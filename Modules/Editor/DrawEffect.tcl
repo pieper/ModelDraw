@@ -339,10 +339,19 @@ itcl::body DrawEffect::buildOptions {} {
   chain
 
   #
+  # Buttons Frame
+  # 
+  set o(buttonsFrame) [vtkNew vtkKWFrame]
+  $o(buttonsFrame) SetParent [$this getOptionsFrame]
+  $o(buttonsFrame) Create
+  pack [$o(buttonsFrame) GetWidgetName] -side top -anchor nw -fill x -padx 2 -pady 2
+  set buttonsFrame $o(buttonsFrame)
+
+  #
   # an apply button
   #
   set o(apply) [vtkNew vtkKWPushButton]
-  $o(apply) SetParent [$this getOptionsFrame]
+  $o(apply) SetParent $o(buttonsFrame)
   $o(apply) Create
   $o(apply) SetText "Apply"
   $o(apply) SetBalloonHelpString "Apply current outline.\nUse the 'a' hotkey to apply in slice window"
@@ -354,7 +363,7 @@ itcl::body DrawEffect::buildOptions {} {
   # a cancel button
   #
   set o(cancel) [vtkNew vtkKWPushButton]
-  $o(cancel) SetParent [$this getOptionsFrame]
+  $o(cancel) SetParent $o(buttonsFrame)
   $o(cancel) Create
   $o(cancel) SetText "Cancel"
   $o(cancel) SetBalloonHelpString "Cancel current outline."
@@ -365,7 +374,7 @@ itcl::body DrawEffect::buildOptions {} {
   # a help button
   #
   set o(help) [vtkNew vtkSlicerPopUpHelpWidget]
-  $o(help) SetParent [$this getOptionsFrame]
+  $o(help) SetParent $o(buttonsFrame)
   $o(help) Create
   [$o(help) GetHelpWindow] SetDisplayPositionToMasterWindowCenter
   $o(help) SetHelpTitle "Draw"
@@ -401,7 +410,7 @@ itcl::body DrawEffect::tearDownOptions { } {
   # call superclass version of tearDownOptions
   chain
 
-  foreach w "help cancel apply" {
+  foreach w "help buttonsFrame cancel apply" {
     if { [info exists o($w)] } {
       $o($w) SetParent ""
       pack forget [$o($w) GetWidgetName] 
