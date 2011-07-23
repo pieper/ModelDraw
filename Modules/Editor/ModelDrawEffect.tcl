@@ -39,6 +39,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     variable _storedSeedSWidgets ""
     variable _modelNode ""
     variable _controlPoints ;# array - initialized in constructor
+    variable _populatingCurves 0
 
     # methods
     method processEvent {{caller ""} {event ""}} {}
@@ -112,6 +113,10 @@ itcl::body ModelDrawEffect::positionActors { } {
 
 itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
 
+  if { $_populatingCurves } {
+    return
+  }
+
   if { [$this preProcessEvent $caller $event] } {
     # superclass processed the event, so we don't
     $this positionActors
@@ -126,6 +131,19 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
       } else {
         EffectSWidget::ConfigureAll ModelDrawEffect -interpolation linear
       }
+      return
+    }
+  }
+
+  if { [info exists o(curves)] } {
+    if { $caller == $o(curves) } {
+      set row [[$o(curves) GetWidget] GetIndexOfFirstSelectedRow]
+      if { $row == -1 } {
+        # no valid row is selected, so ignore event
+        return
+      }
+      set offset [lindex [[$o(curves) GetWidget] GetCellText $row 0] 0]
+      [$sliceGUI GetLogic] SetSliceOffset $offset
       return
     }
   }
@@ -230,6 +248,10 @@ itcl::body ModelDrawEffect::splitControlPoint {index} {
 
 itcl::body ModelDrawEffect::updateControlPoints {} {
   #
+  # update the seed widgets and the listbox
+  #
+  
+  #
   # first - disable old seeds
   # - put them in a list for reuse
   #
@@ -266,6 +288,27 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
   }
   $this updateCurve
   $this applyCurve
+
+  #
+  # update listbox
+  #
+  if { [info exists o(curves)] } {
+    set _populatingCurves 1
+    set currentOffset [$this offset]
+    set w [$o(curves) GetWidget]
+    $w DeleteAllRows
+    foreach offset [lsort -real [array names _controlPoints]] {
+      # add it to the listbox
+      set row [$w GetNumberOfRows]
+      set text "$offset ([llength $_controlPoints($offset)] points)"
+      if { $offset == $currentOffset } {
+        set text "$text (visible)"
+      }
+      $w InsertCellText $row 0 $text
+      # eval $w SetCellBackgroundColor $row $col(Color) [lrange [$lut GetTableValue $c] 0 2]
+    }
+    set _populatingCurves 0
+  }
 }
 
 itcl::body ModelDrawEffect::seedKeyCallback {seed index key} {
@@ -468,6 +511,33 @@ itcl::body ModelDrawEffect::buildOptions {} {
   # we use scope internally, but users shouldn't see it
   pack forget [$o(scopeOption) GetWidgetName]
 
+  #
+  # the list of defined curves for this label
+  #
+  set o(curves) [vtkNew vtkKWMultiColumnListWithScrollbars]
+  $o(curves) SetParent [$this getOptionsFrame]
+  $o(curves) Create
+  set w [$o(curves) GetWidget]
+  $w SetSelectionTypeToRow
+  $w SetSelectionModeToSingle
+  $w MovableRowsOff
+  $w MovableColumnsOn
+  $o(curves) HorizontalScrollbarVisibilityOff
+  $w SetHeight 5
+  $w SetPotentialCellColorsChangedCommand $w "ScheduleRefreshColorsOfAllCellsWithWindowCommand"
+  $w SetColumnSortedCommand $w "ScheduleRefreshColorsOfAllCellsWithWindowCommand"
+
+  set col [$w AddColumn Curves]
+  $w ColumnEditableOff $col
+  $w SetColumnWidth $col 30
+  $w SetColumnSortModeToReal $col
+
+  set SelectionChangedEvent 10000
+  $::slicer3::Broker AddObservation [$o(curves) GetWidget] $SelectionChangedEvent "$this processEvent $o(curves)"
+
+  pack [$o(curves) GetWidgetName] \
+    -side bottom -anchor s -fill both -expand true -padx 2 -pady 2 
+
   $this updateGUIFromMRML
 }
 
@@ -482,7 +552,7 @@ itcl::body ModelDrawEffect::tearDownOptions { } {
   # call superclass version of tearDownOptions
   chain
 
-  foreach w "modelSelect spline" {
+  foreach w "modelSelect spline curves" {
     if { [info exists o($w)] } {
       $o($w) SetParent ""
       pack forget [$o($w) GetWidgetName] 
