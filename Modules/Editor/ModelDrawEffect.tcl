@@ -38,8 +38,9 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     variable _seedSWidgets ""
     variable _storedSeedSWidgets ""
     variable _modelNode ""
-    variable _controlPoints ;# array - initialized in constructor
-    variable _populatingCurves 0
+    variable _controlPoints ;# array - initialized in constructor - points for current label
+    variable _updatingControlPoints 0
+    variable _currentLabel ""
 
     # methods
     method processEvent {{caller ""} {event ""}} {}
@@ -51,7 +52,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method positionActors {} {}
     method offset {} {
       # avoid roundoff issues caused by slicer controllers
-      return [format %0.3f [[$sliceGUI GetLogic] GetSliceOffset]]
+      return [format %0.2f [[$sliceGUI GetLogic] GetSliceOffset]]
     }
     method controlPoints { {offset ""} } {
       if { $offset == "array" } {
@@ -84,8 +85,9 @@ if { [itcl::find class ModelDrawEffect] == "" } {
 itcl::body ModelDrawEffect::constructor {sliceGUI} {
   # take over event processing from the parent class
   $this configure -delegateEventProcessing 1
-  array set _controlPoints {}
   set _scopeOptions "all visible"
+  set _currentLabel [EditorGetPaintLabel]
+  array set _controlPoints [$_parameterNode GetParameter ModelDraw,$_currentLabel]
 }
 
 itcl::body ModelDrawEffect::destructor {} {
@@ -113,16 +115,41 @@ itcl::body ModelDrawEffect::positionActors { } {
 
 itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
 
-  if { $_populatingCurves } {
+  if { $_updatingControlPoints } {
     return
   }
 
+  #
+  # update curves to match current paint color
+  #
+  if { $_currentLabel == "" } {
+    set _currentLabel [EditorGetPaintLabel]
+  }
+
+  if { $caller == $_parameterNode } {
+    set paintLabel [EditorGetPaintLabel]
+    if { $_currentLabel != $paintLabel } {
+      array unset _controlPoints
+      array set _controlPoints [$_parameterNode GetParameter ModelDraw,$paintLabel]
+      set _currentLabel $paintLabel
+      $this updateControlPoints
+    }
+    return
+  }
+
+  #
+  # pass event up the chain
+  #
   if { [$this preProcessEvent $caller $event] } {
     # superclass processed the event, so we don't
     $this positionActors
     [$sliceGUI GetSliceViewer] RequestRender
     return
   }
+
+  #
+  # handle events from widgets
+  #
 
   if { [info exists o(spline)] } {
     if { $caller == $o(spline) } {
@@ -150,6 +177,9 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
 
   chain $caller $event
 
+  #
+  # handle mouse/key events
+  #
   set grabID [$sliceGUI GetGrabID]
   if { ($grabID != "") && ($grabID != $this) } {
     $o(cursorActor) VisibilityOff
@@ -203,6 +233,9 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
     }
   }
 
+  #
+  # changes in the slice view
+  #
   if { $caller != "" && [$caller IsA "vtkMRMLSliceNode"] } {
     $this updateControlPoints
   }
@@ -248,12 +281,20 @@ itcl::body ModelDrawEffect::splitControlPoint {index} {
 
 itcl::body ModelDrawEffect::updateControlPoints {} {
   #
-  # update the seed widgets and the listbox
+  # update:
+  # the parameter node
+  # the seed widgets 
+  # the listbox
   #
+ 
+  set _updatingControlPoints 1
+  
+  $_parameterNode SetParameter ModelDraw,$_currentLabel [array get _controlPoints]
   
   #
-  # first - disable old seeds
-  # - put them in a list for reuse
+  # update seeds: first - disable old seeds
+  # (put them in a list for reuse)
+  # then create seeds for each control point
   #
   foreach seed $_seedSWidgets {
     $seed place -10000 -10000 -10000
@@ -293,7 +334,6 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
   # update listbox
   #
   if { [info exists o(curves)] } {
-    set _populatingCurves 1
     set currentOffset [$this offset]
     set w [$o(curves) GetWidget]
     $w DeleteAllRows
@@ -307,8 +347,8 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       $w InsertCellText $row 0 $text
       # eval $w SetCellBackgroundColor $row $col(Color) [lrange [$lut GetTableValue $c] 0 2]
     }
-    set _populatingCurves 0
   }
+  set _updatingControlPoints 0
 }
 
 itcl::body ModelDrawEffect::seedKeyCallback {seed index key} {
