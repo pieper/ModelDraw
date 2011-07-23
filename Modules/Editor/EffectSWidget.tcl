@@ -37,6 +37,7 @@ if { [itcl::find class EffectSWidget] == "" } {
     public variable animationDelay "200"
     public variable exitCommand ""
 
+    variable _parameterNode ""
     variable _renderer ""
     variable _startPosition "0 0 0"
     variable _currentPosition "0 0 0"
@@ -125,11 +126,11 @@ itcl::body EffectSWidget::constructor {sliceGUI} {
   set tag [$node AddObserver AnyEvent "::SWidget::ProtectedCallback $this processEvent $node"]
   lappend _observerRecords "$node $tag"
 
-  set node [EditorGetParameterNode]
-  set tag [$node AddObserver DeleteEvent "::SWidget::ProtectedDelete $this"]
-  lappend _observerRecords "$node $tag"
-  set tag [$node AddObserver AnyEvent "::SWidget::ProtectedCallback $this processEvent $node"]
-  lappend _observerRecords "$node $tag"
+  set _parameterNode [EditorGetParameterNode]
+  set tag [$_parameterNode AddObserver DeleteEvent "::SWidget::ProtectedDelete $this"]
+  lappend _observerRecords "$_parameterNode $tag"
+  set tag [$_parameterNode AddObserver AnyEvent "::SWidget::ProtectedCallback $this processEvent $_parameterNode"]
+  lappend _observerRecords "$_parameterNode $tag"
 }
 
 itcl::body EffectSWidget::destructor {} {
@@ -340,7 +341,7 @@ itcl::body EffectSWidget::preProcessEvent { {caller ""} {event ""} } {
   # updateGUIFromMRML method which will copy the parameters into the 
   # GUI and into the configuration options of the effect
   #
-  if { $caller == [EditorGetParameterNode] } {
+  if { $caller == $_parameterNode } {
     $this updateGUIFromMRML
     return 1
   }
