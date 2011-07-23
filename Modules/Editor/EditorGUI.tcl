@@ -51,6 +51,7 @@ proc EditorBuildGUI {this} {
     error "editor singleton already created"
   }
   set ::Editor(singleton) $this
+  set ::Editor(parameterNode) ""
 
   #
   # create and register the node class
@@ -231,21 +232,45 @@ proc EditorCreateParameterNode {} {
 }
 
 # get the editor parameter node, or create one if it doesn't exist
+# - keep a reference to parameterNode and remove any new nodes
+#   (i.e. that have been brought in via scene load or import) but
+#   then delete them from the scene
+# - if there is no node in scene, create one and add it
 proc EditorGetParameterNode {} {
 
+  if { [info command $::Editor(parameterNode)] == "" } {
+    set ::Editor(parameterNode) ""
+  }
+
   set node ""
+  set nodesToRemove ""
   set nNodes [$::slicer3::MRMLScene GetNumberOfNodesByClass "vtkMRMLScriptedModuleNode"]
   for {set i 0} {$i < $nNodes} {incr i} {
     set n [$::slicer3::MRMLScene GetNthNodeByClass $i "vtkMRMLScriptedModuleNode"]
     if { [$n GetModuleName] == "Editor" } {
-      set node $n
-      break;
+      if { $n == $::Editor(parameterNode) } {
+        set node $n
+      } else {
+        if { $::Editor(parameterNode) == "" } {
+          set ::Editor(parameterNode) $n
+          set node $n
+        } else {
+          $::Editor(parameterNode) Copy $n
+          set node $::Editor(parameterNode)
+          lappend nodesToRemove $n
+        }
+      }
     }
+  }
+
+  foreach n $nodesToRemove {
+    $::slicer3::MRMLScene RemoveNode $n
   }
 
   if { $node == "" } {
     EditorCreateParameterNode
     set node [EditorGetParameterNode]
+    set ::Editor(parameterNode) $node
   }
 
   return $node
