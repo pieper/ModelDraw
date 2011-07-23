@@ -106,10 +106,16 @@ itcl::body EditColor::create { } {
   bind [$o(colorPatch) GetWidgetName] <1> "$this showColorBox"
 
   # TODO: don't pack this until it's integrated better: [$o(colorOption) GetWidgetName]
+ 
+  # add a little label for the color name
+  set o(colorName) [vtkKWLabel New]
+  $o(colorName) SetParent $frame
+  $o(colorName) Create
 
   pack \
     [$o(colorSpin) GetWidgetName] \
     [$o(colorPatch) GetWidgetName] \
+    [$o(colorName) GetWidgetName] \
     -side left -anchor e -fill x -padx 2 -pady 2 
 
   # TODO: need to listen for AnyEvent because there's no we to specify specific events
@@ -182,6 +188,7 @@ itcl::body EditColor::updateGUI {label} {
     set lut [$colorNode GetLookupTable]
     eval $o(colorPatch) SetBackgroundColor [lrange [$lut GetTableValue $label] 0 2]
     [$o(colorSpin) GetWidget] SetRange 0 [expr [$colorNode GetNumberOfColors] - 1]
+    $o(colorName) SetText [$colorNode GetColorName $label]
   }
 }
 
