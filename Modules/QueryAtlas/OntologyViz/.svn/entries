@@ -1,0 +1,77 @@
+10
+
+dir
+16758
+http://svn.slicer.org/Slicer3/trunk/Modules/QueryAtlas/OntologyViz
+http://svn.slicer.org/Slicer3
+
+
+
+2007-10-09T17:39:48.600793Z
+4574
+wjp@bwh.harvard.edu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3bd1e089-480b-0410-8dfb-8563597acbee
+
+extjars
+dir
+
+tmp
+dir
+
+src
+dir
+
+bin
+dir
+
+data
+dir
+
+build.xml
+file
+
+
+
+
+2010-10-25T02:20:28.474995Z
+8ca21b276040c24acdba8caf3f028652
+2007-09-30T15:41:22.785231Z
+4484
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1630
+

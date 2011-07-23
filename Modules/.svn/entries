@@ -1,0 +1,184 @@
+10
+
+dir
+16758
+http://svn.slicer.org/Slicer3/trunk/Modules
+http://svn.slicer.org/Slicer3
+
+
+
+2011-07-22T01:34:14.298337Z
+16758
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3bd1e089-480b-0410-8dfb-8563597acbee
+
+ModelIntoLabelVolume
+dir
+
+ScriptedModule
+dir
+
+EMSegment
+dir
+
+AtlasCreator
+dir
+
+Editor
+dir
+
+ExtractSubvolumeROI
+dir
+
+VolumeRendering1
+dir
+
+QueryAtlas
+dir
+
+Volumes
+dir
+
+CommandLineModule
+dir
+
+ModelTransform
+dir
+
+NeuroNav
+dir
+
+PythonGADScriptedModule
+dir
+
+OpenIGTLinkIF
+dir
+
+DiffusionWelcome
+dir
+
+VolumeRendering
+dir
+
+SlicerDaemon
+dir
+
+Tractography
+dir
+
+Measurements
+dir
+
+SegmentationWelcome
+dir
+
+ExtractSubvolume
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+
+a003af275cf2bab8553e6b4a0e0740db
+2011-01-24T20:47:42.488580Z
+15815
+haehn
+
+UDPServer
+dir
+
+FetchMI
+dir
+
+Python
+dir
+
+IGTToolSelector
+dir
+
+FourDImage
+dir
+
+FastMarchingSegmentation
+dir
+
+Pharmacokinetics
+dir
+
+GradientAnisotropicDiffusionFilter
+dir
+
+RegistrationWelcome
+dir
+
+CaptureBetaProbe
+dir
+
+Meshing
+dir
+
+Statistics
+dir
+
+ModelMirror
+dir
+
+CropVolume
+dir
+
+IntensityNormalization
+dir
+
+SlicerWelcome
+dir
+
+ScriptedModuleExample
+dir
+
+ChangeTracker
+dir
+
+Endoscopy
+dir
+
+PETCTFusion
+dir
+
+ProstateNav
+dir
+
+DistanceTransformModel
+dir
+
+ClipModel
+dir
+
+IGTRecorder
+dir
+
+CollectFiducials
+dir
+
+DistanceMapFiducials
+dir
+
+Testing
+dir
+

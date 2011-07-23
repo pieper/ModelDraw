@@ -1,0 +1,123 @@
+10
+
+dir
+16758
+http://svn.slicer.org/Slicer3/trunk/Modules/Meshing
+http://svn.slicer.org/Slicer3
+
+
+
+2010-12-26T22:42:59.052785Z
+15697
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3bd1e089-480b-0410-8dfb-8563597acbee
+
+Adapter
+dir
+
+IA_FEMesh
+dir
+
+MIMXCopyright.txt
+file
+
+
+
+
+2010-10-25T02:20:53.774995Z
+0b255b70d8667b552d1db5dcf2416db3
+2010-03-16T20:49:11.611594Z
+12366
+vmagnotta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1407
+
+Filter
+dir
+
+Widgets
+dir
+
+IO
+dir
+
+BuildingBlock
+dir
+
+Common
+dir
+
+Mesh
+dir
+
+Testing
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+2010-10-25T02:20:53.774995Z
+ed1cc9b7991a3672f687536f42f2479c
+2010-03-16T20:43:30.482758Z
+12364
+vmagnotta
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+834
+

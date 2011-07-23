@@ -1,0 +1,52 @@
+10
+
+dir
+16758
+http://svn.slicer.org/Slicer3/trunk/Utilities
+http://svn.slicer.org/Slicer3
+
+
+
+2010-11-23T16:18:23.234175Z
+15553
+tokuda
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3bd1e089-480b-0410-8dfb-8563597acbee
+
+Callgrind
+dir
+
+Designer
+dir
+
+Launcher
+dir
+
+BuildSystem
+dir
+
+Patches
+dir
+
+ETC
+dir
+
+Package
+dir
+
+Doxygen
+dir
+

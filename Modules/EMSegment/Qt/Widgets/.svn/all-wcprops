@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/Qt/Widgets
+END
+qSlicerEMSegmentAnatomicalTreeWidget.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/Qt/Widgets/qSlicerEMSegmentAnatomicalTreeWidget.cxx
+END
+qSlicerEMSegmentAnatomicalTreeWidget_p.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/Qt/Widgets/qSlicerEMSegmentAnatomicalTreeWidget_p.h
+END
+qSlicerEMSegmentAnatomicalTreeWidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/Qt/Widgets/qSlicerEMSegmentAnatomicalTreeWidget.h
+END

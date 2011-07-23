@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake
+END
+EM_Slicer3_GenerateConfigureFile.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_Slicer3_GenerateConfigureFile.cmake
+END
+EM_DetectSlicerVersion.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_DetectSlicerVersion.cmake
+END
+EM_Slicer3_FindPackageSlicer.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_Slicer3_FindPackageSlicer.cmake
+END
+EM_Slicer4_FindPackageSlicer.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_Slicer4_FindPackageSlicer.cmake
+END
+EM_Slicer3_GraphicalUserInterface.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_Slicer3_GraphicalUserInterface.cmake
+END
+EM_Slicer4_GraphicalUserInterface.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_Slicer4_GraphicalUserInterface.cmake
+END
+EM_Slicer3_CMakeRequirements.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_Slicer3_CMakeRequirements.cmake
+END
+EM_Slicer4_CMakeRequirements.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_Slicer4_CMakeRequirements.cmake
+END
+EM_CommandLineApplication.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_CommandLineApplication.cmake
+END
+EM_Slicer3_IncludeSlicerPython.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_Slicer3_IncludeSlicerPython.cmake
+END
+EM_InstallTasksSubScript.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_InstallTasksSubScript.cmake
+END
+EM_Slicer4_GenerateExtensionFile.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_Slicer4_GenerateExtensionFile.cmake
+END
+EM_InstallTasks.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_InstallTasks.cmake
+END
+EM_Testing.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_Testing.cmake
+END
+EM_BaseSources.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/CMake/EM_BaseSources.cmake
+END

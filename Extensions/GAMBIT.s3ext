@@ -1,0 +1,15 @@
+scm       svn
+svnpath   https://www.nitrc.org/svn/gambit/trunk
+svnusername slicerbot
+svnpassword slicer
+
+depends ABC
+
+homepage  http://www.nitrc.org/projects/gambit/
+
+category  wizards
+
+status    Beta
+
+description GAMBIT is an end-to-end application developped at UNC-Chapel Hill allowing Group-wise Automatic Mesh-Based analysis of cortIcal Thickness as well as other surface area measurements.
+

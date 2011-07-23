@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>qSlicerMainWindow</class>
+ <widget class="QMainWindow" name="qSlicerMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>787</width>
+    <height>631</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SlicerQT</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="qVTKRenderView" name="VTKRenderView"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>787</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionFileLoadScene"/>
+    <addaction name="actionFileImportScene"/>
+    <addaction name="actionFileAddData"/>
+    <addaction name="actionFileAddVolume"/>
+    <addaction name="actionFileAddTransform"/>
+    <addaction name="actionFileSaveScene"/>
+    <addaction name="actionFileCloseScene"/>
+    <addaction name="separator"/>
+    <addaction name="actionFileExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionEditSetHome"/>
+    <addaction name="actionEditUndo"/>
+    <addaction name="actionEditRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionEditEditBox"/>
+    <addaction name="separator"/>
+    <addaction name="actionEditNewFiducialList"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <addaction name="actionViewExtensionManager"/>
+    <addaction name="actionViewCacheRemoteIOManager"/>
+    <addaction name="actionViewApplicationSettings"/>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>&amp;Window</string>
+    </property>
+    <widget class="QMenu" name="menuWindowToolbars">
+     <property name="title">
+      <string>&amp;Toolbars</string>
+     </property>
+     <addaction name="actionWindowToolbarsLoadSave"/>
+     <addaction name="actionWindowToolbarsUndoRedo"/>
+     <addaction name="actionWindowToolbarsView"/>
+     <addaction name="actionWindowToolbarsMouseMode"/>
+     <addaction name="actionWindowToolbarsModules"/>
+    </widget>
+    <addaction name="actionWindowShowMainPanel"/>
+    <addaction name="actionWindowShowBottomPanel"/>
+    <addaction name="menuWindowToolbars"/>
+    <addaction name="separator"/>
+    <addaction name="actionWindowErrorLog"/>
+    <addaction name="separator"/>
+    <addaction name="actionWindowPythonInteractor"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionHelpKeyboardShortcuts"/>
+    <addaction name="actionHelpBrowseTutorials"/>
+    <addaction name="actionHelpInterfaceDocumentation"/>
+    <addaction name="actionHelpSlicerPublications"/>
+    <addaction name="separator"/>
+    <addaction name="actionHelpAboutSlicerQT"/>
+   </widget>
+   <widget class="QMenu" name="menuFeeback">
+    <property name="title">
+     <string>Feedback</string>
+    </property>
+    <addaction name="actionFeedbackReportBug"/>
+    <addaction name="actionFeedbackReportUsabilityIssue"/>
+    <addaction name="actionFeedbackMakeFeatureRequest"/>
+    <addaction name="separator"/>
+    <addaction name="actionFeedbackCommunitySlicerVisualBlog"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuFeeback"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="PanelDockWidget">
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>2</number>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../../../Resources/qSlicerLogos.qrc">:/Logos/Slicer3.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="qSlicerModulePanel" name="ModulePanel"/>
+     </item>
+     <item>
+      <widget class="qCTKCollapsibleButton" name="SliceControlsCollapsibleWidget">
+       <property name="text">
+        <string>Manipulate Slice Views</string>
+       </property>
+       <property name="contentsFrameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2"/>
+      </widget>
+     </item>
+     <item>
+      <widget class="qCTKCollapsibleButton" name="View3DControlsCollapsibleWidget">
+       <property name="text">
+        <string>Manipulate 3D View</string>
+       </property>
+       <property name="contentsFrameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3"/>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="MainToolBar">
+   <property name="windowTitle">
+    <string>Main ToolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionFileLoadScene"/>
+   <addaction name="actionFileSaveScene"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QToolBar" name="ModuleToolBar">
+   <property name="windowTitle">
+    <string>Module ToolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionFileLoadScene">
+   <property name="icon">
+    <iconset resource="../../../../Base/QTGUI/Resources/qSlicerBaseQTGUI.qrc">
+     <normaloff>:/Icons/LoadScene.png</normaloff>:/Icons/LoadScene.png</iconset>
+   </property>
+   <property name="text">
+    <string>Load Scene</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionFileImportScene">
+   <property name="text">
+    <string>Import Scene</string>
+   </property>
+  </action>
+  <action name="actionFileAddData">
+   <property name="text">
+    <string>Add Data</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionFileAddVolume">
+   <property name="icon">
+    <iconset resource="../../../../Base/QTGUI/Resources/qSlicerBaseQTGUI.qrc">
+     <normaloff>:/Icons/LoadVolume.png</normaloff>:/Icons/LoadVolume.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Volume</string>
+   </property>
+  </action>
+  <action name="actionFileAddTransform">
+   <property name="icon">
+    <iconset resource="../../../../Base/QTCoreModules/Resources/qSlicerBaseQTCoreModules.qrc">
+     <normaloff>:/Icons/LoadTransform.png</normaloff>:/Icons/LoadTransform.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Transform</string>
+   </property>
+  </action>
+  <action name="actionFileSaveScene">
+   <property name="icon">
+    <iconset resource="../../../../Base/QTGUI/Resources/qSlicerBaseQTGUI.qrc">
+     <normaloff>:/Icons/SaveScene.png</normaloff>:/Icons/SaveScene.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Scene</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionFileCloseScene">
+   <property name="text">
+    <string>Close Scene</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionFileExit">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+  </action>
+  <action name="actionEditSetHome">
+   <property name="text">
+    <string>Set Home</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionEditUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionEditRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actionEditEditBox">
+   <property name="text">
+    <string>Edit Box</string>
+   </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
+  </action>
+  <action name="actionEditNewFiducialList">
+   <property name="text">
+    <string>New Fiducial List</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionViewExtensionManager">
+   <property name="text">
+    <string>Extension Manager</string>
+   </property>
+   <property name="shortcut">
+    <string>/</string>
+   </property>
+  </action>
+  <action name="actionViewCacheRemoteIOManager">
+   <property name="text">
+    <string>Cache &amp; Remote I/O Manager</string>
+   </property>
+  </action>
+  <action name="actionViewApplicationSettings">
+   <property name="text">
+    <string>Application Settings</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="actionWindowShowMainPanel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Main Panel</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="actionWindowShowBottomPanel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Bottom Panel</string>
+   </property>
+   <property name="shortcut">
+    <string>F6</string>
+   </property>
+  </action>
+  <action name="actionWindowErrorLog">
+   <property name="text">
+    <string>&amp;Error Log</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+E</string>
+   </property>
+  </action>
+  <action name="actionWindowPythonInteractor">
+   <property name="text">
+    <string>Python Interactor</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionWindowToolbarsLoadSave">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Load/Save</string>
+   </property>
+  </action>
+  <action name="actionWindowToolbarsUndoRedo">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Undo/Redo</string>
+   </property>
+  </action>
+  <action name="actionWindowToolbarsView">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>View</string>
+   </property>
+  </action>
+  <action name="actionWindowToolbarsMouseMode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Mouse Mode</string>
+   </property>
+  </action>
+  <action name="actionHelpKeyboardShortcuts">
+   <property name="text">
+    <string>&amp;Keyboard Shortcuts</string>
+   </property>
+  </action>
+  <action name="actionHelpBrowseTutorials">
+   <property name="text">
+    <string>Browse tutorials (www)</string>
+   </property>
+  </action>
+  <action name="actionHelpInterfaceDocumentation">
+   <property name="text">
+    <string>Interface Documentation (www)</string>
+   </property>
+  </action>
+  <action name="actionHelpSlicerPublications">
+   <property name="text">
+    <string>Slicer Publications (www)</string>
+   </property>
+  </action>
+  <action name="actionHelpAboutSlicerQT">
+   <property name="text">
+    <string>About SlicerQT</string>
+   </property>
+  </action>
+  <action name="actionFeedbackReportBug">
+   <property name="text">
+    <string>Feedback: report a bug (www)</string>
+   </property>
+  </action>
+  <action name="actionFeedbackReportUsabilityIssue">
+   <property name="text">
+    <string>Feedback: report usability issue (www)</string>
+   </property>
+  </action>
+  <action name="actionFeedbackMakeFeatureRequest">
+   <property name="text">
+    <string>Feedback: make a feature request (www)</string>
+   </property>
+  </action>
+  <action name="actionFeedbackCommunitySlicerVisualBlog">
+   <property name="text">
+    <string>Community: Slicer Visual Blog (www)</string>
+   </property>
+  </action>
+  <action name="actionDebugLoadModule">
+   <property name="text">
+    <string>Load Module</string>
+   </property>
+  </action>
+  <action name="actionWindowToolbarsModules">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Modules</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>qCTKCollapsibleButton</class>
+   <extends>QWidget</extends>
+   <header>qCTKCollapsibleButton.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>qSlicerWidget</class>
+   <extends>QWidget</extends>
+   <header>qSlicerWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>qSlicerModulePanel</class>
+   <extends>qSlicerWidget</extends>
+   <header>qSlicerModulePanel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>qVTKRenderView</class>
+   <extends>QWidget</extends>
+   <header>qVTKRenderView.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../../../Base/QTGUI/Resources/qSlicerBaseQTGUI.qrc"/>
+  <include location="../../../../Resources/qSlicerLogos.qrc"/>
+  <include location="../../../../Base/QTCoreModules/Resources/qSlicerBaseQTCoreModules.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionWindowShowMainPanel</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>PanelDockWidget</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>67</x>
+     <y>320</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWindowToolbarsModules</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>ModuleToolBar</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>447</x>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PanelDockWidget</sender>
+   <signal>visibilityChanged(bool)</signal>
+   <receiver>actionWindowShowMainPanel</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>67</x>
+     <y>320</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

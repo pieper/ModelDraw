@@ -1,0 +1,83 @@
+10
+
+dir
+16758
+http://svn.slicer.org/Slicer3/trunk/Modules/Tractography
+http://svn.slicer.org/Slicer3
+
+
+
+2011-02-22T17:41:08.934742Z
+16090
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3bd1e089-480b-0410-8dfb-8563597acbee
+
+FiducialSeeding
+dir
+
+Settings
+dir
+
+Display
+dir
+
+Editor
+dir
+
+Logic
+dir
+
+Testing
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+2010-10-25T02:20:31.084995Z
+aff951a7eced2d71e8f3800da1a329bf
+2010-02-01T19:38:09.252098Z
+11913
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1526
+
+Seeding
+dir
+

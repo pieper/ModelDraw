@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+  <category>
+  Registration
+  </category>
+  <title>
+  CongealingCLI 
+  </title>
+  <description>
+  Generates a configuration file for the Congealing Registration tool. If a path to the Congeal executable was configured, it tries to launch Congeal with the generated configuration.
+  </description>
+  <version>0.1.1</version>
+  <documentation-url>http://www.slicer.org/slicerWiki/index.php/Modules:AtlasCreator</documentation-url>
+  <license>Slicer license</license>
+  <contributor>Daniel Haehn and Kilian Pohl, University of Pennsylvania</contributor>
+  <acknowledgements>
+  The research was funded by an ARRA supplement to NIH NCRR (P41 RR13218).
+  </acknowledgements>
+
+  <parameters>
+    <label>Input parameters</label>
+    <description>The input parameters for Congealing.</description>
+
+    <integer>
+      <name>congeal_inputfiles</name>
+      <longflag>--congeal_inputfiles</longflag>
+      <label>congeal_inputfiles</label>
+      <default>30</default>
+      <description>number of input files to use. Use '0' for all files when used in conjuctions with congeal_inputfiles.list</description>
+    </integer>
+
+    <string-enumeration>
+      <name>congeal_inputfile_format</name>
+      <longflag>--congeal_inputfile_format</longflag>
+      <label>congeal_inputfile_format</label>
+      <default>nifti</default>
+      <element>nifti</element>
+      <description>format of input files. Currently only 'nifti' is supported</description>
+    </string-enumeration>
+
+    <directory>
+      <name>congeal_inputfiles_list</name>
+      <longflag>--congeal_inputfiles_list</longflag> 
+      <label>congeal_inputfiles_list</label>
+      <channel>input</channel>
+      <default>../input/sample/allfiles</default>
+      <description>
+      a path to a file containing a list of input data files. The list file should contain one filename per line. Only congeal_inputfiles files will be used as input unless congeal_inputfiles is set to '0' in which case all the files in the list will be used      
+      </description>
+    </directory>
+    
+  </parameters>
+
+  <parameters advanced="true">
+  <label>Optimization parameters</label>
+  <description>Options to configure the optimization.</description>
+  
+    <string-enumeration>
+      <name>congeal_optimize_algorithm</name>
+      <description>determines the optimization algorithm used</description>
+      <label>congeal_optimize_algorithm</label>
+      <longflag>--congeal_optimize_algorithm</longflag>
+      <default>randomwalk</default>
+      <element>lbfgs</element>
+      <element>bruteforce</element>
+      <element>randomwalk</element>
+      <element>gradientdescent</element>
+    </string-enumeration>
+  </parameters>
+  
+  <parameters advanced="true">
+  <label>RandomWalk parameters</label>
+  <description>Options to configure RandomWalk.</description>
+
+    <float>
+      <name>congeal_optimize__randomwalk__kernel</name>
+      <label>congeal_optimize__randomwalk__kernel</label>
+      <description>size of support to use for computing initial stepsize. This factor is multiplied by *.initialsteps to establish a maximum step radius for each dimensions</description>
+      <longflag>--congeal_optimize_randomwalk_kernel</longflag>
+      <default>.1</default>
+    </float>
+    
+    <integer>
+      <name>congeal_optimize__randomwalk__steps</name>
+      <label>congeal_optimize__randomwalk__steps</label>
+      <description>maximum number of steps to take along any beam</description>
+      <longflag>--congeal_optimize__randomwalk__steps</longflag>
+      <default>10</default>
+    </integer>
+
+    <integer>
+      <name>congeal_optimize__randomwalk__directions</name>
+      <label>congeal_optimize__randomwalk__directions</label>
+      <description>number of beams to try during each iteration</description>
+      <longflag>--congeal_optimize__randomwalk__directions</longflag>
+      <default>20</default>
+    </integer>
+
+  </parameters>
+  
+  <parameters advanced="true">
+  <label>Error function parameters</label>
+  <description>Options to configure the error function</description>
+  
+    <string-enumeration>
+      <name>congeal_optimize_error</name>
+      <description>selects the error metric to be used. parzen -- entropy estimate based on Parzen density estimator. variance -- variance of voxel stack.</description>
+      <label>congeal_optimize_error</label>
+      <longflag>--congeal_optimize_error</longflag>
+      <default>parzen</default>
+      <element>parzen</element>
+      <element>variance</element>
+    </string-enumeration>
+    
+    <float>
+      <name>congeal_error__parzen__sigma</name>
+      <label>congeal_error__parzen__sigma</label>
+      <description>sigma of Gaussian used as kernel in Parzen density estimator. Measured in voxel intensity</description>
+      <longflag>--congeal_error__parzen__sigma</longflag>
+      <default>30</default>
+    </float>
+
+    <float>
+      <name>congeal_error__parzen__apriori</name>
+      <label>congeal_error__parzen__apriori</label>
+      <description>constant factor added to each Parzen estimate</description>
+      <longflag>--congeal_error__parzen__apriori</longflag>
+      <default>.000001</default>
+    </float>
+    
+  </parameters>
+  
+  <parameters advanced="true">
+  <label>Output display options</label>
+  <description>Options to configure the output display</description>
+  
+    <string>
+      <name>congeal_output_prefix</name>
+      <label>congeal_output_prefix</label>
+      <description>string prepended to the filenames of the outputfiles. This value can include an absolute or relative path, as well as a file prefix</description>
+      <longflag>--congeal_output_prefix</longflag>
+      <default>../output/congeal/</default>
+    </string>
+    
+    <integer>
+      <name>congeal_output_colors_mid</name>
+      <label>congeal_output_colors_mid</label>
+      <description>color equalization intercept. This value determines which data value will be mapped to mid gray</description>
+      <longflag>--congeal_output_colors_mid</longflag>
+      <default>128</default>
+    </integer>
+    
+    <integer>
+      <name>congeal_output_colors_range</name>
+      <label>congeal_output_colors_range</label>
+      <description>color equalization slope. This value determines the relationship between changes in data value and changes in output image gray value</description>
+      <longflag>--congeal_output_colors_range</longflag>
+      <default>256</default>
+    </integer>
+    
+    <integer>
+      <name>congeal_output_sourcegrid</name>
+      <label>congeal_output_sourcegrid</label>
+      <description>determines how many of the transformed source values are shown in the *-inputs* images</description>
+      <longflag>--congeal_output_sourcegrid</longflag>
+      <default>9</default>
+    </integer>
+    
+    <integer>
+      <name>congeal_optimize_progresspoints</name>
+      <label>congeal_optimize_progresspoints</label>
+      <description>determines how many output file sets will be generated during each schedule</description>
+      <longflag>--congeal_optimize_progresspoints</longflag>
+      <default>4</default>
+    </integer>                
+  
+    <integer>
+      <name>congeal_output_average_width</name>
+      <label>congeal_output_average_width</label>
+      <description>determines the width of the congealing average visualization</description>
+      <longflag>--congeal_output_average_width</longflag>
+      <default>512</default>
+    </integer>                
+  
+    <integer>
+      <name>congeal_output_average_height</name>
+      <label>congeal_output_average_height</label>
+      <description>determines the height of the congealing average visualization</description>
+      <longflag>--congeal_output_average_height</longflag>
+      <default>512</default>
+    </integer>                    
+  
+  </parameters>
+  
+  <parameters advanced="true">
+  <label>Initial step sizes for kernels</label>
+  <description>Option to configure the initial kernels</description>
+  
+    <float>
+      <name>congeal_initialsteps_translate</name>
+      <label>congeal_initialsteps_translate</label>
+      <description>relative scaling of translation parameters when computing kernels and step sizes. Scale: translation as fraction of image size</description>
+      <longflag>--congeal_initialsteps_translate</longflag>
+      <default>.2</default>
+    </float>
+    
+    <float>
+      <name>congeal_initialsteps_rotate</name>
+      <label>congeal_initialsteps_rotate</label>
+      <description>relative scaling of rotation parameters when computing kernels and step sizes. Scale: rotation in degrees</description>
+      <longflag>--congeal_initialsteps_rotate</longflag>
+      <default>30</default>
+    </float>
+  
+    <float>
+      <name>congeal_initialsteps_scale</name>
+      <label>congeal_initialsteps_scale</label>
+      <description>relative scaling of scaling parameters when computing kernels and step sizes. Scale: Scale as fraction of image size</description>
+      <longflag>--congeal_initialsteps_scale</longflag>
+      <default>.2</default>
+    </float>
+  
+    <float>
+      <name>congeal_initialsteps_warp</name>
+      <label>congeal_initialsteps_warp</label>
+      <description>relative scaling of warp control point displacement when computing kernels and step sizes. Scale: Warp as fraction of control point's region</description>
+      <longflag>--congeal_initialsteps_warp</longflag>
+      <default>0.15</default>
+    </float>
+      
+  </parameters>
+
+  <parameters advanced="true">
+  <label>Schedule options</label>
+  <description>Options to configure the schedules</description>
+  
+    <string-vector>
+      <name>congeal_schedule__n__cache</name>
+      <label>congeal_schedule__n__cache</label>
+      <description>determines whether or not the schedules results can be retrieved from the previous run. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__cache</longflag>
+      <default>true,true,true,true,true</default>
+    </string-vector>
+    
+    <integer-vector>
+      <name>congeal_schedule__n__downsample</name>
+      <label>congeal_schedule__n__downsample</label>
+      <description>determines how many times the input data should be downsampled (by factor of 2 in each dimension) prior to congealing. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__downsample</longflag>
+      <default>0,0,0,0,0</default>
+    </integer-vector>
+    
+    <string-vector>
+      <name>congeal_schedule__n__optimize_affine</name>
+      <label>congeal_schedule__n__optimize_affine</label>
+      <description>determines if affine parameters should be optimized or left fixed. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__optimize_affine</longflag>
+      <default>true,false,false,false,false</default>
+    </string-vector>
+  
+    <integer-vector>
+      <name>congeal_schedule__n__warpfield__0__size</name>
+      <label>congeal_schedule__n__warpfield__0__size</label>
+      <description>determines number of support points in each dimension of of B-Spline mesh for field 0. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__warpfield__0__size</longflag>
+      <default>1,4,4,4,4</default>
+    </integer-vector>
+    
+    <integer-vector>
+      <name>congeal_schedule__n__warpfield__1__size</name>
+      <label>congeal_schedule__n__warpfield__1__size</label>
+      <description>determines number of support points in each dimension of of B-Spline mesh for field 1. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__warpfield__1__size</longflag>
+      <default>1,1,8,8,8</default>
+    </integer-vector>
+    
+    <integer-vector>
+      <name>congeal_schedule__n__warpfield__2__size</name>
+      <label>congeal_schedule__n__warpfield__2__size</label>
+      <description>determines number of support points in each dimension of of B-Spline mesh for field 2. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__warpfield__2__size</longflag>
+      <default>1,1,1,16,16</default>
+    </integer-vector>
+    
+    <integer-vector>
+      <name>congeal_schedule__n__warpfield__3__size</name>
+      <label>congeal_schedule__n__warpfield__3__size</label>
+      <description>determines number of support points in each dimension of of B-Spline mesh for field 3. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__warpfield__3__size</longflag>
+      <default>1,1,1,1,32</default>
+    </integer-vector>
+    
+    <string-vector>
+      <name>congeal_schedule__n__optimize_warp__0__</name>
+      <label>congeal_schedule__n__optimize_warp__0__</label>
+      <description>determines if the B-spline parameters for B-spline field 0 should be optimized or left fixed. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__optimize_warp__0__</longflag>
+      <default>false,true,false,false,false</default>
+    </string-vector>    
+    
+    <string-vector>
+      <name>congeal_schedule__n__optimize_warp__1__</name>
+      <label>congeal_schedule__n__optimize_warp__1__</label>
+      <description>determines if the B-spline parameters for B-spline field 1 should be optimized or left fixed. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__optimize_warp__1__</longflag>
+      <default>false,false,true,false,false</default>
+    </string-vector>    
+    
+    <string-vector>
+      <name>congeal_schedule__n__optimize_warp__2__</name>
+      <label>congeal_schedule__n__optimize_warp__2__</label>
+      <description>determines if the B-spline parameters for B-spline field 2 should be optimized or left fixed. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__optimize_warp__2__</longflag>
+      <default>false,false,false,true,false</default>
+    </string-vector>
+    
+    <string-vector>
+      <name>congeal_schedule__n__optimize_warp__3__</name>
+      <label>congeal_schedule__n__optimize_warp__3__</label>
+      <description>determines if the B-spline parameters for B-spline field 3 should be optimized or left fixed. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__optimize_warp__3__</longflag>
+      <default>false,false,false,false,true</default>
+    </string-vector>    
+    
+    <integer-vector>
+      <name>congeal_schedule__n__optimize_iterations</name>
+      <label>congeal_schedule__n__optimize_iterations</label>
+      <description>number of optimzation iterations to be taken in the schedules. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__optimize_iterations</longflag>
+      <default>30,30,30,30,30</default>
+    </integer-vector>    
+    
+    <integer-vector>
+      <name>congeal_schedule__n__optimize_samples</name>
+      <label>congeal_schedule__n__optimize_samples</label>
+      <description>number of samples to be compared in each transformed input volume. Separated by comma for each schedule run.</description>
+      <longflag>--congeal_schedule__n__optimize_samples</longflag>
+      <default>50000,50000,500000,500000,500000</default>
+    </integer-vector>    
+    
+  </parameters>
+  
+  <parameters advanced="true">
+  <label>Experimental</label>
+  <description>Experimental options</description>  
+  
+    <integer>
+      <name>congeal_optimize_bestpoints</name>
+      <label>congeal_optimize_bestpoints</label>
+      <description></description>
+      <longflag>--congeal_optimize_bestpoints</longflag>
+      <default>1000</default>
+    </integer>      
+
+    <string>
+      <name>test</name>
+      <label>test</label>
+      <description>Currently unused. "Must be congeal."</description>
+      <longflag>--test</longflag>
+      <default>congeal</default>
+    </string>
+  
+  </parameters>
+  
+  <parameters>
+  <label>Write and Execution options</label>
+  <description>Options to configure the execution</description>  
+
+    <string>
+      <name>outputPath</name>
+      <label>Output path for configuration</label>
+      <description>The output path for the congeal configuration file. The file will only be written, if this is set.</description>
+      <longflag>--outputPath</longflag>
+      <default>/tmp/congeal.config</default>
+    </string>
+  
+    <string>
+      <name>launch</name>
+      <label>Congeal executable</label>
+      <description>The path to the congeal executable. Congeal will only be executed, if this is set.</description>
+      <longflag>--launch</longflag>
+      <default></default>
+    </string>
+  
+  </parameters>
+
+</executable>

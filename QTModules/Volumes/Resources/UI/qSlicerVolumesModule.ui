@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>qSlicerVolumesModule</class>
+ <widget class="qSlicerWidget" name="qSlicerVolumesModule">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>681</width>
+    <height>549</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Active Volume</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="qMRMLNodeSelector" name="ActiveVolumeNodeSelector">
+       <property name="nodeTypes">
+        <stringlist>
+         <string>vtkMRMLVolumeNode</string>
+        </stringlist>
+       </property>
+       <property name="addEnabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="qCTKCollapsibleButton" name="CTKCollapsibleButton">
+     <property name="text">
+      <string>Display</string>
+     </property>
+     <property name="contentsFrameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="qSlicerVolumeDisplayWidget" name="VolumeDisplayWidget" native="true"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>qCTKCollapsibleButton</class>
+   <extends>QWidget</extends>
+   <header>qCTKCollapsibleButton.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>qMRMLNodeSelector</class>
+   <extends>QComboBox</extends>
+   <header>qMRMLNodeSelector.h</header>
+  </customwidget>
+  <customwidget>
+   <class>qSlicerWidget</class>
+   <extends>QWidget</extends>
+   <header>qSlicerWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>qSlicerVolumeDisplayWidget</class>
+   <extends>QWidget</extends>
+   <header>qSlicerVolumeDisplayWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>qSlicerVolumesModule</sender>
+   <signal>mrmlSceneChanged(vtkMRMLScene*)</signal>
+   <receiver>ActiveVolumeNodeSelector</receiver>
+   <slot>setMRMLScene(vtkMRMLScene*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>424</x>
+     <y>1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>422</x>
+     <y>19</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActiveVolumeNodeSelector</sender>
+   <signal>currentNodeChanged(vtkMRMLNode*)</signal>
+   <receiver>VolumeDisplayWidget</receiver>
+   <slot>setMRMLVolumeNode(vtkMRMLNode*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>313</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

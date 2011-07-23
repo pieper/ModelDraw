@@ -1,0 +1,119 @@
+10
+
+dir
+16758
+http://svn.slicer.org/Slicer3/trunk/Libs
+http://svn.slicer.org/Slicer3
+
+
+
+2011-04-25T20:58:38.496471Z
+16489
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3bd1e089-480b-0410-8dfb-8563597acbee
+
+vtkTeem
+dir
+
+qMRMLWidgets
+dir
+
+MRMLIDImageIO
+dir
+
+GenerateLM
+dir
+
+IGT
+dir
+
+RemoteIO
+dir
+
+SlicerExecutionModel
+dir
+
+qCTKWidgets
+dir
+
+FileWatcher
+dir
+
+MRMLCLI
+dir
+
+MGHImageIO
+dir
+
+MRML
+dir
+
+FreeSurfer
+dir
+
+LoadableModule
+dir
+
+SlicerIO
+dir
+
+CudaSupport
+dir
+
+qVTKWidgets
+dir
+
+vtkITK
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+2010-10-25T02:20:22.034995Z
+e0cff08d6a82ee60614674cfb8b961f4
+2010-05-03T15:06:08.972849Z
+13167
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3283
+
+ITKCommandIO
+dir
+

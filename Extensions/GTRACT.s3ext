@@ -1,0 +1,29 @@
+#
+# first token of each non-comment line is the keyword and the rest of the line 
+# (including spaces) is the value.
+# - the value can be blank
+#
+
+# scm is source code manager (i.e. svn)
+scm       svn
+svnpath  https://www.nitrc.org/svn/vmagnotta/slicer-ext-distribution/GTRACT-slicer3-1.0
+svnusername slicerbot
+svnpassword slicer
+
+# list dependencies 
+# - these should be names of other modules that have .s3ext files 
+# - the dependencies will be built first
+
+# homepage
+homepage http://www.nitrc.org/projects/vmagnotta/
+
+# match category in the xml description of the module (where it shows up in Modules menu)
+category  Diffusion GTRACT
+
+# give people an idea what to expect from this code 
+# - is it just a test or something you stand beind?
+status    Beta
+
+# One line description of what the module does
+GTRACT is a Diffusion Tensor fiber tracking suite that includes streamline tracking tools, Eddy current correction as well as several utilities for DT images and fiber tracts. The fiber tracking includes a guided tracking tool that integrates a priori information into a streamlines algorithm. 
+

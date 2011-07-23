@@ -1,0 +1,7 @@
+<Name>AtlasCreatorCxxModule</Name>
+<Description>The Cxx Libraries for the AtlasCreator</Description>
+<SourceLocation>http://viewvc.slicer.org/viewcvs.cgi/trunk/Modules/AtlasCreator/cxx</SourceLocation>
+<HomePage>http://www.slicer.org/slicerWiki/index.php/Modules:AtlasCreator</HomePage>
+<Version>0.1</Version>
+<Author>Daniel Haehn</Author>
+<Acknowledgement>Kilian Pohl, UPENN</Acknowledgement>

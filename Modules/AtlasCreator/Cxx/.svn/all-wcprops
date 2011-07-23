@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/Slicer3/!svn/ver/16735/trunk/Modules/AtlasCreator/Cxx
+END
+vtkMRMLAtlasCreatorNode.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Slicer3/!svn/ver/16735/trunk/Modules/AtlasCreator/Cxx/vtkMRMLAtlasCreatorNode.cxx
+END
+vtkMRMLAtlasCreatorNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/Slicer3/!svn/ver/16735/trunk/Modules/AtlasCreator/Cxx/vtkMRMLAtlasCreatorNode.h
+END

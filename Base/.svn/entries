@@ -1,0 +1,92 @@
+10
+
+dir
+16758
+http://svn.slicer.org/Slicer3/trunk/Base
+http://svn.slicer.org/Slicer3
+
+
+
+2011-07-13T20:28:11.488385Z
+16750
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3bd1e089-480b-0410-8dfb-8563597acbee
+
+QTBase
+dir
+
+Python
+dir
+
+GUI
+dir
+
+QTCoreModules
+dir
+
+CLI
+dir
+
+QTGUI
+dir
+
+QTCLI
+dir
+
+Logic
+dir
+
+QTCore
+dir
+
+Testing
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+2010-10-25T02:21:28.634995Z
+cfa43e7c4674ff40f2ec2308fa5dfd95
+2010-02-25T21:44:20.001030Z
+12231
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+893
+

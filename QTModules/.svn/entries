@@ -1,0 +1,77 @@
+10
+
+dir
+16758
+http://svn.slicer.org/Slicer3/trunk/QTModules
+http://svn.slicer.org/Slicer3
+
+
+
+2010-10-13T18:43:25.576661Z
+15197
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3bd1e089-480b-0410-8dfb-8563597acbee
+
+miAnnotation
+dir
+
+TractographyFiducialSeeding
+dir
+
+Measurements
+dir
+
+Volumes
+dir
+
+SlicerWelcome
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+2010-10-25T02:21:51.224995Z
+d1c160955162914e45caee47f67900c7
+2010-04-28T19:55:57.533482Z
+12988
+pohl
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+694
+

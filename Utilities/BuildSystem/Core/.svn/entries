@@ -1,0 +1,43 @@
+10
+
+dir
+16758
+http://svn.slicer.org/Slicer3/trunk/Utilities/BuildSystem/Core
+http://svn.slicer.org/Slicer3
+
+
+
+2008-09-17T22:59:01.326291Z
+7589
+barre
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3bd1e089-480b-0410-8dfb-8563597acbee
+
+Slicer3
+dir
+
+VTK
+dir
+
+ITK
+dir
+
+KWWidgets
+dir
+
+Teem
+dir
+

@@ -1,0 +1,12 @@
+scm       svn
+svnpath   https://www.nitrc.org/svn/spharm-pdm/
+svnusername slicerbot
+svnpassword slicer
+
+homepage  http://www.nitrc.org/projects/spharm-pdm/
+
+category  Shape Analysis
+
+status    Beta
+
+description Performs 3D structural statistical shape analysis via SPHARM-PDM.
