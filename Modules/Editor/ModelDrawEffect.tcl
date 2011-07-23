@@ -453,7 +453,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   $o(spline) Create
   $o(spline) SetLabelText "Spline: "
   $o(spline) SetBalloonHelpString "Use spline interpolation."
-  [$o(spline) GetLabel] SetWidth 8
+  [$o(spline) GetLabel] SetWidth 22
   [$o(spline) GetLabel] SetAnchorToEast
   pack [$o(spline) GetWidgetName] \
     -side top -anchor w -padx 2 -pady 2 
