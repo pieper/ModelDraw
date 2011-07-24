@@ -76,6 +76,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method seedMovingCallback {seed index} {}
     method seedContextMenuCallback {seed index} {}
     method seedKeyCallback {seed index key} {}
+    method copyCurve {{from "nearest"}} {}
   }
 }
 
@@ -170,7 +171,11 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
         return
       }
       set offset [lindex [[$o(curves) GetWidget] GetCellText $row 0] 0]
-      [$sliceGUI GetLogic] SetSliceOffset $offset
+      if { ![info exists _controlPoints($offset)] } {
+        $this copyCurve "nearest"
+      } else {
+        [$sliceGUI GetLogic] SetSliceOffset $offset
+      }
       return
     }
   }
@@ -337,15 +342,21 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
     set currentOffset [$this offset]
     set w [$o(curves) GetWidget]
     $w DeleteAllRows
+    set visible ""
     foreach offset [lsort -real [array names _controlPoints]] {
       # add it to the listbox
       set row [$w GetNumberOfRows]
       set text "$offset ([llength $_controlPoints($offset)] points)"
       if { $offset == $currentOffset } {
         set text "$text (visible)"
+        set visible $offset
       }
       $w InsertCellText $row 0 $text
       # eval $w SetCellBackgroundColor $row $col(Color) [lrange [$lut GetTableValue $c] 0 2]
+    }
+    if { $visible == "" } {
+      set row [$w GetNumberOfRows]
+      $w InsertCellText $row 0 "$currentOffset - no points, click to copy nearest"
     }
   }
   set _updatingControlPoints 0
@@ -598,4 +609,57 @@ itcl::body ModelDrawEffect::tearDownOptions { } {
       pack forget [$o($w) GetWidgetName] 
     }
   }
+}
+
+itcl::body ModelDrawEffect::copyCurve { {from "nearest"} } {
+  
+  set offset [$this offset]
+  if { [info exists _controlPoints($offset)] } {
+    if { $_controlPoints($offset) != "" } {
+      if { ![EditorConfirmDialog "This slice already has points defined - delete them?"] } {
+        return
+      }
+    }
+  }
+
+  set copyFrom ""
+
+  if { $from == "nearest" } {
+    set near ""
+    set neardist 0
+    foreach otherOffset [lsort -real [array names _controlPoints]] {
+      set dist [expr abs($offset - $otherOffset)]
+      if { $near == "" } {
+        set near $otherOffset
+        set neardist $dist
+      } else {
+        if { $dist < $neardist } {
+          set near $otherOffset
+          set neardist $dist
+        }
+      }
+    }
+    set copyFrom $near
+  }
+
+  if { $copyFrom == "" } {
+    EditorErrorDialog "No control points to copy from"
+    return
+  }
+
+  # get slice normal vector and offset control points by distance
+  set delta [expr $offset - $copyFrom]
+  set x [expr $delta * [[$_sliceNode GetSliceToRAS] GetElement 0 2]]
+  set y [expr $delta * [[$_sliceNode GetSliceToRAS] GetElement 1 2]]
+  set z [expr $delta * [[$_sliceNode GetSliceToRAS] GetElement 2 2]]
+  
+  set _controlPoints($offset) ""
+  foreach cp $_controlPoints($copyFrom) {
+    set xx [expr $x + [lindex $cp 0]]
+    set yy [expr $y + [lindex $cp 1]]
+    set zz [expr $z + [lindex $cp 2]]
+    lappend _controlPoints($offset) "$xx $yy $zz"
+  }
+
+  $this updateControlPoints
 }
