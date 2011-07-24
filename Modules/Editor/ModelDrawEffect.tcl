@@ -84,6 +84,11 @@ if { [itcl::find class ModelDrawEffect] == "" } {
 #                        CONSTRUCTOR/DESTRUCTOR
 # ------------------------------------------------------------------
 itcl::body ModelDrawEffect::constructor {sliceGUI} {
+  if { [$_sliceNode GetLayoutName] != "Red" } {
+    # only allow model object drawing in the Red slice plane (at least for now)
+    itcl::delete object $this
+    return
+  }
   # take over event processing from the parent class
   $this configure -delegateEventProcessing 1
   set _scopeOptions "all visible"
