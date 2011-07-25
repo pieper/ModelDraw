@@ -41,6 +41,9 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     variable _controlPoints ;# array - initialized in constructor - points for current label
     variable _updatingControlPoints 0
     variable _currentLabel ""
+    variable _sliceSplineR "" ;# local storage for dynamicly created temp splines
+    variable _sliceSplineA ""
+    variable _sliceSplineS ""
 
     # methods
     method processEvent {{caller ""} {event ""}} {}
@@ -110,6 +113,12 @@ itcl::body ModelDrawEffect::destructor {} {
   }
   set _seedSWidgets ""
   set _storedSeedSWidgets ""
+
+  if { $_sliceSplineR != "" } {
+    $_sliceSplineR Delete
+    $_sliceSplineA Delete
+    $_sliceSplineS Delete
+  }
 }
 
 itcl::configbody ModelDrawEffect::interpolation {
@@ -493,7 +502,6 @@ itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
       "spline" {
         foreach obj {splineR splineA splineS} {
           $o($obj) RemoveAllPoints
-          $o($obj) SetParametricRange 0 [llength $controlPoints]
           $o($obj) SetClosed 1
         }
         set index 0
@@ -729,9 +737,9 @@ itcl::body ModelDrawEffect::splineToSlice {t} {
   set ns [[$_sliceNode GetSliceToRAS] GetElement 2 2]
 
   # spline point
-  set r [$o(splineR) Evaluate $t]
-  set a [$o(splineA) Evaluate $t]
-  set s [$o(splineS) Evaluate $t]
+  set r [$_sliceSplineR Evaluate $t]
+  set a [$_sliceSplineA Evaluate $t]
+  set s [$_sliceSplineS Evaluate $t]
 
   set dist [expr $nr * ($r - $or) + $na * ($a - $oa) + $ns * ($s - $os)] 
   return $dist
@@ -761,24 +769,28 @@ itcl::body ModelDrawEffect::interpolatedControlPoints {} {
     }
   }
 
+  # first, reset the splines
+  if { $_sliceSplineR != "" } {
+    $_sliceSplineR Delete
+    $_sliceSplineA Delete
+    $_sliceSplineS Delete
+  }
+  set _sliceSplineR [vtkKochanekSpline New]
+  set _sliceSplineA [vtkKochanekSpline New]
+  set _sliceSplineS [vtkKochanekSpline New]
+
   set eps 1e-4
   set interpolatedControlPoints ""
   for {set point 0} {$point < $pointCount} {incr point} {
     # set up the spline between slices for this point
-    # first, reset the spline
-    foreach obj {splineR splineA splineS} {
-      $o($obj) RemoveAllPoints
-      $o($obj) SetParametricRange 0 1
-      $o($obj) SetClosed 0
-    }
     set index 0
     foreach offset $offsets {
       # add the control points
       set cp [lindex $_controlPoints($offset) $point]
       foreach {r a s} $cp {}
-      $o(splineR) AddPoint $index $r
-      $o(splineA) AddPoint $index $a
-      $o(splineS) AddPoint $index $s
+      $_sliceSplineR AddPoint $index $r
+      $_sliceSplineA AddPoint $index $a
+      $_sliceSplineS AddPoint $index $s
       incr index
     }
     # compute the spline
@@ -788,7 +800,7 @@ itcl::body ModelDrawEffect::interpolatedControlPoints {} {
 
     # perform the binary search
     set guesses 0
-    set high 1
+    set high [llength $offsets]
     set low 0
     set highDist [$this splineToSlice $high]
     set lowDist [$this splineToSlice $low]
@@ -804,21 +816,21 @@ itcl::body ModelDrawEffect::interpolatedControlPoints {} {
         # we have a good value of t (guess), so break
         break
       }
+      if { [expr abs($high - $low)] < [expr $eps/10.] } {
+        puts "Bad guess local minimum - use current guess anyway"
+        break
+      }
       if { [expr $sliceDir * $guessDist] > 0 } {
         set high $guess
       } else {
         set low $guess
       }
-      if { [expr abs($high - $low)] < [expr $eps/10.] } {
-        puts "Bad guess local minimum - use current guess anyway"
-        break
-      }
       incr guesses
     }
 
-    set r [$o(splineR) Evaluate $guess]
-    set a [$o(splineA) Evaluate $guess]
-    set s [$o(splineS) Evaluate $guess]
+    set r [$_sliceSplineR Evaluate $guess]
+    set a [$_sliceSplineA Evaluate $guess]
+    set s [$_sliceSplineS Evaluate $guess]
     lappend interpolatedControlPoints "$r $a $s"
   }
   return $interpolatedControlPoints
