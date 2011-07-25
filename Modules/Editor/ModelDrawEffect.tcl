@@ -37,6 +37,8 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     # a list of seeds - the callback info includes the mapping to list and index
     variable _seedSWidgets ""
     variable _storedSeedSWidgets ""
+    variable _moveStartRAS ""
+    variable _moveStartControlPoints ""
     variable _modelNode ""
     variable _controlPoints ;# array - initialized in constructor - points for current label
     variable _updatingControlPoints 0
@@ -76,6 +78,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method updateModel {} {}
     method updateCurve { {controlPoints ""} } {}
     method applyCurve {} {}
+    method seedStartMovingCallback {seed index} {}
     method seedMovingCallback {seed index} {}
     method seedContextMenuCallback {seed index} {}
     method seedKeyCallback {seed index key} {}
@@ -353,6 +356,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       $seedSWidget configure -visibility 1
       $seedSWidget configure -inactive 0
       $seedSWidget configure -color "1.0 0.0 0.0"
+      $seedSWidget configure -startMovingCommand "$this seedStartMovingCallback $seedSWidget $index"
       $seedSWidget configure -movingCommand "$this seedMovingCallback $seedSWidget $index"
       $seedSWidget configure -movedCommand "$this applyCurve"
       $seedSWidget configure -contextMenuCommand "$this seedContextMenuCallback $seedSWidget $index"
@@ -460,9 +464,37 @@ itcl::body ModelDrawEffect::applyCurve {} {
   }
 }
 
+itcl::body ModelDrawEffect::seedStartMovingCallback {seed index} {
+  # keep track of start point to support multi-seed moves
+  set _moveStartRAS [$seed getRASPosition]
+  set _moveStartControlPoints [$this controlPoints]
+}
+
 itcl::body ModelDrawEffect::seedMovingCallback {seed index} {
   set offset [$this offset]
-  set _controlPoints($offset) [lreplace $_controlPoints($offset) $index $index [$seed getRASPosition]]
+  if { [$_interactor GetShiftKey] } {
+    # move all seeds
+    foreach {startR startA startS} $_moveStartRAS {r a s} [$seed getRASPosition] {}
+    set deltaR [expr $r - $startR]
+    set deltaA [expr $a - $startA]
+    set deltaS [expr $s - $startS]
+    for {set i 0} {$i < [llength $_seedSWidgets]} {incr i} {
+      set cp [lindex $_moveStartControlPoints $i]
+      foreach {cpr cpa cps} $cp {}
+      set cpr [expr $cpr + $deltaR]
+      set cpa [expr $cpa + $deltaA]
+      set cps [expr $cps + $deltaS]
+      set _controlPoints($offset) [lreplace $_controlPoints($offset) $i $i "$cpr $cpa $cps"]
+      if { $i != $index } {
+        # skip the widget that generated the event - it will update itself
+        set sw [lindex $_seedSWidgets $i]
+        $sw place $cpr $cpa $cps
+      }
+    }
+  } else {
+    # move just selected control point
+    set _controlPoints($offset) [lreplace $_controlPoints($offset) $index $index [$seed getRASPosition]]
+  }
   $this updateCurve
 }
 
@@ -679,14 +711,23 @@ itcl::body ModelDrawEffect::copyCurve {} {
     }
   }
 
+  # interpolate by default, but fall back to nearest
+  # if needed or bail out if nothing can be done
   set from interpolated
   if { [array names _controlPoints] == 0 } {
     # no points to copy from - can't do anything
     return
   }
   if { [llength [array names _controlPoints]] == 1 } {
+    # only one curve defined, copy it
     set from nearest
   }
+  set sortedOffsets [lsort -real [array names _controlPoints]]
+  if { $offset < [lindex $sortedOffsets 0] || $offset > [lindex $sortedOffsets end] } {
+    # outside of interpolation zone, use nearest
+    set from nearest
+  }
+
 
 
   switch $from {
