@@ -342,6 +342,8 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       $seedSWidget configure -scale 10
       $seedSWidget configure -glyph Circle
       $seedSWidget configure -visibility 1
+      $seedSWidget configure -inactive 0
+      $seedSWidget configure -color "1.0 0.0 0.0"
       $seedSWidget configure -movingCommand "$this seedMovingCallback $seedSWidget $index"
       $seedSWidget configure -movedCommand "$this applyCurve"
       $seedSWidget configure -contextMenuCommand "$this seedContextMenuCallback $seedSWidget $index"
@@ -491,7 +493,7 @@ itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
       "spline" {
         foreach obj {splineR splineA splineS} {
           $o($obj) RemoveAllPoints
-          $o($obj) SetParametricRange -1 -1
+          $o($obj) SetParametricRange 0 [llength $controlPoints]
           $o($obj) SetClosed 1
         }
         set index 0
