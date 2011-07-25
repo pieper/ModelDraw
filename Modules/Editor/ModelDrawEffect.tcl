@@ -71,7 +71,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method splitControlPoint {index} {}
     method updateControlPoints {} {}
     method updateModel {} {}
-    method updateCurve {} {}
+    method updateCurve { {controlPoints ""} } {}
     method applyCurve {} {}
     method seedMovingCallback {seed index} {}
     method seedContextMenuCallback {seed index} {}
@@ -323,30 +323,60 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
 
   set offset [$this offset]
   set index 0
-  foreach cp [$this controlPoints $offset] {
-    # get a stored seed widget or create a new one
-    if { [llength $_storedSeedSWidgets] > 0 } {
-      set seedSWidget [lindex $_storedSeedSWidgets 0]
-      set _storedSeedSWidgets [lrange $_storedSeedSWidgets 1 end]
-    } else {
-      set seedSWidget [SeedSWidget #auto $sliceGUI]
-    }
-    lappend _seedSWidgets $seedSWidget
+  set controlPoints [$this controlPoints $offset]
+  if { [llength $controlPoints] > 0 } {
+    # when there are user-defined control points on this slice,
+    # display them as editable points
+    foreach cp $controlPoints {
+      # get a stored seed widget or create a new one
+      if { [llength $_storedSeedSWidgets] > 0 } {
+        set seedSWidget [lindex $_storedSeedSWidgets 0]
+        set _storedSeedSWidgets [lrange $_storedSeedSWidgets 1 end]
+      } else {
+        set seedSWidget [SeedSWidget #auto $sliceGUI]
+      }
+      lappend _seedSWidgets $seedSWidget
 
-    # configure the seed to act as a control point
-    eval $seedSWidget place $cp
-    $seedSWidget configure -scale 10
-    $seedSWidget configure -glyph Circle
-    $seedSWidget configure -visibility 1
-    $seedSWidget configure -movingCommand "$this seedMovingCallback $seedSWidget $index"
-    $seedSWidget configure -movedCommand "$this applyCurve"
-    $seedSWidget configure -contextMenuCommand "$this seedContextMenuCallback $seedSWidget $index"
-    $seedSWidget configure -keyCommand "$this seedKeyCallback $seedSWidget $index"
-    $seedSWidget processEvent
-    incr index
+      # configure the seed to act as a control point
+      eval $seedSWidget place $cp
+      $seedSWidget configure -scale 10
+      $seedSWidget configure -glyph Circle
+      $seedSWidget configure -visibility 1
+      $seedSWidget configure -movingCommand "$this seedMovingCallback $seedSWidget $index"
+      $seedSWidget configure -movedCommand "$this applyCurve"
+      $seedSWidget configure -contextMenuCommand "$this seedContextMenuCallback $seedSWidget $index"
+      $seedSWidget configure -keyCommand "$this seedKeyCallback $seedSWidget $index"
+      $seedSWidget processEvent
+      incr index
+    }
+    $this updateCurve $controlPoints
+    $this applyCurve
+  } else {
+    # no user-defined control points on this slice,
+    # so just display non-editable outline
+    set controlPoints [$this interpolatedControlPoints]
+    foreach cp $controlPoints {
+      # get a stored seed widget or create a new one
+      if { [llength $_storedSeedSWidgets] > 0 } {
+        set seedSWidget [lindex $_storedSeedSWidgets 0]
+        set _storedSeedSWidgets [lrange $_storedSeedSWidgets 1 end]
+      } else {
+        set seedSWidget [SeedSWidget #auto $sliceGUI]
+      }
+      lappend _seedSWidgets $seedSWidget
+
+      # configure the seed to act as a control point
+      eval $seedSWidget place $cp
+      $seedSWidget configure -scale 8 
+      $seedSWidget configure -glyph Circle
+      $seedSWidget configure -visibility 1
+      $seedSWidget configure -inactive 1
+      $seedSWidget configure -color "0.5 0.5 1.0"
+      $seedSWidget processEvent
+      incr index
+    }
+    $this updateCurve $controlPoints
   }
-  $this updateCurve
-  $this applyCurve
 
   #
   # update listbox
@@ -437,7 +467,7 @@ itcl::body ModelDrawEffect::seedContextMenuCallback {seed index} {
   eval $contextMenu post [winfo pointerxy $parent]
 }
 
-itcl::body ModelDrawEffect::updateCurve {} {
+itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
   
   if { ![info exists o(polyData)] } {
     # not yet initialized
@@ -445,14 +475,18 @@ itcl::body ModelDrawEffect::updateCurve {} {
   }
   $this resetPolyData
 
-  if { [llength [$this controlPoints]] > 1 } {
+  if { $controlPoints == "" } {
+    set controlPoints [$this controlPoints]
+  }
+
+  if { [llength $controlPoints] > 1 } {
 
     switch $interpolation {
       "linear" {
-        foreach cp [$this controlPoints] {
+        foreach cp $controlPoints {
           eval $this addPoint $cp
         }
-        eval $this addPoint [lindex [$this controlPoints] 0]
+        eval $this addPoint [lindex $controlPoints 0]
       }
       "spline" {
         foreach obj {splineR splineA splineS} {
@@ -461,7 +495,7 @@ itcl::body ModelDrawEffect::updateCurve {} {
           $o($obj) SetClosed 1
         }
         set index 0
-        foreach cp [$this controlPoints] {
+        foreach cp $controlPoints {
           foreach {r a s} $cp {}
           $o(splineR) AddPoint $index $r
           $o(splineA) AddPoint $index $a
