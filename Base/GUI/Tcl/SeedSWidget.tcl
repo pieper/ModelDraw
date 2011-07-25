@@ -33,6 +33,7 @@ if { [itcl::find class SeedSWidget] == "" } {
 
     public variable movedCommand ""
     public variable movingCommand ""
+    public variable startMovingCommand ""
     public variable contextMenuCommand ""
     public variable keyCommand ""
     public variable glyph "StarBurst"
@@ -365,6 +366,7 @@ itcl::body SeedSWidget::processEvent { {caller ""} {event ""} } {
                     }
                 set _actionState "dragging"
                 SeedSWidget::SetAllTextVisibility 0
+                eval $startMovingCommand
 
                 # switch into pick mode when we mouse down
                 # on a seed widget -- this mirrors the
