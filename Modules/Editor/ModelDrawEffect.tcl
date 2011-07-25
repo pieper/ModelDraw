@@ -77,6 +77,8 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method seedContextMenuCallback {seed index} {}
     method seedKeyCallback {seed index key} {}
     method copyCurve {{from "nearest"}} {}
+    method interpolatedControlPoints {} {}
+    method splineToSlice {t} {}
   }
 }
 
@@ -94,6 +96,12 @@ itcl::body ModelDrawEffect::constructor {sliceGUI} {
   set _scopeOptions "all visible"
   set _currentLabel [EditorGetPaintLabel]
   array set _controlPoints [$_parameterNode GetParameter ModelDraw,$_currentLabel]
+
+  # create the spline interpolators - these are re-used for intra-slice 
+  # and inter-slice interpolations
+  foreach obj {splineR splineA splineS} {
+    set o($obj) [vtkNew vtkKochanekSpline]
+  }
 }
 
 itcl::body ModelDrawEffect::destructor {} {
@@ -361,7 +369,11 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
     }
     if { $visible == "" } {
       set row [$w GetNumberOfRows]
-      $w InsertCellText $row 0 "$currentOffset - no points, click to copy nearest"
+      if { $row == 0 } {
+        $w InsertCellText $row 0 "no points, select in Red viewer"
+      } else {
+        $w InsertCellText $row 0 "$currentOffset - no points, click to copy nearest"
+      }
     }
   }
   set _updatingControlPoints 0
@@ -443,14 +455,10 @@ itcl::body ModelDrawEffect::updateCurve {} {
         eval $this addPoint [lindex [$this controlPoints] 0]
       }
       "spline" {
-        if { ![info exists o(splineR)] } {
-          foreach obj {splineR splineA splineS} {
-            set o($obj) [vtkNew vtkKochanekSpline]
-            $o($obj) SetClosed 1
-          }
-        }
         foreach obj {splineR splineA splineS} {
           $o($obj) RemoveAllPoints
+          $o($obj) SetParametricRange -1 -1
+          $o($obj) SetClosed 1
         }
         set index 0
         foreach cp [$this controlPoints] {
@@ -579,7 +587,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   $w MovableRowsOff
   $w MovableColumnsOn
   $o(curves) HorizontalScrollbarVisibilityOff
-  $w SetHeight 5
+  $w SetHeight 7
   $w SetPotentialCellColorsChangedCommand $w "ScheduleRefreshColorsOfAllCellsWithWindowCommand"
   $w SetColumnSortedCommand $w "ScheduleRefreshColorsOfAllCellsWithWindowCommand"
 
@@ -667,4 +675,115 @@ itcl::body ModelDrawEffect::copyCurve { {from "nearest"} } {
   }
 
   $this updateControlPoints
+}
+
+
+itcl::body ModelDrawEffect::splineToSlice {t} {
+  # helper - returns signed distance from current
+  # slice plane to current spline evaluated at t
+  # (may not be in mm if normal not normalized, but
+  # will still work when optimizing to zero)
+  
+  # current slice plane origin and normal
+  set or [[$_sliceNode GetSliceToRAS] GetElement 0 3]
+  set oa [[$_sliceNode GetSliceToRAS] GetElement 1 3]
+  set os [[$_sliceNode GetSliceToRAS] GetElement 2 3]
+  set nr [[$_sliceNode GetSliceToRAS] GetElement 0 2]
+  set na [[$_sliceNode GetSliceToRAS] GetElement 1 2]
+  set ns [[$_sliceNode GetSliceToRAS] GetElement 2 2]
+
+  # spline point
+  set r [$o(splineR) Evaluate $t]
+  set a [$o(splineA) Evaluate $t]
+  set s [$o(splineS) Evaluate $t]
+
+  set dist [expr $nr * ($r - $or) + $na * ($a - $oa) + $ns * ($s - $os)] 
+  return $dist
+}
+
+itcl::body ModelDrawEffect::interpolatedControlPoints {} {
+  # return a new set of control points at current offset by fitting
+  # a spline to each of the control point in order
+  #
+  # - check that there are the same number of control points per slice
+  # - for each control point set form a spline 
+  # - intersect spline with current slice plane
+  # -- use binary search to find t such that spline(t) is on offest plane
+  #
+
+  set offsets [lsort -real [array names _controlPoints]]
+  if { [llength $offsets] < 2 } {
+    # can't interpolate 0 or 1 point
+    return ""
+  }
+  set firstOffset [lindex $offsets 0]
+  set pointCount [llength $_controlPoints($firstOffset)]
+  foreach offset $offsets {
+    if { [llength $_controlPoints($offset)] != $pointCount } {
+      # cannot interpolate - point count mismatch
+      return ""
+    }
+  }
+
+  set eps 1e-4
+  set interpolatedControlPoints ""
+  for {set point 0} {$point < $pointCount} {incr point} {
+    # set up the spline between slices for this point
+    # first, reset the spline
+    foreach obj {splineR splineA splineS} {
+      $o($obj) RemoveAllPoints
+      $o($obj) SetParametricRange 0 1
+      $o($obj) SetClosed 0
+    }
+    set index 0
+    foreach offset $offsets {
+      # add the control points
+      set cp [lindex $_controlPoints($offset) $point]
+      foreach {r a s} $cp {}
+      $o(splineR) AddPoint $index $r
+      $o(splineA) AddPoint $index $a
+      $o(splineS) AddPoint $index $s
+      incr index
+    }
+    # compute the spline
+    foreach obj {splineR splineA splineS} {
+      $o($obj) Compute
+    }
+
+    # perform the binary search
+    set guesses 0
+    set high 1
+    set low 0
+    set highDist [$this splineToSlice $high]
+    set lowDist [$this splineToSlice $low]
+    if { $highDist > $lowDist } {
+      set sliceDir 1
+    } else {
+      set sliceDir -1
+    }
+    while { $guesses < 100 } {
+      set guess [expr 0.5 * ($high - $low) + $low]
+      set guessDist [$this splineToSlice $guess]
+      if { [expr abs($guessDist)] < $eps } {
+        # we have a good value of t (guess), so break
+        break
+      }
+      if { [expr $sliceDir * $guessDist] > 0 } {
+        set high $guess
+      } else {
+        set low $guess
+      }
+      if { [expr abs($high - $low)] < [expr $eps/10.] } {
+        puts "Bad guess local minimum - use current guess anyway"
+        break
+      }
+      incr guesses
+    }
+
+    set r [$o(splineR) Evaluate $guess]
+    set a [$o(splineA) Evaluate $guess]
+    set s [$o(splineS) Evaluate $guess]
+    lappend interpolatedControlPoints "$r $a $s"
+  }
+  return $interpolatedControlPoints
 }
