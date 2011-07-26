@@ -59,18 +59,8 @@ if { [itcl::find class ModelDrawEffect] == "" } {
       # avoid roundoff issues caused by slicer controllers
       return [format %0.2f [[$sliceGUI GetLogic] GetSliceOffset]]
     }
-    method controlPoints { {offset ""} } {
-      if { $offset == "array" } {
-        return [array get _controlPoints]
-      }
-      if { $offset == "" } {
-        set offset [$this offset]
-      }
-      if { [info exists _controlPoints($offset)] } {
-        return $_controlPoints($offset)
-      }
-      return ""
-    }
+    method controlPoints { {offset ""} } {}
+    method controlCentroid { {offset ""} } {}
     method addControlPoint {r a s} {}
     method deleteControlPoint {index} {}
     method splitControlPoint {index} {}
@@ -277,6 +267,47 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
 
 itcl::body ModelDrawEffect::apply {} {
   chain
+}
+
+itcl::body ModelDrawEffect::controlPoints { {offset ""} } {
+  if { $offset == "array" } {
+    return [array get _controlPoints]
+  }
+  if { $offset == "" } {
+    set offset [$this offset]
+  }
+  if { [info exists _controlPoints($offset)] } {
+    return $_controlPoints($offset)
+  }
+  return ""
+}
+
+itcl::body ModelDrawEffect::controlCentroid { {offset ""} } {
+  if { $offset == "" } {
+    set offset [$this offset]
+  }
+  if { [info exists _controlPoints($offset)] } {
+    set cps $_controlPoints($offset)
+  } else {
+    set cps [$this interpolatedControlPoints]
+  }
+  if { $cps == "" } {
+    return ""
+  }
+  
+  set rSum 0
+  set aSum 0
+  set sSum 0
+  foreach cp $cps {
+    foreach {r a s} $cp {}
+    set rSum [expr $rSum + $r]
+    set aSum [expr $aSum + $a]
+    set sSum [expr $sSum + $s]
+  }
+  set rCentroid [expr $rSum / [llength $cps]]
+  set aCentroid [expr $aSum / [llength $cps]]
+  set sCentroid [expr $sSum / [llength $cps]]
+  return "$rCentroid $aCentroid $sCentroid"
 }
 
 itcl::body ModelDrawEffect::addControlPoint {r a s} {
@@ -492,8 +523,49 @@ itcl::body ModelDrawEffect::seedMovingCallback {seed index} {
       }
     }
   } else {
-    # move just selected control point
-    set _controlPoints($offset) [lreplace $_controlPoints($offset) $index $index [$seed getRASPosition]]
+    if { [$_interactor GetControlKey] } {
+      # scale all seeds
+      foreach {startR startA startS} $_moveStartRAS {r a s} [$seed getRASPosition] {}
+      set deltaR [expr $r - $startR]
+      set deltaA [expr $a - $startA]
+      set deltaS [expr $s - $startS]
+      foreach {centR centA centS} [$this controlCentroid] {}
+      set centToPointR [expr $startR - $centR]
+      set centToPointA [expr $startA - $centA]
+      set centToPointS [expr $startS - $centS]
+      set centToPointDist [expr sqrt($centToPointR * $centToPointR + $centToPointA * $centToPointA + $centToPointS * $centToPointS)]
+      set centToPointR [expr $centToPointR / $centToPointDist]
+      set centToPointA [expr $centToPointA / $centToPointDist]
+      set centToPointS [expr $centToPointS / $centToPointDist]
+      set dotR [expr $deltaR * $centToPointR]
+      set dotA [expr $deltaA * $centToPointA]
+      set dotS [expr $deltaS * $centToPointS]
+      set dot [expr $dotR + $dotA + $dotS]
+      set dist [expr sqrt($dotR * $dotR + $dotA * $dotA + $dotS * $dotS)]
+      set ratio [expr $dist / $centToPointDist]
+      if { $dot < 0 } {
+        set ratio [expr -1. * $ratio]
+      }
+      for {set i 0} {$i < [llength $_seedSWidgets]} {incr i} {
+        set cp [lindex $_moveStartControlPoints $i]
+        foreach {cpr cpa cps} $cp {}
+        set centToCPR [expr $cpr - $centR]
+        set centToCPA [expr $cpa - $centA]
+        set centToCPS [expr $cps - $centS]
+        set cpr [expr $cpr + $ratio * $centToCPR]
+        set cpa [expr $cpa + $ratio * $centToCPA]
+        set cps [expr $cps + $ratio * $centToCPS]
+        set _controlPoints($offset) [lreplace $_controlPoints($offset) $i $i "$cpr $cpa $cps"]
+        if { 1 || $i != $index } {
+          # skip the widget that generated the event - it will update itself
+          set sw [lindex $_seedSWidgets $i]
+          $sw place $cpr $cpa $cps
+        }
+      }
+    } else {
+      # move just selected control point
+      set _controlPoints($offset) [lreplace $_controlPoints($offset) $index $index [$seed getRASPosition]]
+    }
   }
   $this updateCurve
 }
