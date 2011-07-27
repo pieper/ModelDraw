@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/Editor
 http://svn.slicer.org/Slicer3
 
@@ -128,50 +128,16 @@ has-props
 
 2527
 
-WandEffect.tcl
+IdentifyIslandsEffect.tcl
 file
 
 
 
 
-2011-02-01T01:31:09.141177Z
-94a0389c21fef9109230ec4fbd603ea3
-2011-02-01T01:34:47.704543Z
-15877
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10386
-
-SaveIslandEffect.tcl
-file
-
-
-
-
-2010-10-25T02:20:25.074995Z
-55f7e06cfdd636545c5a43ef52cefef1
-2010-08-09T18:21:51.867292Z
-14505
+2011-04-20T17:57:33.288252Z
+fdf2b5ee2d6e5f10968e6a841eea6fda
+2011-04-20T18:03:10.879082Z
+16464
 pieper
 has-props
 
@@ -194,7 +160,7 @@ has-props
 
 
 
-4016
+6112
 
 Labeler.tcl
 file
@@ -230,16 +196,16 @@ has-props
 
 16017
 
-IdentifyIslandsEffect.tcl
+SaveIslandEffect.tcl
 file
 
 
 
 
-2011-04-20T17:57:33.288252Z
-fdf2b5ee2d6e5f10968e6a841eea6fda
-2011-04-20T18:03:10.879082Z
-16464
+2010-10-25T02:20:25.074995Z
+55f7e06cfdd636545c5a43ef52cefef1
+2010-08-09T18:21:51.867292Z
+14505
 pieper
 has-props
 
@@ -262,20 +228,19 @@ has-props
 
 
 
-6112
+4016
 
-pkgIndex.tcl
+WandEffect.tcl
 file
 
 
 
 
-2010-10-25T02:20:25.074995Z
-88965dbda7d78b447dc0a22d4f623102
-2010-09-24T20:21:57.027599Z
-15076
-harveerar
-has-props
+2011-02-01T01:31:09.141177Z
+94a0389c21fef9109230ec4fbd603ea3
+2011-02-01T01:34:47.704543Z
+15877
+pieper
 
 
 
@@ -296,7 +261,8 @@ has-props
 
 
 
-1229
+
+10386
 
 ThresholdEffect.tcl
 file
@@ -332,6 +298,40 @@ has-props
 
 8186
 
+pkgIndex.tcl
+file
+
+
+
+
+2010-10-25T02:20:25.074995Z
+88965dbda7d78b447dc0a22d4f623102
+2010-09-24T20:21:57.027599Z
+15076
+harveerar
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1229
+
 DrawEffect.tcl
 file
 
@@ -366,40 +366,6 @@ has-props
 
 11183
 
-MakeModelEffect.tcl
-file
-
-
-
-
-2010-10-25T02:20:25.074995Z
-e25e64ce245e6f2fae18087644edb7df
-2010-03-28T16:12:39.512370Z
-12513
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9313
-
 ErodeLabelEffect.tcl
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 7047
+
+MakeModelEffect.tcl
+file
+
+
+
+
+2010-10-25T02:20:25.074995Z
+e25e64ce245e6f2fae18087644edb7df
+2010-03-28T16:12:39.512370Z
+12513
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9313
 
 ImplicitRectangleEffect.tcl
 file

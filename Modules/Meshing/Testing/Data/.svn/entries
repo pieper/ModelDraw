@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/Meshing/Testing/Data
 http://svn.slicer.org/Slicer3
 
@@ -25,74 +25,6 @@ vmagnotta
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-BBox2.vtk
-file
-
-
-
-
-2010-10-25T02:20:53.724995Z
-633d9cbbaae9e3597979041ee7946b82
-2010-03-16T20:43:30.482758Z
-12364
-vmagnotta
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-596
-
-bbox2_modified.vtk
-file
-
-
-
-
-2010-10-25T02:20:53.724995Z
-85d2ba1bd903d18de590f73646ad3577
-2010-03-16T20:43:30.482758Z
-12364
-vmagnotta
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2429
 
 dividedbb.vtk
 file
@@ -128,14 +60,14 @@ vmagnotta
 
 1462
 
-BBox6.vtk
+bbox2_modified.vtk
 file
 
 
 
 
 2010-10-25T02:20:53.724995Z
-96a23503e3219cf5b7a0befce453ef69
+85d2ba1bd903d18de590f73646ad3577
 2010-03-16T20:43:30.482758Z
 12364
 vmagnotta
@@ -160,7 +92,41 @@ vmagnotta
 
 
 
-1095
+2429
+
+BBox2.vtk
+file
+
+
+
+
+2010-10-25T02:20:53.724995Z
+633d9cbbaae9e3597979041ee7946b82
+2010-03-16T20:43:30.482758Z
+12364
+vmagnotta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+596
 
 Clubfoot_Link_38_Mesh.vtk
 file
@@ -195,6 +161,40 @@ vmagnotta
 
 
 396142
+
+BBox6.vtk
+file
+
+
+
+
+2010-10-25T02:20:53.724995Z
+96a23503e3219cf5b7a0befce453ef69
+2010-03-16T20:43:30.482758Z
+12364
+vmagnotta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1095
 
 lumbar_smoothed_04075.stl
 file
@@ -434,14 +434,14 @@ vmagnotta
 
 2426
 
-sgrid.vtk
+dividedmorphsmooth.vtk
 file
 
 
 
 
 2010-10-25T02:20:53.764995Z
-73478beba90daf4279a83dd6fdaa7ec2
+3a30a6b57e115c70d1a8cd0a9e08a5eb
 2010-03-16T20:43:30.482758Z
 12364
 vmagnotta
@@ -466,7 +466,7 @@ vmagnotta
 
 
 
-73590
+201492
 
 1P-SC05030303R-Scanner.stl
 file
@@ -502,14 +502,14 @@ vmagnotta
 
 6146185
 
-dividedmorphsmooth.vtk
+sgrid.vtk
 file
 
 
 
 
 2010-10-25T02:20:53.764995Z
-3a30a6b57e115c70d1a8cd0a9e08a5eb
+73478beba90daf4279a83dd6fdaa7ec2
 2010-03-16T20:43:30.482758Z
 12364
 vmagnotta
@@ -534,7 +534,7 @@ vmagnotta
 
 
 
-201492
+73590
 
 BBoxMerge.vtk
 file

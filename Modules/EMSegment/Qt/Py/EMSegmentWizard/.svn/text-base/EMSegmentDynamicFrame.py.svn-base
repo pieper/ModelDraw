@@ -114,4 +114,10 @@ class EMSegmentDynamicFrame:
       return False
 
 
+  def SaveSettingToMRML( self ):
+    '''
+    '''
+    pass #TODO
+
+
 

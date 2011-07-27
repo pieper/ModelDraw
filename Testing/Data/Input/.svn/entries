@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Testing/Data/Input
 http://svn.slicer.org/Slicer3
 
@@ -576,40 +576,6 @@ has-props
 
 20632
 
-he3volume.nii.gz
-file
-
-
-
-
-2010-10-25T02:22:17.854995Z
-59877231fd80c069ee81155aaef1cfea
-2010-04-28T18:14:04.347049Z
-12975
-fedorov
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-307737
-
 midsag.fcsv
 file
 
@@ -643,6 +609,40 @@ naucoin
 
 
 1908
+
+he3volume.nii.gz
+file
+
+
+
+
+2010-10-25T02:22:17.854995Z
+59877231fd80c069ee81155aaef1cfea
+2010-04-28T18:14:04.347049Z
+12975
+fedorov
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+307737
 
 ACPC.fcsv
 file
@@ -746,17 +746,17 @@ has-props
 
 7697
 
-MRHeadResampledHField.nrrd
+CTHeadAxialDoubled.raw.gz
 file
 
 
 
 
-2010-11-29T19:26:19.773598Z
-b2de1ffaa199da2654b30ba55e31ddfd
-2010-11-24T20:25:02.869340Z
-15582
-francois_budin
+2010-10-25T02:22:17.864995Z
+824ed55eda01fb014ca567a671870772
+2008-11-26T21:23:01.738071Z
+7989
+lorensen
 has-props
 
 
@@ -778,41 +778,7 @@ has-props
 
 
 
-1923336
-
-MRHeadResampledHFieldTest.nrrd
-file
-
-
-
-
-2010-11-29T19:26:19.773598Z
-bbfea2f39b29cd61a4a9636a0a0703ba
-2010-11-24T20:25:02.869340Z
-15582
-francois_budin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-860818
+419183
 
 MRHeadResampledRotationNN.nrrd
 file
@@ -848,17 +814,17 @@ has-props
 
 684768
 
-CTHeadAxialDoubled.raw.gz
+MRHeadResampledHFieldTest.nrrd
 file
 
 
 
 
-2010-10-25T02:22:17.864995Z
-824ed55eda01fb014ca567a671870772
-2008-11-26T21:23:01.738071Z
-7989
-lorensen
+2010-11-29T19:26:19.773598Z
+bbfea2f39b29cd61a4a9636a0a0703ba
+2010-11-24T20:25:02.869340Z
+15582
+francois_budin
 has-props
 
 
@@ -880,47 +846,47 @@ has-props
 
 
 
-419183
+860818
+
+MRHeadResampledHField.nrrd
+file
+
+
+
+
+2010-11-29T19:26:19.773598Z
+b2de1ffaa199da2654b30ba55e31ddfd
+2010-11-24T20:25:02.869340Z
+15582
+francois_budin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1923336
 
 PolyDataToLabelmap
 dir
 
 CTHeadAxialDicom
 dir
-
-brainSliceULONG.mha
-file
-
-
-
-
-2010-10-25T02:22:17.864995Z
-b9ba743784299cab91cfc64c3d48aa56
-2010-04-19T20:42:35.728353Z
-12809
-ibanez
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-72051
 
 brainSliceUSHORT.mha
 file
@@ -955,6 +921,40 @@ has-props
 
 
 61823
+
+brainSliceULONG.mha
+file
+
+
+
+
+2010-10-25T02:22:17.864995Z
+b9ba743784299cab91cfc64c3d48aa56
+2010-04-19T20:42:35.728353Z
+12809
+ibanez
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+72051
 
 itkQuaternionRigidTransform00.txt
 file

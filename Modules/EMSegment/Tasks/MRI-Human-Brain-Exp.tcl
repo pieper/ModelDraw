@@ -112,7 +112,8 @@ namespace eval EMSegmenterPreProcessingTcl {
             $LOGIC PrintText "TCLMRI: == Skull Stripping"
             $LOGIC PrintText "TCLMRI: =========================================="
 
-            set PLUGINS_DIR "[$::slicer3::Application GetPluginsDir]"
+            set PLUGINS_DIR "[$LOGIC GetPluginsDirectory]"
+            set SHARE_DIR "[$LOGIC GetModuleShareDirectory]"
 
             #Threshold --threshold 0 --lower 0 --upper 255 --outsidevalue 1 --thresholdtype Above InputImage OutputImage
 
@@ -131,7 +132,8 @@ namespace eval EMSegmenterPreProcessingTcl {
             #           return ""
             #       }
 
-            set nonSkullStrippedAtlasFileName $::env(Slicer3_HOME)/share/Slicer3/Modules/EMSegment/Tasks/MRI-Human-Brain/atlas_t1.nrrd
+            #set nonSkullStrippedAtlasFileName $::env(Slicer3_HOME)/share/Slicer3/Modules/EMSegment/Tasks/MRI-Human-Brain/atlas_t1.nrrd
+            set nonSkullStrippedAtlasFileName "$SHARE_DIR/Tasks/MRI-Human-Brain/atlas_t1.nrrd"
 
             # now we have to apply the transformation on our mask file
 
@@ -151,7 +153,8 @@ namespace eval EMSegmenterPreProcessingTcl {
             #           return ""
             #       }
 
-            set AtlasMaskFileName $::env(Slicer3_HOME)/share/Slicer3/Modules/EMSegment/Tasks/MRI-Human-Brain/atlas_t1_stripped_mask.nrrd
+            #set AtlasMaskFileName "$PLUGINS_DIR/../share/Slicer3/Modules/EMSegment/Tasks/MRI-Human-Brain/atlas_t1_stripped_mask.nrrd"
+            set AtlasMaskFileName "$SHARE_DIR/Tasks/MRI-Human-Brain/atlas_t1_stripped_mask.nrrd"
 
             set skullstrippedNodeList [SkullStripper $alignedTargetNode $nonSkullStrippedAtlasFileName $AtlasMaskFileName]
 

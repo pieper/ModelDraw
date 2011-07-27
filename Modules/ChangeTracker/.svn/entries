@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/ChangeTracker
 http://svn.slicer.org/Slicer3
 
@@ -26,39 +26,8 @@ has-props
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-vtkChangeTrackerTemplateBuilder.h
-file
-
-
-
-
-2010-10-25T02:21:23.594995Z
-0085e9b6ae4bb0f2620bc284bf890d05
-2008-11-17T22:36:57.626403Z
-7895
-fedorov
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-41
+DiffeomorphicDemonsRegistration
+dir
 
 ChangeTracker.txt
 file
@@ -94,8 +63,39 @@ has-props
 
 44
 
-DiffeomorphicDemonsRegistration
-dir
+vtkChangeTrackerTemplateBuilder.h
+file
+
+
+
+
+2010-10-25T02:21:23.594995Z
+0085e9b6ae4bb0f2620bc284bf890d05
+2008-11-17T22:36:57.626403Z
+7895
+fedorov
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+41
 
 vtkChangeTrackerGUI.h
 file
@@ -313,9 +313,6 @@ has-props
 
 71392
 
-Filters
-dir
-
 vtkChangeTrackerWin32Header.h
 file
 
@@ -349,6 +346,9 @@ has-props
 
 
 389
+
+Filters
+dir
 
 CommandLineApplication
 dir

@@ -1,15 +1,15 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Testing/TestData/TutorialTest
 http://svn.slicer.org/Slicer3
 
 
 
-2011-05-03T17:05:36.840692Z
-16551
-domibel
+2011-07-22T19:22:54.524090Z
+16762
+haehn
 
 
 
@@ -29,17 +29,51 @@ domibel
 VolumeData
 dir
 
+Template_Slicer4_small_normalizationOn_noImages.mrml
+file
+
+
+
+
+2011-07-27T12:38:19.176079Z
+77e209d8f11d0d781d9466e8a4698feb
+2011-07-22T18:18:43.667242Z
+16761
+pohl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10136
+
 Template_small.mrml
 file
 
 
 
 
-2011-04-11T14:40:51.737980Z
-9e0c8d8311d0442247f1eb2036ec2f69
-2011-04-08T18:31:32.452365Z
-16359
-domibel
+2011-07-27T12:38:19.176079Z
+81ee3b321b72c824517aa54090aa5d50
+2011-07-22T19:22:54.524090Z
+16762
+haehn
 
 
 
@@ -61,7 +95,7 @@ domibel
 
 
 
-21601
+21556
 
 StandardData
 dir

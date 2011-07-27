@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Extensions
 http://svn.slicer.org/Slicer3
 
@@ -474,40 +474,6 @@ domibel
 
 145
 
-MORSS.s3ext
-file
-
-
-
-
-2011-03-04T17:24:44.854641Z
-4dc3dd16133c957b0de2275b6eb5ea0e
-2011-03-01T15:02:54.661878Z
-16132
-ygao
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-865
-
 GAMBIT.s3ext
 file
 
@@ -541,6 +507,40 @@ pieper
 
 
 397
+
+MORSS.s3ext
+file
+
+
+
+
+2011-03-04T17:24:44.854641Z
+4dc3dd16133c957b0de2275b6eb5ea0e
+2011-03-01T15:02:54.661878Z
+16132
+ygao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+865
 
 ARCTIC.s3ext
 file
@@ -610,40 +610,6 @@ ygao
 
 790
 
-TransformFiducialList.s3ext
-file
-
-
-
-
-2011-05-26T18:18:38.188079Z
-872bbf1794ddb14c41b9dd109845cc96
-2011-05-26T12:51:24.515388Z
-16655
-fedorov
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-688
-
 SPHARM-PDM.s3ext
 file
 
@@ -677,6 +643,40 @@ francois_budin
 
 
 277
+
+TransformFiducialList.s3ext
+file
+
+
+
+
+2011-05-26T18:18:38.188079Z
+872bbf1794ddb14c41b9dd109845cc96
+2011-05-26T12:51:24.515388Z
+16655
+fedorov
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+688
 
 Old
 dir
@@ -786,40 +786,6 @@ fedorov
 
 836
 
-plastimatch-slicer.s3ext
-file
-
-
-
-
-2010-10-25T02:20:22.064995Z
-1697e6a07287a137869a0bce2bc76508
-2009-03-20T15:47:46.987103Z
-8925
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-244
-
 TclSampleScriptedModule.s3ext
 file
 
@@ -853,6 +819,40 @@ pieper
 
 
 907
+
+plastimatch-slicer.s3ext
+file
+
+
+
+
+2010-10-25T02:20:22.064995Z
+1697e6a07287a137869a0bce2bc76508
+2009-03-20T15:47:46.987103Z
+8925
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+244
 
 VmtkSlicerModule.s3ext
 file
@@ -888,40 +888,6 @@ haehn
 
 288
 
-SpineSegmentation.s3ext
-file
-
-
-
-
-2010-10-25T02:20:22.064995Z
-716fbad59694e16fc5b7151c6b6191ae
-2010-02-02T22:53:28.213725Z
-11936
-sylvain
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1652
-
 VMTKNetworkExtraction.s3ext
 file
 
@@ -955,6 +921,40 @@ haehn
 
 
 904
+
+SpineSegmentation.s3ext
+file
+
+
+
+
+2010-10-25T02:20:22.064995Z
+716fbad59694e16fc5b7151c6b6191ae
+2010-02-02T22:53:28.213725Z
+11936
+sylvain
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1652
 
 VMTKBranchSplitting.s3ext
 file

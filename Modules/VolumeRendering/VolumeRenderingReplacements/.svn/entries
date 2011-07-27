@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/VolumeRendering/VolumeRenderingReplacements
 http://svn.slicer.org/Slicer3
 
@@ -536,40 +536,6 @@ finetjul
 
 5734
 
-vtkSlicerGPURayCastMultiVolumeMapper.h
-file
-
-
-
-
-2010-10-25T02:20:29.894995Z
-c034bfc6f94ed484abd5d54becb96afd
-2010-07-20T18:37:25.313704Z
-14264
-finetjul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5550
-
 vtkSlicerGPURayCastVolumeMapper.cxx
 file
 
@@ -603,6 +569,40 @@ vrnova
 
 
 65056
+
+vtkSlicerGPURayCastMultiVolumeMapper.h
+file
+
+
+
+
+2010-10-25T02:20:29.894995Z
+c034bfc6f94ed484abd5d54becb96afd
+2010-07-20T18:37:25.313704Z
+14264
+finetjul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5550
 
 vtkSlicerFixedPointVolumeRayCastMIPHelper.h
 file
@@ -706,40 +706,6 @@ vrnova
 
 3187
 
-vtkSlicerFixedPointRayCastImage.h
-file
-
-
-
-
-2010-10-25T02:20:29.894995Z
-e19d0c1f448992d34ce239ced6c64377
-2008-01-16T22:20:36.239049Z
-5517
-freudling
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8113
-
 vtkSlicerGPUVolumeMapper.cxx
 file
 
@@ -773,6 +739,40 @@ vrnova
 
 
 41037
+
+vtkSlicerFixedPointRayCastImage.h
+file
+
+
+
+
+2010-10-25T02:20:29.894995Z
+e19d0c1f448992d34ce239ced6c64377
+2008-01-16T22:20:36.239049Z
+5517
+freudling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8113
 
 vtkSlicerOpenGLRayCastImageDisplayHelper.h
 file
@@ -842,40 +842,6 @@ barre
 
 928
 
-vtkSlicerVolumeRenderingFactory.cxx
-file
-
-
-
-
-2010-10-25T02:20:29.894995Z
-b175969ad87b1340d8e13fc593954117
-2010-07-12T22:12:07.304882Z
-14118
-vrnova
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4459
-
 vtkSlicerFixedPointVolumeRayCastMapper.cxx
 file
 
@@ -909,6 +875,40 @@ finetjul
 
 
 112350
+
+vtkSlicerVolumeRenderingFactory.cxx
+file
+
+
+
+
+2010-10-25T02:20:29.894995Z
+b175969ad87b1340d8e13fc593954117
+2010-07-12T22:12:07.304882Z
+14118
+vrnova
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4459
 
 vtkSlicerRayCastImageDisplayHelper.cxx
 file

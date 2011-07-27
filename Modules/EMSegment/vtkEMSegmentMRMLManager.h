@@ -367,6 +367,7 @@ public:
     CMTK = 0,
     BRAINS = 1,
     PLASTIMATCH = 2,
+    DEMONS = 3,
     };
   //ETX
   virtual int       GetRegistrationPackageType();

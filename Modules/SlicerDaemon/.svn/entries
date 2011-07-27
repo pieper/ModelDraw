@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/SlicerDaemon
 http://svn.slicer.org/Slicer3
 
@@ -236,6 +236,9 @@ has-props
 
 1581
 
+Matlab
+dir
+
 vtkSlicerDaemonGUI.cxx
 file
 
@@ -269,9 +272,6 @@ has-props
 
 
 9211
-
-Matlab
-dir
 
 vtkTclHelper.cxx
 file
@@ -375,6 +375,9 @@ has-props
 
 1095
 
+Testing
+dir
+
 CMakeLists.txt
 file
 
@@ -408,9 +411,6 @@ has-props
 
 
 4882
-
-Testing
-dir
 
 vtkMRMLSlicerDaemonNode.h
 file

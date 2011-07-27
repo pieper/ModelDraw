@@ -293,7 +293,7 @@ int main(int argc, char** argv){
   correcter->Print( std::cout, 3 );
 
   timer.Stop();
-  std::cout << "Elapsed ime: " << timer.GetMeanTime() << std::endl;
+  std::cout << "Elapsed time: " << timer.GetMeanTime() << std::endl;
 
 
   /**

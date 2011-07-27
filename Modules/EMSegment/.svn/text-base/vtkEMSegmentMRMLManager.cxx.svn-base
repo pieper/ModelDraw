@@ -16,7 +16,7 @@
 #include "vtkMRMLEMSAtlasNode.h"
 #include "vtkMRMLEMSGlobalParametersNode.h"
 #include "vtkMRMLEMSTargetNode.h"
-
+#include "vtkImageData.h"
 #include "vtkMatrix4x4.h"
 #include "vtkMath.h"
 
@@ -24,6 +24,7 @@
 #include "vtkSlicerColorLogic.h"
 #include "vtkMRMLLabelMapVolumeDisplayNode.h"
 #include "vtkMRMLScalarVolumeNode.h"
+#include "vtkMRMLScalarVolumeDisplayNode.h"
 // needed to translate between enums
 #include "EMLocalInterface.h"
 #include <math.h>
@@ -4632,6 +4633,10 @@ int  vtkEMSegmentMRMLManager::GetPackageTypeFromString(const char* type)
       return vtkEMSegmentMRMLManager::PLASTIMATCH;
     }
 
+  if (!strcmp(type,"DEMONS"))
+    {
+      return vtkEMSegmentMRMLManager::DEMONS;
+    }
 
   return -1;
 }

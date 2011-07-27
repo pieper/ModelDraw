@@ -11,7 +11,8 @@ SET(EMSegmentWizard_PYTHON_SCRIPTS
   EMSegmentDefinePreprocessingStep.py               # step 6
   EMSegmentSpecifyIntensityDistributionStep.py      # step 7
   EMSegmentEditNodeBasedParametersStep.py           # step 8
-  EMSegmentDefineMiscParametersStep.py                  # step 9
+  EMSegmentDefineMiscParametersStep.py              # step 9
+  EMSegmentStartSegmentationStep.py
   EMSegmentDummyStep.py  
   )
 

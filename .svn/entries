@@ -1,15 +1,15 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk
 http://svn.slicer.org/Slicer3
 
 
 
-2011-07-22T01:34:14.298337Z
-16758
-domibel
+2011-07-26T22:07:49.294105Z
+16770
+pieper
 
 
 
@@ -106,11 +106,11 @@ file
 
 
 
-2011-07-07T00:44:35.738909Z
-47a4e89372e26b0ab7b9480ba219a689
-2011-07-04T17:31:24.597668Z
-16726
-domibel
+2011-07-27T12:38:19.196079Z
+6c57b9395d3f91ab7aa0a7e47fb0d26a
+2011-07-26T22:07:49.294105Z
+16770
+pieper
 
 
 
@@ -132,7 +132,7 @@ domibel
 
 
 
-36002
+36083
 
 CTestCustom.cmake.in
 file
@@ -405,6 +405,9 @@ jcfr
 
 110
 
+Extensions
+dir
+
 qSlicerExport.h.in
 file
 
@@ -438,43 +441,6 @@ has-props
 
 
 980
-
-Extensions
-dir
-
-launch.tcl.in
-file
-
-
-
-
-2011-04-27T22:06:29.523192Z
-f098820aafeeca2b7f10cf4eb0e22d73
-2011-04-26T14:44:56.731264Z
-16494
-naucoin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-50086
 
 License.txt
 file
@@ -510,6 +476,40 @@ has-props
 
 10544
 
+launch.tcl.in
+file
+
+
+
+
+2011-04-27T22:06:29.523192Z
+f098820aafeeca2b7f10cf4eb0e22d73
+2011-04-26T14:44:56.731264Z
+16494
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50086
+
 vtkSlicerConfigure.h.in
 file
 
@@ -544,6 +544,9 @@ finetjul
 
 3194
 
+Doc
+dir
+
 Slicer3InstallConfig.cmake.in
 file
 
@@ -577,9 +580,6 @@ hjohnson
 
 
 6873
-
-Doc
-dir
 
 Modules
 dir

@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/QTModules/miAnnotation/MRML
 http://svn.slicer.org/Slicer3
 
@@ -604,40 +604,6 @@ pohl
 
 2445
 
-vtkMRMLAnnotationLineDisplayNode.h
-file
-
-
-
-
-2010-10-25T02:21:50.974995Z
-9f3f1a63cde7c97c9a54906500ed7c4d
-2010-04-28T19:55:02.445411Z
-12987
-pohl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2484
-
 vtkMRMLAnnotationControlPointsStorageNode.cxx
 file
 
@@ -671,6 +637,40 @@ pohl
 
 
 15992
+
+vtkMRMLAnnotationLineDisplayNode.h
+file
+
+
+
+
+2010-10-25T02:21:50.974995Z
+9f3f1a63cde7c97c9a54906500ed7c4d
+2010-04-28T19:55:02.445411Z
+12987
+pohl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2484
 
 vtkMRMLAnnotationStorageNode.cxx
 file
@@ -774,40 +774,6 @@ pohl
 
 16528
 
-vtkMRMLAnnotationAngleStorageNode.cxx
-file
-
-
-
-
-2010-10-25T02:21:50.974995Z
-74329ccdd6505a6a72d22bb4f05b9205
-2010-04-28T19:55:02.445411Z
-12987
-pohl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12657
-
 vtkMRMLAnnotationAngleNode.h
 file
 
@@ -842,14 +808,14 @@ pohl
 
 6023
 
-vtkMRMLAnnotationFiducialsStorageNode.h
+vtkMRMLAnnotationAngleStorageNode.cxx
 file
 
 
 
 
 2010-10-25T02:21:50.974995Z
-d4991f0ad96ea08b2f7ef68f18bf21b3
+74329ccdd6505a6a72d22bb4f05b9205
 2010-04-28T19:55:02.445411Z
 12987
 pohl
@@ -874,7 +840,7 @@ pohl
 
 
 
-2094
+12657
 
 vtkMRMLAnnotationControlPointsNode.cxx
 file
@@ -910,6 +876,40 @@ pohl
 
 15758
 
+vtkMRMLAnnotationFiducialsStorageNode.h
+file
+
+
+
+
+2010-10-25T02:21:50.974995Z
+d4991f0ad96ea08b2f7ef68f18bf21b3
+2010-04-28T19:55:02.445411Z
+12987
+pohl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2094
+
 vtkMRMLAnnotationRulerStorageNode.cxx
 file
 
@@ -944,40 +944,6 @@ pohl
 
 12423
 
-vtkMRMLAnnotationNode.cxx
-file
-
-
-
-
-2010-10-25T02:21:50.974995Z
-6d89449447bb346ef72f91f71a3c18de
-2010-04-28T19:55:02.445411Z
-12987
-pohl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17527
-
 vtkMRMLAnnotationPointDisplayNode.cxx
 file
 
@@ -1011,6 +977,40 @@ pohl
 
 
 6581
+
+vtkMRMLAnnotationNode.cxx
+file
+
+
+
+
+2010-10-25T02:21:50.974995Z
+6d89449447bb346ef72f91f71a3c18de
+2010-04-28T19:55:02.445411Z
+12987
+pohl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17527
 
 vtkMRMLAnnotationControlPointsStorageNode.h
 file

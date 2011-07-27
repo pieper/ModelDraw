@@ -1,14 +1,14 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Tasks
 http://svn.slicer.org/Slicer3
 
 
 
-2011-07-22T01:34:14.298337Z
-16758
+2011-07-26T17:11:59.211168Z
+16769
 domibel
 
 
@@ -26,17 +26,17 @@ domibel
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-CT-Hand-Bone.tcl
+GenericTask.tcl
 file
 
 
 
 
-2011-06-29T20:22:25.271380Z
-25da4b653d4481d2b834be7bff78d82f
-2011-06-29T17:38:03.865200Z
-16715
-haehn
+2011-07-27T12:38:19.116079Z
+b44b7c778571a9fcbe955d5e991e21a6
+2011-07-25T20:32:25.123523Z
+16765
+domibel
 
 
 
@@ -58,7 +58,7 @@ haehn
 
 
 
-20993
+121229
 
 Non-Human-Primate.tcl
 file
@@ -94,16 +94,50 @@ haehn
 
 6597
 
-GenericTask.tcl
+CT-Hand-Bone.tcl
 file
 
 
 
 
-2011-07-22T12:30:17.534688Z
-153d2ae37b7500f8e9dd71ba19e3b2a3
-2011-07-22T01:34:14.298337Z
-16758
+2011-07-27T12:38:19.116079Z
+12bf4228b5b6ee1ea598a7fa0e58a563
+2011-07-22T19:22:54.524090Z
+16762
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20982
+
+Test-Atlas-Cluster.tcl
+file
+
+
+
+
+2011-07-27T12:38:19.116079Z
+063b9309df51b95c67c055b1be4eeb15
+2011-07-26T16:00:54.740092Z
+16768
 domibel
 
 
@@ -126,7 +160,7 @@ domibel
 
 
 
-114393
+8740
 
 vtkCTHandBoneClass.cxx
 file
@@ -161,40 +195,6 @@ domibel
 
 
 16053
-
-Test-Atlas-Cluster.tcl
-file
-
-
-
-
-2011-06-29T20:22:25.271380Z
-be00f69fedd9a79b4155c66f92761cc7
-2011-06-29T17:38:03.865200Z
-16715
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8826
 
 MRI-Human-Brain-Parcellation.tcl
 file
@@ -264,6 +264,9 @@ domibel
 
 22299
 
+MRI-Human-Brain
+dir
+
 MRI-Human-Brain-Exp.mrml
 file
 
@@ -297,9 +300,6 @@ domibel
 
 
 19288
-
-MRI-Human-Brain
-dir
 
 Human-Eye
 dir
@@ -338,17 +338,17 @@ domibel
 
 16008
 
-Template.tcl
+MRI-Human-Brain-HIPR.mrml
 file
 
 
 
 
-2011-06-29T20:22:25.281380Z
-069c668fb23cede3c409fbe5c64c2fe8
-2011-06-29T17:38:03.865200Z
-16715
-haehn
+2011-05-04T11:42:13.842731Z
+d76302d4656cf132b9107d1285a0c3ee
+2011-04-28T18:56:18.186466Z
+16527
+domibel
 
 
 
@@ -370,7 +370,7 @@ haehn
 
 
 
-3655
+19259
 
 MRI-Human-Brain.mrml
 file
@@ -406,17 +406,17 @@ domibel
 
 19250
 
-MRI-Human-Brain-HIPR.mrml
+Template.tcl
 file
 
 
 
 
-2011-05-04T11:42:13.842731Z
-d76302d4656cf132b9107d1285a0c3ee
-2011-04-28T18:56:18.186466Z
-16527
-domibel
+2011-06-29T20:22:25.281380Z
+069c668fb23cede3c409fbe5c64c2fe8
+2011-06-29T17:38:03.865200Z
+16715
+haehn
 
 
 
@@ -438,7 +438,7 @@ domibel
 
 
 
-19259
+3655
 
 Human-Eye.mrml
 file
@@ -486,10 +486,10 @@ file
 
 
 
-2011-06-29T20:22:25.281380Z
-7a903a3e5b46cc2dc0bcfc5a277abd2b
-2011-06-29T17:38:03.865200Z
-16715
+2011-07-27T12:38:19.116079Z
+0ed93ee2a376f4e15c3d4c5dfe986815
+2011-07-22T19:22:54.524090Z
+16762
 haehn
 
 
@@ -512,7 +512,7 @@ haehn
 
 
 
-11649
+11890
 
 MRI-Human-Brain-Parcellation
 dir
@@ -798,10 +798,10 @@ file
 
 
 
-2011-05-12T11:40:52.422778Z
-70a34c096910997bad2b237a8d1279e1
-2011-05-11T21:38:13.869750Z
-16608
+2011-07-27T12:38:19.116079Z
+c0990a4a7ec5fe33619fb87ca283d411
+2011-07-26T17:11:59.211168Z
+16769
 domibel
 
 
@@ -824,5 +824,5 @@ domibel
 
 
 
-23755
+23602
 

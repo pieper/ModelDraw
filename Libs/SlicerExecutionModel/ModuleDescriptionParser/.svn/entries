@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Libs/SlicerExecutionModel/ModuleDescriptionParser
 http://svn.slicer.org/Slicer3
 
@@ -60,8 +60,39 @@ has-props
 
 8419
 
-CMake
-dir
+ModuleProcessInformation.h
+file
+
+
+
+
+2010-10-25T02:20:19.644995Z
+721a764194f09a38998a1723a1d1059f
+2010-02-21T18:53:46.028160Z
+12196
+aylward
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1672
 
 ModuleDescriptionParserConfig.cmake.in
 file
@@ -97,39 +128,8 @@ barre
 
 316
 
-ModuleProcessInformation.h
-file
-
-
-
-
-2010-10-25T02:20:19.644995Z
-721a764194f09a38998a1723a1d1059f
-2010-02-21T18:53:46.028160Z
-12196
-aylward
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1672
+CMake
+dir
 
 BinaryFileDescriptor.cxx
 file
@@ -165,40 +165,6 @@ lorensen
 
 2840
 
-ModuleDescriptionUtilities.cxx
-file
-
-
-
-
-2010-10-25T02:20:19.644995Z
-769d2bf39ad74b80e89424324aefafcf
-2010-03-27T18:53:38.020361Z
-12506
-lorensen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1094
-
 GenerateModuleDescriptionParserConfig.cmake
 file
 
@@ -232,6 +198,40 @@ barre
 
 
 1134
+
+ModuleDescriptionUtilities.cxx
+file
+
+
+
+
+2010-10-25T02:20:19.644995Z
+769d2bf39ad74b80e89424324aefafcf
+2010-03-27T18:53:38.020361Z
+12506
+lorensen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1094
 
 ModuleParameter.cxx
 file
@@ -403,40 +403,6 @@ has-props
 
 1029
 
-ModuleDescriptionParser.h
-file
-
-
-
-
-2010-10-25T02:20:19.654995Z
-6b4537cc0eb1a4c8416043a7db3f1758
-2008-06-25T15:58:36.300591Z
-7176
-barre
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1016
-
 ModuleLogo.h
 file
 
@@ -470,6 +436,40 @@ hjohnson
 
 
 1295
+
+ModuleDescriptionParser.h
+file
+
+
+
+
+2010-10-25T02:20:19.654995Z
+6b4537cc0eb1a4c8416043a7db3f1758
+2008-06-25T15:58:36.300591Z
+7176
+barre
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1016
 
 BatchMakeUtilities.h
 file

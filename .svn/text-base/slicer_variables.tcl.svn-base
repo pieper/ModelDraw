@@ -133,6 +133,8 @@ puts "Slicer3_HOME is $::Slicer3_HOME"
 # section below, or genlib will happily build the library again.
 
 set ::Slicer3_TAG "http://svn.slicer.org/Slicer3/trunk"
+#set ::CMAKE_GIT_REPO git://cmake.org/cmake.git
+#set ::CMAKE_GIT_BRANCH "v2.8.5"
 set ::CMAKE_TAG "CMake-2-8-0"
 set ::Teem_TAG http://teem.svn.sourceforge.net/svnroot/teem/teem/branches/Teem-1.11
 set ::KWWidgets_TAG "Slicer-3-6"

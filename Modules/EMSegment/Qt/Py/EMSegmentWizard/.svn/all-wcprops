@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/Slicer3/!svn/ver/16754/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard
+/Slicer3/!svn/ver/16766/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard
 END
 EMSegmentDefineMiscParametersStep.py
 K 25
@@ -9,17 +9,47 @@ svn:wc:ra_dav:version-url
 V 106
 /Slicer3/!svn/ver/16753/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentDefineMiscParametersStep.py
 END
+EMSegmentStartSegmentationStep.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/Slicer3/!svn/ver/16762/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentStartSegmentationStep.py
+END
 Helper.py
 K 25
 svn:wc:ra_dav:version-url
 V 79
 /Slicer3/!svn/ver/16753/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/Helper.py
 END
+EMSegmentDefinePreprocessingStep.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/Slicer3/!svn/ver/16766/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentDefinePreprocessingStep.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/Slicer3/!svn/ver/16762/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/__init__.py
+END
+EMSegmentEditNodeBasedParametersStep.py
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/Slicer3/!svn/ver/16762/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentEditNodeBasedParametersStep.py
+END
 EMSegmentDefineAtlasStep.py
 K 25
 svn:wc:ra_dav:version-url
 V 97
 /Slicer3/!svn/ver/16753/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentDefineAtlasStep.py
+END
+EMSegmentStep.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/Slicer3/!svn/ver/16762/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentStep.py
 END
 EMSegmentSelectTaskStep.py
 K 25
@@ -31,17 +61,29 @@ EMSegmentDefineAnatomicalTreeStep.py
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/Slicer3/!svn/ver/16753/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentDefineAnatomicalTreeStep.py
+/Slicer3/!svn/ver/16762/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentDefineAnatomicalTreeStep.py
+END
+EMSegmentDynamicFrame.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/Slicer3/!svn/ver/16766/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentDynamicFrame.py
 END
 EMSegmentEditRegistrationParametersStep.py
 K 25
 svn:wc:ra_dav:version-url
 V 112
-/Slicer3/!svn/ver/16754/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentEditRegistrationParametersStep.py
+/Slicer3/!svn/ver/16766/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentEditRegistrationParametersStep.py
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/Slicer3/!svn/ver/16762/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/CMakeLists.txt
 END
 EMSegmentDefineInputChannelsStep.py
 K 25
 svn:wc:ra_dav:version-url
 V 105
-/Slicer3/!svn/ver/16753/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentDefineInputChannelsStep.py
+/Slicer3/!svn/ver/16762/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard/EMSegmentDefineInputChannelsStep.py
 END

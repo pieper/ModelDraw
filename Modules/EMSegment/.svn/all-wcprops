@@ -1,13 +1,25 @@
 K 25
 svn:wc:ra_dav:version-url
 V 47
-/Slicer3/!svn/ver/16758/trunk/Modules/EMSegment
+/Slicer3/!svn/ver/16769/trunk/Modules/EMSegment
+END
+vtkSlicerCommonInterface.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/Slicer3/!svn/ver/16762/trunk/Modules/EMSegment/vtkSlicerCommonInterface.cxx
 END
 vtkEMSegmentMRMLManager.h
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/Slicer3/!svn/ver/16734/trunk/Modules/EMSegment/vtkEMSegmentMRMLManager.h
+/Slicer3/!svn/ver/16765/trunk/Modules/EMSegment/vtkEMSegmentMRMLManager.h
+END
+vtkSlicerCommonInterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/Slicer3/!svn/ver/16762/trunk/Modules/EMSegment/vtkSlicerCommonInterface.h
 END
 vtkEMSegmentLogic.cxx
 K 25
@@ -19,7 +31,7 @@ vtkEMSegmentMRMLManager.cxx
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/Slicer3/!svn/ver/16734/trunk/Modules/EMSegment/vtkEMSegmentMRMLManager.cxx
+/Slicer3/!svn/ver/16766/trunk/Modules/EMSegment/vtkEMSegmentMRMLManager.cxx
 END
 CMakeLists.txt
 K 25

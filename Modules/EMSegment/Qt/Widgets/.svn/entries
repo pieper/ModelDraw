@@ -1,14 +1,14 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Qt/Widgets
 http://svn.slicer.org/Slicer3
 
 
 
-2011-07-20T19:00:25.223761Z
-16755
+2011-07-22T19:22:54.524090Z
+16762
 haehn
 
 
@@ -26,19 +26,16 @@ haehn
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-Plugins
-dir
-
 qSlicerEMSegmentInputChannelListWidget.cxx
 file
 
 
 
 
-2011-06-27T12:10:42.159768Z
-4269363c7e20fce0a5c1108a6da6d417
-2011-06-22T22:13:14.016533Z
-16706
+2011-07-27T12:38:19.056079Z
+f8fd52c60c9270737d0233dc80d3a9ac
+2011-07-22T19:22:54.524090Z
+16762
 haehn
 
 
@@ -61,7 +58,10 @@ haehn
 
 
 
-15274
+15344
+
+Plugins
+dir
 
 qSlicerEMSegmentGraphWidget.h
 file
@@ -137,10 +137,10 @@ file
 
 
 
-2011-07-22T12:30:17.064687Z
-db3d5c8ce6e59e57714412747c5af630
-2011-07-20T19:00:25.223761Z
-16755
+2011-07-27T12:38:19.056079Z
+9bbcdfec5048b1c544483d6bd7d2c154
+2011-07-22T19:22:54.524090Z
+16762
 haehn
 
 
@@ -163,7 +163,7 @@ haehn
 
 
 
-29295
+32554
 
 qSlicerEMSegmentAnatomicalTreeWidget_p.h
 file
@@ -307,10 +307,10 @@ file
 
 
 
-2011-06-20T12:55:43.672361Z
-80242ccd0a30b5b89caa2e8f036f6afd
-2011-06-15T03:01:45.953797Z
-16689
+2011-07-27T12:38:19.056079Z
+653e26a06dee4f46d1e582b2c1fa1fa2
+2011-07-22T19:22:54.524090Z
+16762
 haehn
 
 
@@ -333,7 +333,10 @@ haehn
 
 
 
-2232
+2307
+
+Resources
+dir
 
 qSlicerEMSegmentAnatomicalTreeWidget.h
 file
@@ -341,10 +344,10 @@ file
 
 
 
-2011-07-22T12:30:17.064687Z
-5c798d38f8200757362647937164d599
-2011-07-20T19:00:25.223761Z
-16755
+2011-07-27T12:38:19.056079Z
+c8077c542733c161845e9b7b1ed95828
+2011-07-22T19:22:54.524090Z
+16762
 haehn
 
 
@@ -367,10 +370,7 @@ haehn
 
 
 
-4632
-
-Resources
-dir
+4735
 
 qSlicerEMSegmentWidget.cxx
 file
@@ -406,9 +406,6 @@ haehn
 
 2509
 
-Testing
-dir
-
 CMakeLists.txt
 file
 
@@ -442,4 +439,7 @@ haehn
 
 
 1826
+
+Testing
+dir
 

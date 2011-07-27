@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Testing/TestData/MRI-Human-Brain
 http://svn.slicer.org/Slicer3
 
@@ -162,40 +162,6 @@ has-props
 
 16246
 
-small_atlas_csf.nrrd
-file
-
-
-
-
-2011-01-02T20:28:00.984953Z
-71fab68897dbca0bd96cf2dd5a7db5a6
-2010-12-16T20:17:03.665586Z
-15661
-domibel
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20418
-
 small_atlas_air.nrrd
 file
 
@@ -229,6 +195,40 @@ has-props
 
 
 31716
+
+small_atlas_csf.nrrd
+file
+
+
+
+
+2011-01-02T20:28:00.984953Z
+71fab68897dbca0bd96cf2dd5a7db5a6
+2010-12-16T20:17:03.665586Z
+15661
+domibel
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20418
 
 small_atlas_skulneck.nrrd
 file
@@ -264,40 +264,6 @@ has-props
 
 36050
 
-very_small_atlas_csf.nrrd
-file
-
-
-
-
-2011-01-02T20:28:00.984953Z
-5c89f964dea91d821bcebf9c56e7495f
-2010-12-16T20:17:03.665586Z
-15661
-domibel
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3289
-
 very_small_atlas_air.nrrd
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 4928
+
+very_small_atlas_csf.nrrd
+file
+
+
+
+
+2011-01-02T20:28:00.984953Z
+5c89f964dea91d821bcebf9c56e7495f
+2010-12-16T20:17:03.665586Z
+15661
+domibel
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3289
 
 small_atlas_greymatter.nrrd
 file
@@ -366,40 +366,6 @@ has-props
 
 30683
 
-very_small_atlas_skulneck.nrrd
-file
-
-
-
-
-2011-01-02T20:28:00.984953Z
-8cd61d76ec6f71c73ac402bb8ce41d65
-2010-12-16T20:17:03.665586Z
-15661
-domibel
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5448
-
 small_atlas_t1.nrrd
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 120818
+
+very_small_atlas_skulneck.nrrd
+file
+
+
+
+
+2011-01-02T20:28:00.984953Z
+8cd61d76ec6f71c73ac402bb8ce41d65
+2010-12-16T20:17:03.665586Z
+15661
+domibel
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5448
 
 very_small_atlas_greymatter.nrrd
 file

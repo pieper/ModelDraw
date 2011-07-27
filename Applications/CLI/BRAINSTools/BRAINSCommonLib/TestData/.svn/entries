@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/BRAINSTools/BRAINSCommonLib/TestData
 http://svn.slicer.org/Slicer3
 
@@ -26,14 +26,14 @@ mscully
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-ValidateInitialTransform_Test.nii.gz.md5
+ValidateOrientedImagesTest5.nii.gz.md5
 file
 
 
 
 
 2011-01-22T00:10:44.378533Z
-e2ddaa06ada8359eeb09ee62346bae88
+3297b00c8035aa67e5487aadac64917b
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -60,14 +60,14 @@ mscully
 
 32
 
-ValidateOrientedImagesTest5.nii.gz.md5
+ValidateInitialTransform_Test.nii.gz.md5
 file
 
 
 
 
 2011-01-22T00:10:44.378533Z
-3297b00c8035aa67e5487aadac64917b
+e2ddaa06ada8359eeb09ee62346bae88
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -128,14 +128,14 @@ mscully
 
 32
 
-BRAINSFitTest_Initializer_RigidRotationNoMasks.mat.md5
+test2.nii.gz.md5
 file
 
 
 
 
 2011-01-22T00:10:44.398533Z
-f37043a245ca6ca49fb5c7214c02d00d
+8b936af1e5f37cea860ce411342cf4c5
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -196,14 +196,14 @@ mscully
 
 32
 
-test2.nii.gz.md5
+BRAINSFitTest_Initializer_RigidRotationNoMasks.mat.md5
 file
 
 
 
 
 2011-01-22T00:10:44.398533Z
-8b936af1e5f37cea860ce411342cf4c5
+f37043a245ca6ca49fb5c7214c02d00d
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -298,14 +298,14 @@ mscully
 
 32
 
-BRAINSFitTest_AffineExplicitOrigins_moving.nii.gz.md5
+Initializer_BRAINSFitTest_TranslationRescaleHeadMasks.mat.md5
 file
 
 
 
 
-2011-01-22T00:10:44.378533Z
-ea62ceacd0b4f506c32153e42a57c9c2
+2011-01-22T00:10:44.398533Z
+083a97706cd08ce1be5186e9e8eac58f
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -366,48 +366,14 @@ mscully
 
 32
 
-Initializer_BRAINSFitTest_TranslationRescaleHeadMasks.mat.md5
+BRAINSFitTest_AffineExplicitOrigins_moving.nii.gz.md5
 file
 
 
 
 
-2011-01-22T00:10:44.398533Z
-083a97706cd08ce1be5186e9e8eac58f
-2011-01-21T21:05:52.607944Z
-15797
-mscully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-32
-
-BRAINSFitTest_RigidMedianRotationNoMasks.result.nii.gz.md5
-file
-
-
-
-
-2011-01-22T00:10:44.398533Z
-9cdc8b0cd396bf3cdaf877df8665f85b
+2011-01-22T00:10:44.378533Z
+ea62ceacd0b4f506c32153e42a57c9c2
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -442,6 +408,40 @@ file
 
 2011-01-22T00:10:44.398533Z
 2f0c5011996ada5b230266eb0e8d859f
+2011-01-21T21:05:52.607944Z
+15797
+mscully
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+BRAINSFitTest_RigidMedianRotationNoMasks.result.nii.gz.md5
+file
+
+
+
+
+2011-01-22T00:10:44.398533Z
+9cdc8b0cd396bf3cdaf877df8665f85b
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1049,40 +1049,6 @@ mscully
 
 32
 
-testMask.nii.gz.md5
-file
-
-
-
-
-2011-01-22T00:10:44.378533Z
-323c7b677d922cf7ffcee4862b954305
-2011-01-21T21:05:52.607944Z
-15797
-mscully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-32
-
 BRAINSFitTest_RigidRotationMasks.result.nii.gz.md5
 file
 
@@ -1117,14 +1083,14 @@ mscully
 
 32
 
-Initializer_0.05_BRAINSFitTest_ScaleVersorRotationNoMasks.mat.md5
+testMask.nii.gz.md5
 file
 
 
 
 
 2011-01-22T00:10:44.378533Z
-326b2aa97aadfc220f0e3992ef3b23c1
+323c7b677d922cf7ffcee4862b954305
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1185,14 +1151,14 @@ mscully
 
 32
 
-BRAINSFitTest_MCScaleSkewVersorRotationMasks.result.nii.gz.md5
+Initializer_0.05_BRAINSFitTest_ScaleVersorRotationNoMasks.mat.md5
 file
 
 
 
 
 2011-01-22T00:10:44.378533Z
-af6d65c70f3c0e2deaeb428f7944ef11
+326b2aa97aadfc220f0e3992ef3b23c1
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1219,14 +1185,14 @@ mscully
 
 32
 
-applyWarp1.nii.gz.md5
+BRAINSFitTest_MCScaleSkewVersorRotationMasks.result.nii.gz.md5
 file
 
 
 
 
 2011-01-22T00:10:44.378533Z
-c585975779de69bfa026c2e82ecb16e2
+af6d65c70f3c0e2deaeb428f7944ef11
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1287,14 +1253,14 @@ mscully
 
 32
 
-BRAINSFitTest_RigidRotationMasks.mat.md5
+applyWarp1.nii.gz.md5
 file
 
 
 
 
 2011-01-22T00:10:44.378533Z
-a2e3ce13ff0e11ecbf770228d7e1327c
+c585975779de69bfa026c2e82ecb16e2
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1355,14 +1321,14 @@ mscully
 
 32
 
-Initializer_0.05_BRAINSFitTest_RigidRotationNoMasks.mat.md5
+BRAINSFitTest_RigidRotationMasks.mat.md5
 file
 
 
 
 
-2011-01-22T00:10:44.398533Z
-81f73b53ecab586a4fbf583ba556babd
+2011-01-22T00:10:44.378533Z
+a2e3ce13ff0e11ecbf770228d7e1327c
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1423,6 +1389,40 @@ mscully
 
 32
 
+Initializer_0.05_BRAINSFitTest_RigidRotationNoMasks.mat.md5
+file
+
+
+
+
+2011-01-22T00:10:44.398533Z
+81f73b53ecab586a4fbf583ba556babd
+2011-01-21T21:05:52.607944Z
+15797
+mscully
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
 diffeomorphicDemons1.nii.gz.md5
 file
 
@@ -1431,6 +1431,40 @@ file
 
 2011-01-22T00:10:44.378533Z
 667ef4e01b7ad6b0fe08de70daa81627
+2011-01-21T21:05:52.607944Z
+15797
+mscully
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+BRAINSFitTest_BSplineScaleRotationHistogramHeadMasksUShort.result.nii.gz.md5
+file
+
+
+
+
+2011-01-22T00:10:44.398533Z
+a70d9c8e2060f133c5c19e57399a1d08
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1491,14 +1525,14 @@ mscully
 
 32
 
-BRAINSFitTest_BSplineScaleRotationHistogramHeadMasksUShort.result.nii.gz.md5
+translation.test.mask.md5
 file
 
 
 
 
 2011-01-22T00:10:44.398533Z
-a70d9c8e2060f133c5c19e57399a1d08
+9507c8d4c66f1b4c535c51d9afde6975
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1533,40 +1567,6 @@ file
 
 2011-01-22T00:10:44.398533Z
 7725c928d9514df537e18d1cbcd22631
-2011-01-21T21:05:52.607944Z
-15797
-mscully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-32
-
-translation.test.mask.md5
-file
-
-
-
-
-2011-01-22T00:10:44.398533Z
-9507c8d4c66f1b4c535c51d9afde6975
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1695,14 +1695,14 @@ mscully
 
 32
 
-BRAINSFitTest_ScaleVersorRotationNoMasks.result.nii.gz.md5
+thirionDemons.nii.gz.md5
 file
 
 
 
 
-2011-01-22T00:10:44.378533Z
-40eb911340739ef8958a43c9baf13eb0
+2011-01-22T00:10:44.398533Z
+7fe315d4c1048083634d3361ed997271
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1763,48 +1763,14 @@ mscully
 
 32
 
-thirionDemons.nii.gz.md5
-file
-
-
-
-
-2011-01-22T00:10:44.398533Z
-7fe315d4c1048083634d3361ed997271
-2011-01-21T21:05:52.607944Z
-15797
-mscully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-32
-
-ValidateBRAINSResampleTest5.result.nii.gz.md5
+BRAINSFitTest_ScaleVersorRotationNoMasks.result.nii.gz.md5
 file
 
 
 
 
 2011-01-22T00:10:44.378533Z
-fa790522101e2a817d323ae5270970fe
+40eb911340739ef8958a43c9baf13eb0
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -1839,6 +1805,40 @@ file
 
 2011-01-22T00:10:44.378533Z
 6952b418a1ad17692d5ca360e563d29b
+2011-01-21T21:05:52.607944Z
+15797
+mscully
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+ValidateBRAINSResampleTest5.result.nii.gz.md5
+file
+
+
+
+
+2011-01-22T00:10:44.378533Z
+fa790522101e2a817d323ae5270970fe
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -2001,14 +2001,14 @@ mscully
 
 32
 
-BRAINSFitTest_rotation.input.nii.gz.md5
+BRAINSFitTest_RigidRotationNoMasks.mat.md5
 file
 
 
 
 
 2011-01-22T00:10:44.398533Z
-461ba7bc9bac15c6cc3c935f41a17570
+53180477436c89b5ef2231e514b19a08
 2011-01-21T21:05:52.607944Z
 15797
 mscully
@@ -2035,14 +2035,14 @@ mscully
 
 32
 
-BRAINSFitTest_RigidRotationNoMasks.mat.md5
+BRAINSFitTest_rotation.input.nii.gz.md5
 file
 
 
 
 
 2011-01-22T00:10:44.398533Z
-53180477436c89b5ef2231e514b19a08
+461ba7bc9bac15c6cc3c935f41a17570
 2011-01-21T21:05:52.607944Z
 15797
 mscully

@@ -82,7 +82,7 @@ class EMSegmentPyWidget:
     specifyIntensityDistributionStep = EMSegmentWizard.EMSegmentSpecifyIntensityDistributionStep( Helper.GetNthStepId( 7 ) )
     editNodeBasedParametersStep = EMSegmentWizard.EMSegmentEditNodeBasedParametersStep( Helper.GetNthStepId( 8 ) )
     miscStep = EMSegmentWizard.EMSegmentDefineMiscParametersStep( Helper.GetNthStepId( 9 ) )
-    segmentStep = EMSegmentWizard.EMSegmentDummyStep( Helper.GetNthStepId( 10 ) )
+    segmentStep = EMSegmentWizard.EMSegmentStartSegmentationStep( Helper.GetNthStepId( 10 ) )
 
     # add the wizard steps to an array for convenience
     allSteps = []

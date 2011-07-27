@@ -221,7 +221,7 @@ namespace eval EMSegmenterPreProcessingTcl {
 
         #  set transformfile RegisterAtlasToSubject { $outputAtlasFileName $outputFileName }
 
-        set PLUGINS_DIR "[$::slicer3::Application GetPluginsDir]"
+        set PLUGINS_DIR "[$LOGIC GetPluginsDirectory]"
         set CMD "${PLUGINS_DIR}/BRAINSFit"
 
         set fixedVolumeFileName $blurredInputTargetVolumeFileName

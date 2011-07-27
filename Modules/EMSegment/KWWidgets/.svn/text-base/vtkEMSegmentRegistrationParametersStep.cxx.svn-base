@@ -320,6 +320,12 @@ void vtkEMSegmentRegistrationParametersStep::ShowUserInterface()
               vtkEMSegmentMRMLManager::PLASTIMATCH);
       this->RegistrationParametersPackageMenuButton->
         GetWidget()->GetMenu()->AddRadioButton("PLASTIMATCH", this, buffer);
+
+      sprintf(buffer, "RegistrationPackageCallback %d",
+              vtkEMSegmentMRMLManager::DEMONS);
+      this->RegistrationParametersPackageMenuButton->
+        GetWidget()->GetMenu()->AddRadioButton("DEMONS", this, buffer);
+
       }
 
 

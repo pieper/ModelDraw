@@ -1,15 +1,15 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI
 http://svn.slicer.org/Slicer3
 
 
 
-2011-06-29T22:31:35.914165Z
-16717
-spujol
+2011-07-25T18:58:41.884930Z
+16763
+domibel
 
 
 
@@ -26,27 +26,23 @@ spujol
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-SparseFieldLevelSetContour
-dir
-
 ExtractSkeleton
 dir
 
-Realign
+SparseFieldLevelSetContour
 dir
 
-ModelMaker.cxx
+ResampleVolume2.xml
 file
 
 
 
 
-2011-02-04T12:40:07.734725Z
-664c95c23154056d2e64333572d36c6a
-2011-02-02T17:24:34.654578Z
-15909
-naucoin
-has-props
+2010-11-29T19:26:17.252338Z
+2a1bcec0075a0c369036d1928faf6f54
+2010-11-24T19:40:54.267670Z
+15581
+francois_budin
 
 
 
@@ -67,7 +63,8 @@ has-props
 
 
 
-60077
+
+10604
 
 OtsuThresholdImageFilter.cxx
 file
@@ -103,17 +100,18 @@ has-props
 
 7861
 
-ResampleVolume2.xml
+ModelMaker.cxx
 file
 
 
 
 
-2010-11-29T19:26:17.252338Z
-2a1bcec0075a0c369036d1928faf6f54
-2010-11-24T19:40:54.267670Z
-15581
-francois_budin
+2011-02-04T12:40:07.734725Z
+664c95c23154056d2e64333572d36c6a
+2011-02-02T17:24:34.654578Z
+15909
+naucoin
+has-props
 
 
 
@@ -134,8 +132,10 @@ francois_budin
 
 
 
-
-10604
+60077
+
+Realign
+dir
 
 AffineRegistration.cxx
 file
@@ -208,40 +208,6 @@ has-props
 
 28260
 
-Mask.cxx
-file
-
-
-
-
-2010-10-25T02:20:18.774995Z
-5c1db557e8f6fe799dbabcb2af5e2ecd
-2010-03-24T21:41:08.359846Z
-12452
-fedorov
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6114
-
 BSplineToDeformationField.cxx
 file
 
@@ -276,18 +242,17 @@ domibel
 
 4707
 
-ExecutionModelTour.xml
+Mask.cxx
 file
 
 
 
 
 2010-10-25T02:20:18.774995Z
-db252385d9ead509193c701d512f7a16
-2010-04-20T22:14:57.557797Z
-12844
-naucoin
-has-props
+5c1db557e8f6fe799dbabcb2af5e2ecd
+2010-03-24T21:41:08.359846Z
+12452
+fedorov
 
 
 
@@ -308,7 +273,8 @@ has-props
 
 
 
-9133
+
+6114
 
 Threshold.cxx
 file
@@ -343,6 +309,40 @@ has-props
 
 
 4922
+
+ExecutionModelTour.xml
+file
+
+
+
+
+2010-10-25T02:20:18.774995Z
+db252385d9ead509193c701d512f7a16
+2010-04-20T22:14:57.557797Z
+12844
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9133
 
 ComputeSUVBodyWeight.xml
 file
@@ -832,39 +832,8 @@ has-props
 
 1973
 
-ResampleVolume.xml
-file
-
-
-
-
-2010-10-25T02:20:18.784995Z
-bc82d8975923f3a39685045e1e3fe464
-2010-04-29T01:18:07.225302Z
-13032
-millerjv
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3400
+BRAINSTools
+dir
 
 ExecutionModelTour.cxx
 file
@@ -900,8 +869,39 @@ has-props
 
 2996
 
-BRAINSTools
-dir
+ResampleVolume.xml
+file
+
+
+
+
+2010-10-25T02:20:18.784995Z
+bc82d8975923f3a39685045e1e3fe464
+2010-04-29T01:18:07.225302Z
+13032
+millerjv
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3400
 
 VotingBinaryHoleFillingImageFilter.xml
 file
@@ -1005,17 +1005,17 @@ alexy
 
 4284
 
-OrientImage.cxx
+LinearRegistration.xml
 file
 
 
 
 
 2010-10-25T02:20:18.784995Z
-c6a4a5ae484182cee373f6297e92cc9f
-2010-03-24T21:41:08.359846Z
-12452
-fedorov
+759182b1fdfca055acd1505b4c0a9551
+2009-07-22T18:03:51.709516Z
+10006
+millerjv
 has-props
 
 
@@ -1037,7 +1037,7 @@ has-props
 
 
 
-10349
+6918
 
 LabelMapSmoothing.xml
 file
@@ -1073,17 +1073,17 @@ millerjv
 
 2984
 
-LinearRegistration.xml
+OrientImage.cxx
 file
 
 
 
 
 2010-10-25T02:20:18.784995Z
-759182b1fdfca055acd1505b4c0a9551
-2009-07-22T18:03:51.709516Z
-10006
-millerjv
+c6a4a5ae484182cee373f6297e92cc9f
+2010-03-24T21:41:08.359846Z
+12452
+fedorov
 has-props
 
 
@@ -1105,7 +1105,7 @@ has-props
 
 
 
-6918
+10349
 
 ImageReadDicomWrite.cxx
 file
@@ -1209,40 +1209,6 @@ has-props
 
 17622
 
-GrayscaleModelMaker.xml
-file
-
-
-
-
-2010-10-25T02:20:18.784995Z
-230f927a2f38f3ae8892f3350a6963de
-2010-04-29T11:42:24.631551Z
-13051
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3729
-
 DTIimport.xml
 file
 
@@ -1276,6 +1242,40 @@ spujol
 
 
 1586
+
+GrayscaleModelMaker.xml
+file
+
+
+
+
+2010-10-25T02:20:18.784995Z
+230f927a2f38f3ae8892f3350a6963de
+2010-04-29T11:42:24.631551Z
+13051
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3729
 
 TestGridTransformRegistration.xml
 file
@@ -1311,40 +1311,6 @@ millerjv
 
 2017
 
-PolyDataToLabelmap.xml
-file
-
-
-
-
-2010-10-25T02:20:18.784995Z
-7ce17833a13085624a920d8381c86173
-2010-05-24T15:06:39.090862Z
-13454
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1764
-
 DiffusionTensorEstimation.xml
 file
 
@@ -1379,16 +1345,16 @@ demian
 
 3939
 
-Multiply.xml
+PolyDataToLabelmap.xml
 file
 
 
 
 
 2010-10-25T02:20:18.784995Z
-3705deb74ecd0f80a9186ef9e611f7c6
-2010-04-29T19:29:40.965190Z
-13083
+7ce17833a13085624a920d8381c86173
+2010-05-24T15:06:39.090862Z
+13454
 naucoin
 
 
@@ -1411,7 +1377,41 @@ naucoin
 
 
 
-2042
+1764
+
+ImageLabelCombine.xml
+file
+
+
+
+
+2010-10-25T02:20:18.784995Z
+9e637705fdbc22bad9c046cf3d116be4
+2010-05-05T14:43:34.762976Z
+13240
+alexy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1693
 
 GradientAnisotropicDiffusion.xml
 file
@@ -1447,17 +1447,17 @@ has-props
 
 3760
 
-ImageLabelCombine.xml
+Multiply.xml
 file
 
 
 
 
 2010-10-25T02:20:18.784995Z
-9e637705fdbc22bad9c046cf3d116be4
-2010-05-05T14:43:34.762976Z
-13240
-alexy
+3705deb74ecd0f80a9186ef9e611f7c6
+2010-04-29T19:29:40.965190Z
+13083
+naucoin
 
 
 
@@ -1479,7 +1479,7 @@ alexy
 
 
 
-1693
+2042
 
 ConfidenceConnected.xml
 file
@@ -1549,9 +1549,6 @@ has-props
 
 957
 
-Java
-dir
-
 DTIexport.xml
 file
 
@@ -1585,6 +1582,9 @@ spujol
 
 
 1324
+
+Java
+dir
 
 ZeroCrossingBasedEdgeDetectionImageFilter.xml
 file
@@ -1759,40 +1759,6 @@ has-props
 Templates
 dir
 
-CurvatureAnisotropicDiffusion.xml
-file
-
-
-
-
-2010-10-25T02:20:18.784995Z
-3180189e0266d3d1f34170fbfc594bb9
-2010-04-29T00:21:24.168344Z
-13015
-millerjv
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3935
-
 ResampleVolume.cxx
 file
 
@@ -1826,6 +1792,40 @@ has-props
 
 
 10812
+
+CurvatureAnisotropicDiffusion.xml
+file
+
+
+
+
+2010-10-25T02:20:18.784995Z
+3180189e0266d3d1f34170fbfc594bb9
+2010-04-29T00:21:24.168344Z
+13015
+millerjv
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3935
 
 MergeModels.xml
 file

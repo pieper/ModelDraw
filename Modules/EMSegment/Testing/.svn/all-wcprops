@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/Testing
+/Slicer3/!svn/ver/16768/trunk/Modules/EMSegment/Testing
 END
 vtkSlicerCommonInterfaceTest1.cxx
 K 25
@@ -13,5 +13,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/Slicer3/!svn/ver/16755/trunk/Modules/EMSegment/Testing/CMakeLists.txt
+/Slicer3/!svn/ver/16768/trunk/Modules/EMSegment/Testing/CMakeLists.txt
 END

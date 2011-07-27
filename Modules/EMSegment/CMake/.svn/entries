@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/CMake
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ haehn
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-EM_Slicer3_GenerateConfigureFile.cmake
-file
-
-
-
-
-2011-07-22T12:30:17.034688Z
-d5ea2832dcc46a6fc74445b195a8ede8
-2011-07-20T19:00:25.223761Z
-16755
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-428
 
 EM_DetectSlicerVersion.cmake
 file
@@ -93,6 +59,40 @@ haehn
 
 
 835
+
+EM_Slicer3_GenerateConfigureFile.cmake
+file
+
+
+
+
+2011-07-22T12:30:17.034688Z
+d5ea2832dcc46a6fc74445b195a8ede8
+2011-07-20T19:00:25.223761Z
+16755
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+428
 
 EM_Slicer3_FindPackageSlicer.cmake
 file
@@ -332,40 +332,6 @@ haehn
 
 94
 
-EM_Slicer3_IncludeSlicerPython.cmake
-file
-
-
-
-
-2011-07-22T12:30:17.034688Z
-5194d3d181d43169fe0da84b220702dd
-2011-07-20T19:00:25.223761Z
-16755
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-614
-
 EM_InstallTasksSubScript.cmake
 file
 
@@ -400,14 +366,14 @@ haehn
 
 164
 
-EM_Slicer4_GenerateExtensionFile.cmake
+EM_Slicer3_IncludeSlicerPython.cmake
 file
 
 
 
 
 2011-07-22T12:30:17.034688Z
-7250dc26726d770dde45191515cfe1b0
+5194d3d181d43169fe0da84b220702dd
 2011-07-20T19:00:25.223761Z
 16755
 haehn
@@ -432,7 +398,7 @@ haehn
 
 
 
-723
+614
 
 EM_InstallTasks.cmake
 file
@@ -467,6 +433,40 @@ haehn
 
 
 1314
+
+EM_Slicer4_GenerateExtensionFile.cmake
+file
+
+
+
+
+2011-07-22T12:30:17.034688Z
+7250dc26726d770dde45191515cfe1b0
+2011-07-20T19:00:25.223761Z
+16755
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+723
 
 EM_Testing.cmake
 file

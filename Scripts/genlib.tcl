@@ -359,12 +359,14 @@ if { [BuildThis $::CMAKE "cmake"] == 1 } {
     if {$isWindows} {
       runcmd $::SVN co http://svn.slicer.org/Slicer3-lib-mirrors/trunk/Binaries/Windows/CMake-build CMake-build
     } else {
-        runcmd $::CVS -d :pserver:anonymous:cmake@www.cmake.org:/cvsroot/CMake login
-        eval "runcmd $::CVS $CVS_CO_FLAGS -d :pserver:anonymous@www.cmake.org:/cvsroot/CMake checkout -r $::CMAKE_TAG CMake"
-
-#        if { ![file exists CMake] } {
-#            eval "runcmd $::GIT clone $::CMake_GIT_REPO CMake"
-#        }
+        if { [info exists ::CMAKE_GIT_REPO] } {
+            eval "runcmd $::GIT clone $::CMAKE_GIT_REPO CMake"
+            cd $::Slicer3_LIB/CMake
+            eval "runcmd $::GIT checkout $::CMAKE_GIT_BRANCH"
+        } else {
+            runcmd $::CVS -d :pserver:anonymous:cmake@www.cmake.org:/cvsroot/CMake login
+            eval "runcmd $::CVS $CVS_CO_FLAGS -d :pserver:anonymous@www.cmake.org:/cvsroot/CMake checkout -r $::CMAKE_TAG CMake"
+        }
 
         if {$::GENLIB(buildit)} {
           cd $::CMAKE_PATH

@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/Python
 http://svn.slicer.org/Slicer3
 
@@ -28,40 +28,6 @@ demian
 
 StochasticTractographyServerMP
 dir
-
-LoadVolumeFromArray.py
-file
-
-
-
-
-2010-10-25T02:20:31.734995Z
-8ba609e0f22b5a78ed6c808080b98ff9
-2009-07-22T03:23:12.014081Z
-9998
-jvs
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9811
 
 RecenterMaskToDWI.py
 file
@@ -97,6 +63,43 @@ has-props
 
 1267
 
+LoadVolumeFromArray.py
+file
+
+
+
+
+2010-10-25T02:20:31.734995Z
+8ba609e0f22b5a78ed6c808080b98ff9
+2009-07-22T03:23:12.014081Z
+9998
+jvs
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9811
+
+StochasticTractographyServer
+dir
+
 StochasticTractography.py
 file
 
@@ -130,9 +133,6 @@ demian
 
 
 21938
-
-StochasticTractographyServer
-dir
 
 NumpyScript.py
 file

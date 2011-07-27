@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Libs/vtkITK
 http://svn.slicer.org/Slicer3
 
@@ -1216,40 +1216,6 @@ jcfr
 
 6882
 
-vtkITKImageToImageFilterULUL.h
-file
-
-
-
-
-2010-10-25T02:20:22.014995Z
-996aaa3ef14d35a9bbd6fd0d2c889599
-2010-01-22T19:45:00.771790Z
-11747
-naucoin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2668
-
 vtkITKArchetypeImageSeriesReader.cxx
 file
 
@@ -1284,17 +1250,18 @@ has-props
 
 40031
 
-vtkITKLevelTracingImageFilter.cxx
+vtkITKImageToImageFilterULUL.h
 file
 
 
 
 
 2010-10-25T02:20:22.014995Z
-e1da75116ee489cecd6fca00b6c70b15
-2010-01-14T14:38:49.973919Z
-11623
-jcfr
+996aaa3ef14d35a9bbd6fd0d2c889599
+2010-01-22T19:45:00.771790Z
+11747
+naucoin
+has-props
 
 
 
@@ -1315,20 +1282,20 @@ jcfr
 
 
 
-
-10209
+2668
 
-vtkITKBSplineTransform.cxx
+vtkITKUtility.h
 file
 
 
 
 
-2010-11-22T20:54:23.851712Z
-e92520c10cf1881472070606bffcae57
-2010-11-22T20:54:52.601468Z
-15546
-pieper
+2010-10-25T02:20:22.014995Z
+43fb6b33b6642cc9972d7e8e40eaab2c
+2010-01-22T19:45:00.771790Z
+11747
+naucoin
+has-props
 
 
 
@@ -1349,8 +1316,7 @@ pieper
 
 
 
-
-26940
+4744
 
 vtkITKConfig.cmake.in
 file
@@ -1386,18 +1352,51 @@ has-props
 
 244
 
-vtkITKUtility.h
+vtkITKBSplineTransform.cxx
+file
+
+
+
+
+2010-11-22T20:54:23.851712Z
+e92520c10cf1881472070606bffcae57
+2010-11-22T20:54:52.601468Z
+15546
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26940
+
+vtkITKLevelTracingImageFilter.cxx
 file
 
 
 
 
 2010-10-25T02:20:22.014995Z
-43fb6b33b6642cc9972d7e8e40eaab2c
-2010-01-22T19:45:00.771790Z
-11747
-naucoin
-has-props
+e1da75116ee489cecd6fca00b6c70b15
+2010-01-14T14:38:49.973919Z
+11623
+jcfr
 
 
 
@@ -1418,7 +1417,8 @@ has-props
 
 
 
-4744
+
+10209
 
 vtkITKNumericTraits.cxx
 file
@@ -1556,40 +1556,6 @@ has-props
 
 2719
 
-vtkITKImageWriter.h
-file
-
-
-
-
-2010-10-25T02:20:22.014995Z
-914b61b03fc484063668f5eb9cb5fe2a
-2010-01-22T19:45:00.771790Z
-11747
-naucoin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2315
-
 itkDisplacementFieldTransform.txx
 file
 
@@ -1623,6 +1589,40 @@ bess
 
 
 21025
+
+vtkITKImageWriter.h
+file
+
+
+
+
+2010-10-25T02:20:22.014995Z
+914b61b03fc484063668f5eb9cb5fe2a
+2010-01-22T19:45:00.771790Z
+11747
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2315
 
 itkEncodedTransformFileWriter.cxx
 file
@@ -1760,40 +1760,6 @@ casey.goodlett
 
 5236
 
-vtkITKNewOtsuThresholdImageFilter.h
-file
-
-
-
-
-2010-10-25T02:20:22.014995Z
-23bf3cfb709dbffdab4272773e540c7b
-2010-01-22T19:45:00.771790Z
-11747
-naucoin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3092
-
 CMakeLists.txt
 file
 
@@ -1827,6 +1793,40 @@ has-props
 
 
 4056
+
+vtkITKNewOtsuThresholdImageFilter.h
+file
+
+
+
+
+2010-10-25T02:20:22.014995Z
+23bf3cfb709dbffdab4272773e540c7b
+2010-01-22T19:45:00.771790Z
+11747
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3092
 
 vtkITKGrowCutSegmentationImageFilter.cxx
 file
@@ -1930,18 +1930,17 @@ naucoin
 
 1331
 
-itkNewOtsuThresholdImageFilter.h
+itkEncodedTransformFileWriter.h
 file
 
 
 
 
 2010-10-25T02:20:22.024995Z
-0781a73641db63e0b4c3199553897479
+b621a9c2fb0bda6a27c915d3218af708
 2010-01-22T19:45:00.771790Z
 11747
 naucoin
-has-props
 
 
 
@@ -1962,7 +1961,8 @@ has-props
 
 
 
-4607
+
+2115
 
 itkNewOtsuThresholdImageCalculator.txx
 file
@@ -1998,17 +1998,18 @@ has-props
 
 4764
 
-itkEncodedTransformFileWriter.h
+itkNewOtsuThresholdImageFilter.h
 file
 
 
 
 
 2010-10-25T02:20:22.024995Z
-b621a9c2fb0bda6a27c915d3218af708
+0781a73641db63e0b4c3199553897479
 2010-01-22T19:45:00.771790Z
 11747
 naucoin
+has-props
 
 
 
@@ -2029,8 +2030,7 @@ naucoin
 
 
 
-
-2115
+4607
 
 itkConstrainedValueMultiplicationImageFilter.h
 file
@@ -2066,40 +2066,6 @@ naucoin
 
 5053
 
-vtkITKTimeSeriesDatabase.cxx
-file
-
-
-
-
-2010-10-25T02:20:22.024995Z
-b6d17030dcccd1abeae23d562e3b400f
-2008-04-23T03:43:29.360443Z
-6522
-blezek
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2424
-
 itkTimeSeriesDatabase.h
 file
 
@@ -2133,6 +2099,40 @@ naucoin
 
 
 6309
+
+vtkITKTimeSeriesDatabase.cxx
+file
+
+
+
+
+2010-10-25T02:20:22.024995Z
+b6d17030dcccd1abeae23d562e3b400f
+2008-04-23T03:43:29.360443Z
+6522
+blezek
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2424
 
 vtkITKImageToImageFilterF2F2.h
 file

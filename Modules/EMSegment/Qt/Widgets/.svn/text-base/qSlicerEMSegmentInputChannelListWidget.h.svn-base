@@ -52,6 +52,8 @@ public:
 
   Q_INVOKABLE bool identicalInputVolumes() const;
 
+  Q_INVOKABLE bool identicalInputChannelNames() const;
+
 public slots:
 
   virtual void setMRMLManager(vtkEMSegmentMRMLManager * newMRMLManager);
@@ -74,6 +76,9 @@ protected:
 private:
   Q_DECLARE_PRIVATE(qSlicerEMSegmentInputChannelListWidget);
   Q_DISABLE_COPY(qSlicerEMSegmentInputChannelListWidget);
+
+  bool updating;
+
 };
 
 #endif // __qSlicerEMSegmentInputChannelListWidget_h

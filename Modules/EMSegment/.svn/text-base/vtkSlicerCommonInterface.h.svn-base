@@ -79,6 +79,8 @@ public:
 
 //ETX
 
+  const char* GetExtensionsDirectory();
+
   const char* GetTclNameFromPointer(vtkObject *obj);
 
 

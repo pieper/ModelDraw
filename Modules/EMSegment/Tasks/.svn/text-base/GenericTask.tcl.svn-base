@@ -117,7 +117,10 @@ namespace eval EMSegmenterPreProcessingTcl {
             set NAME .mat
         } elseif { $type == "Text"  } {
             set NAME .txt
+        } elseif { $type == "ITKDeformationField"  } {
+            set NAME .mha
         }
+
 
         if { $NAME != "" } {
             set filename [ $LOGIC mktemp_file $NAME ]
@@ -276,6 +279,7 @@ namespace eval EMSegmenterPreProcessingTcl {
         variable selectedRegistrationPackage
         variable CMTKFOLDER
         variable PLASTIMATCHFOLDER
+        variable DEMONSFOLDER
 
         if {$initLOGIC == ""} {
             PrintError "ERROR: Logic not defined!"
@@ -378,6 +382,9 @@ namespace eval EMSegmenterPreProcessingTcl {
         } elseif { [$mrmlManager GetRegistrationPackageType] == [$mrmlManager GetPackageTypeFromString PLASTIMATCH] } {
             set preferredRegistrationPackage PLASTIMATCH
             $LOGIC PrintText "TCL: User selected PLASTIMATCH"
+        } elseif { [$mrmlManager GetRegistrationPackageType] == [$mrmlManager GetPackageTypeFromString DEMONS] } {
+            set preferredRegistrationPackage DEMONS
+            $LOGIC PrintText "TCL: User selected DEMONS"
         } else {
             PrintError "InitVariables: RegistrationPackage [$mrmlManager GetRegistrationPackageType] not defined"
             return 1
@@ -391,7 +398,7 @@ namespace eval EMSegmenterPreProcessingTcl {
                     $LOGIC PrintText "TCL: Found CMTK in $CMTKFOLDER"
                     set selectedRegistrationPackage "CMTK"
                 } else {
-                    $LOGIC PrintText "TCL: WARNING: Couldn't find CMTK, switch back to BRAINSTools"
+                    $LOGIC PrintText "TCL: WARNING: Could not find CMTK, switch back to BRAINSTools"
                     set selectedRegistrationPackage "BRAINS"
                 }
             }
@@ -404,7 +411,17 @@ namespace eval EMSegmenterPreProcessingTcl {
                     $LOGIC PrintText "TCL: Found PLASTIMATCH in $PLASTIMATCHFOLDER"
                     set selectedRegistrationPackage "PLASTIMATCH"
                 } else {
-                    $LOGIC PrintText "TCL: WARNING: Couldn't find PLASTIMATCH, switch back to BRAINSTools"
+                    $LOGIC PrintText "TCL: WARNING: Could not find PLASTIMATCH, switch back to BRAINSTools"
+                    set selectedRegistrationPackage "BRAINS"
+                }
+            }
+            "DEMONS" {
+                set DEMONSFOLDER [Get_DEMONS_Installation_Path]
+                if { $DEMONSFOLDER != "" } {
+                    $LOGIC PrintText "TCL: Found DEMONS in $DEMONSFOLDER"
+                    set selectedRegistrationPackage "DEMONS"
+                } else {
+                    $LOGIC PrintText "TCL: WARNING: Couldn't find DEMONS, switch back to BRAINSTools"
                     set selectedRegistrationPackage "BRAINS"
                 }
             }
@@ -786,7 +803,6 @@ namespace eval EMSegmenterPreProcessingTcl {
 
         set deformationFieldFilename [ CreateTemporaryFileNameForNode $DFNode ]
 
-        #set PLUGINS_DIR "[$::slicer3::Application GetPluginsDir]"
         set PLUGINS_DIR "[$LOGIC GetPluginsDirectory]"
         set CMDdeform "${PLUGINS_DIR}/BSplineToDeformationField"
         set CMDdeform "$CMDdeform --refImage \"$tmpReferenceVolumeFileName\""
@@ -820,7 +836,6 @@ namespace eval EMSegmenterPreProcessingTcl {
         $LOGIC PrintText "TCL: == Resample Image CLI"
         $LOGIC PrintText "TCL: =========================================="
 
-        #set PLUGINS_DIR "[$::slicer3::Application GetPluginsDir]"
         set PLUGINS_DIR "[$LOGIC GetPluginsDirectory]"
         set CMD "${PLUGINS_DIR}/BRAINSResample"
 
@@ -1244,6 +1259,8 @@ namespace eval EMSegmenterPreProcessingTcl {
         # ignore the template per default
         $node SetIgnoreTemplateSegmentation 1
 
+        $node SetUseDRAMMS 0
+
         if { $debug || $dryrun } {
             $node SetDebugMode 1
         }
@@ -1583,7 +1600,7 @@ namespace eval EMSegmenterPreProcessingTcl {
 
         set CMTKFOLDER ""
         # search for directories , sorted with the highest svn first
-        set dirs [lsort -decreasing [glob -directory [$::slicer3::Application GetExtensionsInstallPath] -type d * ] ]
+        set dirs [lsort -decreasing [glob -nocomplain -directory [[$LOGIC GetSlicerCommonInterface] GetExtensionsDirectory] -type d * ] ]
         foreach dir $dirs {
             set filename $dir\/CMTK4Slicer/registration
             if { [file exists $filename] } {
@@ -1601,7 +1618,7 @@ namespace eval EMSegmenterPreProcessingTcl {
 
         set PLASTIMATCHFOLDER ""
         # search for directories , sorted with the highest svn first
-        set dirs [lsort -decreasing [glob -directory [$::slicer3::Application GetExtensionsInstallPath] -type d * ] ]
+        set dirs [lsort -decreasing [glob -nocomplain -directory [[$LOGIC GetSlicerCommonInterface] GetExtensionsDirectory] -type d * ] ]
         foreach dir $dirs {
             set filename $dir\/plastimatch-slicer/plastimatch_slicer_bspline
             if { [file exists $filename] } {
@@ -1612,6 +1629,24 @@ namespace eval EMSegmenterPreProcessingTcl {
         }
 
         return $PLASTIMATCHFOLDER
+    }
+
+    proc Get_DEMONS_Installation_Path { } {
+        variable LOGIC
+
+        set DEMONSFOLDER ""
+        # search for directories , sorted with the highest svn first
+        set dirs [lsort -decreasing [glob -nocomplain -directory [[$LOGIC GetSlicerCommonInterface] GetExtensionsDirectory] -type d * ] ]
+        foreach dir $dirs {
+            set filename $dir\/LogDomainDemonsRegistration-0.0.5-Source/bin/DemonsRegistration
+            if { [file exists $filename] } {
+                set DEMONSFOLDER  $dir\/LogDomainDemonsRegistration-0.0.5-Source/bin
+                $LOGIC PrintText "TCL: Found DEMONS in $dir\/LogDomainDemonsRegistration-0.0.5-Source/bin/"
+                break
+            }
+        }
+
+        return $DEMONSFOLDER
     }
 
     proc WriteDataToTemporaryDir { Node Type } {
@@ -1732,7 +1767,6 @@ namespace eval EMSegmenterPreProcessingTcl {
 
 
 
-        #set PLUGINS_DIR "[$::slicer3::Application GetPluginsDir]"
         set PLUGINS_DIR "[$LOGIC GetPluginsDirectory]"
 
         # First BRAINSFit call
@@ -2060,7 +2094,6 @@ namespace eval EMSegmenterPreProcessingTcl {
     }
 
 
-
     # ----------------------------------------------------------------------------
     proc PLASTIMATCHRegistration { fixedVolumeNode movingVolumeNode outVolumeNode backgroundLevel deformableType affineType} {
         variable SCENE
@@ -2164,6 +2197,127 @@ namespace eval EMSegmenterPreProcessingTcl {
         if { [file exists $outTransformFileName] == 0 } {
             set outTransformFileName ""
             PrintError "PLASTIMATCHRegistration: out transform file doesn't exists"
+        }
+
+        foreach NAME $RemoveFiles {
+            #file delete -force $NAME
+        }
+
+        # Remove Transformation from image
+        $movingVolumeNode SetAndObserveTransformNodeID ""
+        $SCENE Edited
+
+        # return transformation directory name or ""
+        puts "outTransformFileName: $outTransformFileName"
+        return $outTransformFileName
+    }
+
+
+
+
+    # ----------------------------------------------------------------------------
+    proc DEMONSRegistration { fixedVolumeNode movingVolumeNode outVolumeNode backgroundLevel deformableType affineType} {
+        variable SCENE
+        variable LOGIC
+        variable DEMONSFOLDER
+        variable mrmlManager
+
+        # Do not get rid of debug mode variable - it is sometimes very helpful !
+        set DEMONS_DEBUG_MODE 0
+
+        if { $DEMONS_DEBUG_MODE } {
+            $LOGIC PrintText ""
+            $LOGIC PrintText "DEBUG: ==========DEMONSRegistration DEBUG MODE ============="
+            $LOGIC PrintText ""
+        }
+
+        $LOGIC PrintText "TCL: =========================================="
+        $LOGIC PrintText "TCL: == Image Alignment CommandLine: $deformableType "
+        $LOGIC PrintText "TCL: =========================================="
+
+        # check arguments
+
+        if { $fixedVolumeNode == "" || [$fixedVolumeNode GetImageData] == "" } {
+            PrintError "DEMONSRegistration: fixed volume node not correctly defined"
+            return ""
+        }
+
+        if { $movingVolumeNode == "" || [$movingVolumeNode GetImageData] == "" } {
+            PrintError "DEMONSRegistration: moving volume node not correctly defined"
+            return ""
+        }
+
+        if { $outVolumeNode == "" } {
+            PrintError "DEMONSRegistration: output volume node not correctly defined"
+            return ""
+        }
+
+        set fixedVolumeFileName [WriteDataToTemporaryDir $fixedVolumeNode Volume]
+        if { $fixedVolumeFileName == "" } {
+            # remove files
+            return ""
+        }
+        set RemoveFiles "$fixedVolumeFileName"
+
+
+        set movingVolumeFileName [WriteDataToTemporaryDir $movingVolumeNode Volume]
+        if { $movingVolumeFileName == "" } {
+            #remove files
+            return ""
+        }
+        set RemoveFiles "$RemoveFiles $movingVolumeFileName"
+
+
+        set outVolumeFileName [CreateTemporaryFileNameForNode $outVolumeNode]
+        if { $outVolumeFileName == "" } {
+            #remove files
+            return ""
+        }
+        set RemoveFiles "$RemoveFiles $outVolumeFileName"
+
+        ## DEMONS specific arguments
+
+        set CMD "$DEMONSFOLDER/DemonsRegistration"
+
+
+        set CMD "$CMD -f \"$fixedVolumeFileName\""
+        set CMD "$CMD -m \"$movingVolumeFileName\""
+
+        if { $affineType == [$mrmlManager GetRegistrationTypeFromString RegistrationTest] } {
+            set CMD "$CMD -s 1.5 -i 1x1x1"
+        } elseif { $affineType == [$mrmlManager GetRegistrationTypeFromString RegistrationFast] } {
+            set CMD "$CMD -s 1.0 -i 30x20x10"
+        } elseif { $affineType == [$mrmlManager GetRegistrationTypeFromString RegistrationSlow] } {
+            set CMD "$CMD -s 1.5 -i 50x30x10"
+        } else {
+            PrintError "DEMONSRegistration: Unknown deformableType: $deformableType"
+            return ""
+        }
+
+        
+        # affine
+        set outLinearTransformFileName [CreateFileName "ITKDeformationField"]
+
+        set outTransformFileName $outLinearTransformFileName
+
+        set CMD "$CMD -o \"$outVolumeFileName\""
+        set CMD "$CMD -O \"$outLinearTransformFileName\""
+
+        $LOGIC PrintText "TCL: Executing $CMD"
+        catch { eval exec $CMD } errmsg
+        $LOGIC PrintText "TCL: $errmsg"
+
+        ## Read results back to scene
+        if { [ReadDataFromDisk $outVolumeNode $outVolumeFileName Volume] == 0 } {
+            if { [file exists $outVolumeFileName] == 0 } {
+                set outTransformDirName ""
+                PrintError "DEMONSRegistration: out volume file doesn't exists"
+            }
+        }
+
+        if { [file exists $outTransformFileName] == 0 } {
+            set outTransformFileName ""
+            PrintError "DEMONSRegistration: out transform file doesn't exists"
         }
 
         foreach NAME $RemoveFiles {
@@ -2359,9 +2513,9 @@ namespace eval EMSegmenterPreProcessingTcl {
         $LOGIC PrintText "TCL: =========================================="
         $LOGIC PrintText "TCL: == Generate ICC MASK (not yet implemented)"
         $LOGIC PrintText "TCL: =========================================="
-        set EXE_DIR "$::env(Slicer3_HOME)/bin"
-        #set PLUGINS_DIR "[$::slicer3::Application GetPluginsDir]"
+        set EXE_DIR "[[$LOGIC GetSlicerCommonInterface] GetBinDirectory]"
         set PLUGINS_DIR "[$LOGIC GetPluginsDirectory]"
+        
 
         # set CMD "$PLUGINS_DIR/DemonsRegistration --fixed_image $Scan2Image --moving_image $Scan1Image --output_image $Scan1ToScan2Image --output_field $Scan1ToScan2Deformation --num_levels 3 --num_iterations 20,20,20 --def_field_sigma 1 --use_histogram_matching --verbose"
 
@@ -2455,7 +2609,6 @@ namespace eval EMSegmenterPreProcessingTcl {
         $LOGIC PrintText "TCL: ==     N4ITKBiasFieldCorrectionCLI      =="
         $LOGIC PrintText "TCL: =========================================="
 
-        #set PLUGINS_DIR "[$::slicer3::Application GetPluginsDir]"
         set PLUGINS_DIR "[$LOGIC GetPluginsDirectory]"
         set CMD "${PLUGINS_DIR}/N4ITKBiasFieldCorrection"
 
@@ -2706,7 +2859,22 @@ namespace eval EMSegmenterPreProcessingTcl {
                 $LOGIC PrintText "TCL: Resampling atlas template in PLASTIMATCHRegistration ..."
                 # transformNode is not needed, it's value is ""
                 if { [Resample $movingAtlasVolumeNode $fixedTargetVolumeNode $transformNode $transformDirName $transformNodeType Linear $backgroundLevel $outputAtlasVolumeNode] } {
-                    PrintError "RegisterAtlas: Could not resample(reformatx) atlas template volume"
+                    PrintError "RegisterAtlas: Could not resample atlas template volume"
+                    return 1
+                }
+            }
+            "DEMONS" {
+                set transformDirName [DEMONSRegistration $fixedTargetVolumeNode $movingAtlasVolumeNode $outputAtlasVolumeNode $backgroundLevel $deformableType $affineType]
+                if { $transformDirName == "" } {
+                    PrintError "ResgisterAtlas: Transform node is null"
+                    return 1
+                }
+                set transformNodeType "DEMONSTransform"
+
+                $LOGIC PrintText "TCL: Resampling atlas template in DEMONSRegistration ..."
+                # transformNode is not needed, it's value is ""
+                if { [Resample $movingAtlasVolumeNode $fixedTargetVolumeNode $transformNode $transformDirName $transformNodeType Linear $backgroundLevel $outputAtlasVolumeNode] } {
+                    PrintError "RegisterAtlas: Could not resample atlas template volume"
                     return 1
                 }
             }
@@ -2817,6 +2985,13 @@ namespace eval EMSegmenterPreProcessingTcl {
             "PLASTIMATCHTransform" {
                 $LOGIC PrintText "TCL: with PLASTIMATCHResampleCLI..."
                 if { [PLASTIMATCHResampleCLI $inputVolumeNode $referenceVolumeNode $outputVolumeNode $transformDirName $interpolationType $backgroundLevel] } {
+                    return 1
+                }
+            }
+            "DEMONSTransform" {
+                $LOGIC PrintText "TCL: with BRAINSResample using the Deformation Field"
+                set BRAINSBSpline 0
+                if { [BRAINSResampleCLI $inputVolumeNode $referenceVolumeNode $outputVolumeNode $transformDirName $backgroundLevel $interpolationType $BRAINSBSpline] } {
                     return 1
                 }
             }

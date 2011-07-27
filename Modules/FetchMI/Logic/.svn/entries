@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/FetchMI/Logic
 http://svn.slicer.org/Slicer3
 
@@ -60,40 +60,6 @@ has-props
 
 11582
 
-vtkFetchMIParserXND.h
-file
-
-
-
-
-2010-10-25T02:20:31.504995Z
-04e0af75cf6a11f0e26c557e7b4f9f25
-2010-02-05T06:34:52.346189Z
-12005
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2661
-
 vtkFetchMIServer.h
 file
 
@@ -127,6 +93,40 @@ has-props
 
 
 2770
+
+vtkFetchMIParserXND.h
+file
+
+
+
+
+2010-10-25T02:20:31.504995Z
+04e0af75cf6a11f0e26c557e7b4f9f25
+2010-02-05T06:34:52.346189Z
+12005
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2661
 
 vtkFetchMIParser.cxx
 file
@@ -298,14 +298,14 @@ has-props
 
 2889
 
-vtkFetchMIParserHID.h
+vtkFetchMIServer.cxx
 file
 
 
 
 
 2010-10-25T02:20:31.504995Z
-cb952ea47ca3feaa0a9e63716bfa872e
+a40b00ca9dc191b487c35657773d94ae
 2010-02-05T06:34:52.346189Z
 12005
 jcfr
@@ -330,7 +330,7 @@ has-props
 
 
 
-2959
+1961
 
 vtkFetchMIParserXND.cxx
 file
@@ -366,14 +366,14 @@ has-props
 
 20412
 
-vtkFetchMIServer.cxx
+vtkFetchMIParserHID.h
 file
 
 
 
 
 2010-10-25T02:20:31.504995Z
-a40b00ca9dc191b487c35657773d94ae
+cb952ea47ca3feaa0a9e63716bfa872e
 2010-02-05T06:34:52.346189Z
 12005
 jcfr
@@ -398,7 +398,7 @@ has-props
 
 
 
-1961
+2959
 
 vtkFetchMIServerCollection.h
 file

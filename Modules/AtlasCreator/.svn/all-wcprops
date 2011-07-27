@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 50
-/Slicer3/!svn/ver/16757/trunk/Modules/AtlasCreator
+/Slicer3/!svn/ver/16759/trunk/Modules/AtlasCreator
 END
 AtlasCreatorGUI.py
 K 25
@@ -13,7 +13,7 @@ AtlasCreatorLogic.py
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/Slicer3/!svn/ver/16757/trunk/Modules/AtlasCreator/AtlasCreatorLogic.py
+/Slicer3/!svn/ver/16759/trunk/Modules/AtlasCreator/AtlasCreatorLogic.py
 END
 AtlasCreatorHelper.py
 K 25

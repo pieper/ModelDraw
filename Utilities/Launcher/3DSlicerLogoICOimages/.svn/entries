@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Utilities/Launcher/3DSlicerLogoICOimages
 http://svn.slicer.org/Slicer3
 
@@ -128,40 +128,6 @@ has-props
 
 1080
 
-Thumbs.db
-file
-
-
-
-
-2010-10-25T02:21:40.374995Z
-ca93e1d5b8a391453ac71197b696df6f
-2007-03-07T14:32:14.136571Z
-2839
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-23040
-
 3DSlicerLogo-DesktopIcon-128x128x16.png
 file
 
@@ -195,6 +161,40 @@ has-props
 
 
 4364
+
+Thumbs.db
+file
+
+
+
+
+2010-10-25T02:21:40.374995Z
+ca93e1d5b8a391453ac71197b696df6f
+2007-03-07T14:32:14.136571Z
+2839
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23040
 
 3DSlicerLogo-DesktopIcon-48x48x16.png
 file
@@ -230,40 +230,6 @@ has-props
 
 1317
 
-3DSlicerLogo-DesktopIcon-64x64x256.gif
-file
-
-
-
-
-2010-10-25T02:21:40.374995Z
-65fb3363899aaba12467e976a2aab01f
-2007-03-06T14:27:18.699816Z
-2746
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3699
-
 3DSlicerLogo-DesktopIcon-32x32x16.gif
 file
 
@@ -297,6 +263,40 @@ has-props
 
 
 504
+
+3DSlicerLogo-DesktopIcon-64x64x256.gif
+file
+
+
+
+
+2010-10-25T02:21:40.374995Z
+65fb3363899aaba12467e976a2aab01f
+2007-03-06T14:27:18.699816Z
+2746
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3699
 
 3DSlicerLogo-DesktopIcon-128x128x256.gif
 file
@@ -332,40 +332,6 @@ has-props
 
 8351
 
-3DSlicerLogo-DesktopIcon-16x16x16.gif
-file
-
-
-
-
-2010-10-25T02:21:40.374995Z
-3ea24af221a32229b318e3b6bc9f770c
-2007-03-06T14:27:18.699816Z
-2746
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-223
-
 3DSlicerLogo-DesktopIcon-48x48x256.gif
 file
 
@@ -399,6 +365,40 @@ has-props
 
 
 2668
+
+3DSlicerLogo-DesktopIcon-16x16x16.gif
+file
+
+
+
+
+2010-10-25T02:21:40.374995Z
+3ea24af221a32229b318e3b6bc9f770c
+2007-03-06T14:27:18.699816Z
+2746
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+223
 
 3DSlicerLogo-DesktopIcon-32x32x256.png
 file

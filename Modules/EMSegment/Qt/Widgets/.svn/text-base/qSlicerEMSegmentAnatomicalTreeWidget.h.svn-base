@@ -117,6 +117,12 @@ public slots:
 
   void setAddDeleteSubclassesEnabled(bool enabled);
 
+  void showContextMenu(const QPoint & );
+
+  void addSubclass(int id);
+
+  void deleteSubclass(int id);
+
 protected slots:
 
   void collapseToDepthZero();

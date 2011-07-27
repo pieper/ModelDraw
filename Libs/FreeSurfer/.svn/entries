@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Libs/FreeSurfer
 http://svn.slicer.org/Slicer3
 
@@ -26,18 +26,17 @@ pieper
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-vtkFreeSurferWin32Header.h
+vtkFSSurfaceReader.h
 file
 
 
 
 
 2010-10-25T02:20:21.664995Z
-bca924886fc4adaf082972e70e2c8b6d
+bb905923e17217eb896b81eacaa9d78b
 2010-01-22T19:18:55.208141Z
 11735
 naucoin
-has-props
 
 
 
@@ -58,7 +57,8 @@ has-props
 
 
 
-1074
+
+3351
 
 vtkFSSurfaceLabelReader.h
 file
@@ -94,17 +94,18 @@ naucoin
 
 3173
 
-vtkFSSurfaceReader.h
+vtkFreeSurferWin32Header.h
 file
 
 
 
 
 2010-10-25T02:20:21.664995Z
-bb905923e17217eb896b81eacaa9d78b
+bca924886fc4adaf082972e70e2c8b6d
 2010-01-22T19:18:55.208141Z
 11735
 naucoin
+has-props
 
 
 
@@ -125,8 +126,7 @@ naucoin
 
 
 
-
-3351
+1074
 
 vtkFSSurfaceScalarReader.cxx
 file
@@ -196,40 +196,6 @@ lorensen
 
 6247
 
-vtkFSLookupTable.h
-file
-
-
-
-
-2010-10-25T02:20:21.664995Z
-c61a445718ab1c406a96aeac97237a29
-2010-04-29T20:15:12.400707Z
-13088
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4299
-
 vtkFSSurfaceAnnotationReader.cxx
 file
 
@@ -264,17 +230,17 @@ naucoin
 
 40734
 
-FSLabelReaderContour.tcl
+vtkFSLookupTable.h
 file
 
 
 
 
 2010-10-25T02:20:21.664995Z
-7e333ab0b53ac186d794e37e1f37ccfb
-2008-05-14T18:14:37.110248Z
-6715
-naucoin
+c61a445718ab1c406a96aeac97237a29
+2010-04-29T20:15:12.400707Z
+13088
+pieper
 
 
 
@@ -296,7 +262,7 @@ naucoin
 
 
 
-3602
+4299
 
 vtkFSIO.cxx
 file
@@ -332,17 +298,17 @@ naucoin
 
 3823
 
-vtkFSSurfaceLabelReader.cxx
+FSLabelReaderContour.tcl
 file
 
 
 
 
 2010-10-25T02:20:21.664995Z
-f9a30ec3529b6a9380749a401d15977f
-2010-01-14T14:38:49.973919Z
-11623
-jcfr
+7e333ab0b53ac186d794e37e1f37ccfb
+2008-05-14T18:14:37.110248Z
+6715
+naucoin
 
 
 
@@ -364,7 +330,7 @@ jcfr
 
 
 
-7420
+3602
 
 vtkFSSurfaceReader.cxx
 file
@@ -400,6 +366,40 @@ jcfr
 
 18529
 
+vtkFSSurfaceLabelReader.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.664995Z
+f9a30ec3529b6a9380749a401d15977f
+2010-01-14T14:38:49.973919Z
+11623
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7420
+
 vtkFSLookupTable.cxx
 file
 
@@ -434,18 +434,17 @@ pieper
 
 19572
 
-FreeSurferConfigure.h.in
+vtkFSSurfaceScalarReader.h
 file
 
 
 
 
 2010-10-25T02:20:21.664995Z
-7e3dc54ef16ee607f9f05830df916457
-2008-05-21T23:25:36.961964Z
-6803
-barre
-has-props
+c66272b36781ab41efa62eb817974749
+2010-01-22T19:18:55.208141Z
+11735
+naucoin
 
 
 
@@ -466,7 +465,8 @@ has-props
 
 
 
-321
+
+2147
 
 Simple_surface_labels2002.txt
 file
@@ -502,17 +502,18 @@ naucoin
 
 3753
 
-vtkFSSurfaceScalarReader.h
+FreeSurferConfigure.h.in
 file
 
 
 
 
 2010-10-25T02:20:21.664995Z
-c66272b36781ab41efa62eb817974749
-2010-01-22T19:18:55.208141Z
-11735
-naucoin
+7e3dc54ef16ee607f9f05830df916457
+2008-05-21T23:25:36.961964Z
+6803
+barre
+has-props
 
 
 
@@ -533,8 +534,7 @@ naucoin
 
 
 
-
-2147
+321
 
 vtkFSSurfaceWFileReader.h
 file

@@ -138,15 +138,12 @@ namespace eval EMSegmenterPreProcessingTcl {
 
 
         # -------------------------------------
-        # Step 5: Atlas Alignment - you will also have to include the masks
-        # Defines $workingDN GetAlignedAtlasNode
-        set Slicer3_HOME $::env(Slicer3_HOME)
-
+        # Step 5: Atlas Alignment
         if { [file exists $outputDir] } {
             set outputDir [CreateDirName "tmp"]
         }
 
-        if { [AtlasCreator $Slicer3_HOME/$segmentationsDir $Slicer3_HOME/$imagesDir $outputDir $labels $schedulerCommand $alignedTargetNode] } {
+        if { [AtlasCreator "[$LOGIC GetPluginsDirectory]/../../../$segmentationsDir" "[$LOGIC GetPluginsDirectory]/../../../$imagesDir" $outputDir $labels $schedulerCommand $alignedTargetNode] } {
             PrintError "Run: atlas creation failed !"
             return 1
         }

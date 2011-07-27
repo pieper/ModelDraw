@@ -30,6 +30,8 @@
 #include <QToolButton>
 #include <QCheckBox>
 #include <QDoubleSpinBox>
+#include <QMenu>
+#include <QSignalMapper>
 
 // CTK includes
 #include <ctkLogger.h>
@@ -143,6 +145,11 @@ void qSlicerEMSegmentAnatomicalTreeWidgetPrivate::setupUi(qSlicerEMSegmentWidget
   // Connect TreeView
   connect(this->TreeView, SIGNAL(clicked(QModelIndex)),
           SLOT(onTreeItemSelected(QModelIndex)));
+
+  // context menu action
+  this->TreeView->setContextMenuPolicy(Qt::CustomContextMenu);
+  connect(this->TreeView, SIGNAL(customContextMenuRequested(const QPoint & )), q, SLOT(showContextMenu(const QPoint & )));
+
 }
 
 //-----------------------------------------------------------------------------
@@ -341,7 +348,12 @@ QStandardItem* qSlicerEMSegmentAnatomicalTreeWidgetPrivate::insertTreeRow(
   if (isLeaf && this->ProbabilityMapColumnVisible)
     {
     vtkIdType volumeId = q->mrmlManager()->GetTreeNodeSpatialPriorVolumeID(treeNodeId);
-    vtkMRMLVolumeNode * volumeNode = q->mrmlManager()->GetVolumeNode(volumeId);
+    vtkMRMLVolumeNode * volumeNode = 0;
+
+    if (volumeId != ERROR_NODE_VTKID)
+      {
+      volumeNode = q->mrmlManager()->GetVolumeNode(volumeId);
+      }
     qMRMLNodeComboBox * probabilityMapComboBox = new qMRMLNodeComboBox;
     QStringList nodeTypes;
     nodeTypes << "vtkMRMLVolumeNode";
@@ -352,8 +364,12 @@ QStandardItem* qSlicerEMSegmentAnatomicalTreeWidgetPrivate::insertTreeRow(
     probabilityMapComboBox->setAddEnabled(false);
     probabilityMapComboBox->setRemoveEnabled(false);
     probabilityMapComboBox->setEditEnabled(false);
+    probabilityMapComboBox->setNoneEnabled(true);
     probabilityMapComboBox->setMRMLScene(q->mrmlScene());
-    probabilityMapComboBox->setCurrentNode(volumeNode);
+    if (volumeNode)
+      {
+      probabilityMapComboBox->setCurrentNode(volumeNode);
+      }
     this->TreeView->setIndexWidget(
         this->TreeModel->indexFromItem(probabilityMapItem), probabilityMapComboBox);
     connect(probabilityMapComboBox, SIGNAL(currentNodeChanged(vtkMRMLNode*)),
@@ -364,7 +380,12 @@ QStandardItem* qSlicerEMSegmentAnatomicalTreeWidgetPrivate::insertTreeRow(
   if (isLeaf && this->ParcellationMapColumnVisible)
     {
     vtkIdType volumeId = q->mrmlManager()->GetTreeNodeSubParcellationVolumeID(treeNodeId);
-    vtkMRMLVolumeNode * volumeNode = q->mrmlManager()->GetVolumeNode(volumeId);
+    vtkMRMLVolumeNode * volumeNode = 0;
+
+    if (volumeId != ERROR_NODE_VTKID)
+      {
+      volumeNode = q->mrmlManager()->GetVolumeNode(volumeId);
+      }
     qMRMLNodeComboBox * parcellationMapComboBox = new qMRMLNodeComboBox;
     QStringList nodeTypes;
     nodeTypes << "vtkMRMLVolumeNode";
@@ -374,9 +395,13 @@ QStandardItem* qSlicerEMSegmentAnatomicalTreeWidgetPrivate::insertTreeRow(
     parcellationMapComboBox->setShowHidden(true);
     parcellationMapComboBox->setAddEnabled(false);
     parcellationMapComboBox->setRemoveEnabled(false);
+    parcellationMapComboBox->setNoneEnabled(true);
     parcellationMapComboBox->setEditEnabled(false);
     parcellationMapComboBox->setMRMLScene(q->mrmlScene());
-    parcellationMapComboBox->setCurrentNode(volumeNode);
+    if (volumeNode)
+      {
+      parcellationMapComboBox->setCurrentNode(volumeNode);
+      }
     this->TreeView->setIndexWidget(
         this->TreeModel->indexFromItem(parcellationMapItem), parcellationMapComboBox);
     connect(parcellationMapComboBox, SIGNAL(currentNodeChanged(vtkMRMLNode*)),
@@ -491,6 +516,10 @@ void qSlicerEMSegmentAnatomicalTreeWidgetPrivate::onProbabilityMapChanged(vtkMRM
 void qSlicerEMSegmentAnatomicalTreeWidgetPrivate::onParcellationMapChanged(vtkMRMLNode * node)
 {
   Q_Q(qSlicerEMSegmentAnatomicalTreeWidget);
+
+  std::cout << "------------------------" << std::endl;
+  std::cout << node << std::endl;
+
   if (!node)
     {
     return;
@@ -748,9 +777,82 @@ CTK_GET_CPP(qSlicerEMSegmentAnatomicalTreeWidget, bool,
 void qSlicerEMSegmentAnatomicalTreeWidget::setAddDeleteSubclassesEnabled(bool enabled)
 {
   Q_D(qSlicerEMSegmentAnatomicalTreeWidget);
-  d->ParcellationMapColumnVisible = enabled;
+  d->AddDeleteSubclassesEnabled = enabled;
 }
 
+//-----------------------------------------------------------------------------
+void qSlicerEMSegmentAnatomicalTreeWidget::showContextMenu(const QPoint & point )
+{
+
+  Q_D(qSlicerEMSegmentAnatomicalTreeWidget);
+
+  // check if we should display the context menu at all
+  if(d->AddDeleteSubclassesEnabled)
+    {
+
+    QModelIndex index = d->TreeView->indexAt(point);
+
+    if(index.isValid())
+      {
+
+      QStandardItem * item = d->TreeModel->itemFromIndex(index);
+      Q_ASSERT(item);
+
+      int treeNodeId = item->data(qSlicerEMSegmentAnatomicalTreeWidgetPrivate::TreeNodeIDRole).toInt();
+
+      // Get a reference to the associated treeNode
+      vtkMRMLEMSTreeNode * currentTreeNode = this->mrmlManager()->GetTreeNode(treeNodeId);
+      Q_ASSERT(currentTreeNode);
+      if (!currentTreeNode)
+        {
+        logger.error(QString("onTreeItemSelected - No treeNode associated with id: %1").arg(treeNodeId));
+        return;
+        }
+
+      QMenu *contextMenu = new QMenu(d->TreeView);
+      QAction* addSubclassAction = new QAction("Add Subclass",contextMenu);
+      contextMenu->addAction(addSubclassAction);
+      QAction* deleteSubclassAction = new QAction("Delete Subclass",contextMenu);
+
+      // do not show the delete option if the root item is selected
+      if (index.parent() != QModelIndex())
+        {
+        contextMenu->addAction(deleteSubclassAction);
+        }
+
+      // we need a signal mapper here
+      QSignalMapper *signalMapperAdd = new QSignalMapper(this);
+      signalMapperAdd->setMapping(addSubclassAction,treeNodeId);
+
+      QSignalMapper *signalMapperDel = new QSignalMapper(this);
+      signalMapperDel->setMapping(deleteSubclassAction,treeNodeId);
+
+      QObject::connect(addSubclassAction, SIGNAL(triggered()),signalMapperAdd, SLOT(map()));
+      QObject::connect(deleteSubclassAction, SIGNAL(triggered()),signalMapperDel, SLOT(map()));
+
+      QObject::connect(signalMapperAdd, SIGNAL(mapped(int)), this, SLOT(addSubclass(int)));
+      QObject::connect(signalMapperDel, SIGNAL(mapped(int)), this, SLOT(deleteSubclass(int)));
+
+      contextMenu->exec(d->TreeView->mapToGlobal(point));
+
+      }
+
+    }
+}
+
+//-----------------------------------------------------------------------------
+void qSlicerEMSegmentAnatomicalTreeWidget::addSubclass(int id)
+{
+  this->mrmlManager()->AddTreeNode(id);
+  this->updateWidgetFromMRML();
+}
+
+//-----------------------------------------------------------------------------
+void qSlicerEMSegmentAnatomicalTreeWidget::deleteSubclass(int id)
+{
+  this->mrmlManager()->RemoveTreeNode(id);
+  this->updateWidgetFromMRML();
+}
 
 //-----------------------------------------------------------------------------
 void qSlicerEMSegmentAnatomicalTreeWidget::collapseToDepthZero()

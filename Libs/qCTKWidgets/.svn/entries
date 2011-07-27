@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Libs/qCTKWidgets
 http://svn.slicer.org/Slicer3
 
@@ -165,40 +165,6 @@ has-props
 
 2173
 
-qCTKConsoleWidget.cxx
-file
-
-
-
-
-2010-10-25T02:20:19.934995Z
-4b7d856360012d7f6fe01798a7b864e2
-2010-02-25T21:34:04.414988Z
-12218
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15417
-
 qCTKPimpl.h
 file
 
@@ -232,6 +198,40 @@ has-props
 
 
 8048
+
+qCTKConsoleWidget.cxx
+file
+
+
+
+
+2010-10-25T02:20:19.934995Z
+4b7d856360012d7f6fe01798a7b864e2
+2010-02-25T21:34:04.414988Z
+12218
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15417
 
 qCTKDynamicSpacer.h
 file
@@ -403,40 +403,6 @@ finetjul
 
 14484
 
-qCTKColorPickerButton.h
-file
-
-
-
-
-2010-10-25T02:20:19.934995Z
-b838d6174280c274ad8ca36ed5751524
-2010-01-18T00:56:49.527258Z
-11688
-ibanez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1274
-
 qCTKWidgetsExport.h
 file
 
@@ -470,6 +436,40 @@ has-props
 
 
 961
+
+qCTKColorPickerButton.h
+file
+
+
+
+
+2010-10-25T02:20:19.934995Z
+b838d6174280c274ad8ca36ed5751524
+2010-01-18T00:56:49.527258Z
+11688
+ibanez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1274
 
 qCTKTitleComboBox.h
 file
@@ -1049,40 +1049,6 @@ finetjul
 
 21191
 
-qCTKTreeComboBox.cxx
-file
-
-
-
-
-2010-10-25T02:20:19.944995Z
-08c1e10f3812ff342e226bcc1f3f314d
-2010-01-26T07:20:51.842722Z
-11783
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5424
-
 qCTKAbstractQObjectFactory.h
 file
 
@@ -1116,6 +1082,40 @@ has-props
 
 
 1925
+
+qCTKTreeComboBox.cxx
+file
+
+
+
+
+2010-10-25T02:20:19.944995Z
+08c1e10f3812ff342e226bcc1f3f314d
+2010-01-26T07:20:51.842722Z
+11783
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5424
 
 qCTKSliderSpinBoxWidget.cxx
 file
@@ -1222,40 +1222,6 @@ jcfr
 CMake
 dir
 
-qCTKAbstractPluginFactory.h
-file
-
-
-
-
-2010-10-25T02:20:19.944995Z
-7a791998b4569bd70bc0432d0acbd516
-2010-01-29T16:25:40.366028Z
-11864
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1836
-
 qCTKRangeSlider.cxx
 file
 
@@ -1289,6 +1255,40 @@ finetjul
 
 
 16847
+
+qCTKAbstractPluginFactory.h
+file
+
+
+
+
+2010-10-25T02:20:19.944995Z
+7a791998b4569bd70bc0432d0acbd516
+2010-01-29T16:25:40.366028Z
+11864
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1836
 
 qCTKDoubleSlider.h
 file
@@ -1667,40 +1667,6 @@ has-props
 
 4628
 
-qCTKButtonGroup.cxx
-file
-
-
-
-
-2010-10-25T02:20:19.944995Z
-6dd0142e88bf112f65e29b4838c896ca
-2010-02-16T14:11:43.800766Z
-12144
-finetjul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1409
-
 qCTKTestApplication.h
 file
 
@@ -1734,6 +1700,40 @@ has-props
 
 
 4884
+
+qCTKButtonGroup.cxx
+file
+
+
+
+
+2010-10-25T02:20:19.944995Z
+6dd0142e88bf112f65e29b4838c896ca
+2010-02-16T14:11:43.800766Z
+12144
+finetjul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1409
 
 CMakeLists.txt
 file

@@ -184,6 +184,24 @@ const char* vtkSlicerCommonInterface::EvaluateTcl(const char* command)
 }
 
 //-----------------------------------------------------------------------------
+const char* vtkSlicerCommonInterface::GetExtensionsDirectory()
+{
+
+#ifdef Slicer3_USE_KWWIDGETS
+
+  return vtkSlicerApplication::GetInstance()->GetExtensionsInstallPath();
+
+#else
+
+  // Slicer4
+  QString extensionsDir = qSlicerApplication::application()->extensionsPath();
+  return extensionsDir.toLatin1();
+
+#endif
+
+}
+
+//-----------------------------------------------------------------------------
 const char* vtkSlicerCommonInterface::GetTclNameFromPointer(vtkObject *obj)
 {
 

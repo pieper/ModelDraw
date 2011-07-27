@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Libs/MRML/Testing
 http://svn.slicer.org/Slicer3
 
@@ -233,40 +233,6 @@ ibanez
 
 2506
 
-vtkMRMLDiffusionImageVolumeNodeTest1.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.404995Z
-9e85543f635ea83aac63d6e3b60e25b4
-2010-01-05T04:43:27.274004Z
-11516
-ibanez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2452
-
 vtkMRMLGridTransformNodeTest1.cxx
 file
 
@@ -300,6 +266,40 @@ ibanez
 
 
 2410
+
+vtkMRMLDiffusionImageVolumeNodeTest1.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.404995Z
+9e85543f635ea83aac63d6e3b60e25b4
+2010-01-05T04:43:27.274004Z
+11516
+ibanez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2452
 
 vtkMRMLSliceCompositeNodeTest1.cxx
 file
@@ -335,40 +335,6 @@ ibanez
 
 2416
 
-testFiducialGlyphs.tcl
-file
-
-
-
-
-2010-10-25T02:20:21.404995Z
-09048d30d88a88789ceee3c4a0c4d0a3
-2010-01-27T17:21:21.429529Z
-11813
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2547
-
 testVolume.tcl
 file
 
@@ -402,6 +368,40 @@ jcfr
 
 
 1758
+
+testFiducialGlyphs.tcl
+file
+
+
+
+
+2010-10-25T02:20:21.404995Z
+09048d30d88a88789ceee3c4a0c4d0a3
+2010-01-27T17:21:21.429529Z
+11813
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2547
 
 restoreSceneSnapshotCompareView.mrml
 file
@@ -437,40 +437,6 @@ millerjv
 
 21129
 
-vtkMRMLSelectionNodeTest1.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.414995Z
-85f10cec7c6968283be99bb2b661f44b
-2010-01-05T04:43:27.274004Z
-11516
-ibanez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2386
-
 vtkMRMLROIListNodeTest1.cxx
 file
 
@@ -504,6 +470,40 @@ ibanez
 
 
 2374
+
+vtkMRMLSelectionNodeTest1.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.414995Z
+85f10cec7c6968283be99bb2b661f44b
+2010-01-05T04:43:27.274004Z
+11516
+ibanez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2386
 
 hier_test.mrml
 file
@@ -981,6 +981,40 @@ has-props
 
 234
 
+vtkMRMLLayoutNodeTest1.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.414995Z
+ac769a47b23dcffde531a16f9091be3b
+2010-01-05T04:43:27.274004Z
+11516
+ibanez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2368
+
 vtkMRMLArrayPlotNodeTest1.cxx
 file
 
@@ -1048,40 +1082,6 @@ ibanez
 
 
 2428
-
-vtkMRMLLayoutNodeTest1.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.414995Z
-ac769a47b23dcffde531a16f9091be3b
-2010-01-05T04:43:27.274004Z
-11516
-ibanez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2368
 
 vtkMRMLFreeSurferModelStorageNodeTest1.cxx
 file
@@ -1151,17 +1151,17 @@ pieper
 
 955
 
-helix_roi_tract.mrml
+vtkMRMLVectorVolumeDisplayNodeTest1.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.414995Z
-3cc7efe69866c1e390cd6aa05955451a
-2007-12-07T22:17:15.380452Z
-5098
-alexy
+10cfd1d071e50048d0caf42d19cb38a4
+2010-01-05T04:43:27.274004Z
+11516
+ibanez
 
 
 
@@ -1183,7 +1183,7 @@ alexy
 
 
 
-35193
+2446
 
 multi_display.mrml
 file
@@ -1219,50 +1219,16 @@ has-props
 
 995
 
-vtkMRMLVectorVolumeDisplayNodeTest1.cxx
+helix_roi_tract.mrml
 file
 
 
 
 
 2010-10-25T02:20:21.414995Z
-10cfd1d071e50048d0caf42d19cb38a4
-2010-01-05T04:43:27.274004Z
-11516
-ibanez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2446
-
-Deformable BSpline registration Transform.tfm
-file
-
-
-
-
-2010-10-25T02:20:21.414995Z
-ba94ac268588702840b3b81b4ecfda1a
-2010-04-24T14:47:21.774062Z
-12897
+3cc7efe69866c1e390cd6aa05955451a
+2007-12-07T22:17:15.380452Z
+5098
 alexy
 
 
@@ -1285,7 +1251,7 @@ alexy
 
 
 
-27597
+35193
 
 vtkObserverManagerTest1.cxx
 file
@@ -1321,6 +1287,40 @@ naucoin
 
 4283
 
+Deformable BSpline registration Transform.tfm
+file
+
+
+
+
+2010-10-25T02:20:21.414995Z
+ba94ac268588702840b3b81b4ecfda1a
+2010-04-24T14:47:21.774062Z
+12897
+alexy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27597
+
 vtkMRMLModelStorageNodeTest1.cxx
 file
 
@@ -1355,40 +1355,6 @@ ibanez
 
 710
 
-vtkMRMLColorTableNodeTest1.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.414995Z
-fdb7b91574414bee9d89a7e9588dd682
-2010-01-19T03:13:21.443092Z
-11693
-ibanez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1550
-
 SlicePipeline.mrml
 file
 
@@ -1422,6 +1388,40 @@ has-props
 
 
 2472
+
+vtkMRMLColorTableNodeTest1.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.414995Z
+fdb7b91574414bee9d89a7e9588dd682
+2010-01-19T03:13:21.443092Z
+11693
+ibanez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1550
 
 vtkMRMLClipModelsNodeTest1.cxx
 file
@@ -1491,40 +1491,6 @@ ibanez
 
 2386
 
-vtkMRMLDiffusionWeightedVolumeNodeTest1.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.414995Z
-02f9edd71610284ba4570b77f0e8cdc3
-2010-01-05T04:43:27.274004Z
-11516
-ibanez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2470
-
 vtkMRMLTransformableNodeTest1.cxx
 file
 
@@ -1558,6 +1524,40 @@ ibanez
 
 
 1449
+
+vtkMRMLDiffusionWeightedVolumeNodeTest1.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.414995Z
+02f9edd71610284ba4570b77f0e8cdc3
+2010-01-05T04:43:27.274004Z
+11516
+ibanez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2470
 
 vtkMRMLTransformStorageNodeTest1.cxx
 file
@@ -1593,14 +1593,14 @@ ibanez
 
 2428
 
-vtkMRMLFiducialListStorageNodeTest1.cxx
+vtkMRMLVolumeArchetypeStorageNodeTest1.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.414995Z
-7af1cc675ff0d986095d629720af93ed
+69bc9dc7d09b328474824ec406b299c1
 2010-01-05T04:43:27.274004Z
 11516
 ibanez
@@ -1625,7 +1625,7 @@ ibanez
 
 
 
-2446
+2464
 
 vol.mrml
 file
@@ -1661,14 +1661,14 @@ pieper
 
 1268
 
-vtkMRMLVolumeArchetypeStorageNodeTest1.cxx
+vtkMRMLFiducialListStorageNodeTest1.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.414995Z
-69bc9dc7d09b328474824ec406b299c1
+7af1cc675ff0d986095d629720af93ed
 2010-01-05T04:43:27.274004Z
 11516
 ibanez
@@ -1693,7 +1693,7 @@ ibanez
 
 
 
-2464
+2446
 
 vtkMRMLVolumeArchetypeStorageNodeTest2.cxx
 file
@@ -1797,14 +1797,14 @@ ibanez
 
 2422
 
-vtkMRMLFiberBundleDisplayNodeTest1.cxx
+vtkMRMLVolumeNodeTest1.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.414995Z
-97f72bd7f4409eb65c87a504abae7b59
+e3d43fbfd5a2fa722eb0edb2ba827a93
 2010-01-19T03:13:21.443092Z
 11693
 ibanez
@@ -1829,7 +1829,7 @@ ibanez
 
 
 
-3271
+3063
 
 vtkMRMLSnapshotClipNodeTest1.cxx
 file
@@ -1865,14 +1865,14 @@ ibanez
 
 2404
 
-vtkMRMLVolumeNodeTest1.cxx
+vtkMRMLFiberBundleDisplayNodeTest1.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.414995Z
-e3d43fbfd5a2fa722eb0edb2ba827a93
+97f72bd7f4409eb65c87a504abae7b59
 2010-01-19T03:13:21.443092Z
 11693
 ibanez
@@ -1897,41 +1897,7 @@ ibanez
 
 
 
-3063
-
-vtkMRMLColorTableStorageNodeTest1.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.414995Z
-3c72fa1d323c9b29d72871acdb7581ee
-2010-01-05T04:43:27.274004Z
-11516
-ibanez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2434
+3271
 
 vtkMRMLTransformNodeTest1.cxx
 file
@@ -1966,6 +1932,40 @@ ibanez
 
 
 3544
+
+vtkMRMLColorTableStorageNodeTest1.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.414995Z
+3c72fa1d323c9b29d72871acdb7581ee
+2010-01-05T04:43:27.274004Z
+11516
+ibanez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2434
 
 vtkMRMLPlotNodeTest1.cxx
 file
@@ -2035,17 +2035,17 @@ ibanez
 
 2464
 
-vtkMRMLNonlinearTransformNodeTest1.cxx
+name.mrml
 file
 
 
 
 
 2010-10-25T02:20:21.414995Z
-261007b925c82aa4e8e00026150e9cf4
-2010-01-05T04:43:27.274004Z
-11516
-ibanez
+9fe070c6b7a227c87599886dc7916c1d
+2007-09-11T21:30:19.454730Z
+4302
+alexy
 
 
 
@@ -2067,7 +2067,7 @@ ibanez
 
 
 
-2440
+5284
 
 vtkMRMLFiberBundleNodeTest1.cxx
 file
@@ -2103,17 +2103,17 @@ ibanez
 
 2398
 
-name.mrml
+vtkMRMLNonlinearTransformNodeTest1.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.414995Z
-9fe070c6b7a227c87599886dc7916c1d
-2007-09-11T21:30:19.454730Z
-4302
-alexy
+261007b925c82aa4e8e00026150e9cf4
+2010-01-05T04:43:27.274004Z
+11516
+ibanez
 
 
 
@@ -2135,7 +2135,7 @@ alexy
 
 
 
-5284
+2440
 
 SceneTemplate.xml
 file

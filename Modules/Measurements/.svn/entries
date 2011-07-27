@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/Measurements
 http://svn.slicer.org/Slicer3
 
@@ -196,16 +196,16 @@ has-props
 
 43
 
-vtkMeasurementsGUI.h
+vtkMRMLMeasurementsAngleNode.h
 file
 
 
 
 
 2010-10-25T02:20:31.254995Z
-5a2c7f74d53943d5f85f0874b7ecc004
-2010-05-27T16:24:55.434383Z
-13516
+f212fd17a5b010ec73ceaf596338c594
+2010-04-06T21:20:07.458366Z
+12669
 naucoin
 has-props
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-3601
+5309
 
 vtkMeasurementsDistanceWidgetClass.h
 file
@@ -264,16 +264,16 @@ naucoin
 
 1862
 
-vtkMRMLMeasurementsAngleNode.h
+vtkMeasurementsGUI.h
 file
 
 
 
 
 2010-10-25T02:20:31.254995Z
-f212fd17a5b010ec73ceaf596338c594
-2010-04-06T21:20:07.458366Z
-12669
+5a2c7f74d53943d5f85f0874b7ecc004
+2010-05-27T16:24:55.434383Z
+13516
 naucoin
 has-props
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-5309
+3601
 
 vtkMeasurementsConfigure.h.in
 file
@@ -468,40 +468,6 @@ naucoin
 
 7953
 
-vtkMeasurementsLogic.h
-file
-
-
-
-
-2010-10-25T02:20:31.254995Z
-724ca7e49a98ccd60a3da40abb9e1cad
-2010-04-02T23:09:21.729842Z
-12630
-naucoin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1311
-
 vtkMeasurementsRulerWidget.h
 file
 
@@ -535,6 +501,40 @@ naucoin
 
 
 8778
+
+vtkMeasurementsLogic.h
+file
+
+
+
+
+2010-10-25T02:20:31.254995Z
+724ca7e49a98ccd60a3da40abb9e1cad
+2010-04-02T23:09:21.729842Z
+12630
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1311
 
 vtkMeasurementsDistanceWidgetClass.cxx
 file

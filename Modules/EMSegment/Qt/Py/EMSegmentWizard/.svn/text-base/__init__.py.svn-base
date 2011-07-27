@@ -11,3 +11,4 @@ from EMSegmentDefinePreprocessingStep import *
 from EMSegmentSpecifyIntensityDistributionStep import *
 from EMSegmentEditNodeBasedParametersStep import *
 from EMSegmentDefineMiscParametersStep import *
+from EMSegmentStartSegmentationStep import *

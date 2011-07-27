@@ -30,7 +30,7 @@ class EMSegmentEditNodeBasedParametersStep( EMSegmentStep ) :
     self.__anatomicalTree.labelColumnVisible = False
     self.__anatomicalTree.probabilityMapColumnVisible = False
     self.__anatomicalTree.classWeightColumnVisible = True
-    self.__anatomicalTree.updateClassWeightColumnVisible = False
+    self.__anatomicalTree.updateClassWeightColumnVisible = True
     self.__anatomicalTree.atlasWeightColumnVisible = True
     self.__anatomicalTree.alphaColumnVisible = False
     self.__anatomicalTree.displayAlphaCheckBoxVisible = False

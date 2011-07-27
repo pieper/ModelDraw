@@ -173,7 +173,7 @@
     <string>
       <name>registrationPackage</name>
       <longflag>registrationPackage</longflag>
-      <description>specify the registration package for preprocessing (CMTK or BRAINS or PLASTIMATCH)</description>
+      <description>specify the registration package for preprocessing (CMTK or BRAINS or PLASTIMATCH or DEMONS)</description>
       <label>Registration Package</label>
     </string>
 

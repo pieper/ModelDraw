@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/Python/StochasticTractographyServerMP
 http://svn.slicer.org/Slicer3
 
@@ -94,40 +94,6 @@ jvs
 
 2360
 
-ModifyHeader.py
-file
-
-
-
-
-2010-10-25T02:20:31.644995Z
-1509534674c4bdfe6977cc92e6197a09
-2009-06-29T16:40:10.854699Z
-9817
-jvs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3515
-
 autoSlicerTracto2regions.py
 file
 
@@ -161,6 +127,40 @@ jvs
 
 
 2619
+
+ModifyHeader.py
+file
+
+
+
+
+2010-10-25T02:20:31.644995Z
+1509534674c4bdfe6977cc92e6197a09
+2009-06-29T16:40:10.854699Z
+9817
+jvs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3515
 
 TrackFiber4C.py
 file
@@ -196,40 +196,6 @@ jvs
 
 11950
 
-cmpV.py
-file
-
-
-
-
-2010-10-25T02:20:31.644995Z
-4e33d0c6bce405496a4c5a028c4ee987
-2009-06-29T16:40:10.854699Z
-9817
-jvs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6356
-
 nrrd.py
 file
 
@@ -263,6 +229,40 @@ jvs
 
 
 1190
+
+cmpV.py
+file
+
+
+
+
+2010-10-25T02:20:31.644995Z
+4e33d0c6bce405496a4c5a028c4ee987
+2009-06-29T16:40:10.854699Z
+9817
+jvs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6356
 
 autoTracto2regionsWithMask.py
 file
@@ -298,40 +298,6 @@ jvs
 
 2484
 
-StochasticTractoGraphyClusterSlicerDaemonFiles.py
-file
-
-
-
-
-2010-10-25T02:20:31.644995Z
-95cd5fd922f9ba5ca1aeffb3569c8591
-2009-08-01T16:11:46.479905Z
-10162
-jvs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-44598
-
 TensorEval2C.py
 file
 
@@ -365,6 +331,40 @@ jvs
 
 
 5804
+
+StochasticTractoGraphyClusterSlicerDaemonFiles.py
+file
+
+
+
+
+2010-10-25T02:20:31.644995Z
+95cd5fd922f9ba5ca1aeffb3569c8591
+2009-08-01T16:11:46.479905Z
+10162
+jvs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+44598
 
 autoSlicerTracto2regionsWithMask.py
 file

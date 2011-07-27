@@ -392,7 +392,7 @@ class AtlasCreatorLogic( object ):
                         if node.GetDeleteAlignedImages():
                             if alignedImages != originalImagesFilePathList:
                                 # do not delete the original images
-                                self.Helper().DeleteFilesAndDirectory( alignedImages )
+                                self.Helper().DeleteFilesAndDirectory( alignedImages, True )
 
                     # we register the original images against the meanImage
                     # we then set the alignedImages and start over..

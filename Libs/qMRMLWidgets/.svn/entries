@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Libs/qMRMLWidgets
 http://svn.slicer.org/Slicer3
 
@@ -573,40 +573,6 @@ jcfr
 
 645
 
-qMRMLWidgetsExport.h
-file
-
-
-
-
-2010-10-25T02:20:19.034995Z
-5853a9a51b87eea9e984797203ba8c85
-2010-01-29T16:26:02.733909Z
-11866
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-469
-
 qMRMLMatrixWidget.h
 file
 
@@ -640,6 +606,40 @@ has-props
 
 
 1433
+
+qMRMLWidgetsExport.h
+file
+
+
+
+
+2010-10-25T02:20:19.034995Z
+5853a9a51b87eea9e984797203ba8c85
+2010-01-29T16:26:02.733909Z
+11866
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+469
 
 qMRMLTransformProxyModel.cxx
 file
@@ -675,6 +675,9 @@ finetjul
 
 12513
 
+Resources
+dir
+
 qMRMLUtils.cxx
 file
 
@@ -708,9 +711,6 @@ has-props
 
 
 6851
-
-Resources
-dir
 
 qMRMLNodeFactory.h
 file
@@ -746,16 +746,16 @@ has-props
 
 1401
 
-qMRMLWindowLevelWidget.cxx
+qMRMLNodeComboBox.h
 file
 
 
 
 
 2010-10-25T02:20:19.034995Z
-fbe3167608ee8cf30d234db93c4487b2
-2010-03-25T15:58:54.468474Z
-12467
+6ca111014e10a6020951bcc3e5df38ce
+2010-03-26T19:28:10.573879Z
+12492
 finetjul
 
 
@@ -778,7 +778,7 @@ finetjul
 
 
 
-7289
+7155
 
 CMakeLists.txt
 file
@@ -814,16 +814,16 @@ has-props
 
 4831
 
-qMRMLNodeComboBox.h
+qMRMLWindowLevelWidget.cxx
 file
 
 
 
 
 2010-10-25T02:20:19.034995Z
-6ca111014e10a6020951bcc3e5df38ce
-2010-03-26T19:28:10.573879Z
-12492
+fbe3167608ee8cf30d234db93c4487b2
+2010-03-25T15:58:54.468474Z
+12467
 finetjul
 
 
@@ -846,7 +846,7 @@ finetjul
 
 
 
-7155
+7289
 
 qMRMLListWidget.h
 file

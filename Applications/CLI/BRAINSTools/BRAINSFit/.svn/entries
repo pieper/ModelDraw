@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/BRAINSTools/BRAINSFit
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ hjohnson
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-BRAINSFit.cxx
-file
-
-
-
-
-2011-03-18T10:23:46.023432Z
-207a59c03613f60b5c6cb797de8872a2
-2011-03-16T19:35:43.573720Z
-16205
-mscully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1052
 
 CMakeCPackOptions.cmake.in
 file
@@ -94,6 +60,40 @@ hjohnson
 
 2083
 
+BRAINSFit.cxx
+file
+
+
+
+
+2011-03-18T10:23:46.023432Z
+207a59c03613f60b5c6cb797de8872a2
+2011-03-16T19:35:43.573720Z
+16205
+mscully
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1052
+
 BRAINSFitPrimary.xml
 file
 
@@ -127,74 +127,6 @@ mscully
 
 
 27317
-
-BRAINSFit.s3ext
-file
-
-
-
-
-2010-10-25T02:19:41.944995Z
-6b5785924d1f1297359e1f41a1c88de8
-2010-04-26T03:13:11.206239Z
-12920
-hjohnson
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1065
-
-BRAINSFitPrimary.cxx
-file
-
-
-
-
-2011-03-23T12:44:23.430326Z
-a9e675ecf4aaae7cc55417c1d6f768e9
-2011-03-20T15:24:39.978043Z
-16224
-hjohnson
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-30827
 
 Copyright.txt
 file
@@ -230,6 +162,74 @@ hjohnson
 
 33
 
+BRAINSFitPrimary.cxx
+file
+
+
+
+
+2011-03-23T12:44:23.430326Z
+a9e675ecf4aaae7cc55417c1d6f768e9
+2011-03-20T15:24:39.978043Z
+16224
+hjohnson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30827
+
+BRAINSFit.s3ext
+file
+
+
+
+
+2010-10-25T02:19:41.944995Z
+6b5785924d1f1297359e1f41a1c88de8
+2010-04-26T03:13:11.206239Z
+12920
+hjohnson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1065
+
 CTestConfig.cmake
 file
 
@@ -264,6 +264,9 @@ hjohnson
 
 572
 
+TestSuite
+dir
+
 BRAINSFitCommonLibLauncher.c.in
 file
 
@@ -297,9 +300,6 @@ hjohnson
 
 
 1114
-
-TestSuite
-dir
 
 CTestCustom.ctest
 file
@@ -403,40 +403,6 @@ has-props
 
 620
 
-BRAINSFitPrimary.h
-file
-
-
-
-
-2011-03-18T10:23:46.023432Z
-7e40069c0d0ba61d468ded4ddefc3c59
-2011-03-16T19:35:43.573720Z
-16205
-mscully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-421
-
 ReadMe.txt
 file
 
@@ -470,6 +436,40 @@ hjohnson
 
 
 217
+
+BRAINSFitPrimary.h
+file
+
+
+
+
+2011-03-18T10:23:46.023432Z
+7e40069c0d0ba61d468ded4ddefc3c59
+2011-03-16T19:35:43.573720Z
+16205
+mscully
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+421
 
 BRAINSFitCommonLib.h.in
 file

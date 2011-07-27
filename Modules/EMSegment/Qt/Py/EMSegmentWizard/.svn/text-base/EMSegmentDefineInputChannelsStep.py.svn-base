@@ -110,9 +110,6 @@ class EMSegmentDefineInputChannelsStep( EMSegmentStep ) :
 
       self.__inputChannelList.updateWidgetFromMRML()
 
-      if self.__inputChannelList.inputChannelCount() == 0:
-        self.__inputChannelList.addInputChannel()
-
       self.__alignInputScansCheckBox.setChecked( self.mrmlManager().GetEnableTargetToTargetRegistration() )
 
       self.__updating = 0
@@ -141,9 +138,10 @@ class EMSegmentDefineInputChannelsStep( EMSegmentStep ) :
   def onExit( self, goingTo, transitionType ):
     '''
     '''
+    self.propagateToMRML()
+
     self.__parent.onExit( goingTo, transitionType )
 
-    self.propagateToMRML()
 
 
   def validate( self, desiredBranchId ):
@@ -154,20 +152,30 @@ class EMSegmentDefineInputChannelsStep( EMSegmentStep ) :
     # we need at least one input channel
     if self.__inputChannelList.inputChannelCount() == 0:
       self.__parent.validationFailed( desiredBranchId, 'Input Channel Error', 'Please add at least one input channel!' )
+      return
 
     # we need an assigned volume for each channel
     for c in range( self.__inputChannelList.inputChannelCount() ):
       if not self.__inputChannelList.inputChannelVolume( c ):
         self.__parent.validationFailed( desiredBranchId, 'Input Channel Error', 'Please assign a volume to each input channel!' )
+        return
 
-    # TODO number of input channels changed
-    # this->GetNumberOfInputChannels() != mrmlManager->GetGlobalParametersNode()->GetNumberOfTargetInputChannels()
+    # check if all channels have different volumes assigned
+    if self.__inputChannelList.identicalInputVolumes():
+      self.__parent.validationFailed( desiredBranchId, 'Input Channel Error', 'Please assign different volumes to individual input channel!' )
+      return
 
-    # TODO check if all channels have different volumes assigned
+    # number of input channels changed
+    if self.__inputChannelList.inputChannelCount() != self.mrmlManager().GetGlobalParametersNode().GetNumberOfTargetInputChannels():
+      answer = qt.QMessageBox.question( self, "Change the number of input channels?", "Are you sure you want to change the number of input images?", qt.QMessageBox.Yes | qt.QMessageBox.No )
+      if answer == qt.QMessageBox.No:
+        self.__parent.validationFailed( desiredBranchId, '', '', False )
+        return
 
-    # TODO check on bad names for the channels
-
-
+    # check if all channels have different names
+    if self.__inputChannelList.identicalInputChannelNames():
+      self.__parent.validationFailed( desiredBranchId, 'Input Channel Error', 'Please assign different names to individual input channel!' )
+      return
 
     self.__parent.validationSucceeded( desiredBranchId )
 

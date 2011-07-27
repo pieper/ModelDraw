@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/Meshing/BuildingBlock
 http://svn.slicer.org/Slicer3
 
@@ -638,40 +638,6 @@ jcfr
 
 16386
 
-vtkKWMimxCreateFEMeshFromBBGroup.h
-file
-
-
-
-
-2010-10-25T02:20:34.304995Z
-15fda57de520986eb56d1470191fb08d
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7571
-
 vtkKWMimxLoadBBGroup.h
 file
 
@@ -705,6 +671,40 @@ clisle
 
 
 1898
+
+vtkKWMimxCreateFEMeshFromBBGroup.h
+file
+
+
+
+
+2010-10-25T02:20:34.304995Z
+15fda57de520986eb56d1470191fb08d
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7571
 
 vtkKWMimxCreateSurfaceFromContourGroup.cxx
 file
@@ -774,40 +774,6 @@ clisle
 
 1983
 
-vtkKWMimxApplicationSettingsInterface.h
-file
-
-
-
-
-2010-10-25T02:20:34.304995Z
-f29b613cf7bb044fe0b1f63114a3bfdd
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3719
-
 vtkKWMimxImageViewProperties.cxx
 file
 
@@ -842,14 +808,14 @@ jcfr
 
 7323
 
-vtkKWMimxDeleteObjectGroup.h
+vtkKWMimxApplicationSettingsInterface.h
 file
 
 
 
 
 2010-10-25T02:20:34.304995Z
-f276bdd10dfb3f2f148219afe3bfc009
+f29b613cf7bb044fe0b1f63114a3bfdd
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -874,7 +840,7 @@ clisle
 
 
 
-2512
+3719
 
 vtkKWMimxCreateFEMeshFromSurfaceExtractionGroup.h
 file
@@ -909,6 +875,40 @@ clisle
 
 
 2924
+
+vtkKWMimxDeleteObjectGroup.h
+file
+
+
+
+
+2010-10-25T02:20:34.304995Z
+f276bdd10dfb3f2f148219afe3bfc009
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2512
 
 vtkSlicerTheme.h
 file
@@ -1012,40 +1012,6 @@ jcfr
 
 42841
 
-vtkKWMimxMergeBBGroup.h
-file
-
-
-
-
-2010-10-25T02:20:34.304995Z
-8f74a8e46610efe6c6884657561c3cde
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2618
-
 vtkKWMimxLoadSurfaceGroup.cxx
 file
 
@@ -1079,6 +1045,40 @@ clisle
 
 
 7237
+
+vtkKWMimxMergeBBGroup.h
+file
+
+
+
+
+2010-10-25T02:20:34.304995Z
+8f74a8e46610efe6c6884657561c3cde
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2618
 
 vtkBuildingBlockConfigure.h.in
 file
@@ -2137,40 +2137,6 @@ clisle
 
 2808
 
-vtkKWMimxDisplayPropertiesGroup.cxx
-file
-
-
-
-
-2010-10-25T02:20:34.314995Z
-d27d2cb04164771b928c86f1c99f6a28
-2009-10-29T22:36:10.772871Z
-10795
-barre
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-26753
-
 vtkKWMimxAssignBoundaryConditionsGroup.cxx
 file
 
@@ -2204,6 +2170,40 @@ jcfr
 
 
 160487
+
+vtkKWMimxDisplayPropertiesGroup.cxx
+file
+
+
+
+
+2010-10-25T02:20:34.314995Z
+d27d2cb04164771b928c86f1c99f6a28
+2009-10-29T22:36:10.772871Z
+10795
+barre
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26753
 
 vtkKWMimxViewWindow.cxx
 file
@@ -2375,40 +2375,6 @@ jcfr
 
 11902
 
-vtkKWMimxSurfaceMenuGroup.h
-file
-
-
-
-
-2010-10-25T02:20:34.314995Z
-b7baa6ddf5b9bfdd252339838fd69db1
-2010-07-17T17:28:55.068785Z
-14208
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2580
-
 vtkKWMimxCreateFEMeshNodeSetGroup.h
 file
 
@@ -2442,6 +2408,40 @@ clisle
 
 
 2760
+
+vtkKWMimxSurfaceMenuGroup.h
+file
+
+
+
+
+2010-10-25T02:20:34.314995Z
+b7baa6ddf5b9bfdd252339838fd69db1
+2010-07-17T17:28:55.068785Z
+14208
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2580
 
 IaFeMeshR21.cxx
 file
@@ -2477,40 +2477,6 @@ clisle
 
 4326
 
-vtkKWMimxEditBBGroup.h
-file
-
-
-
-
-2010-10-25T02:20:34.314995Z
-2ad11336510bf565ece183a62fb31b54
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10440
-
 vtkKWMimxObjectMenu.cxx
 file
 
@@ -2545,17 +2511,17 @@ clisle
 
 2736
 
-vtkKWMimxCreateFEMeshElementSetGroup.cxx
+vtkKWMimxEditBBGroup.h
 file
 
 
 
 
 2010-10-25T02:20:34.314995Z
-86207527ff3fbe9a0679eec45d23c431
-2010-01-28T09:09:23.779443Z
-11823
-jcfr
+2ad11336510bf565ece183a62fb31b54
+2008-12-05T16:56:04.859882Z
+8059
+clisle
 
 
 
@@ -2577,7 +2543,7 @@ jcfr
 
 
 
-24446
+10440
 
 vtkKWMimxEvaluateMeshQualityGroup.h
 file
@@ -2613,6 +2579,40 @@ clisle
 
 5691
 
+vtkKWMimxCreateFEMeshElementSetGroup.cxx
+file
+
+
+
+
+2010-10-25T02:20:34.314995Z
+86207527ff3fbe9a0679eec45d23c431
+2010-01-28T09:09:23.779443Z
+11823
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24446
+
 vtkKWMimxMaterialPropertyMenuGroup.cxx
 file
 
@@ -2647,40 +2647,6 @@ clisle
 
 13084
 
-vtkKWMimxDeleteObjectGroup.cxx
-file
-
-
-
-
-2010-10-25T02:20:34.314995Z
-be0ebae53e2c32a96a70eeb72567611b
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18032
-
 vtkKWMimxCreateFEMeshFromSurfaceExtractionGroup.cxx
 file
 
@@ -2714,6 +2680,40 @@ lorensen
 
 
 11754
+
+vtkKWMimxDeleteObjectGroup.cxx
+file
+
+
+
+
+2010-10-25T02:20:34.314995Z
+be0ebae53e2c32a96a70eeb72567611b
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18032
 
 vtkKWMimxSaveSTLSurfaceGroup.cxx
 file
@@ -2953,40 +2953,6 @@ has-props
 
 1406
 
-vtkFaceHedgeHog.cxx
-file
-
-
-
-
-2010-10-25T02:20:34.314995Z
-681e3930a629ffa912f9043f7effbee1
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5690
-
 vtkKWMimxMenuWindow.cxx
 file
 
@@ -3021,14 +2987,14 @@ clisle
 
 4357
 
-vtkKWMimxCreateExtrudeFEMeshGroup.h
+vtkFaceHedgeHog.cxx
 file
 
 
 
 
 2010-10-25T02:20:34.314995Z
-df0ebe995fb46c43862408a250aa5180
+681e3930a629ffa912f9043f7effbee1
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -3053,7 +3019,7 @@ clisle
 
 
 
-3587
+5690
 
 vtkKWMimxFEMeshMenuGroup.h
 file
@@ -3089,51 +3055,17 @@ clisle
 
 3838
 
-vtkKWMimxApplication.cxx
-file
-
-
-
-
-2010-10-25T02:20:34.324995Z
-52960a4ac945b85d46fe05c1eb51c5dd
-2009-04-30T17:22:32.693808Z
-9368
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14147
-
-vtkKWMimxConstMatPropElSetGroup.cxx
+vtkKWMimxCreateExtrudeFEMeshGroup.h
 file
 
 
 
 
 2010-10-25T02:20:34.314995Z
-e883bae710d3aa970800bcbad94a68dd
-2009-01-14T21:54:23.477286Z
-8390
-lorensen
+df0ebe995fb46c43862408a250aa5180
+2008-12-05T16:56:04.859882Z
+8059
+clisle
 
 
 
@@ -3155,7 +3087,7 @@ lorensen
 
 
 
-20959
+3587
 
 vtkKWMimxEditNodeElementNumbersGroup.h
 file
@@ -3191,17 +3123,51 @@ clisle
 
 3124
 
-vtkKWMimxBoundaryConditionsMenuGroup.h
+vtkKWMimxConstMatPropElSetGroup.cxx
+file
+
+
+
+
+2010-10-25T02:20:34.314995Z
+e883bae710d3aa970800bcbad94a68dd
+2009-01-14T21:54:23.477286Z
+8390
+lorensen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20959
+
+vtkKWMimxApplication.cxx
 file
 
 
 
 
 2010-10-25T02:20:34.324995Z
-21f30d419ea18710c3c9e3617a98f305
-2008-12-05T16:56:04.859882Z
-8059
-clisle
+52960a4ac945b85d46fe05c1eb51c5dd
+2009-04-30T17:22:32.693808Z
+9368
+pieper
 
 
 
@@ -3223,7 +3189,7 @@ clisle
 
 
 
-3272
+14147
 
 vtkKWMimxSaveVTKBBGroup.cxx
 file
@@ -3258,6 +3224,40 @@ clisle
 
 
 11189
+
+vtkKWMimxBoundaryConditionsMenuGroup.h
+file
+
+
+
+
+2010-10-25T02:20:34.324995Z
+21f30d419ea18710c3c9e3617a98f305
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3272
 
 vtkSlicerIcons.h
 file
@@ -3361,40 +3361,6 @@ clisle
 
 50524
 
-vtkKWMimxDisplayMatPropGroup.h
-file
-
-
-
-
-2010-10-25T02:20:34.324995Z
-d01a5afc64888a991504c83324b9c193
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4201
-
 vtkKWMimxMainNotebook.h
 file
 
@@ -3428,6 +3394,40 @@ clisle
 
 
 3832
+
+vtkKWMimxDisplayMatPropGroup.h
+file
+
+
+
+
+2010-10-25T02:20:34.324995Z
+d01a5afc64888a991504c83324b9c193
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4201
 
 vtkKWMimxImageViewProperties.h
 file
@@ -3463,40 +3463,6 @@ clisle
 
 2860
 
-vtkFaceHedgeHog.h
-file
-
-
-
-
-2010-10-25T02:20:34.324995Z
-a45efbb5c037b48fd388755975b0b337
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2458
-
 vtkKWMimxMenuWindow.h
 file
 
@@ -3531,48 +3497,14 @@ clisle
 
 1871
 
-vtkKWMimxEditBBMeshSeedGroup.cxx
+vtkFaceHedgeHog.h
 file
 
 
 
 
 2010-10-25T02:20:34.324995Z
-a03e9598be59cf05976cacdb67d2d181
-2009-03-01T18:45:50.601533Z
-8793
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-31836
-
-vtkKWMimxDisplayPropertiesGroup.h
-file
-
-
-
-
-2010-10-25T02:20:34.324995Z
-7b867dcc83673ef733d22ae36ed22262
+a45efbb5c037b48fd388755975b0b337
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -3597,7 +3529,7 @@ clisle
 
 
 
-4133
+2458
 
 vtkKWMimxAssignBoundaryConditionsGroup.h
 file
@@ -3633,6 +3565,74 @@ clisle
 
 13752
 
+vtkKWMimxDisplayPropertiesGroup.h
+file
+
+
+
+
+2010-10-25T02:20:34.324995Z
+7b867dcc83673ef733d22ae36ed22262
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4133
+
+vtkKWMimxEditBBMeshSeedGroup.cxx
+file
+
+
+
+
+2010-10-25T02:20:34.324995Z
+a03e9598be59cf05976cacdb67d2d181
+2009-03-01T18:45:50.601533Z
+8793
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31836
+
 vtkKWMimxViewProperties.cxx
 file
 
@@ -3667,40 +3667,6 @@ jcfr
 
 19584
 
-vtkKWMimxEditFEMeshLaplacianSmoothGroup.cxx
-file
-
-
-
-
-2010-10-25T02:20:34.324995Z
-4323eae641cf100ca267adca1d491b23
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-22143
-
 vtkKWMimxSaveVTKBBGroup.h
 file
 
@@ -3734,6 +3700,40 @@ clisle
 
 
 2202
+
+vtkKWMimxEditFEMeshLaplacianSmoothGroup.cxx
+file
+
+
+
+
+2010-10-25T02:20:34.324995Z
+4323eae641cf100ca267adca1d491b23
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22143
 
 vtkKWMimxImportImageGroup.cxx
 file
@@ -4007,14 +4007,14 @@ clisle
 
 2962
 
-vtkKWMimxEditBBMeshSeedGroup.h
+vtkKWMimxFEMeshMenuGroup.cxx
 file
 
 
 
 
 2010-10-25T02:20:34.324995Z
-08af1b3190c61265a4e094077f377fd1
+7e0b8968f7a8d6747f0206296a5233d2
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -4039,7 +4039,7 @@ clisle
 
 
 
-4824
+15944
 
 vtkKWMimxCreateExtrudeFEMeshGroup.cxx
 file
@@ -4075,14 +4075,14 @@ jcfr
 
 33811
 
-vtkKWMimxFEMeshMenuGroup.cxx
+vtkKWMimxEditBBMeshSeedGroup.h
 file
 
 
 
 
 2010-10-25T02:20:34.324995Z
-7e0b8968f7a8d6747f0206296a5233d2
+08af1b3190c61265a4e094077f377fd1
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -4107,7 +4107,7 @@ clisle
 
 
 
-15944
+4824
 
 vtkKWMimxMergeMeshGroup.h
 file
@@ -4245,40 +4245,6 @@ has-props
 
 4286
 
-vtkKWMimxDisplayMatPropGroup.cxx
-file
-
-
-
-
-2010-10-25T02:20:34.324995Z
-a9acf242263f50af310673f395835189
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-27470
-
 vtkKWMimxMainNotebook.cxx
 file
 
@@ -4312,6 +4278,40 @@ clisle
 
 
 20723
+
+vtkKWMimxDisplayMatPropGroup.cxx
+file
+
+
+
+
+2010-10-25T02:20:34.324995Z
+a9acf242263f50af310673f395835189
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27470
 
 vtkKWMimxDefineElSetGroup.h
 file

@@ -282,6 +282,10 @@ int main(int argc, char** argv)
           {
             emMRMLManager->SetRegistrationPackageType(2); // PLASTIMATCH
           }
+        else if (registrationPackage == "DEMONS")
+          { 
+            emMRMLManager->SetRegistrationPackageType(3); // DEMONS
+          }
         else
           {
             throw std::runtime_error("ERROR: registration package not known.");

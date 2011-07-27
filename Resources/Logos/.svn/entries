@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Resources/Logos
 http://svn.slicer.org/Slicer3
 
@@ -672,16 +672,16 @@ has-props
 
 604
 
-NCIGT.png
+Slicer3.png
 file
 
 
 
 
 2010-10-25T02:21:28.944995Z
-9a2a9cd76b11768d2595823458e2cf7c
-2009-11-25T20:56:03.828149Z
-11051
+fe348cd176295884f39b95996baf371a
+2009-12-06T22:57:22.464663Z
+11177
 jcfr
 has-props
 
@@ -704,7 +704,7 @@ has-props
 
 
 
-3755
+11312
 
 NCRR.png
 file
@@ -740,16 +740,16 @@ has-props
 
 6420
 
-Slicer3.png
+NCIGT.png
 file
 
 
 
 
 2010-10-25T02:21:28.944995Z
-fe348cd176295884f39b95996baf371a
-2009-12-06T22:57:22.464663Z
-11177
+9a2a9cd76b11768d2595823458e2cf7c
+2009-11-25T20:56:03.828149Z
+11051
 jcfr
 has-props
 
@@ -772,7 +772,7 @@ has-props
 
 
 
-11312
+3755
 
 CIMIT.png
 file
@@ -944,40 +944,6 @@ has-props
 
 4826
 
-NIH.png
-file
-
-
-
-
-2010-10-25T02:21:28.954995Z
-7cc92d36cfad1dbb616cd3a2ea33927f
-2009-11-25T20:56:03.828149Z
-11051
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13762
-
 SCI.png
 file
 
@@ -1011,6 +977,40 @@ has-props
 
 
 3171
+
+NIH.png
+file
+
+
+
+
+2010-10-25T02:21:28.954995Z
+7cc92d36cfad1dbb616cd3a2ea33927f
+2009-11-25T20:56:03.828149Z
+11051
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13762
 
 CISST.png
 file

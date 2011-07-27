@@ -1,5 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/Slicer3/!svn/ver/16754/trunk/Modules/EMSegment/Qt/Py
+/Slicer3/!svn/ver/16766/trunk/Modules/EMSegment/Qt/Py
+END
+EMSegmentPy.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/Slicer3/!svn/ver/16762/trunk/Modules/EMSegment/Qt/Py/EMSegmentPy.py
 END

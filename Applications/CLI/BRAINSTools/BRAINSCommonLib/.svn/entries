@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/BRAINSTools/BRAINSCommonLib
 http://svn.slicer.org/Slicer3
 
@@ -60,40 +60,6 @@ mscully
 
 342
 
-itkFindCenterOfBrainFilter.txx
-file
-
-
-
-
-2010-10-25T02:20:17.854995Z
-a900787d4a38bda3d683968118813b80
-2010-07-29T21:10:42.792192Z
-14393
-hjohnson
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16290
-
 iplProg_Common.vpj
 file
 
@@ -127,6 +93,40 @@ hjohnson
 
 
 4478
+
+itkFindCenterOfBrainFilter.txx
+file
+
+
+
+
+2010-10-25T02:20:17.854995Z
+a900787d4a38bda3d683968118813b80
+2010-07-29T21:10:42.792192Z
+14393
+hjohnson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16290
 
 itkBRAINSROIAutoImageFilter.txx
 file
@@ -1015,16 +1015,16 @@ hjohnson
 
 95
 
-CreateField.txx
+itkLogDomainDeformableRegistrationFilter.h
 file
 
 
 
 
-2010-11-02T16:26:36.651960Z
-b573f92878a2b61f9e1ebba4e27b574b
-2010-11-01T22:02:49.293385Z
-15396
+2010-10-25T02:20:17.864995Z
+67fb0ec610a114f5dba34348b59f0e46
+2010-07-29T21:10:42.792192Z
+14393
 hjohnson
 
 
@@ -1047,7 +1047,7 @@ hjohnson
 
 
 
-9943
+12899
 
 CrossOverAffineSystem.h
 file
@@ -1083,16 +1083,16 @@ hjohnson
 
 5420
 
-itkLogDomainDeformableRegistrationFilter.h
+CreateField.txx
 file
 
 
 
 
-2010-10-25T02:20:17.864995Z
-67fb0ec610a114f5dba34348b59f0e46
-2010-07-29T21:10:42.792192Z
-14393
+2010-11-02T16:26:36.651960Z
+b573f92878a2b61f9e1ebba4e27b574b
+2010-11-01T22:02:49.293385Z
+15396
 hjohnson
 
 
@@ -1115,41 +1115,7 @@ hjohnson
 
 
 
-12899
-
-itkComputeHistogramQuantileThresholds.h
-file
-
-
-
-
-2010-10-25T02:20:17.864995Z
-1090534a0b48f5cc5adfefe586056b17
-2010-07-29T21:10:42.792192Z
-14393
-hjohnson
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3119
+9943
 
 itkLargestForegroundFilledMaskImageFilter.txx
 file
@@ -1184,6 +1150,40 @@ hjohnson
 
 
 15017
+
+itkComputeHistogramQuantileThresholds.h
+file
+
+
+
+
+2010-10-25T02:20:17.864995Z
+1090534a0b48f5cc5adfefe586056b17
+2010-07-29T21:10:42.792192Z
+14393
+hjohnson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3119
 
 CreateField.h
 file
@@ -1389,40 +1389,6 @@ hjohnson
 
 4190
 
-itkBOBFFilter.txx
-file
-
-
-
-
-2010-10-25T02:20:17.864995Z
-97b0eb1d6d5439ef59e4d43cc8be6966
-2010-07-29T21:10:42.792192Z
-14393
-hjohnson
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2791
-
 SimpleXMLParserBase.h
 file
 
@@ -1457,18 +1423,17 @@ hjohnson
 
 3801
 
-BRAINSCommonLib.h.in
+itkBOBFFilter.txx
 file
 
 
 
 
 2010-10-25T02:20:17.864995Z
-2d388c2eca1c8c1d5f3498f3263a8639
-2010-04-26T18:52:18.434583Z
-12936
-pieper
-has-props
+97b0eb1d6d5439ef59e4d43cc8be6966
+2010-07-29T21:10:42.792192Z
+14393
+hjohnson
 
 
 
@@ -1489,7 +1454,42 @@ has-props
 
 
 
-331
+
+2791
+
+itkScalarImagePortionToHistogramGenerator.h
+file
+
+
+
+
+2010-11-02T16:26:36.651960Z
+b6acf29da785861d4ae44b2b50ebdd51
+2010-11-01T22:02:49.293385Z
+15396
+hjohnson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4272
 
 itkOppositeImageFilter.h
 file
@@ -1525,17 +1525,18 @@ hjohnson
 
 3331
 
-itkScalarImagePortionToHistogramGenerator.h
+BRAINSCommonLib.h.in
 file
 
 
 
 
-2010-11-02T16:26:36.651960Z
-b6acf29da785861d4ae44b2b50ebdd51
-2010-11-01T22:02:49.293385Z
-15396
-hjohnson
+2010-10-25T02:20:17.864995Z
+2d388c2eca1c8c1d5f3498f3263a8639
+2010-04-26T18:52:18.434583Z
+12936
+pieper
+has-props
 
 
 
@@ -1556,8 +1557,7 @@ hjohnson
 
 
 
-
-4272
+331
 
 TransformAdaptor.h
 file
@@ -1661,40 +1661,6 @@ hjohnson
 
 4572
 
-itkBRAINSROIAutoImageFilter.h
-file
-
-
-
-
-2011-03-14T15:54:25.265182Z
-fecd4ffa37a0bd74e265290eb4109735
-2011-03-11T21:01:00.482657Z
-16177
-hjohnson
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6126
-
 BRAINSCommonLibConfig.cmake.in
 file
 
@@ -1728,6 +1694,40 @@ has-props
 
 
 353
+
+itkBRAINSROIAutoImageFilter.h
+file
+
+
+
+
+2011-03-14T15:54:25.265182Z
+fecd4ffa37a0bd74e265290eb4109735
+2011-03-11T21:01:00.482657Z
+16177
+hjohnson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6126
 
 GenericTransformImage.txx
 file
@@ -1967,40 +1967,6 @@ pieper
 
 3743
 
-itkLogDomainDemonsRegistrationFilter.h
-file
-
-
-
-
-2010-10-25T02:20:17.864995Z
-0e55bd75d1e02203f29d2c05c970c4ff
-2010-07-29T21:10:42.792192Z
-14393
-hjohnson
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7191
-
 DemonsPreprocessor.txx
 file
 
@@ -2034,6 +2000,40 @@ hjohnson
 
 
 8366
+
+itkLogDomainDemonsRegistrationFilter.h
+file
+
+
+
+
+2010-10-25T02:20:17.864995Z
+0e55bd75d1e02203f29d2c05c970c4ff
+2010-07-29T21:10:42.792192Z
+14393
+hjohnson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7191
 
 itkInverseConsistentLandmarks.h
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Libs
 http://svn.slicer.org/Slicer3
 
@@ -26,22 +26,22 @@ naucoin
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-vtkTeem
+MRMLIDImageIO
 dir
 
 qMRMLWidgets
 dir
 
-MRMLIDImageIO
+vtkTeem
 dir
 
-GenerateLM
+RemoteIO
 dir
 
 IGT
 dir
 
-RemoteIO
+GenerateLM
 dir
 
 SlicerExecutionModel
@@ -65,10 +65,10 @@ dir
 FreeSurfer
 dir
 
-LoadableModule
+SlicerIO
 dir
 
-SlicerIO
+LoadableModule
 dir
 
 CudaSupport

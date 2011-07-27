@@ -66,10 +66,11 @@ class EMSegmentStep( ctk.ctkWorkflowWidgetStep ) :
     '''
     super( EMSegmentStep, self ).validate( True, desiredBranchId )
 
-  def validationFailed( self, desiredBranchId, messageTitle='Error', messageText='There was an unknown error. See the console output for more details!' ):
+  def validationFailed( self, desiredBranchId, messageTitle='Error', messageText='There was an unknown error. See the console output for more details!', showMessageBox=True ):
     '''
     '''
-    messageBox = qt.QMessageBox.warning( self, messageTitle, messageText )
+    if showMessageBox:
+      messageBox = qt.QMessageBox.warning( self, messageTitle, messageText )
     super( EMSegmentStep, self ).validate( False, desiredBranchId )
 
 

@@ -1,14 +1,14 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/KWWidgets
 http://svn.slicer.org/Slicer3
 
 
 
-2011-07-09T04:00:27.000345Z
-16734
+2011-07-25T20:32:25.123523Z
+16765
 domibel
 
 
@@ -162,74 +162,6 @@ pohl
 
 10355
 
-vtkEMSegmentIntensityDistributionsStep.h
-file
-
-
-
-
-2011-04-05T16:47:18.090957Z
-65b6e30ab9c128699df506707607d031
-2011-02-07T04:59:11.623701Z
-15961
-pohl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2888
-
-vtkEMSegmentRegistrationParametersStep.cxx
-file
-
-
-
-
-2011-07-11T19:13:54.992171Z
-51276e5f0943708bb6cd2fac1f19837f
-2011-07-09T04:00:27.000345Z
-16734
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-21031
-
 vtkEMSegmentNodeParametersStep.h
 file
 
@@ -263,6 +195,74 @@ pohl
 
 
 6448
+
+vtkEMSegmentRegistrationParametersStep.cxx
+file
+
+
+
+
+2011-07-27T12:38:19.156079Z
+b44c9bb56a764fab3ee005c8adcd3e54
+2011-07-25T20:32:25.123523Z
+16765
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+21263
+
+vtkEMSegmentIntensityDistributionsStep.h
+file
+
+
+
+
+2011-04-05T16:47:18.090957Z
+65b6e30ab9c128699df506707607d031
+2011-02-07T04:59:11.623701Z
+15961
+pohl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2888
 
 vtkEMSegmentInputChannelsStep.h
 file
@@ -332,40 +332,6 @@ pohl
 
 1447
 
-vtkEMSegmentStep.h
-file
-
-
-
-
-2011-04-05T16:47:18.090957Z
-5558a36160c4bbf1bf0e124e18877ccc
-2011-04-02T18:11:19.954888Z
-16296
-pohl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1786
-
 vtkEMSegmentParametersSetStep.h
 file
 
@@ -399,6 +365,40 @@ pohl
 
 
 3133
+
+vtkEMSegmentStep.h
+file
+
+
+
+
+2011-04-05T16:47:18.090957Z
+5558a36160c4bbf1bf0e124e18877ccc
+2011-04-02T18:11:19.954888Z
+16296
+pohl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1786
 
 vtkEMSegmentKWDynamicFrame.cxx
 file
@@ -885,10 +885,10 @@ file
 
 
 
-2011-07-11T19:13:54.992171Z
-f6d895dcff23494f0474006303787b99
-2011-07-09T04:00:27.000345Z
-16734
+2011-07-27T12:38:19.156079Z
+87013f843c8669c2c63ee2502fd29bd6
+2011-07-25T20:32:25.123523Z
+16765
 domibel
 
 
@@ -911,7 +911,7 @@ domibel
 
 
 
-8836
+9552
 
 vtkEMSegmentRegistrationParametersStep.h
 file

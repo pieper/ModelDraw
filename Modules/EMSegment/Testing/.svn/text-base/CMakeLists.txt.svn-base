@@ -131,7 +131,6 @@ if(NOT DISABLE_CXX_TESTING)
     ${TEST_LINK_LIBRARIES}
     )
 
-if(NOT EM_Slicer4_FOUND)
   add_executable(
     vtkEMSegmentBlackBoxSegmentationTest
     vtkEMSegmentBlackBoxSegmentationTest.cxx
@@ -141,7 +140,6 @@ if(NOT EM_Slicer4_FOUND)
     vtkEMSegmentBlackBoxSegmentationTest
     ${TEST_LINK_LIBRARIES}
     )
-endif(NOT EM_Slicer4_FOUND)
 
   add_executable(
     vtkEMSegmentCompareTest
@@ -648,7 +646,13 @@ endif(NOT EM_Slicer4_FOUND)
     set(test_exe         "${Slicer3_EXE}")
     set(test_file_prefix "${EMSegment_TEST_DIR}/${test_name}_tmp")
     set(test_cmp_file    "${test_file_prefix}.mrml")
+
+if(EM_Slicer4_FOUND)
+    set(test_std_file    "${EMSegment_TUTORIAL_DIR}/Template_Slicer4_small_normalizationOn_noImages.mrml")
+else(EM_Slicer4_FOUND)
     set(test_std_file    "${EMSegment_TUTORIAL_DIR}/Template_small_normalizationOn_noImages.mrml")
+endif(EM_Slicer4_FOUND)
+
     if(${EMSEG_REMOVE_TMP_TEST_DATA})
       set(test_rm_files    ${test_file_prefix}.mrml)
     else(${EMSEG_REMOVE_TMP_TEST_DATA})
@@ -688,7 +692,7 @@ endif(NOT EM_Slicer4_FOUND)
 
 
   if (EMSEG_RUN_LOCAL_TESTS)
-    set (registrationpackages CMTK BRAINS PLASTIMATCH)
+    set (registrationpackages CMTK BRAINS PLASTIMATCH DEMONS)
     set (scalartypes float char double int short uchar uint ushort)
     set (sizes small very_small)
   else (EMSEG_RUN_LOCAL_TESTS)
@@ -981,7 +985,7 @@ endif(NOT EM_Slicer4_FOUND)
       --resultVolumeFileName
       ${EMSegment_BINARY_DIR}/RESULT_${size}_TestAtlasCluster.nrrd
       --taskPreProcessingSetting
-      :C1:C0:E../Slicer3/Modules/AtlasCreator/TestData/originals/:E../Slicer3/Modules/AtlasCreator/TestData/segmentations/:E${EMSegment_BINARY_DIR}/ACEMS
+      :C1:C0:Eshare/Slicer3/Modules/AtlasCreator/TestData/originals/:Eshare/Slicer3/Modules/AtlasCreator/TestData/segmentations/:E${EMSegment_BINARY_DIR}/ACEMS
       )
     set_tests_properties(
       EMSegCL_Task_TestAtlasCluster_${registrationpackage}_${size}

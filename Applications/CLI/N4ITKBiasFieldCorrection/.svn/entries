@@ -1,15 +1,15 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/N4ITKBiasFieldCorrection
 http://svn.slicer.org/Slicer3
 
 
 
-2011-05-02T23:33:22.841503Z
-16546
-hjohnson
+2011-07-25T18:58:41.884930Z
+16763
+domibel
 
 
 
@@ -72,11 +72,11 @@ file
 
 
 
-2011-05-04T11:42:13.402731Z
-21165521e6f8a325675086d73008d85b
-2011-05-02T23:33:22.841503Z
-16546
-hjohnson
+2011-07-27T12:38:19.026079Z
+09ebf5f0aec06c67ba881a01d2c81bba
+2011-07-25T18:58:41.884930Z
+16763
+domibel
 
 
 
@@ -98,7 +98,7 @@ hjohnson
 
 
 
-14976
+14977
 
 itkN4MRIBiasFieldCorrectionImageFilter.txx
 file

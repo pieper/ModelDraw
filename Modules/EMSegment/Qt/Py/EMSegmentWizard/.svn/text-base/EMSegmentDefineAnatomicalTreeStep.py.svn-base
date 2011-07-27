@@ -40,6 +40,7 @@ class EMSegmentDefineAnatomicalTreeStep( EMSegmentStep ) :
     self.__anatomicalTree = PythonQt.qSlicerEMSegmentModuleWidgets.qSlicerEMSegmentAnatomicalTreeWidget()
     self.__anatomicalTree.structureNameEditable = True
     self.__anatomicalTree.labelColumnVisible = True
+    self.__anatomicalTree.addDeleteSubclassesEnabled = True
     anatomicalTreeGroupBoxLayout.addWidget( self.__anatomicalTree )
 
   def onColorNodeChanged( self ):

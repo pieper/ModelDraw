@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Libs/IGT
 http://svn.slicer.org/Slicer3
 
@@ -60,40 +60,6 @@ jcfr
 
 6606
 
-vtkIGTDataManager.h
-file
-
-
-
-
-2010-10-25T02:20:19.284995Z
-982f733c227b876599524c4a2ad44044
-2010-01-22T19:41:27.773560Z
-11739
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1427
-
 vtkIGTOpenTrackerStream.cxx
 file
 
@@ -127,6 +93,40 @@ tokuda
 
 
 2958
+
+vtkIGTDataManager.h
+file
+
+
+
+
+2010-10-25T02:20:19.284995Z
+982f733c227b876599524c4a2ad44044
+2010-01-22T19:41:27.773560Z
+11739
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1427
 
 vtkIGTMatrixState.h
 file
@@ -468,6 +468,9 @@ naucoin
 
 2508
 
+Testing
+dir
+
 vtkIGTPat2ImgRegistration.h
 file
 
@@ -501,9 +504,6 @@ naucoin
 
 
 1105
-
-Testing
-dir
 
 CMakeLists.txt
 file

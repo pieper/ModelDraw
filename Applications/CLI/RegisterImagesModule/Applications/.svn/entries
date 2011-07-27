@@ -1,7 +1,7 @@
 10
 
 dir
-16758
+16770
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/RegisterImagesModule/Applications
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ pieper
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-GenerateRegisterImagesTestData.cxx
-file
-
-
-
-
-2010-10-25T02:20:18.084995Z
-5c5222e2edecc5df9e4047bc3621c597
-2009-08-18T13:17:05.119965Z
-10286
-casey.goodlett
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5994
 
 itkImageToImageRegistrationMethodTestingHelper.h
 file
@@ -93,6 +59,40 @@ aylward
 
 
 5974
+
+GenerateRegisterImagesTestData.cxx
+file
+
+
+
+
+2010-10-25T02:20:18.084995Z
+5c5222e2edecc5df9e4047bc3621c597
+2009-08-18T13:17:05.119965Z
+10286
+casey.goodlett
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5994
 
 TransformFromFiducials.xml
 file
@@ -162,40 +162,6 @@ has-props
 
 325
 
-RegisterImagesModuleLogic.h
-file
-
-
-
-
-2010-10-25T02:20:18.084995Z
-79e73a24e2f02d701474d20f9b7de10c
-2009-08-18T13:17:05.119965Z
-10286
-casey.goodlett
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3475
-
 TransformFromFiducials.cxx
 file
 
@@ -229,6 +195,40 @@ has-props
 
 
 6417
+
+RegisterImagesModuleLogic.h
+file
+
+
+
+
+2010-10-25T02:20:18.084995Z
+79e73a24e2f02d701474d20f9b7de10c
+2009-08-18T13:17:05.119965Z
+10286
+casey.goodlett
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3475
 
 logo.h
 file
@@ -366,40 +366,6 @@ aylward
 
 15102
 
-InitialImageToImageRegistrationMethod.cxx
-file
-
-
-
-
-2010-10-25T02:20:18.084995Z
-e4166ee636a15767791187419c4f7b2d
-2009-08-18T13:17:05.119965Z
-10286
-casey.goodlett
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9774
-
 RegisterImagesModuleLogic.cxx
 file
 
@@ -433,6 +399,40 @@ aylward
 
 
 5226
+
+InitialImageToImageRegistrationMethod.cxx
+file
+
+
+
+
+2010-10-25T02:20:18.084995Z
+e4166ee636a15767791187419c4f7b2d
+2009-08-18T13:17:05.119965Z
+10286
+casey.goodlett
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9774
 
 BSplineImageToImageRegistrationMethod.cxx
 file
