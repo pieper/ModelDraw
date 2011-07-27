@@ -39,7 +39,6 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     variable _storedSeedSWidgets ""
     variable _moveStartRAS ""
     variable _moveStartControlPoints ""
-    variable _modelNode ""
     variable _controlPoints ;# array - initialized in constructor - points for current label
     variable _updatingControlPoints 0
     variable _currentLabel ""
@@ -65,7 +64,6 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method deleteControlPoint {index} {}
     method splitControlPoint {index} {}
     method updateControlPoints {} {}
-    method updateModel {} {}
     method updateCurve { {controlPoints ""} } {}
     method applyCurve {} {}
     method seedStartMovingCallback {seed index} {}
@@ -114,6 +112,10 @@ itcl::body ModelDrawEffect::destructor {} {
   }
 }
 
+# ------------------------------------------------------------------
+#                             PUBLIC VARIABLES
+# ------------------------------------------------------------------
+#
 itcl::configbody ModelDrawEffect::interpolation {
   if { [lsearch "spline linear" $interpolation] == -1 } {
     error "invalid interpolation.  Must be linear or spline"
@@ -634,74 +636,7 @@ itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
   [$sliceGUI GetSliceViewer] RequestRender
 }
 
-itcl::body ModelDrawEffect::updateModel {} {
-
-  set modelNode [$o(modelSelect) GetSelected]
-  if { $_modelNode == $modelNode } {
-    # already have the right model - nothing to do
-    return
-  }
-
-  if { $modelNode == "" } {
-    # no model selected - can't do anything
-    return
-    set _modelNode ""
-    $this updateControlPoints
-    return
-  }
-  set _modelNode $modelNode
-
-  set polyData [$_modelNode GetPolyData]
-  if { $polyData == "" } {
-    # no polydata yet - we need to create it
-    set points [vtkPoints New]
-    set polyData [vtkPolyData New]
-    $polyData SetPoints $points
-
-    set lines [vtkCellArray New]
-    $polyData SetLines $lines
-    set linesIDArray [$lines GetData]
-    $linesIDArray Reset
-    $linesIDArray InsertNextTuple1 0
-
-    set polygons [vtkCellArray New]
-    $polyData SetPolys $polygons
-    set idArray [$polygons GetData]
-    $idArray Reset
-    $idArray InsertNextTuple1 0
-
-    $_modelNode SetAndObservePolyData $polyData
-  }
-  
-  set displayNode [$modelNode GetDisplayNode]
-  if { $displayNode == "" } {
-    # no displayNode yet - we need to create it
-    set modelDisplay [vtkMRMLModelDisplayNode New]
-    $modelDisplay SetColor 1 1 0  ;# yellow
-    $modelDisplay SetScene $::slicer3::MRMLScene
-    $::slicer3::MRMLScene AddNodeNoNotify $modelDisplay
-    $_modelNode SetAndObserveDisplayNodeID [$modelDisplay GetID]
-    $modelDisplay SetPolyData [$_modelNode GetPolyData]
-  }
-}
-
 itcl::body ModelDrawEffect::buildOptions {} {
-
-  # TODO: remove this if not needed
-  if { 0 } {
-    set o(modelSelect) [vtkSlicerNodeSelectorWidget New]
-    $o(modelSelect) SetParent [$this getOptionsFrame]
-    $o(modelSelect) Create
-    $o(modelSelect) NewNodeEnabledOn
-    $o(modelSelect) SetNodeClass "vtkMRMLModelNode" "" "" ""
-    $o(modelSelect) SetMRMLScene [[$sliceGUI GetLogic] GetMRMLScene]
-    $o(modelSelect) UpdateMenu
-    $o(modelSelect) SetLabelText "Target Model:"
-    $o(modelSelect) SetBalloonHelpString "The model to edit"
-    pack [$o(modelSelect) GetWidgetName] -side top -anchor e -padx 2 -pady 2 
-
-    $::slicer3::Broker AddObservation $o(modelSelect) AnyEvent "after idle $this updateModel"
-  }
 
   set o(spline) [vtkNew vtkKWCheckButtonWithLabel]
   $o(spline) SetParent [$this getOptionsFrame]
@@ -764,7 +699,7 @@ itcl::body ModelDrawEffect::tearDownOptions { } {
   # call superclass version of tearDownOptions
   chain
 
-  foreach w "modelSelect spline curves" {
+  foreach w "spline curves" {
     if { [info exists o($w)] } {
       $o($w) SetParent ""
       pack forget [$o($w) GetWidgetName] 
