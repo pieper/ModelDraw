@@ -66,6 +66,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method updateControlPoints {} {}
     method updateCurve { {controlPoints ""} } {}
     method applyCurve {} {}
+    method applyCurves {} {}
     method seedStartMovingCallback {seed index} {}
     method seedMovingCallback {seed index} {}
     method seedContextMenuCallback {seed index} {}
@@ -476,8 +477,9 @@ itcl::body ModelDrawEffect::seedKeyCallback {seed index key} {
 }
 
 itcl::body ModelDrawEffect::applyCurve {} {
+  # rasterize the current curve to the current slice
 
-  if { [llength [$this controlPoints]] > 2 } {
+  if { [$o(xyPoints) GetNumberOfPoints] > 2 } {
     # delete the old drawing
     if { ![info exists o(change)] } {
       set o(change) [vtkNew vtkImageLabelChange]
@@ -495,6 +497,41 @@ itcl::body ModelDrawEffect::applyCurve {} {
     $this apply
     $this updateCurve
   }
+}
+
+itcl::body ModelDrawEffect::applyCurves {} {
+  # rasterize the current set of curves to all slices in the
+  # volume between high and low offsets
+ 
+  #
+  # find the sliceSWidget to use for increment
+  # find min/max offset for iteration
+  # update to current real or interpolated curve
+  # apply draw operation to label map
+  #
+
+  set sliceSWidget ""
+  foreach sw [itcl::find objects -class SliceSWidget] {
+    if { [$sw cget -sliceGUI] == $sliceGUI } {
+      set sliceSWidget $sw
+    }
+  }
+
+  set offsets [lsort -real [array names _controlPoints]]
+  if { [llength $offsets] < 2 } {
+    # can't interpolate 0 or 1 point
+    return ""
+  }
+  set firstOffset [lindex $offsets 0]
+  set lastOffset [lindex $offsets end]
+
+  [$sliceGUI GetLogic] SetSliceOffset $firstOffset
+  while { [[$sliceGUI GetLogic] GetSliceOffset] <= $lastOffset } {
+    $sliceSWidget incrementSlice
+    $this applyCurve
+    update
+  }
+
 }
 
 itcl::body ModelDrawEffect::seedStartMovingCallback {seed index} {
@@ -879,7 +916,7 @@ itcl::body ModelDrawEffect::interpolatedControlPoints {} {
         break
       }
       if { [expr abs($high - $low)] < [expr $eps/10.] } {
-        puts "Bad guess local minimum - use current guess anyway"
+        puts "Bad guess local minimum dist: $guessDist, low,high: $low,$high"
         break
       }
       if { [expr $sliceDir * $guessDist] > 0 } {
