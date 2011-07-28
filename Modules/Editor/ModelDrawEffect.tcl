@@ -526,7 +526,7 @@ itcl::body ModelDrawEffect::applyCurves {} {
   set lastOffset [lindex $offsets end]
 
   [$sliceGUI GetLogic] SetSliceOffset $firstOffset
-  while { [[$sliceGUI GetLogic] GetSliceOffset] <= $lastOffset } {
+  while { [[$sliceGUI GetLogic] GetSliceOffset] < $lastOffset } {
     $sliceSWidget incrementSlice
     $this applyCurve
     update
