@@ -658,11 +658,14 @@ itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
         foreach obj {splineR splineA splineS} {
           $o($obj) Compute
         }
-        for {set t 0} {$t < $index} {set t [expr $t + 0.1]} {
+        set steps [expr $index * 10]
+        set t 0
+        for {set step 0} {$step <= $steps} {incr step} {
           set r [$o(splineR) Evaluate $t]
           set a [$o(splineA) Evaluate $t]
           set s [$o(splineS) Evaluate $t]
           $this addPoint $r $a $s
+          set t [expr $t + 0.1]
         }
       }
     }
