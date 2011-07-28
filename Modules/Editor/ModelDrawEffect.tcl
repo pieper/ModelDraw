@@ -198,6 +198,24 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
     }
   }
 
+  if { [info exists o(deleteCurve)] } {
+    if { $caller == $o(deleteCurve) } {
+      set offset [$this offset]
+      if { [info exists _controlPoints($offset)] } {
+        unset _controlPoints($offset)
+        $this updateControlPoints
+      }
+      return
+    }
+  }
+
+  if { [info exists o(applyCurves)] } {
+    if { $caller == $o(applyCurves) } {
+      $this applyCurves
+      return
+    }
+  }
+
   chain $caller $event
 
   #
@@ -372,7 +390,8 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
   set controlPoints [$this controlPoints $offset]
   if { [llength $controlPoints] > 0 } {
     # when there are user-defined control points on this slice,
-    # display them as editable points
+    # display them as editable points and give user option to delete them
+    if { [info exists o(deleteCurve)] } { $o(deleteCurve) SetStateToNormal }
     foreach cp $controlPoints {
       # get a stored seed widget or create a new one
       if { [llength $_storedSeedSWidgets] > 0 } {
@@ -402,7 +421,8 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
     $this applyCurve
   } else {
     # no user-defined control points on this slice,
-    # so just display non-editable outline
+    # so just display non-editable outline and can't delete them
+    if { [info exists o(deleteCurve)] } { $o(deleteCurve) SetStateToDisabled }
     set controlPoints [$this interpolatedControlPoints]
     foreach cp $controlPoints {
       # get a stored seed widget or create a new one
@@ -455,6 +475,16 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       }
     }
   }
+
+  # enable the apply curves option if more than one slice is defined
+  if { [info exists o(applyCurves)] } {
+    if { [llength [array names _controlPoints]] > 1 } {
+      $o(applyCurves) SetStateToNormal
+    } else {
+      $o(applyCurves) SetStateToDisabled
+    }
+  }
+
   set _updatingControlPoints 0
 }
 
@@ -699,6 +729,34 @@ itcl::body ModelDrawEffect::buildOptions {} {
   pack forget [$o(scopeOption) GetWidgetName]
 
   #
+  # an delete slice points button (active when on slice with control points)
+  #
+  set o(deleteCurve) [vtkNew vtkKWPushButton]
+  $o(deleteCurve) SetParent [$this getOptionsFrame]
+  $o(deleteCurve) Create
+  $o(deleteCurve) SetText "Delete Points"
+  $o(deleteCurve) SetBalloonHelpString "Delete the points in the current slice"
+  $o(deleteCurve) SetStateToDisabled
+  pack [$o(deleteCurve) GetWidgetName] \
+    -side bottom -anchor w -padx 2 -pady 2 
+  set invokedEvent 10000
+  $::slicer3::Broker AddObservation $o(deleteCurve) $invokedEvent "$this processEvent $o(deleteCurve)"
+
+  #
+  # an delete slice points button (active when on slice with control points)
+  #
+  set o(applyCurves) [vtkNew vtkKWPushButton]
+  $o(applyCurves) SetParent [$this getOptionsFrame]
+  $o(applyCurves) Create
+  $o(applyCurves) SetText "Apply Curves"
+  $o(applyCurves) SetBalloonHelpString "Fill in all curves between start and end slices"
+  $o(applyCurves) SetStateToDisabled
+  pack [$o(applyCurves) GetWidgetName] \
+    -side bottom -anchor w -padx 2 -pady 2 
+  set invokedEvent 10000
+  $::slicer3::Broker AddObservation $o(applyCurves) $invokedEvent "$this processEvent $o(applyCurves)"
+
+  #
   # the list of defined curves for this label
   #
   set o(curves) [vtkNew vtkKWMultiColumnListWithScrollbars]
@@ -725,6 +783,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   pack [$o(curves) GetWidgetName] \
     -side bottom -anchor s -fill both -expand true -padx 2 -pady 2 
 
+
   $this updateGUIFromMRML
 }
 
@@ -739,7 +798,7 @@ itcl::body ModelDrawEffect::tearDownOptions { } {
   # call superclass version of tearDownOptions
   chain
 
-  foreach w "spline curves" {
+  foreach w "spline curves deleteCurve applyCurves" {
     if { [info exists o($w)] } {
       $o($w) SetParent ""
       pack forget [$o($w) GetWidgetName] 
