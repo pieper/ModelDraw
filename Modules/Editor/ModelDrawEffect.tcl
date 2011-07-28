@@ -918,8 +918,9 @@ itcl::body ModelDrawEffect::interpolatedControlPoints {} {
         # we have a good value of t (guess), so break
         break
       }
-      if { [expr abs($high - $low)] < [expr $eps/10.] } {
-        puts "Bad guess local minimum dist: $guessDist, low,high: $low,$high"
+      if { [expr abs($high - $low)] < [expr $eps/1000.] } {
+        # TODO: could extrapolate beyond current range if needed
+        #puts "Bad guess local minimum dist: $guessDist, low,high: $low,$high"
         break
       }
       if { [expr $sliceDir * $guessDist] > 0 } {
