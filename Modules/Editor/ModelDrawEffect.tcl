@@ -594,22 +594,89 @@ itcl::body ModelDrawEffect::seedStartMovingCallback {seed index} {
 itcl::body ModelDrawEffect::seedMovingCallback {seed index} {
   set offset [$this offset]
   if { [$_interactor GetShiftKey] } {
-    # move all seeds
-    foreach {startR startA startS} $_moveStartRAS {r a s} [$seed getRASPosition] {}
-    set deltaR [expr $r - $startR]
-    set deltaA [expr $a - $startA]
-    set deltaS [expr $s - $startS]
-    for {set i 0} {$i < [llength $_seedSWidgets]} {incr i} {
-      set cp [lindex $_moveStartControlPoints $i]
-      foreach {cpr cpa cps} $cp {}
-      set cpr [expr $cpr + $deltaR]
-      set cpa [expr $cpa + $deltaA]
-      set cps [expr $cps + $deltaS]
-      set _controlPoints($offset) [lreplace $_controlPoints($offset) $i $i "$cpr $cpa $cps"]
-      if { $i != $index } {
-        # skip the widget that generated the event - it will update itself
+    if { [$_interactor GetControlKey] } {
+      # rotate all seeds
+      foreach {startR startA startS} $_moveStartRAS {r a s} [$seed getRASPosition] {}
+      foreach {centR centA centS} [$this controlCentroid] {}
+      set centToStartR [expr $startR - $centR]
+      set centToStartA [expr $startA - $centA]
+      set centToStartS [expr $startS - $centS]
+      set centToStartDist [expr sqrt($centToStartR * $centToStartR + $centToStartA * $centToStartA + $centToStartS * $centToStartS)]
+      set centToStartR [expr $centToStartR / $centToStartDist]
+      set centToStartA [expr $centToStartA / $centToStartDist]
+      set centToStartS [expr $centToStartS / $centToStartDist]
+      set centToPointR [expr $r - $centR]
+      set centToPointA [expr $a - $centA]
+      set centToPointS [expr $s - $centS]
+      set centToPointDist [expr sqrt($centToPointR * $centToPointR + $centToPointA * $centToPointA + $centToPointS * $centToPointS)]
+      set centToPointR [expr $centToPointR / $centToPointDist]
+      set centToPointA [expr $centToPointA / $centToPointDist]
+      set centToPointS [expr $centToPointS / $centToPointDist]
+      set dotR [expr $centToStartR * $centToPointR]
+      set dotA [expr $centToStartA * $centToPointA]
+      set dotS [expr $centToStartS * $centToPointS]
+      set dot [expr $dotR + $dotA + $dotS]
+      set angle [expr acos($dot)]
+      if { $dot < 0 } {
+        set angle [expr -1. * $angle]
+      }
+
+      puts "angle is $angle"
+      set centXYZ [$this rasToXYZ [$this controlCentroid]]
+      foreach {centX centY centZ} $centXYZ {}
+      set trans [vtkMatrix4x4 New]
+      $trans SetElement 0 3 [expr -1 * $centX]
+      $trans SetElement 1 3 [expr -1 * $centY]
+      $trans SetElement 2 3 [expr -1 * $centZ]
+      puts [$trans Print]
+      set rotate [vtkMatrix4x4 New]
+      $rotate SetElement 0 0 [expr cos($angle)]
+      $rotate SetElement 0 1 [expr sin($angle)]
+      $rotate SetElement 1 0 [expr -sin($angle)]
+      $rotate SetElement 1 1 [expr cos($angle)]
+      puts [$rotate Print]
+      $rotate Multiply4x4 $rotate $trans $rotate
+      puts [$rotate Print]
+      $trans Identity
+      $trans SetElement 0 3 $centX
+      $trans SetElement 1 3 $centY
+      $trans SetElement 2 3 $centZ
+      puts [$trans Print]
+      $rotate Multiply4x4 $trans $rotate $rotate
+      puts [$rotate Print]
+
+      # apply rotation around centroid to all points
+      for {set i 0} {$i < [llength $_seedSWidgets]} {incr i} {
+        set cp [lindex $_moveStartControlPoints $i]
+        set cpXYZ [$this rasToXYZ $cp]
+        puts "start XYZ is $cpXYZ"
+        set xyzw [eval $rotate MultiplyPoint $cpXYZ 1]
+        foreach {x y z w} $xyzw {}
         set sw [lindex $_seedSWidgets $i]
-        $sw place $cpr $cpa $cps
+        set _controlPoints($offset) [lreplace $_controlPoints($offset) $i $i "$x $y $z"]
+        $sw setXYZPosition $x $y $z
+        puts "end $x $y $z"
+      }
+      $rotate Delete
+      $trans Delete
+    } else {
+      # move all seeds
+      foreach {startR startA startS} $_moveStartRAS {r a s} [$seed getRASPosition] {}
+      set deltaR [expr $r - $startR]
+      set deltaA [expr $a - $startA]
+      set deltaS [expr $s - $startS]
+      for {set i 0} {$i < [llength $_seedSWidgets]} {incr i} {
+        set cp [lindex $_moveStartControlPoints $i]
+        foreach {cpr cpa cps} $cp {}
+        set cpr [expr $cpr + $deltaR]
+        set cpa [expr $cpa + $deltaA]
+        set cps [expr $cps + $deltaS]
+        set _controlPoints($offset) [lreplace $_controlPoints($offset) $i $i "$cpr $cpa $cps"]
+        if { $i != $index } {
+          # skip the widget that generated the event - it will update itself
+          set sw [lindex $_seedSWidgets $i]
+          $sw place $cpr $cpa $cps
+        }
       }
     }
   } else {
