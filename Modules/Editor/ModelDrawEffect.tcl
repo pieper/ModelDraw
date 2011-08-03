@@ -616,9 +616,23 @@ itcl::body ModelDrawEffect::seedMovingCallback {seed index} {
       set dotA [expr $centToStartA * $centToPointA]
       set dotS [expr $centToStartS * $centToPointS]
       set dot [expr $dotR + $dotA + $dotS]
-      puts $dot
+      if { $dot < 0 } {
+        return
+      }
       set angle [expr acos($dot)]
-      puts $angle
+      set crossR [expr $centToStartA * $centToPointS - $centToStartS * $centToPointA]
+      set crossA [expr $centToStartS * $centToPointR - $centToStartR * $centToPointS]
+      set crossS [expr $centToStartR * $centToPointA - $centToStartA * $centToPointR];
+      set nR [[$_sliceNode GetSliceToRAS] GetElement 0 2]
+      set nA [[$_sliceNode GetSliceToRAS] GetElement 1 2]
+      set nS [[$_sliceNode GetSliceToRAS] GetElement 2 2]
+      set dotR [expr $crossR * $nR]
+      set dotA [expr $crossA * $nA]
+      set dotS [expr $crossS * $nS]
+      set dot [expr $dotR + $dotA + $dotS]
+      if { $dot < 0 } {
+        set angle [expr -1. * $angle]
+      }
 
       set centXYZ [$this rasToXYZ [$this controlCentroid]]
       foreach {centX centY centZ} $centXYZ {}
