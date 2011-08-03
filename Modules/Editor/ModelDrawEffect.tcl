@@ -237,9 +237,13 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
         $o(cursorActor) VisibilityOff
       }
       "LeftButtonReleaseEvent" {
-        eval $this addControlPoint $_currentPosition
-        $o(cursorActor) VisibilityOn
-        $sliceGUI SetGUICommandAbortFlag 1
+        if { ![$_interactor GetShiftKey] } {
+          # ignore the release event if shift is down - could have been a pan event for
+          # non-three button mice
+          eval $this addControlPoint $_currentPosition
+          $o(cursorActor) VisibilityOn
+          $sliceGUI SetGUICommandAbortFlag 1
+        }
       }
       "KeyPressEvent" { 
         set key [$_interactor GetKeySym]
