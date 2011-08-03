@@ -338,6 +338,16 @@ itcl::body ModelDrawEffect::controlCentroid { {offset ""} } {
 itcl::body ModelDrawEffect::addControlPoint {r a s} {
 
   set offset [$this offset]
+  if { [array names _controlPoints] != "" } {
+    if { ![info exists _controlPoints($offset)] } {
+      if { [EditorConfirmDialog "Control points exist on other slices - copy them?"] } {
+        $this copyCurve
+        return
+      }
+    }
+  }
+
+  set offset [$this offset]
   lappend _controlPoints($offset) "$r $a $s"
   $this updateControlPoints
 }
