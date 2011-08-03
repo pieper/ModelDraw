@@ -55,9 +55,11 @@ if { [itcl::find class SeedSWidget] == "" } {
     method processEvent {{caller ""} {event ""}} {}
     method positionActors {} {}
     method pick {} {}
-    method place {x y z} {}
+    method place {r a s} {}
     method setRASPosition {r a s} { $this place $x $y $z }
     method getRASPosition {} { return $_currentPosition }
+    method setXYZPosition {x y z} {}
+    method getXYZPosition {} { return [$this rasToXYZ $_currentPosition] }
     method getPickState {} { return $_pickState }
     method highlight {} {}
     method createGlyph { {type "StarBurst"} } {}
@@ -226,9 +228,13 @@ itcl::body SeedSWidget::pick {} {
   }
 }
 
-itcl::body SeedSWidget::place {x y z} {
-  set _currentPosition "$x $y $z"
+itcl::body SeedSWidget::place {r a s} {
+  set _currentPosition "$r $a $s"
   $this positionActors
+}
+
+itcl::body SeedSWidget::setXYZPosition {x y z} {
+  set _currentPosition [$this xyzToRAS "$x $y $z"]
 }
 
 itcl::body SeedSWidget::positionActors { } {
