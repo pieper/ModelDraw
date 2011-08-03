@@ -404,8 +404,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
   set controlPoints [$this controlPoints $offset]
   if { [llength $controlPoints] > 0 } {
     # when there are user-defined control points on this slice,
-    # display them as editable points and give user option to delete them
-    if { [info exists o(deleteCurve)] } { $o(deleteCurve) SetStateToNormal }
+    # display them as editable points
     foreach cp $controlPoints {
       # get a stored seed widget or create a new one
       if { [llength $_storedSeedSWidgets] > 0 } {
@@ -435,8 +434,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
     $this applyCurve
   } else {
     # no user-defined control points on this slice,
-    # so just display non-editable outline and can't delete them
-    if { [info exists o(deleteCurve)] } { $o(deleteCurve) SetStateToDisabled }
+    # so just display non-editable outline
     set controlPoints [$this interpolatedControlPoints]
     foreach cp $controlPoints {
       # get a stored seed widget or create a new one
@@ -496,6 +494,15 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       $o(applyCurves) SetStateToNormal
     } else {
       $o(applyCurves) SetStateToDisabled
+    }
+  }
+
+  # enable the delete points option if anything exists on this slice
+  if { [info exists o(applyCurves)] } {
+    if { [info exists _controlPoints($offset)] } {
+      $o(deleteCurve) SetStateToNormal
+    } else {
+      $o(deleteCurve) SetStateToDisabled
     }
   }
 
@@ -847,8 +854,6 @@ itcl::body ModelDrawEffect::copyCurve {} {
     # outside of interpolation zone, use nearest
     set from nearest
   }
-
-
 
   switch $from {
     "nearest" {
