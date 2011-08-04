@@ -39,12 +39,14 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     variable _storedSeedSWidgets ""
     variable _moveStartRAS ""
     variable _moveStartControlPoints ""
-    variable _controlPoints ;# array - initialized in constructor - points for current label
+    variable _controlPoints ;# array - points for current label, indexed by offset
+    variable _curves ;# array - interpolated for current points, indexed by offset
     variable _updatingControlPoints 0
     variable _currentLabel ""
     variable _sliceSplineR "" ;# local storage for dynamicly created temp splines
     variable _sliceSplineA ""
     variable _sliceSplineS ""
+    variable _modelDrawNode "" ;# custom parameter node for this tool
 
     # methods
     method processEvent {{caller ""} {event ""}} {}
@@ -53,6 +55,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method updateGUIFromMRML {} {}
     method tearDownOptions {} {}
 
+    method modelDrawNode {} {}
     method positionActors {} {}
     method offset {} {
       # avoid roundoff issues caused by slicer controllers
@@ -81,6 +84,10 @@ if { [itcl::find class ModelDrawEffect] == "" } {
 #                        CONSTRUCTOR/DESTRUCTOR
 # ------------------------------------------------------------------
 itcl::body ModelDrawEffect::constructor {sliceGUI} {
+
+  set _modelDrawNode [$this modelDrawNode]
+  array set _controlPoints [$_modelDrawNode GetParameter $_currentLabel]
+
   if { [$_sliceNode GetLayoutName] != "Red" } {
     # only allow model object drawing in the Red slice plane (at least for now)
     itcl::delete object $this
@@ -90,7 +97,6 @@ itcl::body ModelDrawEffect::constructor {sliceGUI} {
   $this configure -delegateEventProcessing 1
   set _scopeOptions "all visible"
   set _currentLabel [EditorGetPaintLabel]
-  array set _controlPoints [$_parameterNode GetParameter ModelDraw,$_currentLabel]
 
   # create the spline interpolators - these are re-used for intra-slice 
   # and inter-slice interpolations
@@ -128,11 +134,33 @@ itcl::configbody ModelDrawEffect::interpolation {
 #                             METHODS
 # ------------------------------------------------------------------
 
+itcl::body ModelDrawEffect::modelDrawNode { } {
+  if { $_modelDrawNode != "" } {
+    return $_modelDrawNode
+  }
+  set number [$::slicer3::MRMLScene GetNumberOfNodesByClass vtkMRMLScriptedModuleNode]
+  for {set n 0} {$n < $number} {incr n} {
+    set node [$::slicer3::MRMLScene GetNthNodeByClass $n vtkMRMLScriptedModuleNode]
+    if { [$node GetModuleName] == "ModelDraw" } {
+      return $node
+    }
+  }
+  
+  # get here if there is no model draw parameter node yet in scene
+  set node [vtkMRMLScriptedModuleNode New]
+  $node SetModuleName "ModelDraw"
+  $::slicer3::MRMLScene AddNode $node
+  $node Delete
+
+  return [$this modelDrawNode]
+}
+
 itcl::body ModelDrawEffect::positionActors { } {
   chain
 }
 
 itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
+
 
   if { $_updatingControlPoints } {
     return
@@ -145,11 +173,17 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
     set _currentLabel [EditorGetPaintLabel]
   }
 
+
+  # parameter node changed, update control points
   if { $caller == $_parameterNode } {
     set paintLabel [EditorGetPaintLabel]
     if { $_currentLabel != $paintLabel } {
       array unset _controlPoints
-      array set _controlPoints [$_parameterNode GetParameter ModelDraw,$paintLabel]
+      if { $_modelDrawNode != "" } {
+        array set _controlPoints [$_modelDrawNode GetParameter $paintLabel]
+      } else {
+        array set _controlPoints ""
+      }
       set _currentLabel $paintLabel
       $this updateControlPoints
     }
@@ -383,9 +417,16 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
   # the listbox
   #
  
-  set _updatingControlPoints 1
   
-  $_parameterNode SetParameter ModelDraw,$_currentLabel [array get _controlPoints]
+  if { $_modelDrawNode == "" } {
+    # not initialized yet
+    return
+  }
+
+  set _updatingControlPoints 1
+
+  # copy control points into the model draw node
+  $_modelDrawNode SetParameter $_currentLabel [array get _controlPoints]
   
   #
   # update seeds: first - disable old seeds
@@ -459,6 +500,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
     $this updateCurve $controlPoints
   }
 
+
   #
   # update listbox
   #
@@ -487,6 +529,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       }
     }
   }
+
 
   # enable the apply curves option if more than one slice is defined
   if { [info exists o(applyCurves)] } {
@@ -756,14 +799,19 @@ itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
     set controlPoints [$this controlPoints]
   }
 
+  set offset [$this offset]
+  set _curves($offset) ""
+
   if { [llength $controlPoints] > 1 } {
 
     switch $interpolation {
       "linear" {
         foreach cp $controlPoints {
           eval $this addPoint $cp
+          lappend _curves($offset) $cp
         }
         eval $this addPoint [lindex $controlPoints 0]
+        lappend _curves($offset) [lindex $controlPoints 0]
       }
       "spline" {
         foreach obj {splineR splineA splineS} {
@@ -788,6 +836,7 @@ itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
           set a [$o(splineA) Evaluate $t]
           set s [$o(splineS) Evaluate $t]
           $this addPoint $r $a $s
+          lappend _curves($offset) "$r $a $s"
           set t [expr $t + 0.1]
         }
       }
@@ -876,8 +925,9 @@ itcl::body ModelDrawEffect::buildOptions {} {
   pack [$o(curves) GetWidgetName] \
     -side bottom -anchor s -fill both -expand true -padx 2 -pady 2 
 
-
   $this updateGUIFromMRML
+
+  $this updateControlPoints
 }
 
 itcl::body ModelDrawEffect::updateGUIFromMRML { } {
