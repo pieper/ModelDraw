@@ -757,7 +757,6 @@ itcl::body SliceSWidget::processEvent { {caller ""} {event ""} } {
     "KeyPressEvent" { 
       set key [$_interactor GetKeySym]
       if { [lsearch "l v r b f g t space c e s S Up Down Left Right" $key] != -1 } {
-        puts "$this got $key"
         $sliceGUI SetCurrentGUIEvent "" ;# reset event so we don't respond again
         $sliceGUI SetGUICommandAbortFlag 1
         switch [$_interactor GetKeySym] {
