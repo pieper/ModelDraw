@@ -125,7 +125,7 @@ proc SlicerSpinMovie { {degrees 5} {fps 10} } {
   # ffmpeg -v]eval exec ffmpeg -y -i $files \/tmp/movie.ogv
   # try webm
   # see, for example: http://diveintohtml5.org/video.html
-  #
+  # and https://groups.google.com/a/webmproject.org/group/webm-discuss/browse_thread/thread/438f52c6683bedde?pli=1
   # for now:
   
   set files [lsort [glob /tmp/slicer-*.png]]
