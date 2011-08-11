@@ -416,7 +416,6 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
   # the seed widgets 
   # the listbox
   #
- 
   
   if { $_modelDrawNode == "" } {
     # not initialized yet
@@ -472,7 +471,6 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       incr index
     }
     $this updateCurve $controlPoints
-    $this applyCurve
   } else {
     # no user-defined control points on this slice,
     # so just display non-editable outline
