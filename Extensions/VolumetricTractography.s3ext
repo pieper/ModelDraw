@@ -1,0 +1,14 @@
+scm       svn
+svnpath   https://gforge.sci.utah.edu/svn/slicer3d/trunk/Slicer3/VolumetricTractography
+svnusername anonymous
+svnpassword anonymous
+
+depends
+
+homepage  http://gforge.sci.utah.edu/gf/project/slicer3d
+
+category  Diffusion.Tractography
+
+status    Beta
+
+description A command line module to compute a minimum-cost volume between two seed regions specified for a diffusion tensor volume.
