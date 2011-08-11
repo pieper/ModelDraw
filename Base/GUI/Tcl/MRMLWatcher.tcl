@@ -64,6 +64,32 @@ proc TimeSlideSlice { {sliceName "Red"} {iters 10} } {
 }
 
 
+#
+## Memory tracking - optimized for linux
+#
+
+proc MemoryTrack { {interval -1} } {
+
+  if { ![info exists ::MRML(sysinfo)] } {
+    set ::MRML(sysinfo) [vtkSystemInformation New]
+  }
+  $::MRML(sysinfo) RunMemoryCheck
+  set availableMemory [$::MRML(sysinfo) GetAvailablePhysicalMemory]
+
+  set fp [open "/proc/[pid]/statm" "r"]
+  set statm [gets $fp]
+  close $fp
+  scan $statm "%d" vsize
+  # TODO: assume 4096 pagesize for now
+  set vsize [expr $vsize/1024 * 4]
+
+  puts "using $vsize - $availableMemory left"
+
+  if { $interval > 0 } {
+    after $interval ::MemoryTrack $interval
+  }
+}
+
 
 #
 # The partent class definition - define if needed (not when re-sourcing)
