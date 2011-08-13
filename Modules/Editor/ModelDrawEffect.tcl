@@ -373,10 +373,19 @@ itcl::body ModelDrawEffect::addControlPoint {r a s} {
 
   set offset [$this offset]
   if { [array names _controlPoints] != "" } {
+    # there are control points on other slices
     if { ![info exists _controlPoints($offset)] } {
+      # no control points yet on this slice, offer to copy
       if { [EditorConfirmDialog "Control points exist on other slices - copy them?"] } {
         $this copyCurve
         return
+      }
+    } else {
+      if { [llength [array names _controlPoints]] > 1 } {
+        # already control points on this slice (copied), offer to ignore click
+        if { ![EditorConfirmDialog "Really add new control point?"] } {
+          return
+        }
       }
     }
   }
