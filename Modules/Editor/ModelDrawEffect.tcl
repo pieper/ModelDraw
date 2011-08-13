@@ -464,7 +464,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       $seedSWidget configure -color "1.0 0.0 0.0"
       $seedSWidget configure -startMovingCommand "$this seedStartMovingCallback $seedSWidget $index"
       $seedSWidget configure -movingCommand "$this seedMovingCallback $seedSWidget $index"
-      $seedSWidget configure -movedCommand "$this applyCurve"
+      $seedSWidget configure -movedCommand "$this updateControlPoints"
       $seedSWidget configure -contextMenuCommand "$this seedContextMenuCallback $seedSWidget $index"
       $seedSWidget configure -keyCommand "$this seedKeyCallback $seedSWidget $index"
       $seedSWidget processEvent
