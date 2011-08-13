@@ -19,8 +19,6 @@
 
 #include "vtkImageEMLocalGenericClass.h"
 
-#define EMSEGMENT_NUM_OF_QUALITY_MEASURE 1
-
 class VTK_EMSEGMENT_EXPORT vtkImageEMLocalClass : public vtkImageEMLocalGenericClass
 {
   public:

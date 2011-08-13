@@ -8,8 +8,9 @@ class EMSegmentPy:
     parent.title = "EMSegment"
     parent.category = ""
     parent.contributor = "--"
-    parent.helpText = """dsfdsf"""
-    parent.acknowledgementText = """sdfsdfdsf"""
+    parent.helpText = """<b>EMSegment Module:</b>  Segment a set of set of images (target images) using the tree-based EM segmentation algorithm<br><br>Use the pull down menu to select from a collection of tasks or create a new one.<br>Use the 'Back' and 'Next' to navigate through the stages of filling in the algorithm parameters.\n\nWhen all parameters are specified, use the 'segmentation' button. \n\nFor latest updates, new tasks, and detail help please visit <a>http://www.slicer.org/slicerWiki/index.php/Modules:EMSegmenter-3.6</a> <br><br> <b>The work was reported in:</b> <br>K.M. Pohl et. A hierarchical algorithm for MR brain image parcellation. IEEE Transactions on Medical Imaging, 26(9),pp 1201-1212, 2007."""
+    parent.acknowledgementText = """<img src=':/Icons/UPenn_logo.png'><br><br>This module is currently maintained by Daniel Haehn, Dominique Belhachemi, and Kilian Pohl (SBIA,UPenn). The work is currently supported by an ARRA supplement to NAC and the Slicer Community (see also <a>http://www.slicer.org</a>). <br><br>The work was reported in  <br>K.M. Pohl et. A hierarchical algorithm for MR brain image parcellation. IEEE Transactions on Medical Imaging, 26(9),pp 1201-1212, 2007."""
+    parent.icon = qt.QIcon( ":/Icons/EMSegment.png" )
     self.parent = parent
 
 class EMSegmentPyWidget:
@@ -104,7 +105,7 @@ class EMSegmentPyWidget:
     self.workflow.addTransition( selectTaskStep, defineInputChannelsAdvancedStep, 'AdvancedMode' )
 
     # Add transitions associated to the simple mode
-    self.workflow.addTransition( defineInputChannelsSimpleStep, segmentStep )
+    self.workflow.addTransition( defineInputChannelsSimpleStep, defineAnatomicalTreeStep )
 
     # Add transitions associated to the advanced mode
     self.workflow.addTransition( defineInputChannelsAdvancedStep, defineAnatomicalTreeStep )
@@ -127,6 +128,7 @@ class EMSegmentPyWidget:
     # enable global access to the dynamicFrames on step 2 and step 6
     slicer.modules.emsegmentSimpleDynamicFrame = defineInputChannelsSimpleStep.dynamicFrame()
     slicer.modules.emsegmentAdvancedDynamicFrame = definePreprocessingStep.dynamicFrame()
+    slicer.modules.emsegmentPreprocessingStep = definePreprocessingStep
 
     # compress the layout
     #self.layout.addStretch(1)        

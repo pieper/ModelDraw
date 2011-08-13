@@ -372,6 +372,9 @@ IF (VTK_WRAP_TCL)
     set(INCR_TCL_VERSION_DOT "${INCR_TCL_MAJOR_VERSION}.${INCR_TCL_MINOR_VERSION}")
     set(INCR_TCL_VERSION "${INCR_TCL_MAJOR_VERSION}${INCR_TCL_MINOR_VERSION}")
   ENDIF(Slicer3_USE_KWWIDGETS)
+  if(VTK_TCL_INCLUDE_DIR)
+    include_directories("${VTK_TCL_INCLUDE_DIR}" "${VTK_TK_INCLUDE_DIR}")
+  endif(VTK_TCL_INCLUDE_DIR)
 ENDIF (VTK_WRAP_TCL)
 
 #-----------------------------------------------------------------------------

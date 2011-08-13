@@ -1,7 +1,7 @@
 10
 
 dir
-16770
+16815
 http://svn.slicer.org/Slicer3/trunk/Libs/MRML/Testing
 http://svn.slicer.org/Slicer3
 
@@ -981,40 +981,6 @@ has-props
 
 234
 
-vtkMRMLLayoutNodeTest1.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.414995Z
-ac769a47b23dcffde531a16f9091be3b
-2010-01-05T04:43:27.274004Z
-11516
-ibanez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2368
-
 vtkMRMLArrayPlotNodeTest1.cxx
 file
 
@@ -1082,6 +1048,40 @@ ibanez
 
 
 2428
+
+vtkMRMLLayoutNodeTest1.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.414995Z
+ac769a47b23dcffde531a16f9091be3b
+2010-01-05T04:43:27.274004Z
+11516
+ibanez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2368
 
 vtkMRMLFreeSurferModelStorageNodeTest1.cxx
 file

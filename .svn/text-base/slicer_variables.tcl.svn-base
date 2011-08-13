@@ -133,8 +133,10 @@ puts "Slicer3_HOME is $::Slicer3_HOME"
 # section below, or genlib will happily build the library again.
 
 set ::Slicer3_TAG "http://svn.slicer.org/Slicer3/trunk"
-#set ::CMAKE_GIT_REPO git://cmake.org/cmake.git
-#set ::CMAKE_GIT_BRANCH "v2.8.5"
+# uncomment the CMAKE_GIT_* Options to use cmake 2.8.5 (needed for ubuntu 11.04)
+set ::CMAKE_GIT_REPO git://cmake.org/cmake.git
+set ::CMAKE_GIT_BRANCH "release"
+set ::CMAKE_GIT_TAG "v2.8.5"
 set ::CMAKE_TAG "CMake-2-8-0"
 set ::Teem_TAG http://teem.svn.sourceforge.net/svnroot/teem/teem/branches/Teem-1.11
 set ::KWWidgets_TAG "Slicer-3-6"
@@ -158,40 +160,27 @@ set ::OpenIGTLink_TAG "http://svn.na-mic.org/NAMICSandBox/trunk/OpenIGTLink"
 set ::OpenCV_TAG https://code.ros.org/svn/opencv/tags/2.1/opencv
 
 # for experimental use
-set ::ITK_GIT_REPO git://itk.org/ITK.git 
-set ::ITK_GIT_BRANCH release          
-set ::ITK_GIT_TAG v3.20.0   
-set ::VTK_GIT_REPO git://vtk.org/VTK.git   
-set ::VTK_GIT_BRANCH release            
-set ::VTK_GIT_TAG v5.6.1     
-set ::CMake_GIT_REPO git://cmake.org/cmake.git
-set ::CMake_GIT_BRANCH release
-set ::CMake_GIT_TAG v2.8.4
+#set ::ITK_GIT_REPO git://itk.org/ITK.git
+set ::ITK_GIT_BRANCH release
+set ::ITK_GIT_TAG v3.20.0
+#set ::VTK_GIT_REPO git://vtk.org/VTK.git
+set ::VTK_GIT_BRANCH release
+set ::VTK_GIT_TAG v5.6.1
 
 # set TCL_VERSION to "tcl" to get 8.4, otherwise use tcl85 to get 8.5
-# set 8.5 for Solaris explicitly, because 8.4 complains 
-# when built 64 bit with gcc. Suncc/CC is fine, however.
 switch $::tcl_platform(os) {
-    "SunOS" {
-        set ::TCL_VERSION tcl85
-        set ::TCL_MINOR_VERSION 5
-    }
-    "GNU/kFreeBSD" {
-        set ::TCL_VERSION tcl85
-        set ::TCL_MINOR_VERSION 5
-    }
-    "Windows NT" {
-        if { $::env(BITNESS) == "64" } {
-            set ::TCL_VERSION tcl85
-            set ::TCL_MINOR_VERSION 5
-        } else {
-            set ::TCL_VERSION tcl
-            set ::TCL_MINOR_VERSION 4
-        }
-    }
-    default { 
+    "Not Used" {
+        # just an example - all platforms use tcl8.5 now
         set ::TCL_VERSION tcl
         set ::TCL_MINOR_VERSION 4
+        set ::ITCL_VERSION 3.2
+        set ::IWIDGETS_VERSION 4.0.1
+    }
+    default { 
+        set ::TCL_VERSION tcl85
+        set ::TCL_MINOR_VERSION 5
+        set ::ITCL_VERSION 3.4
+        set ::IWIDGETS_VERSION 4.0.2
     }
 }
 
@@ -353,8 +342,8 @@ switch $::tcl_platform(os) {
         set ::CLAPACK_TEST_FILE $::Slicer3_LIB/CLAPACK-build/BLAS/SRC/libblas.a
         set ::NUMPY_TEST_FILE $::PYTHON_BIN_DIR/lib/python2.6/site-packages/numpy/core/numeric.pyc
         set ::SCIPY_TEST_FILE $::PYTHON_BIN_DIR/lib/python2.6/site-packages/scipy/version.pyc
-        set ::ITCL_TEST_FILE $::TCL_LIB_DIR/libitcl3.2.dylib
-        set ::IWIDGETS_TEST_FILE $::TCL_LIB_DIR/iwidgets4.0.1/iwidgets.tcl
+        set ::ITCL_TEST_FILE $::TCL_LIB_DIR/itcl$::ITCL_VERSION/libitcl$::ITCL_VERSION.dylib
+        set ::IWIDGETS_TEST_FILE $::TCL_LIB_DIR/iwidgets$::IWIDGETS_VERSION/iwidgets.tcl
         set ::BLT_TEST_FILE $::TCL_BIN_DIR/bltwish24
         set ::Teem_TEST_FILE $::Teem_BIN_DIR/unu
         set ::VTK_TEST_FILE $::VTK_DIR/bin/vtk
@@ -375,10 +364,10 @@ switch $::tcl_platform(os) {
         set ::VTK_BUILD_SUBDIR ""
         set ::Teem_BIN_DIR  $::Teem_BUILD_DIR/bin
 
-        set ::TCL_TEST_FILE $::TCL_BIN_DIR/tclsh8.4
-        set ::INCR_TCL_LIB $::TCL_LIB_DIR/lib/libitcl3.2.so
-        set ::INCR_TK_LIB $::TCL_LIB_DIR/lib/libitk3.2.so
-        set ::IWIDGETS_TEST_FILE $::TCL_LIB_DIR/iwidgets4.0.1/iwidgets.tcl
+        set ::TCL_TEST_FILE $::TCL_BIN_DIR/tclsh8.$::TCL_MINOR_VERSION
+        set ::INCR_TCL_LIB $::TCL_LIB_DIR/itcl$ITCL_VERSION/libitcl$ITCL_VERSION.so
+        set ::INCR_TK_LIB $::TCL_LIB_DIR/itk$ITCL_VERSION/libitk$ITCL_VERSION.so
+        set ::IWIDGETS_TEST_FILE $::TCL_LIB_DIR/iwidgets$IWIDGETS_VERSION/iwidgets.tcl
         set ::BLT_TEST_FILE $::TCL_BIN_DIR/bltwish24
         if { $::USE_SYSTEM_PYTHON } {
           error "need to define system python path for $::tcl_platform(os)"
@@ -391,15 +380,15 @@ switch $::tcl_platform(os) {
         set ::CLAPACK_TEST_FILE $::Slicer3_LIB/CLAPACK-build/BLAS/SRC/libblas.a
         set ::NUMPY_TEST_FILE $::PYTHON_BIN_DIR/lib/python2.6/site-packages/numpy/core/numeric.pyc
         set ::SCIPY_TEST_FILE $::PYTHON_BIN_DIR/lib/python2.6/site-packages/scipy/version.pyc
-        set ::TK_TEST_FILE  $::TCL_BIN_DIR/wish8.4
-        set ::ITCL_TEST_FILE $::TCL_LIB_DIR/libitcl3.2.so
+        set ::TK_TEST_FILE  $::TCL_BIN_DIR/wish8.$::TCL_MINOR_VERSION
+        set ::ITCL_TEST_FILE $::INCR_TCL_LIB
         set ::Teem_TEST_FILE $::Teem_BIN_DIR/unu
         set ::VTK_TEST_FILE $::VTK_DIR/bin/vtk
         set ::KWWidgets_TEST_FILE $::KWWidgets_BUILD_DIR/bin/libKWWidgets.so
         set ::OpenCV_TEST_FILE $::OpenCV_DIR/lib/libcv.so
-        set ::VTK_TCL_LIB $::TCL_LIB_DIR/libtcl8.4.$shared_lib_ext 
-        set ::VTK_TK_LIB $::TCL_LIB_DIR/libtk8.4.$shared_lib_ext
-        set ::VTK_TCLSH $::TCL_BIN_DIR/tclsh8.4
+        set ::VTK_TCL_LIB $::TCL_LIB_DIR/libtcl8.$::TCL_MINOR_VERSION.$shared_lib_ext 
+        set ::VTK_TK_LIB $::TCL_LIB_DIR/libtk8.$::TCL_MINOR_VERSION.$shared_lib_ext
+        set ::VTK_TCLSH $::TCL_BIN_DIR/tclsh8.$::TCL_MINOR_VERSION
         set ::ITK_TEST_FILE $::ITK_BINARY_PATH/bin/libITKCommon.$shared_lib_ext
         set ::TK_EVENT_PATCH $::Slicer3_HOME/tkEventPatch.diff
         set ::env(VTK_BUILD_SUBDIR) $::VTK_BUILD_SUBDIR
@@ -461,34 +450,26 @@ switch $::tcl_platform(os) {
 
         if { $::env(BITNESS) == "64" } {
             set ::USE_NUMPY "OFF"
-            set ::ITCL_TEST_FILE $::TCL_LIB_DIR/itclstub34.lib
-            set ::INCR_TCL_LIB $::TCL_LIB_DIR/itclstub34.lib
-            set ::INCR_TK_LIB $::TCL_LIB_DIR/itkstub34.lib
-            set ::IWIDGETS_TEST_FILE $::TCL_LIB_DIR/itkstub34.lib
-            set ::TCL_TEST_FILE $::TCL_BIN_DIR/tclsh85.exe
-            set ::TK_TEST_FILE  $::TCL_BIN_DIR/wish85.exe
-            set ::VTK_TCL_LIB $::TCL_LIB_DIR/tcl85.lib
-            set ::VTK_TK_LIB $::TCL_LIB_DIR/tk85.lib
-            set ::VTK_TCLSH $::TCL_BIN_DIR/tclsh85.exe
             set ::PYTHON_TEST_FILE $::PYTHON_BIN_DIR/PCbuild/amd64/python.exe
             set ::PYTHON_LIB $::PYTHON_BIN_DIR/PCbuild/amd64/python26.lib
             set ::PYTHON_BUILD_DIR $::Slicer3_LIB/python-build/PCbuild/amd64
             set ::PYTHON_CONFIG "$::PYTHON_BUILD_TYPE|x64"
         } else {
-            set ::ITCL_TEST_FILE $::TCL_LIB_DIR/itclConfig.sh
-            set ::INCR_TCL_LIB $::TCL_LIB_DIR/lib/itcl3.4/itcl32.lib
-            set ::INCR_TK_LIB $::TCL_LIB_DIR/lib/itk3.4/itk32.lib
-            set ::IWIDGETS_TEST_FILE $::TCL_LIB_DIR/iwidgets4.0.2/iwidgets.tcl
-            set ::TCL_TEST_FILE $::TCL_BIN_DIR/tclsh84.exe
-            set ::TK_TEST_FILE  $::TCL_BIN_DIR/wish84.exe
-            set ::VTK_TCL_LIB $::TCL_LIB_DIR/tcl84.lib
-            set ::VTK_TK_LIB $::TCL_LIB_DIR/tk84.lib
-            set ::VTK_TCLSH $::TCL_BIN_DIR/tclsh84.exe
             set ::PYTHON_TEST_FILE $::PYTHON_BIN_DIR/PCbuild/python.exe
             set ::PYTHON_LIB $::PYTHON_BIN_DIR/PCbuild/python26.lib
             set ::PYTHON_BUILD_DIR $::Slicer3_LIB/python-build/PCbuild
             set ::PYTHON_CONFIG "$::PYTHON_BUILD_TYPE|Win32"
         }
+
+        set ::ITCL_TEST_FILE $::TCL_LIB_DIR/itclConfig.sh
+        set ::INCR_TCL_LIB $::TCL_LIB_DIR/lib/itcl3.4/itcl32.lib
+        set ::INCR_TK_LIB $::TCL_LIB_DIR/lib/itk3.4/itk32.lib
+        set ::IWIDGETS_TEST_FILE $::TCL_LIB_DIR/iwidgets4.0.2/iwidgets.tcl
+        set ::TCL_TEST_FILE $::TCL_BIN_DIR/tclsh8$::TCL_MINOR_VERSION.exe
+        set ::TK_TEST_FILE  $::TCL_BIN_DIR/wish8$::TCL_MINOR_VERSION.exe
+        set ::VTK_TCL_LIB $::TCL_LIB_DIR/tcl8$::TCL_MINOR_VERSION.lib
+        set ::VTK_TK_LIB $::TCL_LIB_DIR/tk8$::TCL_MINOR_VERSION.lib
+        set ::VTK_TCLSH $::TCL_BIN_DIR/tclsh8$::TCL_MINOR_VERSION.exe
 
         set ::PYTHON_INCLUDE $::PYTHON_BIN_DIR/include
         #set ::NUMPY_TAG "http://svn.scipy.org/svn/numpy/branches/1.5.x"

@@ -98,7 +98,7 @@ class Helper( object ):
   def GetPackages():
     '''
     '''
-    return ['CMTK', 'BRAINS', 'PLASTIMATCH']
+    return ['CMTK', 'BRAINS', 'PLASTIMATCH', 'DEMONS', 'DRAMMS', 'ANTS']
 
   @staticmethod
   def GetSpecificationTypes():

@@ -45,15 +45,35 @@ message("######### LOCAL_CMAKE_BUILD_OPTIONS:            ${LOCAL_CMAKE_BUILD_OPT
 
 #############################################################################################
 
-set(PROJECTNAME ANTSExternal)
+set(ITKv4_REPOSITORY git://itk.org/ITK.git)
+set(ITKv4_GIT_TAG ITK_Slicer)
+
+set(PROJECTNAME ITK4)
 ExternalProject_Add(${PROJECTNAME}
-  SVN_REPOSITORY "https://advants.svn.sourceforge.net/svnroot/advants"
+  GIT_REPOSITORY ${ITKv4_REPOSITORY}
+#  GIT_TAG ${ITKv4_GIT_TAG}
+  CMAKE_COMMAND /usr/bin/cmake
+  UPDATE_COMMAND git submodule update --init
   CMAKE_ARGS
     ${LOCAL_CMAKE_BUILD_OPTIONS}
     -DCMAKE_INSTALL_PREFIX:PATH=${PROJECTNAME}-install
-    -DCMAKE_BUILD_TYPE:STRING=Release
-#    -DCMAKE_BUILD_TYPE:STRING=Debug
-# INSTALL_COMMAND ""
+    -DCMAKE_BUILD_TYPE:STRING=Debug
+    -DITK_BUILD_ALL_MODULES:BOOL=ON
+    -DBUILD_TESTING:BOOL=ON
+    -DBUILD_SHARED_LIBS:BOOL=ON
+)
+
+
+set(PROJECTNAME ANTSExternal)
+ExternalProject_Add(${PROJECTNAME}
+  DEPENDS ITK4
+  SVN_REPOSITORY "https://advants.svn.sourceforge.net/svnroot/advants"
+  CMAKE_COMMAND /usr/bin/cmake
+  CMAKE_ARGS
+    ${LOCAL_CMAKE_BUILD_OPTIONS}
+    -DCMAKE_INSTALL_PREFIX:PATH=${PROJECTNAME}-install
+    -DCMAKE_BUILD_TYPE:STRING=Debug
+    -DITK_DIR:PATH=${CMAKE_CURRENT_BINARY_DIR}/ITK4-prefix/src/ITK4-build
 )
 
 install(

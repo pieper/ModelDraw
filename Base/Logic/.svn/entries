@@ -1,14 +1,14 @@
 10
 
 dir
-16770
+16815
 http://svn.slicer.org/Slicer3/trunk/Base/Logic
 http://svn.slicer.org/Slicer3
 
 
 
-2011-05-03T14:50:12.035989Z
-16548
+2011-07-31T15:28:27.302796Z
+16775
 domibel
 has-props
 
@@ -1395,11 +1395,11 @@ file
 
 
 
-2010-10-25T02:21:28.564995Z
-7ae818052cff2434c1ba17bda127cd83
-2010-02-15T21:35:35.375379Z
-12142
-lorensen
+2011-08-13T17:21:37.720119Z
+8fcfb806d8c93b535cb482ddb8abd3c8
+2011-07-31T15:28:27.302796Z
+16775
+domibel
 has-props
 
 
@@ -1421,7 +1421,7 @@ has-props
 
 
 
-1050
+1099
 
 Resources
 dir

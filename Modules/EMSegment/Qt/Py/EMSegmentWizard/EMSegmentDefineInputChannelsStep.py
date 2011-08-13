@@ -32,7 +32,6 @@ class EMSegmentDefineInputChannelsStep( EMSegmentStep ) :
     '''
     if not self.__dynamicFrame:
 
-      Helper.Debug( "No dynamic frame yet, creating one.." )
       self.__dynamicFrame = EMSegmentDynamicFrame()
 
     return self.__dynamicFrame
@@ -40,6 +39,11 @@ class EMSegmentDefineInputChannelsStep( EMSegmentStep ) :
   def createUserInterface( self ):
     '''
     '''
+
+    # disable the next button in simple mode
+    if self.isSimpleMode():
+      self.buttonBoxHints = self.NextButtonHidden
+
     self.__layout = self.__parent.createUserInterface()
 
     # the input channels
@@ -97,6 +101,10 @@ class EMSegmentDefineInputChannelsStep( EMSegmentStep ) :
 
       self.mrmlManager().SetEnableTargetToTargetRegistration( int( self.__alignInputScansCheckBox.isChecked() ) )
 
+      if self.isSimpleMode():
+        # propagate dynamic frame settings to MRML
+        self.dynamicFrame().SaveSettingsToMRML()
+
       self.__updating = 0
 
 
@@ -110,7 +118,14 @@ class EMSegmentDefineInputChannelsStep( EMSegmentStep ) :
 
       self.__inputChannelList.updateWidgetFromMRML()
 
-      self.__alignInputScansCheckBox.setChecked( self.mrmlManager().GetEnableTargetToTargetRegistration() )
+      if self.mrmlManager().GetEnableTargetToTargetRegistration() == 0:
+        self.__alignInputScansCheckBox.setChecked( False )
+      else:
+        self.__alignInputScansCheckBox.setChecked( True )
+
+      if self.isSimpleMode():
+        # update the dynamic frame from MRML
+        self.dynamicFrame().LoadSettingsFromMRML()
 
       self.__updating = 0
 
@@ -125,6 +140,7 @@ class EMSegmentDefineInputChannelsStep( EMSegmentStep ) :
       self.logic().SourceTaskFiles()
 
       # clear the dynamic panel
+      self.dynamicFrame().setMRMLManager( self.mrmlManager() )
       self.dynamicFrame().clearElements()
 
       logicTclName = self.logic().GetSlicerCommonInterface().GetTclNameFromPointer( self.logic() )
@@ -139,6 +155,23 @@ class EMSegmentDefineInputChannelsStep( EMSegmentStep ) :
     '''
     '''
     self.propagateToMRML()
+
+    if self.isSimpleMode():
+
+      returnValue = tcl( "::EMSegmenterSimpleTcl::ValidateCheckList" )
+
+      if int( returnValue ) != 0:
+        # error
+        messageBox = qt.QMessageBox.warning( self, "Error", "Could not validate the Checklist. Please double check your settings!" )
+        return
+
+      self.mrmlManager().GetWorkingDataNode().SetAlignedTargetNodeIsValid( 0 )
+      self.mrmlManager().GetWorkingDataNode().SetAlignedAtlasNodeIsValid( 0 )
+
+      # disable questions at the pre-processing step
+      preProcessingStep = slicer.modules.emsegmentPreprocessingStep
+      if preProcessingStep:
+        preProcessingStep.disableQuestions()
 
     self.__parent.onExit( goingTo, transitionType )
 

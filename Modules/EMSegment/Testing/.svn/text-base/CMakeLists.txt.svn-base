@@ -692,7 +692,7 @@ endif(EM_Slicer4_FOUND)
 
 
   if (EMSEG_RUN_LOCAL_TESTS)
-    set (registrationpackages CMTK BRAINS PLASTIMATCH DEMONS)
+    set (registrationpackages CMTK BRAINS PLASTIMATCH DEMONS DRAMMS ANTS)
     set (scalartypes float char double int short uchar uint ushort)
     set (sizes small very_small)
   else (EMSEG_RUN_LOCAL_TESTS)
@@ -704,21 +704,21 @@ endif(EM_Slicer4_FOUND)
 
 
   #==== Scalartype tests ============================
-
+  set (size very_small)
   foreach (registrationpackage ${registrationpackages})
 
     foreach (scalartype ${scalartypes})
 
       # Task test - scalartypes - registrationpackages
-      midas_add_test( EMSegCL_Task_${registrationpackage}_MRIHumanBrain_${scalartype}
+      midas_add_test( EMSegCL_Task_${registrationpackage}_MRIHumanBrain_scalartype_${scalartype}_${size}
         ${Slicer3_EXE} ${WRAPPED_EXE_PREFIX}/EMSegmentCommandLine
         ${EMS_SLICER_LAUNCH_ARGUMENTS}
         --verbose --mrmlSceneFileName
         ${EMSegment_SOURCE_DIR}/Tasks/MRI-Human-Brain.mrml
         --targetVolumeFileNames
-        MIDAS{MRI-Human-Brain_T1-Atlas-Template-${scalartype}.nrrd.md5}
+        MIDAS{MRI-Human-Brain_T1-Atlas-Template-${scalartype}_${size}.nrrd.md5}
         --resultVolumeFileName
-        ${EMSegment_BINARY_DIR}/RESULT_${registrationpackage}_MRI-Human-Brain_T1-Atlas-Template-${scalartype}.nrrd
+        ${EMSegment_BINARY_DIR}/RESULT_${registrationpackage}_MRI-Human-Brain_T1-Atlas-Template-${scalartype}_${size}.nrrd
         --taskPreProcessingSetting
         ":C1:C0"
         --registrationPackage
@@ -727,9 +727,11 @@ endif(EM_Slicer4_FOUND)
         -1
         --registrationDeformableType
         -1
+        --atlasVolumeFileNames
+        ${EMSegment_TESTDATA_DIR}/MRI-Human-Brain/${size}_atlas_skulneck.nrrd,${EMSegment_TESTDATA_DIR}/MRI-Human-Brain/${size}_atlas_air.nrrd,${EMSegment_TESTDATA_DIR}/MRI-Human-Brain/${size}_atlas_csf.nrrd,${EMSegment_TESTDATA_DIR}/MRI-Human-Brain/${size}_atlas_greymatter.nrrd,${EMSegment_TESTDATA_DIR}/MRI-Human-Brain/${size}_atlas_whitematter.nrrd,${EMSegment_TESTDATA_DIR}/MRI-Human-Brain/${size}_atlas_t1.nrrd
         )
       set_tests_properties(
-        EMSegCL_Task_${registrationpackage}_MRIHumanBrain_${scalartype}
+        EMSegCL_Task_${registrationpackage}_MRIHumanBrain_scalartype_${scalartype}_${size}
         PROPERTIES
         FAIL_REGULAR_EXPRESSION
         "ERROR"
@@ -997,7 +999,7 @@ endif(EM_Slicer4_FOUND)
 
     if (EMSEG_RUN_LOCAL_TESTS)
       # Task cine MRI
-      add_test( EMSegCL_Task_cineMRI_${registrationpackage}_${size}
+      add_test( EMSegCL_Task_ACcineMRI_${registrationpackage}_${size}
         ${Slicer3_EXE} ${WRAPPED_EXE_PREFIX}/EMSegmentCommandLine
         ${EMS_SLICER_LAUNCH_ARGUMENTS}
         --verbose --mrmlSceneFileName
@@ -1013,7 +1015,7 @@ endif(EM_Slicer4_FOUND)
         #      :C1:C0:E../Slicer3/Modules/AtlasCreator/TestData/originals/:E../Slicer3/Modules/AtlasCreator/TestData/segmentations/:E${EMSegment_BINARY_DIR}/ACEMS
         )
       set_tests_properties(
-        EMSegCL_Task_cineMRI_${registrationpackage}_${size}
+        EMSegCL_Task_ACcineMRI_${registrationpackage}_${size}
         PROPERTIES
         FAIL_REGULAR_EXPRESSION
         "ERROR"

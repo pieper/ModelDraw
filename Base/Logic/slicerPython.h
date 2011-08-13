@@ -7,8 +7,8 @@
 
   Program:   Module Description Parser
   Module:    $HeadURL: http://svn.slicer.org/Slicer3/trunk/Base/Logic/slicerPython.h $
-  Date:      $Date: 2010-02-15 16:35:35 -0500 (Mon, 15 Feb 2010) $
-  Version:   $Revision: 12142 $
+  Date:      $Date: 2011-07-31 11:28:27 -0400 (Sun, 31 Jul 2011) $
+  Version:   $Revision: 16775 $
 
 ==========================================================================*/
 
@@ -24,6 +24,9 @@
 #  ifdef _LARGEFILE_SOURCE
 #  undef _LARGEFILE_SOURCE
 #  endif 
+
+#  undef _XOPEN_SOURCE
+#  undef _POSIX_C_SOURCE
 
 /// If debug, Python wants pythonxx_d.lib, so fake it out
 

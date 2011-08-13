@@ -12,6 +12,9 @@ class EMSegmentSpecifyIntensityDistributionStep( EMSegmentStep ) :
     self.setDescription( 'Define intensity distribution for each anatomical structure.' )
 
     self.__parent = super( EMSegmentSpecifyIntensityDistributionStep, self )
+    self.__layout = None
+    self.__anatomicalTree = None
+
 
   def createUserInterface( self ):
     '''
@@ -82,8 +85,9 @@ class EMSegmentSpecifyIntensityDistributionStep( EMSegmentStep ) :
     '''
     self.__parent.onEntry( comingFrom, transitionType )
 
-    self.__anatomicalTree.setMRMLManager( self.mrmlManager() )
-    self.__anatomicalTree.updateWidgetFromMRML()
+    if self.__anatomicalTree:
+      self.__anatomicalTree.setMRMLManager( self.mrmlManager() )
+      self.__anatomicalTree.updateWidgetFromMRML()
 
 
   def validate( self, desiredBranchId ):

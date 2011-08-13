@@ -16,6 +16,7 @@
 
 #define EXPP(x) (exp((x)/100.0) - 1.0)
 #define LOGP(x) (100.0 * log((x)+1.0))
+#define MUL100(x) (100.0 * x)
 //#define EXPP(x) (exp(x) - 1)
 //#define LOGP(x) (log((x)+1))
 
@@ -208,7 +209,7 @@ LLSBiasCorrector <TInputImage, TProbabilityImage>
             mu += 
               m_Probabilities[iclass]->GetPixel(ind)
               *
-              LOGP(m_InputImages[ichan]->GetPixel(ind));
+              MUL100(m_InputImages[ichan]->GetPixel(ind));
             sumClassProb += m_Probabilities[iclass]->GetPixel(ind);
           }
 
@@ -243,8 +244,8 @@ LLSBiasCorrector <TInputImage, TProbabilityImage>
           for (ind[1] = 0; ind[1] < (long)size[1]; ind[1] += skips[1])
             for (ind[0] = 0; ind[0] < (long)size[0]; ind[0] += skips[0])
             {
-              double diff1 = LOGP(m_InputImages[r]->GetPixel(ind)) - mu1;
-              double diff2 = LOGP(m_InputImages[c]->GetPixel(ind)) - mu2;
+              double diff1 = MUL100(m_InputImages[r]->GetPixel(ind)) - mu1;
+              double diff2 = MUL100(m_InputImages[c]->GetPixel(ind)) - mu2;
               var += m_Probabilities[iclass]->GetPixel(ind) * (diff1*diff2);
               sumClassProb += m_Probabilities[iclass]->GetPixel(ind);
             }
@@ -662,7 +663,7 @@ LLSBiasCorrector <TInputImage, TProbabilityImage>
 
             recon /= sumW;
 
-            double bias = LOGP(m_InputImages[jchan]->GetPixel(ind)) - recon;
+            double bias = MUL100(m_InputImages[jchan]->GetPixel(ind)) - recon;
             R_i(eq, 0) += sumW * bias;
 
             eq++;
@@ -784,7 +785,8 @@ LLSBiasCorrector <TInputImage, TProbabilityImage>
         for (ind[0] = 0; ind[0] < (long)size[0]; ind[0] += workingofft[0])
         {
           double p = m_Probabilities[m_ReferenceClassIndex]->GetPixel(ind);
-          inputMu += p * input->GetPixel(ind);
+          //inputMu += p * input->GetPixel(ind); // TODO, this might be correct
+          inputMu += p * exp(input->GetPixel(ind))-1.0;
           sumP += p;
         }
     inputMu /= sumP; 
@@ -882,7 +884,7 @@ LLSBiasCorrector <TInputImage, TProbabilityImage>
           if (logb < minBias)
             logb = minBias;
 
-          double logd = LOGP(m_InputImages[ichan]->GetPixel(ind)) - logb;
+          double logd = MUL100(m_InputImages[ichan]->GetPixel(ind)) - logb;
 //          double logd = m_InputImages[ichan]->GetPixel(ind) - logb;
           double d = EXPP(logd);
           //double d = m_InputImages[ichan]->GetPixel(ind) / (logb + 1e-20);

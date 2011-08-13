@@ -326,6 +326,16 @@ void vtkEMSegmentRegistrationParametersStep::ShowUserInterface()
       this->RegistrationParametersPackageMenuButton->
         GetWidget()->GetMenu()->AddRadioButton("DEMONS", this, buffer);
 
+      sprintf(buffer, "RegistrationPackageCallback %d",
+              vtkEMSegmentMRMLManager::DRAMMS);
+      this->RegistrationParametersPackageMenuButton->
+        GetWidget()->GetMenu()->AddRadioButton("DRAMMS", this, buffer);
+
+      sprintf(buffer, "RegistrationPackageCallback %d",
+              vtkEMSegmentMRMLManager::ANTS);
+      this->RegistrationParametersPackageMenuButton->
+        GetWidget()->GetMenu()->AddRadioButton("ANTS", this, buffer);
+
       }
 
 
@@ -351,6 +361,16 @@ void vtkEMSegmentRegistrationParametersStep::ShowUserInterface()
       case vtkEMSegmentMRMLManager::PLASTIMATCH:
         {
         value = "PLASTIMATCH";
+        break;
+        }
+      case vtkEMSegmentMRMLManager::DRAMMS:
+        {
+        value = "DRAMMS";
+        break;
+        }
+      case vtkEMSegmentMRMLManager::ANTS:
+        {
+        value = "ANTS";
         break;
         }
       default:

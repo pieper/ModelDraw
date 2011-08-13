@@ -367,6 +367,10 @@ GetAlignedTargetNode()
     {
     vtkMRMLNode* snode = 
       this->GetScene()->GetNodeByID(this->AlignedTargetNodeID);
+    if (snode == NULL)
+      {
+      vtkErrorMacro("AlignedTargetNode with ID " << this->AlignedTargetNodeID << " is null");
+      }
     node = vtkMRMLEMSVolumeCollectionNode::SafeDownCast(snode);
     }
   return node;

@@ -5,6 +5,7 @@ SET(EMS_PYTHON_SCRIPTS
   )
   
 SET(EMS_PYTHON_RESOURCES
+  Resources/qSlicerEMSegmentModule.qrc
   )
   
 ctkMacroCompilePythonScript(

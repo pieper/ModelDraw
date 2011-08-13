@@ -25,6 +25,9 @@
 #  undef _LARGEFILE_SOURCE
 #  endif 
 
+#  undef _XOPEN_SOURCE
+#  undef _POSIX_C_SOURCE
+
 /// If debug, Python wants pythonxx_d.lib, so fake it out
 
 #  ifdef _DEBUG

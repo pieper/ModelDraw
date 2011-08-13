@@ -286,6 +286,14 @@ int main(int argc, char** argv)
           { 
             emMRMLManager->SetRegistrationPackageType(3); // DEMONS
           }
+        else if (registrationPackage == "DRAMMS")
+          { 
+            emMRMLManager->SetRegistrationPackageType(4); // DRAMMS
+          }
+        else if (registrationPackage == "ANTS")
+          { 
+            emMRMLManager->SetRegistrationPackageType(5); // ANTS
+          }
         else
           {
             throw std::runtime_error("ERROR: registration package not known.");

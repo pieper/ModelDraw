@@ -1,14 +1,14 @@
 10
 
 dir
-16770
+16815
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Tasks
 http://svn.slicer.org/Slicer3
 
 
 
-2011-07-26T17:11:59.211168Z
-16769
+2011-08-10T21:18:37.412435Z
+16810
 domibel
 
 
@@ -26,16 +26,16 @@ domibel
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-GenericTask.tcl
+Registration_ANTS.tcl
 file
 
 
 
 
-2011-07-27T12:38:19.116079Z
-b44b7c778571a9fcbe955d5e991e21a6
-2011-07-25T20:32:25.123523Z
-16765
+2011-08-13T17:21:37.620119Z
+bfb49418840d230fcae98d6a00e675e7
+2011-08-09T18:29:06.279014Z
+16802
 domibel
 
 
@@ -58,109 +58,7 @@ domibel
 
 
 
-121229
-
-Non-Human-Primate.tcl
-file
-
-
-
-
-2011-06-29T20:22:25.271380Z
-3f2a8925d612b51a1ccb66656f339358
-2011-06-29T17:38:03.865200Z
-16715
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6597
-
-CT-Hand-Bone.tcl
-file
-
-
-
-
-2011-07-27T12:38:19.116079Z
-12bf4228b5b6ee1ea598a7fa0e58a563
-2011-07-22T19:22:54.524090Z
-16762
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20982
-
-Test-Atlas-Cluster.tcl
-file
-
-
-
-
-2011-07-27T12:38:19.116079Z
-063b9309df51b95c67c055b1be4eeb15
-2011-07-26T16:00:54.740092Z
-16768
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8740
+8391
 
 vtkCTHandBoneClass.cxx
 file
@@ -264,6 +162,40 @@ domibel
 
 22299
 
+Registration_plastimatch.tcl
+file
+
+
+
+
+2011-08-13T17:21:37.620119Z
+ec7d530e0c3f0acd8b5bd78a65084ace
+2011-08-09T18:29:06.279014Z
+16802
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7149
+
 MRI-Human-Brain
 dir
 
@@ -338,6 +270,40 @@ domibel
 
 16008
 
+Registration_BRAINS.tcl
+file
+
+
+
+
+2011-08-13T17:21:37.620119Z
+a081e17ad6073d9e64ac04194cf0cbaa
+2011-08-09T18:29:06.279014Z
+16802
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12000
+
 MRI-Human-Brain-HIPR.mrml
 file
 
@@ -406,40 +372,6 @@ domibel
 
 19250
 
-Template.tcl
-file
-
-
-
-
-2011-06-29T20:22:25.281380Z
-069c668fb23cede3c409fbe5c64c2fe8
-2011-06-29T17:38:03.865200Z
-16715
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3655
-
 Human-Eye.mrml
 file
 
@@ -474,11 +406,45 @@ domibel
 
 33000
 
+CT-Hand-Bone
+dir
+
 Non-Human-Primate
 dir
 
-CT-Hand-Bone
-dir
+Registration_DEMONS.tcl
+file
+
+
+
+
+2011-08-13T17:21:37.620119Z
+a8c21158627f2f1f0da8a465b9b31d33
+2011-08-09T18:29:06.279014Z
+16802
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4083
 
 MRI-Human-Brain-Exp.tcl
 file
@@ -514,113 +480,8 @@ haehn
 
 11890
 
-MRI-Human-Brain-Parcellation
-dir
-
 MRI-Human-Brain-Full-Parcellation
 dir
-
-Lesion-Exp.tcl
-file
-
-
-
-
-2011-06-29T20:22:25.281380Z
-93a87d33702d780f9243b9f916df856a
-2011-06-29T17:38:03.865200Z
-16715
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6551
-
-Non-Human-Primate.mrml
-file
-
-
-
-
-2011-05-12T11:40:52.422778Z
-be380ea56f044b9ae117601807bd2af2
-2011-05-11T21:38:13.869750Z
-16608
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-41973
-
-CT-Hand-Bone.mrml
-file
-
-
-
-
-2011-05-12T11:40:52.422778Z
-0836675101dc58ee052c823428b9c994
-2011-05-11T21:38:13.869750Z
-16608
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-40185
 
 vtkCTHandBoneClass.h
 file
@@ -690,40 +551,6 @@ domibel
 
 9858
 
-MRI-Human-Brain.mrml_remote
-file
-
-
-
-
-2011-05-04T11:42:13.852731Z
-f91b865fc68b2c157684352154a83435
-2011-04-28T03:53:26.839523Z
-16518
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-30577
-
 MRI-Human-Brain-Parcellation.mrml
 file
 
@@ -792,6 +619,315 @@ haehn
 
 6561
 
+CT-Hand-Bone.tcl
+file
+
+
+
+
+2011-07-27T12:38:19.116079Z
+12bf4228b5b6ee1ea598a7fa0e58a563
+2011-07-22T19:22:54.524090Z
+16762
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20982
+
+Non-Human-Primate.tcl
+file
+
+
+
+
+2011-06-29T20:22:25.271380Z
+3f2a8925d612b51a1ccb66656f339358
+2011-06-29T17:38:03.865200Z
+16715
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6597
+
+GenericTask.tcl
+file
+
+
+
+
+2011-08-13T17:21:37.620119Z
+3da572c11678573c248953d60c7410dd
+2011-08-10T21:18:37.412435Z
+16810
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+91293
+
+Test-Atlas-Cluster.tcl
+file
+
+
+
+
+2011-07-27T12:38:19.116079Z
+063b9309df51b95c67c055b1be4eeb15
+2011-07-26T16:00:54.740092Z
+16768
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8740
+
+Template.tcl
+file
+
+
+
+
+2011-06-29T20:22:25.281380Z
+069c668fb23cede3c409fbe5c64c2fe8
+2011-06-29T17:38:03.865200Z
+16715
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3655
+
+Registration_DRAMMS.tcl
+file
+
+
+
+
+2011-08-13T17:21:37.620119Z
+f674f7bb48658e63346eeaadf906fa35
+2011-08-09T18:29:06.279014Z
+16802
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4031
+
+MRI-Human-Brain-Parcellation
+dir
+
+Lesion-Exp.tcl
+file
+
+
+
+
+2011-06-29T20:22:25.281380Z
+93a87d33702d780f9243b9f916df856a
+2011-06-29T17:38:03.865200Z
+16715
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6551
+
+CT-Hand-Bone.mrml
+file
+
+
+
+
+2011-05-12T11:40:52.422778Z
+0836675101dc58ee052c823428b9c994
+2011-05-11T21:38:13.869750Z
+16608
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+40185
+
+Non-Human-Primate.mrml
+file
+
+
+
+
+2011-05-12T11:40:52.422778Z
+be380ea56f044b9ae117601807bd2af2
+2011-05-11T21:38:13.869750Z
+16608
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+41973
+
 MRI-Human-Brain-Full-Parcellation.mrml
 file
 
@@ -825,4 +961,72 @@ domibel
 
 
 23602
+
+MRI-Human-Brain.mrml_remote
+file
+
+
+
+
+2011-05-04T11:42:13.852731Z
+f91b865fc68b2c157684352154a83435
+2011-04-28T03:53:26.839523Z
+16518
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30577
+
+Registration_CMTK.tcl
+file
+
+
+
+
+2011-08-13T17:21:37.620119Z
+61f21060285ad346672d218348cfe67b
+2011-08-09T18:29:06.279014Z
+16802
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10241
 

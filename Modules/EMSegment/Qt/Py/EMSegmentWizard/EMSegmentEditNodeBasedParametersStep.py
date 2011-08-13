@@ -12,6 +12,8 @@ class EMSegmentEditNodeBasedParametersStep( EMSegmentStep ) :
     self.setDescription( 'Specify node-based segmentation parameters.' )
 
     self.__parent = super( EMSegmentEditNodeBasedParametersStep, self )
+    self.__layout = None
+    self.__anatomicalTree = None
 
   def createUserInterface( self ):
     '''
@@ -82,8 +84,9 @@ class EMSegmentEditNodeBasedParametersStep( EMSegmentStep ) :
     '''
     self.__parent.onEntry( comingFrom, transitionType )
 
-    self.__anatomicalTree.setMRMLManager( self.mrmlManager() )
-    self.__anatomicalTree.updateWidgetFromMRML()
+    if self.__anatomicalTree:
+      self.__anatomicalTree.setMRMLManager( self.mrmlManager() )
+      self.__anatomicalTree.updateWidgetFromMRML()
 
 
   def validate( self, desiredBranchId ):

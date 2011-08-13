@@ -1,6 +1,9 @@
 #ifndef __vtkEMSegmentLogic_h
 #define __vtkEMSegmentLogic_h
 
+// needed to get the CMake variables
+#include "vtkSlicerConfigure.h"
+
 #include "vtkSlicerModuleLogic.h"
 #include "vtkEMSegment.h"
 #include "vtkEMSegmentMRMLManager.h"
@@ -19,9 +22,6 @@
 #ifdef Slicer3_USE_KWWIDGETS
 #include <vtkMRMLAtlasCreatorNode.h>
 #endif
-
-// needed to get the CMake variables
-#include <vtkSlicerConfigure.h>
 
 class vtkImageEMLocalSegmenter;
 class vtkImageEMLocalGenericClass;
@@ -230,24 +230,15 @@ public:
 
   virtual int SourceTaskFiles();
   virtual int SourcePreprocessingTclFiles();
+
   int ComputeIntensityDistributionsFromSpatialPrior();
+
+  const char* DefineTclTaskFileFromMRML();
 
   //BTX
   vtkstd::string GetTclTaskDirectory();
-  vtkstd::string DefineTclTaskFileFromMRML();
-  //ETX
-#ifdef Slicer3_USE_KWWIDGETS
-  // we do not want to wrap this function in Slicer3
-  // it is only used in Slicer4
 
-  //BTX
-#endif
   std::string DefineTclTaskFullPathName(const char* TclFileName);
-#ifdef Slicer3_USE_KWWIDGETS
-  //ETX
-#endif
-
-  //BTX
   void
       CreateDefaultTasksList(std::vector<std::string> & DefaultTasksName, std::vector<
           std::string> & DefaultTasksFile, std::vector<std::string> & DefinePreprocessingTasksName, std::vector<
@@ -256,22 +247,22 @@ public:
 
   void UpdateIntensityDistributionAuto(vtkIdType nodeID);
 
-#ifdef Slicer3_USE_KWWIDGETS  
+#ifdef Slicer3_USE_KWWIDGETS
   void RunAtlasCreator(vtkMRMLAtlasCreatorNode *node);
 #endif
 
   void WriteImage(vtkImageData* file, const char* filename);
 
-#ifdef Slicer3_USE_KWWIDGETS
-  // we do not want to wrap this function in Slicer3
-  // it is only used in Slicer4
+// we do not want to wrap this function in Slicer3
+// it is only used in Slicer4
 
-  //BTX
-#endif
-  std::string GetTasks();
 #ifdef Slicer3_USE_KWWIDGETS
-  //ETX
+//BTX
 #endif
+std::string GetTasks();
+#ifdef Slicer3_USE_KWWIDGETS
+//ETX
+#endif 
 
 protected:
   // the mrml manager is created in the constructor
@@ -354,6 +345,10 @@ private:
   void operator=(const vtkEMSegmentLogic&);
 
   vtkSlicerCommonInterface *SlicerCommonInterface;
+
+  //BTX
+  std::string StringHolder;
+  //ETX
 
 };
 

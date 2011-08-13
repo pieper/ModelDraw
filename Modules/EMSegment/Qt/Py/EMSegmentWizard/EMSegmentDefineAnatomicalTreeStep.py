@@ -11,6 +11,9 @@ class EMSegmentDefineAnatomicalTreeStep( EMSegmentStep ) :
     self.setDescription( 'Define a hierarchy of structures.' )
 
     self.__parent = super( EMSegmentDefineAnatomicalTreeStep, self )
+    self.__layout = None
+    self.__colorTableComboBox = None
+    self.__anatomicalTree = None
 
   def createUserInterface( self ):
     '''
@@ -59,8 +62,9 @@ class EMSegmentDefineAnatomicalTreeStep( EMSegmentStep ) :
     '''
     self.__parent.onEntry( comingFrom, transitionType )
 
-    self.__anatomicalTree.setMRMLManager( self.mrmlManager() )
-    self.__anatomicalTree.updateWidgetFromMRML()
+    if self.__anatomicalTree:
+      self.__anatomicalTree.setMRMLManager( self.mrmlManager() )
+      self.__anatomicalTree.updateWidgetFromMRML()
 
 
   def validate( self, desiredBranchId ):

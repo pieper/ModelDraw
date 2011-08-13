@@ -42,7 +42,6 @@ endif(GenerateLM_FOUND)
 #   - ScriptedModule (at run-time for its Tcl package)
 
 SET(modules
-  AtlasCreator
   CommandLineModule
   Editor
   Endoscopy
@@ -69,7 +68,6 @@ SET(modules
 # WFEngineModule  <- can't work with 2.6 and Win32??
   ModelMirror
   ModelTransform
-  EMSegment
   # DistanceTransformModel <- culled from slicer 3.6
   ClipModel
   Measurements
@@ -86,6 +84,8 @@ SET(modules
 #  UDPServer
 #  CaptureBetaProbe
 #  OsteoPlan
+  AtlasCreator
+  EMSegment
   )
 
 if(Slicer3_USE_OPENIGTLINK)

@@ -1,14 +1,14 @@
 10
 
 dir
-16770
+16815
 http://svn.slicer.org/Slicer3/trunk/Base/GUI/Tcl
 http://svn.slicer.org/Slicer3
 
 
 
-2011-07-07T13:26:33.235520Z
-16732
+2011-08-13T17:48:52.655686Z
+16815
 pieper
 
 
@@ -25,40 +25,6 @@ pieper
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-ColorTree.tcl
-file
-
-
-
-
-2010-10-25T02:21:25.954995Z
-f0ce7ceb85f41de7044287e9c2ebd450
-2008-05-20T07:31:33.078615Z
-6775
-barre
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6807
 
 Slicer2Import.tcl
 file
@@ -94,6 +60,40 @@ barre
 
 15291
 
+ColorTree.tcl
+file
+
+
+
+
+2010-10-25T02:21:25.954995Z
+f0ce7ceb85f41de7044287e9c2ebd450
+2008-05-20T07:31:33.078615Z
+6775
+barre
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6807
+
 FilteredDirectoryDialog.tcl
 file
 
@@ -127,74 +127,6 @@ has-props
 
 
 6700
-
-Loader.tcl
-file
-
-
-
-
-2011-01-08T17:27:46.856869Z
-89845087f98c8cfeb7d8b5384fd55f0c
-2011-01-07T20:39:48.035608Z
-15736
-naucoin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-41527
-
-SWidget.tcl
-file
-
-
-
-
-2011-04-21T20:44:23.211124Z
-bc42473ce9e876274a9f8ad2fb325199
-2011-04-22T13:22:48.872554Z
-16481
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14265
 
 SlicePlaneSWidget.tcl
 file
@@ -230,16 +162,16 @@ has-props
 
 20208
 
-LoadVolume.tcl
+SWidget.tcl
 file
 
 
 
 
-2011-01-03T20:27:58.440050Z
-d4e413f504b386678b7e33b8a8525ef9
-2011-01-30T17:00:38.775020Z
-15852
+2011-04-21T20:44:23.211124Z
+bc42473ce9e876274a9f8ad2fb325199
+2011-04-22T13:22:48.872554Z
+16481
 pieper
 has-props
 
@@ -262,7 +194,75 @@ has-props
 
 
 
-52735
+14265
+
+Loader.tcl
+file
+
+
+
+
+2011-01-08T17:27:46.856869Z
+89845087f98c8cfeb7d8b5384fd55f0c
+2011-01-07T20:39:48.035608Z
+15736
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+41527
+
+SeedSWidget.tcl
+file
+
+
+
+
+2010-11-30T15:17:05.455939Z
+338dd8f931d249c98d2797d209b95b0f
+2010-11-30T15:53:26.610755Z
+15593
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13089
 
 ExternalProgress.tcl
 file
@@ -298,16 +298,16 @@ pieper
 
 3262
 
-SeedSWidget.tcl
+LoadVolume.tcl
 file
 
 
 
 
-2010-11-30T15:17:05.455939Z
-338dd8f931d249c98d2797d209b95b0f
-2010-11-30T15:53:26.610755Z
-15593
+2011-01-03T20:27:58.440050Z
+d4e413f504b386678b7e33b8a8525ef9
+2011-01-30T17:00:38.775020Z
+15852
 pieper
 has-props
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-13089
+52735
 
 CsysSWidget.tcl
 file
@@ -434,40 +434,6 @@ millerjv
 
 10817
 
-GridSWidget.tcl
-file
-
-
-
-
-2010-11-30T15:14:31.025939Z
-d0a711b903edf8a45a678477c61231cb
-2010-11-30T15:53:26.610755Z
-15593
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8988
-
 SliceViewerInteractor.tcl
 file
 
@@ -501,6 +467,40 @@ has-props
 
 
 2658
+
+GridSWidget.tcl
+file
+
+
+
+
+2010-11-30T15:14:31.025939Z
+d0a711b903edf8a45a678477c61231cb
+2010-11-30T15:53:26.610755Z
+15593
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8988
 
 ScreenShot.tcl
 file
@@ -780,10 +780,10 @@ file
 
 
 
-2011-04-08T19:43:14.062489Z
-3e5448c9acf0af562ea86cfa1f3d6aa8
-2011-04-08T19:45:22.093118Z
-16362
+2011-08-13T17:47:13.500120Z
+60279b8fe96c2f5f552a07272c425c3c
+2011-08-13T17:48:52.655686Z
+16815
 pieper
 has-props
 
@@ -806,7 +806,7 @@ has-props
 
 
 
-3905
+4756
 
 XnatXcatImport.tcl
 file

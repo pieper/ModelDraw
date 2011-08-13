@@ -1,14 +1,14 @@
 10
 
 dir
-16770
+16815
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Testing/TestData/MIDAS_Keys
 http://svn.slicer.org/Slicer3
 
 
 
-2011-02-14T16:14:08.932755Z
-16034
+2011-08-12T16:16:52.358139Z
+16812
 domibel
 
 
@@ -26,16 +26,16 @@ domibel
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-MRI-Human-Brain_T1-Atlas-Template-ushort.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-int_very_small.nrrd.md5
 file
 
 
 
 
-2011-02-14T18:50:38.813161Z
-e14ad367e220724b1dd619431b8cff89
-2011-02-14T16:14:08.932755Z
-16034
+2011-08-13T17:21:37.690119Z
+0b41410bc931f561ded5e539633d542f
+2011-08-12T16:16:52.358139Z
+16812
 domibel
 
 
@@ -60,16 +60,50 @@ domibel
 
 32
 
-RESULT_very_small_MRIHumanBrainParcellation_T1.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-short_small.nrrd.md5
 file
 
 
 
 
-2011-02-06T16:49:41.374725Z
-f7082320e2bea6a0131ddd7bd9c2346c
-2011-02-05T22:55:58.322555Z
-15937
+2011-08-13T17:21:37.690119Z
+514ead1b517810aa3f9ee9a0426c21c1
+2011-08-12T16:16:52.358139Z
+16812
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-uchar_small.nrrd.md5
+file
+
+
+
+
+2011-08-13T17:21:37.690119Z
+e94a1f158de19a4c4796cf914251bd6b
+2011-08-12T16:16:52.358139Z
+16812
 domibel
 
 
@@ -162,16 +196,16 @@ domibel
 
 32
 
-MRI-Human-Brain_T1-Atlas-Template-short.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-float_small.nrrd.md5
 file
 
 
 
 
-2011-02-14T18:50:38.813161Z
-bc44fd99d72d76d04cd1acbbc215a936
-2011-02-14T16:14:08.932755Z
-16034
+2011-08-13T17:21:37.690119Z
+fe9daa381256ea169a49872b0bf4ce34
+2011-08-12T16:16:52.358139Z
+16812
 domibel
 
 
@@ -196,16 +230,50 @@ domibel
 
 32
 
-CT_Hand_Bone_Subject_1.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-uchar_very_small.nrrd.md5
 file
 
 
 
 
-2011-02-06T16:49:41.374725Z
-ba72aaf584254893869924f1bf9212a9
-2011-02-05T23:53:19.888729Z
-15940
+2011-08-13T17:21:37.690119Z
+d04bbdb2b969f7d7e721aa4beafc6ead
+2011-08-12T16:16:52.358139Z
+16812
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-short.nrrd.md5
+file
+
+
+
+
+2011-02-14T18:50:38.813161Z
+bc44fd99d72d76d04cd1acbbc215a936
+2011-02-14T16:14:08.932755Z
+16034
 domibel
 
 
@@ -298,40 +366,6 @@ domibel
 
 32
 
-CT_Hand_Bone_Subject_3.nrrd.md5
-file
-
-
-
-
-2011-02-06T16:49:41.374725Z
-37516475520dd2faf4f5938ac0be4726
-2011-02-05T23:53:19.888729Z
-15940
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-32
-
 MRI-Human-Brain_T1-Atlas-Template-uchar.nrrd.md5
 file
 
@@ -366,16 +400,16 @@ domibel
 
 32
 
-RESULT_small_MRIHumanBrainFullParcellation_T1.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-char_small.nrrd.md5
 file
 
 
 
 
-2011-02-06T16:49:41.374725Z
-4789574d971802b2a8896cd63c439ec9
-2011-02-05T22:55:58.322555Z
-15937
+2011-08-13T17:21:37.690119Z
+60d50a1886460ad42fc25602e3855410
+2011-08-12T16:16:52.358139Z
+16812
 domibel
 
 
@@ -434,16 +468,16 @@ domibel
 
 32
 
-RESULT_small_MRIHumanBrain_T1_aligned.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-uint_small.nrrd.md5
 file
 
 
 
 
-2011-02-06T16:49:41.374725Z
-ddc8f6d76e1e6e1b012d5b03c4ac10d4
-2011-02-05T22:55:58.322555Z
-15937
+2011-08-13T17:21:37.690119Z
+9b554f4c0e44927512aebfa34012752f
+2011-08-12T16:16:52.358139Z
+16812
 domibel
 
 
@@ -468,84 +502,16 @@ domibel
 
 32
 
-RESULT_very_small_MRIHumanBrainFullParcellation_T1.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-ushort_small.nrrd.md5
 file
 
 
 
 
-2011-02-06T16:49:41.374725Z
-9af8570a04e962104f5c46f00e41770a
-2011-02-05T22:55:58.322555Z
-15937
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-32
-
-MRI-Human-Brain_T1-Atlas-Template-double.nrrd.md5
-file
-
-
-
-
-2011-02-14T18:50:38.813161Z
-5077866a8bc58532a66bf403bf68ae35
-2011-02-14T16:14:08.932755Z
-16034
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-32
-
-RESULT_very_small_MRIHumanBrain_T1_aligned.nrrd.md5
-file
-
-
-
-
-2011-02-06T16:49:41.374725Z
-39ee9e70930da23d8c9a8df87fb52caf
-2011-02-05T22:55:58.322555Z
-15937
+2011-08-13T17:21:37.690119Z
+be87ae87282f87259cc00c757bbafcc1
+2011-08-12T16:16:52.358139Z
+16812
 domibel
 
 
@@ -638,6 +604,584 @@ domibel
 
 32
 
+RESULT_small_MRIHumanBrainParcellation_T1.nrrd.md5
+file
+
+
+
+
+2011-02-06T16:49:41.374725Z
+3eff74d670a4eecef8beec13f18f4c9e
+2011-02-05T22:55:58.322555Z
+15937
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-ushort_very_small.nrrd.md5
+file
+
+
+
+
+2011-08-13T17:21:37.690119Z
+a643ed6c281d5b5018d8b9737f7601ad
+2011-08-12T16:16:52.358139Z
+16812
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-ushort.nrrd.md5
+file
+
+
+
+
+2011-02-14T18:50:38.813161Z
+e14ad367e220724b1dd619431b8cff89
+2011-02-14T16:14:08.932755Z
+16034
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+RESULT_very_small_MRIHumanBrainParcellation_T1.nrrd.md5
+file
+
+
+
+
+2011-02-06T16:49:41.374725Z
+f7082320e2bea6a0131ddd7bd9c2346c
+2011-02-05T22:55:58.322555Z
+15937
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-short_very_small.nrrd.md5
+file
+
+
+
+
+2011-08-13T17:21:37.690119Z
+5a0914a85fa8aa7bdce506ceb598116f
+2011-08-12T16:16:52.358139Z
+16812
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+CT_Hand_Bone_Subject_1.nrrd.md5
+file
+
+
+
+
+2011-02-06T16:49:41.374725Z
+ba72aaf584254893869924f1bf9212a9
+2011-02-05T23:53:19.888729Z
+15940
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+CT_Hand_Bone_Subject_3.nrrd.md5
+file
+
+
+
+
+2011-02-06T16:49:41.374725Z
+37516475520dd2faf4f5938ac0be4726
+2011-02-05T23:53:19.888729Z
+15940
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-double_small.nrrd.md5
+file
+
+
+
+
+2011-08-13T17:21:37.690119Z
+b1369eaa4f0eef4655854dfa224c99c5
+2011-08-12T16:16:52.358139Z
+16812
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-float_very_small.nrrd.md5
+file
+
+
+
+
+2011-08-13T17:21:37.690119Z
+b5cc5cdc4c320e60c9e494796248927c
+2011-08-12T16:16:52.358139Z
+16812
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+RESULT_small_MRIHumanBrainFullParcellation_T1.nrrd.md5
+file
+
+
+
+
+2011-02-06T16:49:41.374725Z
+4789574d971802b2a8896cd63c439ec9
+2011-02-05T22:55:58.322555Z
+15937
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+RESULT_small_MRIHumanBrain_T1_aligned.nrrd.md5
+file
+
+
+
+
+2011-02-06T16:49:41.374725Z
+ddc8f6d76e1e6e1b012d5b03c4ac10d4
+2011-02-05T22:55:58.322555Z
+15937
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-double_very_small.nrrd.md5
+file
+
+
+
+
+2011-08-13T17:21:37.690119Z
+a8ef418e40bbaae60bde741322c48a91
+2011-08-12T16:16:52.358139Z
+16812
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+RESULT_very_small_MRIHumanBrainFullParcellation_T1.nrrd.md5
+file
+
+
+
+
+2011-02-06T16:49:41.374725Z
+9af8570a04e962104f5c46f00e41770a
+2011-02-05T22:55:58.322555Z
+15937
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-double.nrrd.md5
+file
+
+
+
+
+2011-02-14T18:50:38.813161Z
+5077866a8bc58532a66bf403bf68ae35
+2011-02-14T16:14:08.932755Z
+16034
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-char_very_small.nrrd.md5
+file
+
+
+
+
+2011-08-13T17:21:37.690119Z
+c6778d454cd6223d2a8fa68dc528ae61
+2011-08-12T16:16:52.358139Z
+16812
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+RESULT_very_small_MRIHumanBrain_T1_aligned.nrrd.md5
+file
+
+
+
+
+2011-02-06T16:49:41.374725Z
+39ee9e70930da23d8c9a8df87fb52caf
+2011-02-05T22:55:58.322555Z
+15937
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+MRI-Human-Brain_T1-Atlas-Template-uint_very_small.nrrd.md5
+file
+
+
+
+
+2011-08-13T17:21:37.690119Z
+6c2055a69df1133e63d28bf2ffe50d20
+2011-08-12T16:16:52.358139Z
+16812
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
 x4_atlas_t1.nrrd.md5
 file
 
@@ -672,16 +1216,16 @@ domibel
 
 32
 
-RESULT_small_MRIHumanBrainParcellation_T1.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-int_small.nrrd.md5
 file
 
 
 
 
-2011-02-06T16:49:41.374725Z
-3eff74d670a4eecef8beec13f18f4c9e
-2011-02-05T22:55:58.322555Z
-15937
+2011-08-13T17:21:37.690119Z
+f2abf2976bcafce201d573f988c47ac2
+2011-08-12T16:16:52.358139Z
+16812
 domibel
 
 

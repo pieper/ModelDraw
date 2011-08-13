@@ -624,6 +624,8 @@ void vtkSlicerCommonInterface::DestroySlicerApplication()
 #ifdef Slicer3_USE_KWWIDGETS
 
   // Slicer3
+  this->PromptBeforeExitOff();
+
   vtkSlicerApplication* app = vtkSlicerApplication::GetInstance();
 
   if (app)

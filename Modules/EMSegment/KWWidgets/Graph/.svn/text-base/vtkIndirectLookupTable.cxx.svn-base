@@ -725,3 +725,10 @@ void vtkIndirectLookupTable::MapScalarsThroughTable2(void *input, unsigned char 
     return;
     }
 }
+#if (VTK_MAJOR_VERSION == 5 && VTK_MINOR_VERSION == 8)
+//----------------------------------------------------------------------------
+vtkIdType vtkIndirectLookupTable::GetNumberOfAvailableColors()
+{
+  return this->LookupTable->GetNumberOfAvailableColors();
+}
+#endif

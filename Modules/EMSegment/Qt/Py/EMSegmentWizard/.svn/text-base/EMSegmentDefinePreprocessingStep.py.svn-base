@@ -9,7 +9,7 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
 
   def __init__( self, stepid ):
     self.initialize( stepid )
-    self.setName( '6. Define Input Channels' )
+    self.setName( '6. Define Preprocessing' )
     self.setDescription( 'Answer questions for preprocessing of input images' )
 
     self.__parent = super( EMSegmentDefinePreprocessingStep, self )
@@ -18,13 +18,24 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
     self.__dynamicFrame = None
     self.__askQuestionsBeforeRunningPreprocessing = True
     self.__performCalculation = False
+    self.__updating = 0
+
+  def disableQuestions( self ):
+    '''
+    '''
+    self.__askQuestionsBeforeRunningPreprocessing = False
+    self.__performCalculation = True
+
+  def enableQuestions( self ):
+    '''
+    '''
+    self.__askQuestionsBeforeRunningPreprocessing = True
 
   def dynamicFrame( self ):
     '''
     '''
     if not self.__dynamicFrame:
 
-      Helper.Debug( "No dynamic frame yet, creating one.." )
       self.__dynamicFrame = EMSegmentDynamicFrame()
 
     return self.__dynamicFrame
@@ -49,6 +60,31 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
     #
 
 
+  def propagateToMRML( self ):
+    '''
+    '''
+    if not self.__updating:
+
+      self.__updating = 1
+
+      self.__updating = 0
+
+
+
+  def loadFromMRML( self ):
+    '''
+    '''
+    if not self.__updating:
+
+      self.__updating = 1
+
+      # update the dynamic frame from MRML
+      self.dynamicFrame().LoadSettingsFromMRML()
+
+      self.__updating = 0
+
+
+
   def onEntry( self, comingFrom, transitionType ):
     '''
     '''
@@ -56,54 +92,65 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
 
     # we are always in advanced mode, so let's fill the dynamic frame
     self.logic().SourceTaskFiles()
+    self.logic().SourcePreprocessingTclFiles()
 
     # clear the dynamic panel
+    self.dynamicFrame().setMRMLManager( self.mrmlManager() )
     self.dynamicFrame().clearElements()
 
     logicTclName = self.logic().GetSlicerCommonInterface().GetTclNameFromPointer( self.logic() )
 
     tcl( '::EMSegmenterPreProcessingTcl::ShowUserInterface ' + str( logicTclName ) )
 
+    self.loadFromMRML()
+
 
   def onExit( self, goingTo, transitionType ):
     '''
     '''
-    self.__parent.onExit( goingTo, transitionType )
-
-    Helper.Debug( "onExit: Preprocessing, goingto: " + str( goingTo.id() ) )
 
     # always save dynamic frame to mrml
-    self.dynamicFrame().SaveSettingToMRML()
+    self.dynamicFrame().SaveSettingsToMRML()
 
     # only perform the following if we go forward
-    if goingTo.id() == Helper.GetNthStepId( 7 ):
+    if goingTo.id() != Helper.GetNthStepId( 5 ):
       # all ok, we are going forward..
 
       # check if we should perform the calculation
       if self.__performCalculation:
+        self.runPreProcessing()
 
-        # run preprocessing
-        returnValue = tcl( "::EMSegmenterPreProcessingTcl::Run" )
+    self.__parent.onExit( goingTo, transitionType )
 
-        if returnValue:
-          # something went wrong!
-          # error message!
-          messageBox = qt.QMessageBox.warning( self, "Error", "Pre-processing did not execute correctly!" )
-          return
 
-        # set flags in the mrml nodes
-        workingDataNode.SetAlignedTargetNodeIsValid( 1 )
-        workingDataNode.SetAlignedAtlasNodeIsValid( 1 )
+  def runPreProcessing( self ):
+    '''
+    '''
+    # run preprocessing
+    returnValue = tcl( "::EMSegmenterPreProcessingTcl::Run" )
 
-        # show preprocessing output in sliceViews
-        volumeCollection = workingDataNode.GetInputTargetNode()
-        if volumeCollection:
-          outputNode = volumeCollection.GetNthVolumeNode( 0 )
-          # propagate to sliceViews
+    if not returnValue or int( returnValue ) != 0:
+      # something went wrong!
+      # error message!
+      messageBox = qt.QMessageBox.warning( self, "Error", "Pre-processing did not execute correctly!" )
+      return
 
-        Helper.Info( '=============================================' )
-        Helper.Info( 'Pre-processing completed successfully' )
-        Helper.Info( '=============================================' )
+    workingDataNode = self.mrmlManager().GetWorkingDataNode()
+
+    if workingDataNode:
+      # set flags in the mrml nodes
+      workingDataNode.SetAlignedTargetNodeIsValid( 1 )
+      workingDataNode.SetAlignedAtlasNodeIsValid( 1 )
+
+      # show preprocessing output in sliceViews
+      volumeCollection = workingDataNode.GetInputTargetNode()
+      if volumeCollection:
+        outputNode = volumeCollection.GetNthVolumeNode( 0 )
+        # propagate to sliceViews
+
+    Helper.Info( '=============================================' )
+    Helper.Info( 'Pre-processing completed successfully' )
+    Helper.Info( '=============================================' )
 
 
   def validate( self, desiredBranchId ):
@@ -128,12 +175,51 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
 
     # same for plastimatch
     if self.mrmlManager().GetRegistrationPackageType() == self.mrmlManager().GetPackageTypeFromString( 'PLASTIMATCH' ):
-      # cmtk was selected
+      # plastimatch was selected
       plastimatchPath = tcl( "::EMSegmenterPreProcessingTcl::Get_PLASTIMATCH_Installation_Path" )
 
       if plastimatchPath == "":
         # plastimatch was not found, ask if we want BRAINSFit instead
         answer = qt.QMessageBox.question( self, "PLASTIMATCH is not installed", "Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
+        if answer == qt.QMessageBox.No:
+          # if no, exit here and stay at this step
+          self.__parent.validationFailed( desiredBranchId, '', '', False )
+          return
+
+    # same for DEMONS
+    if self.mrmlManager().GetRegistrationPackageType() == self.mrmlManager().GetPackageTypeFromString( 'DEMONS' ):
+      # DEMONS was selected
+      demonsPath = tcl( "::EMSegmenterPreProcessingTcl::Get_DEMONS_Installation_Path" )
+
+      if demonsPath == "":
+        # demons was not found, ask if we want BRAINSFit instead
+        answer = qt.QMessageBox.question( self, "DEMONS is not installed", "Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
+        if answer == qt.QMessageBox.No:
+          # if no, exit here and stay at this step
+          self.__parent.validationFailed( desiredBranchId, '', '', False )
+          return
+
+    # same for DRAMMS
+    if self.mrmlManager().GetRegistrationPackageType() == self.mrmlManager().GetPackageTypeFromString( 'DRAMMS' ):
+      # dramms was selected
+      drammsPath = tcl( "::EMSegmenterPreProcessingTcl::Get_DRAMMS_Installation_Path" )
+
+      if drammsPath == "":
+        # dramms was not found, ask if we want BRAINSFit instead
+        answer = qt.QMessageBox.question( self, "DRAMMS is not installed", "Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
+        if answer == qt.QMessageBox.No:
+          # if no, exit here and stay at this step
+          self.__parent.validationFailed( desiredBranchId, '', '', False )
+          return
+
+    # same for ANTS
+    if self.mrmlManager().GetRegistrationPackageType() == self.mrmlManager().GetPackageTypeFromString( 'ANTS' ):
+      # ANTS was selected
+      antsPath = tcl( "::EMSegmenterPreProcessingTcl::Get_ANTS_Installation_Path" )
+
+      if antsPath == "":
+        # ANTS was not found, ask if we want BRAINSFit instead
+        answer = qt.QMessageBox.question( self, "ANTS is not installed", "Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
         if answer == qt.QMessageBox.No:
           # if no, exit here and stay at this step
           self.__parent.validationFailed( desiredBranchId, '', '', False )
@@ -145,6 +231,7 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
     if not self.__askQuestionsBeforeRunningPreprocessing:
       # no questions, just run it
       self.__parent.validationSucceeded( desiredBranchId )
+      return
 
     # check if preprocessing already ran
     # if yes, ask for redo

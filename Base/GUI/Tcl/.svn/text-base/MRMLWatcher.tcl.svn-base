@@ -64,6 +64,41 @@ proc TimeSlideSlice { {sliceName "Red"} {iters 10} } {
 }
 
 
+#
+## Memory tracking - optimized for linux
+#
+
+proc MemoryTrack { {interval 1000} } {
+  
+  if { $interval == "cancel" } {
+    if { [info exists ::MRML(memoryTrackAfterID)] } {
+      after cancel $::MRML(memoryTrackAfterID)
+    }
+    return
+  }
+
+  if { ![info exists ::MRML(sysinfo)] } {
+    set ::MRML(sysinfo) [vtkSystemInformation New]
+  }
+  $::MRML(sysinfo) RunMemoryCheck
+  set availableMemory [$::MRML(sysinfo) GetAvailablePhysicalMemory]
+
+  if { [file exists "/proc/[pid]/statm"] } {
+    set fp [open "/proc/[pid]/statm" "r"]
+    set statm [gets $fp]
+    close $fp
+    scan $statm "%d" vsize
+    # TODO: assume 4096 pagesize for now
+    set vsize [expr $vsize/1024 * 4]
+
+    puts "using $vsize - $availableMemory left"
+  } else {
+    puts "$availableMemory left"
+  }
+
+  set ::MRML(memoryTrackAfterID) [after $interval ::MemoryTrack $interval]
+}
+
 
 #
 # The partent class definition - define if needed (not when re-sourcing)

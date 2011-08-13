@@ -68,7 +68,14 @@ proc TimeSlideSlice { {sliceName "Red"} {iters 10} } {
 ## Memory tracking - optimized for linux
 #
 
-proc MemoryTrack { {interval -1} } {
+proc MemoryTrack { {interval 1000} } {
+  
+  if { $interval == "cancel" } {
+    if { [info exists ::MRML(memoryTrackAfterID)] } {
+      after cancel $::MRML(memoryTrackAfterID)
+    }
+    return
+  }
 
   if { ![info exists ::MRML(sysinfo)] } {
     set ::MRML(sysinfo) [vtkSystemInformation New]
@@ -76,18 +83,20 @@ proc MemoryTrack { {interval -1} } {
   $::MRML(sysinfo) RunMemoryCheck
   set availableMemory [$::MRML(sysinfo) GetAvailablePhysicalMemory]
 
-  set fp [open "/proc/[pid]/statm" "r"]
-  set statm [gets $fp]
-  close $fp
-  scan $statm "%d" vsize
-  # TODO: assume 4096 pagesize for now
-  set vsize [expr $vsize/1024 * 4]
+  if { [file exists "/proc/[pid]/statm"] } {
+    set fp [open "/proc/[pid]/statm" "r"]
+    set statm [gets $fp]
+    close $fp
+    scan $statm "%d" vsize
+    # TODO: assume 4096 pagesize for now
+    set vsize [expr $vsize/1024 * 4]
 
-  puts "using $vsize - $availableMemory left"
-
-  if { $interval > 0 } {
-    after $interval ::MemoryTrack $interval
+    puts "using $vsize - $availableMemory left"
+  } else {
+    puts "$availableMemory left"
   }
+
+  set ::MRML(memoryTrackAfterID) [after $interval ::MemoryTrack $interval]
 }
 
 

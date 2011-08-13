@@ -11,6 +11,8 @@ class EMSegmentDefineAtlasStep( EMSegmentStep ) :
     self.setDescription( 'Assign structure specific atlases of corresponding anatomy in the tree.' )
 
     self.__parent = super( EMSegmentDefineAtlasStep, self )
+    self.__layout = None
+    self.__anatomicalTree = None
 
   def createUserInterface( self ):
     '''
@@ -37,8 +39,9 @@ class EMSegmentDefineAtlasStep( EMSegmentStep ) :
     '''
     self.__parent.onEntry( comingFrom, transitionType )
 
-    self.__anatomicalTree.setMRMLManager( self.mrmlManager() )
-    self.__anatomicalTree.updateWidgetFromMRML()
+    if self.__anatomicalTree:
+      self.__anatomicalTree.setMRMLManager( self.mrmlManager() )
+      self.__anatomicalTree.updateWidgetFromMRML()
 
 
   def validate( self, desiredBranchId ):

@@ -720,6 +720,11 @@ proc launch_SetPaths {} {
     set ::env(TCLLIBPATH) "$::env(TCL_DIR)/lib/iwidgets4.0.1 $::env(TCLLIBPATH)"
     set ::env(TCLLIBPATH) "$::env(TCL_DIR)/lib/blt2.4 $::env(TCLLIBPATH)"
 
+    # new location for windows version of activetcl 8.5
+    if { $::env(BUILD) == $::WINDOWS } {
+      set ::env(TCLLIBPATH) "$::env(TCL_DIR)/lib/teapot/package/win32-ix86/lib/Itcl3.4 $::env(TCLLIBPATH)"
+    }
+
     #
     # add the default search locations for python packages for a slicer build of python
     #

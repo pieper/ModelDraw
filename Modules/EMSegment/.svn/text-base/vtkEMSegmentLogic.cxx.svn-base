@@ -79,6 +79,7 @@ vtkEMSegmentLogic::vtkEMSegmentLogic()
   manager->Delete();
 
   this->SlicerCommonInterface = NULL;
+
 }
 
 //----------------------------------------------------------------------------
@@ -93,6 +94,7 @@ vtkEMSegmentLogic::~vtkEMSegmentLogic()
     this->SlicerCommonInterface->Delete();
     this->SlicerCommonInterface = NULL;
     }
+
 }
 
 //----------------------------------------------------------------------------
@@ -850,6 +852,13 @@ void vtkEMSegmentLogic::CopyTargetDataToSegmenter(vtkImageEMLocalSegmenter* segm
   // !!! todo: TESTING HERE!!!
   vtkMRMLEMSVolumeCollectionNode* workingTarget =
       this->MRMLManager->GetWorkingDataNode()->GetAlignedTargetNode();
+
+  if (workingTarget == NULL)
+  {
+    vtkErrorMacro("TargetNode is null");
+    return;
+  }
+
   unsigned int numTargetImages = workingTarget->GetNumberOfVolumes();
   std::cout << "Setting number of target images: " << numTargetImages
       << std::endl;
@@ -2782,7 +2791,7 @@ int vtkEMSegmentLogic::SourceTaskFiles()
 {
   vtkstd::string generalFile = this->DefineTclTaskFullPathName(
       vtkMRMLEMSGlobalParametersNode::GetDefaultTaskTclFileName());
-  vtkstd::string specificFile = this->DefineTclTaskFileFromMRML();
+  vtkstd::string specificFile = std::string(this->DefineTclTaskFileFromMRML());
   cout << "Sourcing general Task file : " << generalFile.c_str() << endl;
   // Have to first source the default file to set up the basic structure"
   if (this->SourceTclFile(generalFile.c_str()))
@@ -2818,24 +2827,23 @@ int vtkEMSegmentLogic::SourcePreprocessingTclFiles()
 }
 
 //----------------------------------------------------------------------------
-std::string vtkEMSegmentLogic::DefineTclTaskFileFromMRML()
+const char* vtkEMSegmentLogic::DefineTclTaskFileFromMRML()
 {
   std::string tclFile("");
-  tclFile = this->DefineTclTaskFullPathName(
-      this->GetMRMLManager()->GetTclTaskFilename());
+  this->StringHolder = this->DefineTclTaskFullPathName(
+                                                       this->GetMRMLManager()->GetTclTaskFilename());
 
-  if (vtksys::SystemTools::FileExists(tclFile.c_str())
-      && (!vtksys::SystemTools::FileIsDirectory(tclFile.c_str())))
+  if (!vtksys::SystemTools::FileExists(this->StringHolder.c_str())
+      || vtksys::SystemTools::FileIsDirectory(this->StringHolder.c_str()))
     {
-    return tclFile;
+
+      cout << "vtkEMSegmentTclConnector::DefineTclTaskFileFromMRML: "
+           << this->StringHolder.c_str() << " does not exist - using default file" << endl;
+
+      this->StringHolder = this->DefineTclTaskFullPathName(
+           vtkMRMLEMSGlobalParametersNode::GetDefaultTaskTclFileName());
     }
-
-  cout << "vtkEMSegmentTclConnector::DefineTclTaskFileFromMRML: "
-      << tclFile.c_str() << " does not exist - using default file" << endl;
-
-  tclFile = this->DefineTclTaskFullPathName(
-      vtkMRMLEMSGlobalParametersNode::GetDefaultTaskTclFileName());
-  return tclFile;
+  return this->StringHolder.c_str();
 }
 
 //----------------------------------------------------------------------------

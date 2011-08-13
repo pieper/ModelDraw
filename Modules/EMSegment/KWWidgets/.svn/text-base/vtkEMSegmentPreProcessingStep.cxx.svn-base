@@ -161,6 +161,34 @@ vtkEMSegmentPreProcessingStep::Validate()
     }
   }
 
+  if ( mrmlManager->GetRegistrationPackageType() == mrmlManager->GetPackageTypeFromString("DRAMMS") ) {
+    const char* path = this->Script("::EMSegmenterPreProcessingTcl::Get_DRAMMS_Installation_Path");
+    if ( *path == '\0' ) {
+      if (!vtkKWMessageDialog::PopupYesNo(this->GetApplication(), NULL, "DRAMMS is not installed",
+                                          "\nDo you want to proceed with BRAINSTools instead?",
+                                          vtkKWMessageDialog::WarningIcon | vtkKWMessageDialog::InvokeAtPointer))
+        {
+          wizard_workflow->PushInput(vtkKWWizardStep::GetValidationFailedInput());
+          wizard_workflow->ProcessInputs();
+          return;
+        }
+    }
+  }
+
+  if ( mrmlManager->GetRegistrationPackageType() == mrmlManager->GetPackageTypeFromString("ANTS") ) {
+    const char* path = this->Script("::EMSegmenterPreProcessingTcl::Get_ANTS_Installation_Path");
+    if ( *path == '\0' ) {
+      if (!vtkKWMessageDialog::PopupYesNo(this->GetApplication(), NULL, "ANTS is not installed",
+                                          "\nDo you want to proceed with BRAINSTools instead?",
+                                          vtkKWMessageDialog::WarningIcon | vtkKWMessageDialog::InvokeAtPointer))
+        {
+          wizard_workflow->PushInput(vtkKWWizardStep::GetValidationFailedInput());
+          wizard_workflow->ProcessInputs();
+          return;
+        }
+    }
+  }
+
   if (this->askQuestionsBeforeRunningPreprocessingFlag)
     {
       if (mrmlManager->GetWorkingDataNode()->GetAlignedTargetNodeIsValid() && mrmlManager->GetWorkingDataNode()->GetAlignedAtlasNodeIsValid())
@@ -192,7 +220,7 @@ vtkEMSegmentPreProcessingStep::Validate()
     progress->SetParent(this->GetGUI ()->GetApplicationGUI ()->GetMainSlicerWindow ());
     progress->SetMasterWindow (this->GetGUI ()->GetApplicationGUI ()->GetMainSlicerWindow());
     progress->Create();
-    progress->SetMessageText("Please wait until pre-processing has been finished.");
+    progress->SetMessageText("Please wait until pre-processing has finished.");
     progress->Display();
     int flag = atoi(this->Script("::EMSegmenterPreProcessingTcl::Run"));
     progress->SetParent(NULL);

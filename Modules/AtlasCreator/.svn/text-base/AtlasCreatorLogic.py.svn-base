@@ -443,10 +443,6 @@ class AtlasCreatorLogic( object ):
                                   meanNotifyDirectory,
                                   sleepValue )
 
-            # now wipe the temporary registered content, if selected
-            if node.GetDeleteAlignedImages() and not node.GetUseDRAMMS():
-                shutil.rmtree( registeredDirectory, True, None )
-
             # we will save the template
             # this will ensure that we can later 
             # use the transforms (if they exist) and the template to resample
@@ -458,6 +454,10 @@ class AtlasCreatorLogic( object ):
             # update reference to defaultCase to new location, only if templateType is dynamic
             if node.GetTemplateType() == "dynamic":
                 defaultCase = pathToTemplate
+
+            # now wipe the temporary registered content, if selected
+            if node.GetDeleteAlignedImages() and not node.GetUseDRAMMS():
+                shutil.rmtree( registeredDirectory, True, None )
 
         else:
             # we are skipping the registration

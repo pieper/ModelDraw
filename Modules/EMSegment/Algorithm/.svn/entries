@@ -1,14 +1,14 @@
 10
 
 dir
-16770
+16815
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Algorithm
 http://svn.slicer.org/Slicer3
 
 
 
-2011-06-16T22:01:39.359990Z
-16697
+2011-08-03T18:55:10.848693Z
+16789
 domibel
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-05-04T11:42:14.332731Z
-20099f2e0ffafa54797523a7045d0610
-2011-05-02T07:48:29.051832Z
-16538
-pohl
+2011-08-13T17:21:37.630119Z
+a4b481624c0e4c3d7c6e4b22c92d66f9
+2011-08-03T18:55:10.848693Z
+16789
+domibel
 
 
 
@@ -58,7 +58,7 @@ pohl
 
 
 
-7063
+7019
 
 EMLocalAlgorithm_Print.txx
 file

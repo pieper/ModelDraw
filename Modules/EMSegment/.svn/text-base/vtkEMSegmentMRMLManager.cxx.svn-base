@@ -3710,6 +3710,12 @@ void
 vtkEMSegmentMRMLManager::
 GetListOfTreeNodeIDs(vtkIdType rootNodeID, vtkstd::vector<vtkIdType>& idList)
 {
+  if (rootNodeID == 0)
+  {
+    vtkErrorMacro("rootNodeID is zero");
+    return;
+  }
+
   // add this node
   idList.push_back(rootNodeID);
 
@@ -4636,6 +4642,16 @@ int  vtkEMSegmentMRMLManager::GetPackageTypeFromString(const char* type)
   if (!strcmp(type,"DEMONS"))
     {
       return vtkEMSegmentMRMLManager::DEMONS;
+    }
+
+  if (!strcmp(type,"DRAMMS"))
+    {
+      return vtkEMSegmentMRMLManager::DRAMMS;
+    }
+
+  if (!strcmp(type,"ANTS"))
+    {
+      return vtkEMSegmentMRMLManager::ANTS;
     }
 
   return -1;

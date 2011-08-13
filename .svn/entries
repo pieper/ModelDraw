@@ -1,14 +1,14 @@
 10
 
 dir
-16770
+16815
 http://svn.slicer.org/Slicer3/trunk
 http://svn.slicer.org/Slicer3
 
 
 
-2011-07-26T22:07:49.294105Z
-16770
+2011-08-13T17:48:52.655686Z
+16815
 pieper
 
 
@@ -106,10 +106,10 @@ file
 
 
 
-2011-07-27T12:38:19.196079Z
-6c57b9395d3f91ab7aa0a7e47fb0d26a
-2011-07-26T22:07:49.294105Z
-16770
+2011-08-13T17:21:37.730119Z
+ebce32768a6822507b2fa9f5fe1ad6bd
+2011-08-12T20:35:50.183180Z
+16814
 pieper
 
 
@@ -132,7 +132,7 @@ pieper
 
 
 
-36083
+35523
 
 CTestCustom.cmake.in
 file
@@ -292,9 +292,9 @@ file
 
 
 
-701530a631d819870454afea999edcaf
-2011-03-22T17:06:06.031199Z
-16229
+9b740f7e61a9d43a0633296fbfd2c94d
+2011-07-31T21:03:05.855137Z
+16776
 domibel
 
 Slicer3Config.cmake.in
@@ -482,11 +482,11 @@ file
 
 
 
-2011-04-27T22:06:29.523192Z
-f098820aafeeca2b7f10cf4eb0e22d73
-2011-04-26T14:44:56.731264Z
-16494
-naucoin
+2011-08-13T17:21:37.730119Z
+6cd7f4d33ffc6175af7b179542de71b9
+2011-08-12T20:35:50.183180Z
+16814
+pieper
 has-props
 
 
@@ -508,7 +508,7 @@ has-props
 
 
 
-50086
+50297
 
 vtkSlicerConfigure.h.in
 file

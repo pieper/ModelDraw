@@ -1,14 +1,14 @@
 10
 
 dir
-16770
+16815
 http://svn.slicer.org/Slicer3/trunk/Extensions
 http://svn.slicer.org/Slicer3
 
 
 
-2011-06-24T02:47:09.219524Z
-16709
+2011-08-10T20:12:30.993098Z
+16809
 domibel
 
 
@@ -198,7 +198,7 @@ pieper
 
 VolumetricTractography.s3ext
 file
-16805
+
 
 
 
@@ -1023,6 +1023,40 @@ haehn
 
 
 897
+
+laSegmenterCLI.s3ext
+file
+
+
+
+
+2011-08-13T17:21:36.560119Z
+1c2890543d9af2d9b2e0f4b640175eb5
+2011-08-01T02:57:02.224663Z
+16777
+ygao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+793
 
 RegionSelector.s3ext.old
 file

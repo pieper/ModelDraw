@@ -105,7 +105,7 @@ class EMSegmentSelectTaskStep( EMSegmentStep ) :
 
       # there was no relevant template node in the scene, so let's import the mrml file
       # this is the normal behavior!      
-      Helper.Debug( "Attempting to load task '" + taskName + "' from file '" + taskFile + "'" )
+      Helper.Info( "Attempting to load task '" + taskName + "' from file '" + taskFile + "'" )
 
       # only load if no relevant node exists
       self.mrmlManager().ImportMRMLFile( taskFile )
@@ -123,11 +123,14 @@ class EMSegmentSelectTaskStep( EMSegmentStep ) :
     templateNode = templateNodes.GetItemAsObject( templateNodes.GetNumberOfItems() - 1 )
 
     loadResult = self.mrmlManager().SetLoadedParameterSetIndex( templateNode )
-    if not loadResult:
+
+    if int( loadResult ) != 0:
       Helper.Info( "EMS node is corrupted - the manager could not be updated with new task: " + taskName )
       #return False
+    else:
+      Helper.Info( "Loading completed." )
 
-    self.logic().DefineTclTaskFullPathName( self.mrmlManager().GetTclTaskFilename() )
+    self.logic().DefineTclTaskFileFromMRML()
 
     return True
 

@@ -12,7 +12,12 @@ class EMSegmentEditRegistrationParametersStep( EMSegmentStep ) :
     self.setDescription( 'Specify atlas-to-input scans registration parameters.' )
 
     self.__parent = super( EMSegmentEditRegistrationParametersStep, self )
+    self.__layout = None
     self.__channelComboBoxList = []
+    self.__affineRegistrationComboBox = None
+    self.__deformableRegistrationComboBox = None
+    self.__interpolationComboBox = None
+    self.__packageComboBox = None
     self.__updating = 0
 
   def createUserInterface( self ):
@@ -75,20 +80,30 @@ class EMSegmentEditRegistrationParametersStep( EMSegmentStep ) :
 
       self.__updating = 1
 
-      for i in range( self.mrmlManager().GetTargetNumberOfSelectedVolumes() ):
+      if len( self.__channelComboBoxList ) > 0:
+        # only do this if we have a channelComboBoxList defined
+        for i in range( self.mrmlManager().GetTargetNumberOfSelectedVolumes() ):
 
-        volumeNodeID = self.mrmlManager().GetTargetSelectedVolumeNthMRMLID( i )
-        #volumeNodeID = self.mrmlManager().GetRegistrationAtlasVolumeID( i )
-        print "id," + str( i ) + ": " + str( volumeNodeID )
-        if volumeNodeID:
-          volumeNode = slicer.mrmlScene.GetNodeByID( volumeNodeID )
-          if volumeNode:
-            self.__channelComboBoxList[i].setCurrentNode( volumeNode )
+          volumeID = self.mrmlManager().GetRegistrationAtlasVolumeID( i )
+          Helper.Debug( volumeID )
 
-      self.__affineRegistrationComboBox.setCurrentIndex( self.mrmlManager().GetRegistrationAffineType() )
-      self.__deformableRegistrationComboBox.setCurrentIndex( self.mrmlManager().GetRegistrationDeformableType() )
-      self.__interpolationComboBox.setCurrentIndex( self.mrmlManager().GetRegistrationInterpolationType() )
-      self.__packageComboBox.setCurrentIndex( self.mrmlManager().GetRegistrationPackageType() )
+          volumeNodeID = self.mrmlManager().MapVTKNodeIDToMRMLNodeID( volumeID )
+          if volumeNodeID:
+            volumeNode = slicer.mrmlScene.GetNodeByID( volumeNodeID )
+            if volumeNode:
+              self.__channelComboBoxList[i].setCurrentNode( volumeNode )
+
+      if self.__affineRegistrationComboBox:
+        self.__affineRegistrationComboBox.setCurrentIndex( self.mrmlManager().GetRegistrationAffineType() )
+
+      if self.__deformableRegistrationComboBox:
+        self.__deformableRegistrationComboBox.setCurrentIndex( self.mrmlManager().GetRegistrationDeformableType() )
+
+      if self.__interpolationComboBox:
+        self.__interpolationComboBox.setCurrentIndex( self.mrmlManager().GetRegistrationInterpolationType() )
+
+      if self.__packageComboBox:
+        self.__packageComboBox.setCurrentIndex( self.mrmlManager().GetRegistrationPackageType() )
 
       self.__updating = 0
 
@@ -106,7 +121,7 @@ class EMSegmentEditRegistrationParametersStep( EMSegmentStep ) :
           volumeNodeID = None
         else:
           volumeNodeID = volumeNode.GetID()
-        self.mrmlManager().SetRegistrationAtlasVolumeID( i, volumeNodeID )
+        self.mrmlManager().SetRegistrationAtlasVolumeID( i, self.mrmlManager().MapMRMLNodeIDToVTKNodeID( volumeNodeID ) )
 
       self.mrmlManager().SetRegistrationAffineType( self.__affineRegistrationComboBox.currentIndex )
       self.mrmlManager().SetRegistrationDeformableType( self.__deformableRegistrationComboBox.currentIndex )

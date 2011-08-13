@@ -9,6 +9,8 @@ class EMSegmentDynamicFrame:
     self.__layout = None
     self.__checkButtonElementIDs = dict()
     self.__textLabelElementIDs = dict()
+    self.__mrmlManager = None
+    self.__logic = None
 
   def setLayout( self, layout ):
     '''
@@ -18,8 +20,6 @@ class EMSegmentDynamicFrame:
   def layout( self ):
     '''
     '''
-    if not self.__layout:
-      Helper.Error( "No layout for dynamic frame!" )
 
     return self.__layout
 
@@ -59,27 +59,29 @@ class EMSegmentDynamicFrame:
   def clearElements( self ):
     '''
     '''
-    # clear off the layout from checkbuttons
-    for n in self.__checkButtonElementIDs.keys():
-      print "removing.."
-      w = self.__checkButtonElementIDs[n]
-      if self.layout():
-        self.layout().removeWidget( w )
-      w.deleteLater()
-      w.setParent( None )
-      w = None
-      self.__checkButtonElementIDs[n] = None
+    if self.layout():
 
-    # clear off the layout from textlabels
-    for n in self.__textLabelElementIDs.keys():
-      print "removing.."
-      w = self.__textLabelElementIDs[n]
-      if self.layout():
-        self.layout().removeWidget( w )
-      w.deleteLater()
-      w.setParent( None )
-      w = None
-      self.__textLabelElementIDs[n] = None
+      # clear off the layout from checkbuttons
+      for n in self.__checkButtonElementIDs.keys():
+        print "removing.."
+        w = self.__checkButtonElementIDs[n]
+        if self.layout():
+          self.layout().removeWidget( w )
+        w.deleteLater()
+        w.setParent( None )
+        w = None
+        self.__checkButtonElementIDs[n] = None
+
+      # clear off the layout from textlabels
+      for n in self.__textLabelElementIDs.keys():
+        print "removing.."
+        w = self.__textLabelElementIDs[n]
+        if self.layout():
+          self.layout().removeWidget( w )
+        w.deleteLater()
+        w.setParent( None )
+        w = None
+        self.__textLabelElementIDs[n] = None
 
     # reset the dicts
     self.__checkButtonElementIDs = dict()
@@ -89,8 +91,9 @@ class EMSegmentDynamicFrame:
   def DefineCheckButton( self, label, initState, id ):
     '''
     '''
+
     newCheckButton = qt.QCheckBox( label )
-    newCheckButton.setChecked( initState )
+    newCheckButton.setChecked( bool( initState ) )
 
     if self.layout():
       self.layout().addWidget( newCheckButton )
@@ -113,11 +116,118 @@ class EMSegmentDynamicFrame:
     else:
       return False
 
+  def setMRMLManager( self, mrmlManager ):
+    self.__mrmlManager = mrmlManager
 
-  def SaveSettingToMRML( self ):
+  def setLogic( self, logic ):
+    self.__logic = logic
+
+  def mrmlManager( self ):
+    return self.__mrmlManager
+
+  def logic( self ):
+    return self.__logic
+
+
+  def SaveSettingsToMRML( self ):
     '''
     '''
-    pass #TODO
+    oldDefText = self.mrmlManager().GetGlobalParametersNode().GetTaskPreProcessingSetting()
+
+    # let's split it
+    defList = oldDefText.split( ":" )
+
+    # filter empties
+    defList = filter( None, defList )
+
+    # loop through the controls and build the defText
+
+    # checkboxes
+    for id in self.__checkButtonElementIDs.keys():
+
+      currentCheckbox = self.__checkButtonElementIDs[id]
+
+      newDefText = "C"
+
+      if currentCheckbox:
+
+        if currentCheckbox.checked:
+          newDefText += "1"
+        else:
+          newDefText += "0"
+
+        # replace value in defList
+        defList[id] = newDefText
+
+        #Helper.Debug( "Replaced item " + str( id ) + " with " + str( newDefText ) )
+
+    # TODO
+    # volumes
+
+    # TODO
+    # textedits
+
+    #
+    #
+    # Final step:
+
+    # build the defText string
+    newDefText = ":"
+    newDefText += ":".join( defList )
+
+    # and propagate it to MRML
+    self.mrmlManager().GetGlobalParametersNode().SetTaskPreProcessingSetting( newDefText )
+
+
+  def LoadSettingsFromMRML( self ):
+    '''
+    '''
+    defText = self.mrmlManager().GetGlobalParametersNode().GetTaskPreProcessingSetting()
+
+    # the defText string is formated like
+    # C1:C1
+    # which means two checkboxes, both enabled
+
+    # let's split it
+    defList = defText.split( ":" )
+
+    # filter empties
+    defList = filter( None, defList )
+
+    if len( defList ) > 0:
+
+      cIndex = -1
+
+      for d in defList:
+
+        # loop through all entries in the definition list
+
+        if len( d ) < 2:
+          # definition texts need two characters
+          continue
+
+        # checkboxes
+        if d[0] == "C":
+
+          # cIndex is the index of checkboxes, increase it
+          cIndex += 1
+
+          # checkbox
+          if self.__checkButtonElementIDs.has_key( cIndex ):
+
+            cState = int( d[1] )
+
+            currentCheckBox = self.__checkButtonElementIDs[cIndex]
+
+            if cState == 0:
+              currentCheckBox.setChecked( False )
+            else:
+              currentCheckBox.setChecked( True )
+
+        # TODO volumes
+
+        # TODO textedits
+
 
 
 

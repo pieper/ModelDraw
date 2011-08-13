@@ -1,15 +1,15 @@
 10
 
 dir
-16770
+16815
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Qt/Py
 http://svn.slicer.org/Slicer3
 
 
 
-2011-07-26T14:56:59.910263Z
-16766
-haehn
+2011-08-09T18:31:49.746833Z
+16804
+domibel
 
 
 
@@ -26,16 +26,16 @@ haehn
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-EMSegmentPy.py
+qSlicerEMSegmentModule.qrc
 file
 
 
 
 
-2011-07-27T12:38:19.096079Z
-952fcc94f2aae3c979ec41c267c05604
-2011-07-22T19:22:54.524090Z
-16762
+2011-08-13T17:21:36.650119Z
+b3677124fc11e4404b52c992a68e54c6
+2011-08-01T18:31:37.529371Z
+16780
 haehn
 
 
@@ -58,9 +58,46 @@ haehn
 
 
 
-5357
+136
+
+EMSegmentPy.py
+file
+
+
+
+
+2011-08-13T17:21:36.650119Z
+765bfab39210d392f3114c12192cdd1e
+2011-08-03T18:37:57.887351Z
+16788
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6624
 
 EMSegmentWizard
+dir
+
+Resources
 dir
 
 CMakeLists.txt
@@ -69,10 +106,10 @@ file
 
 
 
-2011-06-20T12:55:43.702360Z
-9bd401deab3767eb7a6badd760e90de4
-2011-06-16T21:53:16.389735Z
-16694
+2011-08-13T17:21:36.650119Z
+0cabf60092be6a42b569e1247ba04d05
+2011-08-01T18:31:37.529371Z
+16780
 haehn
 
 
@@ -95,5 +132,5 @@ haehn
 
 
 
-359
+398
 

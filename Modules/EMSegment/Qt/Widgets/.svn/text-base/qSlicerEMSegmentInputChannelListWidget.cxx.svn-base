@@ -89,7 +89,6 @@ qSlicerEMSegmentInputChannelListWidgetPrivate::qSlicerEMSegmentInputChannelListW
 void qSlicerEMSegmentInputChannelListWidgetPrivate::insertInputChannel(int rowId, const QString& inputChannelName, vtkMRMLVolumeNode * volumeNodeToSelect)
 {
 
-  std::cout << "INSERTINPUTCHANNEL" << std::endl;
   Q_Q(qSlicerEMSegmentInputChannelListWidget);
 
   //int rowId = this->TableWidget->rowCount();
@@ -310,6 +309,8 @@ void qSlicerEMSegmentInputChannelListWidget::updateMRMLFromWidget()
     return;
     }
 
+  globalNode->AddTargetInputChannel();
+
   nodeId = node->GetID();
 
   if (rowId == this->mrmlManager()->GetTargetNumberOfSelectedVolumes())
@@ -363,8 +364,6 @@ for (int i = 0; i < d->TableWidget->rowCount(); i++)
   {
 d->TableWidget->removeRow(i);
 }
-
-std::cout << globalNode->GetNumberOfTargetInputChannels() << std::endl;
 
 // Loop through input nodes and update or insert row
 for (int i = 0; i < globalNode->GetNumberOfTargetInputChannels(); i++)

@@ -1,7 +1,7 @@
 10
 
 dir
-16770
+16815
 http://svn.slicer.org/Slicer3/trunk/Libs/SlicerExecutionModel/tclap/tests
 http://svn.slicer.org/Slicer3
 
@@ -1012,40 +1012,6 @@ lorensen
 
 342
 
-test55.sh
-file
-
-
-
-
-2010-10-25T02:20:19.534995Z
-458dfb30e7bcf5a8e8cf1bdf4a68281f
-2006-04-21T22:35:08.165448Z
-315
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-159
-
 test58.out
 file
 
@@ -1113,6 +1079,40 @@ has-props
 
 
 139
+
+test55.sh
+file
+
+
+
+
+2010-10-25T02:20:19.534995Z
+458dfb30e7bcf5a8e8cf1bdf4a68281f
+2006-04-21T22:35:08.165448Z
+315
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+159
 
 test29.sh
 file
