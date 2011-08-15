@@ -165,7 +165,7 @@ proc EditorBuildGUI {this} {
   $::Editor($this,enableAutosave) SetParent $::Editor($this,toolsEditFrame)
   $::Editor($this,enableAutosave) Create
   $::Editor($this,enableAutosave) SetText "Autosave"
-  $::Editor($this,enableAutosave) SetBalloonHelpString "Autosave will save a copy of your current editor label map and parameters to a directory of your choice every minute while you are in the Editor."
+  $::Editor($this,enableAutosave) SetBalloonHelpString "Autosave will save a copy of your current editor label map and parameters to a directory of your choice every 5 minutes while you are in the Editor."
   set ::Editor(autosaveEnabled) 0
   $::Editor($this,enableAutosave) SetSelectedState $::Editor(autosaveEnabled)
   pack [$::Editor($this,enableAutosave) GetWidgetName] -side bottom -anchor w
@@ -802,8 +802,8 @@ proc EditorAutosave { {directory ""} } {
   }
   [$::slicer3::ApplicationGUI GetMainSlicerWindow] SetStatusText "Saved to $autoDir..."
 
-  # save again in 1 minute
-  set ::Editor(autosaveAfterID) [after [expr 60 * 1000] EditorAutosave $directory]
+  # save again in 5 minutes
+  set ::Editor(autosaveAfterID) [after [expr 5 * 60 * 1000] EditorAutosave $directory]
 }
 
 
