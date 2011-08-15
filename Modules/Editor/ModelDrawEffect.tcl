@@ -878,6 +878,20 @@ itcl::body ModelDrawEffect::buildOptions {} {
   pack forget [$o(scopeOption) GetWidgetName]
 
   #
+  # Apply label maps for all curves (interolate)
+  #
+  set o(applyCurves) [vtkNew vtkKWPushButton]
+  $o(applyCurves) SetParent [$this getOptionsFrame]
+  $o(applyCurves) Create
+  $o(applyCurves) SetText "Apply Curves"
+  $o(applyCurves) SetBalloonHelpString "Fill in all curves between start and end slices"
+  $o(applyCurves) SetStateToDisabled
+  pack [$o(applyCurves) GetWidgetName] \
+    -side bottom -anchor w -padx 2 -pady 2 
+  set invokedEvent 10000
+  $::slicer3::Broker AddObservation $o(applyCurves) $invokedEvent "$this processEvent $o(applyCurves)"
+
+  #
   # an delete slice points button (active when on slice with control points)
   #
   set o(deleteCurve) [vtkNew vtkKWPushButton]
@@ -891,19 +905,6 @@ itcl::body ModelDrawEffect::buildOptions {} {
   set invokedEvent 10000
   $::slicer3::Broker AddObservation $o(deleteCurve) $invokedEvent "$this processEvent $o(deleteCurve)"
 
-  #
-  # an delete slice points button (active when on slice with control points)
-  #
-  set o(applyCurves) [vtkNew vtkKWPushButton]
-  $o(applyCurves) SetParent [$this getOptionsFrame]
-  $o(applyCurves) Create
-  $o(applyCurves) SetText "Apply Curves"
-  $o(applyCurves) SetBalloonHelpString "Fill in all curves between start and end slices"
-  $o(applyCurves) SetStateToDisabled
-  pack [$o(applyCurves) GetWidgetName] \
-    -side bottom -anchor w -padx 2 -pady 2 
-  set invokedEvent 10000
-  $::slicer3::Broker AddObservation $o(applyCurves) $invokedEvent "$this processEvent $o(applyCurves)"
 
   #
   # the list of defined curves for this label
