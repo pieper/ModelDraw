@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/Meshing/Common
 http://svn.slicer.org/Slicer3
 
@@ -94,40 +94,6 @@ pieper
 
 3691
 
-vtkAbstractIterator.txx
-file
-
-
-
-
-2010-10-25T02:20:34.674995Z
-215353738c42307656cc6ebbf291ea8e
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1715
-
 vtkMimxActorBase.cxx
 file
 
@@ -162,17 +128,18 @@ lorensen
 
 2348
 
-vtkMimxMergeNodesPointAndCellData.h
+vtkAbstractIterator.txx
 file
 
 
 
 
-2010-10-25T02:20:34.684995Z
-f981f8f1b27e39181cf2ee3b7a60c6cd
+2010-10-25T02:20:34.674995Z
+215353738c42307656cc6ebbf291ea8e
 2008-12-05T16:56:04.859882Z
 8059
 clisle
+has-props
 
 
 
@@ -193,8 +160,7 @@ clisle
 
 
 
-
-2722
+1715
 
 vtkMimxSurfacePolyDataActor.h
 file
@@ -230,6 +196,40 @@ clisle
 
 3027
 
+vtkMimxMergeNodesPointAndCellData.h
+file
+
+
+
+
+2010-10-25T02:20:34.684995Z
+f981f8f1b27e39181cf2ee3b7a60c6cd
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2722
+
 mimxRegisterBSplineFilter.h
 file
 
@@ -264,18 +264,17 @@ clisle
 
 8616
 
-vtkLocalLinkedListWrapper.h
+vtkMimxSTLSource.h
 file
 
 
 
 
 2010-10-25T02:20:34.684995Z
-8176d8d020c5cd6e0f09af6a021caae4
+81c027f9bb89dca1eb6f1604125917bd
 2008-12-05T16:56:04.859882Z
 8059
 clisle
-has-props
 
 
 
@@ -296,7 +295,8 @@ has-props
 
 
 
-2990
+
+2817
 
 mimxMeshSeed.cxx
 file
@@ -332,17 +332,18 @@ clisle
 
 42132
 
-vtkMimxSTLSource.h
+vtkLocalLinkedListWrapper.h
 file
 
 
 
 
 2010-10-25T02:20:34.684995Z
-81c027f9bb89dca1eb6f1604125917bd
+8176d8d020c5cd6e0f09af6a021caae4
 2008-12-05T16:56:04.859882Z
 8059
 clisle
+has-props
 
 
 
@@ -363,8 +364,7 @@ clisle
 
 
 
-
-2817
+2990
 
 vtkLocalAxesActor.cxx
 file
@@ -434,40 +434,6 @@ clisle
 
 1930
 
-mimxApplyNodeElementNumbers.cxx
-file
-
-
-
-
-2010-10-25T02:20:34.684995Z
-139af18f619722cd5fc39747d54ff7e8
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4772
-
 vtkContainer.h
 file
 
@@ -501,6 +467,40 @@ clisle
 
 
 8539
+
+mimxApplyNodeElementNumbers.cxx
+file
+
+
+
+
+2010-10-25T02:20:34.684995Z
+139af18f619722cd5fc39747d54ff7e8
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4772
 
 vtkLinkedListWrapperTree.h
 file
@@ -1046,40 +1046,6 @@ clisle
 
 3968
 
-mimxMatrixTemplate.h
-file
-
-
-
-
-2010-10-25T02:20:34.684995Z
-3814692a18f72531500d53ce04d35845
-2008-12-28T17:14:09.160089Z
-8199
-lorensen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7410
-
 vtkMeshQualityClass.cxx
 file
 
@@ -1114,17 +1080,17 @@ pieper
 
 40019
 
-mimxApplyNodeElementNumbers.h
+mimxMatrixTemplate.h
 file
 
 
 
 
 2010-10-25T02:20:34.684995Z
-21b3f6ddfea14da9922dcf35991babaf
-2008-12-05T16:56:04.859882Z
-8059
-clisle
+3814692a18f72531500d53ce04d35845
+2008-12-28T17:14:09.160089Z
+8199
+lorensen
 
 
 
@@ -1146,7 +1112,7 @@ clisle
 
 
 
-1859
+7410
 
 vtkMimxApplyNodeElementNumbers.cxx
 file
@@ -1182,6 +1148,40 @@ clisle
 
 7131
 
+mimxApplyNodeElementNumbers.h
+file
+
+
+
+
+2010-10-25T02:20:34.684995Z
+21b3f6ddfea14da9922dcf35991babaf
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1859
+
 vtkLinkedListIterator.txx
 file
 
@@ -1216,14 +1216,14 @@ has-props
 
 3713
 
-mimxFileNames.h
+mimxTransformIO.h
 file
 
 
 
 
 2010-10-25T02:20:34.694995Z
-d1d0f379b71311b5a2d35716fd118e36
+bac4767e5ffef250b882ab14e8e3a5ea
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -1248,41 +1248,7 @@ clisle
 
 
 
-2755
-
-mimxCreateIntervertebralDiscElementSets.cxx
-file
-
-
-
-
-2011-01-02T20:28:01.304953Z
-ab4bdd284173f6320c83aa493d58ea2f
-2010-12-26T22:42:59.052785Z
-15697
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6039
+3787
 
 mimxCommonDefine.h
 file
@@ -1318,14 +1284,48 @@ clisle
 
 1766
 
-mimxTransformIO.h
+mimxCreateIntervertebralDiscElementSets.cxx
+file
+
+
+
+
+2011-01-02T20:28:01.304953Z
+ab4bdd284173f6320c83aa493d58ea2f
+2010-12-26T22:42:59.052785Z
+15697
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6039
+
+mimxFileNames.h
 file
 
 
 
 
 2010-10-25T02:20:34.694995Z
-bac4767e5ffef250b882ab14e8e3a5ea
+d1d0f379b71311b5a2d35716fd118e36
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -1350,7 +1350,7 @@ clisle
 
 
 
-3787
+2755
 
 vtkFESurfaceList.cxx
 file
@@ -1420,18 +1420,17 @@ clisle
 
 4748
 
-vtkMRMLFESurfaceNode.cxx
+vtkMimxErrorCallback.cxx
 file
 
 
 
 
 2010-10-25T02:20:34.694995Z
-38a3018f8cc4662cb0ef52b7e463c8e7
-2010-07-17T17:28:55.068785Z
-14208
+4044a2406a20d0837baf1b567933ac84
+2008-12-05T16:56:04.859882Z
+8059
 clisle
-has-props
 
 
 
@@ -1452,7 +1451,8 @@ has-props
 
 
 
-4598
+
+2533
 
 vtkLinkedListIterator.h
 file
@@ -1488,17 +1488,18 @@ clisle
 
 2597
 
-vtkMimxErrorCallback.cxx
+vtkMRMLFESurfaceNode.cxx
 file
 
 
 
 
 2010-10-25T02:20:34.694995Z
-4044a2406a20d0837baf1b567933ac84
-2008-12-05T16:56:04.859882Z
-8059
+38a3018f8cc4662cb0ef52b7e463c8e7
+2010-07-17T17:28:55.068785Z
+14208
 clisle
+has-props
 
 
 
@@ -1519,8 +1520,7 @@ clisle
 
 
 
-
-2533
+4598
 
 vtkMimxBoundaryConditionActor.h
 file
@@ -1590,40 +1590,6 @@ domibel
 
 14486
 
-vtkMimxMergeNodesPointAndCellData.cxx
-file
-
-
-
-
-2010-10-25T02:20:34.694995Z
-8b431ff1ca5c74da15d33187fb250bce
-2008-12-27T16:34:01.385615Z
-8192
-lorensen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15736
-
 vtkMimxSurfacePolyDataActor.cxx
 file
 
@@ -1657,6 +1623,40 @@ pieper
 
 
 6008
+
+vtkMimxMergeNodesPointAndCellData.cxx
+file
+
+
+
+
+2010-10-25T02:20:34.694995Z
+8b431ff1ca5c74da15d33187fb250bce
+2008-12-27T16:34:01.385615Z
+8192
+lorensen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15736
 
 vtkFiniteElementBuildingBlockList.cxx
 file
@@ -1692,17 +1692,17 @@ has-props
 
 5333
 
-vtkMRMLFiniteElementMeshDisplayNode.h
+vtkMimxSTLSource.cxx
 file
 
 
 
 
 2010-10-25T02:20:34.694995Z
-96d53e2f7c1677495f2b156e2ebeccb1
-2008-12-05T16:56:04.859882Z
-8059
-clisle
+cd5ed675ea005d17d21b0b2e01ee0539
+2008-12-27T20:49:16.350003Z
+8196
+lorensen
 
 
 
@@ -1724,7 +1724,7 @@ clisle
 
 
 
-3925
+10977
 
 vtkLocalLinkedListWrapper.cxx
 file
@@ -1760,17 +1760,17 @@ has-props
 
 1462
 
-vtkMimxSTLSource.cxx
+vtkMRMLFiniteElementMeshDisplayNode.h
 file
 
 
 
 
 2010-10-25T02:20:34.694995Z
-cd5ed675ea005d17d21b0b2e01ee0539
-2008-12-27T20:49:16.350003Z
-8196
-lorensen
+96d53e2f7c1677495f2b156e2ebeccb1
+2008-12-05T16:56:04.859882Z
+8059
+clisle
 
 
 
@@ -1792,7 +1792,7 @@ lorensen
 
 
 
-10977
+3925
 
 vtkMRMLFiniteElementBuildingBlockNode.cxx
 file
@@ -1828,40 +1828,6 @@ has-props
 
 5159
 
-vtkAbstractList.txx
-file
-
-
-
-
-2010-10-25T02:20:34.694995Z
-b3375f6ede200f1c5e8f0fb859440f4b
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1288
-
 vtkMeshQualityClass.h
 file
 
@@ -1895,6 +1861,40 @@ clisle
 
 
 9905
+
+vtkAbstractList.txx
+file
+
+
+
+
+2010-10-25T02:20:34.694995Z
+b3375f6ede200f1c5e8f0fb859440f4b
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1288
 
 vtkContainer.cxx
 file
@@ -2032,40 +2032,6 @@ clisle
 
 8325
 
-vtkMRMLFESurfaceNode.h
-file
-
-
-
-
-2010-10-25T02:20:34.694995Z
-ec9e2d96accd19b3724b29ca2067604e
-2009-02-06T21:28:32.116561Z
-8591
-clisle
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4030
-
 vtkMimxErrorCallback.h
 file
 
@@ -2099,6 +2065,40 @@ clisle
 
 
 2855
+
+vtkMRMLFESurfaceNode.h
+file
+
+
+
+
+2010-10-25T02:20:34.694995Z
+ec9e2d96accd19b3724b29ca2067604e
+2009-02-06T21:28:32.116561Z
+8591
+clisle
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4030
 
 vtkMimxMeshSeed.cxx
 file

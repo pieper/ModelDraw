@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Base/GUI/Testing
 http://svn.slicer.org/Slicer3
 
@@ -60,50 +60,16 @@ naucoin
 
 1496
 
-TestvtkKWTextWithHyperlinksWithScrollbars.tcl
+TestFiducials.tcl
 file
 
 
 
 
 2010-10-25T02:21:27.964995Z
-7bab2103df6e43aa34189098dcf78ecd
-2008-02-05T21:45:35.426613Z
-5706
-freudling
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2585
-
-TestSliceModels.tcl
-file
-
-
-
-
-2010-10-25T02:21:27.964995Z
-b4e06ae7057f30e9be89bf1806acd3b1
-2006-07-13T20:54:18.571339Z
-877
+408cb407943b6d4a13351eb61ea965c9
+2009-02-03T23:40:12.228438Z
+8523
 pieper
 has-props
 
@@ -126,7 +92,7 @@ has-props
 
 
 
-1876
+1582
 
 TestSliceController.tcl
 file
@@ -162,16 +128,16 @@ has-props
 
 376
 
-TestFiducials.tcl
+TestSliceModels.tcl
 file
 
 
 
 
 2010-10-25T02:21:27.964995Z
-408cb407943b6d4a13351eb61ea965c9
-2009-02-03T23:40:12.228438Z
-8523
+b4e06ae7057f30e9be89bf1806acd3b1
+2006-07-13T20:54:18.571339Z
+877
 pieper
 has-props
 
@@ -194,7 +160,41 @@ has-props
 
 
 
-1582
+1876
+
+TestvtkKWTextWithHyperlinksWithScrollbars.tcl
+file
+
+
+
+
+2010-10-25T02:21:27.964995Z
+7bab2103df6e43aa34189098dcf78ecd
+2008-02-05T21:45:35.426613Z
+5706
+freudling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2585
 
 TestWidgets.tcl
 file

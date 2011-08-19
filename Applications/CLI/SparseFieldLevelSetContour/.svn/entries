@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/SparseFieldLevelSetContour
 http://svn.slicer.org/Slicer3
 
@@ -162,40 +162,6 @@ pkarasev
 
 2234
 
-Utils.h
-file
-
-
-
-
-2010-10-25T02:19:30.894995Z
-2f36849e71becb4aba85ea2cf7e83235
-2010-07-29T23:10:30.186563Z
-14395
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1912
-
 LSops.h
 file
 
@@ -229,6 +195,40 @@ has-props
 
 
 2619
+
+Utils.h
+file
+
+
+
+
+2010-10-25T02:19:30.894995Z
+2f36849e71becb4aba85ea2cf7e83235
+2010-07-29T23:10:30.186563Z
+14395
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1912
 
 MeshEnergy.cpp
 file
@@ -264,40 +264,6 @@ has-props
 
 9370
 
-vtkComputeLocalGeometry.cxx
-file
-
-
-
-
-2010-10-25T02:19:30.894995Z
-7e85c1db83d4e4658e3ca43f6a3c7266
-2010-07-29T23:10:30.186563Z
-14395
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11348
-
 vtkLevelSetMeshEvolver.cxx
 file
 
@@ -331,6 +297,40 @@ pkarasev
 
 
 4090
+
+vtkComputeLocalGeometry.cxx
+file
+
+
+
+
+2010-10-25T02:19:30.894995Z
+7e85c1db83d4e4658e3ca43f6a3c7266
+2010-07-29T23:10:30.186563Z
+14395
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11348
 
 MeshEnergy.h
 file
@@ -434,40 +434,6 @@ pieper
 
 26952
 
-Utils.cxx
-file
-
-
-
-
-2010-10-25T02:19:30.904995Z
-75ea0ab771e39492b514a30217f3dca3
-2010-07-29T23:10:30.186563Z
-14395
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7266
-
 LSops.cxx
 file
 
@@ -501,6 +467,40 @@ has-props
 
 
 10069
+
+Utils.cxx
+file
+
+
+
+
+2010-10-25T02:19:30.904995Z
+75ea0ab771e39492b514a30217f3dca3
+2010-07-29T23:10:30.186563Z
+14395
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7266
 
 MeshOps.h
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Libs/MRML/Testing/TestData
 http://svn.slicer.org/Slicer3
 
@@ -60,40 +60,6 @@ alexy
 
 22948
 
-helix-DTI.nhdr
-file
-
-
-
-
-2010-10-25T02:20:21.404995Z
-a9ea911664e286b7aadc440bf2ebc9d7
-2007-06-11T18:51:28.559922Z
-3554
-rjosest
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-523
-
 cube.vtk
 file
 
@@ -127,6 +93,40 @@ alexy
 
 
 917
+
+helix-DTI.nhdr
+file
+
+
+
+
+2010-10-25T02:20:21.404995Z
+a9ea911664e286b7aadc440bf2ebc9d7
+2007-06-11T18:51:28.559922Z
+3554
+rjosest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+523
 
 helix-DWI.nhdr
 file
@@ -196,40 +196,6 @@ naucoin
 
 3033
 
-sphere.vtk
-file
-
-
-
-
-2010-10-25T02:20:21.404995Z
-0a3ad218528599b8a1888d870c784b7f
-2006-07-28T17:31:04.482714Z
-967
-alexy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4200
-
 helixMask.nrrd
 file
 
@@ -263,6 +229,40 @@ has-props
 
 
 690
+
+sphere.vtk
+file
+
+
+
+
+2010-10-25T02:20:21.404995Z
+0a3ad218528599b8a1888d870c784b7f
+2006-07-28T17:31:04.482714Z
+967
+alexy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4200
 
 helixOnePixelMask.nrrd
 file
@@ -298,40 +298,6 @@ has-props
 
 494
 
-sphere.vtp
-file
-
-
-
-
-2010-10-25T02:20:21.404995Z
-60ee31b53c9d563566f16ba79c5513b4
-2010-04-29T21:28:17.038515Z
-13097
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3897
-
 helix-DTI.raw.gz
 file
 
@@ -365,6 +331,40 @@ has-props
 
 
 65121
+
+sphere.vtp
+file
+
+
+
+
+2010-10-25T02:20:21.404995Z
+60ee31b53c9d563566f16ba79c5513b4
+2010-04-29T21:28:17.038515Z
+13097
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3897
 
 helixMask3Labels.nrrd
 file
@@ -400,40 +400,6 @@ has-props
 
 696
 
-helix-DWI.raw.gz
-file
-
-
-
-
-2010-10-25T02:20:21.404995Z
-bd050a9787df3d86d5e0c3ee9af36117
-2007-06-11T18:51:28.559922Z
-3554
-rjosest
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-205505
-
 ColorTest.ctbl
 file
 
@@ -468,17 +434,17 @@ naucoin
 
 171
 
-moving.nrrd
+helix-DWI.raw.gz
 file
 
 
 
 
 2010-10-25T02:20:21.404995Z
-f50f2a1a3b6c47faeabdd6d02319e369
-2006-03-19T18:36:23.504753Z
-106
-alexy
+bd050a9787df3d86d5e0c3ee9af36117
+2007-06-11T18:51:28.559922Z
+3554
+rjosest
 has-props
 
 
@@ -500,7 +466,7 @@ has-props
 
 
 
-270714
+205505
 
 helix-roi-lable2.nrrd
 file
@@ -535,6 +501,40 @@ has-props
 
 
 561
+
+moving.nrrd
+file
+
+
+
+
+2010-10-25T02:20:21.404995Z
+f50f2a1a3b6c47faeabdd6d02319e369
+2006-03-19T18:36:23.504753Z
+106
+alexy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+270714
 
 fixed.nrrd
 file

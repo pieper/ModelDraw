@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/AtlasCreator/Cxx
 http://svn.slicer.org/Slicer3
 
@@ -128,40 +128,6 @@ has-props
 
 7177
 
-vtkImagePCATraining.cxx
-file
-
-
-
-
-2011-03-29T18:11:01.725497Z
-6f232fafa2e257f245bfa247f4a5e321
-2011-03-28T19:55:01.841014Z
-16258
-haehn
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14648
-
 vtkAtlasCreatorCxxModule.h
 file
 
@@ -195,6 +161,40 @@ has-props
 
 
 933
+
+vtkImagePCATraining.cxx
+file
+
+
+
+
+2011-03-29T18:11:01.725497Z
+6f232fafa2e257f245bfa247f4a5e321
+2011-03-28T19:55:01.841014Z
+16258
+haehn
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14648
 
 vtkImageKilianDistanceTransform.h
 file

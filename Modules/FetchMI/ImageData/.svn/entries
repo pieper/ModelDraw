@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/FetchMI/ImageData
 http://svn.slicer.org/Slicer3
 
@@ -366,40 +366,6 @@ has-props
 
 925
 
-DeselectAll.png
-file
-
-
-
-
-2010-10-25T02:20:31.584995Z
-fea1753654a9d6a3d3ea9117e715ce8c
-2008-10-10T14:51:53.928110Z
-7645
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-316
-
 TagInformation.png
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 2994
+
+DeselectAll.png
+file
+
+
+
+
+2010-10-25T02:20:31.584995Z
+fea1753654a9d6a3d3ea9117e715ce8c
+2008-10-10T14:51:53.928110Z
+7645
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+316
 
 TagTable.png
 file
@@ -468,40 +468,6 @@ has-props
 
 3062
 
-QueryTags.png
-file
-
-
-
-
-2010-10-25T02:20:31.584995Z
-c51c9d59fd6bd6fa06a9c74924fbf667
-2008-10-10T14:51:53.928110Z
-7645
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3600
-
 TagSelected.png
 file
 
@@ -535,6 +501,40 @@ has-props
 
 
 825
+
+QueryTags.png
+file
+
+
+
+
+2010-10-25T02:20:31.584995Z
+c51c9d59fd6bd6fa06a9c74924fbf667
+2008-10-10T14:51:53.928110Z
+7645
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3600
 
 Upload.png
 file

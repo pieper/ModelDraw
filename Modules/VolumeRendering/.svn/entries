@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/VolumeRendering
 http://svn.slicer.org/Slicer3
 
@@ -264,40 +264,6 @@ pieper
 
 1491
 
-vtkSlicerVolumeRenderingHelper.cxx
-file
-
-
-
-
-2011-02-18T11:18:00.710006Z
-56862bd44af3c5c58895cf260fe49cd4
-2011-02-17T20:03:53.752143Z
-16062
-finetjul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-84296
-
 vtkSlicerNodeSelectorVolumeRenderingWidget.h
 file
 
@@ -331,6 +297,40 @@ vrnova
 
 
 3257
+
+vtkSlicerVolumeRenderingHelper.cxx
+file
+
+
+
+
+2011-02-18T11:18:00.710006Z
+56862bd44af3c5c58895cf260fe49cd4
+2011-02-17T20:03:53.752143Z
+16062
+finetjul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+84296
 
 vtkVolumeRenderingLogic.h
 file
@@ -378,40 +378,6 @@ file
 16062
 finetjul
 
-vtkMRMLVolumeRenderingParametersNode.h
-file
-
-
-
-
-2010-10-25T02:20:30.214995Z
-0bb0c80192d87cfddecb7dbcccd79819
-2010-07-12T22:12:07.304882Z
-14118
-vrnova
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9557
-
 vtkMRMLVolumeRenderingScenarioNode.h
 file
 
@@ -445,6 +411,40 @@ vrnova
 
 
 2769
+
+vtkMRMLVolumeRenderingParametersNode.h
+file
+
+
+
+
+2010-10-25T02:20:30.214995Z
+0bb0c80192d87cfddecb7dbcccd79819
+2010-07-12T22:12:07.304882Z
+14118
+vrnova
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9557
 
 vtkSlicerVRMenuButtonColorMode.cxx
 file

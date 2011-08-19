@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/Volumes
 http://svn.slicer.org/Slicer3
 
@@ -471,107 +471,8 @@ alexy
 
 42461
 
-vtkSlicerVolumesGUI.h
-file
-
-
-
-
-2010-10-25T02:20:29.254995Z
-653a4da3c45375ea149fcafc4e8113ea
-2010-04-21T22:38:54.398209Z
-12865
-naucoin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7387
-
-vtkVolumesConfigure.h.in
-file
-
-
-
-
-2010-10-25T02:20:29.254995Z
-9e73916e15a01fb1a1a6c4c1a7196e59
-2008-05-20T07:29:06.621060Z
-6772
-barre
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-262
-
-vtkSlicerVectorVolumeDisplayWidget.cxx
-file
-
-
-
-
-2010-10-25T02:20:29.254995Z
-69f4102b4a2fa41849cd6b6ae6fe96d4
-2010-06-11T20:45:05.305745Z
-13771
-naucoin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18850
+ImageData
+dir
 
 vtkSlicerGradientsWidget.cxx
 file
@@ -607,8 +508,107 @@ jcfr
 
 12820
 
-ImageData
-dir
+vtkSlicerVectorVolumeDisplayWidget.cxx
+file
+
+
+
+
+2010-10-25T02:20:29.254995Z
+69f4102b4a2fa41849cd6b6ae6fe96d4
+2010-06-11T20:45:05.305745Z
+13771
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18850
+
+vtkVolumesConfigure.h.in
+file
+
+
+
+
+2010-10-25T02:20:29.254995Z
+9e73916e15a01fb1a1a6c4c1a7196e59
+2008-05-20T07:29:06.621060Z
+6772
+barre
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+262
+
+vtkSlicerVolumesGUI.h
+file
+
+
+
+
+2010-10-25T02:20:29.254995Z
+653a4da3c45375ea149fcafc4e8113ea
+2010-04-21T22:38:54.398209Z
+12865
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7387
 
 CMakeLists.txt
 file
@@ -644,40 +644,6 @@ jcfr
 
 4445
 
-vtkSlicerVolumesIcons.cxx
-file
-
-
-
-
-2010-10-25T02:20:29.254995Z
-3856387c1eed6d4bab4c4970300fa1e3
-2009-05-11T21:03:52.424391Z
-9455
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3098
-
 vtkSlicerVolumeDisplayWidget.h
 file
 
@@ -712,17 +678,17 @@ naucoin
 
 3225
 
-vtkSlicerDiffusionTensorVolumeDisplayWidget.h
+vtkSlicerVolumesIcons.cxx
 file
 
 
 
 
 2010-10-25T02:20:29.254995Z
-2eada9f2c7e3c329cb8251484b24e273
-2008-04-29T21:51:46.928952Z
-6576
-kerstin
+3856387c1eed6d4bab4c4970300fa1e3
+2009-05-11T21:03:52.424391Z
+9455
+naucoin
 
 
 
@@ -744,7 +710,7 @@ kerstin
 
 
 
-3645
+3098
 
 vtkSlicerDiffusionTestingWidget.cxx
 file
@@ -779,6 +745,40 @@ pieper
 
 
 32258
+
+vtkSlicerDiffusionTensorVolumeDisplayWidget.h
+file
+
+
+
+
+2010-10-25T02:20:29.254995Z
+2eada9f2c7e3c329cb8251484b24e273
+2008-04-29T21:51:46.928952Z
+6576
+kerstin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3645
 
 vtkSlicerLabelMapVolumeDisplayWidget.cxx
 file

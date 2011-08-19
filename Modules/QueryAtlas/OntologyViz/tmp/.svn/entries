@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/QueryAtlas/OntologyViz/tmp
 http://svn.slicer.org/Slicer3
 
@@ -25,6 +25,40 @@ wjp@bwh.harvard.edu
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
+
+traceback.class
+file
+
+
+
+
+2010-10-25T02:20:27.904995Z
+9ae8d2ac5f68c1e2d28070dda3e73322
+2007-09-30T15:41:22.785231Z
+4484
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11306
 
 copy_reg$_PyInner.class
 file
@@ -60,14 +94,14 @@ has-props
 
 6868
 
-traceback.class
+sre_parse.class
 file
 
 
 
 
 2010-10-25T02:20:27.904995Z
-9ae8d2ac5f68c1e2d28070dda3e73322
+043d6229bc70ec89e3a97e6d422f8d4e
 2007-09-30T15:41:22.785231Z
 4484
 wjp@bwh.harvard.edu
@@ -127,40 +161,6 @@ has-props
 
 
 5977
-
-sre_parse.class
-file
-
-
-
-
-2010-10-25T02:20:27.904995Z
-043d6229bc70ec89e3a97e6d422f8d4e
-2007-09-30T15:41:22.785231Z
-4484
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11306
 
 birnlexvis.class
 file
@@ -332,40 +332,6 @@ has-props
 
 20381
 
-birnlexvis$ZoomToFitAction.class
-file
-
-
-
-
-2010-10-25T02:20:27.904995Z
-b996c66a25775170c124aecea01cf99a
-2007-09-30T15:41:22.785231Z
-4484
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4020
-
 getopt.class
 file
 
@@ -400,14 +366,14 @@ has-props
 
 11300
 
-runutils$ProcRunnable.class
+birnlexvis$ZoomToFitAction.class
 file
 
 
 
 
 2010-10-25T02:20:27.904995Z
-b07718ea8a912bdd9c3c33402c1f57ad
+b996c66a25775170c124aecea01cf99a
 2007-09-30T15:41:22.785231Z
 4484
 wjp@bwh.harvard.edu
@@ -432,7 +398,7 @@ has-props
 
 
 
-2340
+4020
 
 birnlexvis$DisplayItemInformation.class
 file
@@ -467,6 +433,40 @@ has-props
 
 
 2484
+
+runutils$ProcRunnable.class
+file
+
+
+
+
+2010-10-25T02:20:27.904995Z
+b07718ea8a912bdd9c3c33402c1f57ad
+2007-09-30T15:41:22.785231Z
+4484
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2340
 
 string.class
 file
@@ -1219,8 +1219,39 @@ has-props
 
 17860
 
-org
-dir
+javaos.class
+file
+
+
+
+
+2010-10-25T02:20:27.914995Z
+1f6f3b7df5b2f933fca9faf2404fe385
+2007-09-30T15:41:22.785231Z
+4484
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11300
 
 linecache$_PyInner.class
 file
@@ -1256,39 +1287,8 @@ has-props
 
 7332
 
-javaos.class
-file
-
-
-
-
-2010-10-25T02:20:27.914995Z
-1f6f3b7df5b2f933fca9faf2404fe385
-2007-09-30T15:41:22.785231Z
-4484
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11300
+org
+dir
 
 birnlexvis$NodeStrokeColorAction.class
 file
@@ -1324,40 +1324,6 @@ has-props
 
 4331
 
-socket.class
-file
-
-
-
-
-2010-10-25T02:20:27.914995Z
-912ead9aca10e3028afb8f223abc5084
-2007-09-30T15:41:22.785231Z
-4484
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11300
-
 random$_PyInner.class
 file
 
@@ -1392,14 +1358,14 @@ has-props
 
 34754
 
-birnlexvis$SearchBasedListModel.class
+socket.class
 file
 
 
 
 
 2010-10-25T02:20:27.914995Z
-d22544f1168c35d25737c8edf83b0397
+912ead9aca10e3028afb8f223abc5084
 2007-09-30T15:41:22.785231Z
 4484
 wjp@bwh.harvard.edu
@@ -1424,7 +1390,7 @@ has-props
 
 
 
-3162
+11300
 
 birnlexvis$TextColorAction.class
 file
@@ -1460,14 +1426,14 @@ has-props
 
 4319
 
-runutils$_PyInner.class
+birnlexvis$SearchBasedListModel.class
 file
 
 
 
 
 2010-10-25T02:20:27.914995Z
-7a4db028150ef2723d701ac37c433f6d
+d22544f1168c35d25737c8edf83b0397
 2007-09-30T15:41:22.785231Z
 4484
 wjp@bwh.harvard.edu
@@ -1492,7 +1458,7 @@ has-props
 
 
 
-4295
+3162
 
 birnlexvis$SelectStructureInList.class
 file
@@ -1528,6 +1494,40 @@ has-props
 
 2440
 
+runutils$_PyInner.class
+file
+
+
+
+
+2010-10-25T02:20:27.914995Z
+7a4db028150ef2723d701ac37c433f6d
+2007-09-30T15:41:22.785231Z
+4484
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4295
+
 birnlexvis$ChangeLevelOfDetail.class
 file
 
@@ -1562,40 +1562,6 @@ has-props
 
 2422
 
-socket$_PyInner.class
-file
-
-
-
-
-2010-10-25T02:20:27.914995Z
-2103c64402bbaaddd2511779e4e1d52b
-2007-09-30T15:41:22.785231Z
-4484
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-54340
-
 PrefixIntersectionSearchTupleSet.class
 file
 
@@ -1629,6 +1595,40 @@ has-props
 
 
 4953
+
+socket$_PyInner.class
+file
+
+
+
+
+2010-10-25T02:20:27.914995Z
+2103c64402bbaaddd2511779e4e1d52b
+2007-09-30T15:41:22.785231Z
+4484
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+54340
 
 atexit$_PyInner.class
 file
@@ -1732,40 +1732,6 @@ has-props
 
 11410
 
-popen2$_PyInner.class
-file
-
-
-
-
-2010-10-25T02:20:27.914995Z
-861f5141a367e64d12d82de5797bc3e8
-2007-09-30T15:41:22.785231Z
-4484
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17997
-
 linecache.class
 file
 
@@ -1799,6 +1765,40 @@ has-props
 
 
 11306
+
+popen2$_PyInner.class
+file
+
+
+
+
+2010-10-25T02:20:27.914995Z
+861f5141a367e64d12d82de5797bc3e8
+2007-09-30T15:41:22.785231Z
+4484
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17997
 
 string$_PyInner.class
 file

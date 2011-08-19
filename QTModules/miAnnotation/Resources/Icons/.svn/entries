@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/QTModules/miAnnotation/Resources/Icons
 http://svn.slicer.org/Slicer3
 
@@ -536,40 +536,6 @@ has-props
 
 643
 
-AnnotationDistance.png
-file
-
-
-
-
-2010-10-25T02:21:51.044995Z
-d8fd9803accda6233528d8c8718ef3d7
-2010-04-28T19:55:02.445411Z
-12987
-pohl
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-371
-
 AnnotationSpline.png
 file
 
@@ -603,6 +569,40 @@ has-props
 
 
 551
+
+AnnotationDistance.png
+file
+
+
+
+
+2010-10-25T02:21:51.044995Z
+d8fd9803accda6233528d8c8718ef3d7
+2010-04-28T19:55:02.445411Z
+12987
+pohl
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+371
 
 AnnotationPolyline.png
 file
@@ -740,40 +740,6 @@ has-props
 
 723
 
-AnnotationEditDistance.png
-file
-
-
-
-
-2010-10-25T02:21:51.044995Z
-75c35ee412318c1694e576a9d553f0d1
-2010-04-28T19:55:02.445411Z
-12987
-pohl
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-514
-
 AnnotationEditSpline.png
 file
 
@@ -807,6 +773,40 @@ has-props
 
 
 654
+
+AnnotationEditDistance.png
+file
+
+
+
+
+2010-10-25T02:21:51.044995Z
+75c35ee412318c1694e576a9d553f0d1
+2010-04-28T19:55:02.445411Z
+12987
+pohl
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+514
 
 AnnotationEditPolyline.png
 file
@@ -944,40 +944,6 @@ has-props
 
 620
 
-AnnotationMoveUp.png
-file
-
-
-
-
-2010-10-25T02:21:51.044995Z
-98c464778e2dc27dac49df862c15fe8d
-2010-04-28T19:55:02.445411Z
-12987
-pohl
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-578
-
 AnnotationEditNote.png
 file
 
@@ -1011,6 +977,40 @@ has-props
 
 
 646
+
+AnnotationMoveUp.png
+file
+
+
+
+
+2010-10-25T02:21:51.044995Z
+98c464778e2dc27dac49df862c15fe8d
+2010-04-28T19:55:02.445411Z
+12987
+pohl
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+578
 
 AnnotationSaveAnnotations.png
 file

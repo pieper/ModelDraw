@@ -48,22 +48,22 @@ void assign3(T& vec, J x, J y, J z)
 int CountSamplesTest(int, char* [])
 {
   const unsigned int NTESTS = 7;
-  unsigned int sizes[NTESTS][3] = {{128,128,63},
-                                   {128,128,64},
-                                   {128,128,65},
-                                   {128,128,96},
-                                   {256,256,64},
-                                   {512,512,33},
-                                   {512,512,64}
+  unsigned int sizes[NTESTS][3] = {{32,32,63},
+                                   {32,32,64},
+                                   {32,32,65},
+                                   {32,32,96},
+                                   {64,64,64},
+                                   {128,128,33},
+                                   {128,128,64}
                                    };
 
-  double spacings[NTESTS][3] = {{2.0,2.0,2.0},
-                                {2.0,2.0,2.0},
-                                {2.0,2.0,2.0},
-                                {2.0,2.0,2.0},
-                                {1.0,1.0,2.0},
-                                {0.2734,0.2734,3.00001},
-                                {0.2734,0.2734,3.00001}
+  double spacings[NTESTS][3] = {{8.0,8.0,2.0},
+                                {8.0,8.0,2.0},
+                                {8.0,8.0,2.0},
+                                {8.0,8.0,2.0},
+                                {4.0,4.0,2.0},
+                                {1.0936,1.0936,3.00001},
+                                {1.0936,1.0936,3.00001}
                                 };
   
   for(unsigned int i = 0; i < NTESTS; ++i)
@@ -78,12 +78,12 @@ int CountSamplesTest(int, char* [])
     spacing[0] = spacings[i][0];
     spacing[1] = spacings[i][1];
     spacing[2] = spacings[i][2];
-    
 
     ImageType::Pointer image = createTestImage(size, spacing);
 
     std::cout << "spacing: " << image->GetSpacing() << std::endl;
-    std::cout << "size: " << image->GetLargestPossibleRegion().GetSize() << std::endl;
+    std::cout << "size: " << image->GetLargestPossibleRegion().GetSize() 
+      << std::endl;
 
     itk::Point<double, 3> p1;
     assign3(p1, 0.0, 0.0, 0.0);
@@ -95,9 +95,7 @@ int CountSamplesTest(int, char* [])
 
     unsigned long count = countInsideVoxels<ImageType>(image, box1);
     std::cout << "count: " << count << std::endl;
-
     }
-
 
   return EXIT_SUCCESS;
 }

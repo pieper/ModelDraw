@@ -126,8 +126,10 @@ proc SlicerSpinMovie { {degrees 5} {fps 10} } {
   # try webm
   # see, for example: http://diveintohtml5.org/video.html
   # and https://groups.google.com/a/webmproject.org/group/webm-discuss/browse_thread/thread/438f52c6683bedde?pli=1
+  # or try: ffmpeg  -i slicer-0%03d.png video.mpg
+  # ffmpeg -i slicer-0%03d.png video.webm
+  # http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs
   # for now:
-  
   set files [lsort [glob /tmp/slicer-*.png]]
   eval exec animate -delay 10 $files 
 

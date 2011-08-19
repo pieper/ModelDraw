@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Base/GUI/ImageData/SlicerLUTs
 http://svn.slicer.org/Slicer3
 
@@ -502,40 +502,6 @@ has-props
 
 6216
 
-discreteGreen.png
-file
-
-
-
-
-2010-10-25T02:21:27.364995Z
-6c7faa3865cedcf2c45ba7b944c87e94
-2010-04-13T19:54:41.480093Z
-12741
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6255
-
 petPETRainbow.png
 file
 
@@ -570,14 +536,14 @@ has-props
 
 6300
 
-freeSurferGreenRed.png
+discreteGreen.png
 file
 
 
 
 
 2010-10-25T02:21:27.364995Z
-8e3eb939396fccbdb6bf1688c8ad198f
+6c7faa3865cedcf2c45ba7b944c87e94
 2010-04-13T19:54:41.480093Z
 12741
 wjp@bwh.harvard.edu
@@ -602,41 +568,7 @@ has-props
 
 
 
-6306
-
-discreteRainbow.png
-file
-
-
-
-
-2010-10-25T02:21:27.364995Z
-779285685ffdab1b37732616d72af956
-2010-04-13T19:54:41.480093Z
-12741
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6292
+6255
 
 freeSurferRedGreen.png
 file
@@ -672,14 +604,14 @@ has-props
 
 6303
 
-discretelabels.png
+discreteRainbow.png
 file
 
 
 
 
-2010-10-25T02:21:27.374995Z
-19afbb5d83c1f88da378836ff78fc346
+2010-10-25T02:21:27.364995Z
+779285685ffdab1b37732616d72af956
 2010-04-13T19:54:41.480093Z
 12741
 wjp@bwh.harvard.edu
@@ -704,16 +636,16 @@ has-props
 
 
 
-6376
+6292
 
-slicerBrainLUT2010.png
+freeSurferGreenRed.png
 file
 
 
 
 
-2010-10-25T02:21:27.374995Z
-b4281e3883e28a0c321c9a2364933bae
+2010-10-25T02:21:27.364995Z
+8e3eb939396fccbdb6bf1688c8ad198f
 2010-04-13T19:54:41.480093Z
 12741
 wjp@bwh.harvard.edu
@@ -738,7 +670,7 @@ has-props
 
 
 
-6369
+6306
 
 tintWarmTint1.png
 file
@@ -774,6 +706,74 @@ has-props
 
 6284
 
+slicerBrainLUT2010.png
+file
+
+
+
+
+2010-10-25T02:21:27.374995Z
+b4281e3883e28a0c321c9a2364933bae
+2010-04-13T19:54:41.480093Z
+12741
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6369
+
+discretelabels.png
+file
+
+
+
+
+2010-10-25T02:21:27.374995Z
+19afbb5d83c1f88da378836ff78fc346
+2010-04-13T19:54:41.480093Z
+12741
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6376
+
 tintWarmTint2.png
 file
 
@@ -808,16 +808,16 @@ has-props
 
 6286
 
-abdomenColors.png
+tintWarmTint3.png
 file
 
 
 
 
 2010-10-25T02:21:27.374995Z
-b4011bb39c4911d37a2d11d9dd19d2c0
-2010-04-26T15:18:53.603292Z
-12928
+8a5e9c0b94486047e6222ffa99dbcfe1
+2010-04-13T19:54:41.480093Z
+12741
 wjp@bwh.harvard.edu
 has-props
 
@@ -840,7 +840,7 @@ has-props
 
 
 
-6375
+6287
 
 genericAnatomyColors.png
 file
@@ -876,16 +876,16 @@ has-props
 
 673
 
-tintWarmTint3.png
+abdomenColors.png
 file
 
 
 
 
 2010-10-25T02:21:27.374995Z
-8a5e9c0b94486047e6222ffa99dbcfe1
-2010-04-13T19:54:41.480093Z
-12741
+b4011bb39c4911d37a2d11d9dd19d2c0
+2010-04-26T15:18:53.603292Z
+12928
 wjp@bwh.harvard.edu
 has-props
 
@@ -908,7 +908,7 @@ has-props
 
 
 
-6287
+6375
 
 SPL-BrainAtlas-ColorFile.png
 file
@@ -1012,40 +1012,6 @@ has-props
 
 6255
 
-discreteCool2.png
-file
-
-
-
-
-2010-10-25T02:21:27.374995Z
-afbe6eeedb8d5f3129c7d2691c187aed
-2010-04-13T19:54:41.480093Z
-12741
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6255
-
 labelsNonSemantic.png
 file
 
@@ -1079,6 +1045,40 @@ has-props
 
 
 6376
+
+discreteCool2.png
+file
+
+
+
+
+2010-10-25T02:21:27.374995Z
+afbe6eeedb8d5f3129c7d2691c187aed
+2010-04-13T19:54:41.480093Z
+12741
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6255
 
 shadeWarmShade1.png
 file

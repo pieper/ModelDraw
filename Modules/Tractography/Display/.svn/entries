@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/Tractography/Display
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ pieper
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-vtkSlicerAllFiberBundlesDisplayWidget.cxx
-file
-
-
-
-
-2010-10-25T02:20:30.404995Z
-f6930f444fd1769e140e5730fc624788
-2010-02-05T04:39:38.001947Z
-12001
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18313
 
 vtkSlicerTractographyDisplayGUI.h
 file
@@ -93,6 +59,40 @@ demian
 
 
 3786
+
+vtkSlicerAllFiberBundlesDisplayWidget.cxx
+file
+
+
+
+
+2010-10-25T02:20:30.404995Z
+f6930f444fd1769e140e5730fc624788
+2010-02-05T04:39:38.001947Z
+12001
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18313
 
 vtkSlicerTractographyDisplayConfigure.h.in
 file
@@ -162,40 +162,6 @@ pieper
 
 11223
 
-vtkSlicerFiberBundleDisplayWidget.h
-file
-
-
-
-
-2010-10-25T02:20:30.404995Z
-0ba7cf1e682895e76c95bbf7456fca42
-2009-07-27T18:01:10.235799Z
-10048
-maddah
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4392
-
 vtkSlicerTractographyDisplayLogic.h
 file
 
@@ -230,17 +196,17 @@ has-props
 
 1516
 
-vtkSlicerTractographyDisplayGUI.cxx
+vtkSlicerFiberBundleDisplayWidget.h
 file
 
 
 
 
 2010-10-25T02:20:30.404995Z
-38841036b7667f46df66d5f15d2ac414
-2010-05-05T14:43:34.762976Z
-13240
-alexy
+0ba7cf1e682895e76c95bbf7456fca42
+2009-07-27T18:01:10.235799Z
+10048
+maddah
 
 
 
@@ -262,7 +228,7 @@ alexy
 
 
 
-16058
+4392
 
 vtkSlicerDiffusionTensorIcons.h
 file
@@ -298,6 +264,40 @@ alexy
 
 1212
 
+vtkSlicerTractographyDisplayGUI.cxx
+file
+
+
+
+
+2010-10-25T02:20:30.404995Z
+38841036b7667f46df66d5f15d2ac414
+2010-05-05T14:43:34.762976Z
+13240
+alexy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16058
+
 vtkSlicerFiberBundleDisplayLogic.h
 file
 
@@ -332,40 +332,6 @@ tgl
 
 4780
 
-vtkSlicerFiberBundleDisplayWidget.cxx
-file
-
-
-
-
-2010-10-25T02:20:30.404995Z
-e545ddab0891b834a80cac8584efd0c2
-2010-09-23T16:58:09.971785Z
-15048
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-28799
-
 vtkSlicerTractographyDisplayLogic.cxx
 file
 
@@ -399,6 +365,40 @@ has-props
 
 
 1309
+
+vtkSlicerFiberBundleDisplayWidget.cxx
+file
+
+
+
+
+2010-10-25T02:20:30.404995Z
+e545ddab0891b834a80cac8584efd0c2
+2010-09-23T16:58:09.971785Z
+15048
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28799
 
 vtkSlicerAllFiberBundlesDisplayWidget.h
 file

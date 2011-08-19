@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Libs/LoadableModule
 http://svn.slicer.org/Slicer3
 
@@ -25,9 +25,6 @@ has-props
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-CMake
-dir
 
 LoadableModuleDescriptionParser.h
 file
@@ -62,6 +59,9 @@ has-props
 
 
 1242
+
+CMake
+dir
 
 LoadableModuleConfig.cmake.in
 file
@@ -165,40 +165,6 @@ barre
 
 963
 
-LoadableModuleDescriptionParser.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.714995Z
-6547911c3e149c78ea2d99b128b6a9ef
-2010-01-22T00:05:58.436133Z
-11725
-lassoan
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10923
-
 LoadableModuleWin32Header.h
 file
 
@@ -232,6 +198,40 @@ has-props
 
 
 1236
+
+LoadableModuleDescriptionParser.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.714995Z
+6547911c3e149c78ea2d99b128b6a9ef
+2010-01-22T00:05:58.436133Z
+11725
+lassoan
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10923
 
 LoadableModuleFactory.cxx
 file
@@ -335,40 +335,6 @@ barre
 
 391
 
-LoadableModuleInstallConfig.cmake.in
-file
-
-
-
-
-2010-10-25T02:20:21.704995Z
-f2256001b81b4cbdbfaf85bd74cb5e19
-2008-05-26T15:08:45.818372Z
-6845
-barre
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-590
-
 UseLoadableModule.cmake.in
 file
 
@@ -403,8 +369,39 @@ barre
 
 109
 
-Testing
-dir
+LoadableModuleInstallConfig.cmake.in
+file
+
+
+
+
+2010-10-25T02:20:21.704995Z
+f2256001b81b4cbdbfaf85bd74cb5e19
+2008-05-26T15:08:45.818372Z
+6845
+barre
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+590
 
 CMakeLists.txt
 file
@@ -439,6 +436,9 @@ jcfr
 
 
 4301
+
+Testing
+dir
 
 LoadableModuleDescription.cxx
 file

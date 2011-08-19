@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/AMF
 http://svn.slicer.org/Slicer3
 
@@ -26,14 +26,14 @@ pohl
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-vtkImageIsoContourDist.cxx
+vtkLevelSets.h
 file
 
 
 
 
 2011-05-04T11:42:14.882731Z
-f6b7d44023bffe96d15199a7789289df
+ffba1a6080f3a2cbf7fbb09271661a93
 2011-05-02T07:48:29.051832Z
 16538
 pohl
@@ -58,7 +58,7 @@ pohl
 
 
 
-20114
+14759
 
 vtkImagePropagateDist2.cxx
 file
@@ -94,14 +94,14 @@ pohl
 
 60874
 
-vtkLevelSets.h
+vtkImageIsoContourDist.cxx
 file
 
 
 
 
 2011-05-04T11:42:14.882731Z
-ffba1a6080f3a2cbf7fbb09271661a93
+f6b7d44023bffe96d15199a7789289df
 2011-05-02T07:48:29.051832Z
 16538
 pohl
@@ -126,7 +126,7 @@ pohl
 
 
 
-14759
+20114
 
 vtkLevelSetsPythonInit.cxx
 file
@@ -196,50 +196,16 @@ pohl
 
 3812
 
-vtkImageLogOdds.cxx
-file
-
-
-
-
-2011-05-06T15:40:28.643238Z
-2193f9afca575cbfed73e38bfb79db81
-2011-05-05T07:42:20.796968Z
-16568
-pohl
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16201
-
-vtkImageLevelSets.h
+vtkImagePropagateDist.h
 file
 
 
 
 
 2011-05-04T11:42:14.882731Z
-04241e404702fdb90465e63deba4be29
-2011-05-02T14:37:14.941878Z
-16541
+180583a6996397a8d4e35ced207f7855
+2011-05-02T07:48:29.051832Z
+16538
 pohl
 
 
@@ -262,7 +228,7 @@ pohl
 
 
 
-15310
+5995
 
 vtkImageIsoContourDistTcl.cxx
 file
@@ -298,16 +264,16 @@ pohl
 
 8235
 
-vtkImagePropagateDist.h
+vtkImageLevelSets.h
 file
 
 
 
 
 2011-05-04T11:42:14.882731Z
-180583a6996397a8d4e35ced207f7855
-2011-05-02T07:48:29.051832Z
-16538
+04241e404702fdb90465e63deba4be29
+2011-05-02T14:37:14.941878Z
+16541
 pohl
 
 
@@ -330,7 +296,41 @@ pohl
 
 
 
-5995
+15310
+
+vtkImageLogOdds.cxx
+file
+
+
+
+
+2011-05-06T15:40:28.643238Z
+2193f9afca575cbfed73e38bfb79db81
+2011-05-05T07:42:20.796968Z
+16568
+pohl
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16201
 
 vtkLevelSetFastMarching.h
 file
@@ -434,40 +434,6 @@ pohl
 
 4060
 
-vtkLevelSets.cxx
-file
-
-
-
-
-2011-05-04T11:42:14.882731Z
-14600fb8f5254d080a2689f0e094db98
-2011-05-02T07:48:29.051832Z
-16538
-pohl
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-102140
-
 vtkMinHeap.h
 file
 
@@ -501,6 +467,40 @@ pohl
 
 
 8548
+
+vtkLevelSets.cxx
+file
+
+
+
+
+2011-05-04T11:42:14.882731Z
+14600fb8f5254d080a2689f0e094db98
+2011-05-02T07:48:29.051832Z
+16538
+pohl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+102140
 
 LevelSetSegmenter
 file

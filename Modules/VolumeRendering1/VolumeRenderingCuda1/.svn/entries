@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/VolumeRendering1/VolumeRenderingCuda1
 http://svn.slicer.org/Slicer3
 
@@ -162,40 +162,6 @@ alexy
 
 2447
 
-CUDA_renderRayCastCompositeShaded.h
-file
-
-
-
-
-2010-10-25T02:20:25.114995Z
-17c4aa1634ab166fae35ebf4c47c8e4c
-2009-07-16T01:22:50.265733Z
-9952
-alexy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6427
-
 vtkCudaVolumeMapper.h
 file
 
@@ -229,6 +195,40 @@ pieper
 
 
 2195
+
+CUDA_renderRayCastCompositeShaded.h
+file
+
+
+
+
+2010-10-25T02:20:25.114995Z
+17c4aa1634ab166fae35ebf4c47c8e4c
+2009-07-16T01:22:50.265733Z
+9952
+alexy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6427
 
 CUDA_renderBase.h
 file
@@ -298,40 +298,6 @@ alexy
 
 11960
 
-vtkCudaVolumeInformationHandler.cxx
-file
-
-
-
-
-2010-10-25T02:20:25.114995Z
-cdec7f99720f76aa2dd34e3bad01ff6b
-2009-07-16T01:22:50.265733Z
-9952
-alexy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8602
-
 CUDA_zbuffer_math.h
 file
 
@@ -366,14 +332,14 @@ alexy
 
 1121
 
-cudaRendererInformation.h
+vtkCudaVolumeInformationHandler.cxx
 file
 
 
 
 
 2010-10-25T02:20:25.114995Z
-64e06a0977deea51dd33c93763d8f0c7
+cdec7f99720f76aa2dd34e3bad01ff6b
 2009-07-16T01:22:50.265733Z
 9952
 alexy
@@ -398,7 +364,41 @@ alexy
 
 
 
-1300
+8602
+
+vtkCudaVolumeMapper.cxx
+file
+
+
+
+
+2010-10-25T02:20:25.114995Z
+6fe60c5faa6b83f915176468bfe1bb6e
+2009-12-22T16:58:16.293042Z
+11374
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6216
 
 CUDA_matrix_math.h
 file
@@ -434,17 +434,17 @@ alexy
 
 1575
 
-vtkCudaVolumeMapper.cxx
+cudaRendererInformation.h
 file
 
 
 
 
 2010-10-25T02:20:25.114995Z
-6fe60c5faa6b83f915176468bfe1bb6e
-2009-12-22T16:58:16.293042Z
-11374
-naucoin
+64e06a0977deea51dd33c93763d8f0c7
+2009-07-16T01:22:50.265733Z
+9952
+alexy
 
 
 
@@ -466,7 +466,7 @@ naucoin
 
 
 
-6216
+1300
 
 cudaVolumeInformation.h
 file

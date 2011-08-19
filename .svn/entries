@@ -1,14 +1,14 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk
 http://svn.slicer.org/Slicer3
 
 
 
-2011-08-13T17:48:52.655686Z
-16815
+2011-08-15T19:28:42.929526Z
+16821
 pieper
 
 
@@ -405,9 +405,6 @@ jcfr
 
 110
 
-Extensions
-dir
-
 qSlicerExport.h.in
 file
 
@@ -442,39 +439,8 @@ has-props
 
 980
 
-License.txt
-file
-
-
-
-
-2010-10-25T02:22:33.314995Z
-7c54d1d8f00b9968f2328042d1ce54e9
-2006-11-30T22:27:49.115361Z
-1725
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10544
+Extensions
+dir
 
 launch.tcl.in
 file
@@ -510,6 +476,40 @@ has-props
 
 50297
 
+License.txt
+file
+
+
+
+
+2010-10-25T02:22:33.314995Z
+7c54d1d8f00b9968f2328042d1ce54e9
+2006-11-30T22:27:49.115361Z
+1725
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10544
+
 vtkSlicerConfigure.h.in
 file
 
@@ -544,9 +544,6 @@ finetjul
 
 3194
 
-Doc
-dir
-
 Slicer3InstallConfig.cmake.in
 file
 
@@ -580,6 +577,9 @@ hjohnson
 
 
 6873
+
+Doc
+dir
 
 Modules
 dir

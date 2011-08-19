@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/FetchMI
 http://svn.slicer.org/Slicer3
 
@@ -63,16 +63,16 @@ has-props
 
 1894
 
-vtkFetchMIWin32Header.h
+vtkFetchMIIcons.h
 file
 
 
 
 
 2010-10-25T02:20:31.584995Z
-ca584c28fafcda1f5712f730eb1b6495
-2008-10-10T14:51:53.928110Z
-7645
+bc9cff53ddb582e42ad6f60243df47e2
+2009-02-04T22:56:56.161580Z
+8550
 wjp@bwh.harvard.edu
 has-props
 
@@ -95,7 +95,7 @@ has-props
 
 
 
-347
+1763
 
 vtkFetchMIResourceUploadWidget.cxx
 file
@@ -131,16 +131,16 @@ has-props
 
 65912
 
-vtkFetchMIIcons.h
+vtkFetchMIWin32Header.h
 file
 
 
 
 
 2010-10-25T02:20:31.584995Z
-bc9cff53ddb582e42ad6f60243df47e2
-2009-02-04T22:56:56.161580Z
-8550
+ca584c28fafcda1f5712f730eb1b6495
+2008-10-10T14:51:53.928110Z
+7645
 wjp@bwh.harvard.edu
 has-props
 
@@ -163,41 +163,7 @@ has-props
 
 
 
-1763
-
-vtkFetchMIQueryTermWidget.cxx
-file
-
-
-
-
-2010-10-25T02:20:31.584995Z
-b8dda1113d9dbd7cc8dd386b6da189e6
-2010-10-19T20:47:24.202194Z
-15258
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-33545
+347
 
 vtkFetchMIMulticolumnWidget.h
 file
@@ -232,6 +198,40 @@ has-props
 
 
 1907
+
+vtkFetchMIQueryTermWidget.cxx
+file
+
+
+
+
+2010-10-25T02:20:31.584995Z
+b8dda1113d9dbd7cc8dd386b6da189e6
+2010-10-19T20:47:24.202194Z
+15258
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+33545
 
 vtkFetchMIFlatResourceWidget.cxx
 file
@@ -335,6 +335,9 @@ has-props
 
 247
 
+Logic
+dir
+
 FetchMI.txt
 file
 
@@ -368,9 +371,6 @@ has-props
 
 
 15
-
-Logic
-dir
 
 vtkFetchMIGUI.h
 file

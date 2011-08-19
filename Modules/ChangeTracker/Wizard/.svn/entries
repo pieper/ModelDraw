@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/ChangeTracker/Wizard
 http://svn.slicer.org/Slicer3
 
@@ -128,40 +128,6 @@ has-props
 
 7714
 
-vtkChangeTrackerTypeStep.cxx
-file
-
-
-
-
-2010-10-25T02:21:04.944995Z
-b6ea940debd41a6876f6dfcb58929459
-2009-08-06T15:01:04.096873Z
-10176
-fedorov
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17146
-
 vtkChangeTrackerFirstScanStep.h
 file
 
@@ -195,6 +161,40 @@ has-props
 
 
 1559
+
+vtkChangeTrackerTypeStep.cxx
+file
+
+
+
+
+2010-10-25T02:21:04.944995Z
+b6ea940debd41a6876f6dfcb58929459
+2009-08-06T15:01:04.096873Z
+10176
+fedorov
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17146
 
 vtkChangeTrackerSegmentationStep.h
 file

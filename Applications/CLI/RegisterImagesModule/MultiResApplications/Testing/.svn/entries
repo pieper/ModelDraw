@@ -1,14 +1,14 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/RegisterImagesModule/MultiResApplications/Testing
 http://svn.slicer.org/Slicer3
 
 
 
-2010-05-01T12:38:53.433943Z
-13150
+2011-08-14T23:54:38.294698Z
+16820
 aylward
 
 
@@ -372,11 +372,11 @@ file
 
 
 
-2010-10-25T02:20:18.294995Z
-39c8b5a048b3d7f56a014a95c226c2c4
-2010-04-16T15:07:53.753700Z
-12776
-casey.goodlett
+2011-08-16T17:56:46.699912Z
+d083a418b0d8dd335df19008dbafb430
+2011-08-14T23:54:38.294698Z
+16820
+aylward
 has-props
 
 
@@ -398,5 +398,5 @@ has-props
 
 
 
-2631
+2621
 

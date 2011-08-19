@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Base/QTCore
 http://svn.slicer.org/Slicer3
 
@@ -128,16 +128,16 @@ has-props
 
 1252
 
-qSlicerLoadableModuleFactory.cxx
+qSlicerPythonManager.h
 file
 
 
 
 
 2010-10-25T02:21:28.624995Z
-bfd2b2fd1d1f703bb45d057fda4f69d4
-2010-02-04T22:32:08.714342Z
-11988
+6ce745e330ba76f9891da9870de8e331
+2010-02-25T21:49:16.385723Z
+12234
 jcfr
 has-props
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-4045
+894
 
 qSlicerCoreApplication.h
 file
@@ -196,16 +196,16 @@ has-props
 
 5113
 
-qSlicerPythonManager.h
+qSlicerLoadableModuleFactory.cxx
 file
 
 
 
 
 2010-10-25T02:21:28.624995Z
-6ce745e330ba76f9891da9870de8e331
-2010-02-25T21:49:16.385723Z
-12234
+bfd2b2fd1d1f703bb45d057fda4f69d4
+2010-02-04T22:32:08.714342Z
+11988
 jcfr
 has-props
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-894
+4045
 
 qSlicerCoreCommandOptions.cxx
 file
@@ -366,40 +366,6 @@ has-props
 
 5767
 
-qSlicerCoreApplication.cxx
-file
-
-
-
-
-2010-10-25T02:21:28.624995Z
-92b32aa1350f8116a30dff7001841b4c
-2010-03-25T22:11:29.136762Z
-12476
-finetjul
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18169
-
 qSlicerPythonManager.cxx
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 2513
+
+qSlicerCoreApplication.cxx
+file
+
+
+
+
+2010-10-25T02:21:28.624995Z
+92b32aa1350f8116a30dff7001841b4c
+2010-03-25T22:11:29.136762Z
+12476
+finetjul
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18169
 
 qSlicerModuleManager.cxx
 file
@@ -468,6 +468,9 @@ has-props
 
 6734
 
+Resources
+dir
+
 qSlicerLoadableModuleFactory.h
 file
 
@@ -501,9 +504,6 @@ has-props
 
 
 1069
-
-Resources
-dir
 
 qSlicerCoreCommandOptions.h
 file

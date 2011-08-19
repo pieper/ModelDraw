@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/QTModules/SlicerWelcome/Resources/Images
 http://svn.slicer.org/Slicer3
 
@@ -94,40 +94,6 @@ has-props
 
 6849
 
-WelcomeModels.png
-file
-
-
-
-
-2010-10-25T02:21:51.204995Z
-0b32b8df023768b3f5256f46428f8c18
-2009-11-25T21:00:48.274885Z
-11052
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-442
-
 WelcomeSlicesControl.png
 file
 
@@ -161,6 +127,40 @@ has-props
 
 
 2880
+
+WelcomeModels.png
+file
+
+
+
+
+2010-10-25T02:21:51.204995Z
+0b32b8df023768b3f5256f46428f8c18
+2009-11-25T21:00:48.274885Z
+11052
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+442
 
 WelcomeCommunity.png
 file
@@ -230,40 +230,6 @@ has-props
 
 2994
 
-WelcomeModuleNav.png
-file
-
-
-
-
-2010-10-25T02:21:51.204995Z
-51ec19a8675d322715ab95ba78417a50
-2009-11-25T21:00:48.274885Z
-11052
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3779
-
 WelcomeVolumes.png
 file
 
@@ -297,6 +263,40 @@ has-props
 
 
 362
+
+WelcomeModuleNav.png
+file
+
+
+
+
+2010-10-25T02:21:51.204995Z
+51ec19a8675d322715ab95ba78417a50
+2009-11-25T21:00:48.274885Z
+11052
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3779
 
 WelcomeScene.png
 file
@@ -366,40 +366,6 @@ has-props
 
 394
 
-WelcomeSceneSnapshots.png
-file
-
-
-
-
-2010-10-25T02:21:51.204995Z
-b8a595fe377a9af7ef39864cedccb5bf
-2009-11-25T21:00:48.274885Z
-11052
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3718
-
 WelcomeLogo.png
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 18398
+
+WelcomeSceneSnapshots.png
+file
+
+
+
+
+2010-10-25T02:21:51.204995Z
+b8a595fe377a9af7ef39864cedccb5bf
+2009-11-25T21:00:48.274885Z
+11052
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3718
 
 WelcomeFiducials.png
 file

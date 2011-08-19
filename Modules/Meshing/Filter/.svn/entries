@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/Meshing/Filter
 http://svn.slicer.org/Slicer3
 
@@ -60,17 +60,17 @@ lorensen
 
 10259
 
-vtkMimxEdgeToPlanarStructuredGrid.cxx
+vtkMimxSetStructuredGridEdge.h
 file
 
 
 
 
 2010-10-25T02:20:32.344995Z
-9b677278a748d38ea3024dd4d64ec4c2
-2008-12-27T16:34:01.385615Z
-8192
-lorensen
+db2b413b39d23dbded606c38f01e0f51
+2008-12-05T16:56:04.859882Z
+8059
+clisle
 
 
 
@@ -92,7 +92,7 @@ lorensen
 
 
 
-8639
+2967
 
 vtkMimxBoundingBoxFromUnstructuredGrid.cxx
 file
@@ -128,17 +128,17 @@ lorensen
 
 6732
 
-vtkMimxSetStructuredGridEdge.h
+vtkMimxEdgeToPlanarStructuredGrid.cxx
 file
 
 
 
 
 2010-10-25T02:20:32.344995Z
-db2b413b39d23dbded606c38f01e0f51
-2008-12-05T16:56:04.859882Z
-8059
-clisle
+9b677278a748d38ea3024dd4d64ec4c2
+2008-12-27T16:34:01.385615Z
+8192
+lorensen
 
 
 
@@ -160,7 +160,7 @@ clisle
 
 
 
-2967
+8639
 
 vtkMimxSmoothUnstructuredGridFilter.h
 file
@@ -264,40 +264,6 @@ clisle
 
 12090
 
-vtkMimxGenerateIntervertebralDisc.cxx
-file
-
-
-
-
-2010-10-25T02:20:32.354995Z
-28bad9e35e255e2a202abac25645417f
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-23598
-
 vtkMimxDeleteUnstructuredHexahedronGridCell.cxx
 file
 
@@ -332,14 +298,14 @@ vmagnotta
 
 6689
 
-vtkMimxRebinMaterialProperty.h
+vtkMimxGenerateIntervertebralDisc.cxx
 file
 
 
 
 
 2010-10-25T02:20:32.354995Z
-1a8c2c77ca594578fbd40935ffe492ea
+28bad9e35e255e2a202abac25645417f
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -364,7 +330,7 @@ clisle
 
 
 
-5018
+23598
 
 vtkMimxSubdivideCurve.h
 file
@@ -399,6 +365,40 @@ clisle
 
 
 2342
+
+vtkMimxRebinMaterialProperty.h
+file
+
+
+
+
+2010-10-25T02:20:32.354995Z
+1a8c2c77ca594578fbd40935ffe492ea
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5018
 
 vtkMimxExtractStructuredGridFace.h
 file
@@ -1012,6 +1012,74 @@ clisle
 
 2825
 
+vtkMimxDeleteUnstructuredHexahedronGridCell.h
+file
+
+
+
+
+2010-10-25T02:20:32.364995Z
+03df22a60c776d19813337203a5d68e7
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2407
+
+vtkMimxGenerateIntervertebralDisc.h
+file
+
+
+
+
+2010-10-25T02:20:32.364995Z
+33d4d2b594278c3b90b4e165ff2eb72d
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3220
+
 vtkMeshQualityExtended.cxx
 file
 
@@ -1080,14 +1148,14 @@ lorensen
 
 9739
 
-vtkMimxGenerateIntervertebralDisc.h
+vtkMimxPlanarTransfiniteInterpolation.cxx
 file
 
 
 
 
 2010-10-25T02:20:32.364995Z
-33d4d2b594278c3b90b4e165ff2eb72d
+52308261b5ac7a530bdf3b5f61e639c6
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -1112,41 +1180,7 @@ clisle
 
 
 
-3220
-
-vtkMimxDeleteUnstructuredHexahedronGridCell.h
-file
-
-
-
-
-2010-10-25T02:20:32.364995Z
-03df22a60c776d19813337203a5d68e7
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2407
+6157
 
 vtkMimxConstrainedSmoothPolyDataFilter.h
 file
@@ -1181,40 +1215,6 @@ clisle
 
 
 5702
-
-vtkMimxPlanarTransfiniteInterpolation.cxx
-file
-
-
-
-
-2010-10-25T02:20:32.364995Z
-52308261b5ac7a530bdf3b5f61e639c6
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6157
 
 vtkFaceHedgeHog.cxx
 file
@@ -1352,40 +1352,6 @@ vmagnotta
 
 4821
 
-vtkMimxEdgeToStructuredGrid.cxx
-file
-
-
-
-
-2010-10-25T02:20:32.364995Z
-7a8eaf227ce8676d7de4426261bdeb01
-2008-12-27T16:34:01.385615Z
-8192
-lorensen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-24330
-
 vtkMimxBoundingBoxFromBounds.h
 file
 
@@ -1420,17 +1386,17 @@ clisle
 
 2367
 
-vtkMimxMorphStructuredGrid.h
+vtkMimxEdgeToStructuredGrid.cxx
 file
 
 
 
 
 2010-10-25T02:20:32.364995Z
-6dfcc54384708372abf63c5e2f64ef5b
-2008-12-05T16:56:04.859882Z
-8059
-clisle
+7a8eaf227ce8676d7de4426261bdeb01
+2008-12-27T16:34:01.385615Z
+8192
+lorensen
 
 
 
@@ -1452,7 +1418,7 @@ clisle
 
 
 
-3605
+24330
 
 vtkMimxUnstructuredToStructuredGrid.cxx
 file
@@ -1487,6 +1453,40 @@ clisle
 
 
 8414
+
+vtkMimxMorphStructuredGrid.h
+file
+
+
+
+
+2010-10-25T02:20:32.364995Z
+6dfcc54384708372abf63c5e2f64ef5b
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3605
 
 vtkMimxExtractSurface.h
 file
@@ -1590,40 +1590,6 @@ lorensen
 
 8756
 
-vtkMimxSelectSurface.h
-file
-
-
-
-
-2010-10-25T02:20:32.364995Z
-e085eebe28f9b5290a7ef5d2cd642ecf
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4164
-
 vtkMimxSmoothUnstructuredGridFilter.cxx
 file
 
@@ -1658,14 +1624,14 @@ clisle
 
 11947
 
-vtkMimxEditUnstructuredHexahedronGrid.h
+vtkMimxSelectSurface.h
 file
 
 
 
 
 2010-10-25T02:20:32.364995Z
-562b1fca456e3384fa97b9391b994497
+e085eebe28f9b5290a7ef5d2cd642ecf
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -1690,7 +1656,7 @@ clisle
 
 
 
-2736
+4164
 
 vtkMimxMirrorUnstructuredHexahedronGridCell.cxx
 file
@@ -1725,6 +1691,40 @@ lorensen
 
 
 8581
+
+vtkMimxEditUnstructuredHexahedronGrid.h
+file
+
+
+
+
+2010-10-25T02:20:32.364995Z
+562b1fca456e3384fa97b9391b994497
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2736
 
 vtkMimxEquivalancePoints.h
 file
@@ -1828,17 +1828,17 @@ clisle
 
 2270
 
-vtkFaceHedgeHog.h
+vtkMimxSubdivideCurve.cxx
 file
 
 
 
 
 2010-10-25T02:20:32.364995Z
-f1cae51cf2d4137eeacec791f01ed626
-2008-12-05T16:56:04.859882Z
-8059
-clisle
+6b75ccba14f86939688c6acdab474902
+2008-12-27T16:34:01.385615Z
+8192
+lorensen
 
 
 
@@ -1860,7 +1860,7 @@ clisle
 
 
 
-2574
+6392
 
 vtkMimxRebinMaterialProperty.cxx
 file
@@ -1896,17 +1896,17 @@ lorensen
 
 9152
 
-vtkMimxSubdivideCurve.cxx
+vtkFaceHedgeHog.h
 file
 
 
 
 
 2010-10-25T02:20:32.364995Z
-6b75ccba14f86939688c6acdab474902
-2008-12-27T16:34:01.385615Z
-8192
-lorensen
+f1cae51cf2d4137eeacec791f01ed626
+2008-12-05T16:56:04.859882Z
+8059
+clisle
 
 
 
@@ -1928,7 +1928,7 @@ lorensen
 
 
 
-6392
+2574
 
 vtkMimxSplitUnstructuredHexahedronGridCell.h
 file
@@ -1964,40 +1964,6 @@ clisle
 
 3095
 
-vtkMimxComputeNormalsFromPolydataFilter.h
-file
-
-
-
-
-2010-10-25T02:20:32.364995Z
-a9b3a87cfcfbc8f6b3917d487ed3be87
-2008-12-05T16:56:04.859882Z
-8059
-clisle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1751
-
 vtkMimxSolidEllipticalInterpolation.cxx
 file
 
@@ -2031,6 +1997,40 @@ clisle
 
 
 11778
+
+vtkMimxComputeNormalsFromPolydataFilter.h
+file
+
+
+
+
+2010-10-25T02:20:32.364995Z
+a9b3a87cfcfbc8f6b3917d487ed3be87
+2008-12-05T16:56:04.859882Z
+8059
+clisle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1751
 
 vtkFilterConfigure.h.in
 file
@@ -2066,14 +2066,14 @@ has-props
 
 264
 
-vtkMimxEdgeToStructuredGrid.h
+vtkMimxClipImageFromBox.cxx
 file
 
 
 
 
 2010-10-25T02:20:32.364995Z
-2f00f451f2a7a78ae4f8d505170c13e3
+bf3213e291fe6e93af49a7c4221cdb58
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -2098,7 +2098,7 @@ clisle
 
 
 
-2799
+8526
 
 itkMimxAccumulator.h
 file
@@ -2134,14 +2134,14 @@ clisle
 
 3952
 
-vtkMimxClipImageFromBox.cxx
+vtkMimxEdgeToStructuredGrid.h
 file
 
 
 
 
 2010-10-25T02:20:32.364995Z
-bf3213e291fe6e93af49a7c4221cdb58
+2f00f451f2a7a78ae4f8d505170c13e3
 2008-12-05T16:56:04.859882Z
 8059
 clisle
@@ -2166,7 +2166,7 @@ clisle
 
 
 
-8526
+2799
 
 vtkMimxAddUnstructuredHexahedronGridCell.cxx
 file

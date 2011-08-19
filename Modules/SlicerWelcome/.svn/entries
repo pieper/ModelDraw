@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/SlicerWelcome
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ pieper
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-vtkSlicerWelcomeConfigure.h.in
-file
-
-
-
-
-2010-10-25T02:20:54.304995Z
-47e4ecaebaba0ce1c5081d68505e1cb6
-2009-03-27T19:12:39.090042Z
-8989
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-458
 
 vtkSlicerWelcomeIcons.cxx
 file
@@ -93,6 +59,40 @@ has-props
 
 
 11632
+
+vtkSlicerWelcomeConfigure.h.in
+file
+
+
+
+
+2010-10-25T02:20:54.304995Z
+47e4ecaebaba0ce1c5081d68505e1cb6
+2009-03-27T19:12:39.090042Z
+8989
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+458
 
 vtkMRMLSlicerWelcomeNode.cxx
 file
@@ -230,40 +230,6 @@ has-props
 
 1268
 
-vtkSlicerWelcomeIcons.h
-file
-
-
-
-
-2010-10-25T02:20:54.304995Z
-92b5c6eccd3ad9e57b37746de0216ff3
-2009-04-10T21:05:37.888725Z
-9153
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2333
-
 vtkSlicerWelcomeWin32Header.h
 file
 
@@ -297,6 +263,40 @@ has-props
 
 
 389
+
+vtkSlicerWelcomeIcons.h
+file
+
+
+
+
+2010-10-25T02:20:54.304995Z
+92b5c6eccd3ad9e57b37746de0216ff3
+2009-04-10T21:05:37.888725Z
+9153
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2333
 
 vtkMRMLSlicerWelcomeNode.h
 file
@@ -406,40 +406,6 @@ has-props
 ImageData
 dir
 
-CMakeLists.txt
-file
-
-
-
-
-2010-10-25T02:20:54.314995Z
-b53b9d9561615bfdaef70c0563fe1ab4
-2010-03-19T18:48:21.598767Z
-12399
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2311
-
 vtkSlicerWelcomeGUI.h
 file
 
@@ -473,4 +439,38 @@ has-props
 
 
 4232
+
+CMakeLists.txt
+file
+
+
+
+
+2010-10-25T02:20:54.314995Z
+b53b9d9561615bfdaef70c0563fe1ab4
+2010-03-19T18:48:21.598767Z
+12399
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2311
 

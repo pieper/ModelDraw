@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Libs/vtkTeem
 http://svn.slicer.org/Slicer3
 
@@ -536,17 +536,18 @@ alexy
 
 6529
 
-vtkPreciseHyperStreamline.cxx
+vtkTeemConfigure.h.in
 file
 
 
 
 
 2010-10-25T02:20:19.224995Z
-f1262dbec8695f524643677b98a6e7c6
-2008-11-21T17:20:13.464790Z
-7944
-lorensen
+8b6612b9537739da6eefb88624331079
+2008-11-05T23:39:51.680871Z
+7799
+pieper
+has-props
 
 
 
@@ -567,8 +568,7 @@ lorensen
 
 
 
-
-24428
+486
 
 vtkDiffusionTensorMathematics.h
 file
@@ -604,18 +604,17 @@ naucoin
 
 10172
 
-vtkTeemConfigure.h.in
+vtkPreciseHyperStreamline.cxx
 file
 
 
 
 
 2010-10-25T02:20:19.224995Z
-8b6612b9537739da6eefb88624331079
-2008-11-05T23:39:51.680871Z
-7799
-pieper
-has-props
+f1262dbec8695f524643677b98a6e7c6
+2008-11-21T17:20:13.464790Z
+7944
+lorensen
 
 
 
@@ -636,7 +635,8 @@ has-props
 
 
 
-486
+
+24428
 
 CMakeLists.txt
 file
@@ -672,18 +672,17 @@ jcfr
 
 5108
 
-vtkNRRDReader.cxx
+vtkTractographyPointAndArray.h
 file
 
 
 
 
 2010-10-25T02:20:19.224995Z
-704544797858b71f9362b6a552c440e8
-2010-10-12T17:48:39.926998Z
-15186
+68dc4b4eb422b217549bc2e0844dde44
+2010-01-22T19:45:31.011047Z
+11748
 naucoin
-has-props
 
 
 
@@ -704,7 +703,8 @@ has-props
 
 
 
-32356
+
+2937
 
 vtkTeemEstimateDiffusionTensor.cxx
 file
@@ -740,17 +740,18 @@ pieper
 
 18453
 
-vtkTractographyPointAndArray.h
+vtkNRRDReader.cxx
 file
 
 
 
 
 2010-10-25T02:20:19.224995Z
-68dc4b4eb422b217549bc2e0844dde44
-2010-01-22T19:45:31.011047Z
-11748
+704544797858b71f9362b6a552c440e8
+2010-10-12T17:48:39.926998Z
+15186
 naucoin
+has-props
 
 
 
@@ -771,8 +772,7 @@ naucoin
 
 
 
-
-2937
+32356
 
 vtkTensorRotate.cxx
 file
@@ -876,40 +876,6 @@ alexy
 
 4916
 
-vtkBSplineInterpolateImageFunction.h
-file
-
-
-
-
-2010-10-25T02:20:19.224995Z
-210128eea76e7bbc79f531712b1c4a3a
-2010-01-22T19:45:31.011047Z
-11748
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4032
-
 vtkSeedTracts.cxx
 file
 
@@ -943,6 +909,40 @@ alexy
 
 
 42769
+
+vtkBSplineInterpolateImageFunction.h
+file
+
+
+
+
+2010-10-25T02:20:19.224995Z
+210128eea76e7bbc79f531712b1c4a3a
+2010-01-22T19:45:31.011047Z
+11748
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4032
 
 vtkNRRDWriter.cxx
 file

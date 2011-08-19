@@ -1,14 +1,14 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Tasks
 http://svn.slicer.org/Slicer3
 
 
 
-2011-08-10T21:18:37.412435Z
-16810
+2011-08-14T23:20:48.690592Z
+16818
 domibel
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-08-13T17:21:37.620119Z
-bfb49418840d230fcae98d6a00e675e7
-2011-08-09T18:29:06.279014Z
-16802
+2011-08-16T17:56:46.699912Z
+9f0eb14477aae9ac9757f3385eb84bf7
+2011-08-14T00:32:28.536287Z
+16817
 domibel
 
 
@@ -58,7 +58,7 @@ domibel
 
 
 
-8391
+7745
 
 vtkCTHandBoneClass.cxx
 file
@@ -168,10 +168,10 @@ file
 
 
 
-2011-08-13T17:21:37.620119Z
-ec7d530e0c3f0acd8b5bd78a65084ace
-2011-08-09T18:29:06.279014Z
-16802
+2011-08-16T17:56:46.699912Z
+21a9723b972ecc7509643a1d0c6e7dcd
+2011-08-14T23:20:48.690592Z
+16818
 domibel
 
 
@@ -194,7 +194,7 @@ domibel
 
 
 
-7149
+6781
 
 MRI-Human-Brain
 dir
@@ -446,6 +446,9 @@ domibel
 
 4083
 
+MRI-Human-Brain-Full-Parcellation
+dir
+
 MRI-Human-Brain-Exp.tcl
 file
 
@@ -479,43 +482,6 @@ haehn
 
 
 11890
-
-MRI-Human-Brain-Full-Parcellation
-dir
-
-vtkCTHandBoneClass.h
-file
-
-
-
-
-2011-04-25T11:29:36.128251Z
-48d92e18924392e6d1191016913b79e0
-2011-04-25T03:00:51.141969Z
-16486
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2188
 
 Test-Atlas-Cluster.mrml
 file
@@ -551,16 +517,16 @@ domibel
 
 9858
 
-MRI-Human-Brain-Parcellation.mrml
+vtkCTHandBoneClass.h
 file
 
 
 
 
-2011-05-04T11:42:13.842731Z
-c4c024829216fd7ee6794f95d20bee65
-2011-04-28T18:56:18.186466Z
-16527
+2011-04-25T11:29:36.128251Z
+48d92e18924392e6d1191016913b79e0
+2011-04-25T03:00:51.141969Z
+16486
 domibel
 
 
@@ -583,7 +549,7 @@ domibel
 
 
 
-62561
+2188
 
 MRI-Human-Brain.tcl
 file
@@ -619,17 +585,17 @@ haehn
 
 6561
 
-CT-Hand-Bone.tcl
+MRI-Human-Brain-Parcellation.mrml
 file
 
 
 
 
-2011-07-27T12:38:19.116079Z
-12bf4228b5b6ee1ea598a7fa0e58a563
-2011-07-22T19:22:54.524090Z
-16762
-haehn
+2011-05-04T11:42:13.842731Z
+c4c024829216fd7ee6794f95d20bee65
+2011-04-28T18:56:18.186466Z
+16527
+domibel
 
 
 
@@ -651,7 +617,41 @@ haehn
 
 
 
-20982
+62561
+
+GenericTask.tcl
+file
+
+
+
+
+2011-08-13T17:21:37.620119Z
+3da572c11678573c248953d60c7410dd
+2011-08-10T21:18:37.412435Z
+16810
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+91293
 
 Non-Human-Primate.tcl
 file
@@ -687,17 +687,17 @@ haehn
 
 6597
 
-GenericTask.tcl
+CT-Hand-Bone.tcl
 file
 
 
 
 
-2011-08-13T17:21:37.620119Z
-3da572c11678573c248953d60c7410dd
-2011-08-10T21:18:37.412435Z
-16810
-domibel
+2011-07-27T12:38:19.116079Z
+12bf4228b5b6ee1ea598a7fa0e58a563
+2011-07-22T19:22:54.524090Z
+16762
+haehn
 
 
 
@@ -719,7 +719,7 @@ domibel
 
 
 
-91293
+20982
 
 Test-Atlas-Cluster.tcl
 file

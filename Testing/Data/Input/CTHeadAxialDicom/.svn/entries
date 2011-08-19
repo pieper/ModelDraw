@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Testing/Data/Input/CTHeadAxialDicom
 http://svn.slicer.org/Slicer3
 
@@ -162,40 +162,6 @@ has-props
 
 9600
 
-CTHead50.dcm
-file
-
-
-
-
-2010-10-25T02:22:08.534995Z
-4cff3cc03ef5c9695a6e269d139fc10d
-2009-01-02T20:38:17.231876Z
-8256
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9602
-
 CTHead14.dcm
 file
 
@@ -230,14 +196,14 @@ has-props
 
 9602
 
-CTHead51.dcm
+CTHead50.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.534995Z
-c61aaa49bb85bf5ff91647b03a3f126f
+4cff3cc03ef5c9695a6e269d139fc10d
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -262,7 +228,7 @@ has-props
 
 
 
-9600
+9602
 
 CTHead15.dcm
 file
@@ -298,14 +264,14 @@ has-props
 
 9600
 
-CTHead52.dcm
+CTHead51.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.534995Z
-8605a51668822cfd487bf1be7feaf1a7
+c61aaa49bb85bf5ff91647b03a3f126f
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -330,7 +296,7 @@ has-props
 
 
 
-9602
+9600
 
 CTHead16.dcm
 file
@@ -366,14 +332,14 @@ has-props
 
 9602
 
-CTHead53.dcm
+CTHead52.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.534995Z
-dfa6fd54f6ee336ed70e2d8dd927d998
+8605a51668822cfd487bf1be7feaf1a7
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -398,7 +364,7 @@ has-props
 
 
 
-9600
+9602
 
 CTHead17.dcm
 file
@@ -434,14 +400,14 @@ has-props
 
 9600
 
-CTHead54.dcm
+CTHead53.dcm
 file
 
 
 
 
-2010-10-25T02:22:08.544995Z
-9deb07eba24f49b012dbf9822fd96d9f
+2010-10-25T02:22:08.534995Z
+dfa6fd54f6ee336ed70e2d8dd927d998
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -466,7 +432,41 @@ has-props
 
 
 
-9602
+9600
+
+CTHead90.dcm
+file
+
+
+
+
+2010-10-25T02:22:08.544995Z
+125cfd895eb429ff2494a76bdbd5e471
+2009-01-02T20:38:17.231876Z
+8256
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9604
 
 CTHead18.dcm
 file
@@ -502,14 +502,14 @@ has-props
 
 9602
 
-CTHead90.dcm
+CTHead54.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.544995Z
-125cfd895eb429ff2494a76bdbd5e471
+9deb07eba24f49b012dbf9822fd96d9f
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -534,7 +534,7 @@ has-props
 
 
 
-9604
+9602
 
 CTHead55.dcm
 file
@@ -1284,40 +1284,6 @@ has-props
 
 9600
 
-CTHead60.dcm
-file
-
-
-
-
-2010-10-25T02:22:08.544995Z
-ea813c88086b090a8148c44d7a6e6211
-2009-01-02T20:38:17.231876Z
-8256
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9602
-
 CTHead24.dcm
 file
 
@@ -1352,14 +1318,14 @@ has-props
 
 9602
 
-CTHead61.dcm
+CTHead60.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.544995Z
-01f7ee9639628981d388897a273ccc78
+ea813c88086b090a8148c44d7a6e6211
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -1384,7 +1350,7 @@ has-props
 
 
 
-9600
+9602
 
 CTHead25.dcm
 file
@@ -1420,14 +1386,14 @@ has-props
 
 9600
 
-CTHead62.dcm
+CTHead61.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.544995Z
-889f4bb785c77a394623938381123a56
+01f7ee9639628981d388897a273ccc78
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -1452,7 +1418,7 @@ has-props
 
 
 
-9602
+9600
 
 CTHead26.dcm
 file
@@ -1488,14 +1454,14 @@ has-props
 
 9602
 
-CTHead63.dcm
+CTHead62.dcm
 file
 
 
 
 
-2010-10-25T02:22:08.554995Z
-fee51b47af45cd73ac6702c2874850eb
+2010-10-25T02:22:08.544995Z
+889f4bb785c77a394623938381123a56
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -1520,7 +1486,7 @@ has-props
 
 
 
-9600
+9602
 
 CTHead27.dcm
 file
@@ -1556,14 +1522,14 @@ has-props
 
 9600
 
-CTHead64.dcm
+CTHead63.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.554995Z
-9334b93c8ea35631fc70294b47bed007
+fee51b47af45cd73ac6702c2874850eb
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -1588,7 +1554,7 @@ has-props
 
 
 
-9602
+9600
 
 CTHead28.dcm
 file
@@ -1624,14 +1590,48 @@ has-props
 
 9602
 
-CTHead65.dcm
+CTHead64.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.554995Z
-738fefce49fd22bde03c535e27122470
+9334b93c8ea35631fc70294b47bed007
+2009-01-02T20:38:17.231876Z
+8256
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9602
+
+CTHead29.dcm
+file
+
+
+
+
+2010-10-25T02:22:08.554995Z
+e5160809b296e610b3ed6a44719765e1
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -1658,14 +1658,14 @@ has-props
 
 9600
 
-CTHead29.dcm
+CTHead65.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.554995Z
-e5160809b296e610b3ed6a44719765e1
+738fefce49fd22bde03c535e27122470
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -1964,40 +1964,6 @@ has-props
 
 9600
 
-CTHead34.dcm
-file
-
-
-
-
-2010-10-25T02:22:08.554995Z
-adb9d18777021d73df7416792feb2264
-2009-01-02T20:38:17.231876Z
-8256
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9602
-
 CTHead70.dcm
 file
 
@@ -2032,14 +1998,14 @@ has-props
 
 9604
 
-CTHead35.dcm
+CTHead34.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.554995Z
-324deea66b3bb10967e198ecf9780b9d
+adb9d18777021d73df7416792feb2264
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -2064,7 +2030,7 @@ has-props
 
 
 
-9600
+9602
 
 CTHead71.dcm
 file
@@ -2100,14 +2066,14 @@ has-props
 
 9602
 
-CTHead36.dcm
+CTHead35.dcm
 file
 
 
 
 
 2010-10-25T02:22:08.554995Z
-4b163c25f94126278794cb5dadc86453
+324deea66b3bb10967e198ecf9780b9d
 2009-01-02T20:38:17.231876Z
 8256
 lorensen
@@ -2132,7 +2098,7 @@ has-props
 
 
 
-9602
+9600
 
 CTHead72.dcm
 file
@@ -2167,6 +2133,40 @@ has-props
 
 
 9604
+
+CTHead36.dcm
+file
+
+
+
+
+2010-10-25T02:22:08.554995Z
+4b163c25f94126278794cb5dadc86453
+2009-01-02T20:38:17.231876Z
+8256
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9602
 
 CTHead37.dcm
 file

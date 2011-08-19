@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/Editor/ImageData
 http://svn.slicer.org/Slicer3
 
@@ -638,40 +638,6 @@ has-props
 
 351
 
-ThresholdBucketSelected.png
-file
-
-
-
-
-2010-10-25T02:20:25.024995Z
-23a8b6f22659b64806dcc9d02744e828
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-553
-
 RemoveIslandsDisabled.png
 file
 
@@ -706,14 +672,14 @@ has-props
 
 407
 
-SnapToGridOn.png
+ThresholdBucketSelected.png
 file
 
 
 
 
 2010-10-25T02:20:25.024995Z
-0597f912c302fcb662ecf009e592b0b8
+23a8b6f22659b64806dcc9d02744e828
 2007-07-19T14:14:57.433865Z
 3884
 pieper
@@ -738,75 +704,7 @@ has-props
 
 
 
-345
-
-MakeModelSelected.png
-file
-
-
-
-
-2010-10-25T02:20:25.024995Z
-3987006aa0b2e297bb2096732091f110
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-441
-
-LevelTracingDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.024995Z
-fb80d62868384bcbd2c5e4a4b84aff33
-2007-09-04T11:09:51.851615Z
-4223
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-630
+553
 
 ChooseColorDisabled.png
 file
@@ -842,16 +740,16 @@ has-props
 
 396
 
-AddCheckPointSelected.png
+LevelTracingDisabled.png
 file
 
 
 
 
 2010-10-25T02:20:25.024995Z
-c620841b64b2623c76724d944211ecb4
-2009-04-01T15:54:36.806689Z
-9020
+fb80d62868384bcbd2c5e4a4b84aff33
+2007-09-04T11:09:51.851615Z
+4223
 wjp@bwh.harvard.edu
 has-props
 
@@ -874,7 +772,75 @@ has-props
 
 
 
-999
+630
+
+MakeModelSelected.png
+file
+
+
+
+
+2010-10-25T02:20:25.024995Z
+3987006aa0b2e297bb2096732091f110
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+441
+
+SnapToGridOn.png
+file
+
+
+
+
+2010-10-25T02:20:25.024995Z
+0597f912c302fcb662ecf009e592b0b8
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+345
 
 ImplicitCube.png
 file
@@ -909,6 +875,40 @@ has-props
 
 
 364
+
+AddCheckPointSelected.png
+file
+
+
+
+
+2010-10-25T02:20:25.024995Z
+c620841b64b2623c76724d944211ecb4
+2009-04-01T15:54:36.806689Z
+9020
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+999
 
 ThresholdDraw.png
 file
@@ -1012,40 +1012,6 @@ has-props
 
 326
 
-DefaultTool.png
-file
-
-
-
-
-2010-10-25T02:20:25.024995Z
-e47ef6028f91b1cac1c4ef8a1383e66a
-2007-07-21T13:59:47.923399Z
-3923
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-548
-
 LabelVisibilityOff.png
 file
 
@@ -1079,6 +1045,40 @@ has-props
 
 
 668
+
+DefaultTool.png
+file
+
+
+
+
+2010-10-25T02:20:25.024995Z
+e47ef6028f91b1cac1c4ef8a1383e66a
+2007-07-21T13:59:47.923399Z
+3923
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+548
 
 LabelVisibilityOn.png
 file
@@ -2236,14 +2236,14 @@ has-props
 
 170496
 
-EraseLabelSelected.png
+ImplicitRectangleSelected.png
 file
 
 
 
 
-2010-10-25T02:20:25.034995Z
-03cf7940f9fe9311c7cce6757ca8f2b3
+2010-10-25T02:20:25.044995Z
+0f18f8c88aea11ad42d37111c2799e08
 2007-07-19T14:14:57.433865Z
 3884
 pieper
@@ -2268,7 +2268,7 @@ has-props
 
 
 
-396
+297
 
 ChangeIslandDisabled.png
 file
@@ -2304,14 +2304,14 @@ has-props
 
 385
 
-ImplicitRectangleSelected.png
+EraseLabelSelected.png
 file
 
 
 
 
-2010-10-25T02:20:25.044995Z
-0f18f8c88aea11ad42d37111c2799e08
+2010-10-25T02:20:25.034995Z
+03cf7940f9fe9311c7cce6757ca8f2b3
 2007-07-19T14:14:57.433865Z
 3884
 pieper
@@ -2336,7 +2336,7 @@ has-props
 
 
 
-297
+396
 
 PreviousCheckPointDisabled.png
 file
@@ -2474,40 +2474,6 @@ has-props
 
 408
 
-ThresholdBucketDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-cce89ecc095af216b9c22a0d8d96f022
-2007-07-19T15:10:06.290297Z
-3889
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-600
-
 InterpolateLabelsSelected.png
 file
 
@@ -2542,16 +2508,16 @@ has-props
 
 365
 
-ChangeLabel.png
+ThresholdBucketDisabled.png
 file
 
 
 
 
 2010-10-25T02:20:25.044995Z
-9420f2de82165bd6b4444a6e328c1770
-2007-07-19T17:09:04.437760Z
-3896
+cce89ecc095af216b9c22a0d8d96f022
+2007-07-19T15:10:06.290297Z
+3889
 wjp@bwh.harvard.edu
 has-props
 
@@ -2574,7 +2540,7 @@ has-props
 
 
 
-331
+600
 
 FiducialVisibilityOn.png
 file
@@ -2610,6 +2576,40 @@ has-props
 
 671
 
+ChangeLabel.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+9420f2de82165bd6b4444a6e328c1770
+2007-07-19T17:09:04.437760Z
+3896
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+331
+
 MakeModelDisabled.png
 file
 
@@ -2643,74 +2643,6 @@ has-props
 
 
 471
-
-ThresholdPaintLabel.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-3079784e0316c5960f1ed4a349762b4c
-2007-08-08T21:37:12.915024Z
-4030
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-493
-
-AddCheckPointDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-0a0f0b36c46e20855f8ed1570435e443
-2009-04-01T20:36:56.620367Z
-9024
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-897
 
 ImplicitEllipse.png
 file
@@ -2746,17 +2678,17 @@ has-props
 
 339
 
-Redo.png
+AddCheckPointDisabled.png
 file
 
 
 
 
 2010-10-25T02:20:25.044995Z
-da0ae90ae42b45eaf3b16a5929b8ace1
-2008-07-25T21:14:38.153182Z
-7342
-pieper
+0a0f0b36c46e20855f8ed1570435e443
+2009-04-01T20:36:56.620367Z
+9024
+wjp@bwh.harvard.edu
 has-props
 
 
@@ -2778,7 +2710,41 @@ has-props
 
 
 
-564
+897
+
+ThresholdPaintLabel.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+3079784e0316c5960f1ed4a349762b4c
+2007-08-08T21:37:12.915024Z
+4030
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+493
 
 IdentifyIslands.png
 file
@@ -2814,6 +2780,40 @@ has-props
 
 443
 
+Redo.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+da0ae90ae42b45eaf3b16a5929b8ace1
+2008-07-25T21:14:38.153182Z
+7342
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+564
+
 SmudgeToolSelected.png
 file
 
@@ -2848,40 +2848,6 @@ has-props
 
 949
 
-SnapToGridOff.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-6e3b6cca3027f2278804af43259d6fed
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-402
-
 GrowCutSegmentDisabled.png
 file
 
@@ -2915,6 +2881,40 @@ has-props
 
 
 1210
+
+SnapToGridOff.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+6e3b6cca3027f2278804af43259d6fed
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+402
 
 PinOpen.png
 file
@@ -2984,40 +2984,6 @@ has-props
 
 582
 
-ChangeLabelDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-4063ffbdf6b027cf84028f258dda9f01
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-344
-
 FiducialVisibilityOnDisabled.png
 file
 
@@ -3052,17 +3018,17 @@ has-props
 
 690
 
-ThresholdPaintLabelDisabled.png
+ChangeLabelDisabled.png
 file
 
 
 
 
 2010-10-25T02:20:25.044995Z
-d0c566e78a3df7a4ee12bd0e5e80a9ff
-2007-08-08T21:37:12.915024Z
-4030
-wjp@bwh.harvard.edu
+4063ffbdf6b027cf84028f258dda9f01
+2007-07-19T14:14:57.433865Z
+3884
+pieper
 has-props
 
 
@@ -3084,7 +3050,7 @@ has-props
 
 
 
-558
+344
 
 ImplicitEllipseDisabled.png
 file
@@ -3120,17 +3086,17 @@ has-props
 
 346
 
-RedoDisabled.png
+ThresholdPaintLabelDisabled.png
 file
 
 
 
 
 2010-10-25T02:20:25.044995Z
-da0ae90ae42b45eaf3b16a5929b8ace1
-2008-07-25T21:14:38.153182Z
-7342
-pieper
+d0c566e78a3df7a4ee12bd0e5e80a9ff
+2007-08-08T21:37:12.915024Z
+4030
+wjp@bwh.harvard.edu
 has-props
 
 
@@ -3152,7 +3118,41 @@ has-props
 
 
 
-564
+558
+
+LabelOpacitySelected.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+ded2fd119afb8dba0f029206f5ba1fc4
+2007-07-19T15:10:06.290297Z
+3889
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+422
 
 IdentifyIslandsDisabled.png
 file
@@ -3188,17 +3188,17 @@ has-props
 
 459
 
-LabelOpacitySelected.png
+RedoDisabled.png
 file
 
 
 
 
 2010-10-25T02:20:25.044995Z
-ded2fd119afb8dba0f029206f5ba1fc4
-2007-07-19T15:10:06.290297Z
-3889
-wjp@bwh.harvard.edu
+da0ae90ae42b45eaf3b16a5929b8ace1
+2008-07-25T21:14:38.153182Z
+7342
+pieper
 has-props
 
 
@@ -3220,7 +3220,7 @@ has-props
 
 
 
-422
+564
 
 FiducialVisibilityOff.png
 file
@@ -3460,40 +3460,6 @@ has-props
 
 428
 
-EraseLabel.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-667b7aa1bf96fae96d7f7ff475c020fd
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-433
-
 ImplicitRectangle.png
 file
 
@@ -3527,6 +3493,40 @@ has-props
 
 
 301
+
+EraseLabel.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+667b7aa1bf96fae96d7f7ff475c020fd
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+433
 
 PinOpenDisabled.png
 file
@@ -3766,40 +3766,6 @@ has-props
 
 1102
 
-EraseLabelDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-866d203e06acb1c7c3e6c269db23ee6e
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-446
-
 ImplicitRectangleDisabled.png
 file
 
@@ -3833,6 +3799,40 @@ has-props
 
 
 326
+
+EraseLabelDisabled.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+866d203e06acb1c7c3e6c269db23ee6e
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+446
 
 InterpolateLabelsDisabled.png
 file
@@ -4072,40 +4072,6 @@ has-props
 
 331
 
-ToggleLabelOutline.png
-file
-
-
-
-
-2010-10-25T02:20:25.054995Z
-a361512a4afa684f3f918afb155a74b4
-2007-07-19T17:09:04.437760Z
-3896
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-370
-
 ConnectedComponentsSelected.png
 file
 
@@ -4139,6 +4105,40 @@ has-props
 
 
 322
+
+ToggleLabelOutline.png
+file
+
+
+
+
+2010-10-25T02:20:25.054995Z
+a361512a4afa684f3f918afb155a74b4
+2007-07-19T17:09:04.437760Z
+3896
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+370
 
 RemoveIslandsSelected.png
 file
@@ -4174,40 +4174,6 @@ has-props
 
 357
 
-LevelTracingSelected.png
-file
-
-
-
-
-2010-10-25T02:20:25.054995Z
-5d6c9439c95906a5c8ff63169a6fd8ad
-2007-09-04T11:09:51.851615Z
-4223
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-583
-
 ChooseColorSelected.png
 file
 
@@ -4241,6 +4207,40 @@ has-props
 
 
 331
+
+LevelTracingSelected.png
+file
+
+
+
+
+2010-10-25T02:20:25.054995Z
+5d6c9439c95906a5c8ff63169a6fd8ad
+2007-09-04T11:09:51.851615Z
+4223
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+583
 
 DilateLabelDisabled.png
 file

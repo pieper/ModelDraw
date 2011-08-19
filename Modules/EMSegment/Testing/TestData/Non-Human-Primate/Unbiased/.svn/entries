@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Testing/TestData/Non-Human-Primate/Unbiased
 http://svn.slicer.org/Slicer3
 
@@ -94,40 +94,6 @@ has-props
 
 680
 
-very_small_icc_prob.nrrd
-file
-
-
-
-
-2011-01-02T20:28:00.504953Z
-0ea57c825273be29965ffedc376502f8
-2010-12-16T23:06:03.000749Z
-15663
-domibel
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-892
-
 small_gm_prob.nrrd
 file
 
@@ -161,6 +127,40 @@ has-props
 
 
 3147
+
+very_small_icc_prob.nrrd
+file
+
+
+
+
+2011-01-02T20:28:00.504953Z
+0ea57c825273be29965ffedc376502f8
+2010-12-16T23:06:03.000749Z
+15663
+domibel
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+892
 
 small_bs_prob.nrrd
 file
@@ -468,40 +468,6 @@ has-props
 
 2323
 
-small_lcau_prob.nrrd
-file
-
-
-
-
-2011-01-02T20:28:00.514953Z
-e9318c09ac07eb0421e1442bef6dd060
-2010-12-16T23:06:03.000749Z
-15663
-domibel
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-683
-
 small_lput_prob.nrrd
 file
 
@@ -535,6 +501,40 @@ has-props
 
 
 692
+
+small_lcau_prob.nrrd
+file
+
+
+
+
+2011-01-02T20:28:00.514953Z
+e9318c09ac07eb0421e1442bef6dd060
+2010-12-16T23:06:03.000749Z
+15663
+domibel
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+683
 
 small_cb_prob.nrrd
 file

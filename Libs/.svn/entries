@@ -1,15 +1,15 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Libs
 http://svn.slicer.org/Slicer3
 
 
 
-2011-04-25T20:58:38.496471Z
-16489
-naucoin
+2011-08-15T19:28:42.929526Z
+16821
+pieper
 
 
 
@@ -26,22 +26,22 @@ naucoin
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-MRMLIDImageIO
+vtkTeem
 dir
 
 qMRMLWidgets
 dir
 
-vtkTeem
+MRMLIDImageIO
 dir
 
-RemoteIO
+GenerateLM
 dir
 
 IGT
 dir
 
-GenerateLM
+RemoteIO
 dir
 
 SlicerExecutionModel
@@ -65,10 +65,10 @@ dir
 FreeSurfer
 dir
 
-SlicerIO
+LoadableModule
 dir
 
-LoadableModule
+SlicerIO
 dir
 
 CudaSupport
@@ -86,33 +86,11 @@ file
 
 
 
-2010-10-25T02:20:22.034995Z
-e0cff08d6a82ee60614674cfb8b961f4
-2010-05-03T15:06:08.972849Z
-13167
-naucoin
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3283
+8713015e03be8b076d88832454f236ed
+2011-08-15T19:28:42.929526Z
+16821
+pieper
 
 ITKCommandIO
 dir

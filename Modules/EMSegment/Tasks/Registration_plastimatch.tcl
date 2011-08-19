@@ -33,12 +33,6 @@ proc PLASTIMATCHResampleCLI { inputVolumeNode referenceVolumeNode outVolumeNode 
 
     set CMD "$REGISTRATION_PACKAGE_FOLDER/plastimatch_slicer_xformwarp"
 
-    set PIXELTYPEFILENAME [CreateFileName "Text"]
-    set fo [open $PIXELTYPEFILENAME w]
-    puts -nonewline $fo "\[GLOBAL\] \n img_out_type=[PLASTIMATCHGetPixelTypeFromVolumeNode $referenceVolumeNode]"
-    close $fo
-    set CMD "$CMD --returnparameterfile $PIXELTYPEFILENAME"
-
     set outVolumeFileName [CreateTemporaryFileNameForNode $outVolumeNode]
     if { $outVolumeFileName == "" } { return 1 }
 
@@ -48,6 +42,7 @@ proc PLASTIMATCHResampleCLI { inputVolumeNode referenceVolumeNode outVolumeNode 
     set referenceVolumeFileName [WriteDataToTemporaryDir $referenceVolumeNode Volume]
     if { $referenceVolumeFileName == "" } { return 1 }
 
+    set CMD "$CMD --output_type [PLASTIMATCHGetPixelTypeFromVolumeNode $referenceVolumeNode]"
     set CMD "$CMD --plmslc_xformwarp_output_img \"$outVolumeFileName\""
     set CMD "$CMD --plmslc_xformwarp_input_xform_f \"$transformFileName\""
     set CMD "$CMD --plmslc_xformwarp_input_img \"$inputVolumeFileName\""
@@ -133,12 +128,6 @@ proc PLASTIMATCHRegistration { fixedVolumeNode movingVolumeNode outVolumeNode ba
 
     set CMD "$REGISTRATION_PACKAGE_FOLDER/plastimatch_slicer_bspline"
 
-    set PIXELTYPEFILENAME [CreateFileName "Text"]
-    set fo [open $PIXELTYPEFILENAME w]
-    puts -nonewline $fo "\[GLOBAL\] \n img_out_type=[PLASTIMATCHGetPixelTypeFromVolumeNode $fixedVolumeNode]"
-    close $fo
-    set CMD "$CMD --returnparameterfile $PIXELTYPEFILENAME"
-
     if { $affineType == [$mrmlManager GetRegistrationTypeFromString RegistrationTest] } {
         set CMD "$CMD --stage1its 3"
     } elseif { $affineType == [$mrmlManager GetRegistrationTypeFromString RegistrationFast] } {
@@ -158,6 +147,7 @@ proc PLASTIMATCHRegistration { fixedVolumeNode movingVolumeNode outVolumeNode ba
 
     #        set CMD "$CMD --plmslc_output_bsp_f \"$outLinearTransformFileName\""
     #        set CMD "$CMD --plmslc_output_vf \"$outVolumeFileName\""
+    set CMD "$CMD --output_type [PLASTIMATCHGetPixelTypeFromVolumeNode $fixedVolumeNode]"
     set CMD "$CMD --plmslc_output_warped  \"$outVolumeFileName\""
     set CMD "$CMD --plmslc_output_bsp  \"$outLinearTransformFileName\""
 

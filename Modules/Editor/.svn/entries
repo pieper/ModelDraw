@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/Editor
 http://svn.slicer.org/Slicer3
 
@@ -128,18 +128,17 @@ has-props
 
 2527
 
-IdentifyIslandsEffect.tcl
+WandEffect.tcl
 file
 
 
 
 
-2011-04-20T17:57:33.288252Z
-fdf2b5ee2d6e5f10968e6a841eea6fda
-2011-04-20T18:03:10.879082Z
-16464
+2011-02-01T01:31:09.141177Z
+94a0389c21fef9109230ec4fbd603ea3
+2011-02-01T01:34:47.704543Z
+15877
 pieper
-has-props
 
 
 
@@ -160,41 +159,8 @@ has-props
 
 
 
-6112
-
-Labeler.tcl
-file
 
-
-
-
-2011-02-17T19:59:35.013462Z
-e1ef9593f77a66de8e39f577b1d7d670
-2011-04-20T18:01:35.930014Z
-16462
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16017
+10386
 
 SaveIslandEffect.tcl
 file
@@ -230,50 +196,16 @@ has-props
 
 4016
 
-WandEffect.tcl
+Labeler.tcl
 file
 
 
 
 
-2011-02-01T01:31:09.141177Z
-94a0389c21fef9109230ec4fbd603ea3
-2011-02-01T01:34:47.704543Z
-15877
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10386
-
-ThresholdEffect.tcl
-file
-
-
-
-
-2011-02-17T19:59:06.253462Z
-39065eded313ee890dc37fbff14dc783
-2011-04-20T18:00:23.647594Z
-16460
+2011-02-17T19:59:35.013462Z
+e1ef9593f77a66de8e39f577b1d7d670
+2011-04-20T18:01:35.930014Z
+16462
 pieper
 has-props
 
@@ -296,7 +228,41 @@ has-props
 
 
 
-8186
+16017
+
+IdentifyIslandsEffect.tcl
+file
+
+
+
+
+2011-04-20T17:57:33.288252Z
+fdf2b5ee2d6e5f10968e6a841eea6fda
+2011-04-20T18:03:10.879082Z
+16464
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6112
 
 pkgIndex.tcl
 file
@@ -332,6 +298,40 @@ has-props
 
 1229
 
+ThresholdEffect.tcl
+file
+
+
+
+
+2011-02-17T19:59:06.253462Z
+39065eded313ee890dc37fbff14dc783
+2011-04-20T18:00:23.647594Z
+16460
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8186
+
 DrawEffect.tcl
 file
 
@@ -366,40 +366,6 @@ has-props
 
 11183
 
-ErodeLabelEffect.tcl
-file
-
-
-
-
-2011-04-20T17:57:55.288252Z
-829786541fc7a74a09cd1e516c008ffa
-2011-04-20T18:03:10.879082Z
-16464
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7047
-
 MakeModelEffect.tcl
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 9313
+
+ErodeLabelEffect.tcl
+file
+
+
+
+
+2011-04-20T17:57:55.288252Z
+829786541fc7a74a09cd1e516c008ffa
+2011-04-20T18:03:10.879082Z
+16464
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7047
 
 ImplicitRectangleEffect.tcl
 file

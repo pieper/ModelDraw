@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/RobustStatisticsSegmenter
 http://svn.slicer.org/Slicer3
 
@@ -60,40 +60,6 @@ ygao
 
 4946
 
-SFLSRobustStat3DTest.cxx
-file
-
-
-
-
-2011-06-27T12:10:42.079769Z
-5de4e25e2f00cf1dc0166c026fa1f38b
-2011-06-25T16:18:28.587092Z
-16712
-ygao
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5167
-
 kde_via_diffusion.txx
 file
 
@@ -127,6 +93,40 @@ ygao
 
 
 5905
+
+SFLSRobustStat3DTest.cxx
+file
+
+
+
+
+2011-06-27T12:10:42.079769Z
+5de4e25e2f00cf1dc0166c026fa1f38b
+2011-06-25T16:18:28.587092Z
+16712
+ygao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5167
 
 grayscale-label.nrrd
 file
@@ -162,40 +162,6 @@ has-props
 
 16206
 
-dct.txx
-file
-
-
-
-
-2011-05-12T11:40:52.262778Z
-4c5e0d80e15cbdd4a41688272ddc9f8a
-2011-05-11T02:58:44.319861Z
-16602
-ygao
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4106
-
 histc.txx
 file
 
@@ -229,6 +195,40 @@ ygao
 
 
 1005
+
+dct.txx
+file
+
+
+
+
+2011-05-12T11:40:52.262778Z
+4c5e0d80e15cbdd4a41688272ddc9f8a
+2011-05-11T02:58:44.319861Z
+16602
+ygao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4106
 
 SFLS.h
 file
@@ -264,40 +264,6 @@ ygao
 
 720
 
-kde_via_diffusion.h
-file
-
-
-
-
-2011-05-12T11:40:52.262778Z
-01a3d6d118d1cba5f3a1acd04a7d5fb3
-2011-05-11T02:58:44.319861Z
-16602
-ygao
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-758
-
 SFLSRobustStatSegmentor3DLabelMap_single.txx
 file
 
@@ -332,14 +298,14 @@ ygao
 
 27021
 
-histc.h
+kde_via_diffusion.h
 file
 
 
 
 
 2011-05-12T11:40:52.262778Z
-a42fb06d6bab8536cf386b42b9f1e425
+01a3d6d118d1cba5f3a1acd04a7d5fb3
 2011-05-11T02:58:44.319861Z
 16602
 ygao
@@ -364,7 +330,7 @@ ygao
 
 
 
-580
+758
 
 dct.h
 file
@@ -399,6 +365,40 @@ ygao
 
 
 723
+
+histc.h
+file
+
+
+
+
+2011-05-12T11:40:52.262778Z
+a42fb06d6bab8536cf386b42b9f1e425
+2011-05-11T02:58:44.319861Z
+16602
+ygao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+580
 
 SFLSRobustStatSegmentor3DLabelMap_single.h
 file

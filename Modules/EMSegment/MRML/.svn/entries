@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/MRML
 http://svn.slicer.org/Slicer3
 
@@ -60,40 +60,6 @@ haehn
 
 860
 
-vtkMRMLEMSSegmenterNode.cxx
-file
-
-
-
-
-2011-07-22T12:30:17.594688Z
-d14115b5f3ea97b6c77ebd88b6a50a4a
-2011-07-19T14:56:33.535451Z
-16753
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7427
-
 vtkMRMLEMSAtlasNode.h
 file
 
@@ -127,6 +93,40 @@ davisb
 
 
 1249
+
+vtkMRMLEMSSegmenterNode.cxx
+file
+
+
+
+
+2011-07-22T12:30:17.594688Z
+d14115b5f3ea97b6c77ebd88b6a50a4a
+2011-07-19T14:56:33.535451Z
+16753
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7427
 
 vtkMRMLEMSCollectionNode.cxx
 file
@@ -196,40 +196,6 @@ haehn
 
 11661
 
-vtkMRMLEMSTreeNode.cxx
-file
-
-
-
-
-2011-07-22T12:30:17.594688Z
-5343862d401e418a5adba6c70bac5698
-2011-07-19T14:56:33.535451Z
-16753
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18865
-
 vtkMRMLEMSWorkingDataNode.h
 file
 
@@ -264,17 +230,17 @@ pohl
 
 4255
 
-vtkMRMLEMSTemplateNode.h
+vtkMRMLEMSTreeNode.cxx
 file
 
 
 
 
-2011-02-06T16:49:41.334725Z
-4bc7f84530df0a940f249bdba2024200
-2011-02-06T00:41:11.104724Z
-15942
-pohl
+2011-07-22T12:30:17.594688Z
+5343862d401e418a5adba6c70bac5698
+2011-07-19T14:56:33.535451Z
+16753
+haehn
 
 
 
@@ -296,7 +262,7 @@ pohl
 
 
 
-2861
+18865
 
 vtkMRMLEMSTreeParametersLeafNode.h
 file
@@ -332,14 +298,14 @@ pohl
 
 4275
 
-vtkMRMLEMSNode.h
+vtkMRMLEMSTemplateNode.h
 file
 
 
 
 
 2011-02-06T16:49:41.334725Z
-73c41fd53a8a84cec22aa82a4a68d6f2
+4bc7f84530df0a940f249bdba2024200
 2011-02-06T00:41:11.104724Z
 15942
 pohl
@@ -364,41 +330,7 @@ pohl
 
 
 
-2261
-
-vtkMRMLEMSAtlasNode.cxx
-file
-
-
-
-
-2011-07-22T12:30:17.594688Z
-5bc4d01ac738ed705cd1fc71c7449630
-2011-07-19T14:56:33.535451Z
-16753
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2149
+2861
 
 vtkMRMLEMSegmentNode.h
 file
@@ -434,16 +366,50 @@ davisb
 
 1946
 
-vtkMRMLEMSTreeParametersNode.h
+vtkMRMLEMSAtlasNode.cxx
 file
 
 
 
 
-2011-04-05T16:47:14.720957Z
-e67949fb32463cec62056dcbbbc52728
-2011-04-01T05:50:07.396261Z
-16279
+2011-07-22T12:30:17.594688Z
+5bc4d01ac738ed705cd1fc71c7449630
+2011-07-19T14:56:33.535451Z
+16753
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2149
+
+vtkMRMLEMSNode.h
+file
+
+
+
+
+2011-02-06T16:49:41.334725Z
+73c41fd53a8a84cec22aa82a4a68d6f2
+2011-02-06T00:41:11.104724Z
+15942
 pohl
 
 
@@ -466,7 +432,7 @@ pohl
 
 
 
-4038
+2261
 
 vtkMRMLEMSVolumeCollectionNode.h
 file
@@ -501,6 +467,40 @@ pohl
 
 
 2546
+
+vtkMRMLEMSTreeParametersNode.h
+file
+
+
+
+
+2011-04-05T16:47:14.720957Z
+e67949fb32463cec62056dcbbbc52728
+2011-04-01T05:50:07.396261Z
+16279
+pohl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4038
 
 vtkMRMLEMSGlobalParametersNode.h
 file

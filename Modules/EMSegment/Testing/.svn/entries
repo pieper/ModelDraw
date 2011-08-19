@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Testing
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ domibel
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-resample.sh
-file
-
-
-
-
-2010-12-14T18:21:32.981301Z
-8a54475aa2e79c9f56c923042cc6fd1b
-2010-12-13T20:51:03.295293Z
-15648
-domibel
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2603
 
 vtkEMSegmentCompareTest.cxx
 file
@@ -93,6 +59,40 @@ domibel
 
 
 2609
+
+resample.sh
+file
+
+
+
+
+2010-12-14T18:21:32.981301Z
+8a54475aa2e79c9f56c923042cc6fd1b
+2010-12-13T20:51:03.295293Z
+15648
+domibel
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2603
 
 vtkSlicerCommonInterfaceTest1.cxx
 file
@@ -230,40 +230,6 @@ haehn
 
 30148
 
-GUIManualTesting.txt
-file
-
-
-
-
-2010-10-25T02:20:24.664995Z
-38e2e212159d2632c1f8f03bb6bee9d1
-2007-06-16T18:56:51.535490Z
-3613
-davisb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1950
-
 vtkEMSegmentBlackBoxSegmentationTest.cxx
 file
 
@@ -297,6 +263,40 @@ haehn
 
 
 6259
+
+GUIManualTesting.txt
+file
+
+
+
+
+2010-10-25T02:20:24.664995Z
+38e2e212159d2632c1f8f03bb6bee9d1
+2007-06-16T18:56:51.535490Z
+3613
+davisb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1950
 
 test_atlas_creator.tcl
 file
@@ -366,8 +366,39 @@ domibel
 
 6572
 
-TestData
-dir
+vtkEMSegmentReadWriteMRMLTest.cxx
+file
+
+
+
+
+2011-07-02T22:05:25.982536Z
+1a06c4f7c701677e2949d8379012ce0c
+2011-07-01T21:37:33.073905Z
+16722
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1803
 
 vtkEMSegmentPreprocessingManagerTest.cxx
 file
@@ -403,39 +434,8 @@ haehn
 
 8343
 
-vtkEMSegmentReadWriteMRMLTest.cxx
-file
-
-
-
-
-2011-07-02T22:05:25.982536Z
-1a06c4f7c701677e2949d8379012ce0c
-2011-07-01T21:37:33.073905Z
-16722
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1803
+TestData
+dir
 
 CMakeLists.txt
 file

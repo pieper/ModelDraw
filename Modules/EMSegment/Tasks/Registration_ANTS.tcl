@@ -85,20 +85,18 @@ proc ANTSRegistration { fixedVolumeNode movingVolumeNode outVolumeNode backgroun
 
     set CMD "$CMD -r Gauss\\\[3,1\\\] -t Elast\\\[3\\\]"
 
-    append outLinearTransformFileName $outVolumeFileName Affine.txt
-    append outNonLinearTransformFileName $outVolumeFileName Warp.nii.gz
+    set outLinearTransformFileName [string map {.nrrd Affine.txt} $outVolumeFileName]
+    set outNonLinearTransformFileName [string map {.nrrd Warp.nrrd} $outVolumeFileName]
     set outTransformFileName $outNonLinearTransformFileName
 
     $LOGIC PrintText "TCL: Executing $CMD"
     catch { eval exec $CMD } errmsg
     $LOGIC PrintText "TCL: $errmsg"
 
-
-    #TODO: remove workaround
-    append outVolumeFileName_nii $outVolumeFileName ".nii"
+    # ANTS doesn't warp pe default, so we have to do it
     set CMD "$REGISTRATION_PACKAGE_FOLDER/WarpImageMultiTransform"
     set CMD "$CMD 3"
-    set CMD "$CMD $movingVolumeFileName $outVolumeFileName_nii"
+    set CMD "$CMD $movingVolumeFileName $outVolumeFileName"
     set CMD "$CMD $outNonLinearTransformFileName $outLinearTransformFileName"
     set CMD "$CMD -R $fixedVolumeFileName"
     $LOGIC PrintText "TCL: Executing $CMD"
@@ -106,21 +104,16 @@ proc ANTSRegistration { fixedVolumeNode movingVolumeNode outVolumeNode backgroun
     $LOGIC PrintText "TCL: $errmsg"
 
 
-    if { "[ANTSGetPixelTypeFromVolumeNode $fixedVolumeNode]" != "float" } {
-        #TODO: remove workaround
-        # convert pixeltype because of missing functionality in ANTS
-        set CMD "$REGISTRATION_PACKAGE_FOLDER/ConvertImagePixelType"
-        append $outVolumeFileName_nii ".nrrd"
-        set CMD "$CMD $outVolumeFileName_nii $outVolumeFileName"
-        set CMD "$CMD [ANTSGetPixelTypeFromVolumeNode $fixedVolumeNode]"
-        $LOGIC PrintText "TCL: Executing $CMD"
-        catch { eval exec $CMD } errmsg
-        $LOGIC PrintText "TCL: $errmsg"
-    }
+    set PLUGINS_DIR "[$LOGIC GetPluginsDirectory]"
+    set CMD "${PLUGINS_DIR}/Cast"
+    set CMD "$CMD -t [ANTSGetPixelTypeFromVolumeNode $fixedVolumeNode]"
+    set CMD "$CMD $outVolumeFileName $outVolumeFileName"
+    $LOGIC PrintText "TCL: Executing $CMD"
+    catch { eval exec $CMD } errmsg
+    $LOGIC PrintText "TCL: $errmsg"
 
 
     ## Read results back to scene
-#    append outVolumeFileName
     if { [ReadDataFromDisk $outVolumeNode $outVolumeFileName Volume] == 0 } {
         if { [file exists $outVolumeFileName] == 0 } {
             set outTransformDirName ""
@@ -152,14 +145,14 @@ proc ANTSGetPixelTypeFromVolumeNode { volumeNode } {
     set referenceVolume [$volumeNode GetImageData]
     set scalarType [$referenceVolume GetScalarTypeAsString]
     switch -exact "$scalarType" {
-        "char"           { set PIXELTYPE "0" }
-        "unsigned char"  { set PIXELTYPE "1" }
-        "short"          { set PIXELTYPE "2" }
-        "unsigned short" { set PIXELTYPE "3" }
-        "int"            { set PIXELTYPE "4" }
-        "unsigned int"   { set PIXELTYPE "5" }
-        "float"          { set PIXELTYPE "float" }
-        "double"         { set PIXELTYPE "double" }
+        "char"           { set PIXELTYPE Char }
+        "unsigned char"  { set PIXELTYPE UnsignedChar }
+        "short"          { set PIXELTYPE Short }
+        "unsigned short" { set PIXELTYPE UnsignedShort }
+        "int"            { set PIXELTYPE Int }
+        "unsigned int"   { set PIXELTYPE UnsignedInt }
+        "float"          { set PIXELTYPE Float }
+        "double"         { set PIXELTYPE Double }
         default {
             PrintError "CMTKGetPixelTypeFromVolumeNode: Cannot handle a volume of type $scalarType"
             set PIXELTYPE "INVALID"
@@ -167,6 +160,7 @@ proc ANTSGetPixelTypeFromVolumeNode { volumeNode } {
     }
     return $PIXELTYPE
 }
+
 
 
 proc ANTSResampleCLI { inputVolumeNode referenceVolumeNode outVolumeNode transformDirName interpolationType backgroundLevel } {
@@ -189,14 +183,11 @@ proc ANTSResampleCLI { inputVolumeNode referenceVolumeNode outVolumeNode transfo
     set referenceVolumeFileName [WriteDataToTemporaryDir $referenceVolumeNode Volume]
     if { $referenceVolumeFileName == "" } { return 1 }
 
-
-    append outLinearTransformFileName $transformDirName Affine.txt
-    append outNonLinearTransformFileName $transformDirName Warp.nii.gz
-
-    append outVolumeFileName_nii $outVolumeFileName ".nii"
+    set outLinearTransformFileName [string map {.nrrd Affine.txt} $transformDirName]
+    set outNonLinearTransformFileName [string map {.nrrd Warp.nrrd} $transformDirName]
 
     set CMD "$CMD 3"
-    set CMD "$CMD $inputVolumeFileName $outVolumeFileName_nii"
+    set CMD "$CMD $inputVolumeFileName $outVolumeFileName"
     set CMD "$CMD $outNonLinearTransformFileName $outLinearTransformFileName"
     set CMD "$CMD -R $referenceVolumeFileName"
 
@@ -205,22 +196,15 @@ proc ANTSResampleCLI { inputVolumeNode referenceVolumeNode outVolumeNode transfo
     $LOGIC PrintText "TCL: $errmsg"
 
 
-#    set PLUGINS_DIR "[$LOGIC GetPluginsDirectory]" 
-#    set CMD "${PLUGINS_DIR}/Cast"
 
-    if { "[ANTSGetPixelTypeFromVolumeNode $referenceVolumeNode]" != "float" } {
+    set PLUGINS_DIR "[$LOGIC GetPluginsDirectory]"
+    set CMD "${PLUGINS_DIR}/Cast"
+    set CMD "$CMD -t [ANTSGetPixelTypeFromVolumeNode $referenceVolumeNode]"
+    set CMD "$CMD $outVolumeFileName $outVolumeFileName"
+    $LOGIC PrintText "TCL: Executing $CMD"
+    catch { eval exec $CMD } errmsg
+    $LOGIC PrintText "TCL: $errmsg"
 
-        #TODO: remove workaround
-        # convert pixeltype because of missing functionality in ANTS
-        set CMD "$REGISTRATION_PACKAGE_FOLDER/ConvertImagePixelType"
-        append $outVolumeFileName_nii ".nrrd"
-        set CMD "$CMD $outVolumeFileName_nii $outVolumeFileName"
-        set CMD "$CMD [ANTSGetPixelTypeFromVolumeNode $referenceVolumeNode]"
-        $LOGIC PrintText "TCL: Executing $CMD"
-        catch { eval exec $CMD } errmsg
-        $LOGIC PrintText "TCL: $errmsg"
-
-    }
 
     # Write results back to scene
     # This does not work $::slicer3::ApplicationLogic RequestReadData [$outVolumeNode GetID] $outVolumeFileName 0 1
@@ -228,7 +212,6 @@ proc ANTSResampleCLI { inputVolumeNode referenceVolumeNode outVolumeNode transfo
 
     # clean up
 #    file delete -force $outVolumeFileName
-    file delete -force $outVolumeFileName_nii
     file delete -force $inputVolumeFileName
     file delete -force $referenceVolumeFileName
 

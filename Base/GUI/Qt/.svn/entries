@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Base/GUI/Qt
 http://svn.slicer.org/Slicer3
 
@@ -264,40 +264,6 @@ pieper
 
 3619
 
-QtSlicerWebKit.cxx
-file
-
-
-
-
-2010-10-25T02:21:27.834995Z
-898b4c5d8906609dcd4a50c897f56d0e
-2009-11-19T13:46:27.126405Z
-10994
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2407
-
 vtkSlicerBaseGUIQtWin32Header.h
 file
 
@@ -331,6 +297,40 @@ jcfr
 
 
 1141
+
+QtSlicerWebKit.cxx
+file
+
+
+
+
+2010-10-25T02:21:27.834995Z
+898b4c5d8906609dcd4a50c897f56d0e
+2009-11-19T13:46:27.126405Z
+10994
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2407
 
 vtkview.cxx
 file
@@ -366,40 +366,6 @@ pieper
 
 2500
 
-QtSlicerNodeSelectorWidget.cxx
-file
-
-
-
-
-2010-10-25T02:21:27.834995Z
-dd0f7697da07a0ff05de41650f24534d
-2009-09-14T12:26:48.155711Z
-10473
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16984
-
 slicerview.h
 file
 
@@ -433,6 +399,40 @@ jcfr
 
 
 2787
+
+QtSlicerNodeSelectorWidget.cxx
+file
+
+
+
+
+2010-10-25T02:21:27.834995Z
+dd0f7697da07a0ff05de41650f24534d
+2009-09-14T12:26:48.155711Z
+10473
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16984
 
 qvtkfactory.h
 file

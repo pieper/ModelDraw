@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/CMake
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ domibel
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-Slicer3PatchPythonQt.cmake.in
-file
-
-
-
-
-2010-10-25T02:19:30.624995Z
-82d3d5c1ddfff6db49010a3f3e392f01
-2010-02-25T21:34:58.196085Z
-12229
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1228
 
 Slicer3ValgrindSuppressions.supp
 file
@@ -93,6 +59,40 @@ pieper
 
 
 15192
+
+Slicer3PatchPythonQt.cmake.in
+file
+
+
+
+
+2010-10-25T02:19:30.624995Z
+82d3d5c1ddfff6db49010a3f3e392f01
+2010-02-25T21:34:58.196085Z
+12229
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1228
 
 NSIS.InstallOptions.ini.in
 file
@@ -230,17 +230,18 @@ has-props
 
 1107
 
-ExternalProject.cmake
+CheckFortran.cmake
 file
 
 
 
 
-2011-04-07T15:49:19.500168Z
-e8fe7657693d1ea72300e2f233975c51
-2011-04-06T20:30:45.456607Z
-16334
-pieper
+2010-10-25T02:19:30.624995Z
+78522b567b3e5931b8061e57b4b5d575
+2010-02-05T14:37:56.335495Z
+12012
+partyd
+has-props
 
 
 
@@ -261,8 +262,7 @@ pieper
 
 
 
-
-39290
+2202
 
 Slicer3Macros.cmake
 file
@@ -298,18 +298,17 @@ has-props
 
 662
 
-CheckFortran.cmake
+ExternalProject.cmake
 file
 
 
 
 
-2010-10-25T02:19:30.624995Z
-78522b567b3e5931b8061e57b4b5d575
-2010-02-05T14:37:56.335495Z
-12012
-partyd
-has-props
+2011-04-07T15:49:19.500168Z
+e8fe7657693d1ea72300e2f233975c51
+2011-04-06T20:30:45.456607Z
+16334
+pieper
 
 
 
@@ -330,7 +329,8 @@ has-props
 
 
 
-2202
+
+39290
 
 Slicer3FindQT.cmake
 file
@@ -468,40 +468,6 @@ barre
 
 1035
 
-Slicer3QTModuleMacros.cmake
-file
-
-
-
-
-2010-10-25T02:19:30.624995Z
-d1cf055b0bbc2a049c2edb2a3da204a6
-2010-02-01T07:13:04.769691Z
-11903
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4384
-
 FindGit.cmake
 file
 
@@ -535,6 +501,40 @@ jcfr
 
 
 2134
+
+Slicer3QTModuleMacros.cmake
+file
+
+
+
+
+2010-10-25T02:19:30.624995Z
+d1cf055b0bbc2a049c2edb2a3da204a6
+2010-02-01T07:13:04.769691Z
+11903
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4384
 
 Slicer3TodayMacro.cmake
 file

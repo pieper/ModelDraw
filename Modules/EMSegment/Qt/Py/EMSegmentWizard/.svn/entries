@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard
 http://svn.slicer.org/Slicer3
 
@@ -94,40 +94,6 @@ haehn
 
 663
 
-EMSegmentDefinePreprocessingStep.py
-file
-
-
-
-
-2011-08-13T17:21:36.630119Z
-406cec812499132b47256b839c22f601
-2011-08-09T18:31:49.746833Z
-16804
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9262
-
 __init__.py
 file
 
@@ -161,6 +127,40 @@ haehn
 
 
 596
+
+EMSegmentDefinePreprocessingStep.py
+file
+
+
+
+
+2011-08-13T17:21:36.630119Z
+406cec812499132b47256b839c22f601
+2011-08-09T18:31:49.746833Z
+16804
+domibel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9262
 
 EMSegmentSelectTaskStep.py
 file
@@ -196,40 +196,6 @@ haehn
 
 5304
 
-EMSegmentDynamicFrame.py
-file
-
-
-
-
-2011-08-13T17:21:36.630119Z
-20863f6e67695004b8050d02f44c4f4b
-2011-08-01T19:20:12.104457Z
-16782
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5238
-
 EMSegmentDefineAnatomicalTreeStep.py
 file
 
@@ -263,6 +229,40 @@ haehn
 
 
 2559
+
+EMSegmentDynamicFrame.py
+file
+
+
+
+
+2011-08-13T17:21:36.630119Z
+20863f6e67695004b8050d02f44c4f4b
+2011-08-01T19:20:12.104457Z
+16782
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5238
 
 EMSegmentEditRegistrationParametersStep.py
 file
@@ -366,40 +366,6 @@ haehn
 
 3502
 
-EMSegmentEditNodeBasedParametersStep.py
-file
-
-
-
-
-2011-08-13T17:21:36.630119Z
-09ed815c808fe9a69d3525c15fe68e0a
-2011-08-01T18:31:37.529371Z
-16780
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3350
-
 Helper.py
 file
 
@@ -434,16 +400,16 @@ domibel
 
 2134
 
-EMSegmentStep.py
+EMSegmentEditNodeBasedParametersStep.py
 file
 
 
 
 
 2011-08-13T17:21:36.630119Z
-40e29864584d813f346a932b023ade23
-2011-08-01T18:47:06.817075Z
-16781
+09ed815c808fe9a69d3525c15fe68e0a
+2011-08-01T18:31:37.529371Z
+16780
 haehn
 
 
@@ -466,7 +432,7 @@ haehn
 
 
 
-2141
+3350
 
 EMSegmentDefineAtlasStep.py
 file
@@ -501,6 +467,40 @@ haehn
 
 
 1649
+
+EMSegmentStep.py
+file
+
+
+
+
+2011-08-13T17:21:36.630119Z
+40e29864584d813f346a932b023ade23
+2011-08-01T18:47:06.817075Z
+16781
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2141
 
 CMakeLists.txt
 file

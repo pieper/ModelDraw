@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Libs/SlicerExecutionModel/tclap/tests
 http://svn.slicer.org/Slicer3
 
@@ -60,40 +60,6 @@ has-props
 
 134
 
-test10.out
-file
-
-
-
-
-2010-10-25T02:20:19.534995Z
-f5b85cf6f990372c9b44c63c5a17776a
-2006-04-21T22:35:08.165448Z
-315
-lorensen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-285
-
 testCheck.sh
 file
 
@@ -127,6 +93,40 @@ has-props
 
 
 727
+
+test10.out
+file
+
+
+
+
+2010-10-25T02:20:19.534995Z
+f5b85cf6f990372c9b44c63c5a17776a
+2006-04-21T22:35:08.165448Z
+315
+lorensen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+285
 
 test11.out
 file
@@ -230,14 +230,14 @@ lorensen
 
 144
 
-test14.out
+test50.out
 file
 
 
 
 
 2010-10-25T02:20:19.534995Z
-a7cf40cb739b82c9643b567e44fdd81d
+6fa98ef207d7a1f33662f7dab94bd10d
 2006-04-21T22:35:08.165448Z
 315
 lorensen
@@ -262,7 +262,7 @@ lorensen
 
 
 
-147
+355
 
 test11.sh
 file
@@ -298,14 +298,14 @@ has-props
 
 145
 
-test50.out
+test14.out
 file
 
 
 
 
 2010-10-25T02:20:19.534995Z
-6fa98ef207d7a1f33662f7dab94bd10d
+a7cf40cb739b82c9643b567e44fdd81d
 2006-04-21T22:35:08.165448Z
 315
 lorensen
@@ -330,75 +330,7 @@ lorensen
 
 
 
-355
-
-test15.out
-file
-
-
-
-
-2010-10-25T02:20:19.534995Z
-c087ace6b0b5de919c7768f252aa615d
-2006-04-21T22:35:08.165448Z
-315
-lorensen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-362
-
-test21.sh
-file
-
-
-
-
-2010-10-25T02:20:19.534995Z
-cb18606d6489b288c869d96242185af5
-2006-04-21T22:35:08.165448Z
-315
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-158
+147
 
 test51.out
 file
@@ -434,14 +366,14 @@ lorensen
 
 326
 
-test31.sh
+test21.sh
 file
 
 
 
 
 2010-10-25T02:20:19.534995Z
-40f97c6c2a59a146a38964df6ea27607
+cb18606d6489b288c869d96242185af5
 2006-04-21T22:35:08.165448Z
 315
 lorensen
@@ -466,9 +398,9 @@ has-props
 
 
 
-154
+158
 
-test16.out
+test15.out
 file
 
 
@@ -535,6 +467,74 @@ lorensen
 
 
 355
+
+test16.out
+file
+
+
+
+
+2010-10-25T02:20:19.534995Z
+c087ace6b0b5de919c7768f252aa615d
+2006-04-21T22:35:08.165448Z
+315
+lorensen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+362
+
+test31.sh
+file
+
+
+
+
+2010-10-25T02:20:19.534995Z
+40f97c6c2a59a146a38964df6ea27607
+2006-04-21T22:35:08.165448Z
+315
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+154
 
 test17.out
 file
@@ -1012,6 +1012,40 @@ lorensen
 
 342
 
+test55.sh
+file
+
+
+
+
+2010-10-25T02:20:19.534995Z
+458dfb30e7bcf5a8e8cf1bdf4a68281f
+2006-04-21T22:35:08.165448Z
+315
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+159
+
 test58.out
 file
 
@@ -1080,18 +1114,17 @@ has-props
 
 139
 
-test55.sh
+test59.out
 file
 
 
 
 
 2010-10-25T02:20:19.534995Z
-458dfb30e7bcf5a8e8cf1bdf4a68281f
+cb39c04831fe703db240f681ea5b5e63
 2006-04-21T22:35:08.165448Z
 315
 lorensen
-has-props
 
 
 
@@ -1112,7 +1145,8 @@ has-props
 
 
 
-159
+
+51
 
 test29.sh
 file
@@ -1147,40 +1181,6 @@ has-props
 
 
 169
-
-test59.out
-file
-
-
-
-
-2010-10-25T02:20:19.534995Z
-cb39c04831fe703db240f681ea5b5e63
-2006-04-21T22:35:08.165448Z
-315
-lorensen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-51
 
 test39.sh
 file
@@ -1420,40 +1420,6 @@ lorensen
 
 122
 
-test10.sh
-file
-
-
-
-
-2010-10-25T02:20:19.534995Z
-3f86820234926b249e3f3041e40929a2
-2006-04-21T22:35:08.165448Z
-315
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-140
-
 test22.out
 file
 
@@ -1488,17 +1454,18 @@ lorensen
 
 363
 
-test23.out
+test10.sh
 file
 
 
 
 
 2010-10-25T02:20:19.534995Z
-c95fbab27ba439bd0ad1d08f16bc5e36
+3f86820234926b249e3f3041e40929a2
 2006-04-21T22:35:08.165448Z
 315
 lorensen
+has-props
 
 
 
@@ -1519,8 +1486,7 @@ lorensen
 
 
 
-
-366
+140
 
 test20.sh
 file
@@ -1556,48 +1522,14 @@ has-props
 
 167
 
-test30.sh
+test23.out
 file
 
 
 
 
 2010-10-25T02:20:19.534995Z
-a5f4875827152ca5843dc6628605d733
-2006-04-21T22:35:08.165448Z
-315
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-152
-
-test24.out
-file
-
-
-
-
-2010-10-25T02:20:19.534995Z
-21f2b85a423ce7fc1e6444652c1e6ef4
+c95fbab27ba439bd0ad1d08f16bc5e36
 2006-04-21T22:35:08.165448Z
 315
 lorensen
@@ -1622,7 +1554,7 @@ lorensen
 
 
 
-363
+366
 
 test60.out
 file
@@ -1658,14 +1590,14 @@ lorensen
 
 514
 
-test25.out
+test24.out
 file
 
 
 
 
 2010-10-25T02:20:19.534995Z
-d582575c0ab66a3bbd5933317b97437b
+21f2b85a423ce7fc1e6444652c1e6ef4
 2006-04-21T22:35:08.165448Z
 315
 lorensen
@@ -1690,7 +1622,41 @@ lorensen
 
 
 
-128
+363
+
+test30.sh
+file
+
+
+
+
+2010-10-25T02:20:19.534995Z
+a5f4875827152ca5843dc6628605d733
+2006-04-21T22:35:08.165448Z
+315
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+152
 
 test40.sh
 file
@@ -1726,14 +1692,14 @@ has-props
 
 133
 
-test26.out
+test25.out
 file
 
 
 
 
 2010-10-25T02:20:19.534995Z
-c53498c9acf0a144e51c129448753e73
+d582575c0ab66a3bbd5933317b97437b
 2006-04-21T22:35:08.165448Z
 315
 lorensen
@@ -1758,41 +1724,7 @@ lorensen
 
 
 
-322
-
-test14.sh
-file
-
-
-
-
-2010-10-25T02:20:19.534995Z
-7c3cd92d594ead3fbd673c9a84cd32dd
-2006-04-21T22:35:08.165448Z
-315
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-171
+128
 
 test50.sh
 file
@@ -1828,48 +1760,14 @@ has-props
 
 146
 
-test27.out
+test14.sh
 file
 
 
 
 
 2010-10-25T02:20:19.534995Z
-21036d565e0c7619af612383f449c7ca
-2006-04-21T22:35:08.165448Z
-315
-lorensen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-323
-
-test24.sh
-file
-
-
-
-
-2010-10-25T02:20:19.534995Z
-b9d59236abc2246ae9d5ee8af6233d89
+7c3cd92d594ead3fbd673c9a84cd32dd
 2006-04-21T22:35:08.165448Z
 315
 lorensen
@@ -1894,7 +1792,41 @@ has-props
 
 
 
-155
+171
+
+test26.out
+file
+
+
+
+
+2010-10-25T02:20:19.534995Z
+c53498c9acf0a144e51c129448753e73
+2006-04-21T22:35:08.165448Z
+315
+lorensen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+322
 
 test60.sh
 file
@@ -1930,14 +1862,14 @@ has-props
 
 145
 
-test34.sh
+test24.sh
 file
 
 
 
 
-2010-10-25T02:20:19.544995Z
-78c5df2016ef7e4070aee5f9a3401893
+2010-10-25T02:20:19.534995Z
+b9d59236abc2246ae9d5ee8af6233d89
 2006-04-21T22:35:08.165448Z
 315
 lorensen
@@ -1962,7 +1894,41 @@ has-props
 
 
 
-137
+155
+
+test27.out
+file
+
+
+
+
+2010-10-25T02:20:19.534995Z
+21036d565e0c7619af612383f449c7ca
+2006-04-21T22:35:08.165448Z
+315
+lorensen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+323
 
 test28.out
 file
@@ -1998,6 +1964,74 @@ lorensen
 
 314
 
+test34.sh
+file
+
+
+
+
+2010-10-25T02:20:19.544995Z
+78c5df2016ef7e4070aee5f9a3401893
+2006-04-21T22:35:08.165448Z
+315
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+137
+
+test44.sh
+file
+
+
+
+
+2010-10-25T02:20:19.544995Z
+4fcd49473330ff583afadd6b10141005
+2006-04-21T22:35:08.165448Z
+315
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+133
+
 test29.out
 file
 
@@ -2032,14 +2066,14 @@ lorensen
 
 315
 
-test44.sh
+test54.sh
 file
 
 
 
 
 2010-10-25T02:20:19.544995Z
-4fcd49473330ff583afadd6b10141005
+35740d6ab55933bb65a0f949eb2f8e11
 2006-04-21T22:35:08.165448Z
 315
 lorensen
@@ -2099,40 +2133,6 @@ has-props
 
 
 139
-
-test54.sh
-file
-
-
-
-
-2010-10-25T02:20:19.544995Z
-35740d6ab55933bb65a0f949eb2f8e11
-2006-04-21T22:35:08.165448Z
-315
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-133
 
 test28.sh
 file

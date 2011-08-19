@@ -103,19 +103,21 @@ unsigned long countInsideVoxels(const ImageType* img, const itk::SpatialObject<3
 {
   unsigned long count = 0;
 
-
-
   typedef itk::ImageRegionConstIteratorWithIndex<ImageType> IteratorType;
   IteratorType it(img, img->GetBufferedRegion());
+  typedef typename ImageType::IndexType IndexType;
+  typedef typename ImageType::PointType PointType;
+  PointType pt;
+  if( !so )
+    {
+    return count;
+    }
   for(it.GoToBegin(); !it.IsAtEnd(); ++it)
     {
-    typedef typename ImageType::IndexType IndexType;
     IndexType ind = it.GetIndex();
-    typedef typename ImageType::PointType PointType;
-    PointType pt;
     img->TransformIndexToPhysicalPoint(ind, pt);
     
-    if(!so || so->IsInside(pt))
+    if(so->IsInside(pt))
       {
       ++count;
       }

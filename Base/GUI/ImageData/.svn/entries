@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Base/GUI/ImageData
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ wjp@bwh.harvard.edu
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-ToolbarData.png
-file
-
-
-
-
-2010-10-25T02:21:27.544995Z
-9d2891f6dcad57e0542d644439018739
-2006-08-04T15:53:31.871154Z
-1013
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-315
 
 MousePickOn.png
 file
@@ -93,6 +59,40 @@ has-props
 
 
 3257
+
+ToolbarData.png
+file
+
+
+
+
+2010-10-25T02:21:27.544995Z
+9d2891f6dcad57e0542d644439018739
+2006-08-04T15:53:31.871154Z
+1013
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+315
 
 SliceOR.png
 file
@@ -298,40 +298,6 @@ has-props
 
 910
 
-CheckModifiedData.png
-file
-
-
-
-
-2010-10-25T02:21:27.544995Z
-64d6d4ddce253190715f36ac6d35c40f
-2008-10-03T19:55:08.855218Z
-7626
-yumin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-848
-
 SlicerDecrement.png
 file
 
@@ -365,6 +331,40 @@ has-props
 
 
 258
+
+CheckModifiedData.png
+file
+
+
+
+
+2010-10-25T02:21:27.544995Z
+64d6d4ddce253190715f36ac6d35c40f
+2008-10-03T19:55:08.855218Z
+7626
+yumin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+848
 
 UncheckAll.png
 file
@@ -400,16 +400,16 @@ has-props
 
 874
 
-SlicerZoomIn.png
+ViewAxisSLo.png
 file
 
 
 
 
 2010-10-25T02:21:27.544995Z
-0846f0737c9b5f6e0a0a19778c8e0594
-2008-04-06T17:37:42.298644Z
-6416
+38d61c5c8e7301451ad716d257fe75eb
+2006-12-02T17:02:48.863665Z
+1729
 wjp@bwh.harvard.edu
 has-props
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-597
+3083
 
 SliceLB.png
 file
@@ -468,16 +468,16 @@ has-props
 
 3004
 
-ViewAxisSLo.png
+SlicerZoomIn.png
 file
 
 
 
 
 2010-10-25T02:21:27.544995Z
-38d61c5c8e7301451ad716d257fe75eb
-2006-12-02T17:02:48.863665Z
-1729
+0846f0737c9b5f6e0a0a19778c8e0594
+2008-04-06T17:37:42.298644Z
+6416
 wjp@bwh.harvard.edu
 has-props
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-3083
+597
 
 LightboxSliceStart.png
 file
@@ -1148,40 +1148,6 @@ has-props
 
 460
 
-TransferStatusCancelled.png
-file
-
-
-
-
-2010-10-25T02:21:27.554995Z
-30d63e2946b8267d5cb79840a6ce7012
-2008-03-06T17:26:56.169440Z
-6099
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-865
-
 draftSlicerLogo.png
 file
 
@@ -1216,16 +1182,16 @@ has-props
 
 1151
 
-ViewAxisILo2.png
+TransferStatusCancelled.png
 file
 
 
 
 
 2010-10-25T02:21:27.554995Z
-8a73283f4ccc0354cdcd3dd4c00dd115
-2008-06-16T21:56:30.919724Z
-7085
+30d63e2946b8267d5cb79840a6ce7012
+2008-03-06T17:26:56.169440Z
+6099
 wjp@bwh.harvard.edu
 has-props
 
@@ -1248,7 +1214,7 @@ has-props
 
 
 
-450
+865
 
 ViewAxisSHi2.png
 file
@@ -1283,6 +1249,40 @@ has-props
 
 
 507
+
+ViewAxisILo2.png
+file
+
+
+
+
+2010-10-25T02:21:27.554995Z
+8a73283f4ccc0354cdcd3dd4c00dd115
+2008-06-16T21:56:30.919724Z
+7085
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+450
 
 SlicerGoing1.png
 file
@@ -1488,40 +1488,6 @@ has-props
 
 873
 
-ToolbarSaveScene.png
-file
-
-
-
-
-2010-10-25T02:21:27.554995Z
-954906eeff4b60939bae82bb43bd8bbd
-2006-08-04T15:53:31.871154Z
-1013
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-325
-
 TransferStatusGoing3.png
 file
 
@@ -1556,16 +1522,16 @@ has-props
 
 679
 
-SliceWidgetOn.png
+ToolbarSaveScene.png
 file
 
 
 
 
 2010-10-25T02:21:27.554995Z
-43fda207f3de6a7a7e09bf3511dbe219
-2008-05-21T23:57:18.980311Z
-6804
+954906eeff4b60939bae82bb43bd8bbd
+2006-08-04T15:53:31.871154Z
+1013
 wjp@bwh.harvard.edu
 has-props
 
@@ -1588,7 +1554,7 @@ has-props
 
 
 
-745
+325
 
 ViewAxisPHi.png
 file
@@ -1623,6 +1589,40 @@ has-props
 
 
 3039
+
+SliceWidgetOn.png
+file
+
+
+
+
+2010-10-25T02:21:27.554995Z
+43fda207f3de6a7a7e09bf3511dbe219
+2008-05-21T23:57:18.980311Z
+6804
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+745
 
 PercentRelativeZoom.png
 file
@@ -1692,16 +1692,16 @@ has-props
 
 3301
 
-FieldOfView.png
+ViewRoll.png
 file
 
 
 
 
 2010-10-25T02:21:27.554995Z
-836786803242770c8ee2791fea43f01d
-2007-07-31T20:09:00.778918Z
-3974
+f01016d4fb39a580e35db1dbafd17fed
+2008-05-22T13:59:53.886875Z
+6813
 wjp@bwh.harvard.edu
 has-props
 
@@ -1724,7 +1724,7 @@ has-props
 
 
 
-397
+3549
 
 TransferStatusGoing7.png
 file
@@ -1760,16 +1760,16 @@ has-props
 
 680
 
-ViewRoll.png
+FieldOfView.png
 file
 
 
 
 
 2010-10-25T02:21:27.554995Z
-f01016d4fb39a580e35db1dbafd17fed
-2008-05-22T13:59:53.886875Z
-6813
+836786803242770c8ee2791fea43f01d
+2007-07-31T20:09:00.778918Z
+3974
 wjp@bwh.harvard.edu
 has-props
 
@@ -1792,41 +1792,7 @@ has-props
 
 
 
-3549
-
-SlicerManualSliceSpacing.png
-file
-
-
-
-
-2010-10-25T02:21:27.554995Z
-9a2dd30da73ea16336cdd692cbd65ac0
-2008-11-13T16:27:28.884561Z
-7866
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3158
+397
 
 IndicatorDisabled.png
 file
@@ -1861,6 +1827,40 @@ has-props
 
 
 212
+
+SlicerManualSliceSpacing.png
+file
+
+
+
+
+2010-10-25T02:21:27.554995Z
+9a2dd30da73ea16336cdd692cbd65ac0
+2008-11-13T16:27:28.884561Z
+7866
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3158
 
 Slicer3LogoHorizontalAlpha.png
 file
@@ -2100,40 +2100,6 @@ has-props
 
 471
 
-ViewCameraSelect.png
-file
-
-
-
-
-2010-10-25T02:21:27.554995Z
-4c0b2d0da352c21c51e874c8e96f874e
-2007-01-04T18:03:57.958123Z
-2021
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3118
-
 SlicerLoadFiberBundle.png
 file
 
@@ -2167,6 +2133,40 @@ has-props
 
 
 1031
+
+ViewCameraSelect.png
+file
+
+
+
+
+2010-10-25T02:21:27.554995Z
+4c0b2d0da352c21c51e874c8e96f874e
+2007-01-04T18:03:57.958123Z
+2021
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3118
 
 ViewAxisLookFromRadioOn.png
 file
@@ -4344,16 +4344,16 @@ has-props
 
 3025
 
-ToolbarChooseView.png
+SliceWidgetOff.png
 file
 
 
 
 
 2010-10-25T02:21:27.574995Z
-229c2330e0e2ca3416eda0daa4f76d9b
-2007-03-29T15:43:36.496777Z
-3070
+d21c5415c202306683327465e6f3926b
+2008-05-21T23:57:18.980311Z
+6804
 wjp@bwh.harvard.edu
 has-props
 
@@ -4376,75 +4376,7 @@ has-props
 
 
 
-477
-
-MouseDeselectOn.png
-file
-
-
-
-
-2010-10-25T02:21:27.574995Z
-45ecbcd129faa76ffcd6435e87ccf291
-2007-07-12T20:26:27.661533Z
-3830
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-338
-
-FileBrowserGoForward.png
-file
-
-
-
-
-2010-10-25T02:21:27.574995Z
-fa405cd057ff1bf4aa1534c83b0d5c5b
-2007-04-01T14:07:47.854556Z
-3101
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-302
+659
 
 Refresh.png
 file
@@ -4480,16 +4412,16 @@ has-props
 
 3311
 
-SliceWidgetOff.png
+FileBrowserGoForward.png
 file
 
 
 
 
 2010-10-25T02:21:27.574995Z
-d21c5415c202306683327465e6f3926b
-2008-05-21T23:57:18.980311Z
-6804
+fa405cd057ff1bf4aa1534c83b0d5c5b
+2007-04-01T14:07:47.854556Z
+3101
 wjp@bwh.harvard.edu
 has-props
 
@@ -4512,18 +4444,18 @@ has-props
 
 
 
-659
+302
 
-SlicesCrosshair.png
+MouseDeselectOn.png
 file
 
 
 
 
 2010-10-25T02:21:27.574995Z
-2e57d3f6153dc126765f07d2b07b8b47
-2006-12-04T22:59:51.875042Z
-1741
+45ecbcd129faa76ffcd6435e87ccf291
+2007-07-12T20:26:27.661533Z
+3830
 wjp@bwh.harvard.edu
 has-props
 
@@ -4546,7 +4478,41 @@ has-props
 
 
 
-3035
+338
+
+ToolbarChooseView.png
+file
+
+
+
+
+2010-10-25T02:21:27.574995Z
+229c2330e0e2ca3416eda0daa4f76d9b
+2007-03-29T15:43:36.496777Z
+3070
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+477
 
 TransferStatusGoing4.png
 file
@@ -4582,16 +4548,16 @@ has-props
 
 675
 
-SlicerCycle.png
+SlicesCrosshair.png
 file
 
 
 
 
 2010-10-25T02:21:27.574995Z
-c881a3cdbb2e848c848d4029e17d1c53
-2008-04-06T17:37:42.298644Z
-6416
+2e57d3f6153dc126765f07d2b07b8b47
+2006-12-04T22:59:51.875042Z
+1741
 wjp@bwh.harvard.edu
 has-props
 
@@ -4614,7 +4580,7 @@ has-props
 
 
 
-531
+3035
 
 ViewAxisRotateAroundRadioOff.png
 file
@@ -4650,6 +4616,40 @@ has-props
 
 573
 
+SlicerCycle.png
+file
+
+
+
+
+2010-10-25T02:21:27.574995Z
+c881a3cdbb2e848c848d4029e17d1c53
+2008-04-06T17:37:42.298644Z
+6416
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+531
+
 SlicerLoadModel.png
 file
 
@@ -4683,40 +4683,6 @@ has-props
 
 
 442
-
-SlicerScreenCapture.png
-file
-
-
-
-
-2010-10-25T02:21:27.574995Z
-b15d233f80c9af8a0ba6664670c43bc5
-2009-03-27T19:14:24.409694Z
-8991
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3374
 
 TransferTypeUnspecified.png
 file
@@ -4752,16 +4718,16 @@ has-props
 
 338
 
-SlicerPlayBackward.png
+SlicerScreenCapture.png
 file
 
 
 
 
 2010-10-25T02:21:27.574995Z
-5b6e1b9f62bba05f807548b4df78e8a3
-2008-04-06T17:37:42.298644Z
-6416
+b15d233f80c9af8a0ba6664670c43bc5
+2009-03-27T19:14:24.409694Z
+8991
 wjp@bwh.harvard.edu
 has-props
 
@@ -4784,7 +4750,7 @@ has-props
 
 
 
-391
+3374
 
 ViewAxisLLo.png
 file
@@ -4820,16 +4786,16 @@ has-props
 
 3048
 
-SlicerClose.png
+SlicerPlayBackward.png
 file
 
 
 
 
 2010-10-25T02:21:27.574995Z
-381a80ecc5e77f303642d6aa9258fd24
-2009-04-05T21:15:28.755896Z
-9059
+5b6e1b9f62bba05f807548b4df78e8a3
+2008-04-06T17:37:42.298644Z
+6416
 wjp@bwh.harvard.edu
 has-props
 
@@ -4852,7 +4818,7 @@ has-props
 
 
 
-706
+391
 
 TransferStatusUnspecified.png
 file
@@ -4887,6 +4853,40 @@ has-props
 
 
 234
+
+SlicerClose.png
+file
+
+
+
+
+2010-10-25T02:21:27.574995Z
+381a80ecc5e77f303642d6aa9258fd24
+2009-04-05T21:15:28.755896Z
+9059
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+706
 
 Slicer3LogoVerticalBeta.png
 file
@@ -5398,40 +5398,6 @@ has-props
 
 3265
 
-SlicesFieldOfView.png
-file
-
-
-
-
-2010-10-25T02:21:27.584995Z
-51260941a8a6e7dd0772f86736dbdd16
-2007-07-31T20:09:00.778918Z
-3974
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-448
-
 AnnotationRulerEndpoint1.png
 file
 
@@ -5466,16 +5432,16 @@ has-props
 
 234
 
-SlicerSelectAll.png
+SlicesFieldOfView.png
 file
 
 
 
 
 2010-10-25T02:21:27.584995Z
-196cee21129622907690dc01697ec3a6
-2009-01-07T21:16:45.007312Z
-8298
+51260941a8a6e7dd0772f86736dbdd16
+2007-07-31T20:09:00.778918Z
+3974
 wjp@bwh.harvard.edu
 has-props
 
@@ -5498,7 +5464,7 @@ has-props
 
 
 
-413
+448
 
 MouseDefineROIOn.png
 file
@@ -5533,6 +5499,40 @@ has-props
 
 
 420
+
+SlicerSelectAll.png
+file
+
+
+
+
+2010-10-25T02:21:27.584995Z
+196cee21129622907690dc01697ec3a6
+2009-01-07T21:16:45.007312Z
+8298
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+413
 
 TransferStatusGoing.png
 file
@@ -5670,16 +5670,16 @@ has-props
 
 404
 
-SlicerFiducialListLock.png
+MousePickDisabled.png
 file
 
 
 
 
 2010-10-25T02:21:27.584995Z
-424f06744fc00198b151bece563134b6
-2009-05-01T15:58:05.066356Z
-9380
+e9e3aa2e2eb3efb42dc9de8956e8b4e8
+2010-04-28T20:32:09.308872Z
+12993
 wjp@bwh.harvard.edu
 has-props
 
@@ -5702,7 +5702,7 @@ has-props
 
 
 
-684
+3256
 
 SlicerDone.png
 file
@@ -5738,16 +5738,16 @@ has-props
 
 873
 
-MousePickDisabled.png
+SlicerFiducialListLock.png
 file
 
 
 
 
 2010-10-25T02:21:27.584995Z
-e9e3aa2e2eb3efb42dc9de8956e8b4e8
-2010-04-28T20:32:09.308872Z
-12993
+424f06744fc00198b151bece563134b6
+2009-05-01T15:58:05.066356Z
+9380
 wjp@bwh.harvard.edu
 has-props
 
@@ -5770,7 +5770,7 @@ has-props
 
 
 
-3256
+684
 
 ViewAxisIHi.png
 file
@@ -5806,40 +5806,6 @@ has-props
 
 3052
 
-SlicerFiducialListHidden.png
-file
-
-
-
-
-2010-10-25T02:21:27.584995Z
-3a2efbf856b0098ae05c8f4437e09e2b
-2009-05-01T15:58:05.066356Z
-9380
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1097
-
 FileBrowserGoBack.png
 file
 
@@ -5873,6 +5839,40 @@ has-props
 
 
 304
+
+SlicerFiducialListHidden.png
+file
+
+
+
+
+2010-10-25T02:21:27.584995Z
+3a2efbf856b0098ae05c8f4437e09e2b
+2009-05-01T15:58:05.066356Z
+9380
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1097
 
 MouseDeselectOff.png
 file
@@ -5942,16 +5942,16 @@ has-props
 
 386
 
-SlicerVisible.png
+ViewAxisSLo2.png
 file
 
 
 
 
 2010-10-25T02:21:27.584995Z
-3b939ae8aba1815c0f742f4f104a91a7
-2008-04-06T17:37:42.298644Z
-6416
+a3e9c20be3f7acaef2652895bd0d70c1
+2008-06-16T21:56:30.919724Z
+7085
 wjp@bwh.harvard.edu
 has-props
 
@@ -5974,7 +5974,7 @@ has-props
 
 
 
-999
+485
 
 ToolbarTwinView.png
 file
@@ -6010,48 +6010,14 @@ has-props
 
 448
 
-ViewAxisSLo2.png
+SlicerVisible.png
 file
 
 
 
 
 2010-10-25T02:21:27.584995Z
-a3e9c20be3f7acaef2652895bd0d70c1
-2008-06-16T21:56:30.919724Z
-7085
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-485
-
-SlicerDelete.png
-file
-
-
-
-
-2010-10-25T02:21:27.584995Z
-1d4e0d30d93f23fc61a0185f247271ed
+3b939ae8aba1815c0f742f4f104a91a7
 2008-04-06T17:37:42.298644Z
 6416
 wjp@bwh.harvard.edu
@@ -6076,7 +6042,7 @@ has-props
 
 
 
-511
+999
 
 ViewSpin.png
 file
@@ -6111,6 +6077,40 @@ has-props
 
 
 3226
+
+SlicerDelete.png
+file
+
+
+
+
+2010-10-25T02:21:27.584995Z
+1d4e0d30d93f23fc61a0185f247271ed
+2008-04-06T17:37:42.298644Z
+6416
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+511
 
 SlicerHideFiducialList.png
 file
@@ -6316,40 +6316,6 @@ has-props
 
 243
 
-SlicesWinLevThreshCol.png
-file
-
-
-
-
-2010-10-25T02:21:27.584995Z
-9a8f18d4f5796f634262fa44cc82e4e2
-2008-05-21T23:57:18.980311Z
-6804
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3019
-
 SlicerPingPong.png
 file
 
@@ -6383,6 +6349,40 @@ has-props
 
 
 301
+
+SlicesWinLevThreshCol.png
+file
+
+
+
+
+2010-10-25T02:21:27.584995Z
+9a8f18d4f5796f634262fa44cc82e4e2
+2008-05-21T23:57:18.980311Z
+6804
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3019
 
 LightboxSliceForward.png
 file
@@ -6486,40 +6486,6 @@ has-props
 
 3160
 
-MouseZoomOff.png
-file
-
-
-
-
-2010-10-25T02:21:27.594995Z
-77177968fea576b35ca45829a1396b3b
-2007-07-12T20:26:27.661533Z
-3830
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-399
-
 RadioIndicatorOn.png
 file
 
@@ -6554,16 +6520,16 @@ has-props
 
 237
 
-SlicerPreparing.png
+MouseZoomOff.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-d4a429238c253953b7611f7ac33d88e8
-2008-04-06T17:37:42.298644Z
-6416
+77177968fea576b35ca45829a1396b3b
+2007-07-12T20:26:27.661533Z
+3830
 wjp@bwh.harvard.edu
 has-props
 
@@ -6586,7 +6552,7 @@ has-props
 
 
 
-341
+399
 
 SlicerBlank.png
 file
@@ -6622,16 +6588,16 @@ has-props
 
 233
 
-SlicerFiducialListsSelectAll.png
+SlicerPreparing.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-e921e5ea956998bbb06d7ccad55e27c4
-2009-02-19T19:19:56.159863Z
-8703
+d4a429238c253953b7611f7ac33d88e8
+2008-04-06T17:37:42.298644Z
+6416
 wjp@bwh.harvard.edu
 has-props
 
@@ -6654,7 +6620,7 @@ has-props
 
 
 
-558
+341
 
 ToolbarVolume.png
 file
@@ -6689,6 +6655,40 @@ has-props
 
 
 362
+
+SlicerFiducialListsSelectAll.png
+file
+
+
+
+
+2010-10-25T02:21:27.594995Z
+e921e5ea956998bbb06d7ccad55e27c4
+2009-02-19T19:19:56.159863Z
+8703
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+558
 
 LocalSaveDeselected.png
 file
@@ -6792,16 +6792,16 @@ has-props
 
 465
 
-ToolbarColor.png
+SlicerExtensions.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-808296717b2d596b6c2d313e226f38b9
-2006-06-02T12:23:05.789251Z
-465
+ac2f83b9553b4a92e98ea1d59f983ebd
+2009-05-12T18:49:44.874501Z
+9464
 wjp@bwh.harvard.edu
 has-props
 
@@ -6824,7 +6824,7 @@ has-props
 
 
 
-460
+948
 
 SlicerFiducialListDelete.png
 file
@@ -6860,16 +6860,16 @@ has-props
 
 541
 
-SlicerExtensions.png
+ToolbarColor.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-ac2f83b9553b4a92e98ea1d59f983ebd
-2009-05-12T18:49:44.874501Z
-9464
+808296717b2d596b6c2d313e226f38b9
+2006-06-02T12:23:05.789251Z
+465
 wjp@bwh.harvard.edu
 has-props
 
@@ -6892,41 +6892,7 @@ has-props
 
 
 
-948
-
-SlicerComposite.png
-file
-
-
-
-
-2010-10-25T02:21:27.594995Z
-c1e59478d3884d3afbfe072cf1bcc519
-2008-11-04T04:54:01.995262Z
-7788
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-651
+460
 
 ToolbarTriple3DView.png
 file
@@ -6962,6 +6928,40 @@ has-props
 
 3091
 
+SlicerComposite.png
+file
+
+
+
+
+2010-10-25T02:21:27.594995Z
+c1e59478d3884d3afbfe072cf1bcc519
+2008-11-04T04:54:01.995262Z
+7788
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+651
+
 FileBrowserHistory.png
 file
 
@@ -6996,40 +6996,6 @@ has-props
 
 290
 
-SlicerVisibleNoFrame.png
-file
-
-
-
-
-2010-10-25T02:21:27.594995Z
-eee6c83820e33362dfc4fdff36a368e9
-2009-08-19T13:55:38.483232Z
-10304
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-561
-
 IndicatorOff.png
 file
 
@@ -7063,6 +7029,40 @@ has-props
 
 
 212
+
+SlicerVisibleNoFrame.png
+file
+
+
+
+
+2010-10-25T02:21:27.594995Z
+eee6c83820e33362dfc4fdff36a368e9
+2009-08-19T13:55:38.483232Z
+10304
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+561
 
 ModuleSearch.png
 file
@@ -7132,40 +7132,6 @@ has-props
 
 376
 
-SlicesFadeToBG.png
-file
-
-
-
-
-2010-10-25T02:21:27.594995Z
-042fd1d152d2999fd1403602e2cdfbf2
-2006-12-09T16:57:13.313846Z
-1754
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2990
-
 SlicerZoomOut.png
 file
 
@@ -7200,16 +7166,16 @@ has-props
 
 587
 
-ToolbarEditorToolbox.png
+SlicesFadeToBG.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-9f20ef7ff1dc37fe5e81b032a235ccbe
-2006-06-02T12:23:05.789251Z
-465
+042fd1d152d2999fd1403602e2cdfbf2
+2006-12-09T16:57:13.313846Z
+1754
 wjp@bwh.harvard.edu
 has-props
 
@@ -7232,7 +7198,7 @@ has-props
 
 
 
-425
+2990
 
 ViewSpinRadioOn.png
 file
@@ -7268,16 +7234,16 @@ has-props
 
 692
 
-SlicerRotateToPixelSpace.png
+ToolbarEditorToolbox.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-4325df97d192980c06aee6c17b912825
-2010-03-16T18:06:01.704348Z
-12358
+9f20ef7ff1dc37fe5e81b032a235ccbe
+2006-06-02T12:23:05.789251Z
+465
 wjp@bwh.harvard.edu
 has-props
 
@@ -7300,41 +7266,7 @@ has-props
 
 
 
-939
-
-SlicerFiducialsDeleteAll.png
-file
-
-
-
-
-2010-10-25T02:21:27.594995Z
-43085156eb6d3b35b93eedd373ba9882
-2009-02-19T19:19:56.159863Z
-8703
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-442
+425
 
 FileBrowserCreateNew.png
 file
@@ -7370,16 +7302,16 @@ has-props
 
 342
 
-TransferCancelDisabled.png
+SlicerFiducialsDeleteAll.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-82c7413c7676e38aee7b63a986c2d193
-2008-03-09T22:31:44.083187Z
-6144
+43085156eb6d3b35b93eedd373ba9882
+2009-02-19T19:19:56.159863Z
+8703
 wjp@bwh.harvard.edu
 has-props
 
@@ -7402,7 +7334,41 @@ has-props
 
 
 
-712
+442
+
+SlicerRotateToPixelSpace.png
+file
+
+
+
+
+2010-10-25T02:21:27.594995Z
+4325df97d192980c06aee6c17b912825
+2010-03-16T18:06:01.704348Z
+12358
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+939
 
 ViewAxisCenter2.png
 file
@@ -7438,16 +7404,16 @@ has-props
 
 694
 
-SlicesGrid.png
+TransferCancelDisabled.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-35164da019292b128ddf30f1387c9900
-2006-12-09T16:57:13.313846Z
-1754
+82c7413c7676e38aee7b63a986c2d193
+2008-03-09T22:31:44.083187Z
+6144
 wjp@bwh.harvard.edu
 has-props
 
@@ -7470,7 +7436,7 @@ has-props
 
 
 
-3001
+712
 
 SlicerGoing3.png
 file
@@ -7506,16 +7472,16 @@ has-props
 
 679
 
-MouseInformationOff.png
+SlicesGrid.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-099c9a656cae6754b3020563e965d70a
-2010-03-21T22:42:22.058467Z
-12412
+35164da019292b128ddf30f1387c9900
+2006-12-09T16:57:13.313846Z
+1754
 wjp@bwh.harvard.edu
 has-props
 
@@ -7538,7 +7504,7 @@ has-props
 
 
 
-3328
+3001
 
 MouseDeselectDisabled.png
 file
@@ -7573,6 +7539,40 @@ has-props
 
 
 356
+
+MouseInformationOff.png
+file
+
+
+
+
+2010-10-25T02:21:27.594995Z
+099c9a656cae6754b3020563e965d70a
+2010-03-21T22:42:22.058467Z
+12412
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3328
 
 SlicerFiducialListUnlock.png
 file
@@ -7642,16 +7642,16 @@ has-props
 
 488
 
-SlicerGoing7.png
+ViewStereo.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-f15294a4cfe2536b24e7cc27967b2113
-2008-04-06T17:37:42.298644Z
-6416
+665cb69329c0f1ca92f26636bcae058a
+2006-12-04T22:59:51.875042Z
+1741
 wjp@bwh.harvard.edu
 has-props
 
@@ -7674,7 +7674,7 @@ has-props
 
 
 
-680
+3017
 
 ViewAxisLHi.png
 file
@@ -7710,16 +7710,16 @@ has-props
 
 3060
 
-ViewStereo.png
+SlicerGoing7.png
 file
 
 
 
 
 2010-10-25T02:21:27.594995Z
-665cb69329c0f1ca92f26636bcae058a
-2006-12-04T22:59:51.875042Z
-1741
+f15294a4cfe2536b24e7cc27967b2113
+2008-04-06T17:37:42.298644Z
+6416
 wjp@bwh.harvard.edu
 has-props
 
@@ -7742,41 +7742,7 @@ has-props
 
 
 
-3017
-
-SlicerOptions.png
-file
-
-
-
-
-2010-10-25T02:21:27.594995Z
-dd8887c077125815b750bb1b8b13d2e7
-2010-03-21T22:38:25.190623Z
-12410
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2957
+680
 
 TransferStatusGoing1.png
 file
@@ -7811,6 +7777,40 @@ has-props
 
 
 677
+
+SlicerOptions.png
+file
+
+
+
+
+2010-10-25T02:21:27.594995Z
+dd8887c077125815b750bb1b8b13d2e7
+2010-03-21T22:38:25.190623Z
+12410
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2957
 
 TransferStatusGoing5.png
 file
@@ -7914,40 +7914,6 @@ has-props
 
 546
 
-SlicerLoadDirectory.png
-file
-
-
-
-
-2010-10-25T02:21:27.594995Z
-072eb25a6289d795e64f089e9996013f
-2009-04-05T21:15:28.755896Z
-9059
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-535
-
 SlicerCheckedVisible.png
 file
 
@@ -7981,6 +7947,40 @@ has-props
 
 
 795
+
+SlicerLoadDirectory.png
+file
+
+
+
+
+2010-10-25T02:21:27.594995Z
+072eb25a6289d795e64f089e9996013f
+2009-04-05T21:15:28.755896Z
+9059
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+535
 
 SlicerHideExposeAllFiducialLists.png
 file
@@ -8016,40 +8016,6 @@ has-props
 
 2161
 
-ToolbarEditor.png
-file
-
-
-
-
-2010-10-25T02:21:27.594995Z
-d32c972ea1c28f578f08ff60b13c9a64
-2006-06-02T12:23:05.789251Z
-465
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-429
-
 SlicerLoadScalarOverlay.png
 file
 
@@ -8083,6 +8049,40 @@ has-props
 
 
 709
+
+ToolbarEditor.png
+file
+
+
+
+
+2010-10-25T02:21:27.594995Z
+d32c972ea1c28f578f08ff60b13c9a64
+2006-06-02T12:23:05.789251Z
+465
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+429
 
 ViewAxisRLo.png
 file
@@ -8220,40 +8220,6 @@ has-props
 
 316
 
-ModuleNext.png
-file
-
-
-
-
-2010-10-25T02:21:27.604995Z
-6c06a6a06b3b8c19701d004ffc9f6266
-2006-12-20T22:58:32.051272Z
-1893
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-337
-
 ViewAxisRHi2.png
 file
 
@@ -8287,6 +8253,40 @@ has-props
 
 
 446
+
+ModuleNext.png
+file
+
+
+
+
+2010-10-25T02:21:27.604995Z
+6c06a6a06b3b8c19701d004ffc9f6266
+2006-12-20T22:58:32.051272Z
+1893
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+337
 
 SlicerOptionsDisabled.png
 file
@@ -8322,40 +8322,6 @@ has-props
 
 2924
 
-SlicerWWW.png
-file
-
-
-
-
-2010-10-25T02:21:27.604995Z
-1ff161072a3c7d621e39409b3f090e69
-2009-05-11T19:35:39.252161Z
-9452
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1286
-
 ToolbarFiducials.png
 file
 
@@ -8390,16 +8356,16 @@ has-props
 
 311
 
-SlicesInterpolationOn.png
+SlicerWWW.png
 file
 
 
 
 
 2010-10-25T02:21:27.604995Z
-a4ed0dff4df86b47f09b29c1c4e133b0
-2007-03-29T15:42:16.073368Z
-3069
+1ff161072a3c7d621e39409b3f090e69
+2009-05-11T19:35:39.252161Z
+9452
 wjp@bwh.harvard.edu
 has-props
 
@@ -8422,7 +8388,7 @@ has-props
 
 
 
-3211
+1286
 
 SlicerGlyphType.png
 file
@@ -8458,16 +8424,16 @@ has-props
 
 741
 
-SlicerFiducialsAddNew.png
+SlicesInterpolationOn.png
 file
 
 
 
 
 2010-10-25T02:21:27.604995Z
-98270a98747e571cc575cca8d463fda2
-2009-02-19T19:19:56.159863Z
-8703
+a4ed0dff4df86b47f09b29c1c4e133b0
+2007-03-29T15:42:16.073368Z
+3069
 wjp@bwh.harvard.edu
 has-props
 
@@ -8490,7 +8456,7 @@ has-props
 
 
 
-271
+3211
 
 SliceLabelOpacity.png
 file
@@ -8526,6 +8492,40 @@ has-props
 
 475
 
+SlicerFiducialsAddNew.png
+file
+
+
+
+
+2010-10-25T02:21:27.604995Z
+98270a98747e571cc575cca8d463fda2
+2009-02-19T19:19:56.159863Z
+8703
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+271
+
 MouseZoomOn.png
 file
 
@@ -8560,16 +8560,16 @@ has-props
 
 402
 
-MouseInformationOn.png
+ToolbarMeasurements.png
 file
 
 
 
 
 2010-10-25T02:21:27.604995Z
-37c7c82f434ec49b6923c9b33d19967d
-2010-03-21T22:42:22.058467Z
-12412
+acd91e7fd1032e2aeb7a703c6694b970
+2006-08-04T14:01:42.723234Z
+1005
 wjp@bwh.harvard.edu
 has-props
 
@@ -8592,7 +8592,7 @@ has-props
 
 
 
-3288
+242
 
 Slicer3LogoHorizontalBeta.png
 file
@@ -8628,16 +8628,16 @@ has-props
 
 11504
 
-ToolbarMeasurements.png
+MouseInformationOn.png
 file
 
 
 
 
 2010-10-25T02:21:27.604995Z
-acd91e7fd1032e2aeb7a703c6694b970
-2006-08-04T14:01:42.723234Z
-1005
+37c7c82f434ec49b6923c9b33d19967d
+2010-03-21T22:42:22.058467Z
+12412
 wjp@bwh.harvard.edu
 has-props
 
@@ -8660,7 +8660,7 @@ has-props
 
 
 
-242
+3288
 
 SlicerTinyHelp.png
 file

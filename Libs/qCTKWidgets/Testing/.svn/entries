@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Libs/qCTKWidgets/Testing
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ finetjul
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-qCTKAbstractPluginFactoryTest1.cxx
-file
-
-
-
-
-2010-10-25T02:20:19.924995Z
-e002f00510ec3c7ce1fd4c7f8817eae8
-2010-02-08T02:49:42.266835Z
-12042
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-861
 
 qCTKTitleComboBoxTest1.cxx
 file
@@ -93,6 +59,40 @@ jcfr
 
 
 788
+
+qCTKAbstractPluginFactoryTest1.cxx
+file
+
+
+
+
+2010-10-25T02:20:19.924995Z
+e002f00510ec3c7ce1fd4c7f8817eae8
+2010-02-08T02:49:42.266835Z
+12042
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+861
 
 .NoDartCoverage
 file
@@ -400,14 +400,14 @@ jcfr
 
 1389
 
-qCTKFittedTextBrowserTest1.cxx
+qCTKTreeComboBoxTest1.cxx
 file
 
 
 
 
 2010-10-25T02:20:19.924995Z
-8fa71e8e354c1265003eb885be17bb5f
+67fcf5a075cd306556039f2dc80ec7d6
 2010-02-08T02:49:42.266835Z
 12042
 jcfr
@@ -432,7 +432,7 @@ jcfr
 
 
 
-800
+785
 
 qCTKButtonGroupTest1.cxx
 file
@@ -468,14 +468,14 @@ finetjul
 
 3349
 
-qCTKTreeComboBoxTest1.cxx
+qCTKFittedTextBrowserTest1.cxx
 file
 
 
 
 
 2010-10-25T02:20:19.924995Z
-67fcf5a075cd306556039f2dc80ec7d6
+8fa71e8e354c1265003eb885be17bb5f
 2010-02-08T02:49:42.266835Z
 12042
 jcfr
@@ -500,7 +500,7 @@ jcfr
 
 
 
-785
+800
 
 qCTKSliderSpinBoxWidgetTest1.cxx
 file

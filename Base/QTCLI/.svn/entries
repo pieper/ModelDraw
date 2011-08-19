@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Base/QTCLI
 http://svn.slicer.org/Slicer3
 
@@ -434,9 +434,6 @@ has-props
 
 6989
 
-Resources
-dir
-
 qSlicerCLILoadableModule.h
 file
 
@@ -470,6 +467,9 @@ has-props
 
 
 1187
+
+Resources
+dir
 
 qSlicerCLILoadableModuleFactory.cxx
 file

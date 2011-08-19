@@ -43,6 +43,8 @@ source $::Slicer3_HOME/slicer_variables.tcl
 
 set ::Slicer3_BUILDDATE [clock format [clock seconds] -format %Y-%m-%d]
 
+set svn(URL) "unknown"
+set svn(revision) "unknown"
 set ::ENV(LANG) "C"
 set svninfo [split [exec svn info] "\n"]
 array set svn ""

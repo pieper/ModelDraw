@@ -1,15 +1,15 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/RegisterImagesModule/MultiResApplications
 http://svn.slicer.org/Slicer3
 
 
 
-2010-10-06T13:25:01.193828Z
-15150
-pieper
+2011-08-14T23:54:38.294698Z
+16820
+aylward
 
 
 
@@ -162,40 +162,6 @@ has-props
 
 1796
 
-ConvertSlicerROIToRegion.h
-file
-
-
-
-
-2010-10-25T02:20:18.304995Z
-e1d989415dae19128b2f0f95cbc704e6
-2010-04-16T15:07:53.753700Z
-12776
-casey.goodlett
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1161
-
 itkSlicerBoxSpatialObject.txx
 file
 
@@ -229,6 +195,40 @@ has-props
 
 
 5621
+
+ConvertSlicerROIToRegion.h
+file
+
+
+
+
+2010-10-25T02:20:18.304995Z
+e1d989415dae19128b2f0f95cbc704e6
+2010-04-16T15:07:53.753700Z
+12776
+casey.goodlett
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1161
 
 itkSlicerBoxSpatialObject.h
 file
@@ -264,40 +264,6 @@ has-props
 
 4010
 
-RegisterImagesMultiRes.xml
-file
-
-
-
-
-2010-10-25T02:20:18.304995Z
-5aaa91aec8edff5fc674cba5bcc7a136
-2010-10-06T13:25:01.193828Z
-15150
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4113
-
 vtkRegisterImagesModuleMultiResApplicationsConfigure.h.in
 file
 
@@ -332,17 +298,17 @@ aylward
 
 262
 
-RegisterImagesMultiRes.cxx
+RegisterImagesMultiRes.xml
 file
 
 
 
 
 2010-10-25T02:20:18.304995Z
-d3fb9debc917a9591ba580f102add5c8
-2010-04-16T15:07:53.753700Z
-12776
-casey.goodlett
+5aaa91aec8edff5fc674cba5bcc7a136
+2010-10-06T13:25:01.193828Z
+15150
+pieper
 has-props
 
 
@@ -364,7 +330,7 @@ has-props
 
 
 
-32973
+4113
 
 itkEulerSimilarity3DTransform.txx
 file
@@ -400,16 +366,16 @@ has-props
 
 7289
 
-DownsampleHeuristics.h
+RegisterImagesMultiRes.cxx
 file
 
 
 
 
 2010-10-25T02:20:18.304995Z
-3572a7435f0f2e687192998a114b245a
-2010-04-25T21:22:56.507693Z
-12917
+d3fb9debc917a9591ba580f102add5c8
+2010-04-16T15:07:53.753700Z
+12776
 casey.goodlett
 has-props
 
@@ -432,7 +398,41 @@ has-props
 
 
 
-3119
+32973
+
+DownsampleHeuristics.h
+file
+
+
+
+
+2011-08-16T17:56:46.699912Z
+2852fa067717fa2b7fdfbb2f5e90f64a
+2011-08-14T23:33:14.971726Z
+16819
+aylward
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3146
 
 itkFixedRotationSimilarity3DTransform.txx
 file
@@ -468,40 +468,6 @@ has-props
 
 4561
 
-itkEulerSimilarity3DTransform.h
-file
-
-
-
-
-2010-10-25T02:20:18.314995Z
-3f9311b1bda5c07c749ae2ef474935c7
-2009-11-24T19:45:44.190439Z
-11043
-casey.goodlett
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6457
-
 ConvertSlicerROIToRegion.cxx
 file
 
@@ -535,6 +501,40 @@ has-props
 
 
 2151
+
+itkEulerSimilarity3DTransform.h
+file
+
+
+
+
+2010-10-25T02:20:18.314995Z
+3f9311b1bda5c07c749ae2ef474935c7
+2009-11-24T19:45:44.190439Z
+11043
+casey.goodlett
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6457
 
 doc
 dir

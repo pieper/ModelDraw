@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Libs/MRML
 http://svn.slicer.org/Slicer3
 
@@ -502,40 +502,6 @@ naucoin
 
 3916
 
-vtkObserverManager.h
-file
-
-
-
-
-2010-10-25T02:20:21.434995Z
-c8a12c82093ef92213a88daaf47d617e
-2010-01-22T19:39:45.839179Z
-11737
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3002
-
 vtkUserTagTable.h
 file
 
@@ -569,6 +535,40 @@ has-props
 
 
 2213
+
+vtkObserverManager.h
+file
+
+
+
+
+2010-10-25T02:20:21.434995Z
+c8a12c82093ef92213a88daaf47d617e
+2010-01-22T19:39:45.839179Z
+11737
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3002
 
 vtkMRMLSelectionNode.h
 file
@@ -604,40 +604,6 @@ has-props
 
 4149
 
-vtkMRMLModelDisplayNode.h
-file
-
-
-
-
-2010-10-25T02:20:21.434995Z
-31f95959eb32ea4bebd0024b1514ca9e
-2010-01-22T19:39:45.839179Z
-11737
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2019
-
 vtkMRMLFiberBundleGlyphDisplayNode.cxx
 file
 
@@ -671,6 +637,40 @@ maddah
 
 
 10169
+
+vtkMRMLModelDisplayNode.h
+file
+
+
+
+
+2010-10-25T02:20:21.434995Z
+31f95959eb32ea4bebd0024b1514ca9e
+2010-01-22T19:39:45.839179Z
+11737
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2019
 
 vtkMRMLFiberBundleTubeDisplayNode.h
 file
@@ -876,40 +876,6 @@ naucoin
 
 3952
 
-vtkMRMLVectorVolumeNode.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.434995Z
-7b07fe023fcd5ec251c408f87d67ef75
-2009-02-26T22:31:58.609657Z
-8760
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4268
-
 vtkMRMLdGEMRICProceduralColorNode.cxx
 file
 
@@ -943,6 +909,40 @@ naucoin
 
 
 8471
+
+vtkMRMLVectorVolumeNode.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.434995Z
+7b07fe023fcd5ec251c408f87d67ef75
+2009-02-26T22:31:58.609657Z
+8760
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4268
 
 vtkMRMLFiberBundleStorageNode.h
 file
@@ -2134,40 +2134,6 @@ naucoin
 
 4264
 
-vtkMRMLDiffusionTensorDisplayPropertiesNode.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.434995Z
-2ff10b4af60ab59ab445266106771d5e
-2009-03-24T20:04:11.569193Z
-8964
-alexy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17076
-
 vtkMRMLSliceNode.h
 file
 
@@ -2201,6 +2167,40 @@ has-props
 
 
 8252
+
+vtkMRMLDiffusionTensorDisplayPropertiesNode.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.434995Z
+2ff10b4af60ab59ab445266106771d5e
+2009-03-24T20:04:11.569193Z
+8964
+alexy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17076
 
 vtkTagTable.cxx
 file
@@ -2236,17 +2236,17 @@ has-props
 
 12114
 
-vtkMRMLParser.cxx
+vtkTagTableCollection.h
 file
 
 
 
 
 2010-10-25T02:20:21.434995Z
-41af53ff33c9529646b784141d921c1f
-2009-10-09T18:09:11.459725Z
-10623
-alexy
+fe86e9d079ef58f2f477bf548a0a8b0c
+2010-01-22T19:39:45.839179Z
+11737
+naucoin
 has-props
 
 
@@ -2268,7 +2268,7 @@ has-props
 
 
 
-3858
+1791
 
 vtkMRMLTimeSeriesVolumeNode.h
 file
@@ -2304,17 +2304,17 @@ naucoin
 
 5076
 
-vtkTagTableCollection.h
+vtkMRMLParser.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.434995Z
-fe86e9d079ef58f2f477bf548a0a8b0c
-2010-01-22T19:39:45.839179Z
-11737
-naucoin
+41af53ff33c9529646b784141d921c1f
+2009-10-09T18:09:11.459725Z
+10623
+alexy
 has-props
 
 
@@ -2336,41 +2336,7 @@ has-props
 
 
 
-1791
-
-vtkMRMLCameraNode.cxx
-file
-
-
-
-
-2010-11-11T19:18:54.059763Z
-8ed5bcf32370e68b200712896a041f27
-2010-11-11T19:33:25.122741Z
-15470
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14768
+3858
 
 vtkMRMLUnstructuredGridDisplayNode.h
 file
@@ -2406,6 +2372,40 @@ naucoin
 
 3860
 
+vtkMRMLCameraNode.cxx
+file
+
+
+
+
+2010-11-11T19:18:54.059763Z
+8ed5bcf32370e68b200712896a041f27
+2010-11-11T19:33:25.122741Z
+15470
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14768
+
 vtkMRMLLinearTransformNode.h
 file
 
@@ -2440,40 +2440,6 @@ naucoin
 
 3318
 
-vtkMRMLDiffusionWeightedVolumeNode.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.434995Z
-cc2b168c22e345239846f00030546604
-2010-08-03T21:52:37.341396Z
-14455
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14251
-
 vtkMRMLTransformableNode.cxx
 file
 
@@ -2507,6 +2473,40 @@ jcfr
 
 
 5907
+
+vtkMRMLDiffusionWeightedVolumeNode.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.434995Z
+cc2b168c22e345239846f00030546604
+2010-08-03T21:52:37.341396Z
+14455
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14251
 
 vtkMRMLModelNode.cxx
 file
@@ -2576,40 +2576,6 @@ alexy
 
 4762
 
-vtkMRMLGlyphableVolumeSliceDisplayNode.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.434995Z
-854fa5af36760a391adf7d4cf1f78a8f
-2010-01-14T15:48:34.178628Z
-11624
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6993
-
 vtkMRMLFreeSurferModelOverlayStorageNode.h
 file
 
@@ -2643,6 +2609,40 @@ has-props
 
 
 3538
+
+vtkMRMLGlyphableVolumeSliceDisplayNode.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.434995Z
+854fa5af36760a391adf7d4cf1f78a8f
+2010-01-14T15:48:34.178628Z
+11624
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6993
 
 vtkMRMLVolumeNode.cxx
 file
@@ -2678,40 +2678,6 @@ has-props
 
 19292
 
-vtkMRMLDiffusionTensorVolumeNode.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.434995Z
-09fccd737aea006a00e744931c9bb8cc
-2008-07-30T23:34:00.524542Z
-7369
-alexy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4717
-
 vtkMRMLDoubleArrayNode.cxx
 file
 
@@ -2745,6 +2711,40 @@ maddah
 
 
 13562
+
+vtkMRMLDiffusionTensorVolumeNode.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.434995Z
+09fccd737aea006a00e744931c9bb8cc
+2008-07-30T23:34:00.524542Z
+7369
+alexy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4717
 
 vtkMRMLDiffusionWeightedVolumeDisplayNode.h
 file
@@ -2848,17 +2848,17 @@ alexy
 
 15233
 
-vtkMRMLFiberBundleLineDisplayNode.cxx
+vtkMRMLdGEMRICProceduralColorNode.h
 file
 
 
 
 
 2010-10-25T02:20:21.434995Z
-e344ab294526a3460142a8a407cf77f5
-2009-07-27T17:54:27.837183Z
-10046
-maddah
+976f7f6c50f71c3ac677b0a37fce7315
+2010-03-04T19:59:02.422247Z
+12302
+naucoin
 
 
 
@@ -2880,7 +2880,7 @@ maddah
 
 
 
-8627
+3507
 
 vtkMRMLVectorVolumeNode.h
 file
@@ -2916,17 +2916,17 @@ naucoin
 
 2369
 
-vtkMRMLdGEMRICProceduralColorNode.h
+vtkMRMLFiberBundleLineDisplayNode.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.434995Z
-976f7f6c50f71c3ac677b0a37fce7315
-2010-03-04T19:59:02.422247Z
-12302
-naucoin
+e344ab294526a3460142a8a407cf77f5
+2009-07-27T17:54:27.837183Z
+10046
+maddah
 
 
 
@@ -2948,41 +2948,7 @@ naucoin
 
 
 
-3507
-
-vtkMRMLScalarVolumeNode.h
-file
-
-
-
-
-2010-10-25T02:20:21.434995Z
-4c63056e714c704c026eaca7d9649d5c
-2010-01-22T19:39:45.839179Z
-11737
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4154
+8627
 
 vtkMRMLVolumeDisplayNode.h
 file
@@ -3018,14 +2984,14 @@ naucoin
 
 2874
 
-vtkMRMLDiffusionWeightedVolumeNode.h
+vtkMRMLScalarVolumeNode.h
 file
 
 
 
 
-2010-10-25T02:20:21.444995Z
-4c52ee77a7a3e0597c95089f253f189d
+2010-10-25T02:20:21.434995Z
+4c63056e714c704c026eaca7d9649d5c
 2010-01-22T19:39:45.839179Z
 11737
 naucoin
@@ -3050,7 +3016,7 @@ naucoin
 
 
 
-4429
+4154
 
 vtkMRMLTransformableNode.h
 file
@@ -3085,6 +3051,40 @@ ibanez
 
 
 3223
+
+vtkMRMLDiffusionWeightedVolumeNode.h
+file
+
+
+
+
+2010-10-25T02:20:21.444995Z
+4c52ee77a7a3e0597c95089f253f189d
+2010-01-22T19:39:45.839179Z
+11737
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4429
 
 vtkMRMLSelectionNode.cxx
 file
@@ -3358,40 +3358,6 @@ pieper
 
 3204
 
-vtkDataIOManager.cxx
-file
-
-
-
-
-2011-02-14T12:19:57.632593Z
-7298787bcc8df4217b8a1db122f6d1ba
-2011-02-12T07:25:19.817418Z
-16009
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18171
-
 vtkMRMLDoubleArrayStorageNode.cxx
 file
 
@@ -3426,17 +3392,18 @@ alexy
 
 13625
 
-vtkMRMLFiducial.h
+vtkDataIOManager.cxx
 file
 
 
 
 
-2010-10-25T02:20:21.444995Z
-b8e24dc682c03ac4a4f1af4b5bc736a8
-2010-01-22T19:39:45.839179Z
-11737
-naucoin
+2011-02-14T12:19:57.632593Z
+7298787bcc8df4217b8a1db122f6d1ba
+2011-02-12T07:25:19.817418Z
+16009
+wjp@bwh.harvard.edu
+has-props
 
 
 
@@ -3457,8 +3424,7 @@ naucoin
 
 
 
-
-2444
+18171
 
 vtkURIHandler.cxx
 file
@@ -3493,6 +3459,40 @@ has-props
 
 
 6884
+
+vtkMRMLFiducial.h
+file
+
+
+
+
+2010-10-25T02:20:21.444995Z
+b8e24dc682c03ac4a4f1af4b5bc736a8
+2010-01-22T19:39:45.839179Z
+11737
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2444
 
 Wrapping
 dir
@@ -3531,40 +3531,6 @@ naucoin
 
 2842
 
-vtkMRMLGridTransformNode.h
-file
-
-
-
-
-2010-10-25T02:20:21.444995Z
-75ebe4da490f83b203638e2ca2607bb0
-2010-01-22T19:39:45.839179Z
-11737
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2038
-
 vtkMRMLDiffusionImageVolumeNode.h
 file
 
@@ -3598,6 +3564,40 @@ naucoin
 
 
 3979
+
+vtkMRMLGridTransformNode.h
+file
+
+
+
+
+2010-10-25T02:20:21.444995Z
+75ebe4da490f83b203638e2ca2607bb0
+2010-01-22T19:39:45.839179Z
+11737
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2038
 
 vtkMRMLROIListNode.h
 file
@@ -3701,40 +3701,6 @@ alexy
 
 10585
 
-vtkMRMLLayoutNode.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.444995Z
-ea5f11aa88179647761b62d168f2895a
-2010-10-08T18:08:21.198293Z
-15173
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11188
-
 vtkMRMLUnstructuredGridNode.cxx
 file
 
@@ -3769,17 +3735,18 @@ ibanez
 
 5068
 
-vtkMRMLPlotNode.cxx
+vtkMRMLLayoutNode.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.444995Z
-5b329bade77b14fd5b2fdeb05de738c4
-2009-12-01T03:54:27.815983Z
-11086
-tokuda
+ea5f11aa88179647761b62d168f2895a
+2010-10-08T18:08:21.198293Z
+15173
+wjp@bwh.harvard.edu
+has-props
 
 
 
@@ -3800,8 +3767,7 @@ tokuda
 
 
 
-
-6893
+11188
 
 vtkXNATPermissionPrompter.cxx
 file
@@ -3837,85 +3803,17 @@ has-props
 
 835
 
-vtkMRMLNode.cxx
-file
-
-
-
-
-2010-11-11T21:48:59.199762Z
-6bf9135dfcb7f032fd64dcb63ab4bca9
-2010-11-11T22:18:00.601030Z
-15478
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14094
-
-vtkMRMLInteractionNode.cxx
+vtkMRMLPlotNode.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.444995Z
-88240880919a74cbdb7a2d09323c37dc
-2010-03-29T20:04:09.513585Z
-12535
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13555
-
-vtkMRMLDiffusionTensorVolumeSliceDisplayNode.cxx
-file
-
-
-
-
-2010-11-10T16:10:51.957142Z
-05d66f3683cb4254dc2cc2c245e4c4e3
-2010-11-06T20:15:39.996576Z
-15440
-alexy
+5b329bade77b14fd5b2fdeb05de738c4
+2009-12-01T03:54:27.815983Z
+11086
+tokuda
 
 
 
@@ -3937,7 +3835,7 @@ alexy
 
 
 
-15865
+6893
 
 vtkMRMLXYPlotManagerNode.h
 file
@@ -3973,17 +3871,52 @@ ibanez
 
 7270
 
-vtkMRMLLabelMapVolumeDisplayNode.h
+vtkMRMLDiffusionTensorVolumeSliceDisplayNode.cxx
+file
+
+
+
+
+2010-11-10T16:10:51.957142Z
+05d66f3683cb4254dc2cc2c245e4c4e3
+2010-11-06T20:15:39.996576Z
+15440
+alexy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15865
+
+vtkMRMLInteractionNode.cxx
 file
 
 
 
 
 2010-10-25T02:20:21.444995Z
-f1d2a83d07ca15ec53f134ba34a50c42
-2010-01-22T19:39:45.839179Z
-11737
-naucoin
+88240880919a74cbdb7a2d09323c37dc
+2010-03-29T20:04:09.513585Z
+12535
+pieper
+has-props
 
 
 
@@ -4004,8 +3937,41 @@ naucoin
 
 
 
+13555
+
+vtkMRMLNode.cxx
+file
 
-2522
+
+
+
+2010-11-11T21:48:59.199762Z
+6bf9135dfcb7f032fd64dcb63ab4bca9
+2010-11-11T22:18:00.601030Z
+15478
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14094
 
 vtkMRMLFreeSurferModelOverlayStorageNode.cxx
 file
@@ -4040,6 +4006,40 @@ has-props
 
 
 35687
+
+vtkMRMLLabelMapVolumeDisplayNode.h
+file
+
+
+
+
+2010-10-25T02:20:21.444995Z
+f1d2a83d07ca15ec53f134ba34a50c42
+2010-01-22T19:39:45.839179Z
+11737
+naucoin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2522
 
 vtkMRMLScalarVolumeDisplayNode.cxx
 file
@@ -4109,40 +4109,6 @@ has-props
 
 4320
 
-vtkMRMLModelStorageNode.cxx
-file
-
-
-
-
-2011-01-19T22:32:49.222588Z
-e8d0e56316245213e724379e34b8eae2
-2011-01-18T22:59:28.109937Z
-15783
-alexy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13195
-
 vtkMRMLTransformStorageNode.h
 file
 
@@ -4177,16 +4143,16 @@ naucoin
 
 2784
 
-vtkMRMLLogic.cxx
+vtkMRMLModelStorageNode.cxx
 file
 
 
 
 
-2011-01-06T13:09:24.438299Z
-f09efb462e36c6506a4576df801bc98d
-2011-01-04T19:30:12.080344Z
-15716
+2011-01-19T22:32:49.222588Z
+e8d0e56316245213e724379e34b8eae2
+2011-01-18T22:59:28.109937Z
+15783
 alexy
 
 
@@ -4209,7 +4175,7 @@ alexy
 
 
 
-4146
+13195
 
 vtkMRMLGlyphableVolumeDisplayPropertiesNode.h
 file
@@ -4244,6 +4210,40 @@ naucoin
 
 
 4115
+
+vtkMRMLLogic.cxx
+file
+
+
+
+
+2011-01-06T13:09:24.438299Z
+f09efb462e36c6506a4576df801bc98d
+2011-01-04T19:30:12.080344Z
+15716
+alexy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4146
 
 vtkEventBroker.cxx
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Qt/Attic/Workflow
 http://svn.slicer.org/Slicer3
 
@@ -28,40 +28,6 @@ haehn
 
 Plugins
 dir
-
-qSlicerEMSegmentSpecifyIntensityDistributionStep.h
-file
-
-
-
-
-2011-06-28T15:56:32.141483Z
-d6bf0d80617c9bb3abb4c791a922aa74
-2011-04-18T22:06:43.391855Z
-16439
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2332
 
 qSlicerEMSegmentDefinePreprocessingStep.cxx
 file
@@ -96,6 +62,40 @@ haehn
 
 
 9274
+
+qSlicerEMSegmentSpecifyIntensityDistributionStep.h
+file
+
+
+
+
+2011-06-28T15:56:32.141483Z
+d6bf0d80617c9bb3abb4c791a922aa74
+2011-04-18T22:06:43.391855Z
+16439
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2332
 
 qSlicerEMSegmentSegmentationLogicStep.h
 file
@@ -165,16 +165,16 @@ haehn
 
 2040
 
-qSlicerEMSegmentWorkflowWidgetStep.h
+qSlicerEMSegmentEditNodeBasedParametersStep.h
 file
 
 
 
 
 2011-06-28T15:56:32.141483Z
-ccf9100b49c48c9dc86b879e20f78dd6
-2011-06-01T17:54:22.405688Z
-16662
+13f939c711b742b70fbca88a7d360f32
+2011-04-18T22:06:43.391855Z
+16439
 haehn
 
 
@@ -197,7 +197,7 @@ haehn
 
 
 
-2388
+2287
 
 qSlicerEMSegmentDefineAnatomicalTreeStep.cxx
 file
@@ -233,16 +233,16 @@ haehn
 
 4409
 
-qSlicerEMSegmentEditNodeBasedParametersStep.h
+qSlicerEMSegmentWorkflowWidgetStep.h
 file
 
 
 
 
 2011-06-28T15:56:32.141483Z
-13f939c711b742b70fbca88a7d360f32
-2011-04-18T22:06:43.391855Z
-16439
+ccf9100b49c48c9dc86b879e20f78dd6
+2011-06-01T17:54:22.405688Z
+16662
 haehn
 
 
@@ -265,41 +265,7 @@ haehn
 
 
 
-2287
-
-qSlicerEMSegmentDefineAtlasStep.h
-file
-
-
-
-
-2011-06-28T15:56:32.141483Z
-6cfeb9b94a4a6640974b913d523c6f19
-2011-04-18T22:06:43.391855Z
-16439
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1955
+2388
 
 qSlicerEMSegmentEditRegistrationParametersStep.cxx
 file
@@ -335,16 +301,16 @@ haehn
 
 18504
 
-qSlicerEMSegmentWorkflowWidget.h
+qSlicerEMSegmentDefineAtlasStep.h
 file
 
 
 
 
 2011-06-28T15:56:32.141483Z
-1c0f6c651988923f722e7ed73819bf4e
-2011-06-01T17:54:22.405688Z
-16662
+6cfeb9b94a4a6640974b913d523c6f19
+2011-04-18T22:06:43.391855Z
+16439
 haehn
 
 
@@ -367,7 +333,7 @@ haehn
 
 
 
-833
+1955
 
 qSlicerEMSegmentRunSegmentationStep.h
 file
@@ -402,6 +368,40 @@ haehn
 
 
 2215
+
+qSlicerEMSegmentWorkflowWidget.h
+file
+
+
+
+
+2011-06-28T15:56:32.141483Z
+1c0f6c651988923f722e7ed73819bf4e
+2011-06-01T17:54:22.405688Z
+16662
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+833
 
 qSlicerEMSegmentEditRegistrationParametersStep_p.h
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/QueryAtlas
 http://svn.slicer.org/Slicer3
 
@@ -508,40 +508,6 @@ has-props
 
 938
 
-vtkEdgeGradient.cxx
-file
-
-
-
-
-2010-10-25T02:20:29.084995Z
-d16be317eae62201eb38076118f70ac0
-2007-04-04T13:53:52.789249Z
-3153
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11112
-
 vtkTextureFontManager.cxx
 file
 
@@ -576,8 +542,39 @@ has-props
 
 6834
 
-Resources
-dir
+vtkEdgeGradient.cxx
+file
+
+
+
+
+2010-10-25T02:20:29.084995Z
+d16be317eae62201eb38076118f70ac0
+2007-04-04T13:53:52.789249Z
+3153
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11112
 
 vtkBIRNCard.cxx
 file
@@ -613,42 +610,11 @@ has-props
 
 11006
 
-ImageData
+Resources
 dir
 
-CMakeLists.txt
-file
-
-
-
-
-2010-10-25T02:20:29.084995Z
-8239f1926cf2bc2957a5f625698932af
-2010-05-03T15:06:08.972849Z
-13167
-naucoin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6514
+ImageData
+dir
 
 vtkTextureFont.cxx
 file
@@ -683,6 +649,40 @@ has-props
 
 
 18417
+
+CMakeLists.txt
+file
+
+
+
+
+2010-10-25T02:20:29.084995Z
+8239f1926cf2bc2957a5f625698932af
+2010-05-03T15:06:08.972849Z
+13167
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6514
 
 vtkMRMLQueryAtlasNode.cxx
 file
@@ -786,40 +786,6 @@ has-props
 
 3768
 
-vtkRasterizerCharacter.h
-file
-
-
-
-
-2010-10-25T02:20:29.084995Z
-f3f98e09475230f0e5398de99b00dd79
-2007-04-04T13:53:52.789249Z
-3153
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1652
-
 vtkTextureTextPolys.cxx
 file
 
@@ -853,6 +819,40 @@ has-props
 
 
 4001
+
+vtkRasterizerCharacter.h
+file
+
+
+
+
+2010-10-25T02:20:29.084995Z
+f3f98e09475230f0e5398de99b00dd79
+2007-04-04T13:53:52.789249Z
+3153
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1652
 
 vtkQueryAtlasLogic.h
 file

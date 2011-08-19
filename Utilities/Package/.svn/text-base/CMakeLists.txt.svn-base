@@ -11,8 +11,10 @@ IF (VTK_WRAP_TCL)
 
   if(NOT EXISTS "${Slicer3_TCL_DIR}/bin/tclsh${TCL_TK_VERSION_DOT}" AND
       NOT EXISTS "${Slicer3_TCL_DIR}/bin/tclsh${TCL_TK_VERSION}.exe")
-    message(STATUS "Not Packaging TCL (cannot found: ${Slicer3_TCL_DIR}/bin/tclsh${TCL_TK_VERSION_DOT} or ${Slicer3_TCL_DIR}/bin/tclsh${TCL_TK_VERSION}.exe)")
-    set(Slicer3_TCL_DIR "")
+    # this test was pointless - VTK doesn't autodetect TCL_TK_VERSION_DOT
+    # correctly and all this did was prevent easy switching of versions.
+    #message(STATUS "Not Packaging TCL (cannot found: ${Slicer3_TCL_DIR}/bin/tclsh${TCL_TK_VERSION_DOT} or ${Slicer3_TCL_DIR}/bin/tclsh${TCL_TK_VERSION}.exe)")
+    #set(Slicer3_TCL_DIR "")
   endif(NOT EXISTS "${Slicer3_TCL_DIR}/bin/tclsh${TCL_TK_VERSION_DOT}" AND
     NOT EXISTS "${Slicer3_TCL_DIR}/bin/tclsh${TCL_TK_VERSION}.exe")
 ENDIF (VTK_WRAP_TCL)

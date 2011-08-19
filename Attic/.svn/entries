@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Attic
 http://svn.slicer.org/Slicer3
 
@@ -536,40 +536,6 @@ has-props
 
 1464
 
-qCTKCollapsibleWidget.cxx
-file
-
-
-
-
-2010-10-25T02:20:22.204995Z
-dc1e9c2464f00a83cc859f0b33fe01ab
-2009-12-01T21:29:03.457544Z
-11098
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6834
-
 qCTKCollapsibleWidgetContainerExtension.cxx
 file
 
@@ -604,18 +570,17 @@ jcfr
 
 1110
 
-qMRMLSceneGeneratorPlugin.h
+qCTKCollapsibleWidget.cxx
 file
 
 
 
 
 2010-10-25T02:20:22.204995Z
-a0edd27c2dbd05f6470d0e9d690593cf
-2009-12-31T05:55:02.357511Z
-11467
-finetjul
-has-props
+dc1e9c2464f00a83cc859f0b33fe01ab
+2009-12-01T21:29:03.457544Z
+11098
+jcfr
 
 
 
@@ -636,7 +601,8 @@ has-props
 
 
 
-724
+
+6834
 
 qCTKCollapsibleWidget2Plugin.cxx
 file
@@ -671,6 +637,40 @@ jcfr
 
 
 1148
+
+qMRMLSceneGeneratorPlugin.h
+file
+
+
+
+
+2010-10-25T02:20:22.204995Z
+a0edd27c2dbd05f6470d0e9d690593cf
+2009-12-31T05:55:02.357511Z
+11467
+finetjul
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+724
 
 qMRMLNodeFactoryButton.cxx
 file
@@ -842,50 +842,16 @@ jcfr
 
 11797
 
-qVTKConnection.cxx
+qCTKNumericInput.cxx
 file
 
 
 
 
 2010-10-25T02:20:22.214995Z
-299f47a5978f015d36195626553e29ed
-2010-02-09T19:41:38.134672Z
-12081
-finetjul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12825
-
-qCTKSlider.cxx
-file
-
-
-
-
-2010-10-25T02:20:22.214995Z
-562c7668eb98b0617255072d30a642cb
-2010-01-28T19:28:42.648229Z
-11840
+d00c58c10d8f6e2bdc5d22728fe5f4d0
+2010-03-03T14:36:39.875311Z
+12287
 finetjul
 has-props
 
@@ -908,41 +874,7 @@ has-props
 
 
 
-5256
-
-qCTKCollapsibleWidget.h
-file
-
-
-
-
-2010-10-25T02:20:22.214995Z
-f6f2f179adba50444d35fa6401e6df44
-2009-12-14T00:21:13.086808Z
-11264
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2223
+3049
 
 qCTKCollapsibleWidgetContainerExtension.h
 file
@@ -978,16 +910,50 @@ jcfr
 
 887
 
-qCTKNumericInput.cxx
+qCTKCollapsibleWidget.h
 file
 
 
 
 
 2010-10-25T02:20:22.214995Z
-d00c58c10d8f6e2bdc5d22728fe5f4d0
-2010-03-03T14:36:39.875311Z
-12287
+f6f2f179adba50444d35fa6401e6df44
+2009-12-14T00:21:13.086808Z
+11264
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2223
+
+qCTKSlider.cxx
+file
+
+
+
+
+2010-10-25T02:20:22.214995Z
+562c7668eb98b0617255072d30a642cb
+2010-01-28T19:28:42.648229Z
+11840
 finetjul
 has-props
 
@@ -1010,7 +976,41 @@ has-props
 
 
 
-3049
+5256
+
+qVTKConnection.cxx
+file
+
+
+
+
+2010-10-25T02:20:22.214995Z
+299f47a5978f015d36195626553e29ed
+2010-02-09T19:41:38.134672Z
+12081
+finetjul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12825
 
 qCTKCollapsibleWidget2Plugin.h
 file

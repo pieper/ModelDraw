@@ -1,7 +1,7 @@
 10
 
 dir
-16815
+16821
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Testing/TestData/TutorialTest2/VolumeData/Atlas
 http://svn.slicer.org/Slicer3
 
@@ -332,40 +332,6 @@ davisb
 
 337
 
-atlas_csf_med.raw.gz
-file
-
-
-
-
-2010-10-25T02:20:24.124995Z
-1255ec474eae8941da282f4c6ef24e9e
-2007-12-14T01:27:38.671908Z
-5193
-davisb
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16457
-
 atlas_t2_small.nhdr
 file
 
@@ -399,6 +365,40 @@ davisb
 
 
 337
+
+atlas_csf_med.raw.gz
+file
+
+
+
+
+2010-10-25T02:20:24.124995Z
+1255ec474eae8941da282f4c6ef24e9e
+2007-12-14T01:27:38.671908Z
+5193
+davisb
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16457
 
 atlas_csf_small.raw.gz
 file
