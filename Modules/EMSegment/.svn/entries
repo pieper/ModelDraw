@@ -1,15 +1,15 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment
 http://svn.slicer.org/Slicer3
 
 
 
-2011-08-14T23:20:48.690592Z
-16818
-domibel
+2011-08-17T16:03:35.516150Z
+16823
+haehn
 
 
 
@@ -27,6 +27,9 @@ domibel
 3bd1e089-480b-0410-8dfb-8563597acbee
 
 CMake
+dir
+
+Tcl
 dir
 
 vtkEMSegmentMRMLManager.h
@@ -63,13 +66,13 @@ domibel
 
 26581
 
-Tcl
-dir
-
 Qt
 dir
 
 Tasks
+dir
+
+Algorithm
 dir
 
 vtkSlicerCommonInterface.h
@@ -106,20 +109,17 @@ haehn
 
 3723
 
-Algorithm
-dir
-
 vtkEMSegmentLogic.cxx
 file
 
 
 
 
-2011-08-13T17:21:37.700119Z
-4b8529c74bd3c929a4d88018a9e1c1a9
-2011-08-11T22:49:50.666776Z
-16811
-domibel
+2011-08-21T16:00:36.815834Z
+09f9dc39e109915d6362305ab430a379
+2011-08-17T16:03:35.516150Z
+16823
+haehn
 
 
 
@@ -141,7 +141,7 @@ domibel
 
 
 
-118552
+118925
 
 vtkEMSegmentWin32Header.h
 file
@@ -177,40 +177,6 @@ haehn
 
 750
 
-README
-file
-
-
-
-
-2010-10-25T02:20:24.674995Z
-890587b530bad5ddac0c6a355c372110
-2008-08-25T17:46:15.225990Z
-7486
-davisb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-340
-
 vtkEMSegmentMRMLManager.cxx
 file
 
@@ -244,6 +210,40 @@ domibel
 
 
 160658
+
+README
+file
+
+
+
+
+2010-10-25T02:20:24.674995Z
+890587b530bad5ddac0c6a355c372110
+2008-08-25T17:46:15.225990Z
+7486
+davisb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+340
 
 vtkEMSegment.h
 file
@@ -408,10 +408,10 @@ file
 
 
 
-2011-08-13T17:21:37.700119Z
-d69162e9652dfd42c94b1d2377d2a3ac
-2011-08-10T15:49:46.593260Z
-16807
+2011-08-21T16:00:36.815834Z
+fc27fc8cf4bf3c44e189aec5ce0ac4d5
+2011-08-17T16:03:35.516150Z
+16823
 haehn
 
 
@@ -434,5 +434,5 @@ haehn
 
 
 
-10842
+10722
 

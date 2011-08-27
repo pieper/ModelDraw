@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Testing/TestData/MRI-Human-Brain-Parcellation
 http://svn.slicer.org/Slicer3
 
@@ -604,40 +604,6 @@ has-props
 
 5436
 
-very_small_ltgm2_combatlas.nrrd
-file
-
-
-
-
-2011-01-02T20:28:00.684953Z
-92e34d2a28f95c74e3c7dcb8da5604d6
-2010-12-16T19:22:03.570350Z
-15660
-domibel
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-976
-
 small_rtgm1_combatlas.nrrd
 file
 
@@ -672,14 +638,14 @@ has-props
 
 5409
 
-very_small_ltgm4_combatlas.nrrd
+very_small_ltgm2_combatlas.nrrd
 file
 
 
 
 
 2011-01-02T20:28:00.684953Z
-7a1b1c0a68e4462323a460278a8f3774
+92e34d2a28f95c74e3c7dcb8da5604d6
 2010-12-16T19:22:03.570350Z
 15660
 domibel
@@ -704,7 +670,7 @@ has-props
 
 
 
-1431
+976
 
 small_rtgm3_combatlas.nrrd
 file
@@ -739,6 +705,40 @@ has-props
 
 
 3233
+
+very_small_ltgm4_combatlas.nrrd
+file
+
+
+
+
+2011-01-02T20:28:00.684953Z
+7a1b1c0a68e4462323a460278a8f3774
+2010-12-16T19:22:03.570350Z
+15660
+domibel
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1431
 
 small_subwm_combatlas.nrrd
 file
@@ -944,14 +944,14 @@ has-props
 
 37735
 
-very_small_ltwm2_combatlas.nrrd
+small_rtwm1_combatlas.nrrd
 file
 
 
 
 
 2011-01-02T20:28:00.684953Z
-80f01042310890fdb5f804ba9513640d
+591645d1a5ed6e17697640511eb48eef
 2010-12-16T19:22:03.570350Z
 15660
 domibel
@@ -976,7 +976,7 @@ has-props
 
 
 
-966
+4704
 
 small_csf_atlas.nrrd
 file
@@ -1012,14 +1012,14 @@ has-props
 
 24989
 
-small_rtwm1_combatlas.nrrd
+very_small_ltwm2_combatlas.nrrd
 file
 
 
 
 
 2011-01-02T20:28:00.684953Z
-591645d1a5ed6e17697640511eb48eef
+80f01042310890fdb5f804ba9513640d
 2010-12-16T19:22:03.570350Z
 15660
 domibel
@@ -1044,7 +1044,7 @@ has-props
 
 
 
-4704
+966
 
 small_rtwm3_combatlas.nrrd
 file

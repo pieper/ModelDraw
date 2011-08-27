@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Libs/qMRMLWidgets/Plugins
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ alexy
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-qMRMLTransformSlidersPlugin.h
-file
-
-
-
-
-2010-10-25T02:20:18.884995Z
-e613ec795310d76b68b0fa47b0f0359b
-2010-03-04T00:24:41.900061Z
-12298
-finetjul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-545
 
 qMRMLNodeSelectorPlugin.cxx
 file
@@ -94,17 +60,17 @@ finetjul
 
 1058
 
-qMRMLWindowLevelWidgetPlugin.h
+qMRMLTransformSlidersPlugin.h
 file
 
 
 
 
 2010-10-25T02:20:18.884995Z
-6faa44fda266f52a6195083cc742d00e
-2010-03-07T18:27:07.049616Z
-12314
-alexy
+e613ec795310d76b68b0fa47b0f0359b
+2010-03-04T00:24:41.900061Z
+12298
+finetjul
 
 
 
@@ -126,7 +92,41 @@ alexy
 
 
 
-558
+545
+
+qMRMLTreeWidgetPlugin.h
+file
+
+
+
+
+2010-10-25T02:20:18.884995Z
+e53242e6348428ec7345a66015f5b8a7
+2010-03-04T00:24:41.900061Z
+12298
+finetjul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+520
 
 qMRMLVolumeThresholdWidgetPlugin.cxx
 file
@@ -162,17 +162,17 @@ alexy
 
 1202
 
-qMRMLTreeWidgetPlugin.h
+qMRMLWindowLevelWidgetPlugin.h
 file
 
 
 
 
 2010-10-25T02:20:18.884995Z
-e53242e6348428ec7345a66015f5b8a7
-2010-03-04T00:24:41.900061Z
-12298
-finetjul
+6faa44fda266f52a6195083cc742d00e
+2010-03-07T18:27:07.049616Z
+12314
+alexy
 
 
 
@@ -194,7 +194,7 @@ finetjul
 
 
 
-520
+558
 
 qMRMLSceneFactoryWidgetPlugin.cxx
 file
@@ -264,40 +264,6 @@ has-props
 
 428
 
-qMRMLWidgetsPlugin.h
-file
-
-
-
-
-2010-10-25T02:20:18.884995Z
-bc8d4eb557f629adbae6bfd8a419276a
-2010-03-13T16:37:54.821170Z
-12340
-alexy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1530
-
 qMRMLNodeTreeSelectorPlugin.h
 file
 
@@ -332,18 +298,17 @@ finetjul
 
 553
 
-qMRMLWidgetsPluginExport.h
+qMRMLWidgetsPlugin.h
 file
 
 
 
 
 2010-10-25T02:20:18.884995Z
-0384d9276013b9d4036de42a54e1e50b
-2009-12-14T00:21:13.086808Z
-11264
-jcfr
-has-props
+bc8d4eb557f629adbae6bfd8a419276a
+2010-03-13T16:37:54.821170Z
+12340
+alexy
 
 
 
@@ -364,7 +329,8 @@ has-props
 
 
 
-519
+
+1530
 
 qMRMLMatrixWidgetPlugin.h
 file
@@ -399,6 +365,40 @@ finetjul
 
 
 528
+
+qMRMLWidgetsPluginExport.h
+file
+
+
+
+
+2010-10-25T02:20:18.884995Z
+0384d9276013b9d4036de42a54e1e50b
+2009-12-14T00:21:13.086808Z
+11264
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+519
 
 qMRMLLinearTransformSliderPlugin.h
 file
@@ -468,40 +468,6 @@ finetjul
 
 1122
 
-qMRMLTreeWidgetPlugin.cxx
-file
-
-
-
-
-2010-10-25T02:20:18.884995Z
-95139f0fae579254187592e88df9ad87
-2010-03-04T00:24:41.900061Z
-12298
-finetjul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-783
-
 qMRMLNodeComboBoxPlugin.h
 file
 
@@ -535,6 +501,40 @@ finetjul
 
 
 537
+
+qMRMLTreeWidgetPlugin.cxx
+file
+
+
+
+
+2010-10-25T02:20:18.884995Z
+95139f0fae579254187592e88df9ad87
+2010-03-04T00:24:41.900061Z
+12298
+finetjul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+783
 
 qMRMLWindowLevelWidgetPlugin.cxx
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Testing/TestData/MRI-Human-Brain-Full-Parcellation
 http://svn.slicer.org/Slicer3
 
@@ -162,14 +162,14 @@ has-props
 
 6452
 
-very_small_atlas_whitematter_sub.nrrd
+small_atlas_csf.nrrd
 file
 
 
 
 
 2011-01-16T17:30:56.458290Z
-d5ff994f09bd47689d872e4dec1a10b5
+2deda0aafd792e2e824a9899b1e3edbe
 2011-01-16T17:28:41.615484Z
 15771
 domibel
@@ -194,7 +194,7 @@ has-props
 
 
 
-1431
+20710
 
 small_atlas_air.nrrd
 file
@@ -230,14 +230,14 @@ has-props
 
 33414
 
-small_atlas_csf.nrrd
+very_small_atlas_whitematter_sub.nrrd
 file
 
 
 
 
 2011-01-16T17:30:56.458290Z
-2deda0aafd792e2e824a9899b1e3edbe
+d5ff994f09bd47689d872e4dec1a10b5
 2011-01-16T17:28:41.615484Z
 15771
 domibel
@@ -262,41 +262,7 @@ has-props
 
 
 
-20710
-
-very_small_atlas_air.nrrd
-file
-
-
-
-
-2011-01-16T17:30:56.458290Z
-c2105ef04962ee1fc471aab1265eccab
-2011-01-16T17:28:41.615484Z
-15771
-domibel
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5281
+1431
 
 very_small_atlas_csf.nrrd
 file
@@ -332,6 +298,40 @@ has-props
 
 3347
 
+very_small_atlas_air.nrrd
+file
+
+
+
+
+2011-01-16T17:30:56.458290Z
+c2105ef04962ee1fc471aab1265eccab
+2011-01-16T17:28:41.615484Z
+15771
+domibel
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5281
+
 small_atlas_greymatter.nrrd
 file
 
@@ -365,40 +365,6 @@ has-props
 
 
 32095
-
-small_atlas_csf_sub.nrrd
-file
-
-
-
-
-2011-01-16T17:30:56.458290Z
-af2b6401285ba8ec251d96b316c1a5b8
-2011-01-16T17:28:41.615484Z
-15771
-domibel
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1279
 
 small_atlas_t1.nrrd
 file
@@ -434,6 +400,40 @@ has-props
 
 150830
 
+small_atlas_csf_sub.nrrd
+file
+
+
+
+
+2011-01-16T17:30:56.458290Z
+af2b6401285ba8ec251d96b316c1a5b8
+2011-01-16T17:28:41.615484Z
+15771
+domibel
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1279
+
 very_small_atlas_greymatter.nrrd
 file
 
@@ -468,40 +468,6 @@ has-props
 
 4970
 
-very_small_atlas_csf_sub.nrrd
-file
-
-
-
-
-2011-01-16T17:30:56.458290Z
-ebecf4db1e5eb6c9777ef753cbef1ee4
-2011-01-16T17:28:41.615484Z
-15771
-domibel
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-547
-
 very_small_atlas_t1.nrrd
 file
 
@@ -535,6 +501,40 @@ has-props
 
 
 19738
+
+very_small_atlas_csf_sub.nrrd
+file
+
+
+
+
+2011-01-16T17:30:56.458290Z
+ebecf4db1e5eb6c9777ef753cbef1ee4
+2011-01-16T17:28:41.615484Z
+15771
+domibel
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+547
 
 small_atlas_skullneck.nrrd
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/MRIBiasFieldCorrection
 http://svn.slicer.org/Slicer3
 
@@ -26,18 +26,17 @@ domibel
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-MRIBiasFieldCorrection.xml
+itkVTKImageToImageFilter.h
 file
 
 
 
 
 2010-10-25T02:19:40.024995Z
-f77a76f77e4eeebb72648d613c3fad0d
-2010-05-02T00:29:27.769020Z
-13155
+f2693ca3cadf4ce0ded0b56729f8c8bd
+2010-02-03T19:48:57.315534Z
+11954
 sylvain
-has-props
 
 
 
@@ -58,7 +57,8 @@ has-props
 
 
 
-4145
+
+3385
 
 itkImageToVTKImageFilter.h
 file
@@ -94,17 +94,18 @@ sylvain
 
 3986
 
-itkVTKImageToImageFilter.h
+MRIBiasFieldCorrection.xml
 file
 
 
 
 
 2010-10-25T02:19:40.024995Z
-f2693ca3cadf4ce0ded0b56729f8c8bd
-2010-02-03T19:48:57.315534Z
-11954
+f77a76f77e4eeebb72648d613c3fad0d
+2010-05-02T00:29:27.769020Z
+13155
 sylvain
+has-props
 
 
 
@@ -125,8 +126,7 @@ sylvain
 
 
 
-
-3385
+4145
 
 Baseline
 dir
@@ -233,40 +233,6 @@ domibel
 
 25048
 
-ImageCompare.cxx
-file
-
-
-
-
-2010-10-25T02:19:40.034995Z
-ffc05dddc642d1be910af27b8a8f8646
-2010-05-02T00:29:27.769020Z
-13155
-sylvain
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8164
-
 itkN3MRIBiasFieldCorrectionImageFilter.h
 file
 
@@ -300,6 +266,40 @@ domibel
 
 
 12259
+
+ImageCompare.cxx
+file
+
+
+
+
+2010-10-25T02:19:40.034995Z
+ffc05dddc642d1be910af27b8a8f8646
+2010-05-02T00:29:27.769020Z
+13155
+sylvain
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8164
 
 itkN4MRIBiasFieldCorrectionImageFilter.h
 file
@@ -372,18 +372,17 @@ pieper
 
 32773
 
-CMakeLists.txt
+itkVTKImageToImageFilter.txx
 file
 
 
 
 
 2010-10-25T02:19:40.034995Z
-d4b1eb5aaedfc754f8f84851bd75c914
-2010-05-02T00:29:27.769020Z
-13155
+6eb593d8dbae27b4d8f42412df7f8df5
+2010-02-03T19:48:57.315534Z
+11954
 sylvain
-has-props
 
 
 
@@ -404,7 +403,8 @@ has-props
 
 
 
-4713
+
+3218
 
 itkImageToVTKImageFilter.txx
 file
@@ -440,17 +440,18 @@ sylvain
 
 3153
 
-itkVTKImageToImageFilter.txx
+CMakeLists.txt
 file
 
 
 
 
 2010-10-25T02:19:40.034995Z
-6eb593d8dbae27b4d8f42412df7f8df5
-2010-02-03T19:48:57.315534Z
-11954
+d4b1eb5aaedfc754f8f84851bd75c914
+2010-05-02T00:29:27.769020Z
+13155
 sylvain
+has-props
 
 
 
@@ -471,8 +472,7 @@ sylvain
 
 
 
-
-3218
+4713
 
 itkBSplineControlPointImageFilter.h
 file

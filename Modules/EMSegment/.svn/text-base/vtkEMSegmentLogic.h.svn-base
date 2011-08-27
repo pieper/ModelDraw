@@ -19,9 +19,6 @@
 #include <vtkMRMLScalarVolumeNode.h>
 #include <vtkMRMLVolumeNode.h>
 
-#ifdef Slicer3_USE_KWWIDGETS
-#include <vtkMRMLAtlasCreatorNode.h>
-#endif
 
 class vtkImageEMLocalSegmenter;
 class vtkImageEMLocalGenericClass;
@@ -247,9 +244,7 @@ public:
 
   void UpdateIntensityDistributionAuto(vtkIdType nodeID);
 
-#ifdef Slicer3_USE_KWWIDGETS
-  void RunAtlasCreator(vtkMRMLAtlasCreatorNode *node);
-#endif
+  void RunAtlasCreator(vtkMRMLNode *mNode);
 
   void WriteImage(vtkImageData* file, const char* filename);
 

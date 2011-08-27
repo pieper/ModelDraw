@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/CMake
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ domibel
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-Slicer3ValgrindSuppressions.supp
-file
-
-
-
-
-2010-10-25T02:19:30.624995Z
-691a7b492457a4c72b5ffde4909d0655
-2009-09-08T23:25:42.764517Z
-10427
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15192
 
 Slicer3PatchPythonQt.cmake.in
 file
@@ -93,6 +59,40 @@ jcfr
 
 
 1228
+
+Slicer3ValgrindSuppressions.supp
+file
+
+
+
+
+2010-10-25T02:19:30.624995Z
+691a7b492457a4c72b5ffde4909d0655
+2009-09-08T23:25:42.764517Z
+10427
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15192
 
 NSIS.InstallOptions.ini.in
 file
@@ -230,18 +230,17 @@ has-props
 
 1107
 
-CheckFortran.cmake
+ExternalProject.cmake
 file
 
 
 
 
-2010-10-25T02:19:30.624995Z
-78522b567b3e5931b8061e57b4b5d575
-2010-02-05T14:37:56.335495Z
-12012
-partyd
-has-props
+2011-04-07T15:49:19.500168Z
+e8fe7657693d1ea72300e2f233975c51
+2011-04-06T20:30:45.456607Z
+16334
+pieper
 
 
 
@@ -262,7 +261,8 @@ has-props
 
 
 
-2202
+
+39290
 
 Slicer3Macros.cmake
 file
@@ -298,17 +298,18 @@ has-props
 
 662
 
-ExternalProject.cmake
+CheckFortran.cmake
 file
 
 
 
 
-2011-04-07T15:49:19.500168Z
-e8fe7657693d1ea72300e2f233975c51
-2011-04-06T20:30:45.456607Z
-16334
-pieper
+2010-10-25T02:19:30.624995Z
+78522b567b3e5931b8061e57b4b5d575
+2010-02-05T14:37:56.335495Z
+12012
+partyd
+has-props
 
 
 
@@ -329,8 +330,7 @@ pieper
 
 
 
-
-39290
+2202
 
 Slicer3FindQT.cmake
 file
@@ -468,40 +468,6 @@ barre
 
 1035
 
-FindGit.cmake
-file
-
-
-
-
-2010-10-25T02:19:30.624995Z
-bcd3284cdde83d7cb9f6d2e048210258
-2010-01-31T18:34:48.533034Z
-11897
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2134
-
 Slicer3QTModuleMacros.cmake
 file
 
@@ -535,6 +501,40 @@ has-props
 
 
 4384
+
+FindGit.cmake
+file
+
+
+
+
+2010-10-25T02:19:30.624995Z
+bcd3284cdde83d7cb9f6d2e048210258
+2010-01-31T18:34:48.533034Z
+11897
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2134
 
 Slicer3TodayMacro.cmake
 file

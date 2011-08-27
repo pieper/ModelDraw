@@ -1,14 +1,14 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/Editor
 http://svn.slicer.org/Slicer3
 
 
 
-2011-07-04T17:11:23.873077Z
-16723
+2011-08-19T21:36:51.748505Z
+16828
 pieper
 
 
@@ -25,108 +25,6 @@ pieper
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-EditBox.tcl
-file
-
-
-
-
-2010-10-25T02:20:25.074995Z
-859088fa01632f41c276e689810189f4
-2010-10-22T21:23:55.775145Z
-15318
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11752
-
-ChangeLabelEffect.tcl
-file
-
-
-
-
-2010-10-25T02:20:25.074995Z
-0403774e35ca397045ceba7e3043035e
-2008-06-06T22:43:41.565640Z
-7008
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4535
-
-EditorLogic.tcl
-file
-
-
-
-
-2010-11-30T16:06:43.065939Z
-4d2e0678b22744c8b315d98d1799b9fc
-2010-12-09T00:32:15.023149Z
-15631
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2527
 
 WandEffect.tcl
 file
@@ -196,118 +94,16 @@ has-props
 
 4016
 
-Labeler.tcl
-file
-
-
-
-
-2011-02-17T19:59:35.013462Z
-e1ef9593f77a66de8e39f577b1d7d670
-2011-04-20T18:01:35.930014Z
-16462
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16017
-
-IdentifyIslandsEffect.tcl
-file
-
-
-
-
-2011-04-20T17:57:33.288252Z
-fdf2b5ee2d6e5f10968e6a841eea6fda
-2011-04-20T18:03:10.879082Z
-16464
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6112
-
 pkgIndex.tcl
 file
 
 
 
 
-2010-10-25T02:20:25.074995Z
-88965dbda7d78b447dc0a22d4f623102
-2010-09-24T20:21:57.027599Z
-15076
-harveerar
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1229
-
-ThresholdEffect.tcl
-file
-
-
-
-
-2011-02-17T19:59:06.253462Z
-39065eded313ee890dc37fbff14dc783
-2011-04-20T18:00:23.647594Z
-16460
+2011-07-25T00:12:16.934688Z
+f25747d425b60a0b036dde36bcfb905c
+2011-08-19T21:36:51.748505Z
+16828
 pieper
 has-props
 
@@ -330,7 +126,7 @@ has-props
 
 
 
-8186
+1276
 
 DrawEffect.tcl
 file
@@ -338,10 +134,10 @@ file
 
 
 
-2011-02-01T01:30:35.281177Z
-a06e4b517e000f0e280814000ece79c1
-2011-02-01T01:34:47.704543Z
-15877
+2011-07-28T15:32:59.081389Z
+08676f0d6f163c1880cd52ac65b9288f
+2011-08-19T21:36:51.748505Z
+16828
 pieper
 has-props
 
@@ -364,7 +160,7 @@ has-props
 
 
 
-11183
+11337
 
 MakeModelEffect.tcl
 file
@@ -468,6 +264,451 @@ has-props
 
 7791
 
+EditColor.tcl
+file
+16829
+
+
+
+2011-08-26T14:40:28.068230Z
+c405bd2c87ea8e2dd185cef498ad8f5f
+2011-08-26T14:43:58.845839Z
+16829
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5936
+
+Editor.tcl
+file
+
+
+
+
+2010-10-25T02:20:25.074995Z
+3f08e3006e4665f728ec5ba1e1f5c58d
+2006-08-04T19:37:32.525786Z
+1033
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+473
+
+HelperBox.tcl
+file
+
+
+
+
+2010-11-15T13:58:46.417567Z
+27ca1b0addc230e5473197c1f006cee6
+2010-11-15T14:00:02.147505Z
+15501
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+36526
+
+Box.tcl
+file
+
+
+
+
+2010-10-25T02:20:25.074995Z
+9a239e8f310e4abdee8e40a9607049b4
+2010-10-06T21:57:13.194587Z
+15167
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6715
+
+GrowCutSegmentEffect.tcl
+file
+
+
+
+
+2010-12-06T18:07:27.099214Z
+5e267b661192a142db646c21cd8e66ff
+2010-12-06T17:48:13.335190Z
+15613
+harveerar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17057
+
+ImageData
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+2010-10-25T02:20:25.074995Z
+36db1dc9d0558f74eddd14a205902bfa
+2010-01-27T23:18:02.562588Z
+11821
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1404
+
+EditorNode.tcl
+file
+
+
+
+
+2010-10-25T02:20:25.074995Z
+81b91fa49451b707dd473ea6060c0cdf
+2006-08-04T19:37:32.525786Z
+1033
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+57
+
+EditBox.tcl
+file
+
+
+
+
+2011-07-07T17:03:44.095580Z
+eb06dc8dcf5f7075fd63bd7579688820
+2011-08-19T21:36:51.748505Z
+16828
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11772
+
+ChangeLabelEffect.tcl
+file
+
+
+
+
+2010-10-25T02:20:25.074995Z
+0403774e35ca397045ceba7e3043035e
+2008-06-06T22:43:41.565640Z
+7008
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4535
+
+EditorLogic.tcl
+file
+
+
+
+
+2010-11-30T16:06:43.065939Z
+4d2e0678b22744c8b315d98d1799b9fc
+2010-12-09T00:32:15.023149Z
+15631
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2527
+
+IdentifyIslandsEffect.tcl
+file
+
+
+
+
+2011-04-20T17:57:33.288252Z
+fdf2b5ee2d6e5f10968e6a841eea6fda
+2011-04-20T18:03:10.879082Z
+16464
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6112
+
+Labeler.tcl
+file
+
+
+
+
+2011-02-17T19:59:35.013462Z
+e1ef9593f77a66de8e39f577b1d7d670
+2011-04-20T18:01:35.930014Z
+16462
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16017
+
+ThresholdEffect.tcl
+file
+
+
+
+
+2011-08-15T21:34:28.556189Z
+a6cdd7299202d7886be306adcc244398
+2011-08-19T21:36:51.748505Z
+16828
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14803
+
 DilateLabelEffect.tcl
 file
 
@@ -508,10 +749,10 @@ file
 
 
 
-2011-07-04T17:10:08.292694Z
-9e722900a13746cd52c532330fc65c80
-2011-07-04T17:11:23.873077Z
-16723
+2011-07-23T20:35:29.894688Z
+94386b33dcd667273bf96c8bee682030
+2011-08-19T21:36:51.748505Z
+16828
 pieper
 has-props
 
@@ -534,75 +775,7 @@ has-props
 
 
 
-22882
-
-EditColor.tcl
-file
-
-
-
-
-2010-10-25T02:20:25.074995Z
-9a8fb0324f70fc8a346fb40e2050aec2
-2010-06-03T21:39:23.489290Z
-13617
-pieper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5701
-
-Editor.tcl
-file
-
-
-
-
-2010-10-25T02:20:25.074995Z
-3f08e3006e4665f728ec5ba1e1f5c58d
-2006-08-04T19:37:32.525786Z
-1033
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-473
+22964
 
 ColorBox.tcl
 file
@@ -637,74 +810,6 @@ has-props
 
 
 6698
-
-Box.tcl
-file
-
-
-
-
-2010-10-25T02:20:25.074995Z
-9a239e8f310e4abdee8e40a9607049b4
-2010-10-06T21:57:13.194587Z
-15167
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6715
-
-HelperBox.tcl
-file
-
-
-
-
-2010-11-15T13:58:46.417567Z
-27ca1b0addc230e5473197c1f006cee6
-2010-11-15T14:00:02.147505Z
-15501
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-36526
 
 PaintEffect.tcl
 file
@@ -774,90 +879,16 @@ has-props
 
 7063
 
-GrowCutSegmentEffect.tcl
-file
-
-
-
-
-2010-12-06T18:07:27.099214Z
-5e267b661192a142db646c21cd8e66ff
-2010-12-06T17:48:13.335190Z
-15613
-harveerar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17057
-
-ImageData
-dir
-
 EditorGUI.tcl
 file
 
 
 
 
-2011-06-27T12:10:42.209769Z
-27b70724f54105bfb80cc417046a60f5
-2011-06-24T18:57:48.081892Z
-16710
-harveerar
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-30946
-
-Testing
-dir
-
-EditorNode.tcl
-file
-
-
-
-
-2010-10-25T02:20:25.074995Z
-81b91fa49451b707dd473ea6060c0cdf
-2006-08-04T19:37:32.525786Z
-1033
+2011-08-15T18:00:01.848636Z
+32897dc8bea49aa52978731ba23bd474
+2011-08-19T21:36:51.748505Z
+16828
 pieper
 has-props
 
@@ -880,19 +911,19 @@ has-props
 
 
 
-57
+35458
 
-CMakeLists.txt
+ModelDrawEffect.tcl
 file
 
 
 
 
-2010-10-25T02:20:25.074995Z
-36db1dc9d0558f74eddd14a205902bfa
-2010-01-27T23:18:02.562588Z
-11821
-naucoin
+2011-08-15T19:34:08.278636Z
+153ff150f6c949ca5948357c7da19982
+2011-08-19T21:36:51.748505Z
+16828
+pieper
 has-props
 
 
@@ -914,7 +945,10 @@ has-props
 
 
 
-1404
+36002
+
+Testing
+dir
 
 LevelTracingEffect.tcl
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/Tractography/Display
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ pieper
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-vtkSlicerTractographyDisplayGUI.h
-file
-
-
-
-
-2010-10-25T02:20:30.404995Z
-30fd3c0caa57146e69807d703e503c88
-2010-05-21T20:58:01.029463Z
-13442
-demian
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3786
 
 vtkSlicerAllFiberBundlesDisplayWidget.cxx
 file
@@ -93,6 +59,40 @@ jcfr
 
 
 18313
+
+vtkSlicerTractographyDisplayGUI.h
+file
+
+
+
+
+2010-10-25T02:20:30.404995Z
+30fd3c0caa57146e69807d703e503c88
+2010-05-21T20:58:01.029463Z
+13442
+demian
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3786
 
 vtkSlicerTractographyDisplayConfigure.h.in
 file
@@ -162,40 +162,6 @@ pieper
 
 11223
 
-vtkSlicerTractographyDisplayLogic.h
-file
-
-
-
-
-2010-10-25T02:20:30.404995Z
-3f244d822787d8b00a2affbf799206ee
-2008-05-08T23:50:44.069867Z
-6666
-tgl
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1516
-
 vtkSlicerFiberBundleDisplayWidget.h
 file
 
@@ -230,17 +196,18 @@ maddah
 
 4392
 
-vtkSlicerDiffusionTensorIcons.h
+vtkSlicerTractographyDisplayLogic.h
 file
 
 
 
 
 2010-10-25T02:20:30.404995Z
-437f22002cd4c8b709eb94ada7e8d389
-2007-02-14T17:48:24.739902Z
-2602
-alexy
+3f244d822787d8b00a2affbf799206ee
+2008-05-08T23:50:44.069867Z
+6666
+tgl
+has-props
 
 
 
@@ -261,8 +228,7 @@ alexy
 
 
 
-
-1212
+1516
 
 vtkSlicerTractographyDisplayGUI.cxx
 file
@@ -298,6 +264,40 @@ alexy
 
 16058
 
+vtkSlicerDiffusionTensorIcons.h
+file
+
+
+
+
+2010-10-25T02:20:30.404995Z
+437f22002cd4c8b709eb94ada7e8d389
+2007-02-14T17:48:24.739902Z
+2602
+alexy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1212
+
 vtkSlicerFiberBundleDisplayLogic.h
 file
 
@@ -332,40 +332,6 @@ tgl
 
 4780
 
-vtkSlicerTractographyDisplayLogic.cxx
-file
-
-
-
-
-2010-10-25T02:20:30.404995Z
-79072318b1614b52a86ac32dcc74f5a6
-2008-05-08T23:50:44.069867Z
-6666
-tgl
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1309
-
 vtkSlicerFiberBundleDisplayWidget.cxx
 file
 
@@ -399,6 +365,40 @@ pieper
 
 
 28799
+
+vtkSlicerTractographyDisplayLogic.cxx
+file
+
+
+
+
+2010-10-25T02:20:30.404995Z
+79072318b1614b52a86ac32dcc74f5a6
+2008-05-08T23:50:44.069867Z
+6666
+tgl
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1309
 
 vtkSlicerAllFiberBundlesDisplayWidget.h
 file

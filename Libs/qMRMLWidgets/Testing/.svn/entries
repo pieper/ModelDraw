@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Libs/qMRMLWidgets/Testing
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ finetjul
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-.NoDartCoverage
-file
-
-
-
-
-2010-10-25T02:20:19.014995Z
-d41d8cd98f00b204e9800998ecf8427e
-2010-01-15T23:18:00.533665Z
-11657
-finetjul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0
 
 qMRMLNodeSelectorTest1.cxx
 file
@@ -94,6 +60,40 @@ jcfr
 
 9787
 
+.NoDartCoverage
+file
+
+
+
+
+2010-10-25T02:20:19.014995Z
+d41d8cd98f00b204e9800998ecf8427e
+2010-01-15T23:18:00.533665Z
+11657
+finetjul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
 qMRMLSceneFactoryWidgetTest1.cxx
 file
 
@@ -127,40 +127,6 @@ jcfr
 
 
 1376
-
-qMRMLItemHelperTest1.cxx
-file
-
-
-
-
-2010-10-25T02:20:19.014995Z
-1fc296fe8b21d43974891b20e781d850
-2010-03-09T00:25:56.262337Z
-12318
-finetjul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-599
 
 qMRMLTransformProxyModelTest1.cxx
 file
@@ -196,17 +162,17 @@ jcfr
 
 2416
 
-qMRMLUtilsTest1.cxx
+qMRMLItemHelperTest1.cxx
 file
 
 
 
 
 2010-10-25T02:20:19.014995Z
-9689bebd9a1ed8ce65b1b786db7a4b9b
-2010-02-11T03:40:40.348862Z
-12100
-jcfr
+1fc296fe8b21d43974891b20e781d850
+2010-03-09T00:25:56.262337Z
+12318
+finetjul
 
 
 
@@ -228,7 +194,7 @@ jcfr
 
 
 
-611
+599
 
 qMRMLModelTest1.cxx
 file
@@ -263,6 +229,40 @@ jcfr
 
 
 2130
+
+qMRMLUtilsTest1.cxx
+file
+
+
+
+
+2010-10-25T02:20:19.014995Z
+9689bebd9a1ed8ce65b1b786db7a4b9b
+2010-02-11T03:40:40.348862Z
+12100
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+611
 
 qMRMLTransformSlidersTest1.cxx
 file
@@ -366,40 +366,6 @@ jcfr
 
 275
 
-qMRMLWidgetsExportTest1.cxx
-file
-
-
-
-
-2010-10-25T02:20:19.014995Z
-2ab9b916a6041236132c0683daacfa82
-2010-02-11T03:40:40.348862Z
-12100
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-269
-
 qMRMLMatrixWidgetTest1.cxx
 file
 
@@ -433,6 +399,40 @@ jcfr
 
 
 293
+
+qMRMLWidgetsExportTest1.cxx
+file
+
+
+
+
+2010-10-25T02:20:19.014995Z
+2ab9b916a6041236132c0683daacfa82
+2010-02-11T03:40:40.348862Z
+12100
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+269
 
 qMRMLLinearTransformSliderTest1.cxx
 file

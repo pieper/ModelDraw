@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/RegisterImagesModule
 http://svn.slicer.org/Slicer3
 
@@ -60,40 +60,6 @@ casey.goodlett
 
 21866
 
-itkAnisotropicSimilarity3DTransform.h
-file
-
-
-
-
-2010-10-25T02:20:18.314995Z
-6647e4449969cf715a3b3ca53b7159a7
-2009-08-18T13:17:05.119965Z
-10286
-casey.goodlett
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6964
-
 itkImageToImageRegistrationMethod.h
 file
 
@@ -127,6 +93,40 @@ casey.goodlett
 
 
 6187
+
+itkAnisotropicSimilarity3DTransform.h
+file
+
+
+
+
+2010-10-25T02:20:18.314995Z
+6647e4449969cf715a3b3ca53b7159a7
+2009-08-18T13:17:05.119965Z
+10286
+casey.goodlett
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6964
 
 Applications
 dir
@@ -199,40 +199,6 @@ casey.goodlett
 
 13253
 
-itkAffineImageToImageRegistrationMethod.h
-file
-
-
-
-
-2010-10-25T02:20:18.314995Z
-505df74f56419038189214dc946b0522
-2009-08-18T13:17:05.119965Z
-10286
-casey.goodlett
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4217
-
 itkBSplineImageToImageRegistrationMethod.txx
 file
 
@@ -266,6 +232,40 @@ casey.goodlett
 
 
 31903
+
+itkAffineImageToImageRegistrationMethod.h
+file
+
+
+
+
+2010-10-25T02:20:18.314995Z
+505df74f56419038189214dc946b0522
+2009-08-18T13:17:05.119965Z
+10286
+casey.goodlett
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4217
 
 itkInitialImageToImageRegistrationMethod.h
 file
@@ -301,40 +301,6 @@ casey.goodlett
 
 4574
 
-itkRigidImageToImageRegistrationMethod.txx
-file
-
-
-
-
-2010-10-25T02:20:18.314995Z
-51896ccb2876b51da5366bac8f95e650
-2009-08-18T13:17:05.119965Z
-10286
-casey.goodlett
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6062
-
 itkImageRegionMomentsCalculator.txx
 file
 
@@ -368,6 +334,40 @@ domibel
 
 
 12446
+
+itkRigidImageToImageRegistrationMethod.txx
+file
+
+
+
+
+2010-10-25T02:20:18.314995Z
+51896ccb2876b51da5366bac8f95e650
+2009-08-18T13:17:05.119965Z
+10286
+casey.goodlett
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6062
 
 itkBSplineImageToImageRegistrationMethod.h
 file
@@ -403,40 +403,6 @@ casey.goodlett
 
 5133
 
-itkRigidImageToImageRegistrationMethod.h
-file
-
-
-
-
-2010-10-25T02:20:18.314995Z
-3b7096217bf2a1cae6786b6704f16672
-2009-08-18T13:17:05.119965Z
-10286
-casey.goodlett
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5161
-
 itkImageRegionMomentsCalculator.h
 file
 
@@ -470,6 +436,40 @@ has-props
 
 
 10308
+
+itkRigidImageToImageRegistrationMethod.h
+file
+
+
+
+
+2010-10-25T02:20:18.314995Z
+3b7096217bf2a1cae6786b6704f16672
+2009-08-18T13:17:05.119965Z
+10286
+casey.goodlett
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5161
 
 itkOptimizedImageToImageRegistrationMethod.txx
 file

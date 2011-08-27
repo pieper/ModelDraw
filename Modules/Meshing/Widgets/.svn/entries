@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/Meshing/Widgets
 http://svn.slicer.org/Slicer3
 
@@ -604,40 +604,6 @@ has-props
 
 14071
 
-vtkMimxCreateBuildingBlockFromPickWidget.cxx
-file
-
-
-
-
-2010-10-25T02:20:32.564995Z
-145c31a6b29d7acafd3fcb16568b7fb2
-2009-10-29T22:36:10.772871Z
-10795
-barre
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-47123
-
 vtkMimxSelectCellsWidget.h
 file
 
@@ -671,6 +637,40 @@ jcfr
 
 
 4073
+
+vtkMimxCreateBuildingBlockFromPickWidget.cxx
+file
+
+
+
+
+2010-10-25T02:20:32.564995Z
+145c31a6b29d7acafd3fcb16568b7fb2
+2009-10-29T22:36:10.772871Z
+10795
+barre
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+47123
 
 CMakeLists.txt
 file

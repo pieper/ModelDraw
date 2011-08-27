@@ -33,6 +33,9 @@ if { [itcl::find class SeedSWidget] == "" } {
 
     public variable movedCommand ""
     public variable movingCommand ""
+    public variable startMovingCommand ""
+    public variable contextMenuCommand ""
+    public variable keyCommand ""
     public variable glyph "StarBurst"
     public variable scale "1"
     public variable color "1 0 0"
@@ -52,9 +55,11 @@ if { [itcl::find class SeedSWidget] == "" } {
     method processEvent {{caller ""} {event ""}} {}
     method positionActors {} {}
     method pick {} {}
-    method place {x y z} {}
+    method place {r a s} {}
     method setRASPosition {r a s} { $this place $x $y $z }
     method getRASPosition {} { return $_currentPosition }
+    method setXYZPosition {x y z} {}
+    method getXYZPosition {} { return [$this rasToXYZ $_currentPosition] }
     method getPickState {} { return $_pickState }
     method highlight {} {}
     method createGlyph { {type "StarBurst"} } {}
@@ -95,7 +100,7 @@ itcl::body SeedSWidget::constructor {sliceGUI} {
   $this processEvent
 
   $::slicer3::Broker AddObservation $sliceGUI DeleteEvent "::SWidget::ProtectedDelete $this"
-  foreach event {LeftButtonPressEvent LeftButtonReleaseEvent MouseMoveEvent} {
+  foreach event {LeftButtonPressEvent LeftButtonReleaseEvent RightButtonPressEvent MouseMoveEvent KeyPressEvent} {
     $::slicer3::Broker AddObservation $sliceGUI $event "::SWidget::ProtectedCallback $this processEvent $sliceGUI $event"
   }
   set node [[$sliceGUI GetLogic] GetSliceNode]
@@ -223,9 +228,13 @@ itcl::body SeedSWidget::pick {} {
   }
 }
 
-itcl::body SeedSWidget::place {x y z} {
-  set _currentPosition "$x $y $z"
+itcl::body SeedSWidget::place {r a s} {
+  set _currentPosition "$r $a $s"
   $this positionActors
+}
+
+itcl::body SeedSWidget::setXYZPosition {x y z} {
+  set _currentPosition [$this xyzToRAS "$x $y $z"]
 }
 
 itcl::body SeedSWidget::positionActors { } {
@@ -363,6 +372,7 @@ itcl::body SeedSWidget::processEvent { {caller ""} {event ""} } {
                     }
                 set _actionState "dragging"
                 SeedSWidget::SetAllTextVisibility 0
+                eval $startMovingCommand
 
                 # switch into pick mode when we mouse down
                 # on a seed widget -- this mirrors the
@@ -407,8 +417,24 @@ itcl::body SeedSWidget::processEvent { {caller ""} {event ""} } {
                 }
             }
         }
+        "RightButtonPressEvent" { 
+          if { $contextMenuCommand != "" } {
+            eval $contextMenuCommand
+          } 
+        }
+        "KeyPressEvent" { 
+          set key [$_interactor GetKeySym]
+          if { $keyCommand != "" } {
+            set key [$_interactor GetKeySym]
+            set handled [eval $keyCommand $key]
+            if { $handled } {
+              $sliceGUI SetCurrentGUIEvent "" ;# reset event so we don't respond again
+              $sliceGUI SetGUICommandAbortFlag 1
+            }
+          } 
+        }
       }
-  }
+    }
   }
 
   $this highlight

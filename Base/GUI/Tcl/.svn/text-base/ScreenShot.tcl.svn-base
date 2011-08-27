@@ -65,7 +65,7 @@ proc SlicerSaveEachRenderCancel { {renderer ""} } {
   $renderer RemoveObserver $::SLICERSAVE($renderer,observerTag)
 }
 
-proc SlicerSaveEachRender { {fileNamePattern /tmp/slicer-%d.png} {resolutionFactor 1} } {
+proc SlicerSaveEachRender { {fileNamePattern /tmp/slicer-%04d.png} {resolutionFactor 1} } {
 
   set appGUI $::slicer3::ApplicationGUI
   set viewerWidget [$appGUI GetActiveViewerWidget]
@@ -99,6 +99,42 @@ proc SlicerSaveEachRenderCallback { renderer } {
   set ::SLICERSAVE($renderer,saving) 0
 }
 
+proc SlicerSpinMovie { {degrees 5} {fps 10} } {
+
+  set camera [[$::slicer3::MRMLScene GetNthNodeByClass 0 "vtkMRMLCameraNode"] GetCamera]
+
+  SlicerSaveEachRender
+  [$::slicer3::ApplicationGUI GetMainSlicerWindow] SetStatusText "Starting render..."
+
+  for {set arc 0} {$arc < 360} {set arc [expr $arc + $degrees] } {
+    $camera Azimuth $degrees
+    $camera OrthogonalizeViewUp
+
+    # Make the lighting follow the camera to avoid illumination changes
+    set viewerWidget [$::slicer3::ApplicationGUI GetActiveViewerWidget]
+    [[$viewerWidget GetMainViewer] GetRenderer] UpdateLightsGeometryToFollowCamera
+    $viewerWidget RequestRender
+    update
+    [$::slicer3::ApplicationGUI GetMainSlicerWindow] SetStatusText "Rendered $arc"
+  }
+
+  SlicerSaveEachRenderCancel
+  [$::slicer3::ApplicationGUI GetMainSlicerWindow] SetStatusText "Encoding..."
+
+  # TODO: need an encoder command and way to view:
+  # ffmpeg -v]eval exec ffmpeg -y -i $files \/tmp/movie.ogv
+  # try webm
+  # see, for example: http://diveintohtml5.org/video.html
+  # and https://groups.google.com/a/webmproject.org/group/webm-discuss/browse_thread/thread/438f52c6683bedde?pli=1
+  # or try: ffmpeg  -i slicer-0%03d.png video.mpg
+  # ffmpeg -i slicer-0%03d.png video.webm
+  # http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs
+  # for now:
+  set files [lsort [glob /tmp/slicer-*.png]]
+  eval exec animate -delay 10 $files 
+
+  [$::slicer3::ApplicationGUI GetMainSlicerWindow] SetStatusText "Render finished."
+}
 
 
 

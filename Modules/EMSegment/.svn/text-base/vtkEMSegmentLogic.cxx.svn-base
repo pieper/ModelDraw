@@ -31,6 +31,10 @@
 #include "vtkImageEllipsoidSource.h"
 #include <vtksys/SystemTools.hxx>
 
+#ifdef Slicer3_USE_KWWIDGETS
+#include <vtkMRMLAtlasCreatorNode.h>
+#endif
+
 #ifdef _WIN32
 //for _mktemp
 #include <io.h>
@@ -3015,10 +3019,17 @@ void vtkEMSegmentLogic::CreateDefaultTasksList(std::vector<std::string> & Defaul
       DefinePreprocessingTasksFile);
 }
 
-#ifdef Slicer3_USE_KWWIDGETS
 //-----------------------------------------------------------------------------
-void vtkEMSegmentLogic::RunAtlasCreator(vtkMRMLAtlasCreatorNode *node)
+void vtkEMSegmentLogic::RunAtlasCreator(vtkMRMLNode *mNode)
 {
+#ifdef Slicer3_USE_KWWIDGETS
+
+  vtkMRMLAtlasCreatorNode *node = vtkMRMLAtlasCreatorNode::SafeDownCast(mNode);
+
+  if (!node) {
+    std::cout << "RunAtlasCreator: Error - not a valid MRML node!" << std::endl;
+    return;
+  }
 
   std::string pythonCommand = "";
   vtksys_stl::string module_path = std::string(
@@ -3140,9 +3151,15 @@ void vtkEMSegmentLogic::RunAtlasCreator(vtkMRMLAtlasCreatorNode *node)
   pythonCommand += "logic = None\n";
 
   this->GetSlicerCommonInterface()->EvaluatePython(pythonCommand.c_str());
+#else
+
+  // not supported in Slicer4
+  std::cout << "The AtlasCreator is not supported in Slicer4." << std::endl;
+
+#endif
 
 }
-#endif
+
 
 //-----------------------------------------------------------------------------
 int vtkEMSegmentLogic::ActiveMeanField(vtkImageEMLocalSegmenter* segmenter, vtkImageData* result)

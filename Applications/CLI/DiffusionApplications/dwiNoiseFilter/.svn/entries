@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/DiffusionApplications/dwiNoiseFilter
 http://svn.slicer.org/Slicer3
 
@@ -134,7 +134,7 @@ file
 
 
 
-2011-03-07T14:09:45.384364Z
+2011-08-19T21:26:15.564622Z
 80cd6168e03c3840b7f10d6ca1c3e19f
 2008-12-13T21:14:26.164825Z
 8137
@@ -230,40 +230,6 @@ jcfr
 
 1802
 
-itkLMMSEVectorImageFilter.txx
-file
-
-
-
-
-2010-10-25T02:20:18.534995Z
-5dc5474f700a6ba569810aa60cb81bae
-2008-12-27T20:49:16.350003Z
-8196
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5846
-
 itkLMMSEVectorImageFilterStep.h
 file
 
@@ -297,6 +263,40 @@ atriveg
 
 
 4677
+
+itkLMMSEVectorImageFilter.txx
+file
+
+
+
+
+2010-10-25T02:20:18.534995Z
+5dc5474f700a6ba569810aa60cb81bae
+2008-12-27T20:49:16.350003Z
+8196
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5846
 
 itkComputeStatisticsWherePositiveFilter.txx
 file
@@ -542,7 +542,7 @@ file
 
 
 
-2011-03-07T14:09:45.384364Z
+2011-08-19T21:26:15.564622Z
 6736132643b48e571d223d5a1d06e161
 2010-01-24T17:09:58.323574Z
 11772

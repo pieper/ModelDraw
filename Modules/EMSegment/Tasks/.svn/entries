@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Tasks
 http://svn.slicer.org/Slicer3
 
@@ -446,9 +446,6 @@ domibel
 
 4083
 
-MRI-Human-Brain-Full-Parcellation
-dir
-
 MRI-Human-Brain-Exp.tcl
 file
 
@@ -483,39 +480,8 @@ haehn
 
 11890
 
-Test-Atlas-Cluster.mrml
-file
-
-
-
-
-2011-05-12T11:40:52.422778Z
-004a33e31ad507e060ae91f8803aa1c8
-2011-05-10T22:04:50.992227Z
-16598
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9858
+MRI-Human-Brain-Full-Parcellation
+dir
 
 vtkCTHandBoneClass.h
 file
@@ -551,17 +517,17 @@ domibel
 
 2188
 
-MRI-Human-Brain.tcl
+Test-Atlas-Cluster.mrml
 file
 
 
 
 
-2011-06-29T20:22:25.281380Z
-bc2b4518927e9b831995dc0865e9524a
-2011-06-29T17:38:03.865200Z
-16715
-haehn
+2011-05-12T11:40:52.422778Z
+004a33e31ad507e060ae91f8803aa1c8
+2011-05-10T22:04:50.992227Z
+16598
+domibel
 
 
 
@@ -583,7 +549,7 @@ haehn
 
 
 
-6561
+9858
 
 MRI-Human-Brain-Parcellation.mrml
 file
@@ -619,17 +585,17 @@ domibel
 
 62561
 
-GenericTask.tcl
+MRI-Human-Brain.tcl
 file
 
 
 
 
-2011-08-13T17:21:37.620119Z
-3da572c11678573c248953d60c7410dd
-2011-08-10T21:18:37.412435Z
-16810
-domibel
+2011-06-29T20:22:25.281380Z
+bc2b4518927e9b831995dc0865e9524a
+2011-06-29T17:38:03.865200Z
+16715
+haehn
 
 
 
@@ -651,7 +617,41 @@ domibel
 
 
 
-91293
+6561
+
+CT-Hand-Bone.tcl
+file
+
+
+
+
+2011-07-27T12:38:19.116079Z
+12bf4228b5b6ee1ea598a7fa0e58a563
+2011-07-22T19:22:54.524090Z
+16762
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20982
 
 Non-Human-Primate.tcl
 file
@@ -687,17 +687,17 @@ haehn
 
 6597
 
-CT-Hand-Bone.tcl
+GenericTask.tcl
 file
 
 
 
 
-2011-07-27T12:38:19.116079Z
-12bf4228b5b6ee1ea598a7fa0e58a563
-2011-07-22T19:22:54.524090Z
-16762
-haehn
+2011-08-13T17:21:37.620119Z
+3da572c11678573c248953d60c7410dd
+2011-08-10T21:18:37.412435Z
+16810
+domibel
 
 
 
@@ -719,7 +719,7 @@ haehn
 
 
 
-20982
+91293
 
 Test-Atlas-Cluster.tcl
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/QTModules/miAnnotation/Testing
 http://svn.slicer.org/Slicer3
 
@@ -26,14 +26,14 @@ pohl
 
 3bd1e089-480b-0410-8dfb-8563597acbee
 
-TestAnnAngleWidget3D.cxx
+vtkMRMLAnnotationPointDisplayNodeTest1.cxx
 file
 
 
 
 
 2010-10-25T02:21:51.074995Z
-67fc38485b5b9eddf30c8fe0bec35262
+23b2cca6582fb7065f69ef30372e95b9
 2010-04-28T19:55:02.445411Z
 12987
 pohl
@@ -58,7 +58,7 @@ pohl
 
 
 
-26015
+2087
 
 vtkMRMLAnnotationNodeTest1.cxx
 file
@@ -94,14 +94,14 @@ pohl
 
 5460
 
-vtkMRMLAnnotationPointDisplayNodeTest1.cxx
+TestAnnAngleWidget3D.cxx
 file
 
 
 
 
 2010-10-25T02:21:51.074995Z
-23b2cca6582fb7065f69ef30372e95b9
+67fc38485b5b9eddf30c8fe0bec35262
 2010-04-28T19:55:02.445411Z
 12987
 pohl
@@ -126,7 +126,7 @@ pohl
 
 
 
-2087
+26015
 
 vtkMRMLAnnotationFiducialNodeTest1.cxx
 file

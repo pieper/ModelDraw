@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Base/Logic
 http://svn.slicer.org/Slicer3
 
@@ -60,40 +60,6 @@ has-props
 
 15486
 
-vtkSlicerTransformLogic.cxx
-file
-
-
-
-
-2010-10-25T02:21:28.554995Z
-191231dd2b23ccdbe9f2d49551c77abc
-2010-07-01T21:27:45.599222Z
-14011
-fedorov
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10546
-
 vtkImageRectangularSource.cxx
 file
 
@@ -127,6 +93,40 @@ has-props
 
 
 13443
+
+vtkSlicerTransformLogic.cxx
+file
+
+
+
+
+2010-10-25T02:21:28.554995Z
+191231dd2b23ccdbe9f2d49551c77abc
+2010-07-01T21:27:45.599222Z
+14011
+fedorov
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10546
 
 vtkPichonFastMarching.h
 file
@@ -233,17 +233,17 @@ has-props
 
 2944
 
-vtkSlicerIGTDemoLogic.cxx
+vtkSlicerApplicationLogic.h
 file
 
 
 
 
-2010-10-25T02:21:28.554995Z
-bd2bd7ae242427a32e8344ff5affb74e
-2010-04-08T19:01:58.369555Z
-12690
-naucoin
+2011-01-30T17:50:44.019288Z
+45f771ac970abf04d0ec4ecf2ff871ce
+2011-01-30T17:51:01.602310Z
+15856
+pieper
 has-props
 
 
@@ -265,7 +265,7 @@ has-props
 
 
 
-12734
+12964
 
 vtkSlicerFiducialsLogic.h
 file
@@ -301,17 +301,17 @@ has-props
 
 2957
 
-vtkSlicerApplicationLogic.h
+vtkSlicerIGTDemoLogic.cxx
 file
 
 
 
 
-2011-01-30T17:50:44.019288Z
-45f771ac970abf04d0ec4ecf2ff871ce
-2011-01-30T17:51:01.602310Z
-15856
-pieper
+2010-10-25T02:21:28.554995Z
+bd2bd7ae242427a32e8344ff5affb74e
+2010-04-08T19:01:58.369555Z
+12690
+naucoin
 has-props
 
 
@@ -333,7 +333,7 @@ has-props
 
 
 
-12964
+12734
 
 vtkSlicerROILogic.cxx
 file
@@ -437,40 +437,6 @@ has-props
 
 22309
 
-vtkImageRectangularSource.h
-file
-
-
-
-
-2010-10-25T02:21:28.564995Z
-ca5162705610822bb289ad87a02f2980
-2010-02-15T21:35:35.375379Z
-12142
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3307
-
 vtkImageNeighborhoodFilter.cxx
 file
 
@@ -504,6 +470,40 @@ has-props
 
 
 4986
+
+vtkImageRectangularSource.h
+file
+
+
+
+
+2010-10-25T02:21:28.564995Z
+ca5162705610822bb289ad87a02f2980
+2010-02-15T21:35:35.375379Z
+12142
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3307
 
 vtkSlicerTransformLogic.h
 file
@@ -1766,40 +1766,6 @@ has-props
 
 14044
 
-vtkImageNeighborhoodFilter.h
-file
-
-
-
-
-2011-01-31T18:34:19.208909Z
-4ff394b85741a65f6b33b794cee91762
-2011-01-31T18:34:17.988628Z
-15867
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2414
-
 vtkImageResliceMask.cxx
 file
 
@@ -1833,6 +1799,40 @@ has-props
 
 
 102827
+
+vtkImageNeighborhoodFilter.h
+file
+
+
+
+
+2011-01-31T18:34:19.208909Z
+4ff394b85741a65f6b33b794cee91762
+2011-01-31T18:34:17.988628Z
+15867
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2414
 
 vtkPichonFastMarching.cxx
 file
@@ -1902,40 +1902,6 @@ has-props
 
 1602
 
-vtkSlicerModelHierarchyLogic.cxx
-file
-
-
-
-
-2010-10-25T02:21:28.574995Z
-68170bcf5c15570578098be2e055bd39
-2010-02-15T21:35:35.375379Z
-12142
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5595
-
 vtkSlicerBaseLogic.h
 file
 
@@ -1969,6 +1935,40 @@ has-props
 
 
 950
+
+vtkSlicerModelHierarchyLogic.cxx
+file
+
+
+
+
+2010-10-25T02:21:28.574995Z
+68170bcf5c15570578098be2e055bd39
+2010-02-15T21:35:35.375379Z
+12142
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5595
 
 vtkImageLabelOutline.cxx
 file
@@ -2004,17 +2004,17 @@ has-props
 
 8746
 
-vtkSlicerApplicationLogic.cxx
+vtkSlicerColorLogic.h
 file
 
 
 
 
-2011-04-19T20:05:30.059008Z
-1016e8443409a49716c911950bf82dba
-2011-04-19T20:05:29.825716Z
-16448
-pieper
+2011-01-08T17:27:46.876869Z
+a05591ec105044b11c82dff115e4503c
+2011-01-07T20:39:48.035608Z
+15736
+naucoin
 has-props
 
 
@@ -2036,7 +2036,7 @@ has-props
 
 
 
-62690
+4582
 
 vtkSlicerFiducialsLogic.cxx
 file
@@ -2072,17 +2072,17 @@ has-props
 
 8309
 
-vtkSlicerColorLogic.h
+vtkSlicerApplicationLogic.cxx
 file
 
 
 
 
-2011-01-08T17:27:46.876869Z
-a05591ec105044b11c82dff115e4503c
-2011-01-07T20:39:48.035608Z
-15736
-naucoin
+2011-04-19T20:05:30.059008Z
+1016e8443409a49716c911950bf82dba
+2011-04-19T20:05:29.825716Z
+16448
+pieper
 has-props
 
 
@@ -2104,7 +2104,7 @@ has-props
 
 
 
-4582
+62690
 
 vtkSlicerLogic.h
 file

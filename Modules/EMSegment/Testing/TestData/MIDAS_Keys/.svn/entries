@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Testing/TestData/MIDAS_Keys
 http://svn.slicer.org/Slicer3
 
@@ -604,16 +604,16 @@ domibel
 
 32
 
-MRI-Human-Brain_T1-Atlas-Template-ushort_very_small.nrrd.md5
+RESULT_small_MRIHumanBrainParcellation_T1.nrrd.md5
 file
 
 
 
 
-2011-08-13T17:21:37.690119Z
-a643ed6c281d5b5018d8b9737f7601ad
-2011-08-12T16:16:52.358139Z
-16812
+2011-02-06T16:49:41.374725Z
+3eff74d670a4eecef8beec13f18f4c9e
+2011-02-05T22:55:58.322555Z
+15937
 domibel
 
 
@@ -638,16 +638,16 @@ domibel
 
 32
 
-RESULT_small_MRIHumanBrainParcellation_T1.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-ushort_very_small.nrrd.md5
 file
 
 
 
 
-2011-02-06T16:49:41.374725Z
-3eff74d670a4eecef8beec13f18f4c9e
-2011-02-05T22:55:58.322555Z
-15937
+2011-08-13T17:21:37.690119Z
+a643ed6c281d5b5018d8b9737f7601ad
+2011-08-12T16:16:52.358139Z
+16812
 domibel
 
 
@@ -842,14 +842,14 @@ domibel
 
 32
 
-MRI-Human-Brain_T1-Atlas-Template-float_very_small.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-double_small.nrrd.md5
 file
 
 
 
 
 2011-08-13T17:21:37.690119Z
-b5cc5cdc4c320e60c9e494796248927c
+b1369eaa4f0eef4655854dfa224c99c5
 2011-08-12T16:16:52.358139Z
 16812
 domibel
@@ -876,14 +876,14 @@ domibel
 
 32
 
-MRI-Human-Brain_T1-Atlas-Template-double_small.nrrd.md5
+MRI-Human-Brain_T1-Atlas-Template-float_very_small.nrrd.md5
 file
 
 
 
 
 2011-08-13T17:21:37.690119Z
-b1369eaa4f0eef4655854dfa224c99c5
+b5cc5cdc4c320e60c9e494796248927c
 2011-08-12T16:16:52.358139Z
 16812
 domibel

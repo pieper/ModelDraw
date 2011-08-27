@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Libs/CudaSupport
 http://svn.slicer.org/Slicer3
 
@@ -570,40 +570,6 @@ nicky
 
 1524
 
-CudappDeviceMemory.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.734995Z
-c154bd422b6241653b1ff767c5613e66
-2008-09-09T15:08:25.221793Z
-7549
-nicky
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2614
-
 CudappMemoryBase.h
 file
 
@@ -637,6 +603,40 @@ naucoin
 
 
 2338
+
+CudappDeviceMemory.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.734995Z
+c154bd422b6241653b1ff767c5613e66
+2008-09-09T15:08:25.221793Z
+7549
+nicky
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2614
 
 CudappOpenGLBufferObject.h
 file
@@ -774,40 +774,6 @@ nicky
 
 512
 
-CudappDevice.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.734995Z
-b39042a99a410af9309992c13827c093
-2008-09-09T15:08:25.221793Z
-7549
-nicky
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2219
-
 CudappBase.h
 file
 
@@ -841,6 +807,40 @@ naucoin
 
 
 707
+
+CudappDevice.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.734995Z
+b39042a99a410af9309992c13827c093
+2008-09-09T15:08:25.221793Z
+7549
+nicky
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2219
 
 CudappMemoryPitch.cxx
 file
@@ -910,40 +910,6 @@ nicky
 
 451
 
-CudappHostMemory.cxx
-file
-
-
-
-
-2010-10-25T02:20:21.744995Z
-b0c8b94f8b607f5b56b10a190acbc8a8
-2008-09-09T15:08:25.221793Z
-7549
-nicky
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1092
-
 CudappEvent.h
 file
 
@@ -977,6 +943,40 @@ nicky
 
 
 726
+
+CudappHostMemory.cxx
+file
+
+
+
+
+2010-10-25T02:20:21.744995Z
+b0c8b94f8b607f5b56b10a190acbc8a8
+2008-09-09T15:08:25.221793Z
+7549
+nicky
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1092
 
 CudappMemory.cxx
 file

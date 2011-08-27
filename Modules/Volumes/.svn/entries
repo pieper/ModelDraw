@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/Volumes
 http://svn.slicer.org/Slicer3
 
@@ -471,53 +471,16 @@ alexy
 
 42461
 
-ImageData
-dir
-
-vtkSlicerGradientsWidget.cxx
+vtkSlicerVolumesGUI.h
 file
 
 
 
 
 2010-10-25T02:20:29.254995Z
-3285e3e3fbba4632e8a6d5d52787a69e
-2010-01-28T22:05:16.738472Z
-11843
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12820
-
-vtkSlicerVectorVolumeDisplayWidget.cxx
-file
-
-
-
-
-2010-10-25T02:20:29.254995Z
-69f4102b4a2fa41849cd6b6ae6fe96d4
-2010-06-11T20:45:05.305745Z
-13771
+653a4da3c45375ea149fcafc4e8113ea
+2010-04-21T22:38:54.398209Z
+12865
 naucoin
 has-props
 
@@ -540,7 +503,7 @@ has-props
 
 
 
-18850
+7387
 
 vtkVolumesConfigure.h.in
 file
@@ -576,16 +539,16 @@ barre
 
 262
 
-vtkSlicerVolumesGUI.h
+vtkSlicerVectorVolumeDisplayWidget.cxx
 file
 
 
 
 
 2010-10-25T02:20:29.254995Z
-653a4da3c45375ea149fcafc4e8113ea
-2010-04-21T22:38:54.398209Z
-12865
+69f4102b4a2fa41849cd6b6ae6fe96d4
+2010-06-11T20:45:05.305745Z
+13771
 naucoin
 has-props
 
@@ -608,7 +571,44 @@ has-props
 
 
 
-7387
+18850
+
+vtkSlicerGradientsWidget.cxx
+file
+
+
+
+
+2010-10-25T02:20:29.254995Z
+3285e3e3fbba4632e8a6d5d52787a69e
+2010-01-28T22:05:16.738472Z
+11843
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12820
+
+ImageData
+dir
 
 CMakeLists.txt
 file
@@ -644,40 +644,6 @@ jcfr
 
 4445
 
-vtkSlicerVolumeDisplayWidget.h
-file
-
-
-
-
-2010-10-25T02:20:29.254995Z
-2aa0adef6fe6f1537962fd7b5f584d83
-2010-06-11T20:45:05.305745Z
-13771
-naucoin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3225
-
 vtkSlicerVolumesIcons.cxx
 file
 
@@ -712,17 +678,17 @@ naucoin
 
 3098
 
-vtkSlicerDiffusionTestingWidget.cxx
+vtkSlicerVolumeDisplayWidget.h
 file
 
 
 
 
-2010-11-12T13:37:34.379763Z
-d0646b1ec0daa8c439b6821270f59fc5
-2010-11-12T13:39:59.668904Z
-15482
-pieper
+2010-10-25T02:20:29.254995Z
+2aa0adef6fe6f1537962fd7b5f584d83
+2010-06-11T20:45:05.305745Z
+13771
+naucoin
 
 
 
@@ -744,7 +710,7 @@ pieper
 
 
 
-32258
+3225
 
 vtkSlicerDiffusionTensorVolumeDisplayWidget.h
 file
@@ -779,6 +745,40 @@ kerstin
 
 
 3645
+
+vtkSlicerDiffusionTestingWidget.cxx
+file
+
+
+
+
+2010-11-12T13:37:34.379763Z
+d0646b1ec0daa8c439b6821270f59fc5
+2010-11-12T13:39:59.668904Z
+15482
+pieper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32258
 
 vtkSlicerLabelMapVolumeDisplayWidget.cxx
 file

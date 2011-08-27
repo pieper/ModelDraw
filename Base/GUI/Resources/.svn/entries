@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Base/GUI/Resources
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ wjp@bwh.harvard.edu
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-vtkSlicerBaseAcknowledgementLogos_ImageData.h
-file
-
-
-
-
-2010-10-25T02:21:25.344995Z
-da7acf567eb6b66216c4dd624488be9d
-2009-05-21T19:09:08.636025Z
-9587
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-55455
 
 vtkSlicerFoundation_ImageData.h
 file
@@ -93,6 +59,40 @@ has-props
 
 
 112907
+
+vtkSlicerBaseAcknowledgementLogos_ImageData.h
+file
+
+
+
+
+2010-10-25T02:21:25.344995Z
+da7acf567eb6b66216c4dd624488be9d
+2009-05-21T19:09:08.636025Z
+9587
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+55455
 
 vtkSlicerModuleToolbar_ImageData.h
 file
@@ -196,40 +196,6 @@ has-props
 
 40259
 
-vtkSlicerLightbox_ImageData.h
-file
-
-
-
-
-2010-10-25T02:21:25.344995Z
-6b1768eb09297cb362bf10ba48d248d4
-2007-03-29T15:45:09.296403Z
-3071
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3328
-
 vtkSlicerMouseModeToolbar_ImageData.h
 file
 
@@ -264,16 +230,16 @@ has-props
 
 24061
 
-vtkSlicerHelpAndInformation_ImageData.h
+vtkSlicerLightbox_ImageData.h
 file
 
 
 
 
 2010-10-25T02:21:25.344995Z
-a900fba3e62adc3aad295a4cf312d127
-2008-03-26T20:59:23.972058Z
-6304
+6b1768eb09297cb362bf10ba48d248d4
+2007-03-29T15:45:09.296403Z
+3071
 wjp@bwh.harvard.edu
 has-props
 
@@ -296,7 +262,7 @@ has-props
 
 
 
-657
+3328
 
 vtkSlicerLoadSaveToolbar_ImageData.h
 file
@@ -332,16 +298,16 @@ has-props
 
 12999
 
-vtkSlicerFileBrowser_ImageData.h
+vtkSlicerHelpAndInformation_ImageData.h
 file
 
 
 
 
 2010-10-25T02:21:25.344995Z
-0b1ba9917a4302de588b32078d7c746b
-2007-04-01T14:08:36.044474Z
-3102
+a900fba3e62adc3aad295a4cf312d127
+2008-03-26T20:59:23.972058Z
+6304
 wjp@bwh.harvard.edu
 has-props
 
@@ -364,7 +330,7 @@ has-props
 
 
 
-4277
+657
 
 vtkSlicerSlicesControl_ImageData.h
 file
@@ -399,6 +365,40 @@ has-props
 
 
 26045
+
+vtkSlicerFileBrowser_ImageData.h
+file
+
+
+
+
+2010-10-25T02:21:25.344995Z
+0b1ba9917a4302de588b32078d7c746b
+2007-04-01T14:08:36.044474Z
+3102
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4277
 
 vtkSlicerModuleChoose_ImageData.h
 file

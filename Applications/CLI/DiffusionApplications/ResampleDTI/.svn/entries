@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/DiffusionApplications/ResampleDTI
 http://svn.slicer.org/Slicer3
 
@@ -502,40 +502,6 @@ has-props
 
 2634
 
-itkDiffusionTensor3DResample.h
-file
-
-
-
-
-2010-11-29T19:26:17.242333Z
-f0263309bc5d373b931689188b2f160c
-2010-11-24T16:23:52.442070Z
-15574
-francois_budin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4510
-
 itkDiffusionTensor3DBSplineInterpolateImageFunction.txx
 file
 
@@ -569,6 +535,40 @@ has-props
 
 
 1479
+
+itkDiffusionTensor3DResample.h
+file
+
+
+
+
+2010-11-29T19:26:17.242333Z
+f0263309bc5d373b931689188b2f160c
+2010-11-24T16:23:52.442070Z
+15574
+francois_budin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4510
 
 dtiprocessFiles
 dir
@@ -709,40 +709,6 @@ has-props
 
 1169
 
-ResampleDTIApp.cxx
-file
-
-
-
-
-2010-11-29T19:26:17.242333Z
-6dcf0830585e580aa07598cbdbf1142f
-2010-11-24T16:26:46.374618Z
-15575
-francois_budin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1126
-
 itkTransformDeformationFieldFilter.h
 file
 
@@ -777,18 +743,17 @@ francois_budin
 
 3186
 
-itkDiffusionTensor3DRigidTransform.txx
+ResampleDTIApp.cxx
 file
 
 
 
 
-2010-10-25T02:20:18.694995Z
-f950f5676eef93e87de41e0c6e9e46eb
-2010-04-29T15:58:49.396110Z
-13073
+2010-11-29T19:26:17.242333Z
+6dcf0830585e580aa07598cbdbf1142f
+2010-11-24T16:26:46.374618Z
+15575
 francois_budin
-has-props
 
 
 
@@ -809,7 +774,8 @@ has-props
 
 
 
-4501
+
+1126
 
 CMakeLists.txt
 file
@@ -844,6 +810,40 @@ francois_budin
 
 
 1529
+
+itkDiffusionTensor3DRigidTransform.txx
+file
+
+
+
+
+2010-10-25T02:20:18.694995Z
+f950f5676eef93e87de41e0c6e9e46eb
+2010-04-29T15:58:49.396110Z
+13073
+francois_budin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4501
 
 itkDiffusionTensor3DLinearInterpolateFunction.h
 file
@@ -913,40 +913,6 @@ has-props
 
 1518
 
-itkDiffusionTensor3DRigidTransform.h
-file
-
-
-
-
-2010-10-25T02:20:18.694995Z
-29dbee94c184dfbc39262facc65e2237
-2010-03-15T22:00:34.603278Z
-12353
-francois_budin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2446
-
 itkDiffusionTensor3DMatrix3x3Transform.txx
 file
 
@@ -980,6 +946,40 @@ has-props
 
 
 4908
+
+itkDiffusionTensor3DRigidTransform.h
+file
+
+
+
+
+2010-10-25T02:20:18.694995Z
+29dbee94c184dfbc39262facc65e2237
+2010-03-15T22:00:34.603278Z
+12353
+francois_budin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2446
 
 itkDiffusionTensor3DInterpolateImageFunction.txx
 file

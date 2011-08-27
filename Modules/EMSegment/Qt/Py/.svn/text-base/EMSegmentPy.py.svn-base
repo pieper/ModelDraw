@@ -114,6 +114,9 @@ class EMSegmentPyWidget:
     for i in range( 3, len( allSteps ) - 1 ):
       self.workflow.addTransition( allSteps[i], allSteps[i + 1] )
 
+    # configure behavior if user clicks on segment button to not go back to the current step
+    #self.workflow.goBackToOriginStepUponSuccess = False
+
     # Propagate the workflow, the logic and the MRML Manager to the steps
     for s in allSteps:
         s.setWorkflow( self.workflow )

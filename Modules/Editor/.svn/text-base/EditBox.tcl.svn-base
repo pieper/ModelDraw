@@ -79,7 +79,7 @@ itcl::body EditBox::findEffects { {path ""} } {
     ImplicitCube ImplicitEllipse ImplicitRectangle 
     Draw RemoveIslands ConnectedComponents 
     ThresholdBucket ThresholdPaintLabel SaveIsland SlurpColor Paint
-    DefaultTool LevelTracing MakeModel Wand GrowCutSegment
+    DefaultTool LevelTracing MakeModel Wand GrowCutSegment ModelDraw
   }
 
   # effects that operate from the menu
@@ -256,7 +256,7 @@ itcl::body EditBox::create { } {
   $this createButtonRow $parent {Paint Draw LevelTracing ImplicitRectangle}
   $this createButtonRow $parent {IdentifyIslands ChangeIsland RemoveIslands SaveIsland}
   $this createButtonRow $parent {ErodeLabel DilateLabel Threshold ChangeLabel}
-  $this createButtonRow $parent {MakeModel GrowCutSegment}
+  $this createButtonRow $parent {MakeModel GrowCutSegment ModelDraw}
   $this createButtonRow $parent {PreviousFiducial NextFiducial}
   if { $frame == "" } {
     $this createButtonRow $parent {PreviousCheckPoint NextCheckPoint GoToEditorModule PinOpen}

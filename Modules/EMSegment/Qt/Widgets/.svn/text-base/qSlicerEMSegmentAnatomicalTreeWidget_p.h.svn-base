@@ -119,6 +119,8 @@ public:
 
   vtkMRMLEMSNode *         EMSNode;
 
+  vtkMRMLNode *            CurrentNode;
+
   vtkMRMLColorTableNode *  CurrentColorTableNode;
 
   QStandardItemModel *     TreeModel;

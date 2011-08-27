@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Libs/qVTKWidgets
 http://svn.slicer.org/Slicer3
 
@@ -60,6 +60,9 @@ jcfr
 
 363
 
+Plugins
+dir
+
 qVTKRenderView.cxx
 file
 
@@ -93,9 +96,6 @@ has-props
 
 
 4555
-
-Plugins
-dir
 
 qVTKRenderView_p.h
 file
@@ -403,40 +403,6 @@ jcfr
 
 2279
 
-qVTKMatrixWidget.h
-file
-
-
-
-
-2010-10-25T02:20:21.794995Z
-88de38c65b8e135a5609c08b7c2566a1
-2010-01-29T16:25:56.006157Z
-11865
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-548
-
 qVTKWidgetsExport.h
 file
 
@@ -470,6 +436,40 @@ has-props
 
 
 429
+
+qVTKMatrixWidget.h
+file
+
+
+
+
+2010-10-25T02:20:21.794995Z
+88de38c65b8e135a5609c08b7c2566a1
+2010-01-29T16:25:56.006157Z
+11865
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+548
 
 qVTKConnection.cxx
 file

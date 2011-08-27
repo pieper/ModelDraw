@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Base/QTGUI
 http://svn.slicer.org/Slicer3
 
@@ -199,40 +199,6 @@ jcfr
 
 753
 
-qSlicerCommandOptions.h
-file
-
-
-
-
-2010-10-25T02:21:28.114995Z
-7dc31e248ea6c17d09bdc4e8ffa9f202
-2010-02-08T08:08:57.886235Z
-12048
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1029
-
 qSlicerModuleSelectorWidget.h
 file
 
@@ -266,6 +232,40 @@ has-props
 
 
 760
+
+qSlicerCommandOptions.h
+file
+
+
+
+
+2010-10-25T02:21:28.114995Z
+7dc31e248ea6c17d09bdc4e8ffa9f202
+2010-02-08T08:08:57.886235Z
+12048
+jcfr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1029
 
 Resources
 dir
@@ -338,40 +338,6 @@ has-props
 
 2027
 
-CMakeLists.txt
-file
-
-
-
-
-2010-10-25T02:21:28.114995Z
-3323e51fd7a20afb18b940a23c095758
-2010-02-04T22:31:49.607213Z
-11985
-jcfr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1695
-
 qSlicerAbstractModulePanel.cxx
 file
 
@@ -406,17 +372,18 @@ jcfr
 
 477
 
-qSlicerModulePanel.h
+CMakeLists.txt
 file
 
 
 
 
-2010-10-25T02:21:28.124995Z
-98b3bbdc498e59724fc364aa0b14daf4
-2010-01-29T16:26:27.298276Z
-11871
+2010-10-25T02:21:28.114995Z
+3323e51fd7a20afb18b940a23c095758
+2010-02-04T22:31:49.607213Z
+11985
 jcfr
+has-props
 
 
 
@@ -437,8 +404,7 @@ jcfr
 
 
 
-
-747
+1695
 
 qSlicerModuleSelectorWidget.cxx
 file
@@ -473,6 +439,40 @@ has-props
 
 
 3538
+
+qSlicerModulePanel.h
+file
+
+
+
+
+2010-10-25T02:21:28.124995Z
+98b3bbdc498e59724fc364aa0b14daf4
+2010-01-29T16:26:27.298276Z
+11871
+jcfr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+747
 
 qSlicerCommandOptions.cxx
 file

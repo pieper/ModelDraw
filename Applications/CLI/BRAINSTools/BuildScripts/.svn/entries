@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Applications/CLI/BRAINSTools/BuildScripts
 http://svn.slicer.org/Slicer3
 
@@ -25,40 +25,6 @@ hjohnson
 
 
 3bd1e089-480b-0410-8dfb-8563597acbee
-
-getbuildtest.tcl
-file
-
-
-
-
-2010-11-02T16:26:35.451960Z
-a8ced281b0a730548a0e041e55f46e81
-2010-11-01T22:02:49.293385Z
-15396
-hjohnson
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-31876
 
 brains.kws.xml
 file
@@ -93,6 +59,40 @@ hjohnson
 
 
 607
+
+getbuildtest.tcl
+file
+
+
+
+
+2010-11-02T16:26:35.451960Z
+a8ced281b0a730548a0e041e55f46e81
+2010-11-01T22:02:49.293385Z
+15396
+hjohnson
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31876
 
 genlib.tcl
 file
@@ -196,40 +196,6 @@ mscully
 
 3409
 
-BRAINSLogo.h
-file
-
-
-
-
-2010-11-02T16:26:35.451960Z
-3ef5f1435c8ba89224425349b6c9c0bc
-2010-11-01T22:02:49.293385Z
-15396
-hjohnson
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3191
-
 IJMacros.txt
 file
 
@@ -263,6 +229,40 @@ hjohnson
 
 
 3205
+
+BRAINSLogo.h
+file
+
+
+
+
+2010-11-02T16:26:35.451960Z
+3ef5f1435c8ba89224425349b6c9c0bc
+2010-11-01T22:02:49.293385Z
+15396
+hjohnson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3191
 
 brains.uncrustify.cfg
 file
@@ -434,40 +434,6 @@ hjohnson
 
 1997
 
-package_variables.tcl
-file
-
-
-
-
-2010-10-25T02:19:42.044995Z
-a15f126afacf20500ef2d627f2286923
-2010-05-26T13:05:14.188346Z
-13504
-hjohnson
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-30834
-
 InitialCache-MacOSX_PROFILE.cmake
 file
 
@@ -501,6 +467,40 @@ hjohnson
 
 
 2543
+
+package_variables.tcl
+file
+
+
+
+
+2010-10-25T02:19:42.044995Z
+a15f126afacf20500ef2d627f2286923
+2010-05-26T13:05:14.188346Z
+13504
+hjohnson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30834
 
 Module_Dummy.in
 file

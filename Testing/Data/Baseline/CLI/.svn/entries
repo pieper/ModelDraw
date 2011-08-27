@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Testing/Data/Baseline/CLI
 http://svn.slicer.org/Slicer3
 
@@ -60,40 +60,6 @@ has-props
 
 1051560
 
-GrayscaleFillHoleTest.nhdr
-file
-
-
-
-
-2010-10-25T02:22:33.234995Z
-8df4f258c812cd8809bd8813a342f38d
-2009-01-03T19:41:56.998955Z
-8261
-lorensen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-350
-
 MultiplyTest.nrrd
 file
 
@@ -128,17 +94,51 @@ has-props
 
 200327
 
-AddTest_DOUBLE.mha
+GrayscaleFillHoleTest.nhdr
 file
 
 
 
 
 2010-10-25T02:22:33.234995Z
-d81a2ad7468313e3b0b6e4c0377fd549
-2010-04-19T20:29:04.199582Z
-12806
-ibanez
+8df4f258c812cd8809bd8813a342f38d
+2009-01-03T19:41:56.998955Z
+8261
+lorensen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+350
+
+ThresholdTest.nhdr
+file
+
+
+
+
+2010-10-25T02:22:33.234995Z
+c886e595f3d0131c38c296af7754465f
+2009-01-08T16:20:11.536805Z
+8319
+naucoin
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-78008
+334
 
 OrientImageTestAxial.nrrd
 file
@@ -196,17 +196,17 @@ has-props
 
 270714
 
-ThresholdTest.nhdr
+AddTest_DOUBLE.mha
 file
 
 
 
 
 2010-10-25T02:22:33.234995Z
-c886e595f3d0131c38c296af7754465f
-2009-01-08T16:20:11.536805Z
-8319
-naucoin
+d81a2ad7468313e3b0b6e4c0377fd549
+2010-04-19T20:29:04.199582Z
+12806
+ibanez
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-334
+78008
 
 SparseFieldLevelSetContourTest.vtp
 file
@@ -468,40 +468,6 @@ lorensen
 
 344
 
-CheckerBoardTest.nhdr
-file
-
-
-
-
-2010-10-25T02:22:33.254995Z
-f4a8d71acc004535694ce8a3c1b40951
-2008-11-26T21:23:01.738071Z
-7989
-lorensen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-333
-
 GrayscaleGrindPeakTest.raw.gz
 file
 
@@ -535,6 +501,40 @@ has-props
 
 
 771310
+
+CheckerBoardTest.nhdr
+file
+
+
+
+
+2010-10-25T02:22:33.254995Z
+f4a8d71acc004535694ce8a3c1b40951
+2008-11-26T21:23:01.738071Z
+7989
+lorensen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+333
 
 he3corrected.nii.gz
 file
@@ -1522,40 +1522,6 @@ naucoin
 
 4001
 
-CastTest.nrrd
-file
-
-
-
-
-2010-10-25T02:22:33.274995Z
-c30ed33a210381c0a553e5b33389aa02
-2009-05-13T18:00:34.674458Z
-9472
-naucoin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1193
-
 SubtractTest.raw.gz
 file
 
@@ -1589,6 +1555,40 @@ has-props
 
 
 426310
+
+CastTest.nrrd
+file
+
+
+
+
+2010-10-25T02:22:33.274995Z
+c30ed33a210381c0a553e5b33389aa02
+2009-05-13T18:00:34.674458Z
+9472
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1193
 
 MaskedVolume.nrrd
 file
@@ -2032,40 +2032,6 @@ lorensen
 
 337
 
-AddTest_ULONG.mha
-file
-
-
-
-
-2010-10-25T02:22:33.274995Z
-6c80aca46173fdf2c6a4b3016a42f0bc
-2010-04-19T21:59:16.209453Z
-12818
-ibanez
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-73277
-
 AddTest_USHORT.mha
 file
 
@@ -2099,6 +2065,40 @@ has-props
 
 
 61725
+
+AddTest_ULONG.mha
+file
+
+
+
+
+2010-10-25T02:22:33.274995Z
+6c80aca46173fdf2c6a4b3016a42f0bc
+2010-04-19T21:59:16.209453Z
+12818
+ibanez
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+73277
 
 ThresholdTest.raw.gz
 file

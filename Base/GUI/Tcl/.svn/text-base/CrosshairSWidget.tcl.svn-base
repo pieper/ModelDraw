@@ -322,6 +322,7 @@ itcl::body CrosshairSWidget::processEvent { {caller ""} {event ""} } {
           "outside" {
               set _actionState ""
               set state $_actionState
+              $sliceGUI SetGrabID ""
               $this unhighlight
               return
           }

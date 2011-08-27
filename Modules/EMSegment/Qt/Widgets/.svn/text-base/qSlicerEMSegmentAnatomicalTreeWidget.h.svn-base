@@ -87,6 +87,8 @@ public:
 
   bool addDeleteSubclassesEnabled() const;
 
+  Q_INVOKABLE vtkMRMLNode* currentNode();
+
 public slots:
 
   virtual void setMRMLManager(vtkEMSegmentMRMLManager * newMRMLManager);

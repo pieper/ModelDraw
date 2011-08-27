@@ -1,15 +1,15 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/Editor/ImageData
 http://svn.slicer.org/Slicer3
 
 
 
-2010-09-24T19:59:24.384897Z
-15072
-harveerar
+2011-08-19T21:36:51.748505Z
+16828
+pieper
 
 
 
@@ -638,40 +638,6 @@ has-props
 
 351
 
-RemoveIslandsDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.024995Z
-bea1443fcbffca00762684c4793feb5f
-2007-07-27T14:02:09.350757Z
-3950
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-407
-
 ThresholdBucketSelected.png
 file
 
@@ -706,16 +672,16 @@ has-props
 
 553
 
-ChooseColorDisabled.png
+RemoveIslandsDisabled.png
 file
 
 
 
 
 2010-10-25T02:20:25.024995Z
-0e244805afe0ebfab9276e790131a12f
-2007-07-19T14:14:57.433865Z
-3884
+bea1443fcbffca00762684c4793feb5f
+2007-07-27T14:02:09.350757Z
+3950
 pieper
 has-props
 
@@ -738,75 +704,7 @@ has-props
 
 
 
-396
-
-LevelTracingDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.024995Z
-fb80d62868384bcbd2c5e4a4b84aff33
-2007-09-04T11:09:51.851615Z
-4223
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-630
-
-MakeModelSelected.png
-file
-
-
-
-
-2010-10-25T02:20:25.024995Z
-3987006aa0b2e297bb2096732091f110
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-441
+407
 
 SnapToGridOn.png
 file
@@ -842,14 +740,14 @@ has-props
 
 345
 
-ImplicitCube.png
+MakeModelSelected.png
 file
 
 
 
 
 2010-10-25T02:20:25.024995Z
-b7adb6b666822b9cf51b4beac3a9a589
+3987006aa0b2e297bb2096732091f110
 2007-07-19T14:14:57.433865Z
 3884
 pieper
@@ -874,7 +772,75 @@ has-props
 
 
 
-364
+441
+
+LevelTracingDisabled.png
+file
+
+
+
+
+2010-10-25T02:20:25.024995Z
+fb80d62868384bcbd2c5e4a4b84aff33
+2007-09-04T11:09:51.851615Z
+4223
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+630
+
+ChooseColorDisabled.png
+file
+
+
+
+
+2010-10-25T02:20:25.024995Z
+0e244805afe0ebfab9276e790131a12f
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+396
 
 AddCheckPointSelected.png
 file
@@ -909,6 +875,40 @@ has-props
 
 
 999
+
+ImplicitCube.png
+file
+
+
+
+
+2010-10-25T02:20:25.024995Z
+b7adb6b666822b9cf51b4beac3a9a589
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+364
 
 ThresholdDraw.png
 file
@@ -1012,40 +1012,6 @@ has-props
 
 326
 
-LabelVisibilityOff.png
-file
-
-
-
-
-2010-10-25T02:20:25.024995Z
-93f73c8adfe6f867c0634c01b4f08490
-2007-07-19T17:07:53.403056Z
-3895
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-668
-
 DefaultTool.png
 file
 
@@ -1079,6 +1045,40 @@ has-props
 
 
 548
+
+LabelVisibilityOff.png
+file
+
+
+
+
+2010-10-25T02:20:25.024995Z
+93f73c8adfe6f867c0634c01b4f08490
+2007-07-19T17:07:53.403056Z
+3895
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+668
 
 LabelVisibilityOn.png
 file
@@ -2236,14 +2236,14 @@ has-props
 
 170496
 
-ImplicitRectangleSelected.png
+EraseLabelSelected.png
 file
 
 
 
 
-2010-10-25T02:20:25.044995Z
-0f18f8c88aea11ad42d37111c2799e08
+2010-10-25T02:20:25.034995Z
+03cf7940f9fe9311c7cce6757ca8f2b3
 2007-07-19T14:14:57.433865Z
 3884
 pieper
@@ -2268,7 +2268,7 @@ has-props
 
 
 
-297
+396
 
 ChangeIslandDisabled.png
 file
@@ -2304,14 +2304,14 @@ has-props
 
 385
 
-EraseLabelSelected.png
+ImplicitRectangleSelected.png
 file
 
 
 
 
-2010-10-25T02:20:25.034995Z
-03cf7940f9fe9311c7cce6757ca8f2b3
+2010-10-25T02:20:25.044995Z
+0f18f8c88aea11ad42d37111c2799e08
 2007-07-19T14:14:57.433865Z
 3884
 pieper
@@ -2336,7 +2336,7 @@ has-props
 
 
 
-396
+297
 
 PreviousCheckPointDisabled.png
 file
@@ -2474,40 +2474,6 @@ has-props
 
 408
 
-InterpolateLabelsSelected.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-9a15c64e2b41ebefe9da494e582f0ede
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-365
-
 ThresholdBucketDisabled.png
 file
 
@@ -2542,17 +2508,17 @@ has-props
 
 600
 
-FiducialVisibilityOn.png
+InterpolateLabelsSelected.png
 file
 
 
 
 
 2010-10-25T02:20:25.044995Z
-37de27ca56032165281f2c3293277512
-2007-07-19T17:10:07.261620Z
-3897
-wjp@bwh.harvard.edu
+9a15c64e2b41ebefe9da494e582f0ede
+2007-07-19T14:14:57.433865Z
+3884
+pieper
 has-props
 
 
@@ -2574,7 +2540,7 @@ has-props
 
 
 
-671
+365
 
 ChangeLabel.png
 file
@@ -2610,6 +2576,40 @@ has-props
 
 331
 
+FiducialVisibilityOn.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+37de27ca56032165281f2c3293277512
+2007-07-19T17:10:07.261620Z
+3897
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+671
+
 MakeModelDisabled.png
 file
 
@@ -2643,74 +2643,6 @@ has-props
 
 
 471
-
-ImplicitEllipse.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-64ecbc14ebea1ceda7d13300874df64d
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-339
-
-AddCheckPointDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-0a0f0b36c46e20855f8ed1570435e443
-2009-04-01T20:36:56.620367Z
-9024
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-897
 
 ThresholdPaintLabel.png
 file
@@ -2746,16 +2678,16 @@ has-props
 
 493
 
-IdentifyIslands.png
+AddCheckPointDisabled.png
 file
 
 
 
 
 2010-10-25T02:20:25.044995Z
-3bd91d663b6c563fc1df912315343b07
-2007-07-19T15:39:33.440113Z
-3891
+0a0f0b36c46e20855f8ed1570435e443
+2009-04-01T20:36:56.620367Z
+9024
 wjp@bwh.harvard.edu
 has-props
 
@@ -2778,7 +2710,41 @@ has-props
 
 
 
-443
+897
+
+ImplicitEllipse.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+64ecbc14ebea1ceda7d13300874df64d
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+339
 
 Redo.png
 file
@@ -2814,6 +2780,40 @@ has-props
 
 564
 
+IdentifyIslands.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+3bd91d663b6c563fc1df912315343b07
+2007-07-19T15:39:33.440113Z
+3891
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+443
+
 SmudgeToolSelected.png
 file
 
@@ -2848,40 +2848,6 @@ has-props
 
 949
 
-GrowCutSegmentDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-8273a1ae49b3db2a5ce288c01f4f4c00
-2010-09-24T19:59:24.384897Z
-15072
-harveerar
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1210
-
 SnapToGridOff.png
 file
 
@@ -2915,6 +2881,40 @@ has-props
 
 
 402
+
+GrowCutSegmentDisabled.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+8273a1ae49b3db2a5ce288c01f4f4c00
+2010-09-24T19:59:24.384897Z
+15072
+harveerar
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1210
 
 PinOpen.png
 file
@@ -2984,40 +2984,6 @@ has-props
 
 582
 
-FiducialVisibilityOnDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-4ef6220f2aacd351ea0a88395b7a5690
-2007-07-19T17:10:07.261620Z
-3897
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-690
-
 ChangeLabelDisabled.png
 file
 
@@ -3052,17 +3018,17 @@ has-props
 
 344
 
-ImplicitEllipseDisabled.png
+FiducialVisibilityOnDisabled.png
 file
 
 
 
 
 2010-10-25T02:20:25.044995Z
-02582e2895d74c80621c9fb4eb21fd4c
-2007-07-19T14:14:57.433865Z
-3884
-pieper
+4ef6220f2aacd351ea0a88395b7a5690
+2007-07-19T17:10:07.261620Z
+3897
+wjp@bwh.harvard.edu
 has-props
 
 
@@ -3084,7 +3050,7 @@ has-props
 
 
 
-346
+690
 
 ThresholdPaintLabelDisabled.png
 file
@@ -3120,17 +3086,17 @@ has-props
 
 558
 
-LabelOpacitySelected.png
+ImplicitEllipseDisabled.png
 file
 
 
 
 
 2010-10-25T02:20:25.044995Z
-ded2fd119afb8dba0f029206f5ba1fc4
-2007-07-19T15:10:06.290297Z
-3889
-wjp@bwh.harvard.edu
+02582e2895d74c80621c9fb4eb21fd4c
+2007-07-19T14:14:57.433865Z
+3884
+pieper
 has-props
 
 
@@ -3152,7 +3118,41 @@ has-props
 
 
 
-422
+346
+
+RedoDisabled.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+da0ae90ae42b45eaf3b16a5929b8ace1
+2008-07-25T21:14:38.153182Z
+7342
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+564
 
 IdentifyIslandsDisabled.png
 file
@@ -3188,17 +3188,17 @@ has-props
 
 459
 
-RedoDisabled.png
+LabelOpacitySelected.png
 file
 
 
 
 
 2010-10-25T02:20:25.044995Z
-da0ae90ae42b45eaf3b16a5929b8ace1
-2008-07-25T21:14:38.153182Z
-7342
-pieper
+ded2fd119afb8dba0f029206f5ba1fc4
+2007-07-19T15:10:06.290297Z
+3889
+wjp@bwh.harvard.edu
 has-props
 
 
@@ -3220,7 +3220,7 @@ has-props
 
 
 
-564
+422
 
 FiducialVisibilityOff.png
 file
@@ -3358,6 +3358,40 @@ has-props
 
 334
 
+ModelDrawSelected.png
+file
+
+
+
+
+2011-07-07T17:14:21.391333Z
+607b02782e2c35698e6a117b932d2c6c
+2011-08-19T21:36:51.748505Z
+16828
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+411
+
 Wand.png
 file
 
@@ -3460,40 +3494,6 @@ has-props
 
 428
 
-ImplicitRectangle.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-aaf6e6c99e0c4207f47f7c977c22beb0
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-301
-
 EraseLabel.png
 file
 
@@ -3527,6 +3527,40 @@ has-props
 
 
 433
+
+ImplicitRectangle.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+aaf6e6c99e0c4207f47f7c977c22beb0
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+301
 
 PinOpenDisabled.png
 file
@@ -3766,40 +3800,6 @@ has-props
 
 1102
 
-ImplicitRectangleDisabled.png
-file
-
-
-
-
-2010-10-25T02:20:25.044995Z
-bf4c291ebcebf886e60bf6ecf1fec8bc
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-326
-
 EraseLabelDisabled.png
 file
 
@@ -3833,6 +3833,40 @@ has-props
 
 
 446
+
+ImplicitRectangleDisabled.png
+file
+
+
+
+
+2010-10-25T02:20:25.044995Z
+bf4c291ebcebf886e60bf6ecf1fec8bc
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+326
 
 InterpolateLabelsDisabled.png
 file
@@ -4072,16 +4106,16 @@ has-props
 
 331
 
-ConnectedComponentsSelected.png
+ModelDraw.png
 file
 
 
 
 
-2010-10-25T02:20:25.054995Z
-3c6c25e687daea1b1f2d41983ea9f8e2
-2007-07-19T14:14:57.433865Z
-3884
+2011-07-07T17:14:10.741333Z
+f284d84a96ff666b2038bebf26e1304a
+2011-08-19T21:36:51.748505Z
+16828
 pieper
 has-props
 
@@ -4104,7 +4138,7 @@ has-props
 
 
 
-322
+444
 
 ToggleLabelOutline.png
 file
@@ -4140,6 +4174,40 @@ has-props
 
 370
 
+ConnectedComponentsSelected.png
+file
+
+
+
+
+2010-10-25T02:20:25.054995Z
+3c6c25e687daea1b1f2d41983ea9f8e2
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+322
+
 RemoveIslandsSelected.png
 file
 
@@ -4174,40 +4242,6 @@ has-props
 
 357
 
-ChooseColorSelected.png
-file
-
-
-
-
-2010-10-25T02:20:25.054995Z
-6c5f001a40a39c651e9a0b7043de174a
-2007-07-19T14:14:57.433865Z
-3884
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-331
-
 LevelTracingSelected.png
 file
 
@@ -4241,6 +4275,40 @@ has-props
 
 
 583
+
+ChooseColorSelected.png
+file
+
+
+
+
+2010-10-25T02:20:25.054995Z
+6c5f001a40a39c651e9a0b7043de174a
+2007-07-19T14:14:57.433865Z
+3884
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+331
 
 DilateLabelDisabled.png
 file
@@ -4479,6 +4547,40 @@ has-props
 
 
 458
+
+ModelDrawDisabled.png
+file
+
+
+
+
+2011-07-07T17:14:03.451333Z
+7f3bb9e43fa323121bc4802bf2ce7894
+2011-08-19T21:36:51.748505Z
+16828
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+429
 
 ErodeLabelSelected.png
 file

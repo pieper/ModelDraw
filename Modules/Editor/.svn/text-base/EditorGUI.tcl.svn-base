@@ -15,6 +15,7 @@ proc EditorTearDownGUI {this} {
       optionsSpacer optionsFrame
       toolsActiveTool toolsEditFrame toolsColorFrame
       enableCheckPoint
+      enableAutosave
       toolsFrame volumesFrame 
   }
 
@@ -51,6 +52,7 @@ proc EditorBuildGUI {this} {
     error "editor singleton already created"
   }
   set ::Editor(singleton) $this
+  set ::Editor(parameterNode) ""
 
   #
   # create and register the node class
@@ -158,6 +160,16 @@ proc EditorBuildGUI {this} {
   pack [$::Editor($this,optionsSpacer) GetWidgetName] \
     -fill both -expand true 
 
+  # Enable autosave check button
+  set ::Editor($this,enableAutosave) [vtkKWCheckButton New]
+  $::Editor($this,enableAutosave) SetParent $::Editor($this,toolsEditFrame)
+  $::Editor($this,enableAutosave) Create
+  $::Editor($this,enableAutosave) SetText "Autosave"
+  $::Editor($this,enableAutosave) SetBalloonHelpString "Autosave will save a copy of your current editor label map and parameters to a directory of your choice every 5 minutes while you are in the Editor."
+  set ::Editor(autosaveEnabled) 0
+  $::Editor($this,enableAutosave) SetSelectedState $::Editor(autosaveEnabled)
+  pack [$::Editor($this,enableAutosave) GetWidgetName] -side bottom -anchor w
+
   # Enable check point check button
   set ::Editor($this,enableCheckPoint) [vtkKWCheckButton New]
   $::Editor($this,enableCheckPoint) SetParent $::Editor($this,toolsEditFrame)
@@ -166,12 +178,13 @@ proc EditorBuildGUI {this} {
   $::Editor($this,enableCheckPoint) SetBalloonHelpString "Volume Check Points allow you to undo and redo recent edits.\n\nNote: for large volumes, you may run out of system memory when this is enabled."
   set ::Editor(checkPointsEnabled) 1
   $::Editor($this,enableCheckPoint) SetSelectedState $::Editor(checkPointsEnabled)
-  pack [$::Editor($this,enableCheckPoint) GetWidgetName] -side left
+  pack [$::Editor($this,enableCheckPoint) GetWidgetName] -side bottom -anchor w
 
 }
 
 proc EditorAddGUIObservers {this} {
     $this AddObserverByNumber $::Editor($this,enableCheckPoint) 10000 
+    $this AddObserverByNumber $::Editor($this,enableAutosave) 10000 
 
     if {[$this GetDebug]} {
         puts "Adding mrml observer to selection node, modified event"
@@ -182,6 +195,7 @@ proc EditorAddGUIObservers {this} {
 
 proc EditorRemoveGUIObservers {this} {
   $this RemoveObserverByNumber $::Editor($this,enableCheckPoint) 10000 
+  $this RemoveObserverByNumber $::Editor($this,enableAutosave) 10000 
   
   if {[$this GetDebug]} {
     puts "Removing mrml observer on selection node, modified event"
@@ -210,6 +224,15 @@ proc EditorProcessGUIEvents {this caller event} {
     }
   } 
 
+  if { $caller == $::Editor($this,enableAutosave) } {
+    switch $event {
+      "10000" {
+        set onoff [$::Editor($this,enableAutosave) GetSelectedState]
+        EditorSetAutosaveEnabled $onoff
+      }
+    }
+  } 
+
   EditorUpdateMRML $this
 }
 
@@ -231,21 +254,45 @@ proc EditorCreateParameterNode {} {
 }
 
 # get the editor parameter node, or create one if it doesn't exist
+# - keep a reference to parameterNode and remove any new nodes
+#   (i.e. that have been brought in via scene load or import) but
+#   then delete them from the scene
+# - if there is no node in scene, create one and add it
 proc EditorGetParameterNode {} {
 
+  if { [info command $::Editor(parameterNode)] == "" } {
+    set ::Editor(parameterNode) ""
+  }
+
   set node ""
+  set nodesToRemove ""
   set nNodes [$::slicer3::MRMLScene GetNumberOfNodesByClass "vtkMRMLScriptedModuleNode"]
   for {set i 0} {$i < $nNodes} {incr i} {
     set n [$::slicer3::MRMLScene GetNthNodeByClass $i "vtkMRMLScriptedModuleNode"]
     if { [$n GetModuleName] == "Editor" } {
-      set node $n
-      break;
+      if { $n == $::Editor(parameterNode) } {
+        set node $n
+      } else {
+        if { $::Editor(parameterNode) == "" } {
+          set ::Editor(parameterNode) $n
+          set node $n
+        } else {
+          $::Editor(parameterNode) Copy $n
+          set node $::Editor(parameterNode)
+          lappend nodesToRemove $n
+        }
+      }
     }
+  }
+
+  foreach n $nodesToRemove {
+    $::slicer3::MRMLScene RemoveNode $n
   }
 
   if { $node == "" } {
     EditorCreateParameterNode
     set node [EditorGetParameterNode]
+    set ::Editor(parameterNode) $node
   }
 
   return $node
@@ -677,6 +724,87 @@ proc EditorPerformNextCheckPoint {} {
   EditorUpdateCheckPointButtons 
 }
 
+#
+# Helpers for autosave
+#
+
+proc EditorSetAutosaveEnabled {onoff} {
+  set ::Editor(autosaveEnabled) $onoff
+
+  if { $onoff } {
+    # let user pick directory for autosaves
+    
+    set ::dialog [vtkKWLoadSaveDialog New]
+    $::dialog ChooseDirectoryOn
+    $::dialog SetParent [$::slicer3::ApplicationGUI GetMainSlicerWindow]
+    $::dialog Create
+    $::dialog RetrieveLastPathFromRegistry "EditorAutosavePath"
+
+    # scroll-to-selection
+    set fileprefix [[[$::dialog GetFileBrowserWidget] GetDirectoryExplorer] GetSelectedDirectory]
+    [[$::dialog GetFileBrowserWidget] GetDirectoryExplorer] ScrollToDirectory $fileprefix
+
+    $::dialog Invoke
+    set dir ""
+    if { [[$::dialog GetFileNames] GetNumberOfValues] } {
+      set dir [[$::dialog GetFileNames] GetValue 0]
+    }
+    if { $dir != "" } {
+      $::slicer3::Application SetRegistry EditorAutosavePath $dir
+    }
+    #$::dialog Delete
+
+    EditorAutosave $dir
+  } else {
+    EditorAutosave cancel
+  }
+}
+
+proc EditorAutosave { {directory ""} } {
+
+  if { $directory == "cancel" } {
+    if { [info exists ::Editor(autosaveAfterID)] } {
+      after cancel $::Editor(autosaveAfterID)
+      [$::slicer3::ApplicationGUI GetMainSlicerWindow] SetStatusText "Autosaving canceled."
+    }
+    return
+  }
+
+  if { ![file isdirectory $directory] || ![file writable $directory] } {
+    puts "Cannot save to $directory"
+    return
+  }
+
+  set autoDir $directory/[clock format [clock seconds] -format "%Y-%m-%d_%H-%M"]
+  file mkdir $autoDir
+
+  [$::slicer3::ApplicationGUI GetMainSlicerWindow] SetStatusText "Autosaving to $autoDir..."
+
+  # save the current label map
+  set sliceLogic [$::slicer3::ApplicationLogic GetSliceLogic "Red"]
+  set labelNode [[$sliceLogic GetLabelLayer] GetVolumeNode]
+  if { $labelNode != "" } {
+    set storageNode [vtkMRMLNRRDStorageNode New]
+    $storageNode SetFileName $autoDir/autosaved-labelVolume.nrrd
+    $storageNode WriteData $labelNode
+    $storageNode Delete
+  }
+
+  # save all scripted parameter nodes
+  set nodeCount [$::slicer3::MRMLScene GetNumberOfNodesByClass "vtkMRMLScriptedModuleNode"]
+  for {set nodeIndex 0} {$nodeIndex < $nodeCount} {incr nodeIndex} {
+    set parameterNode [$::slicer3::MRMLScene GetNthNodeByClass $nodeIndex "vtkMRMLScriptedModuleNode"]
+    $parameterNode RequestParameterList
+    set parameters [$parameterNode GetParameterList]
+    set fp [open $autoDir/[$parameterNode GetID]-parameters.txt "w"]
+    puts $fp $parameters
+    close $fp
+  }
+  [$::slicer3::ApplicationGUI GetMainSlicerWindow] SetStatusText "Saved to $autoDir..."
+
+  # save again in 5 minutes
+  set ::Editor(autosaveAfterID) [after [expr 5 * 60 * 1000] EditorAutosave $directory]
+}
 
 
 #

@@ -1,15 +1,15 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Modules/EMSegment/Qt/Py/EMSegmentWizard
 http://svn.slicer.org/Slicer3
 
 
 
-2011-08-09T18:31:49.746833Z
-16804
-domibel
+2011-08-17T14:54:11.954335Z
+16822
+haehn
 
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-07-22T12:30:17.084688Z
-3b791bc622a86eb17ba22df89ddd84a6
-2011-07-19T14:56:33.535451Z
-16753
+2011-08-21T16:00:36.805834Z
+59cfcbb5c05d574e8fa81b26a660aaf0
+2011-08-17T14:54:11.954335Z
+16822
 haehn
 
 
@@ -58,7 +58,7 @@ haehn
 
 
 
-2944
+3333
 
 EMSegmentDummyStep.py
 file
@@ -94,6 +94,40 @@ haehn
 
 663
 
+EMSegmentDefinePreprocessingStep.py
+file
+
+
+
+
+2011-08-21T16:00:36.805834Z
+d536d0446f712e3a0c40b2376390fe66
+2011-08-17T14:54:11.954335Z
+16822
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9485
+
 __init__.py
 file
 
@@ -127,40 +161,6 @@ haehn
 
 
 596
-
-EMSegmentDefinePreprocessingStep.py
-file
-
-
-
-
-2011-08-13T17:21:36.630119Z
-406cec812499132b47256b839c22f601
-2011-08-09T18:31:49.746833Z
-16804
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9262
 
 EMSegmentSelectTaskStep.py
 file
@@ -196,40 +196,6 @@ haehn
 
 5304
 
-EMSegmentDefineAnatomicalTreeStep.py
-file
-
-
-
-
-2011-08-13T17:21:36.630119Z
-9d8fb8eb30e3d7f020a2a6a40268884a
-2011-08-01T18:31:37.529371Z
-16780
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2559
-
 EMSegmentDynamicFrame.py
 file
 
@@ -263,6 +229,40 @@ haehn
 
 
 5238
+
+EMSegmentDefineAnatomicalTreeStep.py
+file
+
+
+
+
+2011-08-13T17:21:36.630119Z
+9d8fb8eb30e3d7f020a2a6a40268884a
+2011-08-01T18:31:37.529371Z
+16780
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2559
 
 EMSegmentEditRegistrationParametersStep.py
 file
@@ -304,10 +304,10 @@ file
 
 
 
-2011-08-13T17:21:36.630119Z
-5a9a2b8612e228a1379fbd935852fb64
-2011-08-01T18:31:37.529371Z
-16780
+2011-08-21T16:00:36.805834Z
+495a818b5f338281375a941b54744200
+2011-08-17T14:54:11.954335Z
+16822
 haehn
 
 
@@ -330,7 +330,7 @@ haehn
 
 
 
-3386
+9250
 
 EMSegmentStartSegmentationStep.py
 file
@@ -338,10 +338,10 @@ file
 
 
 
-2011-08-13T17:21:36.630119Z
-a192f766230b2e08fb595deba2d188f5
-2011-08-01T18:31:37.529371Z
-16780
+2011-08-21T16:00:36.805834Z
+e210138995f3003679038043bde5b64e
+2011-08-17T14:54:11.954335Z
+16822
 haehn
 
 
@@ -364,41 +364,7 @@ haehn
 
 
 
-3502
-
-Helper.py
-file
-
-
-
-
-2011-08-13T17:21:36.630119Z
-b03dc1bfa9d2b362db48699d248a43db
-2011-08-09T18:31:49.746833Z
-16804
-domibel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2134
+3727
 
 EMSegmentEditNodeBasedParametersStep.py
 file
@@ -434,6 +400,74 @@ haehn
 
 3350
 
+Helper.py
+file
+
+
+
+
+2011-08-21T16:00:36.805834Z
+5bce7ba843f92f19a3f24e38b6d73a9d
+2011-08-17T14:54:11.954335Z
+16822
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2780
+
+EMSegmentStep.py
+file
+
+
+
+
+2011-08-21T16:00:36.805834Z
+3cc925fbaca8357ec5099bb3a7b08edc
+2011-08-17T14:54:11.954335Z
+16822
+haehn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2138
+
 EMSegmentDefineAtlasStep.py
 file
 
@@ -467,40 +501,6 @@ haehn
 
 
 1649
-
-EMSegmentStep.py
-file
-
-
-
-
-2011-08-13T17:21:36.630119Z
-40e29864584d813f346a932b023ade23
-2011-08-01T18:47:06.817075Z
-16781
-haehn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2141
 
 CMakeLists.txt
 file

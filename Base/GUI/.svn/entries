@@ -1,14 +1,14 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Base/GUI
 http://svn.slicer.org/Slicer3
 
 
 
-2011-08-13T17:48:52.655686Z
-16815
+2011-08-19T21:36:51.748505Z
+16828
 pieper
 has-props
 
@@ -536,40 +536,6 @@ has-props
 
 3479
 
-vtkSlicerPopUpHelpWidget.cxx
-file
-
-
-
-
-2010-10-25T02:21:27.984995Z
-7f48666b2d7519d1771cb477eee3f635
-2010-02-15T21:34:06.325299Z
-12141
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8951
-
 vtkSlicerFiducialListWidget.cxx
 file
 
@@ -604,17 +570,17 @@ has-props
 
 76450
 
-vtkSlicerVolumeHeaderWidget.cxx
+vtkSlicerPopUpHelpWidget.cxx
 file
 
 
 
 
 2010-10-25T02:21:27.984995Z
-338357cb321ad181d0e260ea560c56ab
-2010-04-08T19:31:34.315599Z
-12691
-naucoin
+7f48666b2d7519d1771cb477eee3f635
+2010-02-15T21:34:06.325299Z
+12141
+lorensen
 has-props
 
 
@@ -636,7 +602,7 @@ has-props
 
 
 
-28009
+8951
 
 vtkSlicerVolumeFileHeaderWidget.cxx
 file
@@ -672,6 +638,40 @@ has-props
 
 15243
 
+vtkSlicerVolumeHeaderWidget.cxx
+file
+
+
+
+
+2010-10-25T02:21:27.984995Z
+338357cb321ad181d0e260ea560c56ab
+2010-04-08T19:31:34.315599Z
+12691
+naucoin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28009
+
 vtkSlicerPermissionPrompterWidget.cxx
 file
 
@@ -705,40 +705,6 @@ has-props
 
 
 9539
-
-vtkSlicerTheme.h
-file
-
-
-
-
-2010-10-25T02:21:27.984995Z
-ff680c56fd2df7ccc37575722a68c923
-2010-02-15T21:34:06.325299Z
-12141
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2043
 
 vtkSlicerRecordSnapshotWidget.h
 file
@@ -774,14 +740,14 @@ has-props
 
 2669
 
-vtkSlicerTransformsGUI.h
+vtkSlicerTheme.h
 file
 
 
 
 
 2010-10-25T02:21:27.984995Z
-31dad3df8873d3c878f166b036059004
+ff680c56fd2df7ccc37575722a68c923
 2010-02-15T21:34:06.325299Z
 12141
 lorensen
@@ -806,7 +772,7 @@ has-props
 
 
 
-2339
+2043
 
 vtkSlicerModelHierarchyWidget.h
 file
@@ -841,6 +807,40 @@ has-props
 
 
 4509
+
+vtkSlicerTransformsGUI.h
+file
+
+
+
+
+2010-10-25T02:21:27.984995Z
+31dad3df8873d3c878f166b036059004
+2010-02-15T21:34:06.325299Z
+12141
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2339
 
 vtkSlicerInteractorStyle.cxx
 file
@@ -944,40 +944,6 @@ has-props
 
 6102
 
-vtkSlicerModulesWizardDialog.h
-file
-
-
-
-
-2010-10-25T02:21:27.984995Z
-73aa1b9fbf748bcde01537d0a5969649
-2010-02-15T21:34:06.325299Z
-12141
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1871
-
 vtkSlicerROIGUI.cxx
 file
 
@@ -1011,6 +977,40 @@ has-props
 
 
 8318
+
+vtkSlicerModulesWizardDialog.h
+file
+
+
+
+
+2010-10-25T02:21:27.984995Z
+73aa1b9fbf748bcde01537d0a5969649
+2010-02-15T21:34:06.325299Z
+12141
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1871
 
 vtkSlicerSeedWidgetClass.h
 file
@@ -2375,17 +2375,17 @@ has-props
 
 20665
 
-vtkSlicerColorLUTIcons.h
+vtkSlicerMRMLSaveDataWidget.cxx
 file
 
 
 
 
-2010-10-25T02:21:28.004995Z
-ccc2a85aa05b99909510bca057274987
-2010-06-10T16:28:54.100571Z
-13738
-wjp@bwh.harvard.edu
+2011-01-30T16:17:50.349288Z
+80f4073065efcffe1d5b5b831c33884e
+2011-01-30T04:30:37.547430Z
+15845
+alexy
 has-props
 
 
@@ -2407,7 +2407,7 @@ has-props
 
 
 
-6370
+59433
 
 vtkSlicerClipModelsWidget.h
 file
@@ -2443,17 +2443,17 @@ has-props
 
 2229
 
-vtkSlicerMRMLSaveDataWidget.cxx
+vtkSlicerColorLUTIcons.h
 file
 
 
 
 
-2011-01-30T16:17:50.349288Z
-80f4073065efcffe1d5b5b831c33884e
-2011-01-30T04:30:37.547430Z
-15845
-alexy
+2010-10-25T02:21:28.004995Z
+ccc2a85aa05b99909510bca057274987
+2010-06-10T16:28:54.100571Z
+13738
+wjp@bwh.harvard.edu
 has-props
 
 
@@ -2475,7 +2475,7 @@ has-props
 
 
 
-59433
+6370
 
 vtkSlicerSlicesGUI.cxx
 file
@@ -2545,6 +2545,9 @@ has-props
 
 87806
 
+Python
+dir
+
 vtkSlicerModulesStep.h
 file
 
@@ -2579,8 +2582,39 @@ has-props
 
 5005
 
-Python
-dir
+vtkSlicerModelDisplayWidget.cxx
+file
+
+
+
+
+2011-01-02T20:28:01.404953Z
+577197a3c0d14baadfe141132bf0e532
+2010-12-31T17:23:45.990216Z
+15709
+alexy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38269
 
 vtkSlicerNodeSelectorWidget.cxx
 file
@@ -2615,40 +2649,6 @@ has-props
 
 
 23382
-
-vtkSlicerModelDisplayWidget.cxx
-file
-
-
-
-
-2011-01-02T20:28:01.404953Z
-577197a3c0d14baadfe141132bf0e532
-2010-12-31T17:23:45.990216Z
-15709
-alexy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-38269
 
 vtkSlicerComponentGUI.h
 file
@@ -2820,40 +2820,6 @@ has-props
 
 14078
 
-vtkSlicerSliceGUI.cxx
-file
-
-
-
-
-2010-10-25T02:21:28.004995Z
-473d5c4571632d5f239d330c36e4af00
-2010-10-03T22:29:31.019079Z
-15136
-wjp@bwh.harvard.edu
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19196
-
 vtkSlicerFileBrowserIcons.h
 file
 
@@ -2887,6 +2853,40 @@ has-props
 
 
 1301
+
+vtkSlicerSliceGUI.cxx
+file
+
+
+
+
+2010-10-25T02:21:28.004995Z
+473d5c4571632d5f239d330c36e4af00
+2010-10-03T22:29:31.019079Z
+15136
+wjp@bwh.harvard.edu
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19196
 
 vtkSlicerSliceGUICollection.h
 file
@@ -2990,40 +2990,6 @@ has-props
 
 30133
 
-vtkSlicerROIDisplayWidget.h
-file
-
-
-
-
-2010-10-25T02:21:28.014995Z
-1b21f8c7b0574c2e5aa745fed0a7857d
-2010-05-11T14:21:21.168261Z
-13312
-alexy
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3915
-
 vtkSlicerColorDisplayWidget.cxx
 file
 
@@ -3057,6 +3023,40 @@ has-props
 
 
 40496
+
+vtkSlicerROIDisplayWidget.h
+file
+
+
+
+
+2010-10-25T02:21:28.014995Z
+1b21f8c7b0574c2e5aa745fed0a7857d
+2010-05-11T14:21:21.168261Z
+13312
+alexy
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3915
 
 vtkSlicerBoxRepresentation.cxx
 file
@@ -3092,40 +3092,6 @@ has-props
 
 41931
 
-vtkSlicerSlicesGUI.h
-file
-
-
-
-
-2010-10-25T02:21:28.014995Z
-fb10dfdfd63bfdce6f00148c1abdf339
-2010-04-28T21:23:55.029383Z
-13002
-millerjv
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4145
-
 vtkKWCheckBoxSelectionDialog.cxx
 file
 
@@ -3159,6 +3125,40 @@ has-props
 
 
 11478
+
+vtkSlicerSlicesGUI.h
+file
+
+
+
+
+2010-10-25T02:21:28.014995Z
+fb10dfdfd63bfdce6f00148c1abdf339
+2010-04-28T21:23:55.029383Z
+13002
+millerjv
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4145
 
 vtkSlicerColorEditWidget.h
 file
@@ -3262,40 +3262,6 @@ has-props
 
 18719
 
-vtkSlicerWidget.cxx
-file
-
-
-
-
-2010-10-25T02:21:28.014995Z
-e75b5a9ef0656a1d4cac62531e9fef1f
-2010-02-15T21:34:06.325299Z
-12141
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3680
-
 vtkSlicerROIGUI.h
 file
 
@@ -3329,6 +3295,40 @@ has-props
 
 
 3051
+
+vtkSlicerWidget.cxx
+file
+
+
+
+
+2010-10-25T02:21:28.014995Z
+e75b5a9ef0656a1d4cac62531e9fef1f
+2010-02-15T21:34:06.325299Z
+12141
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3680
 
 vtkSlicerHelpIcons.cxx
 file
@@ -3398,6 +3398,40 @@ has-props
 
 1643
 
+vtkSlicerModelsGUI.cxx
+file
+
+
+
+
+2010-10-25T02:21:28.014995Z
+1891386ebd04ef73b6fb5888916b9c47
+2010-04-29T15:53:52.652309Z
+13071
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20951
+
 vtkSlicerXYPlotWidget.h
 file
 
@@ -3432,39 +3466,8 @@ has-props
 
 6405
 
-vtkSlicerModelsGUI.cxx
-file
-
-
-
-
-2010-10-25T02:21:28.014995Z
-1891386ebd04ef73b6fb5888916b9c47
-2010-04-29T15:53:52.652309Z
-13071
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20951
+Tcl
+dir
 
 vtkSlicerApplicationSettingsInterface.h
 file
@@ -3500,8 +3503,39 @@ has-props
 
 5156
 
-Tcl
-dir
+vtkSlicerModulesConfigurationStep.cxx
+file
+
+
+
+
+2011-02-04T23:14:40.404725Z
+a4cdf1562dfe90ba0feee43e1a535ff4
+2011-02-04T23:14:47.623271Z
+15926
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17149
 
 vtkSlicerViewControlIcons.h
 file
@@ -3537,40 +3571,6 @@ has-props
 
 4909
 
-vtkSlicerModulesConfigurationStep.cxx
-file
-
-
-
-
-2011-02-04T23:14:40.404725Z
-a4cdf1562dfe90ba0feee43e1a535ff4
-2011-02-04T23:14:47.623271Z
-15926
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17149
-
 vtkSlicerEmptyModuleGUI.h
 file
 
@@ -3604,40 +3604,6 @@ has-props
 
 
 1880
-
-vtkSlicerBoxRepresentation.h
-file
-
-
-
-
-2010-10-25T02:21:28.014995Z
-70d02b65610a23f8382b6cdb64328ae5
-2010-02-15T21:34:06.325299Z
-12141
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10695
 
 vtkSlicerBaseGUIWin32Header.h
 file
@@ -3673,14 +3639,14 @@ has-props
 
 1116
 
-vtkSlicerWaitMessageWidget.h
+vtkSlicerBoxRepresentation.h
 file
 
 
 
 
 2010-10-25T02:21:28.014995Z
-24e13f242fbb52bc4ddd9ca014ad3a6a
+70d02b65610a23f8382b6cdb64328ae5
 2010-02-15T21:34:06.325299Z
 12141
 lorensen
@@ -3705,7 +3671,7 @@ has-props
 
 
 
-1318
+10695
 
 vtkSlicerFoundationIcons.cxx
 file
@@ -3741,14 +3707,14 @@ has-props
 
 70915
 
-vtkSlicerImageCloseUp2D.cxx
+vtkSlicerWaitMessageWidget.h
 file
 
 
 
 
 2010-10-25T02:21:28.014995Z
-e74057b53fa72e79b94987d27ef8a2ea
+24e13f242fbb52bc4ddd9ca014ad3a6a
 2010-02-15T21:34:06.325299Z
 12141
 lorensen
@@ -3773,7 +3739,7 @@ has-props
 
 
 
-6976
+1318
 
 vtkSlicerLoadSaveDialog.h
 file
@@ -3809,14 +3775,14 @@ has-props
 
 698
 
-vtkSlicerSlicesControlIcons.h
+vtkSlicerImageCloseUp2D.cxx
 file
 
 
 
 
 2010-10-25T02:21:28.014995Z
-781c839632c35904219bd2ab644de326
+e74057b53fa72e79b94987d27ef8a2ea
 2010-02-15T21:34:06.325299Z
 12141
 lorensen
@@ -3841,41 +3807,7 @@ has-props
 
 
 
-3992
-
-vtkSlicerModulesStep.cxx
-file
-
-
-
-
-2011-02-06T15:51:05.264725Z
-47cf5761ea8fc32c8d9bb0ae84ca6896
-2011-02-06T15:51:26.025412Z
-15944
-pieper
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-40149
+6976
 
 vtkSlicerBaseGUI.h
 file
@@ -3911,6 +3843,74 @@ has-props
 
 946
 
+vtkSlicerModulesStep.cxx
+file
+
+
+
+
+2011-02-06T15:51:05.264725Z
+47cf5761ea8fc32c8d9bb0ae84ca6896
+2011-02-06T15:51:26.025412Z
+15944
+pieper
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+40149
+
+vtkSlicerSlicesControlIcons.h
+file
+
+
+
+
+2010-10-25T02:21:28.014995Z
+781c839632c35904219bd2ab644de326
+2010-02-15T21:34:06.325299Z
+12141
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3992
+
 vtkSlicerCamerasGUI.h
 file
 
@@ -3944,40 +3944,6 @@ has-props
 
 
 2808
-
-vtkSlicerSceneSnapshotWidget.h
-file
-
-
-
-
-2010-10-25T02:21:28.024995Z
-238df0729355bfaaab0a63f85c37e70f
-2010-02-15T21:34:06.325299Z
-12141
-lorensen
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2970
 
 vtkKWScriptedWidget.h
 file
@@ -4013,14 +3979,14 @@ has-props
 
 2116
 
-vtkSlicerWidget.h
+vtkSlicerSceneSnapshotWidget.h
 file
 
 
 
 
-2010-11-11T16:50:45.369762Z
-0c70f50abf84271764c36c6c868d3376
+2010-10-25T02:21:28.024995Z
+238df0729355bfaaab0a63f85c37e70f
 2010-02-15T21:34:06.325299Z
 12141
 lorensen
@@ -4045,7 +4011,7 @@ has-props
 
 
 
-5507
+2970
 
 vtkSlicerApplicationGUI.cxx
 file
@@ -4081,14 +4047,14 @@ has-props
 
 217499
 
-vtkSlicerModulesWizardDialog.cxx
+vtkSlicerWidget.h
 file
 
 
 
 
-2010-10-25T02:21:28.024995Z
-db14c886ba1fc8d5b0a4ca61b73e3cf7
+2010-11-11T16:50:45.369762Z
+0c70f50abf84271764c36c6c868d3376
 2010-02-15T21:34:06.325299Z
 12141
 lorensen
@@ -4113,7 +4079,7 @@ has-props
 
 
 
-2637
+5507
 
 vtkKWProgressDialog.h
 file
@@ -4148,6 +4114,40 @@ has-props
 
 
 2483
+
+vtkSlicerModulesWizardDialog.cxx
+file
+
+
+
+
+2010-10-25T02:21:28.024995Z
+db14c886ba1fc8d5b0a4ca61b73e3cf7
+2010-02-15T21:34:06.325299Z
+12141
+lorensen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2637
 
 vtkSlicerIcons.cxx
 file

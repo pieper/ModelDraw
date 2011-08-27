@@ -1,7 +1,7 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Libs/qCTKWidgets/Plugins
 http://svn.slicer.org/Slicer3
 
@@ -539,40 +539,6 @@ jcfr
 Resources
 dir
 
-qCTKCollapsibleButtonPlugin.h
-file
-
-
-
-
-2010-10-25T02:20:19.734995Z
-6fdd34a7be5b6d81bbde6c8dc0c92ff9
-2010-03-03T14:36:32.861055Z
-12286
-finetjul
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-549
-
 CMakeLists.txt
 file
 
@@ -606,6 +572,40 @@ finetjul
 
 
 2147
+
+qCTKCollapsibleButtonPlugin.h
+file
+
+
+
+
+2010-10-25T02:20:19.734995Z
+6fdd34a7be5b6d81bbde6c8dc0c92ff9
+2010-03-03T14:36:32.861055Z
+12286
+finetjul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+549
 
 qCTKDoubleSliderPlugin.cxx
 file
@@ -743,40 +743,6 @@ finetjul
 
 1329
 
-qCTKExtensionFactory.cxx
-file
-
-
-
-
-2010-10-25T02:20:19.734995Z
-0f58737477333108334c5806126b02fb
-2010-01-28T22:05:16.738472Z
-11843
-jcfr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-792
-
 qCTKRangeWidgetPlugin.h
 file
 
@@ -811,17 +777,17 @@ finetjul
 
 539
 
-qCTKFittedTextBrowserPlugin.cxx
+qCTKExtensionFactory.cxx
 file
 
 
 
 
 2010-10-25T02:20:19.734995Z
-ff2715df1b57626e604bade24066f57f
-2010-03-03T14:36:32.861055Z
-12286
-finetjul
+0f58737477333108334c5806126b02fb
+2010-01-28T22:05:16.738472Z
+11843
+jcfr
 
 
 
@@ -843,7 +809,7 @@ finetjul
 
 
 
-958
+792
 
 qCTKTreeComboBoxPlugin.cxx
 file
@@ -878,6 +844,40 @@ finetjul
 
 
 877
+
+qCTKFittedTextBrowserPlugin.cxx
+file
+
+
+
+
+2010-10-25T02:20:19.734995Z
+ff2715df1b57626e604bade24066f57f
+2010-03-03T14:36:32.861055Z
+12286
+finetjul
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+958
 
 qCTKSliderSpinBoxWidgetPlugin.cxx
 file

@@ -31,6 +31,9 @@ if { [itcl::find class DrawEffect] == "" } {
     constructor {sliceGUI} {Labeler::constructor $sliceGUI} {}
     destructor {}
 
+    # let the subclass handle all events
+    public variable delegateEventProcessing 0
+
     variable _activeSlice ""
     variable _lastInsertSliceNodeMTime ""
     variable _actionState ""
@@ -127,6 +130,10 @@ itcl::body DrawEffect::processEvent { {caller ""} {event ""} } {
   }
 
   chain $caller $event
+
+  if { $delegateEventProcessing } {
+    return
+  }
 
   set event [$sliceGUI GetCurrentGUIEvent] 
   set _currentPosition [$this xyToRAS [$_interactor GetEventPosition]]
@@ -332,10 +339,19 @@ itcl::body DrawEffect::buildOptions {} {
   chain
 
   #
-  # an appl button
+  # Buttons Frame
+  # 
+  set o(buttonsFrame) [vtkNew vtkKWFrame]
+  $o(buttonsFrame) SetParent [$this getOptionsFrame]
+  $o(buttonsFrame) Create
+  pack [$o(buttonsFrame) GetWidgetName] -side top -anchor nw -fill x -padx 2 -pady 2
+  set buttonsFrame $o(buttonsFrame)
+
+  #
+  # an apply button
   #
   set o(apply) [vtkNew vtkKWPushButton]
-  $o(apply) SetParent [$this getOptionsFrame]
+  $o(apply) SetParent $o(buttonsFrame)
   $o(apply) Create
   $o(apply) SetText "Apply"
   $o(apply) SetBalloonHelpString "Apply current outline.\nUse the 'a' hotkey to apply in slice window"
@@ -347,7 +363,7 @@ itcl::body DrawEffect::buildOptions {} {
   # a cancel button
   #
   set o(cancel) [vtkNew vtkKWPushButton]
-  $o(cancel) SetParent [$this getOptionsFrame]
+  $o(cancel) SetParent $o(buttonsFrame)
   $o(cancel) Create
   $o(cancel) SetText "Cancel"
   $o(cancel) SetBalloonHelpString "Cancel current outline."
@@ -358,7 +374,7 @@ itcl::body DrawEffect::buildOptions {} {
   # a help button
   #
   set o(help) [vtkNew vtkSlicerPopUpHelpWidget]
-  $o(help) SetParent [$this getOptionsFrame]
+  $o(help) SetParent $o(buttonsFrame)
   $o(help) Create
   [$o(help) GetHelpWindow] SetDisplayPositionToMasterWindowCenter
   $o(help) SetHelpTitle "Draw"
@@ -394,19 +410,7 @@ itcl::body DrawEffect::tearDownOptions { } {
   # call superclass version of tearDownOptions
   chain
 
-  foreach w "percentage cancel" {
-    if { [info exists o($w)] } {
-      $o($w) SetParent ""
-      pack forget [$o($w) GetWidgetName] 
-    }
-  }
-}
-itcl::body DrawEffect::tearDownOptions { } {
-
-  # call superclass version of tearDownOptions
-  chain
-
-  foreach w "help cancel apply" {
+  foreach w "help buttonsFrame cancel apply" {
     if { [info exists o($w)] } {
       $o($w) SetParent ""
       pack forget [$o($w) GetWidgetName] 

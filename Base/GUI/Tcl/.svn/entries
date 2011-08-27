@@ -1,14 +1,14 @@
 10
 
 dir
-16821
+16828
 http://svn.slicer.org/Slicer3/trunk/Base/GUI/Tcl
 http://svn.slicer.org/Slicer3
 
 
 
-2011-08-13T17:48:52.655686Z
-16815
+2011-08-19T21:36:51.748505Z
+16828
 pieper
 
 
@@ -168,10 +168,10 @@ file
 
 
 
-2011-04-21T20:44:23.211124Z
-bc42473ce9e876274a9f8ad2fb325199
-2011-04-22T13:22:48.872554Z
-16481
+2011-07-18T17:59:02.981402Z
+2510e5708908e7ee5be3163e667a6c4e
+2011-08-19T21:36:51.748505Z
+16828
 pieper
 has-props
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-14265
+14673
 
 SlicePlaneSWidget.tcl
 file
@@ -304,10 +304,10 @@ file
 
 
 
-2010-11-30T15:17:05.455939Z
-338dd8f931d249c98d2797d209b95b0f
-2010-11-30T15:53:26.610755Z
-15593
+2011-08-08T20:27:39.798151Z
+6c53368fd5a70c87cbede53ff9543b98
+2011-08-19T21:36:51.748505Z
+16828
 pieper
 has-props
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-13089
+14044
 
 CsysSWidget.tcl
 file
@@ -508,10 +508,10 @@ file
 
 
 
-2010-10-25T02:21:25.954995Z
-fd283041d2d462731ede0de4c3755adc
-2010-02-26T18:22:14.837449Z
-12259
+2011-08-19T14:40:39.704622Z
+7b502d6d63b1015472530095d0c910d7
+2011-08-19T21:29:13.329815Z
+16826
 pieper
 has-props
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-3202
+4690
 
 XcedeCatalogImport.tcl
 file
@@ -712,11 +712,11 @@ file
 
 
 
-2011-03-29T18:11:01.975497Z
-bc9dddda02802e4dfa56e9900eaf88a1
-2011-03-24T13:56:23.938508Z
-16246
-millerjv
+2011-04-08T22:11:27.272489Z
+8184bbcd815dcce3bf8697b86d4e8cf8
+2011-08-19T21:28:17.980299Z
+16825
+pieper
 has-props
 
 
@@ -738,7 +738,7 @@ has-props
 
 
 
-28107
+28144
 
 VolumeDisplaySWidget.tcl
 file
