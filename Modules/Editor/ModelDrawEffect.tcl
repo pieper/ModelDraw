@@ -936,7 +936,6 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
     lappend normals [$this normalize [$this cross $tangent $sliceNormal]]
   }
 
-if { 0 } {
   # get the image patch at each control point
   set i 0
   set cpPatches ""
@@ -949,30 +948,105 @@ if { 0 } {
     lappend cpPatches $imagePatch
     incr i $splineSteps
   }
-}
   
+  # set up the interpolation and comparision pipeline
+  if { ![info exists o(cmpMath)] } {
+    set o(cmpBlend) [vtkNew vtkImageBlend]
+    set o(cmpDiff) [vtkNew vtkImageMathematics]
+    set o(cmpAbs) [vtkNew vtkImageMathematics]
+    set o(cmpAccumulate) [vtkNew vtkImageAccumulate]
+  }
 
   $this resetPolyData
   set i 0
-set imagePatch [vtkImageData New]
-  foreach n $normals t $tangents p $_curves($offset) {
+  set imagePatch [vtkImageData New]
+  foreach normal $normals tangent $tangents point $_curves($offset) {
 
+    # find the two control points on either side of the curve
+    # and the interpolation value (t)
     set cp0 [expr $i / $splineSteps]
-
-    $this extractPatch $imagePatch $p $n $t $sliceNormal
-
-    set newPoint ""
-    foreach nn $n pp $p {
-      lappend newPoint [expr $nn + $pp]
+    set cp1 [expr $cp0 + 1]
+    if { $cp1 >= [llength $controlPoints] } {
+      set cp1 0
     }
-    eval $this addPoint $newPoint
+    set t [expr ($i % $splineSteps) / (1. * $splineSteps) ]
+
+    $o(cmpBlend) RemoveAllInputs
+    $o(cmpBlend) SetInput 0 [lindex $cpPatches $cp0]
+    $o(cmpBlend) SetInput 1 [lindex $cpPatches $cp1]
+    $o(cmpBlend) SetOpacity 1 $t
+
+    $o(cmpDiff) SetInput1 [$o(cmpBlend) GetOutput]
+    $o(cmpDiff) SetOperationToSubtract
+    $o(cmpAbs) SetInput1 [$o(cmpDiff) GetOutput]
+    $o(cmpAbs) SetOperationToAbsoluteValue
+    $o(cmpAccumulate) SetInput [$o(cmpAbs) GetOutput]
+
+    # optimize the offset for each point on the curve as a distance
+    # along the normal 
+    # - first, sample a range of offsets
+    # - pick the one with the min weight
+    #
+
+    set minWeight 1e6
+    set minSample ""
+    set minS ""
+    set range 15
+    set steps 15
+    for {set step 0} {$step < $steps} {incr step} {
+      set s [expr -1 * $range/2. + ($step/(1.*$steps)) * $range]
+      set samplePoint ""
+      foreach p $point n $normal {
+        lappend samplePoint [expr $p + $s * $n]
+      }
+
+      # extract the patch for the current 
+      $this extractPatch $imagePatch $samplePoint $normal $tangent $sliceNormal
+      $o(cmpDiff) SetInput2 $imagePatch
+      $o(cmpAccumulate) Update
+
+      if { $debugExtractPatch } {
+        if { ![info exists o(blendviewer)] } {
+          set o(blendviewer) [vtkNew vtkImageViewer]
+          set o(blendmag) [vtkNew vtkImageMagnify]
+        }
+        set logic [[$sliceGUI GetLogic]  GetBackgroundLayer]
+        set node [$logic GetVolumeNode]
+        set displayNode [$node GetDisplayNode]
+        $o(blendviewer) SetColorWindow [$displayNode GetWindow]
+        $o(blendviewer) SetColorLevel [$displayNode GetLevel]
+        $o(blendmag) SetMagnificationFactors 15 15 1
+        $o(blendmag) SetInput [$o(cmpBlend) GetOutput]
+        $o(blendviewer) SetInput [$o(blendmag) GetOutput]
+        $o(blendviewer) Render
+      }
+
+      set weight [lindex [$o(cmpAccumulate) GetMean] 0]
+      puts "weight at $cp0 . $t at $s is $weight"
+      if { $weight < $minWeight } {
+        set minWeight $weight
+        set minSample $samplePoint
+        set minS $s
+      }
+    }
+
+    puts "min weight is $minWeight at $minSample"
+
+    eval $this addPoint $minSample
     incr i
+
+
+
   }
+  $imagePatch Delete
 }
 
 itcl::body ModelDrawEffect::extractPatch { imagePatch point normal tangent sliceNormal } {
-  if { ![info exists o(reslice)] } {
+  if { ![info exists o(resliceCast)] } {
+    set o(resliceCast) [vtkNew vtkImageCast]
+    $o(resliceCast) SetOutputScalarTypeToFloat
     set o(reslice) [vtkNew vtkImageReslice]
+    $o(reslice) SetInputConnection [$o(resliceCast) GetOutputPort]
     set o(resliceTransform) [vtkNew vtkTransform]
     set o(resliceMatrix) [vtkNew vtkMatrix4x4]
     set o(rasToIJKMatrix) [vtkNew vtkMatrix4x4]
@@ -984,11 +1058,9 @@ itcl::body ModelDrawEffect::extractPatch { imagePatch point normal tangent slice
 
   set logic [[$sliceGUI GetLogic]  GetBackgroundLayer]
   set node [$logic GetVolumeNode]
-  $o(reslice) SetInput [$node GetImageData]
-  #eval $o(reslice) SetOutputSpacing [$node GetSpacing]
+  $o(resliceCast) SetInput [$node GetImageData]
   eval $o(reslice) SetOutputSpacing 1 1 1
   foreach {w h} $patchSize {}
-  #$o(reslice) SetOutputOrigin [expr $w/2.] [expr $h/2.] 0
   $o(reslice) SetOutputOrigin 0 0 0
   $o(reslice) SetOutputDimensionality 3
   $o(reslice) SetOutputExtent 0 [expr $w-1] 0 [expr $h-1] 0 0
@@ -1011,20 +1083,21 @@ itcl::body ModelDrawEffect::extractPatch { imagePatch point normal tangent slice
   $o(resliceMatrix) Multiply4x4 $o(rasToIJKMatrix) $o(resliceMatrix) $o(resliceMatrix)
 
   $o(resliceTransform) SetMatrix $o(resliceMatrix)
-  set ::r $o(reslice)
 
   $o(reslice) SetOutput $imagePatch
   $o(reslice) UpdateWholeExtent
 
   if { $debugExtractPatch } {
-    if { ![info exists o(viewer)] } {
+    if { ![info exists o(viewermag)] } {
+      set o(viewermag) [vtkNew vtkImageMagnify]
       set o(viewer) [vtkNew vtkImageViewer]
-
     }
     set displayNode [$node GetDisplayNode]
     $o(viewer) SetColorWindow [$displayNode GetWindow]
     $o(viewer) SetColorLevel [$displayNode GetLevel]
-    $o(viewer) SetInput $imagePatch
+    $o(viewermag) SetInput $imagePatch
+    $o(viewermag) SetMagnificationFactors 15 15 1
+    $o(viewer) SetInput [$o(viewermag) GetOutput]
     $o(viewer) Render
   }
 }
