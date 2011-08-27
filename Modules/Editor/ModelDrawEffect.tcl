@@ -33,6 +33,10 @@ if { [itcl::find class ModelDrawEffect] == "" } {
 
     # could be "linear" or "spline"
     public variable interpolation "spline"
+    public variable snap 1
+    public variable splineSteps 10
+    public variable patchSize "3 15"
+    public variable debugExtractPatch 1
 
     # a list of seeds - the callback info includes the mapping to list and index
     variable _seedSWidgets ""
@@ -77,6 +81,9 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method copyCurve {} {}
     method interpolatedControlPoints {} {}
     method splineToSlice {t} {}
+    method snapCurve { {controlPoints ""} } {}
+    method extractPatch { imagePatch point normal tangent sliceNormal } {}
+    method comparePatches {i1 i2} {}
   }
 }
 
@@ -128,6 +135,10 @@ itcl::configbody ModelDrawEffect::interpolation {
     error "invalid interpolation.  Must be linear or spline"
   }
   $this updateControlPoints
+}
+
+itcl::configbody ModelDrawEffect::snap {
+  $this updateCurve
 }
 
 # ------------------------------------------------------------------
@@ -203,6 +214,17 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
   #
   # handle events from widgets
   #
+
+  if { [info exists o(snap)] } {
+    if { $caller == $o(snap) } {
+      if { [[$o(snap) GetWidget] GetSelectedState] } {
+        EffectSWidget::ConfigureAll ModelDrawEffect -snap 1
+      } else {
+        EffectSWidget::ConfigureAll ModelDrawEffect -snap 0
+      }
+      return
+    }
+  }
 
   if { [info exists o(spline)] } {
     if { $caller == $o(spline) } {
@@ -836,7 +858,8 @@ itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
         foreach obj {splineR splineA splineS} {
           $o($obj) Compute
         }
-        set steps [expr $index * 10]
+        set steps [expr $index * $splineSteps]
+        set deltaT [expr 1. / $splineSteps]
         set t 0
         for {set step 0} {$step <= $steps} {incr step} {
           set r [$o(splineR) Evaluate $t]
@@ -844,15 +867,169 @@ itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
           set s [$o(splineS) Evaluate $t]
           $this addPoint $r $a $s
           lappend _curves($offset) "$r $a $s"
-          set t [expr $t + 0.1]
+          set t [expr $t + $deltaT]
         }
       }
     }
   }
 
+  if { $snap } {
+    $this snapCurve
+  }
+
   $this positionActors
   $this positionCursor
   [$sliceGUI GetSliceViewer] RequestRender
+}
+
+itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
+
+  #
+  # For each control point, extract a patch of
+  # image data perpendicular to the curve
+  #
+  # For each point on the curve
+  # - interoplate image patches
+  # - get local normal to curve
+  # - move along normal
+  # -- find best fit to interpolated patch
+  #
+ 
+  if { $controlPoints == "" } {
+    set controlPoints [$this controlPoints]
+  }
+
+  set offset [$this offset]
+  set pointCount [llength $_curves($offset)]
+  if { $pointCount < 3 } {
+    return
+  }
+
+  set sliceToRAS [$_sliceNode GetSliceToRAS]
+  set sliceNormal [list \
+    [$sliceToRAS GetElement 0 2] \
+    [$sliceToRAS GetElement 1 2] \
+    [$sliceToRAS GetElement 2 2] ]
+  set sliceNormal [$this normalize $sliceNormal]
+
+  set lastPoint [expr $pointCount - 1]
+  set normals ""
+  set tangents ""
+  for {set i 0} {$i < $pointCount} {incr i} {
+    set iIn [expr $i - 1]
+    set iOut [expr $i + 1]
+    if { $iIn < 0 } {
+      set iIn $lastPoint
+    }
+    if { $iOut > $lastPoint  } {
+      set iOut 0
+    }
+    foreach pp {"" In Out} {
+      set p$pp [lindex $_curves($offset) [set i$pp]]
+    }
+    set tangent ""
+    foreach a $p b $pIn c $pOut {
+      lappend tangent [expr 0.5 * ($a - $b) + ($c - $a)]
+    }
+    set tangent [$this normalize $tangent]
+    lappend tangents $tangent
+    lappend normals [$this normalize [$this cross $tangent $sliceNormal]]
+  }
+
+if { 0 } {
+  # get the image patch at each control point
+  set i 0
+  set cpPatches ""
+  foreach cp $controlPoints {
+    set imagePatch [vtkImageData New]
+    set point [lindex $_curves($offset) $i]
+    set normal [lindex $normals $i]
+    set tangent [lindex $tangents $i]
+    $this extractPatch $imagePatch $point $normal $tangent $sliceNormal
+    lappend cpPatches $imagePatch
+    incr i $splineSteps
+  }
+}
+  
+
+  $this resetPolyData
+  set i 0
+set imagePatch [vtkImageData New]
+  foreach n $normals t $tangents p $_curves($offset) {
+
+    set cp0 [expr $i / $splineSteps]
+
+    $this extractPatch $imagePatch $p $n $t $sliceNormal
+
+    set newPoint ""
+    foreach nn $n pp $p {
+      lappend newPoint [expr $nn + $pp]
+    }
+    eval $this addPoint $newPoint
+    incr i
+  }
+}
+
+itcl::body ModelDrawEffect::extractPatch { imagePatch point normal tangent sliceNormal } {
+  if { ![info exists o(reslice)] } {
+    set o(reslice) [vtkNew vtkImageReslice]
+    set o(resliceTransform) [vtkNew vtkTransform]
+    set o(resliceMatrix) [vtkNew vtkMatrix4x4]
+    set o(rasToIJKMatrix) [vtkNew vtkMatrix4x4]
+    $o(reslice) SetResliceTransform $o(resliceTransform)
+    $o(reslice) SetInterpolationModeToLinear
+    $o(reslice) InterpolateOn
+    $o(reslice) AutoCropOutputOff
+  }
+
+  set logic [[$sliceGUI GetLogic]  GetBackgroundLayer]
+  set node [$logic GetVolumeNode]
+  $o(reslice) SetInput [$node GetImageData]
+  #eval $o(reslice) SetOutputSpacing [$node GetSpacing]
+  eval $o(reslice) SetOutputSpacing 1 1 1
+  foreach {w h} $patchSize {}
+  #$o(reslice) SetOutputOrigin [expr $w/2.] [expr $h/2.] 0
+  $o(reslice) SetOutputOrigin 0 0 0
+  $o(reslice) SetOutputDimensionality 3
+  $o(reslice) SetOutputExtent 0 [expr $w-1] 0 [expr $h-1] 0 0
+
+  # goes from World space to input volume IJK space
+  $node GetIJKToRASMatrix $o(rasToIJKMatrix)
+  $o(rasToIJKMatrix) Invert
+
+  # goes from output IJK space to World space
+  $o(resliceMatrix) Identity
+  foreach p $point n $normal t $tangent sn $sliceNormal row {0 1 2} {
+    # offset point to the upper left corner of output
+    set p [expr $p - 0.5 * $n * $h - 0.5 * $t * $w]
+    $o(resliceMatrix) SetElement $row 0 $t
+    $o(resliceMatrix) SetElement $row 1 $n
+    $o(resliceMatrix) SetElement $row 2 $sn
+    $o(resliceMatrix) SetElement $row 3 $p
+  }
+  # goes from output IJK to input IJK
+  $o(resliceMatrix) Multiply4x4 $o(rasToIJKMatrix) $o(resliceMatrix) $o(resliceMatrix)
+
+  $o(resliceTransform) SetMatrix $o(resliceMatrix)
+  set ::r $o(reslice)
+
+  $o(reslice) SetOutput $imagePatch
+  $o(reslice) UpdateWholeExtent
+
+  if { $debugExtractPatch } {
+    if { ![info exists o(viewer)] } {
+      set o(viewer) [vtkNew vtkImageViewer]
+
+    }
+    set displayNode [$node GetDisplayNode]
+    $o(viewer) SetColorWindow [$displayNode GetWindow]
+    $o(viewer) SetColorLevel [$displayNode GetLevel]
+    $o(viewer) SetInput $imagePatch
+    $o(viewer) Render
+  }
+}
+
+itcl::body ModelDrawEffect::comparePatches {p1 p2} {
 }
 
 itcl::body ModelDrawEffect::buildOptions {} {
@@ -870,6 +1047,20 @@ itcl::body ModelDrawEffect::buildOptions {} {
 
   set SelectedStateChangedEvent 10000
   $::slicer3::Broker AddObservation [$o(spline) GetWidget] $SelectedStateChangedEvent "$this processEvent $o(spline) $SelectedStateChangedEvent"
+
+  set o(snap) [vtkNew vtkKWCheckButtonWithLabel]
+  $o(snap) SetParent [$this getOptionsFrame]
+  $o(snap) Create
+  $o(snap) SetLabelText "Snap: "
+  $o(snap) SetBalloonHelpString "Snap interpolated curve to follow gradient profile of control points."
+  [$o(snap) GetLabel] SetWidth 22
+  [$o(snap) GetLabel] SetAnchorToEast
+  pack [$o(snap) GetWidgetName] \
+    -side top -anchor w -padx 2 -pady 2 
+  [$o(snap) GetWidget] SetSelectedState 1
+
+  set SelectedStateChangedEvent 10000
+  $::slicer3::Broker AddObservation [$o(snap) GetWidget] $SelectedStateChangedEvent "$this processEvent $o(snap) $SelectedStateChangedEvent"
 
   # call superclass version of buildOptions
   chain
@@ -949,7 +1140,7 @@ itcl::body ModelDrawEffect::tearDownOptions { } {
   # call superclass version of tearDownOptions
   chain
 
-  foreach w "spline curves deleteCurve applyCurves" {
+  foreach w "spline snap curves deleteCurve applyCurves" {
     if { [info exists o($w)] } {
       $o($w) SetParent ""
       pack forget [$o($w) GetWidgetName] 

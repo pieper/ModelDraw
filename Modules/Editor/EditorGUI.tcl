@@ -12,10 +12,10 @@ proc EditorTearDownGUI {this} {
 
   # nodeSelector  ;# disabled for now
   set widgets {
-      optionsSpacer optionsFrame
-      toolsActiveTool toolsEditFrame toolsColorFrame
       enableCheckPoint
       enableAutosave
+      optionsSpacer optionsFrame
+      toolsActiveTool toolsEditFrame toolsColorFrame
       toolsFrame volumesFrame 
   }
 

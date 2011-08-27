@@ -70,6 +70,7 @@ if { [itcl::find class EditColor] == "" } {
 # ------------------------------------------------------------------
 
 itcl::body EditColor::destructor {} {
+
   if { $_colorBox != "" } {
     itcl::delete object $_colorBox
   }
@@ -108,7 +109,7 @@ itcl::body EditColor::create { } {
   # TODO: don't pack this until it's integrated better: [$o(colorOption) GetWidgetName]
  
   # add a little label for the color name
-  set o(colorName) [vtkKWLabel New]
+  set o(colorName) [vtkNew vtkKWLabel]
   $o(colorName) SetParent $frame
   $o(colorName) Create
 
