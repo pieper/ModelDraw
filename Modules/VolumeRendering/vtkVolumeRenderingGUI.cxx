@@ -1564,9 +1564,7 @@ void vtkVolumeRenderingGUI::InitializePipelineFromImageDataFg()
     
     if (slicer_viewer_widget)
     {
-      slicer_viewer_widget->GetMainViewer()->AddViewProp(this->GetLogic()->GetVolumeActor() );
       slicer_viewer_widget->GetMainViewer()->GetRenderWindowInteractor()->Enable();
-      slicer_viewer_widget->RequestRender();
     }
   }
 

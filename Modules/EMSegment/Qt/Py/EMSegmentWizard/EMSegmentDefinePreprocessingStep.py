@@ -126,8 +126,15 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
   def runPreProcessing( self ):
     '''
     '''
+    # notify user
+    message = qt.QMessageBox( qt.QMessageBox.NoIcon, "Please wait", "Please wait while pre-processing runs..", qt.QMessageBox.Ignore )
+    message.setModal( False )
+    message.show()
+
     # run preprocessing
     returnValue = tcl( "::EMSegmenterPreProcessingTcl::Run" )
+
+    message.hide()
 
     if not returnValue or int( returnValue ) != 0:
       # something went wrong!

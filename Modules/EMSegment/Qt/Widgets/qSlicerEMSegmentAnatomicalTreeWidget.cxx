@@ -103,6 +103,8 @@ qSlicerEMSegmentAnatomicalTreeWidgetPrivate::qSlicerEMSegmentAnatomicalTreeWidge
   this->ParcellationMapColumnVisible = false;
   this->AddDeleteSubclassesEnabled = false;
 
+  this->CurrentNode = 0;
+
   this->initializeHorizontalHeader();
 }
 
@@ -490,6 +492,8 @@ void qSlicerEMSegmentAnatomicalTreeWidgetPrivate::onTreeItemSelected(const QMode
     return;
     }
 
+  this->CurrentNode = currentTreeNode;
+
   emit q->currentTreeNodeChanged(currentTreeNode);
 
 //  vtkIdType volumeId = q->mrmlManager()->GetTreeNodeSpatialPriorVolumeID(treeNodeId);
@@ -863,4 +867,13 @@ void qSlicerEMSegmentAnatomicalTreeWidget::collapseToDepthZero()
   d->TreeView->collapseAll();
   d->TreeView->expandToDepth(0);
   d->TreeView->setUpdatesEnabled(true);
+}
+
+//-----------------------------------------------------------------------------
+vtkMRMLNode* qSlicerEMSegmentAnatomicalTreeWidget::currentNode()
+{
+  Q_D(qSlicerEMSegmentAnatomicalTreeWidget);
+
+  return d->CurrentNode;
+
 }

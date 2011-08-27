@@ -1,0 +1,16 @@
+
+--This line, and those below, will be ignored--
+
+M    Base/GUI/Tcl/SWidget.tcl
+M    Base/GUI/Tcl/SeedSWidget.tcl
+AM   Modules/Editor/ModelDrawEffect.tcl
+M    Modules/Editor/EditBox.tcl
+M    Modules/Editor/ThresholdEffect.tcl
+M    Modules/Editor/pkgIndex.tcl
+M    Modules/Editor/DrawEffect.tcl
+M    Modules/Editor/EffectSWidget.tcl
+M    Modules/Editor/EditColor.tcl
+AM   Modules/Editor/ImageData/ModelDrawSelected.png
+AM   Modules/Editor/ImageData/ModelDraw.png
+AM   Modules/Editor/ImageData/ModelDrawDisabled.png
+M    Modules/Editor/EditorGUI.tcl

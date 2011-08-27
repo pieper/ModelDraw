@@ -92,10 +92,6 @@ IF (NOT CUDA_BUILD_TYPE)
   SET(CUDA_BUILD_TYPE "Device" CACHE STRING "Cuda build type: Emulation or Device")
 ENDIF(NOT CUDA_BUILD_TYPE)
 
-IF (NOT CUDA_BITNESS)
-  SET(CUDA_BITNESS "64" CACHE STRING "Cuda bitness: 64 or blank (lib64 or lib)")
-ENDIF(NOT CUDA_BITNESS)
-
 # Emulation if the card isn't present.
 IF (CUDA_BUILD_TYPE MATCHES "Emulation")
   # Emulation.
@@ -178,7 +174,7 @@ IF (NOT CUDA_TARGET_LINK)
 
   FIND_LIBRARY(FOUND_CUDART
     cudart
-    PATHS ${CUDA_INSTALL_PREFIX}/lib${CUDA_BITNESS} $ENV{CUDA_LIB_PATH}
+    PATHS ${CUDA_INSTALL_PREFIX}/lib $ENV{CUDA_LIB_PATH}
     DOC "\"cudart\" library"
     )
   
@@ -190,7 +186,7 @@ IF (NOT CUDA_TARGET_LINK)
   # 1.1 toolkit on linux doesn't appear to have a separate library.
   FIND_LIBRARY(FOUND_CUDA
     cuda
-    PATHS ${CUDA_INSTALL_PREFIX}/lib${CUDA_BITNESS} /usr/lib
+    PATHS ${CUDA_INSTALL_PREFIX}/lib /usr/lib
     DOC "\"cuda\" library (older versions only)."
     NO_DEFAULT_PATH
     NO_CMAKE_ENVIRONMENT_PATH
@@ -227,7 +223,6 @@ ENDIF(NOT CUDA_TARGET_LINK)
 IF(NOT CUDA_CUT_INCLUDE)
   IF(APPLE)
     SET(SEARCH_PATHS /Developer/CUDA/common/inc
-                     $ENV{HOME}/NVIDIA_GPU_Computing_SDK/C/common/inc
                      $ENV{HOME}/NVIDIA_CUDA_SDK_MACOSX/common/inc)
   ELSEIF(WIN32)
     SET(SEARCH_PATHS $ENV{NVSDKCUDA_ROOT}/common/inc
@@ -236,7 +231,6 @@ IF(NOT CUDA_CUT_INCLUDE)
 #                     "C:/Documents and Settings/All Users/Application Data/NVIDIA Corporation/NVIDIA CUDA SDK/common/inc")
   ELSE(APPLE)
      SET(SEARCH_PATHS $ENV{HOME}/NVIDIA_CUDA_SDK/common/inc
-                      $ENV{HOME}/NVIDIA_GPU_Computing_SDK/C/common/inc
                       ${CUDA_INSTALL_PREFIX}/local/NVSDK0.2/common/inc
                       ${CUDA_INSTALL_PREFIX}/NVSDK0.2/common/inc
                       ${CUDA_INSTALL_PREFIX}/NV_CUDA_SDK/common/inc)
@@ -258,24 +252,19 @@ ENDIF(NOT CUDA_CUT_INCLUDE)
 # CUDA_CUT_TARGET_LINK
 IF(NOT CUDA_CUT_TARGET_LINK)
   IF(APPLE)
-    # TODO: don't know what the right path is for the mac after the path changed to "GPU_Computing" 
     SET(SEARCH_PATHS /Developer/CUDA/lib
-                     $ENV{HOME}/NVIDIA_GPU_Computing_SDK/C/lib
                      $ENV{HOME}/NVIDIA_CUDA_SDK_MACOSX/lib)
   ELSEIF(WIN32)
-    # TODO: don't know the current windows path
     SET(SEARCH_PATHS $ENV{NVSDKCUDA_ROOT}/common/lib
                      "C:/Program Files/NVIDIA Corporation/NVIDIA SDK 10/NVIDIA CUDA SDK/lib"
                      "C:/Program Files/NVIDIA Corporation/NVIDIA CUDA SDK/lib")
   ELSE(APPLE)
-     SET(SEARCH_PATHS $ENV{HOME}/NVIDIA_CUDA_SDK/lib${CUDA_BITNESS}
-                      $ENV{HOME}/NVIDIA_GPU_Computing_SDK/C/lib${CUDA_BITNESS}
+     SET(SEARCH_PATHS $ENV{HOME}/NVIDIA_CUDA_SDK/lib
                       ${CUDA_INSTALL_PREFIX}/local/NVSDK0.2/lib
                       ${CUDA_INSTALL_PREFIX}/NVSDK0.2/lib
                       ${CUDA_INSTALL_PREFIX}/NV_CUDA_SDK/lib)
   ENDIF(APPLE)
   FIND_LIBRARY(FOUND_CUT
-    cutil_x86_64
     cutil
     cutil32
     PATHS ${SEARCH_PATHS}

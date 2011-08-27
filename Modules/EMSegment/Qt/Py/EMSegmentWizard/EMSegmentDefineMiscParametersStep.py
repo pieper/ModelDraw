@@ -12,11 +12,15 @@ class EMSegmentDefineMiscParametersStep( EMSegmentStep ) :
     self.setDescription( 'Define miscellaneous parameters for performing segmentation' )
 
     self.__parent = super( EMSegmentDefineMiscParametersStep, self )
+    self.__updating = 0;
 
   def createUserInterface( self ):
     '''
     '''
     self.__layout = self.__parent.createUserInterface()
+
+    # deactivate next button since it is the last step
+    self.buttonBoxHints = self.NextButtonHidden
 
     # the ROI parameters
     voiGroupBox = qt.QGroupBox()
@@ -94,3 +98,24 @@ class EMSegmentDefineMiscParametersStep( EMSegmentStep ) :
     self.__parent.validate( desiredBranchId )
 
     self.__parent.validationSucceeded( desiredBranchId )
+
+
+
+  def propagateToMRML( self ):
+    '''
+    '''
+    if not self.__updating:
+
+      self.__updating = 1
+
+      self.__updating = 0
+
+
+  def loadFromMRML( self ):
+    '''
+    '''
+    if not self.__updating:
+
+      self.__updating = 1
+
+      self.__updating = 0

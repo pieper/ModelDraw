@@ -68,8 +68,6 @@ vtkMRMLVolumeRenderingParametersNode::vtkMRMLVolumeRenderingParametersNode()
   this->ROINodeID = NULL;
   this->ROINode = NULL;
 
-  this->PreferredViewID = NULL;
-
   this->ExpectedFPS = 8;
   this->EstimatedSampleDistance = 1.0;
 
@@ -146,11 +144,6 @@ vtkMRMLVolumeRenderingParametersNode::~vtkMRMLVolumeRenderingParametersNode()
     {
     SetAndObserveROINodeID(NULL);
     }
-
-  if (this->PreferredViewID)
-    {
-    SetPreferredViewID(NULL);
-    }
 }
 
 //----------------------------------------------------------------------------
@@ -177,11 +170,6 @@ void vtkMRMLVolumeRenderingParametersNode::ReadXMLAttributes(const char** atts)
     if (!strcmp(attName, "ROINodeID"))
     {
       this->SetROINodeID(attValue);
-      continue;
-    }
-    if (!strcmp(attName, "PreferredViewID"))
-    {
-      this->SetPreferredViewID(attValue);
       continue;
     }
     if (!strcmp(attName, "volumePropertyNodeID"))
@@ -358,7 +346,6 @@ void vtkMRMLVolumeRenderingParametersNode::WriteXML(ostream& of, int nIndent)
   of << indent << " fgVolumeNodeID=\"" << (this->FgVolumeNodeID ? this->FgVolumeNodeID : "NULL") << "\"";
   of << indent << " croppingEnabled=\""<< this->CroppingEnabled << "\"";
   of << indent << " ROINodeID=\"" << (this->ROINodeID ? this->ROINodeID : "NULL") << "\"";
-  of << indent << " PreferredViewID=\"" << (this->PreferredViewID ? this->PreferredViewID : "NULL") << "\"";
   of << indent << " volumePropertyNodeID=\"" << (this->VolumePropertyNodeID ? this->VolumePropertyNodeID : "NULL") << "\"";
   of << indent << " fgVolumePropertyNodeID=\"" << (this->FgVolumePropertyNodeID ? this->FgVolumePropertyNodeID : "NULL") << "\"";
   of << indent << " currentVolumeMapper=\"" << this->CurrentVolumeMapper << "\"";
@@ -398,10 +385,6 @@ void vtkMRMLVolumeRenderingParametersNode::UpdateReferenceID(const char *oldID, 
     {
     this->SetAndObserveROINodeID(newID);
     }
-  if (this->PreferredViewID && !strcmp(oldID, this->PreferredViewID))
-    {
-    this->SetPreferredViewID(newID);
-    }
   if (this->VolumePropertyNodeID && !strcmp(oldID, this->VolumePropertyNodeID))
     {
     this->SetAndObserveVolumePropertyNodeID(newID);
@@ -429,10 +412,6 @@ void vtkMRMLVolumeRenderingParametersNode::UpdateReferences()
     {
     this->SetAndObserveROINodeID(NULL);
     }
-  if (this->PreferredViewID != NULL && this->Scene->GetNodeByID(this->PreferredViewID) == NULL)
-    {
-    this->SetPreferredViewID(NULL);
-    }
   if (this->VolumePropertyNodeID != NULL && this->Scene->GetNodeByID(this->VolumePropertyNodeID) == NULL)
     {
     this->SetAndObserveVolumePropertyNodeID(NULL);
@@ -457,7 +436,6 @@ void vtkMRMLVolumeRenderingParametersNode::Copy(vtkMRMLNode *anode)
   this->SetVolumePropertyNodeID(node->GetVolumePropertyNodeID());
   this->SetFgVolumePropertyNodeID(node->GetFgVolumePropertyNodeID());
   this->SetROINodeID(node->GetROINodeID());
-  this->SetPreferredViewID(node->GetPreferredViewID());
   this->SetCroppingEnabled(node->GetCroppingEnabled());
   this->SetCurrentVolumeMapper(node->GetCurrentVolumeMapper());
   this->SetGPUMemorySize(node->GetGPUMemorySize());
@@ -645,7 +623,6 @@ void vtkMRMLVolumeRenderingParametersNode::UpdateScene(vtkMRMLScene *scene)
   this->SetAndObserveFgVolumeNodeID(this->FgVolumeNodeID);
   this->SetAndObserveFgVolumePropertyNodeID(this->FgVolumePropertyNodeID);
   this->SetAndObserveROINodeID(this->ROINodeID);
-  this->SetPreferredViewID(this->PreferredViewID);
 }
 
 //---------------------------------------------------------------------------
@@ -665,8 +642,7 @@ void vtkMRMLVolumeRenderingParametersNode::PrintSelf(ostream& os, vtkIndent inde
 
   os << "VolumeNodeID: " << ( (this->VolumeNodeID) ? this->VolumeNodeID : "None" ) << "\n";
   os << "FgVolumeNodeID: " << ( (this->FgVolumeNodeID) ? this->FgVolumeNodeID : "None" ) << "\n";
-  os << "ROINodeID: " << ( (this->ROINodeID) ? this->ROINodeID : "None" ) << "\n";
-  os << "PreferredViewID: " << ( (this->PreferredViewID) ? this->PreferredViewID : "None" ) << "\n";
+  os << "ROINodeID: " << ( (this->VolumeNodeID) ? this->ROINodeID : "None" ) << "\n";
   os << "VolumePropertyNodeID: " << ( (this->VolumePropertyNodeID) ? this->VolumePropertyNodeID : "None" ) << "\n";
   os << "FgVolumePropertyNodeID: " << ( (this->FgVolumePropertyNodeID) ? this->FgVolumePropertyNodeID : "None" ) << "\n";
   os << "CroppingEnabled: " << this->CroppingEnabled << "\n";

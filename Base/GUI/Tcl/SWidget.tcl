@@ -148,6 +148,10 @@ if { [itcl::find class SWidget] == "" } {
     method processDelayedAnnotation {} {}
     method cancelDelayedAnnotation {} {}
     method getInAnySliceSWidget {} {}
+    method cross {a b} {}
+    method dot {a b} {}
+    method length {v} {}
+    method normalize {v} {}
 
     # make a new instance of a class and add it to the list for cleanup
     method vtkNew {class} {
@@ -472,6 +476,36 @@ itcl::body SWidget::getInAnySliceSWidget { } {
       }
     }
     return 0
+}
+
+itcl::body SWidget::cross { a b } {
+  foreach {a0 a1 a2} $a {}
+  foreach {b0 b1 b2} $b {}
+  set c0 [expr $a1*$b2 - $a2*$b1]
+  set c1 [expr $a2*$b0 - $a0*$b2]
+  set c2 [expr $a0*$b1 - $a1*$b0]
+  return [list $c0 $c1 $c2]
+}
+
+itcl::body SWidget::dot { a b } {
+  set sum 0.0
+  foreach aa $a bb $b {
+    set sum [expr $sum + $aa*$bb]
+  }
+  return $sum
+}
+
+itcl::body SWidget::length { v } {
+  return [expr sqrt([$this dot $v $v])]
+}
+
+itcl::body SWidget::normalize { v } {
+  set nv ""
+  set length [$this length $v]
+  foreach vv $v {
+    lappend nv [expr $vv / $length]
+  }
+  return $nv
 }
 
 #

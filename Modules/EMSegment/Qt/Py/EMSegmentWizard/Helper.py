@@ -106,8 +106,28 @@ class Helper( object ):
     '''
     return ['Manual', 'Manual Sampling', 'Auto Sampling']
 
+  @staticmethod
+  def onClickInSliceView( sliceViewInteractorStyle, sliceLogic ):
+    '''
+    Get the last event of a certain sliceView and return it as RAS coordinates.
+    '''
+    coordinates = []
 
+    i = sliceViewInteractorStyle.GetInteractor()
+    if i:
 
+      clickedPos = i.GetLastEventPosition()
 
+      # we need a 4 element point to be able to multiply further down
+      coordinates.append( clickedPos[0] )
+      coordinates.append( clickedPos[1] )
+      coordinates.append( 0 )
+      coordinates.append( 1 )
+
+      xyToRas = sliceLogic.GetSliceNode().GetXYToRAS()
+
+      rasPos = xyToRas.MultiplyPoint( coordinates )
+
+      return rasPos
 
 

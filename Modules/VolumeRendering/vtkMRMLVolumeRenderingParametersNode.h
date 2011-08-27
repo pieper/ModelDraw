@@ -117,13 +117,6 @@ class VTK_SLICERVOLUMERENDERING_EXPORT vtkMRMLVolumeRenderingParametersNode : pu
   vtkMRMLROINode* GetROINode();
 
   // Description:
-  // the ID of a parameter MRMLViewNode
-  // if using a mapper that can only show in one view, 
-  // use this parameter to select the view to use
-  vtkGetStringMacro (PreferredViewID);
-  vtkSetStringMacro (PreferredViewID);
-
-  // Description:
   // Is cropping enabled?
   vtkSetMacro(CroppingEnabled,int);
   vtkGetMacro(CroppingEnabled,int);
@@ -230,7 +223,6 @@ protected:
   vtkMRMLVolumePropertyNode* FgVolumePropertyNode;
 
   char *ROINodeID;
-  char *PreferredViewID;
   vtkSetReferenceStringMacro(ROINodeID);
   vtkMRMLROINode* ROINode;
 
