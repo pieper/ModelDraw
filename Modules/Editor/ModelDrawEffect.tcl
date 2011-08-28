@@ -37,6 +37,8 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     public variable splineSteps 10
     public variable patchSize "3 15"
     public variable debugExtractPatch 1
+    public variable edgeTangentSampleDistance 3
+    public variable edgeTangentSampleSteps 90
 
     # a list of seeds - the callback info includes the mapping to list and index
     variable _seedSWidgets ""
@@ -45,6 +47,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     variable _moveStartControlPoints ""
     variable _controlPoints ;# array - points for current label, indexed by offset
     variable _curves ;# array - interpolated for current points, indexed by offset
+    variable _edgeTangents ;# array - image based estimate, indexed by offset
     variable _updatingControlPoints 0
     variable _currentLabel ""
     variable _sliceSplineR "" ;# local storage for dynamicly created temp splines
@@ -71,6 +74,8 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method deleteControlPoint {index} {}
     method splitControlPoint {index} {}
     method updateControlPoints {} {}
+    method updateEdgeTangents {} {}
+    method estimateEdgeTangent { cp } {}
     method updateCurve { {controlPoints ""} } {}
     method applyCurve {} {}
     method applyCurves {} {}
@@ -502,6 +507,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       incr index
     }
     $this updateCurve $controlPoints
+    $this updateEdgeTangents
   } else {
     # no user-defined control points on this slice,
     # so just display non-editable outline
@@ -579,6 +585,120 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
   }
 
   set _updatingControlPoints 0
+}
+
+
+itcl::body ModelDrawEffect::estimateEdgeTangent { cp } {
+  # - search neighborhood for best match image patch at various rotations
+ 
+  set sliceToRAS [$_sliceNode GetSliceToRAS]
+  foreach row {0 1 2} {
+    lappend tangent [$sliceToRAS GetElement $row 0]
+    lappend normal [$sliceToRAS GetElement $row 1]
+    lappend sliceNormal [$sliceToRAS GetElement $row 2]
+  }
+  set tangent [$this normalize $tangent]
+  set normal [$this normalize $normal]
+  set sliceNormal [$this normalize $sliceNormal]
+
+  set cpPatch [vtkImageData New]
+  set samplePatch [vtkImageData New]
+  $this extractPatch $cpPatch $cp $normal $tangent $sliceNormal
+
+  # rotate tangent and normal, and offset cp by edgeTangentSampleDistance along tangent
+  # - keep track of min weight
+  set minWeight 1e6
+  set minAngle ""
+  set minTangent ""
+  set twoPi [expr 3.14159 * 2]
+  set angleStep [expr $twoPi / $edgeTangentSampleSteps]
+  for {set angle 0} {$angle < $twoPi} {set angle [expr $angle + $angleStep]} {
+    set c [expr cos($angle)]
+    set s [expr sin($angle)]
+    set newT ""; set newN ""; set newP ""
+    foreach tele $tangent nele $normal {
+      lappend newT [expr $c * $tele - $s * $nele]
+      lappend newN [expr $c * $nele + $s * $tele]
+    }
+    foreach pele $cp tele $newT {
+      lappend newP [expr $pele + $edgeTangentSampleDistance * $tele]
+    }
+
+    $this extractPatch $samplePatch  $newP  $newN  $newT  $sliceNormal
+
+    set weight [$this comparePatches $cpPatch $samplePatch]
+
+    if { $weight < $minWeight } {
+      set minWeight $weight
+      set minAngle $angle
+      set minTangent $newT
+    }
+  }
+
+  # TODO: optimize tangent estimate around minTangent
+  # TODO: calculate in and out tangents along line perp to minTangent
+
+  $samplePatch Delete
+  $cpPatch Delete
+
+  return $minTangent
+}
+
+
+itcl::body ModelDrawEffect::updateEdgeTangents {} {
+
+  #
+  # for each control point
+  # - calculate a new tangent if needed
+  # - place locked seeds along tangent
+  #
+
+  set offset [$this offset]
+  if { ![info exists _edgeTangents($offset,controlPoints)] } {
+    # if no existing control points, set up dummies
+    foreach cp $_controlPoints($offset) {
+      lappend _edgeTangents($offset,controlPoints) "none"
+      lappend _edgeTangents($offset,tangents) "none"
+    }
+  }
+
+  set newTangents ""
+  foreach cp $_controlPoints($offset) \
+          oldCP $_edgeTangents($offset,controlPoints) \
+          oldTangent $_edgeTangents($offset,tangents) {
+    if { $cp == $oldCP } {
+      # if the control point hasn't changed, use old tangent
+      lappend newTangents $oldTangent
+    } else {
+      lappend newTangents [$this estimateEdgeTangent $cp]
+    }
+  }
+  set _edgeTangents($offset,controlPoints) $_controlPoints($offset)
+  set _edgeTangents($offset,tangents) $newTangents
+
+  foreach cp $_controlPoints($offset) \
+          tangent $_edgeTangents($offset,tangents) {
+    # get a stored seed widget or create a new one
+    if { [llength $_storedSeedSWidgets] > 0 } {
+      set seedSWidget [lindex $_storedSeedSWidgets 0]
+      set _storedSeedSWidgets [lrange $_storedSeedSWidgets 1 end]
+    } else {
+      set seedSWidget [SeedSWidget #auto $sliceGUI]
+    }
+    lappend _seedSWidgets $seedSWidget
+
+    set seedPoint ""
+    foreach cpele $cp tele $tangent {
+      lappend seedPoint [expr $cpele + $edgeTangentSampleDistance * $tele]
+    }
+    eval $seedSWidget place $seedPoint
+    $seedSWidget configure -scale 5 
+    $seedSWidget configure -glyph Circle
+    $seedSWidget configure -visibility 1
+    $seedSWidget configure -inactive 1
+    $seedSWidget configure -color "0.5 0.8 0.5"
+    $seedSWidget processEvent
+  }
 }
 
 itcl::body ModelDrawEffect::seedKeyCallback {seed index key} {
