@@ -152,6 +152,10 @@ if { [itcl::find class SWidget] == "" } {
     method dot {a b} {}
     method length {v} {}
     method normalize {v} {}
+    method minus {a b} {}
+    method plus {a b} {}
+    method negative {a} {}
+    method multiply {s a} {}
 
     # make a new instance of a class and add it to the list for cleanup
     method vtkNew {class} {
@@ -506,6 +510,42 @@ itcl::body SWidget::normalize { v } {
     lappend nv [expr $vv / $length]
   }
   return $nv
+}
+
+itcl::body SWidget::minus { a b } {
+  # return a minus b
+  set diff ""
+  foreach aa $a bb $b {
+    lappend diff [expr $aa - $bb]
+  }
+  return $diff
+}
+
+itcl::body SWidget::plus { a b } {
+  # return a plus b
+  set sum ""
+  foreach aa $a bb $b {
+    lappend sum [expr $aa + $bb]
+  }
+  return $sum
+}
+
+itcl::body SWidget::negative { a } {
+  # return -a
+  set neg ""
+  foreach aa $a {
+    lappend neg [expr -1. * $aa]
+  }
+  return $neg
+}
+
+itcl::body SWidget::multiply { s a } {
+  # return s * a
+  set b ""
+  foreach aa $a {
+    lappend b [expr $s * $aa]
+  }
+  return $b
 }
 
 #
