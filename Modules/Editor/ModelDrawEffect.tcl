@@ -33,10 +33,11 @@ if { [itcl::find class ModelDrawEffect] == "" } {
 
     # could be "linear" or "spline"
     public variable interpolation "spline"
-    public variable snap 1
+    public variable snap 0
     public variable splineSteps 10
     public variable patchSize "3 15"
-    public variable debugExtractPatch 1
+    public variable debugExtractPatch 0
+    public variable edgeTangents 1
     public variable edgeTangentSampleDistance 3
     public variable edgeTangentSampleSteps 90
 
@@ -54,6 +55,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     variable _sliceSplineA ""
     variable _sliceSplineS ""
     variable _modelDrawNode "" ;# custom parameter node for this tool
+    variable _hermiteWeights ;# array of precalculated weights per splineSteps
 
     # methods
     method processEvent {{caller ""} {event ""}} {}
@@ -89,6 +91,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method snapCurve { {controlPoints ""} } {}
     method extractPatch { imagePatch point normal tangent sliceNormal } {}
     method comparePatches {i1 i2} {}
+    method hermiteWeights {} {}
   }
 }
 
@@ -507,7 +510,6 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       incr index
     }
     $this updateCurve $controlPoints
-    $this updateEdgeTangents
   } else {
     # no user-defined control points on this slice,
     # so just display non-editable outline
@@ -654,6 +656,11 @@ itcl::body ModelDrawEffect::updateEdgeTangents {} {
   #
 
   set offset [$this offset]
+
+  if { ![info exists _controlPoints($offset)] } {
+    return
+  }
+
   if { ![info exists _edgeTangents($offset,controlPoints)] } {
     # if no existing control points, set up dummies
     foreach cp $_controlPoints($offset) {
@@ -921,7 +928,10 @@ itcl::body ModelDrawEffect::seedMovingCallback {seed index} {
       set _controlPoints($offset) [lreplace $_controlPoints($offset) $index $index [$seed getRASPosition]]
     }
   }
+  set oldTangentMode $edgeTangents
+  $this configure -edgeTangents 0
   $this updateCurve
+  $this configure -edgeTangents $oldTangentMode
 }
 
 itcl::body ModelDrawEffect::seedContextMenuCallback {seed index} {
@@ -937,7 +947,7 @@ itcl::body ModelDrawEffect::seedContextMenuCallback {seed index} {
 }
 
 itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
-  
+
   if { ![info exists o(polyData)] } {
     # not yet initialized
     return
@@ -946,6 +956,13 @@ itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
 
   if { $controlPoints == "" } {
     set controlPoints [$this controlPoints]
+  }
+
+  if { $edgeTangents } {
+    # TODO: when showing an interpolated set of control points
+    #  probably better to interpolate tangents rather than recompute them
+    #$this updateEdgeTangents $controlPoints
+    $this updateEdgeTangents
   }
 
   set offset [$this offset]
@@ -963,31 +980,85 @@ itcl::body ModelDrawEffect::updateCurve { {controlPoints ""} } {
         lappend _curves($offset) [lindex $controlPoints 0]
       }
       "spline" {
-        foreach obj {splineR splineA splineS} {
-          $o($obj) RemoveAllPoints
-          $o($obj) SetClosed 1
-        }
-        set index 0
-        foreach cp $controlPoints {
-          foreach {r a s} $cp {}
-          $o(splineR) AddPoint $index $r
-          $o(splineA) AddPoint $index $a
-          $o(splineS) AddPoint $index $s
-          incr index
-        }
-        foreach obj {splineR splineA splineS} {
-          $o($obj) Compute
-        }
-        set steps [expr $index * $splineSteps]
-        set deltaT [expr 1. / $splineSteps]
-        set t 0
-        for {set step 0} {$step <= $steps} {incr step} {
-          set r [$o(splineR) Evaluate $t]
-          set a [$o(splineA) Evaluate $t]
-          set s [$o(splineS) Evaluate $t]
-          $this addPoint $r $a $s
-          lappend _curves($offset) "$r $a $s"
-          set t [expr $t + $deltaT]
+        if { $edgeTangents } {
+          # use hermite interpolation
+          if { ![info exists _edgeTangents($offset,tangents)] } {
+            return;
+          }
+          set tangents $_edgeTangents($offset,tangents)
+          set h [$this hermiteWeights]
+
+          set pointCount [llength $controlPoints]
+          for {set index 0} {$index < $pointCount} {incr index} {
+            set index1 [expr ($index + 1) % $pointCount]
+            set index2 [expr ($index + 2) % $pointCount]
+            set indexm1 [expr $index -1]
+            if { $indexm1 < 0 } {
+              set indexm1 [expr $pointCount - 1]
+            }
+            set cpm1 [lindex $controlPoints $indexm1]
+            set cp0 [lindex $controlPoints $index]
+            set cp1 [lindex $controlPoints $index1]
+            set cp2 [lindex $controlPoints $index2]
+            set t0 [lindex $tangents $index]
+            set t1 [lindex $tangents $index1]
+
+            set inVector [$this minus $cp0 $cpm1]
+            set outVector [$this minus $cp1 $cp0]
+            set v0 [$this multiply 0.5 [$this plus $inVector $outVector]]
+
+            set inVector [$this minus $cp1 $cp0]
+            set outVector [$this minus $cp2 $cp1]
+            set v1 [$this multiply 0.5 [$this plus $inVector $outVector]]
+
+            if { [$this dot $v0 $t0] < 0 } {
+              set t0 [$this negative $t0]
+            }
+            if { [$this dot $v1 $t1] < 0 } {
+              set t1 [$this negative $t1]
+            }
+            set t0 [$this multiply [expr 1.5 * [$this length $v0]] $t0]
+            set t1 [$this multiply [expr 1.5 * [$this length $v1]] $t1]
+
+            for {set step 0} {$step < $splineSteps} {incr step} {
+              foreach {h00 h10 h01 h11} [lindex $h $step] {}
+              set p ""
+              foreach cp0ele $cp0 cp1ele $cp1 t0ele $t0 t1ele $t1 {
+                lappend p [expr $h00 * $cp0ele + $h10 * $t0ele + $h01 * $cp1ele + $h11 * $t1ele]
+              }
+              eval $this addPoint $p
+              lappend _curves($offset) $p
+            }
+          }
+
+        } else {
+          # no edge tangents, use TBC Splines
+          foreach obj {splineR splineA splineS} {
+            $o($obj) RemoveAllPoints
+            $o($obj) SetClosed 1
+          }
+          set index 0
+          foreach cp $controlPoints {
+            foreach {r a s} $cp {}
+            $o(splineR) AddPoint $index $r
+            $o(splineA) AddPoint $index $a
+            $o(splineS) AddPoint $index $s
+            incr index
+          }
+          foreach obj {splineR splineA splineS} {
+            $o($obj) Compute
+          }
+          set steps [expr $index * $splineSteps]
+          set deltaT [expr 1. / $splineSteps]
+          set t 0
+          for {set step 0} {$step <= $steps} {incr step} {
+            set r [$o(splineR) Evaluate $t]
+            set a [$o(splineA) Evaluate $t]
+            set s [$o(splineS) Evaluate $t]
+            $this addPoint $r $a $s
+            lappend _curves($offset) "$r $a $s"
+            set t [expr $t + $deltaT]
+          }
         }
       }
     }
@@ -1270,7 +1341,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   [$o(snap) GetLabel] SetAnchorToEast
   pack [$o(snap) GetWidgetName] \
     -side top -anchor w -padx 2 -pady 2 
-  [$o(snap) GetWidget] SetSelectedState 1
+  [$o(snap) GetWidget] SetSelectedState $snap
 
   set SelectedStateChangedEvent 10000
   $::slicer3::Broker AddObservation [$o(snap) GetWidget] $SelectedStateChangedEvent "$this processEvent $o(snap) $SelectedStateChangedEvent"
@@ -1549,4 +1620,21 @@ itcl::body ModelDrawEffect::interpolatedControlPoints {} {
     lappend interpolatedControlPoints "$r $a $s"
   }
   return $interpolatedControlPoints
+}
+
+itcl::body ModelDrawEffect::hermiteWeights {} {
+  if { ![info exists _hermiteWeights($splineSteps)] } {
+    set deltaT [expr 1. / $splineSteps]
+    set t 0.
+    for {set step 0} {$step <= $splineSteps} {incr step} {
+      # hermite interpolation functions
+      set h00 [expr  2.*$t**3 - 3.*$t**2       + 1.]
+      set h10 [expr     $t**3 - 2.*$t**2 + $t      ]
+      set h01 [expr -2.*$t**3 + 3.*$t**2           ]
+      set h11 [expr     $t**3 -    $t**2           ]
+      lappend _hermiteWeights($splineSteps) "$h00 $h10 $h01 $h11"
+      set t [expr $t + $deltaT]
+    }
+  }
+  return $_hermiteWeights($splineSteps)
 }
