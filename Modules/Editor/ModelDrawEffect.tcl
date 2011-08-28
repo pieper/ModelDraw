@@ -986,13 +986,27 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
     # along the normal 
     # - first, sample a range of offsets
     # - pick the one with the min weight
+    # - TODO: check standard deviation of guesses - ignore non-clear winners
+    # - use neighbors to initialize guesses - don't stray far from previous winner
+    # - have weighted falloff for diff image (priorize near sample point)
+    # - check gradient of interpolated image - if not much edge, discount snap guess
     #
+    # Considerations:
+    # - how big a sample patch
+    # - how big a search area
+    # - how much to weight the center of the sample
+    # - when to decide there is no good matching feature
+    # -- then using the previous winner as new control point
+    # -- or go back to original curve?
+    # - whether to consider the near by winner samples compared to the interpolated control points
+    # - use last winner as guess for optimizer
+    # - other ways to enforce smoothness
 
     set minWeight 1e6
     set minSample ""
     set minS ""
-    set range 15
-    set steps 15
+    set range 10
+    set steps 10
     for {set step 0} {$step < $steps} {incr step} {
       set s [expr -1 * $range/2. + ($step/(1.*$steps)) * $range]
       set samplePoint ""
@@ -1000,7 +1014,7 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
         lappend samplePoint [expr $p + $s * $n]
       }
 
-      # extract the patch for the current 
+      # extract the patch for the current guess
       $this extractPatch $imagePatch $samplePoint $normal $tangent $sliceNormal
       $o(cmpDiff) SetInput2 $imagePatch
       $o(cmpAccumulate) Update
@@ -1022,7 +1036,6 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
       }
 
       set weight [lindex [$o(cmpAccumulate) GetMean] 0]
-      puts "weight at $cp0 . $t at $s is $weight"
       if { $weight < $minWeight } {
         set minWeight $weight
         set minSample $samplePoint
@@ -1030,7 +1043,6 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
       }
     }
 
-    puts "min weight is $minWeight at $minSample"
 
     eval $this addPoint $minSample
     incr i
