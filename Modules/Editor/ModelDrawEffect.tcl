@@ -624,7 +624,7 @@ itcl::body ModelDrawEffect::estimateEdgeTangent { cp } {
       lappend newP [expr $pele + $edgeTangentSampleDistance * $tele]
     }
 
-    $this extractPatch $samplePatch  $newP  $newN  $newT  $sliceNormal
+    $this extractPatch $samplePatch  $newP  $normal  $tangent  $sliceNormal
 
     set weight [$this comparePatches $cpPatch $samplePatch]
 
