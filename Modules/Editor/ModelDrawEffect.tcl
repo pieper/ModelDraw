@@ -949,12 +949,9 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
     incr i $splineSteps
   }
   
-  # set up the interpolation and comparision pipeline
-  if { ![info exists o(cmpMath)] } {
+  # set up the interpolation pipeline
+  if { ![info exists o(cmpBlend)] } {
     set o(cmpBlend) [vtkNew vtkImageBlend]
-    set o(cmpDiff) [vtkNew vtkImageMathematics]
-    set o(cmpAbs) [vtkNew vtkImageMathematics]
-    set o(cmpAccumulate) [vtkNew vtkImageAccumulate]
   }
 
   $this resetPolyData
@@ -975,12 +972,6 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
     $o(cmpBlend) SetInput 0 [lindex $cpPatches $cp0]
     $o(cmpBlend) SetInput 1 [lindex $cpPatches $cp1]
     $o(cmpBlend) SetOpacity 1 $t
-
-    $o(cmpDiff) SetInput1 [$o(cmpBlend) GetOutput]
-    $o(cmpDiff) SetOperationToSubtract
-    $o(cmpAbs) SetInput1 [$o(cmpDiff) GetOutput]
-    $o(cmpAbs) SetOperationToAbsoluteValue
-    $o(cmpAccumulate) SetInput [$o(cmpAbs) GetOutput]
 
     # optimize the offset for each point on the curve as a distance
     # along the normal 
@@ -1016,8 +1007,6 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
 
       # extract the patch for the current guess
       $this extractPatch $imagePatch $samplePoint $normal $tangent $sliceNormal
-      $o(cmpDiff) SetInput2 $imagePatch
-      $o(cmpAccumulate) Update
 
       if { $debugExtractPatch } {
         if { ![info exists o(blendviewer)] } {
@@ -1035,7 +1024,7 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
         $o(blendviewer) Render
       }
 
-      set weight [lindex [$o(cmpAccumulate) GetMean] 0]
+      set weight [$this comparePatches $imagePatch [$o(cmpBlend) GetOutput]]
       if { $weight < $minWeight } {
         set minWeight $weight
         set minSample $samplePoint
@@ -1115,6 +1104,25 @@ itcl::body ModelDrawEffect::extractPatch { imagePatch point normal tangent slice
 }
 
 itcl::body ModelDrawEffect::comparePatches {p1 p2} {
+
+  # set up the comparision pipeline
+  if { ![info exists o(cmpDiff)] } {
+    set o(cmpDiff) [vtkNew vtkImageMathematics]
+    set o(cmpAbs) [vtkNew vtkImageMathematics]
+    set o(cmpAccumulate) [vtkNew vtkImageAccumulate]
+  }
+
+  # calculate mean abs value of difference and return as weight
+  $o(cmpDiff) SetInput1 $p1
+  $o(cmpDiff) SetInput2 $p2
+  $o(cmpDiff) SetOperationToSubtract
+  $o(cmpAbs) SetInput1 [$o(cmpDiff) GetOutput]
+  $o(cmpAbs) SetOperationToAbsoluteValue
+  $o(cmpAccumulate) SetInput [$o(cmpAbs) GetOutput]
+  $o(cmpAccumulate) Update
+  set weight [lindex [$o(cmpAccumulate) GetMean] 0]
+  return $weight
+
 }
 
 itcl::body ModelDrawEffect::buildOptions {} {
