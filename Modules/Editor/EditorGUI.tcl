@@ -228,7 +228,9 @@ proc EditorProcessGUIEvents {this caller event} {
     switch $event {
       "10000" {
         set onoff [$::Editor($this,enableAutosave) GetSelectedState]
-        EditorSetAutosaveEnabled $onoff
+        if { [EditorSetAutosaveEnabled $onoff] == "" } {
+          $::Editor($this,enableAutosave) SetSelectedState 0
+        }
       }
     }
   } 
@@ -751,12 +753,15 @@ proc EditorSetAutosaveEnabled {onoff} {
     }
     if { $dir != "" } {
       $::slicer3::Application SetRegistry EditorAutosavePath $dir
+      EditorAutosave $dir
+    } else {
+      EditorAutosave cancel
     }
-    #$::dialog Delete
-
-    EditorAutosave $dir
+    $::dialog Delete
+    return $dir
   } else {
     EditorAutosave cancel
+    return ""
   }
 }
 
@@ -803,7 +808,7 @@ proc EditorAutosave { {directory ""} } {
   [$::slicer3::ApplicationGUI GetMainSlicerWindow] SetStatusText "Saved to $autoDir..."
 
   # save again in 5 minutes
-  set ::Editor(autosaveAfterID) [after [expr 5 * 60 * 1000] EditorAutosave $directory]
+  set ::Editor(autosaveAfterID) [after [expr 5 * 60 * 1000] EditorAutosave \"$directory\"]
 }
 
 
