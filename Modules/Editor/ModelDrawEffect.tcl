@@ -37,7 +37,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     public variable splineSteps 10
     public variable patchSize "3 15"
     public variable debugExtractPatch 0
-    public variable edgeTangents 1
+    public variable edgeTangents 0
     public variable edgeTangentSampleDistance 3
     public variable edgeTangentSampleSteps 90
 
@@ -92,6 +92,8 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method extractPatch { imagePatch point normal tangent sliceNormal } {}
     method comparePatches {i1 i2} {}
     method hermiteWeights {} {}
+    method importDialog {} {}
+    method importCallback {} {}
   }
 }
 
@@ -146,6 +148,10 @@ itcl::configbody ModelDrawEffect::interpolation {
 }
 
 itcl::configbody ModelDrawEffect::snap {
+  $this updateCurve
+}
+
+itcl::configbody ModelDrawEffect::edgeTangents {
   $this updateCurve
 }
 
@@ -240,6 +246,17 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
         EffectSWidget::ConfigureAll ModelDrawEffect -interpolation spline
       } else {
         EffectSWidget::ConfigureAll ModelDrawEffect -interpolation linear
+      }
+      return
+    }
+  }
+
+  if { [info exists o(edgeTangents)] } {
+    if { $caller == $o(edgeTangents) } {
+      if { [[$o(edgeTangents) GetWidget] GetSelectedState] } {
+        EffectSWidget::ConfigureAll ModelDrawEffect -edgeTangents 1
+      } else {
+        EffectSWidget::ConfigureAll ModelDrawEffect -edgeTangents 0
       }
       return
     }
@@ -567,6 +584,21 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
     }
   }
 
+  #
+  # update defined points label
+  #
+  [$o(definedPointsLabel) GetWidget] SetText "None"
+  if { $_modelDrawNode != "" } {
+    $_modelDrawNode RequestParameterList
+    array set p [$_modelDrawNode GetParameterList]
+    set definedPoints ""
+    foreach l [array names p] {
+      if { $p($l) != "" } {
+        lappend definedPoints $l
+      }
+    }
+    [$o(definedPointsLabel) GetWidget] SetText [lsort -integer $definedPoints]
+  }
 
   # enable the apply curves option if more than one slice is defined
   if { [info exists o(applyCurves)] } {
@@ -1318,6 +1350,52 @@ itcl::body ModelDrawEffect::comparePatches {p1 p2} {
 
 itcl::body ModelDrawEffect::buildOptions {} {
 
+
+  #
+  # Defined points frame
+  #
+  set o(definedPointsFrame) [vtkNew vtkKWFrame]
+  $o(definedPointsFrame) SetParent [$this getOptionsFrame]
+  $o(definedPointsFrame) Create
+  pack [$o(definedPointsFrame) GetWidgetName] \
+    -side top -anchor w -padx 2 -pady 0 -expand true -fill x
+
+  set o(definedPointsLabel) [vtkNew vtkKWLabelWithLabel]
+  $o(definedPointsLabel) SetParent $o(definedPointsFrame)
+  $o(definedPointsLabel) Create
+  $o(definedPointsLabel) SetLabelText "Defined: "
+  $o(definedPointsLabel) SetBalloonHelpString "List of label numbers that have control points defined.\nUse the label selector above to select new labels."
+  pack [$o(definedPointsLabel) GetWidgetName] \
+    -side left -anchor w -padx 2 -pady 0
+
+  set o(importPoints) [vtkNew vtkKWPushButton]
+  $o(importPoints) SetParent $o(definedPointsFrame)
+  $o(importPoints) Create
+  $o(importPoints) SetText "Import..."
+  $o(importPoints) SetBalloonHelpString "Import control points from another study."
+  pack [$o(importPoints) GetWidgetName] \
+    -side right -anchor e -padx 2 -pady 0
+  set invokedEvent 10000
+  $::slicer3::Broker AddObservation $o(importPoints) $invokedEvent "$this importDialog"
+
+  #
+  # option check boxes
+  #
+
+  set o(edgeTangents) [vtkNew vtkKWCheckButtonWithLabel]
+  $o(edgeTangents) SetParent [$this getOptionsFrame]
+  $o(edgeTangents) Create
+  $o(edgeTangents) SetLabelText "Edge Tangents: "
+  $o(edgeTangents) SetBalloonHelpString "Use calculate edge tangets when interpolating."
+  [$o(edgeTangents) GetLabel] SetWidth 22
+  [$o(edgeTangents) GetLabel] SetAnchorToEast
+  pack [$o(edgeTangents) GetWidgetName] \
+    -side top -anchor w -padx 2 -pady 2 
+  [$o(edgeTangents) GetWidget] SetSelectedState $edgeTangents
+
+  set SelectedStateChangedEvent 10000
+  $::slicer3::Broker AddObservation [$o(edgeTangents) GetWidget] $SelectedStateChangedEvent "$this processEvent $o(edgeTangents) $SelectedStateChangedEvent"
+
   set o(spline) [vtkNew vtkKWCheckButtonWithLabel]
   $o(spline) SetParent [$this getOptionsFrame]
   $o(spline) Create
@@ -1327,7 +1405,11 @@ itcl::body ModelDrawEffect::buildOptions {} {
   [$o(spline) GetLabel] SetAnchorToEast
   pack [$o(spline) GetWidgetName] \
     -side top -anchor w -padx 2 -pady 2 
-  [$o(spline) GetWidget] SetSelectedState 1
+  if { $interpolation == "spline" } {
+    [$o(spline) GetWidget] SetSelectedState 1
+  } else {
+    [$o(spline) GetWidget] SetSelectedState 0
+  }
 
   set SelectedStateChangedEvent 10000
   $::slicer3::Broker AddObservation [$o(spline) GetWidget] $SelectedStateChangedEvent "$this processEvent $o(spline) $SelectedStateChangedEvent"
@@ -1424,7 +1506,8 @@ itcl::body ModelDrawEffect::tearDownOptions { } {
   # call superclass version of tearDownOptions
   chain
 
-  foreach w "spline snap curves deleteCurve applyCurves" {
+  set widgets {spline snap edgeTangents curves deleteCurve applyCurves definedPointsLabel importPoints definedPointsFrame }
+  foreach w $widgets {
     if { [info exists o($w)] } {
       $o($w) SetParent ""
       pack forget [$o($w) GetWidgetName] 
@@ -1638,3 +1721,138 @@ itcl::body ModelDrawEffect::hermiteWeights {} {
   }
   return $_hermiteWeights($splineSteps)
 }
+
+
+# import Dialog - pick scene with existing control points and grayscale
+itcl::body ModelDrawEffect::importDialog {} {
+
+  if { [array names _controlPoints] != "" } {
+    # there are control points in this scene
+    if { ![EditorConfirmDialog "Control points exist in this scene.\nReplace them with import?"] } {
+      return
+    }
+  }
+
+  if { ![info exists o(importTopLevel)] } {
+    set o(importTopLevel) [vtkNew vtkKWTopLevel]
+    $o(importTopLevel) SetApplication $::slicer3::Application
+    $o(importTopLevel) ModalOn
+    $o(importTopLevel) Create
+    $o(importTopLevel) SetMasterWindow [$::slicer3::ApplicationGUI GetMainSlicerWindow]
+    $o(importTopLevel) SetDisplayPositionToPointer
+    $o(importTopLevel) HideDecorationOff
+    $o(importTopLevel) Withdraw
+    $o(importTopLevel) SetBorderWidth 2
+    $o(importTopLevel) SetReliefToGroove
+
+    set topFrame [vtkNew vtkKWFrame]
+    $topFrame SetParent $o(importTopLevel)
+    $topFrame Create
+    pack [$topFrame GetWidgetName] -side top -anchor w -padx 2 -pady 2 -fill both -expand true
+
+    set o(labelPromptLabel) [vtkNew vtkKWLabel]
+    $o(labelPromptLabel) SetParent $topFrame
+    $o(labelPromptLabel) Create
+    $o(labelPromptLabel) SetText "Select a mrml scene containing control points to import.\nIf the scene contains a volume, optionally register it to define a transform for the control points."
+    pack [$o(labelPromptLabel) GetWidgetName] -side top -anchor w -padx 2 -pady 2 -fill both -expand true
+
+    set o(sceneSelect) [vtkNew vtkKWLoadSaveButtonWithLabel]
+    $o(sceneSelect) SetParent $topFrame
+    $o(sceneSelect) Create
+    $o(sceneSelect) SetLabelText "Scene file to import:"
+    $o(sceneSelect) SetBalloonHelpString "Select a .mrml scene containing model draw control points and a grayscale volume for registration."
+    [$o(sceneSelect) GetWidget] TrimPathFromFileNameOff
+    set loadSaveDialog [[$o(sceneSelect) GetWidget] GetLoadSaveDialog]
+    $loadSaveDialog ChooseDirectoryOff
+    $loadSaveDialog SaveDialogOff
+    $loadSaveDialog SetTitle "Select Scene to Import"
+    $loadSaveDialog SetFileTypes "{ {MRML Scene} {.mrml} }"
+    $loadSaveDialog RetrieveLastPathFromRegistry "ModelDrawImportScene"
+    pack [$o(sceneSelect) GetWidgetName] -side top -fill x -expand true
+
+    set o(importRegister) [vtkNew vtkKWCheckButtonWithLabel]
+    $o(importRegister) SetParent $topFrame
+    $o(importRegister) Create
+    $o(importRegister) SetLabelText "Register Volume: "
+    $o(importRegister) SetBalloonHelpString "Register volume from selected scene to calculate the transform to use with the imported control points."
+    [$o(importRegister) GetLabel] SetWidth 22
+    [$o(importRegister) GetLabel] SetAnchorToEast
+    pack [$o(importRegister) GetWidgetName] \
+      -side top -anchor w -padx 2 -pady 2 
+    [$o(importRegister) GetWidget] SetSelectedState 1
+
+    set buttonFrame [vtkNew vtkKWFrame]
+    $buttonFrame SetParent $topFrame
+    $buttonFrame Create
+    pack [$buttonFrame GetWidgetName] -side left -anchor w -padx 2 -pady 2 -fill both -expand true
+
+    set o(importOK) [vtkNew vtkKWPushButton]
+    $o(importOK) SetParent $buttonFrame
+    $o(importOK) Create
+    $o(importOK) SetText OK
+    set o(importCancel) [vtkNew vtkKWPushButton]
+    $o(importCancel) SetParent $buttonFrame
+    $o(importCancel) Create
+    $o(importCancel) SetText Cancel
+    pack [$o(importCancel) GetWidgetName] [$o(importOK) GetWidgetName] -side left -padx 4 -anchor c 
+
+    # invoked event
+    set broker $::slicer3::Broker
+    $broker AddObservation $o(importOK) 10000 "$this importCallback; $o(importTopLevel) Withdraw"
+    $broker AddObservation $o(importCancel) 10000 "$o(importTopLevel) Withdraw"
+  }
+
+  $o(importTopLevel) DeIconify
+  $o(importTopLevel) Raise
+}
+
+itcl::body ModelDrawEffect::importCallback {} {
+  set loadSaveDialog [[$o(sceneSelect) GetWidget] GetLoadSaveDialog]
+  $loadSaveDialog SaveLastPathToRegistry "ModelDrawImportScene"
+
+  #
+  # load the import scene
+  # - sanity check import scene (for control points and volume)
+  # - if needed find the scalar volume and register it
+  # - transform the control points from the import scene
+  # - adjust the control points to lie on offsets
+  #
+
+  # create the new scene
+  set scene [vtkMRMLScene New]
+  set tag [$scene GetTagByClassName "vtkMRMLScriptedModuleNode"]
+  if { $tag == "" } {
+    set node [vtkMRMLScriptedModuleNode New]
+    $scene RegisterNodeClass $node
+    $node Delete
+  }
+
+  set sceneFile [[$o(sceneSelect) GetWidget] GetFileName]
+  $scene SetURL $sceneFile
+  $scene Connect
+
+  set modelDrawNode ""
+  set number [$scene GetNumberOfNodesByClass vtkMRMLScriptedModuleNode]
+  for {set n 0} {$n < $number} {incr n} {
+    set node [$scene GetNthNodeByClass $n vtkMRMLScriptedModuleNode]
+    if { [$node GetModuleName] == "ModelDraw" } {
+      set modelDrawNode $node
+    }
+  }
+
+  if { $modelDrawNode == "" } {
+    EditorErrorDialog "No model draw information in $sceneFile"
+    return
+  }
+  puts [$modelDrawNode Print]
+  $_modelDrawNode Copy $modelDrawNode
+  puts [$_modelDrawNode Print]
+
+  # TODO: run registration and transform points
+
+  array set _controlPoints [$_modelDrawNode GetParameter $_currentLabel]
+  $this updateControlPoints
+
+  $scene Delete
+}
+
