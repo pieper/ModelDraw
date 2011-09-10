@@ -1844,11 +1844,95 @@ itcl::body ModelDrawEffect::importCallback {} {
     EditorErrorDialog "No model draw information in $sceneFile"
     return
   }
-  puts [$modelDrawNode Print]
   $_modelDrawNode Copy $modelDrawNode
-  puts [$_modelDrawNode Print]
 
-  # TODO: run registration and transform points
+  if { [[$o(importRegister) GetWidget] GetSelectedState] } {
+    # perform the registration
+    # - get the scalar volume
+    # - run the registration
+    set importVolume ""
+    set number [$scene GetNumberOfNodesByClass vtkMRMLScalarVolumeNode]
+    for {set n 0} {$n < $number} {incr n} {
+      set node [$scene GetNthNodeByClass $n vtkMRMLScalarVolumeNode]
+      if { ![$node GetLabelMap] } {
+        set importVolume $node
+      }
+    }
+    set movingNode ""
+    if { $importVolume == "" } {
+      EditorErrorDialog "No scalar volume in $sceneFile\nCannot register"
+    } else {
+      set storage [$importVolume GetStorageNode]
+      set path [$storage GetFileName]
+    
+      set volumeLogic [$::slicer3::VolumesGUI GetLogic]
+      set ret [catch [list $volumeLogic AddArchetypeVolume "$path" "Model Draw Reference"] movingNode]
+      if { $ret } {
+        EditorErrorDialog "Could not import $path\nCannot register"
+      } 
+    }
+    if { $movingNode != "" } {
+      #
+      # perform the registration
+      # - create node
+      # - apply the task
+      # - wait for result
+      #
+      set registrationModule ""
+      foreach gui [vtkCommandLineModuleGUI ListInstances] {
+        if { [$gui GetGUIName] == "Fast Affine registration" } {
+          set registrationModule $gui
+        }
+      }
+      if { $registrationModule == "" } {
+        EditorErrorDialog "Could find registration module\nCannot register"
+      } else {
+        # the module parameter node
+        set moduleNode [vtkMRMLCommandLineModuleNode New]
+        $::slicer3::MRMLScene AddNode $moduleNode
+        $moduleNode SetName "Model Draw Import Registration"
+        # fixed (our edit volume) and moving (the imported volume)
+        set logic [[$sliceGUI GetLogic]  GetBackgroundLayer]
+        set node [$logic GetVolumeNode]
+        $moduleNode SetParameterAsString "fixedVolume" [$node GetID]
+        $moduleNode SetParameterAsString "movingVolume" [$movingNode GetID]
+        # the transform node
+        set transformNode [vtkMRMLLinearTransformNode New]
+        $::slicer3::MRMLScene AddNode $transformNode
+        $moduleNode SetParameterAsString "outputTransform" [$transformNode GetID]
+        $transformNode Delete
+        # some registration parameters
+        $moduleNode SetParameterAsString "initializeTransformMode" "useMomentsAlign"
+        $moduleNode SetParameterAsString "useRigid" "true"
+        $moduleNode SetParameterAsString "useAffine" "true"
+
+        $registrationModule SetCommandLineModuleNode $moduleNode
+        [$registrationModule GetLogic] Apply $moduleNode
+
+        set waitWindow [vtkNew vtkKWTopLevel]
+        $waitWindow SetApplication $::slicer3::Application
+        $waitWindow ModalOn
+        $waitWindow Create
+        $waitWindow SetMasterWindow [$::slicer3::ApplicationGUI GetMainSlicerWindow]
+        $waitWindow HideDecorationOff
+        $waitWindow SetBorderWidth 2
+        $waitWindow SetReliefToGroove
+
+        set waitLabel [vtkNew vtkKWLabel]
+        $waitLabel SetParent $topFrame
+        $waitLabel Create
+        $waitLabel SetText "Registration in process.  Please wait..."
+        pack [$waitLabel GetWidgetName] -side top -anchor w -padx 2 -pady 2 -fill both -expand true
+        set seconds 0
+        while { [$moduleNode GetStatusString] != "Completed" } {
+          $waitLabel SetText "Registration in process ($seconds sec).  Please wait..."
+          incr seconds
+          after 1000
+        }
+        $moduleNode Delete
+      }
+    }
+  }
 
   array set _controlPoints [$_modelDrawNode GetParameter $_currentLabel]
   $this updateControlPoints
