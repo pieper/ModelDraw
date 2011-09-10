@@ -344,6 +344,7 @@ QStandardItem* qSlicerEMSegmentAnatomicalTreeWidgetPrivate::insertTreeRow(
         q->mrmlManager()->GetTreeNodeIntensityLabel(treeNodeId));
     this->TreeView->setIndexWidget(
         this->TreeModel->indexFromItem(labelItem), labelComboBox);
+    connect(labelComboBox, SIGNAL(currentColorChanged(int)),this,SLOT(onCurrentColorChanged(int)));
     }
 
   // Set widget associated with probabilityMapItem
@@ -521,9 +522,6 @@ void qSlicerEMSegmentAnatomicalTreeWidgetPrivate::onParcellationMapChanged(vtkMR
 {
   Q_Q(qSlicerEMSegmentAnatomicalTreeWidget);
 
-  std::cout << "------------------------" << std::endl;
-  std::cout << node << std::endl;
-
   if (!node)
     {
     return;
@@ -534,6 +532,19 @@ void qSlicerEMSegmentAnatomicalTreeWidgetPrivate::onParcellationMapChanged(vtkMR
       treeNodeId, q->mrmlManager()->MapMRMLNodeIDToVTKNodeID(node->GetID()));
 }
 
+//-----------------------------------------------------------------------------
+void qSlicerEMSegmentAnatomicalTreeWidgetPrivate::onCurrentColorChanged(int index)
+{
+  Q_Q(qSlicerEMSegmentAnatomicalTreeWidget);
+
+  // some magic to get the selected treeNodeId
+  QWidget* currentWidget = (QWidget*)QObject::sender();
+  QStandardItem * item = this->TreeModel->itemFromIndex(this->TreeView->indexAt(currentWidget->pos()));
+  int treeNodeId = item->data(Self::TreeNodeIDRole).toInt();
+
+  q->mrmlManager()->SetTreeNodeIntensityLabel(treeNodeId, index);
+
+}
 
 //-----------------------------------------------------------------------------
 // qSlicerEMSegmentAnatomicalTreeWidget methods

@@ -84,8 +84,10 @@ class EMSegmentEditRegistrationParametersStep( EMSegmentStep ) :
         # only do this if we have a channelComboBoxList defined
         for i in range( self.mrmlManager().GetTargetNumberOfSelectedVolumes() ):
 
+          if not self.mrmlManager().GetGlobalParametersNode().GetRegistrationAtlasVolumeKey( i ):
+            continue
+
           volumeID = self.mrmlManager().GetRegistrationAtlasVolumeID( i )
-          Helper.Debug( volumeID )
 
           volumeNodeID = self.mrmlManager().MapVTKNodeIDToMRMLNodeID( volumeID )
           if volumeNodeID:
@@ -121,7 +123,7 @@ class EMSegmentEditRegistrationParametersStep( EMSegmentStep ) :
           volumeNodeID = None
         else:
           volumeNodeID = volumeNode.GetID()
-        self.mrmlManager().SetRegistrationAtlasVolumeID( i, self.mrmlManager().MapMRMLNodeIDToVTKNodeID( volumeNodeID ) )
+          self.mrmlManager().SetRegistrationAtlasVolumeID( i, self.mrmlManager().MapMRMLNodeIDToVTKNodeID( volumeNodeID ) )
 
       self.mrmlManager().SetRegistrationAffineType( self.__affineRegistrationComboBox.currentIndex )
       self.mrmlManager().SetRegistrationDeformableType( self.__deformableRegistrationComboBox.currentIndex )

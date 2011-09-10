@@ -44,7 +44,7 @@ class Helper( object ):
     
     '''
 
-    showDebugOutput = 1
+    showDebugOutput = 0
     from time import strftime
     if showDebugOutput:
         print "[EMSegmentPy " + time.strftime( "%m/%d/%Y %H:%M:%S" ) + "] DEBUG: " + str( message )
@@ -104,7 +104,13 @@ class Helper( object ):
   def GetSpecificationTypes():
     '''
     '''
-    return ['Manual', 'Manual Sampling', 'Auto Sampling']
+    return ['Manual', 'Manual Sampling']#, 'Auto Sampling']
+
+  @staticmethod
+  def GetStoppingConditionTypes():
+    '''
+    '''
+    return ['Iterations', 'LabelMap', 'Weights']
 
   @staticmethod
   def onClickInSliceView( sliceViewInteractorStyle, sliceLogic ):
@@ -128,6 +134,6 @@ class Helper( object ):
 
       rasPos = xyToRas.MultiplyPoint( coordinates )
 
-      return rasPos
+      return [rasPos[0], rasPos[1], rasPos[2]]
 
 

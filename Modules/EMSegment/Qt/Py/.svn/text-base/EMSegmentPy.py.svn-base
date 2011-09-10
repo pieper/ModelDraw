@@ -6,7 +6,7 @@ from EMSegmentWizard import Helper
 class EMSegmentPy:
   def __init__( self, parent ):
     parent.title = "EMSegment"
-    parent.category = ""
+    parent.category = "Segmentation"
     parent.contributor = "--"
     parent.helpText = """<b>EMSegment Module:</b>  Segment a set of set of images (target images) using the tree-based EM segmentation algorithm<br><br>Use the pull down menu to select from a collection of tasks or create a new one.<br>Use the 'Back' and 'Next' to navigate through the stages of filling in the algorithm parameters.\n\nWhen all parameters are specified, use the 'segmentation' button. \n\nFor latest updates, new tasks, and detail help please visit <a>http://www.slicer.org/slicerWiki/index.php/Modules:EMSegmenter-3.6</a> <br><br> <b>The work was reported in:</b> <br>K.M. Pohl et. A hierarchical algorithm for MR brain image parcellation. IEEE Transactions on Medical Imaging, 26(9),pp 1201-1212, 2007."""
     parent.acknowledgementText = """<img src=':/Icons/UPenn_logo.png'><br><br>This module is currently maintained by Daniel Haehn, Dominique Belhachemi, and Kilian Pohl (SBIA,UPenn). The work is currently supported by an ARRA supplement to NAC and the Slicer Community (see also <a>http://www.slicer.org</a>). <br><br>The work was reported in  <br>K.M. Pohl et. A hierarchical algorithm for MR brain image parcellation. IEEE Transactions on Medical Imaging, 26(9),pp 1201-1212, 2007."""
@@ -114,14 +114,14 @@ class EMSegmentPyWidget:
     for i in range( 3, len( allSteps ) - 1 ):
       self.workflow.addTransition( allSteps[i], allSteps[i + 1] )
 
-    # configure behavior if user clicks on segment button to not go back to the current step
-    #self.workflow.goBackToOriginStepUponSuccess = False
-
     # Propagate the workflow, the logic and the MRML Manager to the steps
     for s in allSteps:
         s.setWorkflow( self.workflow )
         s.setLogic( self.logic() )
         s.setMRMLManager( self.mrmlManager() )
+
+    # disable the error text which showed up when jumping to the (invisible) segment step
+    workflowWidget.workflowGroupBox().errorTextEnabled = False
 
     # start the workflow and show the widget
     self.workflow.start()

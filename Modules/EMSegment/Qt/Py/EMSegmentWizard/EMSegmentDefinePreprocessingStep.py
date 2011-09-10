@@ -154,6 +154,10 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
       if volumeCollection:
         outputNode = volumeCollection.GetNthVolumeNode( 0 )
         # propagate to sliceViews
+        selectionNode = slicer.app.mrmlApplicationLogic().GetSelectionNode()
+        selectionNode.SetReferenceActiveVolumeID( outputNode.GetID() )
+        #selectionNode.SetReferenceSecondaryVolumeID( outputNode.GetID() )
+        slicer.app.mrmlApplicationLogic().PropagateVolumeSelection()
 
     Helper.Info( '=============================================' )
     Helper.Info( 'Pre-processing completed successfully' )
@@ -174,7 +178,7 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
 
       if cmtkPath == "":
         # cmtk was not found, ask if we want BRAINSFit instead
-        answer = qt.QMessageBox.question( self, "CMTK is not installed", "Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
+        answer = qt.QMessageBox.question( self, "CMTK is not installed", "CMTK is not installed. Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
         if answer == qt.QMessageBox.No:
           # if no, exit here and stay at this step
           self.__parent.validationFailed( desiredBranchId, '', '', False )
@@ -187,7 +191,7 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
 
       if plastimatchPath == "":
         # plastimatch was not found, ask if we want BRAINSFit instead
-        answer = qt.QMessageBox.question( self, "PLASTIMATCH is not installed", "Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
+        answer = qt.QMessageBox.question( self, "PLASTIMATCH is not installed", "PLASTIMATCH is not installed. Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
         if answer == qt.QMessageBox.No:
           # if no, exit here and stay at this step
           self.__parent.validationFailed( desiredBranchId, '', '', False )
@@ -200,7 +204,7 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
 
       if demonsPath == "":
         # demons was not found, ask if we want BRAINSFit instead
-        answer = qt.QMessageBox.question( self, "DEMONS is not installed", "Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
+        answer = qt.QMessageBox.question( self, "DEMONS is not installed", "DEMONS is not installed. Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
         if answer == qt.QMessageBox.No:
           # if no, exit here and stay at this step
           self.__parent.validationFailed( desiredBranchId, '', '', False )
@@ -213,7 +217,7 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
 
       if drammsPath == "":
         # dramms was not found, ask if we want BRAINSFit instead
-        answer = qt.QMessageBox.question( self, "DRAMMS is not installed", "Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
+        answer = qt.QMessageBox.question( self, "DRAMMS is not installed", "DRAMMS is not installed. Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
         if answer == qt.QMessageBox.No:
           # if no, exit here and stay at this step
           self.__parent.validationFailed( desiredBranchId, '', '', False )
@@ -226,7 +230,7 @@ class EMSegmentDefinePreprocessingStep( EMSegmentStep ) :
 
       if antsPath == "":
         # ANTS was not found, ask if we want BRAINSFit instead
-        answer = qt.QMessageBox.question( self, "ANTS is not installed", "Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
+        answer = qt.QMessageBox.question( self, "ANTS is not installed", "ANTS is not installed. Do you want to proceed with BRAINSTools instead?", qt.QMessageBox.Yes | qt.QMessageBox.No )
         if answer == qt.QMessageBox.No:
           # if no, exit here and stay at this step
           self.__parent.validationFailed( desiredBranchId, '', '', False )

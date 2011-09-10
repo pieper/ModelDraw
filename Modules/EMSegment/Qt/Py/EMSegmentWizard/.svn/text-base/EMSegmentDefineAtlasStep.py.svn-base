@@ -31,6 +31,7 @@ class EMSegmentDefineAtlasStep( EMSegmentStep ) :
     self.__anatomicalTree.labelColumnVisible = False
     self.__anatomicalTree.probabilityMapColumnVisible = True
     self.__anatomicalTree.parcellationMapColumnVisible = True
+    self.__anatomicalTree.setSizePolicy( qt.QSizePolicy.MinimumExpanding, qt.QSizePolicy.MinimumExpanding )
     anatomicalTreeGroupBoxLayout.addWidget( self.__anatomicalTree )
 
 

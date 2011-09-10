@@ -21,9 +21,10 @@
 // Qt includes
 #include <QCheckBox>
 #include <QDebug>
+#include <QHBoxLayout>
 
 // SlicerQt includes
-#include "qCTKFlowLayout.h"
+
 #include "qSlicerEMSegmentGraphWidget.h"
 #include "ui_qSlicerEMSegmentGraphWidget.h"
 
@@ -40,6 +41,7 @@
 #include "vtkMRMLScene.h"
 
 // VTK includes
+#include <vtkTable.h>
 #include <vtkChartXY.h>
 #include <vtkContextView.h>
 #include <vtkContextScene.h>
@@ -70,7 +72,7 @@ public:
   vtkSmartPointer<vtkChartXY>     Chart0;
   vtkSmartPointer<vtkChartXY>     Chart1;
   QMap<QString, QString>          VolumeList;
-  qCTKFlowLayout*                 ClassListLayout;
+  QHBoxLayout*                 ClassListLayout;
   QMap<vtkIdType, vtkPlotGaussian*> ClassPlotList[2];
 };
 
@@ -97,7 +99,7 @@ void qSlicerEMSegmentGraphWidgetPrivate::setupUi(qSlicerEMSegmentWidget* newPare
   this->Chart1View->SetInteractor(this->Graph1Widget->GetInteractor());
   this->Graph1Widget->SetRenderWindow(this->Chart1View->GetRenderWindow());
 
-  this->ClassListLayout = new qCTKFlowLayout;
+  this->ClassListLayout = new QHBoxLayout;
   this->Input0Layout->addLayout(this->ClassListLayout);
 
   QObject::connect(this->Input0ComboBox, SIGNAL(currentIndexChanged(const QString&)),

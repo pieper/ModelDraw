@@ -42,8 +42,8 @@ public:
   virtual ~qSlicerEMSegmentGraphWidget();
 
 public slots:
-  virtual void setMRMLManager(vtkEMSegmentMRMLManager* manager);
-  void updateFromMRMLManager();
+  Q_INVOKABLE virtual void setMRMLManager(vtkEMSegmentMRMLManager* manager);
+  Q_INVOKABLE void updateFromMRMLManager();
 
 protected slots:
   void onCurrentInput0VolumeChanged(const QString& volumeName);

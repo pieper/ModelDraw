@@ -3486,3 +3486,30 @@ std::string vtkEMSegmentLogic::GetTasks()
   return tasksList;
 
 }
+
+//-----------------------------------------------------------------------------
+std::string vtkEMSegmentLogic::GetPreprocessingTasks()
+{
+
+  std::vector < std::string > pssDefaultTasksName;
+  std::vector < std::string > pssDefaultTasksFile;
+  std::vector < std::string > DefinePreprocessingTasksName;
+  std::vector < std::string > DefinePreprocessingTasksFile;
+
+  this->CreateDefaultTasksList(pssDefaultTasksName, pssDefaultTasksFile,
+      DefinePreprocessingTasksName, DefinePreprocessingTasksFile);
+
+  std::string tasksList = "";
+
+  for (unsigned int i = 0; i < DefinePreprocessingTasksName.size(); ++i)
+    {
+    tasksList += DefinePreprocessingTasksName[i];
+    tasksList += ":";
+    tasksList += DefinePreprocessingTasksFile[i];
+    if (i != DefinePreprocessingTasksName.size() - 1)
+      tasksList += ",";
+    }
+
+  return tasksList;
+
+}

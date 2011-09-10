@@ -23,8 +23,8 @@ SET(module_widgets_SRCS
   qSlicerEMSegmentInputChannelListWidget.h
   qSlicerEMSegmentInputChannelListWidget.cxx
   
-  #qSlicerEMSegmentGraphWidget.h
-  #qSlicerEMSegmentGraphWidget.cxx
+  qSlicerEMSegmentGraphWidget.h
+  qSlicerEMSegmentGraphWidget.cxx
   
   qSlicerEMSegmentAnatomicalTreeWidget.h
   qSlicerEMSegmentAnatomicalTreeWidget.cxx
@@ -38,7 +38,7 @@ SET(module_widgets_SRCS
 SET(module_widgets_MOC_SRCS
   qSlicerEMSegmentAnatomicalTreeWidget.h
   qSlicerEMSegmentAnatomicalTreeWidget_p.h
-  #qSlicerEMSegmentGraphWidget.h
+  qSlicerEMSegmentGraphWidget.h
   qSlicerEMSegmentInputChannelListWidget.h
   qSlicerEMSegmentWidget.h
   )
@@ -46,7 +46,7 @@ SET(module_widgets_MOC_SRCS
 # UI files
 SET(module_widgets_UI_SRCS
   Resources/UI/qSlicerEMSegmentAnatomicalTreeWidget.ui
-  #Resources/UI/qSlicerEMSegmentGraphWidget.ui  
+  Resources/UI/qSlicerEMSegmentGraphWidget.ui  
   )
 
 # Resources

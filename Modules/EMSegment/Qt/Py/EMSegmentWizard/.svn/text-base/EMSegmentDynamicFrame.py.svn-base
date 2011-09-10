@@ -134,6 +134,9 @@ class EMSegmentDynamicFrame:
     '''
     oldDefText = self.mrmlManager().GetGlobalParametersNode().GetTaskPreProcessingSetting()
 
+    if not oldDefText:
+      return
+
     # let's split it
     defList = oldDefText.split( ":" )
 
@@ -183,6 +186,9 @@ class EMSegmentDynamicFrame:
     '''
     '''
     defText = self.mrmlManager().GetGlobalParametersNode().GetTaskPreProcessingSetting()
+
+    if not defText:
+      return
 
     # the defText string is formated like
     # C1:C1

@@ -115,6 +115,8 @@ public slots:
 
   void onParcellationMapChanged(vtkMRMLNode * node);
 
+  void onCurrentColorChanged(int index);
+
 public:
 
   vtkMRMLEMSNode *         EMSNode;

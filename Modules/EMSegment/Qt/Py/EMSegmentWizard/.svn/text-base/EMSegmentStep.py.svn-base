@@ -49,17 +49,17 @@ class EMSegmentStep( ctk.ctkWorkflowWidgetStep ) :
   def onEntry( self, comingFrom, transitionType ):
     comingFromId = "None"
     if comingFrom: comingFromId = comingFrom.id()
-    print "-> onEntry - current [%s] - comingFrom [%s]" % ( self.id(), comingFromId )
+    #print "-> onEntry - current [%s] - comingFrom [%s]" % ( self.id(), comingFromId )
     super( EMSegmentStep, self ).onEntry( comingFrom, transitionType )
 
   def onExit( self, goingTo, transitionType ):
     goingToId = "None"
     if goingTo: goingToId = goingTo.id()
-    print "-> onExit - current [%s] - goingTo [%s]" % ( self.id(), goingToId )
+    #print "-> onExit - current [%s] - goingTo [%s]" % ( self.id(), goingToId )
     super( EMSegmentStep, self ).onExit( goingTo, transitionType )
 
   def validate( self, desiredBranchId ):
-    print "-> validate %s" % self.id()
+    #print "-> validate %s" % self.id()
     pass
 
   def validationSucceeded( self, desiredBranchId ):

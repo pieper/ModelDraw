@@ -1,5 +1,6 @@
 from __main__ import qt, ctk
 import PythonQt
+import os
 
 from EMSegmentStep import *
 from Helper import *

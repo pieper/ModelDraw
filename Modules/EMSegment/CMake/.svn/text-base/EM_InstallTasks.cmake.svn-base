@@ -11,7 +11,7 @@ ADD_CUSTOM_TARGET(copytasks ALL
 
 install(
   DIRECTORY Tasks
-  DESTINATION ${EM_SHARE_DIR}/${PROJECT_NAME}/
+  DESTINATION ${EM_INSTALL_SHARE_DIR}/${PROJECT_NAME}/
   FILES_MATCHING PATTERN "*"
 )
 
@@ -28,7 +28,7 @@ endforeach(file)
 
 install(
   FILES ${TCLFILES}
-  DESTINATION ${EM_SHARE_DIR}/${PROJECT_NAME}/Tcl
+  DESTINATION ${EM_INSTALL_SHARE_DIR}/${PROJECT_NAME}/Tcl
 )
 
 ### this code will be replaced by the cmake command 'file(COPY ....)' below 

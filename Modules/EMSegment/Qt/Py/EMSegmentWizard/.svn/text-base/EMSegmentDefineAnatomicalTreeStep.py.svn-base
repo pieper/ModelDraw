@@ -44,6 +44,7 @@ class EMSegmentDefineAnatomicalTreeStep( EMSegmentStep ) :
     self.__anatomicalTree.structureNameEditable = True
     self.__anatomicalTree.labelColumnVisible = True
     self.__anatomicalTree.addDeleteSubclassesEnabled = True
+    self.__anatomicalTree.setSizePolicy( qt.QSizePolicy.MinimumExpanding, qt.QSizePolicy.MinimumExpanding )
     anatomicalTreeGroupBoxLayout.addWidget( self.__anatomicalTree )
 
   def onColorNodeChanged( self ):

@@ -255,6 +255,7 @@ public:
 //BTX
 #endif
 std::string GetTasks();
+std::string GetPreprocessingTasks();
 #ifdef Slicer3_USE_KWWIDGETS
 //ETX
 #endif 

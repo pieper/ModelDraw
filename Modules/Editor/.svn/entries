@@ -1,14 +1,14 @@
 10
 
 dir
-16828
+16835
 http://svn.slicer.org/Slicer3/trunk/Modules/Editor
 http://svn.slicer.org/Slicer3
 
 
 
-2011-08-19T21:36:51.748505Z
-16828
+2011-08-26T14:43:58.845839Z
+16829
 pieper
 
 
@@ -266,7 +266,7 @@ has-props
 
 EditColor.tcl
 file
-16829
+
 
 
 

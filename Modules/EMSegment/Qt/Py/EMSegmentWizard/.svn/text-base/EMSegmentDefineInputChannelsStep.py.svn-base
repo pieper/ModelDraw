@@ -173,6 +173,14 @@ class EMSegmentDefineInputChannelsStep( EMSegmentStep ) :
       if preProcessingStep:
         preProcessingStep.disableQuestions()
 
+    else:
+
+      # disable questions at the pre-processing step
+      preProcessingStep = slicer.modules.emsegmentPreprocessingStep
+      if preProcessingStep:
+        preProcessingStep.enableQuestions()
+
+
     self.__parent.onExit( goingTo, transitionType )
 
 

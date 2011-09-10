@@ -2,6 +2,7 @@ from __main__ import qt, ctk
 
 from EMSegmentStep import *
 from Helper import *
+import os
 
 class EMSegmentSelectTaskStep( EMSegmentStep ) :
 
@@ -11,7 +12,8 @@ class EMSegmentSelectTaskStep( EMSegmentStep ) :
     self.setDescription( 'Select a (new) task.' )
 
     self.__tasksList = dict()
-
+    self.__preprocessingTasksList = dict()
+    self.__newTaskString = 'Create new task..'
     self.__parent = super( EMSegmentSelectTaskStep, self )
 
   def createUserInterface( self ):
@@ -23,6 +25,7 @@ class EMSegmentSelectTaskStep( EMSegmentStep ) :
 
     # let's load all tasks
     self.loadTasks()
+    self.loadPreprocessingTasks()
 
     selectTaskLabel = qt.QLabel( 'Select Task' )
     selectTaskLabel.setFont( self.__parent.getBoldFont() )
@@ -33,6 +36,8 @@ class EMSegmentSelectTaskStep( EMSegmentStep ) :
 
     # fill the comboBox with the taskNames
     self.__taskComboBox.addItems( self.getTaskNames() )
+    # TODO select MRI Human Brain as default
+    self.__taskComboBox.connect( 'currentIndexChanged(int)', self.onTaskSelected )
     self.__layout.addRow( Helper.CreateSpace( 20 ), self.__taskComboBox )
 
     # add empty row
@@ -42,21 +47,102 @@ class EMSegmentSelectTaskStep( EMSegmentStep ) :
     chooseModeLabel.setFont( self.__parent.getBoldFont() )
     self.__layout.addRow( chooseModeLabel )
 
-    buttonBox = qt.QDialogButtonBox()
-    simpleButton = buttonBox.addButton( buttonBox.Discard )
+    self.__buttonBox = qt.QDialogButtonBox()
+    simpleButton = self.__buttonBox.addButton( self.__buttonBox.Discard )
     simpleButton.setIcon( qt.QIcon() )
     simpleButton.text = "Simple"
     simpleButton.toolTip = "Click to use the simple mode."
-    advancedButton = buttonBox.addButton( buttonBox.Apply )
+    advancedButton = self.__buttonBox.addButton( self.__buttonBox.Apply )
     advancedButton.setIcon( qt.QIcon() )
     advancedButton.text = "Advanced"
     advancedButton.toolTip = "Click to use the advanced mode."
-    self.__layout.addWidget( buttonBox )
+    self.__layout.addWidget( self.__buttonBox )
 
     # connect the simple and advanced buttons
     simpleButton.connect( 'clicked()', self.goSimple )
     advancedButton.connect( 'clicked()', self.goAdvanced )
 
+  def onTaskSelected( self ):
+    '''
+    '''
+    index = self.__taskComboBox.currentIndex
+    taskName = self.__taskComboBox.currentText
+
+    # re-enable the simple and advanced buttons
+    self.__buttonBox.enabled = True
+
+    if taskName == self.__newTaskString:
+      # create new task was selected
+
+      # disable the simple and advanced buttons
+      self.__buttonBox.enabled = False
+
+      # create new dialog
+      self.__d = qt.QDialog()
+      dLayout = qt.QFormLayout( self.__d )
+
+      self.__nameEdit = qt.QLineEdit()
+      dLayout.addRow( 'New Task Name:', self.__nameEdit )
+
+      self.__preprocessingComboBox = qt.QComboBox()
+      list = self.__preprocessingTasksList.keys()
+      list.sort( lambda x, y: cmp( x.lower(), y.lower() ) )
+      self.__preprocessingComboBox.addItems( list )
+      # also, add None
+      self.__preprocessingComboBox.addItem( 'None' )
+      dLayout.addRow( 'Pre-processing:', self.__preprocessingComboBox )
+
+      buttonBox = qt.QDialogButtonBox()
+      #cancelButton = buttonBox.addButton(buttonBox.Discard)
+      #cancelButton.text = 'Cancel'
+      okButton = buttonBox.addButton( buttonBox.Apply )
+      okButton.setIcon( qt.QIcon() )
+      okButton.text = 'Apply'
+      okButton.connect( 'clicked()', self.createNewTask )
+      dLayout.addWidget( buttonBox )
+
+      self.__d.setModal( True )
+      self.__d.show()
+
+  def createNewTask( self ):
+    '''
+    '''
+    name = self.__nameEdit.text
+    preprocessing = self.__preprocessingComboBox.currentText
+    if preprocessing == 'None':
+      taskFile = None
+    else:
+      taskFile = self.__preprocessingTasksList[preprocessing]
+
+    if not name:
+      messageBox = qt.QMessageBox.warning( self, 'Error', 'The name can not be empty!' )
+      return
+
+    if not taskFile:
+      # use default taskfile
+      taskFileShort = slicer.vtkMRMLEMSGlobalParametersNode.GetDefaultTaskTclFileName()
+      taskFile = taskFileShort
+    else:
+      # get just the filename
+      taskFileShort = os.path.split( taskFile )[1]
+
+    self.mrmlManager().CreateAndObserveNewParameterSet()
+    templateNodes = slicer.mrmlScene.GetNodesByClass( 'vtkMRMLEMSTemplateNode' )
+
+    self.mrmlManager().SetNthParameterName( templateNodes.GetNumberOfItems() - 1, name )
+    self.mrmlManager().SetTclTaskFilename( taskFileShort )
+
+    # update combobox
+    self.__taskComboBox.clear()
+    self.loadTasks()
+    self.__taskComboBox.addItems( self.getTaskNames() )
+
+    # select new task
+    self.__taskComboBox.setCurrentIndex( self.__taskComboBox.findText( name ) )
+
+    self.__d.hide()
+
+    self.goAdvanced()
 
   def loadTasks( self ):
     '''
@@ -72,13 +158,54 @@ class EMSegmentSelectTaskStep( EMSegmentStep ) :
 
     self.__tasksList.clear()
 
+    templateNodes = slicer.mrmlScene.GetNodesByClass( 'vtkMRMLEMSTemplateNode' )
+
+    # look in the scene
+    for i in range( templateNodes.GetNumberOfItems() ):
+
+      t = templateNodes.GetItemAsObject( i )
+      # there are already nodes in the scene, let's propagate them to our list
+      taskName = t.GetName()
+      taskFile = slicer.vtkMRMLEMSGlobalParametersNode.GetDefaultTaskTclFileName()
+
+      self.__tasksList[taskName] = taskFile
+
+    # look in files
     for t in tasksList:
       task = t.split( ':' )
-      taskName = task[0]
-      taskFile = task[1]
+      if len( task ) == 2:
+        taskName = task[0]
+        taskFile = task[1]
+
+      # add this entry to our tasksList, if it does not exist yet
+      if not self.__tasksList.has_key( taskName ):
+        self.__tasksList[taskName] = taskFile
+
+    return True
+
+  def loadPreprocessingTasks( self ):
+    '''
+    Load all available Tasks and save them to self.__tasksList as key,value pairs of taskName and fileName
+    '''
+    if not self.logic():
+      Helper.Error( "No logic class!" )
+      return False
+
+    # we query the logic for a comma-separated string with the following format of each item:
+    # tasksName:tasksFile
+    tasksList = self.logic().GetPreprocessingTasks().split( ',' )
+
+    self.__preprocessingTasksList.clear()
+
+    for t in tasksList:
+      if t:
+        task = t.split( ':' )
+        if len( task ) == 2:
+          taskName = task[0]
+          taskFile = task[1]
 
       # add this entry to our tasksList
-      self.__tasksList[taskName] = taskFile
+      self.__preprocessingTasksList[taskName] = taskFile
 
     return True
 
@@ -137,9 +264,14 @@ class EMSegmentSelectTaskStep( EMSegmentStep ) :
 
   def getTaskNames( self ):
     '''
-    Get the taskNames of our tasksList
+    Get the taskNames of our tasksList (alphabetically sorted)
     '''
-    return self.__tasksList.keys()
+    list = self.__tasksList.keys()
+    list.sort( lambda x, y: cmp( x.lower(), y.lower() ) )
+
+    list.append( self.__newTaskString )
+
+    return list
 
   def goSimple( self ):
     '''
