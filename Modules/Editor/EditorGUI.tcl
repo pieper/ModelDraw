@@ -271,6 +271,10 @@ proc EditorGetParameterNode {} {
   set nNodes [$::slicer3::MRMLScene GetNumberOfNodesByClass "vtkMRMLScriptedModuleNode"]
   for {set i 0} {$i < $nNodes} {incr i} {
     set n [$::slicer3::MRMLScene GetNthNodeByClass $i "vtkMRMLScriptedModuleNode"]
+    if { $n == "" } {
+      # TODO: how can this be?  It happens during scene load
+      continue
+    }
     if { [$n GetModuleName] == "Editor" } {
       if { $n == $::Editor(parameterNode) } {
         set node $n
