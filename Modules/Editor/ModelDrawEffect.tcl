@@ -1850,7 +1850,6 @@ itcl::body ModelDrawEffect::importCallback {} {
     EditorErrorDialog "No model draw information in $sceneFile"
     return
   }
-  $_modelDrawNode Copy $modelDrawNode
 
   if { [[$o(importRegister) GetWidget] GetSelectedState] } {
     # perform the registration
@@ -1936,7 +1935,14 @@ itcl::body ModelDrawEffect::importCallback {} {
         while { [$moduleNode GetStatusString] != "Completed" } {
           $waitLabel SetText "Registration in process ($seconds sec).  Please wait..."
           incr seconds
+          update
           after 1000
+        }
+
+        while { [$::slicer3::ApplicationLogic GetReadDataQueueSize] } {
+            $waitLabel SetText "Waiting for data to be read...queue size = [$::slicer3::ApplicationLogic GetReadDataQueueSize]"
+            update
+            after 1000
         }
 
 
@@ -1950,10 +1956,13 @@ itcl::body ModelDrawEffect::importCallback {} {
         }
         set sliceNormal [$this normalize $sliceNormal]
         set matrix [$transformNode GetMatrixTransformToParent]
-        $_modelDrawNode RequestParameterList
-        array set p [$_modelDrawNode GetParameterList]
+        $modelDrawNode RequestParameterList
+        array set p [$modelDrawNode GetParameterList]
         foreach index [array names p] {
+          # make a new set of control points per label value
+          array unset newOffsetCPArray
           foreach {offset, cps} $p($index) {
+            # transform points by registration matrix
             set transformedCPs ""
             foreach cp $cps {
               lappend transformedCPs [lrange [eval $matrix MultiplyPoint $cp 1] 0 2]
@@ -1963,11 +1972,11 @@ itcl::body ModelDrawEffect::importCallback {} {
             eval $_sliceNode JumpSlice $cent
             [$sliceGUI GetLogic] SnapSliceOffsetToIJK
             set newOffset [$this offset]
-            
             set newCPs ""
             foreach newCP $transformedCPs {
+              # snap the points to the offset plane
               set cpToSlice ""
-              foreach cpEle $newCP $row {0 1 2} {
+              foreach cpEle $newCP row {0 1 2} {
                 # calculate vector from cp to slice point
                 lappend cpToSlice [expr [$sliceToRAS GetElement $row 3] - $cpEle]
               }
@@ -1979,21 +1988,22 @@ itcl::body ModelDrawEffect::importCallback {} {
               }
               lappend newCPs $cpOnSlice
             }
+            # update array of control points for this slice offset
             set newOffsetCPArray($newOffset) $newCPs
           }
-          $_modelDrawNode SetParameter $index [array get newOffsetCPArray]
+          # set parameter for this label value
+          $modelDrawNode SetParameter $index [array get newOffsetCPArray]
         }
-
         $transformNode Delete
-
         $moduleNode Delete
         $waitLabel Delete
         $waitWindow Delete
-
-
       }
     }
   }
+
+  # put new points, imported and possibly registered, into scene
+  $_modelDrawNode Copy $modelDrawNode
 
   array set _controlPoints [$_modelDrawNode GetParameter $_currentLabel]
   $this updateControlPoints
