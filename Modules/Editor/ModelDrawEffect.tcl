@@ -72,6 +72,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     }
     method controlPoints { {offset ""} } {}
     method controlCentroid { {offset ""} } {}
+    method centroid { controlPoints } {}
     method addControlPoint {r a s} {}
     method deleteControlPoint {index} {}
     method splitControlPoint {index} {}
@@ -400,19 +401,24 @@ itcl::body ModelDrawEffect::controlCentroid { {offset ""} } {
   if { $cps == "" } {
     return ""
   }
+
+  return [$this centroid $cps]
+}
+
+itcl::body ModelDrawEffect::centroid { controlPoints } {
   
   set rSum 0
   set aSum 0
   set sSum 0
-  foreach cp $cps {
+  foreach cp $controlPoints {
     foreach {r a s} $cp {}
     set rSum [expr $rSum + $r]
     set aSum [expr $aSum + $a]
     set sSum [expr $sSum + $s]
   }
-  set rCentroid [expr $rSum / [llength $cps]]
-  set aCentroid [expr $aSum / [llength $cps]]
-  set sCentroid [expr $sSum / [llength $cps]]
+  set rCentroid [expr $rSum / [llength $controlPoints]]
+  set aCentroid [expr $aSum / [llength $controlPoints]]
+  set sCentroid [expr $sSum / [llength $controlPoints]]
   return "$rCentroid $aCentroid $sCentroid"
 }
 
