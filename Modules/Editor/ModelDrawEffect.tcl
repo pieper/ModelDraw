@@ -1872,7 +1872,7 @@ itcl::body ModelDrawEffect::importCallback {} {
       set path [$storage GetFileName]
     
       set volumeLogic [$::slicer3::VolumesGUI GetLogic]
-      set ret [catch [list $volumeLogic AddArchetypeVolume "$path" "Model Draw Reference"] movingNode]
+      set ret [catch [list $volumeLogic AddArchetypeVolume "$path" "ModelDrawReference"] movingNode]
       if { $ret } {
         EditorErrorDialog "Could not import $path\nCannot register"
       } 
@@ -1897,22 +1897,22 @@ itcl::body ModelDrawEffect::importCallback {} {
         set moduleNode [vtkMRMLCommandLineModuleNode New]
         $::slicer3::MRMLScene AddNode $moduleNode
         $moduleNode SetName "Model Draw Import Registration"
+        $moduleNode SetModuleDescription "Fast Affine registration"
+        $registrationModule Enter
         # fixed (our edit volume) and moving (the imported volume)
         set logic [[$sliceGUI GetLogic]  GetBackgroundLayer]
         set node [$logic GetVolumeNode]
-        $moduleNode SetParameterAsString "fixedVolume" [$node GetID]
-        $moduleNode SetParameterAsString "movingVolume" [$movingNode GetID]
+        $moduleNode SetParameterAsString "FixedImageFileName" [$node GetID]
+        $moduleNode SetParameterAsString "MovingImageFileName" [$movingNode GetID]
         # the transform node
         set transformNode [vtkMRMLLinearTransformNode New]
+        $transformNode SetName "ReferenceToSubject"
         $::slicer3::MRMLScene AddNode $transformNode
-        $moduleNode SetParameterAsString "outputTransform" [$transformNode GetID]
-        $transformNode Delete
-        # some registration parameters
-        $moduleNode SetParameterAsString "initializeTransformMode" "useMomentsAlign"
-        $moduleNode SetParameterAsString "useRigid" "true"
-        $moduleNode SetParameterAsString "useAffine" "true"
+        $moduleNode SetParameterAsString "OutputTransform" [$transformNode GetID]
 
         $registrationModule SetCommandLineModuleNode $moduleNode
+        [$registrationModule GetLogic] SetCommandLineModuleNode $moduleNode
+        [$registrationModule GetLogic] LazyEvaluateModuleTarget $moduleNode
         [$registrationModule GetLogic] Apply $moduleNode
 
         set waitWindow [vtkNew vtkKWTopLevel]
@@ -1925,17 +1925,72 @@ itcl::body ModelDrawEffect::importCallback {} {
         $waitWindow SetReliefToGroove
 
         set waitLabel [vtkNew vtkKWLabel]
-        $waitLabel SetParent $topFrame
+        $waitLabel SetParent $waitWindow
         $waitLabel Create
         $waitLabel SetText "Registration in process.  Please wait..."
         pack [$waitLabel GetWidgetName] -side top -anchor w -padx 2 -pady 2 -fill both -expand true
+        $waitWindow DeIconify
+        $waitWindow Raise
         set seconds 0
+        update
         while { [$moduleNode GetStatusString] != "Completed" } {
           $waitLabel SetText "Registration in process ($seconds sec).  Please wait..."
           incr seconds
           after 1000
         }
+
+
+        # Now transform the control points by the registration matrix
+        # - and figure out a valid offset for them
+        # - then snap each new control point on to the slice plane at offset
+        $waitLabel SetText "Transforming Control Points..."
+        set sliceToRAS [$_sliceNode GetSliceToRAS]
+        foreach row {0 1 2} {
+          lappend sliceNormal [$sliceToRAS GetElement $row 2]
+        }
+        set sliceNormal [$this normalize $sliceNormal]
+        set matrix [$transformNode GetMatrixTransformToParent]
+        $_modelDrawNode RequestParameterList
+        array set p [$_modelDrawNode GetParameterList]
+        foreach index [array names p] {
+          foreach {offset, cps} $p($index) {
+            set transformedCPs ""
+            foreach cp $cps {
+              lappend transformedCPs [lrange [eval $matrix MultiplyPoint $cp 1] 0 2]
+            }
+            # determine best offset value for this group of points
+            set cent [$this centroid $transformedCPs]
+            eval $_sliceNode JumpSlice $cent
+            [$sliceGUI GetLogic] SnapSliceOffsetToIJK
+            set newOffset [$this offset]
+            
+            set newCPs ""
+            foreach newCP $transformedCPs {
+              set cpToSlice ""
+              foreach cpEle $newCP $row {0 1 2} {
+                # calculate vector from cp to slice point
+                lappend cpToSlice [expr [$sliceToRAS GetElement $row 3] - $cpEle]
+              }
+              set toPlane [$this dot $sliceNormal $cpToSlice]
+              set cpOnSlice ""
+              foreach cpEle $newCP snEle $sliceNormal {
+                # add the portion of cpToSlice that is along the slice normal
+                lappend cpOnSlice [expr $cpEle + $toPlane * $snEle]
+              }
+              lappend newCPs $cpOnSlice
+            }
+            set newOffsetCPArray($newOffset) $newCPs
+          }
+          $_modelDrawNode SetParameter $index [array get newOffsetCPArray]
+        }
+
+        $transformNode Delete
+
         $moduleNode Delete
+        $waitLabel Delete
+        $waitWindow Delete
+
+
       }
     }
   }
