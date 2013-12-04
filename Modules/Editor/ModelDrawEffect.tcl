@@ -1535,7 +1535,7 @@ itcl::body ModelDrawEffect::copyCurve {} {
   # interpolate by default, but fall back to nearest
   # if needed or bail out if nothing can be done
   set from interpolated
-  if { [array names _controlPoints] == 0 } {
+  if { [llength [array names _controlPoints]] == 0 } {
     # no points to copy from - can't do anything
     return
   }
