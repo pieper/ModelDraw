@@ -76,6 +76,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method addControlPoint {r a s} {}
     method deleteControlPoint {index} {}
     method splitControlPoint {index} {}
+    method jumpToControlPoints {arg} {}
     method updateControlPoints {} {}
     method updateEdgeTangents {} {}
     method estimateEdgeTangent { cp } {}
@@ -338,8 +339,9 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
       }
       "KeyPressEvent" { 
         set key [$_interactor GetKeySym]
+        puts [$_interactor GetKeySym]
         # TODO: fill in key bindings
-        if { [lsearch "a x Return" $key] != -1 } {
+        if { [lsearch "a x period j J Return" $key] != -1 } {
           $sliceGUI SetCurrentGUIEvent "" ;# reset event so we don't respond again
           $sliceGUI SetGUICommandAbortFlag 1
           switch [$_interactor GetKeySym] {
@@ -348,8 +350,18 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
               $this apply
               set _actionState ""
             }
+            "period" {
+              eval $this addControlPoint $_currentPosition
+              $sliceGUI SetGUICommandAbortFlag 1
+            }
             "x" {
               $this deleteLastPoint
+            }
+            "j" {
+              $this jumpToControlPoints "next"
+            }
+            "J" {
+              $this jumpToControlPoints "previous"
             }
           }
         } 
@@ -479,6 +491,35 @@ itcl::body ModelDrawEffect::splitControlPoint {index} {
   set _controlPoints($offset) [linsert $_controlPoints($offset) $index $ras]
   after idle $this updateControlPoints
 }
+
+
+itcl::body ModelDrawEffect::jumpToControlPoints {arg} {
+  # go to prev/next slice offset where points are defined
+
+  set offset [$this offset]
+  set sortedOffsets [lsort -real -increasing [array names _controlPoints]]
+  set offsetIndex [lsearch $sortedOffsets $offset]
+  if { $offsetIndex == -1 } {
+    set sortedOffsets [concat $sortedOffsets $offset]
+    set sortedOffsets [lsort -real -increasing $sortedOffsets]
+  }
+  set offsetIndex [lsearch $sortedOffsets $offset]
+  set jumpTo $offset
+  if { $arg == "previous" } {
+    set jumpTo [lindex $sortedOffsets $offsetIndex-1]
+    if { $jumpTo == "" } {
+      set jumpTo [lindex $sortedOffsets end]
+    }
+  }
+  if { $arg == "next" } {
+    set jumpTo [lindex $sortedOffsets $offsetIndex+1]
+    if { $jumpTo == "" } {
+      set jumpTo [lindex $sortedOffsets 0]
+    }
+  }
+  [$sliceGUI GetLogic] SetSliceOffset $jumpTo
+}
+
 
 itcl::body ModelDrawEffect::updateControlPoints {} {
   #
