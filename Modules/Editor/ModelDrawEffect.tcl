@@ -82,12 +82,13 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method updateCurve { {controlPoints ""} } {}
     method applyCurve {} {}
     method applyOperation {operation} {}
+    method copyCurves {} {}
     method applyCurves {} {}
     method seedStartMovingCallback {seed index} {}
     method seedMovingCallback {seed index} {}
     method seedContextMenuCallback {seed index} {}
     method seedKeyCallback {seed index key} {}
-    method copyCurve {} {}
+    method copyCurve { {promptForOverwrite "yes"} } {}
     method interpolatedControlPoints {} {}
     method splineToSlice {t} {}
     method snapCurve { {controlPoints ""} } {}
@@ -295,6 +296,13 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
   if { [info exists o(applyCurves)] } {
     if { $caller == $o(applyCurves) } {
       $this applyCurves
+      return
+    }
+  }
+
+  if { [info exists o(copyCurves)] } {
+    if { $caller == $o(copyCurves) } {
+      $this copyCurves
       return
     }
   }
@@ -615,8 +623,9 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
   if { [info exists o(applyCurves)] } {
     if { [llength [array names _controlPoints]] > 1 } {
       $o(applyCurves) SetStateToNormal
+      $o(copyCurves) SetStateToNormal
     } else {
-      $o(applyCurves) SetStateToDisabled
+      $o(copyCurves) SetStateToDisabled
     }
   }
 
@@ -824,6 +833,12 @@ itcl::body ModelDrawEffect::applyOperation {operation} {
     eval $operation
     update
   }
+}
+
+itcl::body ModelDrawEffect::copyCurves {} {
+  # Copy interpolated curves to all slices where they don't yet exist
+
+  $this applyOperation "$this copyCurve no"
 }
 
 itcl::body ModelDrawEffect::applyCurves {} {
@@ -1470,6 +1485,20 @@ itcl::body ModelDrawEffect::buildOptions {} {
   $::slicer3::Broker AddObservation $o(applyCurves) $invokedEvent "$this processEvent $o(applyCurves)"
 
   #
+  # copy curves to all slices (interolate)
+  #
+  set o(copyCurves) [vtkNew vtkKWPushButton]
+  $o(copyCurves) SetParent [$this getOptionsFrame]
+  $o(copyCurves) Create
+  $o(copyCurves) SetText "Copy Curves"
+  $o(copyCurves) SetBalloonHelpString "Make curves for all interpolated slices"
+  $o(copyCurves) SetStateToDisabled
+  pack [$o(copyCurves) GetWidgetName] \
+    -side bottom -anchor w -padx 2 -pady 2 
+  set invokedEvent 10000
+  $::slicer3::Broker AddObservation $o(copyCurves) $invokedEvent "$this processEvent $o(copyCurves)"
+
+  #
   # an delete slice points button (active when on slice with control points)
   #
   set o(deleteCurve) [vtkNew vtkKWPushButton]
@@ -1527,7 +1556,7 @@ itcl::body ModelDrawEffect::tearDownOptions { } {
   # call superclass version of tearDownOptions
   chain
 
-  set widgets {spline snap edgeTangents curves deleteCurve applyCurves definedPointsLabel importPoints definedPointsFrame }
+  set widgets {spline snap edgeTangents curves deleteCurve applyCurves copyCurves definedPointsLabel importPoints definedPointsFrame }
   foreach w $widgets {
     if { [info exists o($w)] } {
       $o($w) SetParent ""
@@ -1536,12 +1565,16 @@ itcl::body ModelDrawEffect::tearDownOptions { } {
   }
 }
 
-itcl::body ModelDrawEffect::copyCurve {} {
+itcl::body ModelDrawEffect::copyCurve { {promptForOverwrite "yes"} } {
 
   set offset [$this offset]
   if { [info exists _controlPoints($offset)] } {
-    if { $_controlPoints($offset) != "" } {
-      if { ![EditorConfirmDialog "This slice already has points defined - delete them?"] } {
+    if { $promptForOverwrite == "yes" } {
+      if { $_controlPoints($offset) != "" } {
+        if { ![EditorConfirmDialog "This slice already has points defined - delete them?"] } {
+          return
+        }
+      } else {
         return
       }
     }
