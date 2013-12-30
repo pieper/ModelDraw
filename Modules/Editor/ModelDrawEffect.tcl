@@ -73,7 +73,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method controlPoints { {offset ""} } {}
     method controlCentroid { {offset ""} } {}
     method centroid { controlPoints } {}
-    method addControlPoint {r a s} {}
+    method addControlPoint {r a s {copyIfPossible "no"} } {}
     method deleteControlPoint {index} {}
     method splitControlPoint {index} {}
     method jumpToControlPoints {arg} {}
@@ -351,7 +351,7 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
               set _actionState ""
             }
             "period" {
-              eval $this addControlPoint $_currentPosition
+              eval $this addControlPoint $_currentPosition "yes"
               $sliceGUI SetGUICommandAbortFlag 1
             }
             "x" {
@@ -443,14 +443,14 @@ itcl::body ModelDrawEffect::centroid { controlPoints } {
   return "$rCentroid $aCentroid $sCentroid"
 }
 
-itcl::body ModelDrawEffect::addControlPoint {r a s} {
+itcl::body ModelDrawEffect::addControlPoint {r a s {copyIfPossible "no"} } {
 
   set offset [$this offset]
   if { [array names _controlPoints] != "" } {
     # there are control points on other slices
     if { ![info exists _controlPoints($offset)] } {
       # no control points yet on this slice, offer to copy
-      if { [EditorConfirmDialog "Control points exist on other slices - copy them?"] } {
+      if { $copyIfPossible == "yes" || [EditorConfirmDialog "Control points exist on other slices - copy them?"] } {
         $this copyCurve
         return
       }
