@@ -56,6 +56,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     variable _sliceSplineS ""
     variable _modelDrawNode "" ;# custom parameter node for this tool
     variable _hermiteWeights ;# array of precalculated weights per splineSteps
+    variable _lastJumpFrom "" ;# state variable for jumpToControlPoints method
 
     # methods
     method processEvent {{caller ""} {event ""}} {}
@@ -340,7 +341,7 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
       "KeyPressEvent" { 
         set key [$_interactor GetKeySym]
         # TODO: fill in key bindings
-        if { [lsearch "a x period j J k Return" $key] != -1 } {
+        if { [lsearch "a x period i I j J k Return" $key] != -1 } {
           $sliceGUI SetCurrentGUIEvent "" ;# reset event so we don't respond again
           $sliceGUI SetGUICommandAbortFlag 1
           switch [$_interactor GetKeySym] {
@@ -355,6 +356,18 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
             }
             "x" {
               $this deleteLastPoint
+            }
+            "I" {
+              $this jumpToControlPoints "previous"
+              update; after 150
+              $this jumpToControlPoints "lastJumpFrom"
+              update; after 150
+              $this jumpToControlPoints "next"
+              update; after 150
+              $this jumpToControlPoints "lastJumpFrom"
+            }
+            "i" {
+              $this jumpToControlPoints "lastJumpFrom"
             }
             "j" {
               $this jumpToControlPoints "next"
@@ -517,7 +530,15 @@ itcl::body ModelDrawEffect::jumpToControlPoints {arg} {
       set jumpTo [lindex $sortedOffsets 0]
     }
   }
+
+  if { $arg == "lastJumpFrom" } {
+    if { $_lastJumpFrom != "" } {
+      set jumpTo $_lastJumpFrom
+    }
+  }
+
   [$sliceGUI GetLogic] SetSliceOffset $jumpTo
+  set _lastJumpFrom $offset
 }
 
 
