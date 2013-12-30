@@ -526,7 +526,9 @@ itcl::body Labeler::rotateSliceToImage { } {
 
   $_sliceNode RotateToVolumePlane $_layers(background,node)
   # make sure the slice plane does not lie on an index boundary (to avoid rounding issues)
-  [$sliceGUI GetLogic] SnapSliceOffsetToIJK
+  if {[catch {[$sliceGUI GetLogic] SnapSliceOffsetToIJK}]} {
+    puts "No SnapSliceOffsetToIJK in this version of slicer"
+  }
   $_sliceNode UpdateMatrices
 }
 

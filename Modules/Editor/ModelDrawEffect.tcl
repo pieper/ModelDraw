@@ -81,6 +81,7 @@ if { [itcl::find class ModelDrawEffect] == "" } {
     method estimateEdgeTangent { cp } {}
     method updateCurve { {controlPoints ""} } {}
     method applyCurve {} {}
+    method applyOperation {operation} {}
     method applyCurves {} {}
     method seedStartMovingCallback {seed index} {}
     method seedMovingCallback {seed index} {}
@@ -569,6 +570,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
     set w [$o(curves) GetWidget]
     $w DeleteAllRows
     set visible ""
+    set visibleRow 0
     foreach offset [lsort -real [array names _controlPoints]] {
       # add it to the listbox
       set row [$w GetNumberOfRows]
@@ -576,6 +578,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       if { $offset == $currentOffset } {
         set text "$text (visible)"
         set visible $offset
+        set visibleRow $row
       }
       $w InsertCellText $row 0 $text
       # eval $w SetCellBackgroundColor $row $col(Color) [lrange [$lut GetTableValue $c] 0 2]
@@ -587,6 +590,8 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
       } else {
         $w InsertCellText $row 0 "$currentOffset - no points, click to copy nearest"
       }
+    } else {
+      $w SeeRow $visibleRow
     }
   }
 
@@ -787,15 +792,15 @@ itcl::body ModelDrawEffect::applyCurve {} {
   }
 }
 
-itcl::body ModelDrawEffect::applyCurves {} {
-  # rasterize the current set of curves to all slices in the
+itcl::body ModelDrawEffect::applyOperation {operation} {
+  # go through all current set of curves and apply operation to all slices in the
   # volume between high and low offsets
  
   #
   # find the sliceSWidget to use for increment
   # find min/max offset for iteration
   # update to current real or interpolated curve
-  # apply draw operation to label map
+  # apply operation
   #
 
   set sliceSWidget ""
@@ -816,10 +821,17 @@ itcl::body ModelDrawEffect::applyCurves {} {
   [$sliceGUI GetLogic] SetSliceOffset $firstOffset
   while { [[$sliceGUI GetLogic] GetSliceOffset] < $lastOffset } {
     $sliceSWidget incrementSlice
-    $this applyCurve
+    eval $operation
     update
   }
+}
 
+itcl::body ModelDrawEffect::applyCurves {} {
+  # rasterize the current set of curves to all slices in the
+  # volume between high and low offsets
+  #
+
+  $this applyOperation "$this applyCurve"
 }
 
 itcl::body ModelDrawEffect::seedStartMovingCallback {seed index} {
@@ -1440,6 +1452,9 @@ itcl::body ModelDrawEffect::buildOptions {} {
   # we use scope internally, but users shouldn't see it
   pack forget [$o(scopeOption) GetWidgetName]
 
+  # set the help text (widget defined in DrawEffect superclass)
+  $o(help) SetHelpText "Use this tool to draw interpolated outlines.  Red control points can be modified, Blue control points are automatically interpolated but can be converted to Red points by clicking on the slice.  Slices with outline but no control points are outside interpolation region.  Use Apply Curves to generate a label map.\n\nLeft Click: add control point.\nLeft Drag: move control point.\nShift-Left Drag: translate control points\nControl-Left Drag: scale control points\nControl-Shift-Left Drag: rotate control points."
+
   #
   # Apply label maps for all curves (interolate)
   #
@@ -1970,7 +1985,9 @@ itcl::body ModelDrawEffect::importCallback {} {
             # determine best offset value for this group of points
             set cent [$this centroid $transformedCPs]
             eval $_sliceNode JumpSlice $cent
-            [$sliceGUI GetLogic] SnapSliceOffsetToIJK
+            if {[catch {[$sliceGUI GetLogic] SnapSliceOffsetToIJK}]} {
+              puts "No SnapSliceOffsetToIJK in this version of slicer"
+            }
             set newOffset [$this offset]
             set newCPs ""
             foreach newCP $transformedCPs {
