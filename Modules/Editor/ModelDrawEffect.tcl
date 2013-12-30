@@ -620,10 +620,11 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
     $w DeleteAllRows
     set visible ""
     set visibleRow 0
+    set rows [llength [array names _controlPoints]]
     foreach offset [lsort -real [array names _controlPoints]] {
       # add it to the listbox
       set row [$w GetNumberOfRows]
-      set text "$offset ([llength $_controlPoints($offset)] points)"
+      set text "$offset ([llength $_controlPoints($offset)] pts) [expr 1+$row]/$rows"
       if { $offset == $currentOffset } {
         set text "$text (visible)"
         set visible $offset
