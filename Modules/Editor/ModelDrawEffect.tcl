@@ -339,7 +339,6 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
       }
       "KeyPressEvent" { 
         set key [$_interactor GetKeySym]
-        puts [$_interactor GetKeySym]
         # TODO: fill in key bindings
         if { [lsearch "a x period j J Return" $key] != -1 } {
           $sliceGUI SetCurrentGUIEvent "" ;# reset event so we don't respond again
