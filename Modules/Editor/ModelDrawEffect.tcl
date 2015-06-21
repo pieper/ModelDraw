@@ -8,7 +8,7 @@ if {0} { ;# comment
   ModelDrawEffect an editor effect
 
 
-# TODO : 
+# TODO :
 
 }
 #
@@ -120,7 +120,7 @@ itcl::body ModelDrawEffect::constructor {sliceGUI} {
   set _scopeOptions "all visible"
   set _currentLabel [EditorGetPaintLabel]
 
-  # create the spline interpolators - these are re-used for intra-slice 
+  # create the spline interpolators - these are re-used for intra-slice
   # and inter-slice interpolations
   foreach obj {splineR splineA splineS} {
     set o($obj) [vtkNew vtkKochanekSpline]
@@ -175,7 +175,7 @@ itcl::body ModelDrawEffect::modelDrawNode { } {
       return $node
     }
   }
-  
+
   # get here if there is no model draw parameter node yet in scene
   set node [vtkMRMLScriptedModuleNode New]
   $node SetModuleName "ModelDraw"
@@ -321,7 +321,7 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
     $o(cursorActor) VisibilityOn
   }
 
-  set event [$sliceGUI GetCurrentGUIEvent] 
+  set event [$sliceGUI GetCurrentGUIEvent]
   set _currentPosition [$this xyToRAS [$_interactor GetEventPosition]]
 
   if { $caller == $sliceGUI } {
@@ -338,10 +338,19 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
           $sliceGUI SetGUICommandAbortFlag 1
         }
       }
-      "KeyPressEvent" { 
+      "KeyPressEvent" {
         set key [$_interactor GetKeySym]
         # TODO: fill in key bindings
-        if { [lsearch "a x period i I j J k Return" $key] != -1 } {
+        # "a" - apply curves on the current slice (ie. create labelmap based on the curves)
+        # "x" - delete last point
+        # "." - (period) turn all (interpolated) points on current slice to control points when on an interpolated slice and add control point when on a control slice
+        # "i" - jump back and forth between the two last viewed control slices
+        # "I" - animate through/show the previous control slice then show the current (not necessarily control) slice then the next control slice and go back to the current slice
+        # "j"="d" - jump to next slice with control points (both "j" and "k" cycle through the list!)
+        # "J"="k"="q" - (equals "k") jump to previous slice with control points (both "j" and "k" cycle through the list!)
+        # "k"="J"="q" - jump to previous slice with control points (both "j" and "k" cycle through the list!)
+        # "return key" -
+        if { [lsearch "a x period i Y I j d J q k Return" $key] != -1 } {
           $sliceGUI SetCurrentGUIEvent "" ;# reset event so we don't respond again
           $sliceGUI SetGUICommandAbortFlag 1
           switch [$_interactor GetKeySym] {
@@ -351,6 +360,10 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
               set _actionState ""
             }
             "period" {
+              eval $this addControlPoint $_currentPosition "yes"
+              $sliceGUI SetGUICommandAbortFlag 1
+            }
+            "Y" {
               eval $this addControlPoint $_currentPosition "yes"
               $sliceGUI SetGUICommandAbortFlag 1
             }
@@ -369,15 +382,21 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
             "i" {
               $this jumpToControlPoints "lastJumpFrom"
             }
-            "j" {
+            "d" {
+              $this jumpToControlPoints "next"
+            }
+            "j"  {
               $this jumpToControlPoints "next"
             }
             "k" -
+            "q" {
+              $this jumpToControlPoints "previous"
+            }
             "J" {
               $this jumpToControlPoints "previous"
             }
           }
-        } 
+        }
       }
       "EnterEvent" {
         $o(cursorActor) VisibilityOn
@@ -440,7 +459,7 @@ itcl::body ModelDrawEffect::controlCentroid { {offset ""} } {
 }
 
 itcl::body ModelDrawEffect::centroid { controlPoints } {
-  
+
   set rSum 0
   set aSum 0
   set sSum 0
@@ -546,10 +565,10 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
   #
   # update:
   # the parameter node
-  # the seed widgets 
+  # the seed widgets
   # the listbox
   #
-  
+
   if { $_modelDrawNode == "" } {
     # not initialized yet
     return
@@ -559,7 +578,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
 
   # copy control points into the model draw node
   $_modelDrawNode SetParameter $_currentLabel [array get _controlPoints]
-  
+
   #
   # update seeds: first - disable old seeds
   # (put them in a list for reuse)
@@ -620,7 +639,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
 
       # configure the seed to act as a control point
       eval $seedSWidget place $cp
-      $seedSWidget configure -scale 8 
+      $seedSWidget configure -scale 8
       $seedSWidget configure -glyph Circle
       $seedSWidget configure -visibility 1
       $seedSWidget configure -inactive 1
@@ -707,7 +726,7 @@ itcl::body ModelDrawEffect::updateControlPoints {} {
 
 itcl::body ModelDrawEffect::estimateEdgeTangent { cp } {
   # - search neighborhood for best match image patch at various rotations
- 
+
   set sliceToRAS [$_sliceNode GetSliceToRAS]
   foreach row {0 1 2} {
     lappend tangent [$sliceToRAS GetElement $row 0]
@@ -814,7 +833,7 @@ itcl::body ModelDrawEffect::updateEdgeTangents {} {
       lappend seedPoint [expr $cpele + $edgeTangentSampleDistance * $tele]
     }
     eval $seedSWidget place $seedPoint
-    $seedSWidget configure -scale 5 
+    $seedSWidget configure -scale 5
     $seedSWidget configure -glyph Circle
     $seedSWidget configure -visibility 1
     $seedSWidget configure -inactive 1
@@ -867,7 +886,7 @@ itcl::body ModelDrawEffect::applyCurve {} {
 itcl::body ModelDrawEffect::applyOperation {operation} {
   # go through all current set of curves and apply operation to all slices in the
   # volume between high and low offsets
- 
+
   #
   # find the sliceSWidget to use for increment
   # find min/max offset for iteration
@@ -1213,7 +1232,7 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
   # - move along normal
   # -- find best fit to interpolated patch
   #
- 
+
   if { $controlPoints == "" } {
     set controlPoints [$this controlPoints]
   }
@@ -1267,7 +1286,7 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
     lappend cpPatches $imagePatch
     incr i $splineSteps
   }
-  
+
   # set up the interpolation pipeline
   if { ![info exists o(cmpBlend)] } {
     set o(cmpBlend) [vtkNew vtkImageBlend]
@@ -1293,7 +1312,7 @@ itcl::body ModelDrawEffect::snapCurve { {controlPoints ""} } {
     $o(cmpBlend) SetOpacity 1 $t
 
     # optimize the offset for each point on the curve as a distance
-    # along the normal 
+    # along the normal
     # - first, sample a range of offsets
     # - pick the one with the min weight
     # - TODO: check standard deviation of guesses - ignore non-clear winners
@@ -1486,7 +1505,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   [$o(edgeTangents) GetLabel] SetWidth 22
   [$o(edgeTangents) GetLabel] SetAnchorToEast
   pack [$o(edgeTangents) GetWidgetName] \
-    -side top -anchor w -padx 2 -pady 2 
+    -side top -anchor w -padx 2 -pady 2
   [$o(edgeTangents) GetWidget] SetSelectedState $edgeTangents
 
   set SelectedStateChangedEvent 10000
@@ -1500,7 +1519,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   [$o(spline) GetLabel] SetWidth 22
   [$o(spline) GetLabel] SetAnchorToEast
   pack [$o(spline) GetWidgetName] \
-    -side top -anchor w -padx 2 -pady 2 
+    -side top -anchor w -padx 2 -pady 2
   if { $interpolation == "spline" } {
     [$o(spline) GetWidget] SetSelectedState 1
   } else {
@@ -1518,7 +1537,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   [$o(snap) GetLabel] SetWidth 22
   [$o(snap) GetLabel] SetAnchorToEast
   pack [$o(snap) GetWidgetName] \
-    -side top -anchor w -padx 2 -pady 2 
+    -side top -anchor w -padx 2 -pady 2
   [$o(snap) GetWidget] SetSelectedState $snap
 
   set SelectedStateChangedEvent 10000
@@ -1526,7 +1545,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
 
   # call superclass version of buildOptions
   chain
-  
+
   # we use scope internally, but users shouldn't see it
   pack forget [$o(scopeOption) GetWidgetName]
 
@@ -1543,7 +1562,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   $o(applyCurves) SetBalloonHelpString "Fill in all curves between start and end slices"
   $o(applyCurves) SetStateToDisabled
   pack [$o(applyCurves) GetWidgetName] \
-    -side bottom -anchor w -padx 2 -pady 2 
+    -side bottom -anchor w -padx 2 -pady 2
   set invokedEvent 10000
   $::slicer3::Broker AddObservation $o(applyCurves) $invokedEvent "$this processEvent $o(applyCurves)"
 
@@ -1557,7 +1576,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   $o(copyCurves) SetBalloonHelpString "Make curves for all interpolated slices"
   $o(copyCurves) SetStateToDisabled
   pack [$o(copyCurves) GetWidgetName] \
-    -side bottom -anchor w -padx 2 -pady 2 
+    -side bottom -anchor w -padx 2 -pady 2
   set invokedEvent 10000
   $::slicer3::Broker AddObservation $o(copyCurves) $invokedEvent "$this processEvent $o(copyCurves)"
 
@@ -1571,7 +1590,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   $o(deleteCurve) SetBalloonHelpString "Delete the points in the current slice"
   $o(deleteCurve) SetStateToDisabled
   pack [$o(deleteCurve) GetWidgetName] \
-    -side bottom -anchor w -padx 2 -pady 2 
+    -side bottom -anchor w -padx 2 -pady 2
   set invokedEvent 10000
   $::slicer3::Broker AddObservation $o(deleteCurve) $invokedEvent "$this processEvent $o(deleteCurve)"
 
@@ -1601,7 +1620,7 @@ itcl::body ModelDrawEffect::buildOptions {} {
   $::slicer3::Broker AddObservation [$o(curves) GetWidget] $SelectionChangedEvent "$this processEvent $o(curves)"
 
   pack [$o(curves) GetWidgetName] \
-    -side bottom -anchor s -fill both -expand true -padx 2 -pady 2 
+    -side bottom -anchor s -fill both -expand true -padx 2 -pady 2
 
   $this updateGUIFromMRML
 
@@ -1623,7 +1642,7 @@ itcl::body ModelDrawEffect::tearDownOptions { } {
   foreach w $widgets {
     if { [info exists o($w)] } {
       $o($w) SetParent ""
-      pack forget [$o($w) GetWidgetName] 
+      pack forget [$o($w) GetWidgetName]
     }
   }
 }
@@ -1689,7 +1708,7 @@ itcl::body ModelDrawEffect::copyCurve { {promptForOverwrite "yes"} } {
       set x [expr $delta * [[$_sliceNode GetSliceToRAS] GetElement 0 2]]
       set y [expr $delta * [[$_sliceNode GetSliceToRAS] GetElement 1 2]]
       set z [expr $delta * [[$_sliceNode GetSliceToRAS] GetElement 2 2]]
-      
+
       set _controlPoints($offset) ""
       foreach cp $_controlPoints($copyFrom) {
         set xx [expr $x + [lindex $cp 0]]
@@ -1712,7 +1731,7 @@ itcl::body ModelDrawEffect::splineToSlice {t} {
   # slice plane to current spline evaluated at t
   # (may not be in mm if normal not normalized, but
   # will still work when optimizing to zero)
-  
+
   # current slice plane origin and normal
   set or [[$_sliceNode GetSliceToRAS] GetElement 0 3]
   set oa [[$_sliceNode GetSliceToRAS] GetElement 1 3]
@@ -1726,7 +1745,7 @@ itcl::body ModelDrawEffect::splineToSlice {t} {
   set a [$_sliceSplineA Evaluate $t]
   set s [$_sliceSplineS Evaluate $t]
 
-  set dist [expr $nr * ($r - $or) + $na * ($a - $oa) + $ns * ($s - $os)] 
+  set dist [expr $nr * ($r - $or) + $na * ($a - $oa) + $ns * ($s - $os)]
   return $dist
 }
 
@@ -1735,7 +1754,7 @@ itcl::body ModelDrawEffect::interpolatedControlPoints {} {
   # a spline to each of the control point in order
   #
   # - check that there are the same number of control points per slice
-  # - for each control point set form a spline 
+  # - for each control point set form a spline
   # - intersect spline with current slice plane
   # -- use binary search to find t such that spline(t) is on offest plane
   #
@@ -1895,7 +1914,7 @@ itcl::body ModelDrawEffect::importDialog {} {
     [$o(importRegister) GetLabel] SetWidth 22
     [$o(importRegister) GetLabel] SetAnchorToEast
     pack [$o(importRegister) GetWidgetName] \
-      -side top -anchor w -padx 2 -pady 2 
+      -side top -anchor w -padx 2 -pady 2
     [$o(importRegister) GetWidget] SetSelectedState 1
 
     set buttonFrame [vtkNew vtkKWFrame]
@@ -1911,7 +1930,7 @@ itcl::body ModelDrawEffect::importDialog {} {
     $o(importCancel) SetParent $buttonFrame
     $o(importCancel) Create
     $o(importCancel) SetText Cancel
-    pack [$o(importCancel) GetWidgetName] [$o(importOK) GetWidgetName] -side left -padx 4 -anchor c 
+    pack [$o(importCancel) GetWidgetName] [$o(importOK) GetWidgetName] -side left -padx 4 -anchor c
 
     # invoked event
     set broker $::slicer3::Broker
@@ -1980,12 +1999,12 @@ itcl::body ModelDrawEffect::importCallback {} {
     } else {
       set storage [$importVolume GetStorageNode]
       set path [$storage GetFileName]
-    
+
       set volumeLogic [$::slicer3::VolumesGUI GetLogic]
       set ret [catch [list $volumeLogic AddArchetypeVolume "$path" "ModelDrawReference"] movingNode]
       if { $ret } {
         EditorErrorDialog "Could not import $path\nCannot register"
-      } 
+      }
     }
     if { $movingNode != "" } {
       #
