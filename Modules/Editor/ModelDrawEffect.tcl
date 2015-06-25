@@ -341,7 +341,7 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
       "KeyPressEvent" {
         set key [$_interactor GetKeySym]
         # TODO: fill in key bindings
-        # "a" - apply curves on the current slice (ie. create labelmap based on the curves)
+        # "a"="Return" - apply curves on the current slice (ie. create labelmap based on the curves)
         # "x" - delete last point
         # "." - (period) turn all (interpolated) points on current slice to control points when on an interpolated slice and add control point when on a control slice
         # "i" - jump back and forth between the two last viewed control slices
@@ -349,7 +349,6 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
         # "j"="d" - jump to next slice with control points (both "j" and "k" cycle through the list!)
         # "J"="k"="q" - (equals "k") jump to previous slice with control points (both "j" and "k" cycle through the list!)
         # "k"="J"="q" - jump to previous slice with control points (both "j" and "k" cycle through the list!)
-        # "return key" -
         if { [lsearch "a x period i Y I j d J q k Return" $key] != -1 } {
           $sliceGUI SetCurrentGUIEvent "" ;# reset event so we don't respond again
           $sliceGUI SetGUICommandAbortFlag 1
@@ -389,10 +388,8 @@ itcl::body ModelDrawEffect::processEvent { {caller ""} {event ""} } {
               $this jumpToControlPoints "next"
             }
             "k" -
+            "J" -
             "q" {
-              $this jumpToControlPoints "previous"
-            }
-            "J" {
               $this jumpToControlPoints "previous"
             }
           }
